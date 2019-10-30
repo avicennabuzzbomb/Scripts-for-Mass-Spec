@@ -4,6 +4,7 @@
 if __name__=='__main__':  # Run this script when invoked, instead of the modules imported into it
 
     import numpy # may need for accurate math (double check this)
+    import csv   # tools for reading and writing into csv files
 
     """ProteomeDiscoverer's reported mass of a neutron; needed for calculating mass
     #shifts in heavy-nitrogen labeled peptides"""
@@ -38,8 +39,9 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         assert type(mZ)==float, "Error, mZ must be a float representing the m/z of the dipeptide"
         assert type(z)==int, "Error, z must be an integer representing the charge of the dipeptide"
 
-        heavyAshift = calc_15Nshift(pepA, charge)   
-        heavyBshift = calc_15Nshift(pepB, charge)
+        dipeptide = pepA + "-" + pepB
+        heavyAshift = calc_15Nshift(pepA, charge)   # These statements calculate peptide
+        heavyBshift = calc_15Nshift(pepB, charge)   # the expected N15 shift of each. 
 
         HH = heavyAshift + heavyBshift + mZ                  # fully labeled (Heavy-Heavy)
         HL = heavyAshift + mZ     # peptide A is labeled, peptide B is light (Heavy-Light)
@@ -68,7 +70,11 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         countN = seq.count('N') 
         countQ = seq.count('Q')
         countW = seq.count('W')
-        countRemaining = length - sum([countR, countH, countK, countN, countQ, countW])
+
+        countBrackets = seq.count('[')
+        countBrackets1 = seq.count(']')
+
+        countRemaining = length - sum([countR, countH, countK, countN, countQ, countW, countBrackets, countBrackets1])
         mZshift = (R*countR + H*countH + K*countK + N*countN + Q*countQ + W*countW + neutron*countRemaining) / charge
         print("Peptide sequence is",seq," and its m/z shift is ",mZshift)
         return mZshift
@@ -87,20 +93,6 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
 
     # FUNCTION: Calls read_CSMs(); calls calc_Labeled() with parameters read from file contents; outputs pepNames and labeledPeps to a new result file.
     def ANALYZE_CSMs(): #TODO this may be redundant to read_CSMs; either bundle everything under read and make it main, or make ANALYZE the main function and have it call read.
-        return
-
-    ##____TEST PARAMS AND CODE FOR THE FUNCTION calcMzShift____##
-    def testCalcs(testStrA,testStrB,test_mZ,testZ):
-        dipeptide = testStrA + "-" + testStrB
-        print("The dipeptide is ",dipeptide,"and its charge state is +",testZ)
-        print("")
-
-        labeledPeps = calc_Labeled(testStrA,testStrB,test_mZ,testZ)  # list of expected m/z
-        pepNames = ['LL','LH','HL','HH']                             # list of label names
-
-        for x in range(len(pepNames)):
-            print("Predicted m/z of labeled peptides are",pepNames[x],": ",labeledPeps[x])
-    
         return
     """
     #List of parameters for the testing function testCalcs()
@@ -123,8 +115,15 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
     testCalcs(testStrC,testStrD,test_mZ2,testZ) #TEST 2 calls testCalcs() with TEST 2 params
     """
 
-    response = 'y'   #default in order to enter the loop
 
+    # response = 'y'   #default in order to enter the loop
+
+    Output = open('Predicted_mixedPeaks.csv', 'w+') # create a new file object Output, open an empty file with it to 'w'rite into.
+    print("HEADER:: Predicted m/z for light-light(LL), light-heavy(LH), heavy-light(HL), heavy-heavy(HH) dipeptides.", file = Output)  
+    print("", file = Output)
+    COUNT = 1
+
+    """ ##This large codeblock is designed for manual entry of sequences by the user (slow, mistake prone)
     while response == 'Y' or response == 'y':
         seqA = input("Enter peptide sequence A: ")
         print("seqA is ",seqA)
@@ -137,11 +136,477 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         charge = int(charge)    #have to typecast because input defaults to str
         print("Charge: z = ",charge)
 
-        testCalcs(seqA,seqB,mZ,charge)
+        dipeptide = seqA + "-" + seqB
+        print("The dipeptide is ",dipeptide,"and its charge state is +",charge)
+        print("")
 
-        response = input("Analysis done. Enter another dipeptide?")
+        labeledPeps = calc_Labeled(seqA,seqB,mZ,charge) #get list of predicted sequences from calc_Labeled
+        pepNames = ["LL","LH","HL","HH"]
 
-            
+        #This block prints the contents of the array of lists: label names, and predicted m/z to the new file.
+        print(COUNT,":","Dipeptide sequence is ",dipeptide,"and its charge state is +",charge, file = Output)
+        for x in range(len(pepNames)):
+            print(pepNames[x], labeledPeps[x], file = Output)
+        print("", file=Output)
+        COUNT += 1
+
+        # To user: continue?
+        response = input("Analysis done. Enter another dipeptide?\n" "(Any key to continue; to stop, N or n.)")
+        """
+    ## Block below specifically for my purposes (copy-paste directly from Thao's data, then run script over this list)
+    pepA_list = ["ELSEIAEQA[K]R",
+                "ELSEIAEQA[K]R",
+                "TLHGLQP[K]EAVNIFPEK",
+                "ELHTL[K]GHVESVVK",    
+                "[K]HIVGMTGDGVNDAPALK",    # need to check this one in PD (CSM 5)
+                "IPIEEVFQQL[K]CSR",        # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
+                "IPIEEVFQQL[K]CSR",
+                "VS[K]GAPEQILELAK",
+                "ELSEIAEQA[K]R",
+                "LSVD[K]NLVEVFCK",
+                "LSVD[K]NLVEVFCK",
+                "TLHGLQP[K]EAVNIFPEK",
+                "GVE[K]DQVLLFAAMASR",
+                "EVHFLPFNPVD[K]R",
+                "EVHFLPFNPVD[K]R",
+                "EVHFLPFNPVD[K]R",
+                "VLSIID[K]YAER",
+                "TGTLTLN[K]LSVDK",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "VS[K]GAPEQILELAK",
+                "VS[K]GAPEQILELAK",
+                "[K]ADIGIAVADATDAAR",
+                "VS[K]GAPEQILELAK",
+                "VS[K]GAPEQILELAK",
+                "EVHFLPFNPVD[K]R",
+                "ADGFAGVFPEH[K]YEIVK",
+                "EVHFLPFNPVD[K]R",
+                "GAPEQILELA[K]ASNDLSK",
+                "EEEEEEEEEEEEEEK",         # no sequence! check PD; RT is 62.07.
+                "VLSIID[K]YAER",
+                "NLVEVFC[K]GVEK",
+                "V[K]PSPTPDSWK",
+                "MITGDQLAIG[K]ETGR",
+                "IPIEEVFQQL[K]CSR",
+                "NETVDLE[K]IPIEEVFQQLK",   # "positive control" test for this script, picked by Thao
+                "IQIFGPN[K]LEEK",          # this is an example where the monoisotopic peak is not reliable and have to pick something in the spectra as the starting point
+                "ELHTL[K]GHVESVVK",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "[K]ADIGIAVADATDAAR",
+                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",
+                "[K]HIVGMTGDGVNDAPALK",
+                "NETVDLE[K]IPIEEVFQQLK",
+                "V[K]PSPTPDSWK",
+                "TAFTM[K]K",
+                "TLHGLQP[K]EAVNIFPEK",
+                "EVHFLPFNPVD[K]R",
+                "IPIEEVFQQL[K]CSR",
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",
+                "NETVDLE[K]IPIEEVFQQLK",
+                "EVHFLPFNPVD[K]R",
+                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "EAVNIFPE[K]GSYR",
+                "MITGDQLAIG[K]ETGR",
+                "LLEGDPL[K]VDQSALTGESLPVTK",
+                "ELHTL[K]GHVESVVK",
+                "TLHGLQP[K]EAVNIFPEK",
+                "IPIEEVFQQL[K]CSR",
+                "VS[K]GAPEQILELAK",
+                "GAPEQILELA[K]ASNDLSK",
+                "T[K]ESPGAPWEFVGLLPLFDPPR",
+                "VS[K]GAPEQILELAK",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "TLHGLQP[K]EAVNIFPEK",
+                "MITGDQLAIG[K]ETGR",
+                "VS[K]GAPEQILELAK",
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",
+                "EVHFLPFNPVD[K]R",
+                "VSKGAPEQILELA[K]ASNDLSKK",
+                "EAVNIFPE[K]GSYR",
+                "EVHFLPFNPVD[K]R",
+                "EVHFLPFNPVD[K]R",
+                "VS[K]GAPEQILELAK",
+                "LLEGDPL[K]VDQSALTGESLPVTK",
+                "EAVNIFPE[K]GSYR",
+                "EAVNIFPE[K]GSYR",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "MITGDQLAIG[K]ETGR",
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",    #slide 97: data is too low quality to be useful.
+                "IPIEEVFQQL[K]CSR",
+                "VLSIID[K]YAER",
+                "EVHFLPFNPVD[K]R",
+                "LLEGDPL[K]VDQSALTGESLPVTK",
+                "WSEQEAAILVPGDIVSI[K]LGDIIPADAR",
+                "IQIFGPN[K]LEEK",
+                "ADGFAGVFPEH[K]YEIVK",
+                "V[K]PSPTPDSWK",
+                "V[K]PSPTPDSWK",
+                "IQIFGPN[K]LEEK",
+                "VENQDAIDAAMVGMLADP[K]EAR",        #slide 108, data poor quality; test different peaks.
+                "LLEGDPL[K]VDQSALTGESLPVTK",
+                "GAPEQILELA[K]ASNDLSK",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "LSQQGAIT[K]R",
+                "EVHFLPFNPVD[K]R",
+                "ADGFAGVFPEH[K]YEIVK",
+                "LLEGDPL[K]VDQSALTGESLPVTK",
+                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",
+                "V[K]PSPTPDSWK",
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",
+                "MITGDQLAIG[K]ETGR",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "LLEGDPL[K]VDQSALTGESLPVTK",
+                "MITGDQLAIG[K]ETGR",
+                "IPIEEVFQQL[K]CSR"]          #slide 123, data poor quality; test different peaks.
+
+    pepB_list = ["LSQQGAIT[K]R",
+                "LSQQGAIT[K]R",
+                "EVHFLPFNPVD[K]R",
+                "LSQQGAIT[K]R",        
+                "[K]ADIGIAVADATDAAR",      # need to check this one in PD (CSM 5)
+                "ELSEIAEQA[K]R",           # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
+                "IQIFGPN[K]LEEK",
+                "ASNDLS[K]K",
+                "DYG[K]EER",
+                "LSQQGAIT[K]R",
+                "LSQQGAIT[K]R",
+                "ELSEIAEQA[K]R ",
+                "LSVD[K]NLVEVFCK",
+                "ELSEIAEQA[K]R",
+                "ELSEIAEQA[K]R",
+                "LSQQGAIT[K]R",
+                "ASNDLS[K]K",
+                "LSQQGAIT[K]R",
+                "EVHFLPFNPVD[K]R",
+                "GVE[K]DQVLLFAAMASR",
+                "LSQQGAIT[K]R",
+                "VLSIID[K]YAER",
+                "ELSEIAEQA[K]R",
+                "EVHFLPFNPVD[K]R",
+                "ELSEIAEQA[K]R",
+                "TGTLTLN[K]LSVDK",
+                "[K]ADIGIAVADATDAAR",
+                "ASNDLS[K]K",
+                "EVHFLPFNPVD[K]R",
+                "EEEEEEEEEEEEEEK",         # no sequence! check PD; RT is 62.07.
+                "LSQQGAIT[K]R",
+                "LSQQGAIT[K]R",
+                "LSQQGAIT[K]R",
+                "ELSEIAEQA[K]R",
+                "EVHFLPFNPVD[K]R",
+                "VS[K]GAPEQILELAK",        # "positive control" test for this script, picked by Thao
+                "LSQQGAIT[K]R",            # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+                "EAVNIFPE[K]GSYR",
+                "LSQQGAIT[K]R",
+                "LSQQGAIT[K]R",
+                "EVHFLPFNPVD[K]R",
+                "LSQQGAIT[K]R",
+                "ELSEIAEQA[K]R",
+                "EVHFLPFNPVD[K]R",
+                "DYG[K]EER",
+                "EAVNIFPE[K]GSYR",
+                "VLSIID[K]YAER",
+                "VS[K]GAPEQILELAK",
+                "VS[K]GAPEQILELAK",
+                "EVHFLPFNPVD[K]R",
+                "IQIFGPN[K]LEEK",          # Picked a different peak to start (vs. 634.934)
+                "VS[K]GAPEQILELAK",
+                "VS[K]GAPEQILELAK",
+                "ELSEIAEQA[K]R",
+                "VLSIID[K]YAER",
+                "VS[K]GAPEQILELAK",
+                "ELSEIAEQA[K]R",
+                "DYG[K]EER",
+                "VLSIID[K]YAER",
+                "IQIFGPN[K]LEEK",
+                "[K]VLSIIDK",
+                "VS[K]GAPEQILELAK",
+                "TGTLTLN[K]LSVDK",
+                "IQIFGPN[K]LEEK",
+                "LSQQGAIT[K]R",
+                "VS[K]GAPEQILELAK",
+                "LSVD[K]NLVEVFCK",
+                "LSQQGAIT[K]R",
+                "LSVD[K]NLVEVFCK",
+                "VLSIID[K]YAER",
+                "LSQQGAIT[K]R",
+                "[K]VLSIIDK",
+                "NLVEVFC[K]GVEK",
+                "ASNDLSK[K]VLSIIDKYAER",
+                "EVHFLPFNPVD[K]R",
+                "EVHFLPFNPVD[K]R",
+                "DYG[K]EER",
+                "VLSIID[K]YAER",
+                "LSQQGAIT[K]R",
+                "LSVD[K]NLVEVFCK",     #slide 97: data is too low quality to be useful.
+                "LSQQGAIT[K]R",
+                "QVVPE[K]TK",
+                "QVVPE[K]TK",
+                "VENQDAIDAAMVGMLADP[K]EAR",
+                "LSQQGAIT[K]R",
+                "ES[K]LLK",
+                "EVHFLPFNPVD[K]R",
+                "VS[K]GAPEQILELAK",
+                "IQIFGPN[K]LEEK",
+                "ELSEIAEQA[K]R",
+                "LSVD[K]NLVEVFCK",       #slide 108, data poor quality; test different peaks.
+                "[K]ADIGIAVADATDAAR",
+                "QVVPE[K]TK",
+                "[K]VLSIIDK",
+                "[K]VLSIIDK",
+                "YEIV[K]K",
+                "LSQQGAIT[K]R",
+                "IQIFGPN[K]LEEK",
+                "LSQQGAIT[K]R",
+                "LLEGDPL[K]VDQSALTGESLPVTK",
+                "EVHFLPFNPVD[K]R",
+                "QVVPE[K]TK",
+                "GAPEQILELA[K]ASNDLSK",
+                "LSQQGAIT[K]R",
+                "IQIFGPN[K]LEEK",
+                "DYG[K]EER"]                #slide 123, data poor quality; test different peaks.
+
+    mZ_list = [844.777,
+               633.834,
+               735.989,
+               709.388,
+               885.199,                    # need to check this one in PD (CSM 5)
+               885.199,                    # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
+               830.685,
+               626.329,
+               776.367,
+               703.122,
+               703.122,
+               838.690,
+               861.448,
+               757.887,
+               757.888,
+               714.878,
+               776.072,
+               662.864,
+               1025.503,
+               1059.766,
+               686.130,
+               737.405,
+               747.881,
+               648.348,
+               729.138,
+               786.919,
+               906.205,
+               524.268,
+               728.578,
+               1077.765,
+               642.100,
+               894.133,
+               625.828,
+               755.884,
+               701.160,
+               978.774,                     # "positive control" test for this script, picked by Thao
+               669.363,                     # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+               811.421,
+               901.448,
+               704.872,
+               943.666,
+               771.153,
+               926.480,
+               749.882,
+               627.291,
+               718.372,
+               766.152,
+               847.453,
+               1093.043,
+               806.219,
+               635.135,                     # Picked a different peak to start (vs. 634.934)
+               920.667,
+               996.753,
+               980.821,
+               764.150,
+               1013.297,
+               752.396,
+               744.371,
+               803.424,
+               764.667,
+               739.906,
+               1024.044,
+               758.168,
+               980.236,
+               795.679,
+               808.178,
+               792.428,
+               997.740,
+               661.942,
+               987.766,
+               692.860,
+               668.365,
+               694.904,
+               987.768,
+               1042.047,
+               816.930,
+               641.550,
+               952.724,
+               713.368,
+               1110.537,      #slide 97: data is too low quality to be useful.
+               752.147,
+               598.827,
+               671.605,
+               1228.615,
+               1059.572,
+               764.086,
+               733.170,
+               721.133,
+               704.367,
+               712.374,
+               1013.740,       #slide 108, data poor quality; test different peaks.
+               1032.46,
+               743.146,
+               854.937,
+               544.310,
+               634.336,
+               792.161,
+               996.534,
+               844.242,
+               953.000,
+               1121.795,
+               669.600,
+               1097.045,
+               917.994,
+               791.411,
+               700.840]             #slide 123, data poor quality; test different peaks.
+
+    charge_list = [3,
+                   4,
+                   5,
+                   4,
+                   4,                      # need to check this one in PD (CSM 5)
+                   4,                      # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
+                   4,
+                   4,
+                   3,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   3,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   5,
+                   4,
+                   4,
+                   4,
+                   5,
+                   5,
+                   4,
+                   4,
+                   3,
+                   4,
+                   4,
+                   5,
+                   4,                   # "positive control" test for this script, picked by Thao
+                   4,                   # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+                   4,
+                   4,
+                   4,
+                   5,
+                   4,
+                   4,
+                   4,
+                   3,
+                   5,
+                   4,
+                   4,
+                   4,
+                   5,                   # Picked a different peak to start (vs. 634.934)
+                   5,
+                   4,
+                   3,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   5,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,   #slide 97: data is too low quality to be useful.
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   3,
+                   5,
+                   4,
+                   4,
+                   4,
+                   4,   #slide 108, data poor quality; test different peaks.
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   5,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4]    #slide 123, data poor quality; test different peaks. 
+                   
+
+    for x in range(len(pepA_list)):
+
+        seqA = pepA_list[x]
+        seqB = pepB_list[x]
+        mZ = mZ_list[x]
+        charge = charge_list[x]
+
+        dipeptide = seqA + "-" + seqB
+        print("The dipeptide is ",dipeptide,"and its charge state is +",charge)
+        print("")
+
+        labeledPeps = calc_Labeled(seqA,seqB,mZ,charge) #get list of predicted sequences from calc_Labeled
+        pepNames = ["LL","LH","HL","HH"]
+
+        #This block prints the contents of the array of lists: label names, and predicted m/z to the new file.
+        print(COUNT,":","Dipeptide sequence is ",dipeptide,"and its charge state is +",charge, file = Output)
+        for x in range(len(pepNames)):
+            print(pepNames[x], labeledPeps[x], file = Output)
+        print("", file=Output)
+        COUNT += 1
+
+    #When user stops analysis, close the file.
+    Output.close()       
+    print("\nNew file 'Predicted_mixedPeaks.csv' containing the results has been saved in the working directory.")
 
 
 
