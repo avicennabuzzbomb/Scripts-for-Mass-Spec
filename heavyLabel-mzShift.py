@@ -39,7 +39,6 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         assert type(mZ)==float, "Error, mZ must be a float representing the m/z of the dipeptide"
         assert type(z)==int, "Error, z must be an integer representing the charge of the dipeptide"
 
-        dipeptide = pepA + "-" + pepB
         heavyAshift = calc_15Nshift(pepA, charge)   # These statements calculate peptide
         heavyBshift = calc_15Nshift(pepB, charge)   # the expected N15 shift of each. 
 
@@ -90,69 +89,13 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         """
         #TODO CODE BLOCK FOR OPENING AN  INPUT STREAM OBJECT HERE (read a list of CSMs into this script, call functions, write new output file)
         return
-
-    # FUNCTION: Calls read_CSMs(); calls calc_Labeled() with parameters read from file contents; outputs pepNames and labeledPeps to a new result file.
-    def ANALYZE_CSMs(): #TODO this may be redundant to read_CSMs; either bundle everything under read and make it main, or make ANALYZE the main function and have it call read.
-        return
-    """
-    #List of parameters for the testing function testCalcs()
-    testStrA = "NETVDLEKIPIEEVFQQLK"
-    testStrB = "VSKGAPEQILELAK"
-    test_mZ = 978.774                                                                    
-    testZ = 4
-    testStrC = "IPIEEVFQQLKCSR"
-    testStrD = "ELSEIAEQAKR" 
-    test_mZ2 = 885.199
-
-    #TEST 1
-    print("")
-    print("___TEST 1___")
-    testCalcs(testStrA,testStrB,test_mZ,testZ) #TEST 1 calls testCalcs() with TEST 1 params
-
-    #TEST 2
-    print("")
-    print("___TEST 2___")
-    testCalcs(testStrC,testStrD,test_mZ2,testZ) #TEST 2 calls testCalcs() with TEST 2 params
-    """
-
-
-    # response = 'y'   #default in order to enter the loop
-
-    Output = open('Predicted_mixedPeaks.csv', 'w+') # create a new file object Output, open an empty file with it to 'w'rite into.
+    
+    # create a new file object Output, open an empty file with it to 'w'rite into.
+    Output = open('Predicted_mixedPeaks.csv', 'w+')
     print("HEADER:: Predicted m/z for light-light(LL), light-heavy(LH), heavy-light(HL), heavy-heavy(HH) dipeptides.", file = Output)  
     print("", file = Output)
     COUNT = 1
 
-    """ ##This large codeblock is designed for manual entry of sequences by the user (slow, mistake prone)
-    while response == 'Y' or response == 'y':
-        seqA = input("Enter peptide sequence A: ")
-        print("seqA is ",seqA)
-        seqB = input("Enter peptide sequence B: ")
-        print("seqB is ",seqB)
-        mZ = input("Enter mZ of seqA-B: ")
-        mZ = float(mZ)          #have to typecast because input defaults to str
-        print("mZ is ",mZ)      
-        charge = input("Enter charge, z: ")
-        charge = int(charge)    #have to typecast because input defaults to str
-        print("Charge: z = ",charge)
-
-        dipeptide = seqA + "-" + seqB
-        print("The dipeptide is ",dipeptide,"and its charge state is +",charge)
-        print("")
-
-        labeledPeps = calc_Labeled(seqA,seqB,mZ,charge) #get list of predicted sequences from calc_Labeled
-        pepNames = ["LL","LH","HL","HH"]
-
-        #This block prints the contents of the array of lists: label names, and predicted m/z to the new file.
-        print(COUNT,":","Dipeptide sequence is ",dipeptide,"and its charge state is +",charge, file = Output)
-        for x in range(len(pepNames)):
-            print(pepNames[x], labeledPeps[x], file = Output)
-        print("", file=Output)
-        COUNT += 1
-
-        # To user: continue?
-        response = input("Analysis done. Enter another dipeptide?\n" "(Any key to continue; to stop, N or n.)")
-        """
     ## Block below specifically for my purposes (copy-paste directly from Thao's data, then run script over this list)
     pepA_list = ["ELSEIAEQA[K]R",
                 "ELSEIAEQA[K]R",
@@ -583,6 +526,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                    4]    #slide 123, data poor quality; test different peaks. 
                    
 
+## MAIN (script starts)
     for x in range(len(pepA_list)):
 
         seqA = pepA_list[x]
@@ -606,7 +550,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
 
     #When user stops analysis, close the file.
     Output.close()       
-    print("\nNew file 'Predicted_mixedPeaks.csv' containing the results has been saved in the working directory.")
+    print("\n\nATTENTION: New file 'Predicted_mixedPeaks.csv' containing the results has been saved in the working directory.")
 
 
 
