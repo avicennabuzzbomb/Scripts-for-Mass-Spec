@@ -3,8 +3,9 @@
 
 if __name__=='__main__':  # Run this script when invoked, instead of the modules imported into it
 
-    import numpy # may need for accurate math (double check this)
-    import csv   # tools for reading and writing into csv files
+    import numpy   # may need for accurate math (double check this)
+    import decimal # need for correct rounding TODO: build in decimal rounding, halfway cases always round up
+    import csv     # tools for reading and writing into csv files
 
     """ProteomeDiscoverer's reported mass of a neutron; needed for calculating mass
     #shifts in heavy-nitrogen labeled peptides"""
@@ -42,12 +43,15 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         heavyAshift = calc_15Nshift(pepA, charge)   # These statements calculate peptide
         heavyBshift = calc_15Nshift(pepB, charge)   # the expected N15 shift of each. 
 
-        HH = heavyAshift + heavyBshift + mZ                  # fully labeled (Heavy-Heavy)
-        HL = heavyAshift + mZ     # peptide A is labeled, peptide B is light (Heavy-Light)
-        LH = heavyBshift + mZ     # peptide B is labeled, peptide A is light (Light-Heavy)
-        LL = mZ                   # unlabeled (Light-Light)
+        HH = round(heavyAshift + heavyBshift + mZ, 3)       # fully labeled (Heavy-Heavy), rounded to 3 decimal places
+        HL = round(heavyAshift + mZ, 3)                     # peptide A is labeled, peptide B is light (Heavy-Light), rounded to 3 decimal places
+        LH = round(heavyBshift + mZ, 3)                     # peptide B is labeled, peptide A is light (Light-Heavy), rounded to 3 decimal places
+        LL = round(mZ, 3)                                   # unlabeled (Light-Light), rounded to 3 decimal places
+        #TODO: rounding may not be desireable every time; may want to make round conditional on an input - a boolean and an integer to say, "yes, round to this many places"
+        #TODO: ...and that should be a different method, which is contigent on the boolean 'if response == y, boolean == true and call with (labeledPeps,x) where x is the integer
+        #TODO: specifying the decimal places.
 
-        labeledPeps = [LL, LH, HL, HH] # store predicted m/z in a List and output the List       
+        labeledPeps = [LL, LH, HL, HH]      # store predicted m/z in a List and output the List       
         return labeledPeps
 
 
