@@ -105,11 +105,11 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "ELSEIAEQA[K]R",
                 "TLHGLQP[K]EAVNIFPEK",
                 "ELHTL[K]GHVESVVK",    
-                "[K]HIVGMTGDGVNDAPALK",    # need to check this one in PD (CSM 5)
-                "IPIEEVFQQL[K]CSR",        # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
+                "[K]HIVGMTGDGVNDAPALK",    
+                "IPIEEVFQQL[K]CSR",        
                 "IPIEEVFQQL[K]CSR",
-                "VS[K]GAPEQILELAK",
-                "ELSEIAEQA[K]R",
+                "VS[K]GAPEQILELAK",             # corrected
+                "ELSEIAEQA[K]R",                # <-- left off after the 9th CSM (10/31/2019)
                 "LSVD[K]NLVEVFCK",
                 "LSVD[K]NLVEVFCK",
                 "TLHGLQP[K]EAVNIFPEK",
@@ -212,10 +212,10 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "LSQQGAIT[K]R",
                 "EVHFLPFNPVD[K]R",
                 "LSQQGAIT[K]R",        
-                "[K]ADIGIAVADATDAAR",      # need to check this one in PD (CSM 5)
-                "ELSEIAEQA[K]R",           # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
+                "[K]ADIGIAVADATDAAR",      
+                "ELSEIAEQA[K]R",           
                 "IQIFGPN[K]LEEK",
-                "ASNDLS[K]K",
+                "ASNDLS[K]K",               # corrected
                 "DYG[K]EER",
                 "LSQQGAIT[K]R",
                 "LSQQGAIT[K]R",
@@ -319,10 +319,10 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                633.834,
                735.989,
                709.388,
-               885.199,                    # need to check this one in PD (CSM 5)
-               885.199,                    # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
-               830.685,
-               626.329,
+               885.199,                    
+               795.154,                    
+               830.685,                     
+               626.335,                    # corrected
                776.367,
                703.122,
                703.122,
@@ -426,10 +426,10 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                    4,
                    5,
                    4,
-                   4,                      # need to check this one in PD (CSM 5)
-                   4,                      # This is wrong, m/z does not match RT (CSM 6), possible error by Thao
+                   4,                      
+                   4,                      
                    4,
-                   4,
+                   4,                # corrected
                    3,
                    4,
                    4,
