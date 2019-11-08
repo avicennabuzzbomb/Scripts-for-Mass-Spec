@@ -91,7 +91,11 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         list as in the test method below, and the list is used to print a new output
         file containing the analysis results
         """
-        #TODO CODE BLOCK FOR OPENING AN  INPUT STREAM OBJECT HERE (read a list of CSMs into this script, call functions, write new output file)
+        #TODO CODE BLOCK FOR OPENING AN INPUT STREAM OBJECT HERE (read a list of CSMs into this script and call functions with that imported data)
+
+        #FIXME A full .txt table of the required data can be output from a PDresultview file. To do this, make sure no filters are applied in any of the associated tables. Example of headers below:
+        #FIXME "Checked"	"Confidence"	"Max. XlinkX Score"	"Sequence A"	"Accession A"	"Position A"	"Sequence B"	"Accession B"	"Position B"	"Crosslinker"	"Crosslink Type"	"# CSMs"	"Protein Descriptions A"	"Protein Descriptions B"
+
         return
     
     # create a new file object Output, open an empty file with it to 'w'rite into.
@@ -101,74 +105,73 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
     COUNT = 1
 
     ## Block below specifically for my purposes (copy-paste directly from Thao's data, then run script over this list)
-    pepA_list = ["ELSEIAEQA[K]R",
-                "ELSEIAEQA[K]R",
-                "TLHGLQP[K]EAVNIFPEK",
-                "ELHTL[K]GHVESVVK",    
-                "[K]HIVGMTGDGVNDAPALK",    
-                "IPIEEVFQQL[K]CSR",        
-                "IPIEEVFQQL[K]CSR",
-                "VS[K]GAPEQILELAK",             # corrected
-                "ELSEIAEQA[K]R",                # <-- left off after the 9th CSM (10/31/2019)
-                "LSVD[K]NLVEVFCK",
-                "LSVD[K]NLVEVFCK",
-                "TLHGLQP[K]EAVNIFPEK",
-                "GVE[K]DQVLLFAAMASR",
-                "EVHFLPFNPVD[K]R",
-                "EVHFLPFNPVD[K]R",
-                "EVHFLPFNPVD[K]R",
-                "VLSIID[K]YAER",
-                "TGTLTLN[K]LSVDK",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "VS[K]GAPEQILELAK",
-                "VS[K]GAPEQILELAK",
-                "[K]ADIGIAVADATDAAR",
-                "VS[K]GAPEQILELAK",
-                "VS[K]GAPEQILELAK",
-                "EVHFLPFNPVD[K]R",
-                "ADGFAGVFPEH[K]YEIVK",
-                "EVHFLPFNPVD[K]R",
-                "GAPEQILELA[K]ASNDLSK",
-                "EEEEEEEEEEEEEEK",         # no sequence! check PD; RT is 62.07.
-                "VLSIID[K]YAER",
-                "NLVEVFC[K]GVEK",
-                "V[K]PSPTPDSWK",
-                "MITGDQLAIG[K]ETGR",
-                "IPIEEVFQQL[K]CSR",
-                "NETVDLE[K]IPIEEVFQQLK",   # "positive control" test for this script, picked by Thao
-                "IQIFGPN[K]LEEK",          # this is an example where the monoisotopic peak is not reliable and have to pick something in the spectra as the starting point
-                "ELHTL[K]GHVESVVK",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "[K]ADIGIAVADATDAAR",
-                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",
-                "[K]HIVGMTGDGVNDAPALK",
-                "NETVDLE[K]IPIEEVFQQLK",
-                "V[K]PSPTPDSWK",
-                "TAFTM[K]K",
-                "TLHGLQP[K]EAVNIFPEK",
-                "EVHFLPFNPVD[K]R",
-                "IPIEEVFQQL[K]CSR",
-                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",
-                "NETVDLE[K]IPIEEVFQQLK",
-                "EVHFLPFNPVD[K]R",
-                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "EAVNIFPE[K]GSYR",
-                "MITGDQLAIG[K]ETGR",
-                "LLEGDPL[K]VDQSALTGESLPVTK",
-                "ELHTL[K]GHVESVVK",
-                "TLHGLQP[K]EAVNIFPEK",
-                "IPIEEVFQQL[K]CSR",
-                "VS[K]GAPEQILELAK",
-                "GAPEQILELA[K]ASNDLSK",
-                "T[K]ESPGAPWEFVGLLPLFDPPR",
-                "VS[K]GAPEQILELAK",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "TLHGLQP[K]EAVNIFPEK",
-                "MITGDQLAIG[K]ETGR",
-                "VS[K]GAPEQILELAK",
-                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",
+    pepA_list = ["ELSEIAEQA[K]R",                  #1
+                "ELSEIAEQA[K]R",                   #2
+                "TLHGLQP[K]EAVNIFPEK",             #3
+                "ELHTL[K]GHVESVVK",                #4
+                "[K]HIVGMTGDGVNDAPALK",            #5
+                "IPIEEVFQQL[K]CSR",                #6
+                "IPIEEVFQQL[K]CSR",                #7
+                "VS[K]GAPEQILELAK",                #8       # corrected
+                "ELSEIAEQA[K]R",                   #9       # <-- left off after the 9th CSM (10/31/2019)
+                "LSVD[K]NLVEVFCK",                 #10      #10 and 11 were actually identical; correct on 11/02/2019
+                "TLHGLQP[K]EAVNIFPEK",             #11
+                "GVE[K]DQVLLFAAMASR",              #12
+                "EVHFLPFNPVD[K]R",                 #13
+                "EVHFLPFNPVD[K]R",                 #14
+                "EVHFLPFNPVD[K]R",                 #15
+                "VLSIID[K]YAER",                   #16
+                "TGTLTLN[K]LSVDK",                 #17
+                "VENQDAIDAAMVGMLADP[K]EAR",        #18
+                "VENQDAIDAAMVGMLADP[K]EAR",        #19
+                "VS[K]GAPEQILELAK",                #20
+                "VS[K]GAPEQILELAK",                #21
+                "[K]ADIGIAVADATDAAR",              #22    
+                "VS[K]GAPEQILELAK",                #23
+                "VS[K]GAPEQILELAK",                #24
+                "EVHFLPFNPVD[K]R",                 #25
+                "ADGFAGVFPEH[K]YEIVK",             #26
+                "EVHFLPFNPVD[K]R",                 #27
+                "GAPEQILELA[K]ASNDLSK",            #28
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",     #29    # no sequence! check PD; RT is 62.07. Corrected 11/01. <-- left off after the 30th CSM (11/01/2019)
+                "VLSIID[K]YAER",                   #30
+                "NLVEVFC[K]GVEK",                  #31
+                "V[K]PSPTPDSWK",                   #32
+                "MITGDQLAIG[K]ETGR",               #33 
+                "IPIEEVFQQL[K]CSR",                #34
+                "NETVDLE[K]IPIEEVFQQLK",           #35    # "positive control" test for this script, picked by Thao
+                "IQIFGPN[K]LEEK",                  #36    # this is an example where the monoisotopic peak is not reliable and have to pick something in the spectra as the starting point
+                "ELHTL[K]GHVESVVK",                #37
+                "VENQDAIDAAMVGMLADP[K]EAR",        #38
+                "[K]ADIGIAVADATDAAR",              #39  
+                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",  #40
+                "[K]HIVGMTGDGVNDAPALK",            #41
+                "NETVDLE[K]IPIEEVFQQLK",           #42
+                "V[K]PSPTPDSWK",                   #43
+                "TAFTM[K]K",                       #44
+                "TLHGLQP[K]EAVNIFPEK",             #45
+                "EVHFLPFNPVD[K]R",                 #46
+                "IPIEEVFQQL[K]CSR",                #47
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",     #48
+                "NETVDLE[K]IPIEEVFQQLK",           #49
+                "EVHFLPFNPVD[K]R",                 #50
+                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",  #51
+                "VENQDAIDAAMVGMLADP[K]EAR",        #52
+                "EAVNIFPE[K]GSYR",                 #53
+                "MITGDQLAIG[K]ETGR",               #54
+                "LLEGDPL[K]VDQSALTGESLPVTK",       #55
+                "ELHTL[K]GHVESVVK",                #56
+                "TLHGLQP[K]EAVNIFPEK",             #57
+                "IPIEEVFQQL[K]CSR",                #58
+                "VS[K]GAPEQILELAK",                #59
+                "GAPEQILELA[K]ASNDLSK",            #60
+                "T[K]ESPGAPWEFVGLLPLFDPPR",        #61
+                "VS[K]GAPEQILELAK",                #62
+                "VENQDAIDAAMVGMLADP[K]EAR",        #63
+                "TLHGLQP[K]EAVNIFPEK",             #64
+                "MITGDQLAIG[K]ETGR",               #65
+                "VS[K]GAPEQILELAK",                #66
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",     #67
                 "EVHFLPFNPVD[K]R",
                 "VSKGAPEQILELA[K]ASNDLSKK",
                 "EAVNIFPE[K]GSYR",
@@ -208,18 +211,17 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "MITGDQLAIG[K]ETGR",
                 "IPIEEVFQQL[K]CSR"]          #slide 123, data poor quality; test different peaks.
 
-    pepB_list = ["LSQQGAIT[K]R",
-                "LSQQGAIT[K]R",
-                "EVHFLPFNPVD[K]R",
-                "LSQQGAIT[K]R",        
-                "[K]ADIGIAVADATDAAR",      
-                "ELSEIAEQA[K]R",           
-                "IQIFGPN[K]LEEK",
-                "ASNDLS[K]K",               # corrected
-                "DYG[K]EER",
-                "LSQQGAIT[K]R",
-                "LSQQGAIT[K]R",
-                "ELSEIAEQA[K]R ",
+    pepB_list = ["LSQQGAIT[K]R",        #1
+                "LSQQGAIT[K]R",         #2
+                "EVHFLPFNPVD[K]R",      #3
+                "LSQQGAIT[K]R",         #4
+                "[K]ADIGIAVADATDAAR",   #5   
+                "ELSEIAEQA[K]R",        #6   
+                "IQIFGPN[K]LEEK",       #7
+                "ASNDLS[K]K",           #8    # corrected
+                "DYG[K]EER",            #9    # <-- left off after the 9th CSM (10/31/2019)
+                "LSQQGAIT[K]R",         #10    
+                "ELSEIAEQA[K]R ",       #11
                 "LSVD[K]NLVEVFCK",
                 "ELSEIAEQA[K]R",
                 "ELSEIAEQA[K]R",
@@ -237,7 +239,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "[K]ADIGIAVADATDAAR",
                 "ASNDLS[K]K",
                 "EVHFLPFNPVD[K]R",
-                "EEEEEEEEEEEEEEK",         # no sequence! check PD; RT is 62.07.
+                "NLVEVFC[K]GVEK",         # no sequence! check PD; RT is 62.07. Corrected 11/01. <-- left off after the 30th CSM (11/01/2019).
                 "LSQQGAIT[K]R",
                 "LSQQGAIT[K]R",
                 "LSQQGAIT[K]R",
@@ -315,18 +317,17 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "IQIFGPN[K]LEEK",
                 "DYG[K]EER"]                #slide 123, data poor quality; test different peaks.
 
-    mZ_list = [844.777,
-               633.834,
-               735.989,
-               709.388,
-               885.199,                    
-               795.154,                    
-               830.685,                     
-               626.335,                    # corrected
-               776.367,
-               703.122,
-               703.122,
-               838.690,
+    mZ_list = [844.777,            #1
+               633.834,            #2
+               735.989,            #3
+               709.388,            #4
+               885.199,            #5        
+               795.154,            #6        
+               830.685,            #7         
+               626.335,            #8        # corrected
+               776.367,            #9
+               703.122,            #10 
+               838.690,            #11
                861.448,
                757.887,
                757.888,
@@ -350,184 +351,183 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                625.828,
                755.884,
                701.160,
-               978.774,                     # "positive control" test for this script, picked by Thao
-               669.363,                     # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
-               811.421,
-               901.448,
-               704.872,
-               943.666,
-               771.153,
-               926.480,
-               749.882,
-               627.291,
-               718.372,
-               766.152,
-               847.453,
-               1093.043,
-               806.219,
-               635.135,                     # Picked a different peak to start (vs. 634.934)
-               920.667,
-               996.753,
-               980.821,
-               764.150,
-               1013.297,
-               752.396,
-               744.371,
-               803.424,
-               764.667,
-               739.906,
-               1024.044,
-               758.168,
-               980.236,
-               795.679,
-               808.178,
-               792.428,
-               997.740,
-               661.942,
-               987.766,
-               692.860,
-               668.365,
-               694.904,
-               987.768,
-               1042.047,
-               816.930,
-               641.550,
-               952.724,
-               713.368,
-               1110.537,      #slide 97: data is too low quality to be useful.
-               752.147,
-               598.827,
-               671.605,
-               1228.615,
-               1059.572,
-               764.086,
-               733.170,
-               721.133,
-               704.367,
-               712.374,
-               1013.740,       #slide 108, data poor quality; test different peaks.
-               1032.46,
-               743.146,
-               854.937,
-               544.310,
-               634.336,
-               792.161,
-               996.534,
-               844.242,
-               953.000,
-               1121.795,
-               669.600,
-               1097.045,
-               917.994,
-               791.411,
-               700.840]             #slide 123, data poor quality; test different peaks.
+               978.774,                 #35    # "positive control" test for this script, picked by Thao
+               669.363,                 #36    # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+               811.421,                 #37
+               901.448,                 #38
+               704.872,                 #39
+               943.666,                 #40
+               771.153,                 #41
+               926.480,                 #42
+               749.882,                 #43
+               627.291,                 #44
+               718.372,                 #45
+               766.152,                 #46
+               847.453,                 #47
+               1093.043,                #48
+               806.219,                 #49
+               635.135,                 #50     # Picked a different peak to start (vs. 634.934)
+               920.667,                 #51
+               996.753,                 #52
+               980.821,                 #53
+               764.150,                 #54
+               1013.297,                #55
+               752.396,                 #56
+               744.371,                 #57
+               803.424,                 #58
+               764.667,                 #59
+               739.906,                 #60
+               1024.044,                #61
+               758.168,                 #62
+               980.236,                 #63
+               795.679,                 #64
+               808.178,                 #65
+               798.428,                 #66
+               997.740,                 #67       
+               661.942,                 #68
+               987.766,                 #69
+               692.860,                 #70
+               668.365,                 #71
+               794.904,                 #72
+               987.768,                 #73
+               1042.047,                #74
+               816.930,                 #75
+               641.550,                 #76
+               952.724,                 #77
+               713.124,                 #78
+               1110.047,                #79
+               752.147,                 #80
+               598.827,                 #81
+               671.605,                 #82
+               1228.615,                #83
+               1059.572,                #84
+               764.086,                 #85
+               733.170,                 #86
+               721.133,                 #87
+               704.367,                 #88
+               712.374,                 #89
+               1013.740,                #90     #slide 108, data poor quality; test different peaks.
+               1032.046,                #91
+               743.146,                 #92
+               854.937,                 #93
+               544.310,                 #94
+               634.336,                 #95
+               792.161,                 #96
+               996.534,                 #97
+               844.424,                 #98
+               953.000,                 #99
+               1121.795,                #100
+               669.600,                 #101
+               1097.045,                #102
+               917.994,                 #103
+               791.411,                 #104
+               700.840]                 #105    #slide 123, data poor quality; test different peaks.
 
-    charge_list = [3,
-                   4,
-                   5,
-                   4,
-                   4,                      
-                   4,                      
-                   4,
-                   4,                # corrected
-                   3,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   3,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   5,
-                   4,
-                   4,
-                   4,
-                   5,
-                   5,
-                   4,
-                   4,
-                   3,
-                   4,
-                   4,
-                   5,
-                   4,                   # "positive control" test for this script, picked by Thao
-                   4,                   # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
-                   4,
-                   4,
-                   4,
-                   5,
-                   4,
-                   4,
-                   4,
-                   3,
-                   5,
-                   4,
-                   4,
-                   4,
-                   5,                   # Picked a different peak to start (vs. 634.934)
-                   5,
-                   4,
-                   3,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   5,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,   #slide 97: data is too low quality to be useful.
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   3,
-                   5,
-                   4,
-                   4,
-                   4,
-                   4,   #slide 108, data poor quality; test different peaks.
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   5,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4,
-                   4]    #slide 123, data poor quality; test different peaks. 
+    charge_list = [3,       #1
+                   4,       #2
+                   5,       #3
+                   4,       #4
+                   4,       #5                
+                   4,       #6                  
+                   4,       #7
+                   4,       #8            # corrected
+                   3,       #9
+                   4,       #10
+                   4,       #11
+                   4,       #12
+                   4,       #13
+                   4,       #14
+                   4,       #15
+                   3,       #16
+                   4,       #17
+                   4,       #18
+                   4,       #19
+                   4,       #20
+                   4,       #21
+                   4,       #22
+                   5,       #23
+                   4,       #24
+                   4,       #25
+                   4,       #26
+                   5,       #27
+                   5,       #28
+                   4,       #29
+                   4,       #30
+                   3,       #31
+                   4,       #32
+                   4,       #33
+                   5,       #34
+                   4,       #35              # "positive control" test for this script, picked by Thao
+                   4,       #36              # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+                   4,       #37
+                   4,       #38
+                   4,       #39
+                   5,       #40
+                   4,       #41
+                   4,       #42
+                   4,       #43
+                   3,       #44
+                   5,       #45
+                   4,       #46
+                   4,       #47
+                   4,       #48
+                   5,       #49            
+                   5,       #50            # Picked a different peak to start (vs. 634.934)
+                   4,       #51
+                   3,       #52
+                   4,       #53
+                   4,       #54
+                   4,       #55
+                   4,       #56
+                   4,       #57
+                   4,       #58
+                   4,       #59
+                   4,       #60
+                   4,       #61
+                   4,       #62
+                   4,       #63
+                   4,       #64
+                   4,       #65
+                   4,       #66
+                   4,       #67
+                   4,       #68
+                   4,       #69
+                   4,       #70
+                   4,       #71
+                   4,       #72
+                   4,       #73
+                   4,       #74
+                   4,       #75
+                   4,       #76
+                   4,       #77
+                   4,       #78
+                   4,       #79
+                   4,       #80   
+                   4,       #81
+                   4,       #82
+                   4,       #83
+                   4,       #84
+                   3,       #85
+                   5,       #86
+                   4,       #87
+                   4,       #88
+                   4,       #89
+                   4,       #90   #slide 108, data poor quality; test different peaks.
+                   4,       #91
+                   4,       #92
+                   4,       #93
+                   4,       #94
+                   4,       #95
+                   4,       #96
+                   4,       #97
+                   5,       #98
+                   4,       #99
+                   4,       #100
+                   4,       #101
+                   4,       #102
+                   4,       #103
+                   4,       #104
+                   4]       #105      #slide 123, data poor quality; test different peaks. 
                    
 
 ## MAIN (script starts)
