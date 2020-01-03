@@ -222,50 +222,50 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "DYG[K]EER",            #9    # <-- left off after the 9th CSM (10/31/2019)
                 "LSQQGAIT[K]R",         #10    
                 "ELSEIAEQA[K]R ",       #11
-                "LSVD[K]NLVEVFCK",
-                "ELSEIAEQA[K]R",
-                "ELSEIAEQA[K]R",
-                "LSQQGAIT[K]R",
-                "ASNDLS[K]K",
-                "LSQQGAIT[K]R",
-                "EVHFLPFNPVD[K]R",
-                "GVE[K]DQVLLFAAMASR",
-                "LSQQGAIT[K]R",
-                "VLSIID[K]YAER",
-                "ELSEIAEQA[K]R",
-                "EVHFLPFNPVD[K]R",
-                "ELSEIAEQA[K]R",
-                "TGTLTLN[K]LSVDK",
-                "[K]ADIGIAVADATDAAR",
-                "ASNDLS[K]K",
-                "EVHFLPFNPVD[K]R",
-                "NLVEVFC[K]GVEK",         # no sequence! check PD; RT is 62.07. Corrected 11/01. <-- left off after the 30th CSM (11/01/2019).
-                "LSQQGAIT[K]R",
-                "LSQQGAIT[K]R",
-                "LSQQGAIT[K]R",
-                "ELSEIAEQA[K]R",
-                "EVHFLPFNPVD[K]R",
-                "VS[K]GAPEQILELAK",        # "positive control" test for this script, picked by Thao
-                "LSQQGAIT[K]R",            # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
-                "EAVNIFPE[K]GSYR",
-                "LSQQGAIT[K]R",
-                "LSQQGAIT[K]R",
-                "EVHFLPFNPVD[K]R",
-                "LSQQGAIT[K]R",
-                "ELSEIAEQA[K]R",
-                "EVHFLPFNPVD[K]R",
-                "DYG[K]EER",
-                "EAVNIFPE[K]GSYR",
-                "VLSIID[K]YAER",
-                "VS[K]GAPEQILELAK",
-                "VS[K]GAPEQILELAK",
-                "EVHFLPFNPVD[K]R",
-                "IQIFGPN[K]LEEK",          # Picked a different peak to start (vs. 634.934)
-                "VS[K]GAPEQILELAK",
-                "VS[K]GAPEQILELAK",
-                "ELSEIAEQA[K]R",
-                "VLSIID[K]YAER",
-                "VS[K]GAPEQILELAK",
+                "LSVD[K]NLVEVFCK",      #12
+                "ELSEIAEQA[K]R",        #13
+                "ELSEIAEQA[K]R",        #14
+                "LSQQGAIT[K]R",         #15
+                "ASNDLS[K]K",           #16
+                "LSQQGAIT[K]R",         #17
+                "EVHFLPFNPVD[K]R",      #18
+                "GVE[K]DQVLLFAAMASR",   #19
+                "LSQQGAIT[K]R",         #20
+                "VLSIID[K]YAER",        #21
+                "ELSEIAEQA[K]R",        #22
+                "EVHFLPFNPVD[K]R",      #23
+                "ELSEIAEQA[K]R",        #24
+                "TGTLTLN[K]LSVDK",      #25
+                "[K]ADIGIAVADATDAAR",   #26
+                "ASNDLS[K]K",           #27
+                "EVHFLPFNPVD[K]R",      #28
+                "NLVEVFC[K]GVEK",       #29  # no sequence! check PD; RT is 62.07. Corrected 11/01. <-- left off after the 30th CSM (11/01/2019).
+                "LSQQGAIT[K]R",         #30
+                "LSQQGAIT[K]R",         #31
+                "LSQQGAIT[K]R",         #32
+                "ELSEIAEQA[K]R",        #33
+                "EVHFLPFNPVD[K]R",      #34
+                "VS[K]GAPEQILELAK",     #35   # "positive control" test for this script, picked by Thao
+                "LSQQGAIT[K]R",         #36   # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+                "EAVNIFPE[K]GSYR",      #37
+                "LSQQGAIT[K]R",         #38
+                "LSQQGAIT[K]R",         #39
+                "EVHFLPFNPVD[K]R",      #40
+                "LSQQGAIT[K]R",         #41
+                "ELSEIAEQA[K]R",        #42
+                "EVHFLPFNPVD[K]R",      #43
+                "DYG[K]EER",            #44
+                "EAVNIFPE[K]GSYR",      #45
+                "VLSIID[K]YAER",        #46
+                "VS[K]GAPEQILELAK",     #47
+                "VS[K]GAPEQILELAK",     #48
+                "EVHFLPFNPVD[K]R",      #49
+                "IQIFGPN[K]LEEK",       #50   # Picked a different peak to start (vs. 634.934)
+                "VS[K]GAPEQILELAK",     #51
+                "VS[K]GAPEQILELAK",     #52
+                "ELSEIAEQA[K]R",        #53
+                "VLSIID[K]YAER",        #54
+                "VS[K]GAPEQILELAK",     #55
                 "ELSEIAEQA[K]R",
                 "DYG[K]EER",
                 "VLSIID[K]YAER",
@@ -358,7 +358,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                704.872,                 #39
                943.666,                 #40
                771.153,                 #41
-               926.480,                 #42
+               926.728,                 #42
                749.882,                 #43
                627.291,                 #44
                718.372,                 #45
@@ -474,7 +474,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                    5,       #49            
                    5,       #50            # Picked a different peak to start (vs. 634.934)
                    4,       #51
-                   3,       #52
+                   4,       #52
                    4,       #53
                    4,       #54
                    4,       #55

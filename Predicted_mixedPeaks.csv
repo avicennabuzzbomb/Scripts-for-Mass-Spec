@@ -247,10 +247,10 @@ HL 776.886
 HH 780.874
 
 42 : Dipeptide sequence is  NETVDLE[K]IPIEEVFQQLK-ELSEIAEQA[K]R and its charge state is + 4
-LL 926.48
-LH 930.468
-HL 932.462
-HH 936.45
+LL 926.728
+LH 930.716
+HL 932.71
+HH 936.698
 
 43 : Dipeptide sequence is  V[K]PSPTPDSWK-EVHFLPFNPVD[K]R and its charge state is + 4
 LL 749.882
@@ -306,11 +306,11 @@ LH 924.904
 HL 929.142
 HH 933.379
 
-52 : Dipeptide sequence is  VENQDAIDAAMVGMLADP[K]EAR-VS[K]GAPEQILELAK and its charge state is + 3
+52 : Dipeptide sequence is  VENQDAIDAAMVGMLADP[K]EAR-VS[K]GAPEQILELAK and its charge state is + 4
 LL 996.753
-LH 1002.403
-HL 1006.059
-HH 1011.709
+LH 1000.99
+HL 1003.732
+HH 1007.97
 
 53 : Dipeptide sequence is  EAVNIFPE[K]GSYR-ELSEIAEQA[K]R and its charge state is + 4
 LL 980.821
