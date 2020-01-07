@@ -388,7 +388,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                987.766,                 #69
                692.360,                 #70
                668.365,                 #71
-               794.904,                 #72
+               795.410,                 #72
                987.768,                 #73
                1042.047,                #74
                816.930,                 #75
@@ -405,14 +405,14 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                733.170,                 #86
                721.133,                 #87
                704.367,                 #88
-               712.374,                 #89
-               1013.740,                #90     #slide 108, data poor quality; test different peaks.
+               712.625,                 #89
+               1013.989,                #90     #slide 108, data poor quality; test different peaks.
                1032.046,                #91
                743.146,                 #92
-               854.937,                 #93
+               855.188,                 #93
                544.310,                 #94
-               634.336,                 #95
-               792.161,                 #96
+               634.586,                 #95
+               792.408,                 #96
                996.534,                 #97
                844.424,                 #98
                953.000,                 #99
