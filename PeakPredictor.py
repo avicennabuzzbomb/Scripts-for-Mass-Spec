@@ -367,11 +367,11 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                1093.043,                #48
                806.219,                 #49
                635.135,                 #50     # Picked a different peak to start (vs. 634.934)
-               920.667,                 #51
+               920.868,                 #51
                996.753,                 #52
-               980.821,                 #53
+               981.155,                 #53
                764.150,                 #54
-               1013.297,                #55
+               1013.547,                #55
                752.396,                 #56
                744.371,                 #57
                803.424,                 #58
@@ -386,7 +386,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                997.740,                 #67       
                661.942,                 #68
                987.766,                 #69
-               692.860,                 #70
+               692.360,                 #70
                668.365,                 #71
                794.904,                 #72
                987.768,                 #73
@@ -473,9 +473,9 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                    4,       #48
                    5,       #49            
                    5,       #50            # Picked a different peak to start (vs. 634.934)
-                   4,       #51
+                   5,       #51
                    4,       #52
-                   4,       #53
+                   3,       #53
                    4,       #54
                    4,       #55
                    4,       #56
@@ -490,7 +490,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                    4,       #65
                    4,       #66
                    4,       #67
-                   4,       #68
+                   5,       #68
                    4,       #69
                    4,       #70
                    4,       #71
