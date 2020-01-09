@@ -366,7 +366,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                847.453,                 #47
                1093.043,                #48
                806.219,                 #49
-               635.135,                 #50     # Picked a different peak to start (vs. 634.934)
+               635.536,                 #50     # Picked a different peak to start (vs. 634.934)
                920.868,                 #51
                996.753,                 #52
                981.155,                 #53
