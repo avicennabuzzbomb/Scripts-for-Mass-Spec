@@ -79,7 +79,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
 
         countRemaining = length - sum([countR, countH, countK, countN, countQ, countW, countBrackets, countBrackets1])
         mZshift = (R*countR + H*countH + K*countK + N*countN + Q*countQ + W*countW + neutron*countRemaining) / charge
-        print("Peptide sequence is",seq," and its m/z shift is ",mZshift)
+        # print("Peptide sequence is",seq," and its m/z shift is ",mZshift)
         return mZshift
 
     # FUNCTION: opens file stream and reads in CSM data (currently, exported .txt files from ProteomeDiscoverer)
@@ -105,8 +105,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
     COUNT = 1
 
     ## Block below specifically for my purposes (copy-paste directly from Thao's data, then run script over this list)
-    pepA_list = ["ELSEIAEQA[K]R",                  #1
-                "ELSEIAEQA[K]R",                   #2
+    pepA_list = ["ELSEIAEQA[K]R",                  #2       # corrected; 1 and 2 were duplicate IDs.
                 "TLHGLQP[K]EAVNIFPEK",             #3
                 "ELHTL[K]GHVESVVK",                #4
                 "[K]HIVGMTGDGVNDAPALK",            #5
@@ -118,7 +117,6 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "TLHGLQP[K]EAVNIFPEK",             #11
                 "GVE[K]DQVLLFAAMASR",              #12
                 "EVHFLPFNPVD[K]R",                 #13
-                "EVHFLPFNPVD[K]R",                 #14
                 "EVHFLPFNPVD[K]R",                 #15
                 "VLSIID[K]YAER",                   #16
                 "TGTLTLN[K]LSVDK",                 #17
@@ -211,8 +209,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "MITGDQLAIG[K]ETGR",
                 "IPIEEVFQQL[K]CSR"]          #slide 123, data poor quality; test different peaks.
 
-    pepB_list = ["LSQQGAIT[K]R",        #1
-                "LSQQGAIT[K]R",         #2
+    pepB_list = ["LSQQGAIT[K]R",        #2
                 "EVHFLPFNPVD[K]R",      #3
                 "LSQQGAIT[K]R",         #4
                 "[K]ADIGIAVADATDAAR",   #5   
@@ -224,7 +221,6 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "ELSEIAEQA[K]R ",       #11
                 "LSVD[K]NLVEVFCK",      #12
                 "ELSEIAEQA[K]R",        #13
-                "ELSEIAEQA[K]R",        #14
                 "LSQQGAIT[K]R",         #15
                 "ASNDLS[K]K",           #16
                 "LSQQGAIT[K]R",         #17
@@ -317,8 +313,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "IQIFGPN[K]LEEK",
                 "DYG[K]EER"]                #slide 123, data poor quality; test different peaks.
 
-    mZ_list = [844.777,            #1
-               633.834,            #2
+    mZ_list = [633.834,            #2
                735.989,            #3
                709.388,            #4
                885.199,            #5        
@@ -328,10 +323,9 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                776.367,            #9
                703.122,            #10 
                838.690,            #11
-               861.448,
-               757.887,
-               757.888,
-               714.878,
+               861.448,            #12
+               758.389,            #13
+               714.878,            #15
                776.072,
                662.864,
                1025.503,
@@ -362,13 +356,13 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                749.882,                 #43
                627.291,                 #44
                718.372,                 #45
-               766.152,                 #46
+               766.404,                 #46
                847.453,                 #47
                1093.043,                #48
                806.219,                 #49
                635.536,                 #50     # Picked a different peak to start (vs. 634.934)
                920.868,                 #51
-               996.753,                 #52
+               997.255,                 #52
                981.155,                 #53
                764.150,                 #54
                1013.547,                #55
@@ -377,16 +371,16 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                803.424,                 #58
                764.667,                 #59
                739.906,                 #60
-               1024.044,                #61
-               758.168,                 #62
+               1024.546,                #61
+               758.670,                 #62
                980.236,                 #63
-               795.679,                 #64
+               795.930,                 #64
                808.178,                 #65
                798.428,                 #66
                997.740,                 #67       
                661.942,                 #68
                987.766,                 #69
-               692.360,                 #70
+               693.360,                 #70
                668.365,                 #71
                795.410,                 #72
                987.768,                 #73
@@ -407,7 +401,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                704.367,                 #88
                712.625,                 #89
                1013.989,                #90     #slide 108, data poor quality; test different peaks.
-               1032.046,                #91
+               1033.043,                #91
                743.146,                 #92
                855.188,                 #93
                544.310,                 #94
@@ -423,8 +417,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                791.411,                 #104
                700.840]                 #105    #slide 123, data poor quality; test different peaks.
 
-    charge_list = [3,       #1
-                   4,       #2
+    charge_list = [4,       #2
                    5,       #3
                    4,       #4
                    4,       #5                
@@ -436,7 +429,6 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                    4,       #11
                    4,       #12
                    4,       #13
-                   4,       #14
                    4,       #15
                    3,       #16
                    4,       #17
@@ -537,11 +529,11 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         seqB = pepB_list[x]
         mZ = mZ_list[x]
         charge = charge_list[x]
-
         dipeptide = seqA + "-" + seqB
+        '''
         print("The dipeptide is ",dipeptide,"and its charge state is +",charge)
         print("")
-
+        '''
         labeledPeps = calc_Labeled(seqA,seqB,mZ,charge) #get list of predicted sequences from calc_Labeled
         pepNames = ["LL","LH","HL","HH"]
 
