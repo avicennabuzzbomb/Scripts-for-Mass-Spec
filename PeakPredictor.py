@@ -8,7 +8,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
     import csv     # tools for reading and writing into csv files
 
     """ProteomeDiscoverer's reported mass of a neutron; needed for calculating mass
-    #shifts in heavy-nitrogen labeled peptides"""
+       shifts in heavy-nitrogen labeled peptides"""
     neutron = 0.997035                          
 
     R = 3.98814     # nitrogen mass shift in Arginine, R after heavy N labeling (4 nitrogens)
@@ -98,6 +98,16 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
 
         return
     
+
+    with open('DSSO-ArabidopsisProteome.csv', mode='r') as infile:
+        reader = csv.reader(infile)
+    #    with open('DSSO-ArabidopsisProteome.csv', mode='w') as outfile:
+    #        writer = csv.writer(outfile)
+        datadict = {rows[0]:rows[1] for rows in reader}
+
+    for key, value in datadict.items():
+        print(key, ' : ', value)      
+"""
     # create a new file object Output, open an empty file with it to 'w'rite into. 'w+' means create the file to write into if it does not exist.
     Output = open('Predicted_mixedPeaks.csv', 'w+')
     print("HEADER:: Predicted m/z for light-light(LL), light-heavy(LH), heavy-light(HL), heavy-heavy(HH) dipeptides.", file = Output)  
@@ -547,7 +557,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
     #When user stops analysis, close the file.
     Output.close()       
     print("\n\nATTENTION: New file 'Predicted_mixedPeaks.csv' containing the results has been saved in the working directory.")
-
+"""
 
 
 
