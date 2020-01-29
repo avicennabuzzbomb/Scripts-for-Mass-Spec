@@ -12,10 +12,11 @@ if __name__ == "__main__":
 
 # REQUIRED: your input file must be a .txt file named 'fasta'
 
+
+
 # first get all lines from file by storing each line in a new List of strings called 'lines'
 with open('fasta.txt', 'r') as f:
     lines = f.readlines()
-    #print(type(lines))
 
 # remove spaces from the List 'lines'
 lines = [line.replace(' ', '') for line in lines]
