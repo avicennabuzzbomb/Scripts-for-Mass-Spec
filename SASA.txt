@@ -1,4 +1,4 @@
 Solvent-Accessible Surface Area Calculations in Angstrom:
 
 Protein's solvent-accessible surface area is 45450.25
-Total solvent-accessible surface area of crosslinked lysines is 1182.49304199
+Total solvent-accessible surface area of crosslinked lysines is 5515.18017578
