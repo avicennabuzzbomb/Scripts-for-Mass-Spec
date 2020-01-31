@@ -96,3 +96,10 @@ for row in reader3:
 
 print(result3)
 """
+
+#TODO Implement code to pull "Position" values for each Key, one Key at a time (where Key = peptide ID or sequence);
+#TODO This must typecast the position values as integers (if not already done) and compare them to a set of reference ranges;
+#TODO these ranges should be specified by User input using a List for each domain per protein: [[Domain_name],[starting_aa_integer],[ending_aa_integer]]
+#TODO and, if user wants to enter more than one protein, nest each List (Protein-Domain) into a Dictionary, where the Key is automatically
+#TODO a string with Protein's accession followed by '-' and an integer, taken from a rolling tally of dipeptide IDs found for this protein.
+#TODO make sure to provide user check-input messages after each entry! So that if they make a mistake, they have the opportunity to go back and correct it.

@@ -98,7 +98,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
 
         return
     
-
+"""
     with open('DSSO-ArabidopsisProteome.csv', mode='r') as infile:
         reader = csv.reader(infile)
     #    with open('DSSO-ArabidopsisProteome.csv', mode='w') as outfile:
@@ -109,16 +109,16 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         print(key, ' : ', value)      
 """
     # create a new file object Output, open an empty file with it to 'w'rite into. 'w+' means create the file to write into if it does not exist.
-    Output = open('Predicted_mixedPeaks.csv', 'w+')
-    print("HEADER:: Predicted m/z for light-light(LL), light-heavy(LH), heavy-light(HL), heavy-heavy(HH) dipeptides.", file = Output)  
-    print("", file = Output)
-    COUNT = 1
+Output = open('Predicted_mixedPeaks.csv', 'w+')
+print("HEADER:: Predicted m/z for light-light(LL), light-heavy(LH), heavy-light(HL), heavy-heavy(HH) dipeptides.", file = Output)  
+print("", file = Output)
+COUNT = 1
 
     ## Block below specifically for my purposes (copy-paste directly from Thao's data, then run script over this list)
-    pepA_list = ["ELSEIAEQA[K]R",                  #2       # corrected; 1 and 2 were duplicate IDs.
-                "TLHGLQP[K]EAVNIFPEK",             #3
-                "ELHTL[K]GHVESVVK",                #4
-                "[K]HIVGMTGDGVNDAPALK",            #5
+pepA_list = ["ELSEIAEQA[K]R",                  #2       # corrected; 1 and 2 were duplicate IDs.
+            "TLHGLQP[K]EAVNIFPEK",             #3
+            "ELHTL[K]GHVESVVK",                #4
+            "[K]HIVGMTGDGVNDAPALK",            #5
                 "IPIEEVFQQL[K]CSR",                #6
                 "IPIEEVFQQL[K]CSR",                #7
                 "VS[K]GAPEQILELAK",                #8       # corrected
@@ -219,7 +219,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "MITGDQLAIG[K]ETGR",
                 "IPIEEVFQQL[K]CSR"]          #slide 123, data poor quality; test different peaks.
 
-    pepB_list = ["LSQQGAIT[K]R",        #2
+pepB_list = ["LSQQGAIT[K]R",        #2
                 "EVHFLPFNPVD[K]R",      #3
                 "LSQQGAIT[K]R",         #4
                 "[K]ADIGIAVADATDAAR",   #5   
@@ -323,7 +323,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                 "IQIFGPN[K]LEEK",
                 "DYG[K]EER"]                #slide 123, data poor quality; test different peaks.
 
-    mZ_list = [633.834,            #2
+mZ_list = [633.834,            #2
                735.989,            #3
                709.388,            #4
                885.199,            #5        
@@ -407,7 +407,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                1059.572,                #84
                764.086,                 #85
                733.170,                 #86
-               721.133,                 #87
+               721.383,                 #87
                704.367,                 #88
                712.625,                 #89
                1013.989,                #90     #slide 108, data poor quality; test different peaks.
@@ -427,7 +427,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                791.411,                 #104
                700.840]                 #105    #slide 123, data poor quality; test different peaks.
 
-    charge_list = [4,       #2
+charge_list = [4,       #2
                    5,       #3
                    4,       #4
                    4,       #5                
@@ -533,40 +533,27 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
                    
 
 ## MAIN (script starts)
-    for x in range(len(pepA_list)):
+for x in range(len(pepA_list)):
 
-        seqA = pepA_list[x]
-        seqB = pepB_list[x]
-        mZ = mZ_list[x]
-        charge = charge_list[x]
-        dipeptide = seqA + "-" + seqB
-        '''
-        print("The dipeptide is ",dipeptide,"and its charge state is +",charge)
-        print("")
-        '''
-        labeledPeps = calc_Labeled(seqA,seqB,mZ,charge) #get list of predicted sequences from calc_Labeled
-        pepNames = ["LL","LH","HL","HH"]
+    seqA = pepA_list[x]
+    seqB = pepB_list[x]
+    mZ = mZ_list[x]
+    charge = charge_list[x]
+    dipeptide = seqA + "-" + seqB
+    '''
+    print("The dipeptide is ",dipeptide,"and its charge state is +",charge)
+    print("")
+    '''
+    labeledPeps = calc_Labeled(seqA,seqB,mZ,charge) #get list of predicted sequences from calc_Labeled
+    pepNames = ["LL","LH","HL","HH"]
 
-        #This block prints the contents of the array of lists: label names, and predicted m/z to the new file.
-        print(COUNT,":","Dipeptide sequence is ",dipeptide,"and its charge state is +",charge, file = Output)
-        for x in range(len(pepNames)):
-            print(pepNames[x], labeledPeps[x], file = Output)
-        print("", file=Output)
-        COUNT += 1
+    #This block prints the contents of the array of lists: label names, and predicted m/z to the new file.
+    print(COUNT,":","Dipeptide sequence is ",dipeptide,"and its charge state is +",charge, file = Output)
+    for x in range(len(pepNames)):
+        print(pepNames[x], labeledPeps[x], file = Output)
+    print("", file=Output)
+    COUNT += 1
 
     #When user stops analysis, close the file.
-    Output.close()       
-    print("\n\nATTENTION: New file 'Predicted_mixedPeaks.csv' containing the results has been saved in the working directory.")
-"""
-
-
-
-
-
-
-
-
-
-
-
-
+Output.close()       
+print("\n\nATTENTION: New file 'Predicted_mixedPeaks.csv' containing the results has been saved in the working directory.")
