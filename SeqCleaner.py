@@ -19,7 +19,7 @@ with open('fasta.txt', 'r') as f:
     lines = f.readlines()
 
 # remove spaces from the List 'lines'
-lines = [line.replace(' ', '') for line in lines]
+lines = [line.replace(' ', '') for line in lines]   # this converts the string into a list! use the re module and regex instead.
 
 # remove all digits from the List 'lines'
 pattern = '[0-9]'
