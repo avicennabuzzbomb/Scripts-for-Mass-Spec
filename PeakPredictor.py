@@ -38,7 +38,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         assert type(pepA)==str, "Error, pepA must be a string representing the peptide"
         assert type(pepB)==str, "Error, pepB must be a string representing the peptide"
         assert type(mZ)==float, "Error, mZ must be a float representing the m/z of the dipeptide"
-        assert type(z)==int, "Error, z must be an integer representing the charge of the dipeptide"
+        assert type(charge)==int, "Error, z must be an integer representing the charge of the dipeptide"
 
         heavyAshift = calc_15Nshift(pepA, charge)   # These statements calculate peptide
         heavyBshift = calc_15Nshift(pepB, charge)   # the expected N15 shift of each. 
