@@ -26,6 +26,9 @@ import time     # methods for tracking efficiency of the code (CPU time)
 ## "Stopwatch" starts now
 start = time.time()
 
+## start with a fresh pymol session
+cmd.reinitialize
+
 ## SASA settings
 cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
 cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
@@ -38,13 +41,20 @@ def find(s, ch, thr):
     print("Length of fasta string (characters) is " + num_aa)
 
     header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
-    threshold = 0.25
+    threshold = 0.25           #TODO make this a user-input value
 
     with open('SASA.csv', 'w') as file:                         # correct implementation for writing values into csv, in the same row, vals in separate cells
         writer = csv.writer(file, delimiter = ',')
         writer.writerow(header)
 
-        for count, ltr in enumerate(s, 1):     # setting [0] of the string = [1], find each 'K' and get its index (aa position).
+        #for count, ltr in enumerate(s, 1):     # setting [0] of the string = [1], find each 'K' and get its index (aa position). TODO - make the 1 in enumerate(s, 1) a user input value.
+        for count, ltr in enumerate(s, 10):     # fasta of 5KSD is truncated in 2 directions, and "start index" for 5ksd is actually 12, not 1.
+                                                # Adjusting enumerate index by the difference in amino acids (N-terminal) corrects this. Note, 11 (12 - 1) are missing from the front,
+                                                # but python is a 0-index language, therefore make [10] the start index (0 - 10 = 11 index positions).
+                                                # TODO given this index problem, this script can be made generalizable by requiring the user to input either a fasta
+                                                # of the full length protein and/or the position where the N-terminal portion of the enzyme begins. (ex., user here would
+                                                # enter '12' as the first amino acid position, code would subtract 1 to adjust for 0 index, then it would be saved in a variable
+                                                # used by the enumerator). TODO TODO TODO This script works very well but could really use an argparser for these inputs.
             if ltr == ch:
                 ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
                 count = str(count)
@@ -70,9 +80,6 @@ def find(s, ch, thr):
     return
 ################################################################################################################################################
 
-## start with a fresh pymol session
-cmd.reinitialize
-
 ## do a calculation of the residue when completely free in solution (not in a tripeptide)
 cmd.fragment("lys")  # Summon a disembodied lysine
 cmd.select("Rgroup", "sidechain and lys")    # Select only the sidechain (non-backbone atoms)
@@ -84,10 +91,10 @@ cmd.reinitialize
 
 ## load the pymol session, or fetch a PDB entry, containing the objects this script will work on.
 ## When loading:
-cmd.load('5KSD_C-terminal.pse','all') 
+# cmd.load('5KSD_C-terminal.pse','all') 
 
 ## When fetching:
-# cmd.fetch("5KSD", "Chain A")  TODO need to figure out how to correctly handle fetched objects; the script currently cannot
+cmd.fetch("5KSD", "Chain A")  #TODO need to figure out how to correctly handle fetched objects; the script currently cannot
 # make valid selections and returns a list of nonsense SASA values instead of getting the real calculation.
 
 ## Create a selection of all lysines, get the full aa sequence and count all lysines in the selection using this string
@@ -112,4 +119,4 @@ find(clean_fasta, ch, threshold)
 ## "Stopwatch" stops now; print runtime
 stop = time.time()
 print("Relative SASA is calculated using absolute SASA of the sidechain of a free lysine = " + maximumSASA_str + ";\nthe threshold for classifying lysines as buried vs. exposed is " + str(threshold))
-print("Time (minutes) taken for SASA calculations: " + str(stop - start))
+print("Time (seconds) taken for SASA calculations: " + str(stop - start))
