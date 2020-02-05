@@ -14,35 +14,83 @@
 ## NOTE - 'reinitialize' removes all objects from this pymol session's memory (it's a reset as if the program was restarted) 
 """
 
+## TODO TODO TODO Add arguments and a docstring.
+
 from pymol import cmd  # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
-import pymol
+import pymol    # this one might be unnecessary since we specifically need pymol.cmd()
 import re       # methods for string editing
 import decimal  # methods for correct rounding
 import csv      # methods for handling csv file i/o
+import time     # methods for tracking efficiency of the code (CPU time)
 
-# SASA settings
+## "Stopwatch" starts now
+start = time.time()
+
+## SASA settings
 cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
 cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
-#open a file writer object to save results
-Output = open('SASA.csv', 'w')   #TODO note - csv is preferable to text. Need to implement writing into separate cells.
 
-# start with a fresh pymol session
+################################################################################################################################################
+## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output.
+def find(s, ch, thr):
+    assert type(thr) == float  #TODO using the threshold, residues can be annotated as exposed or buried with respect to a cutoff value.
+    print("Length of fasta string (characters) is " + num_aa)
+
+    header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
+    threshold = 0.25
+
+    with open('SASA.csv', 'w') as file:                         # correct implementation for writing values into csv, in the same row, vals in separate cells
+        writer = csv.writer(file, delimiter = ',')
+        writer.writerow(header)
+
+        for count, ltr in enumerate(s, 1):     # setting [0] of the string = [1], find each 'K' and get its index (aa position).
+            if ltr == ch:
+                ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
+                count = str(count)
+                residue = "" + ltr + count
+                ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
+                ## note that this specific line of code can be universally useful for making discrete selections.
+                cmd.select("sele", "resn lys and resi " + count)
+
+                ## SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
+                ## and then typecast to string so it can be printed easily. In the future, make rounding optional.
+                sasa = cmd.get_area("sele", 1, 0)
+                rel_sasa = sasa / maximumSASA
+                burial = "Exposed"
+                if rel_sasa <= threshold:
+                    burial = "Buried"
+                sasa = str(round(sasa, 3))
+                rel_sasa = str(round(rel_sasa, 3))
+                ## Each SASA printed to console and then to output
+                print("\n" + residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
+                current_row = [residue, sasa, rel_sasa, burial]
+                writer.writerow(current_row)
+
+    return
+################################################################################################################################################
+
+## start with a fresh pymol session
 cmd.reinitialize
 
-# do a calculation of the residue when completely free in solution (not in a tripeptide)
-cmd.fragment("lys")
-maximumSASA = cmd.get_area("lys", 1, 0)
-maximumSASA_str = str(maximumSASA)
-Output.write("A free lysine has a maximum SASA of " + maximumSASA_str + "\n")
+## do a calculation of the residue when completely free in solution (not in a tripeptide)
+cmd.fragment("lys")  # Summon a disembodied lysine
+cmd.select("Rgroup", "sidechain and lys")    # Select only the sidechain (non-backbone atoms)
+maximumSASA = cmd.get_area("Rgroup", 1, 0)  #get solvent exposed area of the lysine
+maximumSASA_str = str(maximumSASA)  #typecast to a string type (easier to deal with if printing into a string)
 
-# get rid of the free lysine so that only the protein of interest is now considered
+## get rid of the free lysine so that only the protein of interest is now considered
 cmd.reinitialize
 
-# load the pymol session containing the objects this script will work on
+## load the pymol session, or fetch a PDB entry, containing the objects this script will work on.
+## When loading:
 cmd.load('5KSD_C-terminal.pse','all') 
 
-# Create a selection of all lysines, get the full aa sequence and count all lysines in the selection using this string
+## When fetching:
+# cmd.fetch("5KSD", "Chain A")  TODO need to figure out how to correctly handle fetched objects; the script currently cannot
+# make valid selections and returns a list of nonsense SASA values instead of getting the real calculation.
+
+## Create a selection of all lysines, get the full aa sequence and count all lysines in the selection using this string
 cmd.select("Lysines", "resn Lys and Chain A")
 fasta = cmd.get_fastastr('Chain A')
 clean_fasta = re.sub("[^A-Z]+", "", fasta)     # remove everything except uppercase letters; Python exports fasta with aa's capitalized; meta data is lower cased and contains whitespace.
@@ -50,47 +98,18 @@ num_aa = str(len(clean_fasta))
 numLys = clean_fasta.count('K')
 print("FASTA sequence is: \n" + fasta + "\n\nNumber of lysines in this selection is " + str(numLys))
 
-## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output.
-def find(s, ch, thr):
-    assert type(thr) == float  #TODO using the threshold, residues can be annotated as exposed or buried with respect to a cutoff value.
-    print("Length of fasta string (characters) is " + num_aa)
-    Output.write("\n\nResidue Position" + "     " + "Absolute SASA" + "     " + "Relative SASA")
-    for count, ltr in enumerate(s, 1):     # setting [0] of the string = [1], find each 'K' and get its index (aa position).
-        if ltr == ch:
-
-            # Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
-            count = str(count)
-
-            # selection algebra for picking one specific residue at a time and performing operation(s) on it.
-            # note that this specific line of code can be universally useful for making discrete selections.
-            cmd.select("sele", "resn lys and resi " + count)
-
-            # SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
-            # and then typecast to string so it can be printed easily. In the future, make rounding optional.
-            sasa = cmd.get_area("sele", 1, 0)
-            rel_sasa = sasa / maximumSASA
-
-            sasa = str(round(sasa, 3))
-            rel_sasa = str(round(rel_sasa, 3))
-
-            # Each SASA printed to console and then to output
-            print("\n" + ltr + count + " | " + sasa + " | " + rel_sasa)
-            Output.write("\n" + ltr + count + "     " + sasa + "        " + rel_sasa)  
-   
-    return
-
-# Bulk SASA calculations are done and then results are immediately typecast from float to string to allow string concatenation
-areaProtein = str(cmd.get_area("all", 1, 0))
+## Bulk SASA calculations are done and then results are immediately typecast from float to string to allow string concatenation
+areaProtein = str(cmd.get_area("Chain A", 1, 0))
 areaLysines = str(cmd.get_area("Lysines", 1, 0))
 
-# Calculate SASA results to an output text file
-Output.write("FASTA sequence is: \n" + fasta)
-Output.write("\n\nProtein's solvent-accessible surface area is " + areaProtein + "\n")
-Output.write("Total SASA of all lysines is " + areaLysines + "\n")
-Output.write("\nSASA for each lysine:")
-
-# get a list of lysines and their positions just from the string, fasta; the method call also writes to the output.
+## get a list of lysines and their positions just from the string, fasta; the method call also writes to the output.
 ch = 'K'
-threshold = 0.25
+threshold = 0.25   # in the future, this can be an argument (for user input)
+
+## one row at a time, comma is delimiter (for cells); call method and print row by row
 find(clean_fasta, ch, threshold)
-Output.close()
+
+## "Stopwatch" stops now; print runtime
+stop = time.time()
+print("Relative SASA is calculated using absolute SASA of the sidechain of a free lysine = " + maximumSASA_str + ";\nthe threshold for classifying lysines as buried vs. exposed is " + str(threshold))
+print("Time (minutes) taken for SASA calculations: " + str(stop - start))
