@@ -109,16 +109,17 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         print(key, ' : ', value)      
 """
     # create a new file object Output, open an empty file with it to 'w'rite into. 'w+' means create the file to write into if it does not exist.
+    #TODO csv.writer and writer.row(<val>) is superior for formatting an output .csv file; change this when there is time.
 Output = open('Predicted_mixedPeaks.csv', 'w+')
 print("HEADER:: Predicted m/z for light-light(LL), light-heavy(LH), heavy-light(HL), heavy-heavy(HH) dipeptides.", file = Output)  
 print("", file = Output)
 COUNT = 1
 
     ## Block below specifically for my purposes (copy-paste directly from Thao's data, then run script over this list)
-pepA_list = ["ELSEIAEQA[K]R",                  #2       # corrected; 1 and 2 were duplicate IDs.
-            "TLHGLQP[K]EAVNIFPEK",             #3
-            "ELHTL[K]GHVESVVK",                #4
-            "[K]HIVGMTGDGVNDAPALK",            #5
+pepA_list = ["ELSEIAEQA[K]R",                      #2       # corrected; 1 and 2 were duplicate IDs.
+            "TLHGLQP[K]EAVNIFPEK",                 #3
+            "ELHTL[K]GHVESVVK",                    #4
+            "[K]HIVGMTGDGVNDAPALK",                #5
                 "IPIEEVFQQL[K]CSR",                #6
                 "IPIEEVFQQL[K]CSR",                #7
                 "VS[K]GAPEQILELAK",                #8       # corrected
@@ -180,356 +181,356 @@ pepA_list = ["ELSEIAEQA[K]R",                  #2       # corrected; 1 and 2 wer
                 "MITGDQLAIG[K]ETGR",               #65
                 "VS[K]GAPEQILELAK",                #66
                 "MTAIEEMAGMDVLCSD[K]TGTLTLNK",     #67
-                "EVHFLPFNPVD[K]R",
-                "VSKGAPEQILELA[K]ASNDLSKK",
-                "EAVNIFPE[K]GSYR",
-                "EVHFLPFNPVD[K]R",
-                "EVHFLPFNPVD[K]R",
-                "VS[K]GAPEQILELAK",
-                "LLEGDPL[K]VDQSALTGESLPVTK",
-                "EAVNIFPE[K]GSYR",
-                "EAVNIFPE[K]GSYR",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "MITGDQLAIG[K]ETGR",
-                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",    #slide 97: data is too low quality to be useful.
-                "IPIEEVFQQL[K]CSR",
-                "VLSIID[K]YAER",
-                "EVHFLPFNPVD[K]R",
-                "LLEGDPL[K]VDQSALTGESLPVTK",
-                "WSEQEAAILVPGDIVSI[K]LGDIIPADAR",
-                "IQIFGPN[K]LEEK",
-                "ADGFAGVFPEH[K]YEIVK",
-                "V[K]PSPTPDSWK",
-                "V[K]PSPTPDSWK",
-                "IQIFGPN[K]LEEK",
-                "VENQDAIDAAMVGMLADP[K]EAR",        #slide 108, data poor quality; test different peaks.
-                "LLEGDPL[K]VDQSALTGESLPVTK",
-                "GAPEQILELA[K]ASNDLSK",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "LSQQGAIT[K]R",
-                "EVHFLPFNPVD[K]R",
-                "ADGFAGVFPEH[K]YEIVK",
-                "LLEGDPL[K]VDQSALTGESLPVTK",
-                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",
-                "V[K]PSPTPDSWK",
-                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",
-                "MITGDQLAIG[K]ETGR",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "LLEGDPL[K]VDQSALTGESLPVTK",
-                "MITGDQLAIG[K]ETGR",
-                "IPIEEVFQQL[K]CSR"]          #slide 123, data poor quality; test different peaks.
+                "EVHFLPFNPVD[K]R",                 #68
+                "VSKGAPEQILELA[K]ASNDLSKK",        #69
+                "EAVNIFPE[K]GSYR",                 #70
+                "EVHFLPFNPVD[K]R",                 #71
+                "EVHFLPFNPVD[K]R",                 #72
+                "VS[K]GAPEQILELAK",                #73
+                "LLEGDPL[K]VDQSALTGESLPVTK",       #74
+                "EAVNIFPE[K]GSYR",                 #75
+                "EAVNIFPE[K]GSYR",                 #76
+                "VENQDAIDAAMVGMLADP[K]EAR",        #77
+                "MITGDQLAIG[K]ETGR",               #78
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",     #79
+                "IPIEEVFQQL[K]CSR",                #80
+                "VLSIID[K]YAER",                   #81
+                "EVHFLPFNPVD[K]R",                 #82
+                "LLEGDPL[K]VDQSALTGESLPVTK",       #83
+                "WSEQEAAILVPGDIVSI[K]LGDIIPADAR",  #84
+                "IQIFGPN[K]LEEK",                  #85
+                "ADGFAGVFPEH[K]YEIVK",             #86
+                "V[K]PSPTPDSWK",                   #87
+                "V[K]PSPTPDSWK",                   #88
+                "IQIFGPN[K]LEEK",                  #89
+                "VENQDAIDAAMVGMLADP[K]EAR",        #90
+                "LLEGDPL[K]VDQSALTGESLPVTK",       #91
+                "GAPEQILELA[K]ASNDLSK",            #92
+                "VENQDAIDAAMVGMLADP[K]EAR",        #93
+                "LSQQGAIT[K]R",                    #94
+                "EVHFLPFNPVD[K]R",                 #95
+                "ADGFAGVFPEH[K]YEIVK",             #96
+                "LLEGDPL[K]VDQSALTGESLPVTK",       #97
+                "VDQSALTGESLPVT[K]HPGQEVFSGSTCK",  #98
+                "V[K]PSPTPDSWK",                   #99
+                "MTAIEEMAGMDVLCSD[K]TGTLTLNK",     #100
+                "MITGDQLAIG[K]ETGR",               #101
+                "VENQDAIDAAMVGMLADP[K]EAR",        #102
+                "LLEGDPL[K]VDQSALTGESLPVTK",       #103
+                "MITGDQLAIG[K]ETGR",               #104
+                "IPIEEVFQQL[K]CSR"]                #105
 
-pepB_list = ["LSQQGAIT[K]R",        #2
-                "EVHFLPFNPVD[K]R",      #3
-                "LSQQGAIT[K]R",         #4
-                "[K]ADIGIAVADATDAAR",   #5   
-                "ELSEIAEQA[K]R",        #6   
-                "IQIFGPN[K]LEEK",       #7
-                "ASNDLS[K]K",           #8    # corrected
-                "DYG[K]EER",            #9    # <-- left off after the 9th CSM (10/31/2019)
-                "LSQQGAIT[K]R",         #10    
-                "ELSEIAEQA[K]R ",       #11
-                "LSVD[K]NLVEVFCK",      #12
-                "ELSEIAEQA[K]R",        #13
-                "LSQQGAIT[K]R",         #15
-                "ASNDLS[K]K",           #16
-                "LSQQGAIT[K]R",         #17
-                "EVHFLPFNPVD[K]R",      #18
-                "GVE[K]DQVLLFAAMASR",   #19
-                "LSQQGAIT[K]R",         #20
-                "VLSIID[K]YAER",        #21
-                "ELSEIAEQA[K]R",        #22
-                "EVHFLPFNPVD[K]R",      #23
-                "ELSEIAEQA[K]R",        #24
-                "TGTLTLN[K]LSVDK",      #25
-                "[K]ADIGIAVADATDAAR",   #26
-                "ASNDLS[K]K",           #27
-                "EVHFLPFNPVD[K]R",      #28
-                "NLVEVFC[K]GVEK",       #29  # no sequence! check PD; RT is 62.07. Corrected 11/01. <-- left off after the 30th CSM (11/01/2019).
-                "LSQQGAIT[K]R",         #30
-                "LSQQGAIT[K]R",         #31
-                "LSQQGAIT[K]R",         #32
-                "ELSEIAEQA[K]R",        #33
-                "EVHFLPFNPVD[K]R",      #34
-                "VS[K]GAPEQILELAK",     #35   # "positive control" test for this script, picked by Thao
-                "LSQQGAIT[K]R",         #36   # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
-                "EAVNIFPE[K]GSYR",      #37
-                "LSQQGAIT[K]R",         #38
-                "LSQQGAIT[K]R",         #39
-                "EVHFLPFNPVD[K]R",      #40
-                "LSQQGAIT[K]R",         #41
-                "ELSEIAEQA[K]R",        #42
-                "EVHFLPFNPVD[K]R",      #43
-                "DYG[K]EER",            #44
-                "EAVNIFPE[K]GSYR",      #45
-                "VLSIID[K]YAER",        #46
-                "VS[K]GAPEQILELAK",     #47
-                "VS[K]GAPEQILELAK",     #48
-                "EVHFLPFNPVD[K]R",      #49
-                "IQIFGPN[K]LEEK",       #50   # Picked a different peak to start (vs. 634.934)
-                "VS[K]GAPEQILELAK",     #51
-                "VS[K]GAPEQILELAK",     #52
-                "ELSEIAEQA[K]R",        #53
-                "VLSIID[K]YAER",        #54
-                "VS[K]GAPEQILELAK",     #55
-                "ELSEIAEQA[K]R",
-                "DYG[K]EER",
-                "VLSIID[K]YAER",
-                "IQIFGPN[K]LEEK",
-                "[K]VLSIIDK",
-                "VS[K]GAPEQILELAK",
-                "TGTLTLN[K]LSVDK",
-                "IQIFGPN[K]LEEK",
-                "LSQQGAIT[K]R",
-                "VS[K]GAPEQILELAK",
-                "LSVD[K]NLVEVFCK",
-                "LSQQGAIT[K]R",
-                "LSVD[K]NLVEVFCK",
-                "VLSIID[K]YAER",
-                "LSQQGAIT[K]R",
-                "[K]VLSIIDK",
-                "NLVEVFC[K]GVEK",
-                "ASNDLSK[K]VLSIIDKYAER",
-                "EVHFLPFNPVD[K]R",
-                "EVHFLPFNPVD[K]R",
-                "DYG[K]EER",
-                "VLSIID[K]YAER",
-                "LSQQGAIT[K]R",
-                "LSVD[K]NLVEVFCK",     #slide 97: data is too low quality to be useful.
-                "LSQQGAIT[K]R",
-                "QVVPE[K]TK",
-                "QVVPE[K]TK",
-                "VENQDAIDAAMVGMLADP[K]EAR",
-                "LSQQGAIT[K]R",
-                "ES[K]LLK",
-                "EVHFLPFNPVD[K]R",
-                "VS[K]GAPEQILELAK",
-                "IQIFGPN[K]LEEK",
-                "ELSEIAEQA[K]R",
-                "LSVD[K]NLVEVFCK",       #slide 108, data poor quality; test different peaks.
-                "[K]ADIGIAVADATDAAR",
-                "QVVPE[K]TK",
-                "[K]VLSIIDK",
-                "[K]VLSIIDK",
-                "YEIV[K]K",
-                "LSQQGAIT[K]R",
-                "IQIFGPN[K]LEEK",
-                "LSQQGAIT[K]R",
-                "LLEGDPL[K]VDQSALTGESLPVTK",
-                "EVHFLPFNPVD[K]R",
-                "QVVPE[K]TK",
-                "GAPEQILELA[K]ASNDLSK",
-                "LSQQGAIT[K]R",
-                "IQIFGPN[K]LEEK",
-                "DYG[K]EER"]                #slide 123, data poor quality; test different peaks.
+pepB_list = ["LSQQGAIT[K]R",                        #2
+                "EVHFLPFNPVD[K]R",                  #3
+                "LSQQGAIT[K]R",                     #4
+                "[K]ADIGIAVADATDAAR",               #5   
+                "ELSEIAEQA[K]R",                    #6   
+                "IQIFGPN[K]LEEK",                   #7
+                "ASNDLS[K]K",                       #8
+                "DYG[K]EER",                        #9
+                "LSQQGAIT[K]R",                     #10    
+                "ELSEIAEQA[K]R ",                   #11
+                "LSVD[K]NLVEVFCK",                  #12
+                "ELSEIAEQA[K]R",                    #13
+                "LSQQGAIT[K]R",                     #15
+                "ASNDLS[K]K",                       #16
+                "LSQQGAIT[K]R",                     #17
+                "EVHFLPFNPVD[K]R",                  #18
+                "GVE[K]DQVLLFAAMASR",               #19
+                "LSQQGAIT[K]R",                     #20
+                "VLSIID[K]YAER",                    #21
+                "ELSEIAEQA[K]R",                    #22
+                "EVHFLPFNPVD[K]R",                  #23
+                "ELSEIAEQA[K]R",                    #24
+                "TGTLTLN[K]LSVDK",                  #25
+                "[K]ADIGIAVADATDAAR",               #26
+                "ASNDLS[K]K",                       #27
+                "EVHFLPFNPVD[K]R",                  #28
+                "NLVEVFC[K]GVEK",                   #29  # no sequence! check PD; RT is 62.07. Corrected 11/01. <-- left off after the 30th CSM (11/01/2019).
+                "LSQQGAIT[K]R",                     #30
+                "LSQQGAIT[K]R",                     #31
+                "LSQQGAIT[K]R",                     #32
+                "ELSEIAEQA[K]R",                    #33
+                "EVHFLPFNPVD[K]R",                  #34
+                "VS[K]GAPEQILELAK",                 #35   # "positive control" test for this script, picked by Thao
+                "LSQQGAIT[K]R",                     #36   # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+                "EAVNIFPE[K]GSYR",                  #37
+                "LSQQGAIT[K]R",                     #38
+                "LSQQGAIT[K]R",                     #39
+                "EVHFLPFNPVD[K]R",                  #40
+                "LSQQGAIT[K]R",                     #41
+                "ELSEIAEQA[K]R",                    #42
+                "EVHFLPFNPVD[K]R",                  #43
+                "DYG[K]EER",                        #44
+                "EAVNIFPE[K]GSYR",                  #45
+                "VLSIID[K]YAER",                    #46
+                "VS[K]GAPEQILELAK",                 #47
+                "VS[K]GAPEQILELAK",                 #48
+                "EVHFLPFNPVD[K]R",                  #49
+                "IQIFGPN[K]LEEK",                   #50   # Picked a different peak to start (vs. 634.934)
+                "VS[K]GAPEQILELAK",                 #51
+                "VS[K]GAPEQILELAK",                 #52
+                "ELSEIAEQA[K]R",                    #53
+                "VLSIID[K]YAER",                    #54
+                "VS[K]GAPEQILELAK",                 #55
+                "ELSEIAEQA[K]R",                    #56
+                "DYG[K]EER",                        #57
+                "VLSIID[K]YAER",                    #58
+                "IQIFGPN[K]LEEK",                   #59
+                "[K]VLSIIDK",                       #60
+                "VS[K]GAPEQILELAK",                 #61
+                "TGTLTLN[K]LSVDK",                  #62
+                "IQIFGPN[K]LEEK",                   #63
+                "LSQQGAIT[K]R",                     #64
+                "VS[K]GAPEQILELAK",                 #65
+                "LSVD[K]NLVEVFCK",                  #66
+                "LSQQGAIT[K]R",                     #67
+                "LSVD[K]NLVEVFCK",                  #68
+                "VLSIID[K]YAER",                    #69
+                "LSQQGAIT[K]R",                     #70
+                "[K]VLSIIDK",                       #71
+                "NLVEVFC[K]GVEK",                   #72
+                "ASNDLSK[K]VLSIIDKYAER",            #73
+                "EVHFLPFNPVD[K]R",                  #74
+                "EVHFLPFNPVD[K]R",                  #75
+                "DYG[K]EER",                        #76
+                "VLSIID[K]YAER",                    #77
+                "LSQQGAIT[K]R",                     #78
+                "LSVD[K]NLVEVFCK",                  #79
+                "LSQQGAIT[K]R",                     #80
+                "QVVPE[K]TK",                       #81
+                "QVVPE[K]TK",                       #82
+                "VENQDAIDAAMVGMLADP[K]EAR",         #83
+                "LSQQGAIT[K]R",                     #84
+                "ES[K]LLK",                         #85
+                "EVHFLPFNPVD[K]R",                  #86
+                "VS[K]GAPEQILELAK",                 #87
+                "IQIFGPN[K]LEEK",                   #88
+                "ELSEIAEQA[K]R",                    #89
+                "LSVD[K]NLVEVFCK",                  #90
+                "[K]ADIGIAVADATDAAR",               #91
+                "QVVPE[K]TK",                       #92
+                "[K]VLSIIDK",                       #93
+                "[K]VLSIIDK",                       #94
+                "YEIV[K]K",                         #95
+                "LSQQGAIT[K]R",                     #96
+                "IQIFGPN[K]LEEK",                   #97
+                "LSQQGAIT[K]R",                     #98
+                "LLEGDPL[K]VDQSALTGESLPVTK",        #99
+                "EVHFLPFNPVD[K]R",                  #100
+                "QVVPE[K]TK",                       #101
+                "GAPEQILELA[K]ASNDLSK",             #102
+                "LSQQGAIT[K]R",                     #103
+                "IQIFGPN[K]LEEK",                   #104
+                "DYG[K]EER"]                        #105
 
-mZ_list = [633.834,            #2
-               735.989,            #3
-               709.388,            #4
-               885.199,            #5        
-               795.154,            #6        
-               830.685,            #7         
-               626.335,            #8        # corrected
-               776.367,            #9
-               703.122,            #10 
-               838.690,            #11
-               861.448,            #12
-               758.389,            #13
-               714.878,            #15
-               776.072,            #16
-               662.864,            #17
-               1025.753,           #18
-               1059.766,           #19
-               686.130,            #20
-               737.654,            #21
-               747.881,            #22
-               648.348,            #23
-               729.138,            #24
-               786.919,            #25
-               906.205,            #26
-               524.268,            #27
-               728.980,            #28
-               1077.765,
-               642.100,
-               894.133,
-               625.828,
-               755.884,
-               701.160,
-               978.774,                 #35    # "positive control" test for this script, picked by Thao
-               669.363,                 #36    # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
-               811.421,                 #37
-               901.448,                 #38
-               704.872,                 #39
-               943.666,                 #40
-               771.153,                 #41
-               926.728,                 #42
-               749.882,                 #43
-               627.291,                 #44
-               718.372,                 #45
-               766.404,                 #46
-               847.453,                 #47
-               1093.293,                #48
-               806.219,                 #49
-               635.536,                 #50     # Picked a different peak to start (vs. 634.934)
-               920.868,                 #51
-               997.255,                 #52
-               981.155,                 #53
-               764.150,                 #54
-               1013.547,                #55
-               752.396,                 #56
-               744.371,                 #57
-               803.424,                 #58
-               764.667,                 #59
-               739.906,                 #60
-               1024.546,                #61
-               758.670,                 #62
-               980.236,                 #63
-               795.930,                 #64
-               808.178,                 #65
-               798.428,                 #66
-               997.740,                 #67       
-               661.942,                 #68
-               987.766,                 #69
-               693.360,                 #70
-               668.365,                 #71
-               795.410,                 #72
-               987.768,                 #73
-               1042.047,                #74
-               816.930,                 #75
-               641.550,                 #76
-               952.724,                 #77
-               713.124,                 #78
-               1110.047,                #79
-               752.147,                 #80
-               598.827,                 #81
-               671.605,                 #82
-               1228.615,                #83
-               1059.572,                #84
-               764.086,                 #85
-               733.170,                 #86
-               721.383,                 #87
-               704.367,                 #88
-               712.625,                 #89
-               1013.989,                #90     #slide 108, data poor quality; test different peaks.
-               1033.043,                #91
-               743.146,                 #92
-               855.188,                 #93
-               544.310,                 #94
-               634.586,                 #95
-               792.408,                 #96
-               996.785,                 #97
-               844.625,                 #98
-               953.500,                 #99
-               1121.795,                #100
-               669.600,                 #101
-               1097.045,                #102
-               918.245,                 #103
-               791.411,                 #104
-               700.840]                 #105    #slide 123, data poor quality; test different peaks.
+mZ_list = [633.834,                                 #2
+               735.989,                             #3
+               709.388,                             #4
+               885.199,                             #5        
+               795.154,                             #6        
+               830.685,                             #7         
+               626.335,                             #8        
+               776.367,                             #9
+               703.122,                             #10 
+               838.690,                             #11
+               861.448,                             #12
+               758.389,                             #13
+               714.878,                             #15
+               776.072,                             #16
+               662.864,                             #17
+               1025.753,                            #18
+               1059.766,                            #19
+               686.130,                             #20
+               737.654,                             #21
+               747.881,                             #22
+               648.348,                             #23
+               729.138,                             #24
+               786.919,                             #25
+               906.205,                             #26
+               524.268,                             #27
+               728.980,                             #28
+               1077.765,                            #29
+               642.100,                             #30
+               894.133,                             #31
+               625.828,                             #32
+               755.884,                             #33
+               701.160,                             #34
+               978.774,                             #35    # "positive control" test for this script, picked by Thao
+               669.363,                             #36    # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+               811.421,                             #37
+               901.448,                             #38
+               704.872,                             #39
+               943.666,                             #40
+               771.153,                             #41
+               926.728,                             #42
+               750.133,                             #43
+               627.291,                             #44
+               718.372,                             #45
+               766.404,                             #46
+               847.453,                             #47
+               1093.293,                            #48
+               806.219,                             #49
+               635.536,                             #50     # Picked a different peak to start (vs. 634.934)
+               920.868,                             #51
+               997.255,                             #52
+               981.155,                             #53
+               764.150,                             #54
+               1013.547,                            #55
+               752.396,                             #56
+               744.371,                             #57
+               803.424,                             #58
+               764.667,                             #59
+               739.906,                             #60
+               1024.546,                            #61
+               758.670,                             #62
+               980.236,                             #63
+               795.930,                             #64
+               808.178,                             #65
+               798.428,                             #66
+               997.740,                             #67       
+               661.942,                             #68
+               987.766,                             #69
+               693.360,                             #70
+               668.365,                             #71
+               795.410,                             #72
+               987.768,                             #73
+               1042.047,                            #74
+               816.930,                             #75
+               641.550,                             #76
+               952.724,                             #77
+               713.124,                             #78
+               1110.047,                            #79
+               752.147,                             #80
+               598.827,                             #81
+               671.605,                             #82
+               1228.615,                            #83
+               1059.572,                            #84
+               764.086,                             #85
+               733.170,                             #86
+               721.383,                             #87
+               704.619,                             #88
+               712.625,                             #89
+               1013.989,                            #90     #slide 108, data poor quality; test different peaks.
+               1033.043,                            #91
+               743.146,                             #92
+               855.188,                             #93
+               544.310,                             #94
+               634.586,                             #95
+               792.408,                             #96
+               996.785,                             #97
+               844.625,                             #98
+               953.500,                             #99
+               1121.795,                            #100
+               669.600,                             #101
+               1097.045,                            #102
+               918.245,                             #103
+               791.411,                             #104
+               700.840]                             #105    #slide 123, data poor quality; test different peaks.
 
-charge_list = [4,       #2
-                   5,       #3
-                   4,       #4
-                   4,       #5                
-                   4,       #6                  
-                   4,       #7
-                   4,       #8            # corrected
-                   3,       #9
-                   4,       #10
-                   4,       #11
-                   4,       #12
-                   4,       #13
-                   4,       #15
-                   3,       #16
-                   4,       #17
-                   4,       #18
-                   4,       #19
-                   4,       #20
-                   4,       #21
-                   4,       #22
-                   5,       #23
-                   4,       #24
-                   4,       #25
-                   4,       #26
-                   5,       #27
-                   5,       #28
-                   4,       #29
-                   4,       #30
-                   3,       #31
-                   4,       #32
-                   4,       #33
-                   5,       #34
-                   4,       #35              # "positive control" test for this script, picked by Thao
-                   4,       #36              # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
-                   4,       #37
-                   4,       #38
-                   4,       #39
-                   5,       #40
-                   4,       #41
-                   4,       #42
-                   4,       #43
-                   3,       #44
-                   5,       #45
-                   4,       #46
-                   4,       #47
-                   4,       #48
-                   5,       #49            
-                   5,       #50            # Picked a different peak to start (vs. 634.934)
-                   5,       #51
-                   4,       #52
-                   3,       #53
-                   4,       #54
-                   4,       #55
-                   4,       #56
-                   4,       #57
-                   4,       #58
-                   4,       #59
-                   4,       #60
-                   4,       #61
-                   4,       #62
-                   4,       #63
-                   4,       #64
-                   4,       #65
-                   4,       #66
-                   4,       #67
-                   5,       #68
-                   4,       #69
-                   4,       #70
-                   4,       #71
-                   4,       #72
-                   4,       #73
-                   4,       #74
-                   4,       #75
-                   4,       #76
-                   4,       #77
-                   4,       #78
-                   4,       #79
-                   4,       #80   
-                   4,       #81
-                   4,       #82
-                   4,       #83
-                   4,       #84
-                   3,       #85
-                   5,       #86
-                   4,       #87
-                   4,       #88
-                   4,       #89
-                   4,       #90   #slide 108, data poor quality; test different peaks.
-                   4,       #91
-                   4,       #92
-                   4,       #93
-                   4,       #94
-                   4,       #95
-                   4,       #96
-                   4,       #97
-                   5,       #98
-                   4,       #99
-                   4,       #100
-                   4,       #101
-                   4,       #102
-                   4,       #103
-                   4,       #104
-                   4]       #105      #slide 123, data poor quality; test different peaks. 
+charge_list = [4,                                   #2
+                   5,                               #3
+                   4,                               #4
+                   4,                               #5                
+                   4,                               #6                  
+                   4,                               #7
+                   4,                               #8            # corrected
+                   3,                               #9
+                   4,                               #10
+                   4,                               #11
+                   4,                               #12
+                   4,                               #13
+                   4,                               #15
+                   3,                               #16
+                   4,                               #17
+                   4,                               #18
+                   4,                               #19
+                   4,                               #20
+                   4,                               #21
+                   4,                               #22
+                   5,                               #23
+                   4,                               #24
+                   4,                               #25
+                   4,                               #26
+                   5,                               #27
+                   5,                               #28
+                   4,                               #29
+                   4,                               #30
+                   3,                               #31
+                   4,                               #32
+                   4,                               #33
+                   5,                               #34
+                   4,                               #35              # "positive control" test for this script, picked by Thao
+                   4,                               #36              # this is an example where the monoisotopic peak is not reliable and you have to use the next (or the one after) as the starting point
+                   4,                               #37
+                   4,                               #38
+                   4,                               #39
+                   5,                               #40
+                   4,                               #41
+                   4,                               #42
+                   4,                               #43
+                   3,                               #44
+                   5,                               #45
+                   4,                               #46
+                   4,                               #47
+                   4,                               #48
+                   5,                               #49            
+                   5,                               #50            # Picked a different peak to start (vs. 634.934)
+                   5,                               #51
+                   4,                               #52
+                   3,                               #53
+                   4,                               #54
+                   4,                               #55
+                   4,                               #56
+                   4,                               #57
+                   4,                               #58
+                   4,                               #59
+                   4,                               #60
+                   4,                               #61
+                   4,                               #62
+                   4,                               #63
+                   4,                               #64
+                   4,                               #65
+                   4,                               #66
+                   4,                               #67
+                   5,                               #68
+                   4,                               #69
+                   4,                               #70
+                   4,                               #71
+                   4,                               #72
+                   4,                               #73
+                   4,                               #74
+                   4,                               #75
+                   4,                               #76
+                   4,                               #77
+                   4,                               #78
+                   4,                               #79
+                   4,                               #80   
+                   4,                               #81
+                   4,                               #82
+                   4,                               #83
+                   4,                               #84
+                   3,                               #85
+                   5,                               #86
+                   4,                               #87
+                   4,                               #88
+                   4,                               #89
+                   4,                               #90   #slide 108, data poor quality; test different peaks.
+                   4,                               #91
+                   4,                               #92
+                   4,                               #93
+                   4,                               #94
+                   4,                               #95
+                   4,                               #96
+                   4,                               #97
+                   5,                               #98
+                   4,                               #99
+                   4,                               #100
+                   4,                               #101
+                   4,                               #102
+                   4,                               #103
+                   4,                               #104
+                   4]                               #105      #slide 123, data poor quality; test different peaks. 
                    
 
 ## MAIN (script starts)
