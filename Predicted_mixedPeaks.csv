@@ -373,10 +373,10 @@ HL 801.663
 HH 805.651
 
 63 : Dipeptide sequence is  MITGDQLAIG[K]ETGR-VS[K]GAPEQILELAK and its charge state is + 4
-LL 808.178
-LH 812.415
-HL 813.163
-HH 817.401
+LL 808.428
+LH 812.665
+HL 813.413
+HH 817.651
 
 64 : Dipeptide sequence is  VS[K]GAPEQILELAK-LSVD[K]NLVEVFCK and its charge state is + 4
 LL 798.428
@@ -511,10 +511,10 @@ HL 724.873
 HH 729.11
 
 86 : Dipeptide sequence is  V[K]PSPTPDSWK-IQIFGPN[K]LEEK and its charge state is + 4
-LL 704.367
-LH 708.355
-HL 707.857
-HH 711.845
+LL 704.87
+LH 708.858
+HL 708.36
+HH 712.348
 
 87 : Dipeptide sequence is  IQIFGPN[K]LEEK-ELSEIAEQA[K]R and its charge state is + 4
 LL 712.625
