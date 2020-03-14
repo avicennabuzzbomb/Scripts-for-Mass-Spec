@@ -56,6 +56,8 @@ Max_SASA = {'R' : 249.4673309,   # arg
             'Y' : 231.1389923,   # tyr
             'W' : 262.1514587}   # trp
 
+## TODO Also need to add a dictionary (or a second value to this dictionary) listing 3-letter aa codes so that PyMOL selection algebra can work.
+
 threshold = 0.25   # the cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 
 ###########################################################################################################################################################
@@ -70,21 +72,25 @@ def find_Allchain(seq):
         writer = csv.writer(file, delimiter = ',')
         writer.writerow(header)
     
-        for count, ltr in enumerate(seq, 115):  # 6sl6 is truncated but also has no electron density until res 89; need to implement code to detect problems like this
+        for count, ltr in enumerate(seq, 66):  # 6sl6 is truncated but also has no electron density until res 89; need to implement code to detect problems like this
                                                # and account for them at runtime.
 
             ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
             count = str(count)
             residue = "" + ltr + count
+
             ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
             ## note that this specific line of code can be universally useful for making discrete selections.
-            cmd.select("sele", "resn lys and resi " + count)
+            ## TODO: this code is good but pymol selection algebra needs 3-letter codes for resn; resn cannot recognize single letter codes,
+            ## therefore currently selections have invalid targets because pymol does not know what 'resn [ch]' means
+            cmd.select("sele", "resn " + ltr + " and resi " + count)
 
             ## SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
             ## and then typecast to string so it can be printed easily. TODO In the future, make rounding optional.
 
             # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
             sasa = cmd.get_area("sele", 1, 0)
+            # print("SASA of " + ltr + "is " + str(sasa))
             rel_sasa = sasa / Max_SASA[ltr]
             # threshold check: exposure is "buried" or "exposed".
             burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
@@ -136,7 +142,7 @@ def find_res(seq, ch):
                 residue = "" + ltr + count
                 ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
                 ## note that this specific line of code can be universally useful for making discrete selections.
-                cmd.select("sele", "resn lys and resi " + count)
+                cmd.select("sele", "resn " + ltr + " and resi " + count)
 
                 ## SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
                 ## and then typecast to string so it can be printed easily. TODO In the future, make rounding optional.
@@ -187,13 +193,22 @@ cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation
 
 ## When fetching:
 cmd.fetch(jobquery, "Chain A")
+unwantedHeader = ">Chain_A_A"
 
 ## Get the full aa sequence and count all lysines in the selection using this string
 fasta = cmd.get_fastastr('Chain A')
-clean_fasta = re.sub("[^A-Z]+", "", fasta)     # remove everything except uppercase letters (Python's fasta string has aa's capitalized; meta data is lower cased and contains whitespace).
+clean_fasta = re.sub(unwantedHeader, "", fasta)
+clean_fasta = re.sub("\n", "", clean_fasta)     # remove everything except uppercase letters (Python's fasta string has aa's capitalized; meta data is lower cased and contains whitespace).
+                                               # NOTE: edit to above comment - the chain "name" included in the PDB entry's fasta sometimes includes capital letters, which this cleaning code
+                                               # will unintentionally retain and alter the sequence string from what it actually is. (6SL6 is an example of a file with this). Need to find a way
+                                               # to make the script perceive where the fasta sequence actually begins and only then begin Enumerating there in order to prevent this bug.
+                                               # TODO: Since the unchanged fasta object contains whitespace (carriage return newlines), is it possible to just remove the first full line (leaving only aa's
+                                               # and whitespace), and then strip whitespace?
+                                                
 num_aa = str(len(clean_fasta))
 #numLys = clean_fasta.count('K')
 print("FASTA sequence is: \n" + fasta)
+print("'Clean' FASTA sequence is: \n" + clean_fasta)
 
 threshold = 0.25   # in the future, this can be an argument (for user input)
 
