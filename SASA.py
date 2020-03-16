@@ -26,12 +26,12 @@ PyMOL> run script.py
 
 ## TODO TODO TODO Add arguments and a docstring.
 
-from pymol import cmd  # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
-import pymol    # this one might be unnecessary since we specifically need pymol.cmd()
-import re       # methods for string editing
-import decimal  # methods for correct rounding
-import csv      # methods for handling csv file i/o
-import time     # methods for tracking efficiency of the code (CPU time)
+from pymol import cmd     # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
+import pymol              # this one might be unnecessary since we specifically need pymol.cmd()
+import re                 # methods for string editing
+import decimal            # methods for correct rounding
+import csv                # methods for handling csv file i/o
+import time               # methods for tracking efficiency of the code (CPU time)
 
 ## Dictionary containing maximum sidechain SASA values (unrounded) for each biological amino acid; calculated with Pymol's get_area command, with dot_solvent = 1 (SASA = true)
 ## and with dot_density = 4 (maximum accuracy to the discrete surface area calculation); variables declared above methods are accessible to those methods! Key = residue name, value = SASA
@@ -56,15 +56,35 @@ Max_SASA = {'R' : 249.4673309,   # arg
             'Y' : 231.1389923,   # tyr
             'W' : 262.1514587}   # trp
 
-## TODO Also need to add a dictionary (or a second value to this dictionary) listing 3-letter aa codes so that PyMOL selection algebra can work.
+## Dictionary of 3-letter codes (required for pyMOL's selection algebra)
+aa_codes = {'R' : 'lys',   # arg	
+            'H' : 'his',   # his
+            'K' : 'lys',   # lys
+            'D' : 'asp',   # asp
+            'E' : 'glu',   # glu
+            'S' : 'ser',   # ser
+            'T' : 'thr',   # thr
+            'N' : 'asn',   # asn
+            'Q' : 'gln',   # gln
+            'C' : 'cys',   # cys
+            'G' : 'gly',   # gly
+            'P' : 'pro',   # pro
+            'A' : 'ala',   # ala
+            'V' : 'val',   # val
+            'I' : 'ile',   # ile
+            'L' : 'leu',   # leu
+            'M' : 'met',   # met
+            'F' : 'phe',   # phe
+            'Y' : 'tyr',   # tyr
+            'W' : 'trp'}   # trp
 
 threshold = 0.25   # the cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 
 ###########################################################################################################################################################
 ## Method for getting each amino acid position and using it to make a separate residue selection, and calculate and write SASA to output. (ALL RESIDUES) ##
 ###########################################################################################################################################################
-def find_Allchain(seq):
-    print("Length of fasta string (characters) is " + num_aa)
+def find_Allchain(seq, start):
+    print("Length of fasta string (characters) is " + str(num_aa))
 
     header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
 
@@ -72,7 +92,7 @@ def find_Allchain(seq):
         writer = csv.writer(file, delimiter = ',')
         writer.writerow(header)
     
-        for count, ltr in enumerate(seq, 66):  # 6sl6 is truncated but also has no electron density until res 89; need to implement code to detect problems like this
+        for count, ltr in enumerate(seq, start):  # 6sl6 is truncated but also has no electron density until res 89; need to implement code to detect problems like this
                                                # and account for them at runtime.
 
             ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
@@ -81,18 +101,13 @@ def find_Allchain(seq):
 
             ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
             ## note that this specific line of code can be universally useful for making discrete selections.
-            ## TODO: this code is good but pymol selection algebra needs 3-letter codes for resn; resn cannot recognize single letter codes,
-            ## therefore currently selections have invalid targets because pymol does not know what 'resn [ch]' means
-            cmd.select("sele", "resn " + ltr + " and resi " + count)
-
             ## SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
             ## and then typecast to string so it can be printed easily. TODO In the future, make rounding optional.
 
             # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
-            sasa = cmd.get_area("sele", 1, 0)
-            # print("SASA of " + ltr + "is " + str(sasa))
+            # Chain A must be specified every time, otherwise the value will be multiplied by the number of identical chains.
+            sasa = cmd.get_area("resi " + count + " and chain A", 1, 0)
             rel_sasa = sasa / Max_SASA[ltr]
-            # threshold check: exposure is "buried" or "exposed".
             burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
             if rel_sasa <= threshold:
                 burial = "Buried"
@@ -109,40 +124,22 @@ def find_Allchain(seq):
 ################################################################################################################################################################
 
 ## seq: string input (amino acid sequence); ch: the amino acid letter of choice; thr: relative SASA cutoff value for determining exposure
-def find_res(seq, ch):
-    print("Length of fasta string (characters) is " + num_aa)
+def find_res(seq, ch, start):
+    print("Length of fasta string (characters) is " + str(num_aa))
 
     header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
 
     with open('SASA' + jobquery + '.csv', 'w') as file: # write output values into csv row by row, vals in separate columns
         writer = csv.writer(file, delimiter = ',')
         writer.writerow(header)
-
-        #for count, ltr in enumerate(s, 1):     # setting [0] of the string = [1], find each 'K' and get its index (aa position). TODO - make the 1 in enumerate(s, 1) a user input value.
-        for count, ltr in enumerate(seq, 9):     # fasta of 5KSD is truncated in 2 directions, and "start index" for 5ksd is actually 12, not 1.
-                                                # Adjusting enumerate index by the difference in amino acids (N-terminal) corrects this. Note, 11 (12 - 1) are missing from the front,
-                                                # but python is a 0-index language, therefore make [10] the start index (0 - 10 = 11 index positions).
-                                                # TODO given this index problem, this script can be made generalizable by requiring the user to input either a fasta
-                                                # of the full length protein and/or the position where the N-terminal portion of the enzyme begins. (ex., user here would
-                                                # enter '12' as the first amino acid position, code would subtract 1 to adjust for 0 index, then it would be saved in a variable
-                                                # used by the enumerator). TODO TODO TODO This script works very well but could really use an argparser for these inputs.
-           ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO
-           ## TODO Even better: use an argparser to make the user indicate the position of the first lysine in their model's fasta. This                   ## TODO
-           ## TODO argument can then be taken and used to set enumerator's starting position. This avoids problems with unknown N-terminal truncations     ## TODO
-           ## TODO that arise from missing electron density or biochemical manipulation!                                                                   ## TODO
-           ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO         
-
-
-
-            ## Two conditional branch statements - in one case, unspecified amino acids is all amino acids; otherwise if specified, only that amino acid 
-
+        for count, ltr in enumerate(seq, start):    
             if ltr == ch:
                 ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
                 count = str(count)
                 residue = "" + ltr + count
                 ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
                 ## note that this specific line of code can be universally useful for making discrete selections.
-                cmd.select("sele", "resn " + ltr + " and resi " + count)
+                cmd.select("sele", "resn " + ltr + " and resi " + count + " and chain A")
 
                 ## SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
                 ## and then typecast to string so it can be printed easily. TODO In the future, make rounding optional.
@@ -198,26 +195,30 @@ unwantedHeader = ">Chain_A_A"
 ## Get the full aa sequence and count all lysines in the selection using this string
 fasta = cmd.get_fastastr('Chain A')
 clean_fasta = re.sub(unwantedHeader, "", fasta)
-clean_fasta = re.sub("\n", "", clean_fasta)     # remove everything except uppercase letters (Python's fasta string has aa's capitalized; meta data is lower cased and contains whitespace).
-                                               # NOTE: edit to above comment - the chain "name" included in the PDB entry's fasta sometimes includes capital letters, which this cleaning code
-                                               # will unintentionally retain and alter the sequence string from what it actually is. (6SL6 is an example of a file with this). Need to find a way
-                                               # to make the script perceive where the fasta sequence actually begins and only then begin Enumerating there in order to prevent this bug.
-                                               # TODO: Since the unchanged fasta object contains whitespace (carriage return newlines), is it possible to just remove the first full line (leaving only aa's
-                                               # and whitespace), and then strip whitespace?
-                                                
-num_aa = str(len(clean_fasta))
-#numLys = clean_fasta.count('K')
+clean_fasta = re.sub("\n", "", clean_fasta)     # remove Chain A header and all whitespace, leaving pyMOL's fasta string with capitalized aa letters.                                               
+num_aa = len(clean_fasta)
+
 print("FASTA sequence is: \n" + fasta)
 print("'Clean' FASTA sequence is: \n" + clean_fasta)
 
-threshold = 0.25   # in the future, this can be an argument (for user input)
+# In the future, this can be an argument (for user input)
+threshold = 0.25  
+
+# Iterate the residue positions into a Set, and use the fasta string to inform the starting position in the sequence
+stored_residues = set()
+cmd.iterate("chain A", 'stored_residues.add(resv)')
+residues = []
+for i in stored_residues:
+    residues.append(i)
+
+start = residues[0]
 
 if len(jobquery1) == 1:
     ch = jobquery1
-    find_res(clean_fasta, ch)
+    find_res(clean_fasta, ch, start)
 
 elif jobquery1 == "ALL":
-    find_Allchain(clean_fasta)
+    find_Allchain(clean_fasta, start)
 
 ## "Stopwatch" stops now; print runtime
 stop = time.time()
