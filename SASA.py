@@ -201,10 +201,7 @@ num_aa = len(clean_fasta)
 print("FASTA sequence is: \n" + fasta)
 print("'Clean' FASTA sequence is: \n" + clean_fasta)
 
-# In the future, this can be an argument (for user input)
-threshold = 0.25  
-
-# Iterate the residue positions into a Set, and use the fasta string to inform the starting position in the sequence
+# Iterate the residue positions into a Set, move the set into a List, and then use List[0] to set enumerate startpoint
 stored_residues = set()
 cmd.iterate("chain A", 'stored_residues.add(resv)')
 residues = []
