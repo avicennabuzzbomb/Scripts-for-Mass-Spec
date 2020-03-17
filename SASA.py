@@ -78,45 +78,64 @@ aa_codes = {'R' : 'lys',   # arg
             'Y' : 'tyr',   # tyr
             'W' : 'trp'}   # trp
 
+header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
 threshold = 0.25   # the cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 
+# Initialize empty data stuctures for handling python's iterator stream
+stored_residues = set()
+residues = []
+occu_vals = set()
+
+###########################################################################################################################################################
+## Helper Method: evaluate if current residue position is actually present in the structure model, and annotate accordingly                              ##
+###########################################################################################################################################################
+def occupancy(count):
+    cmd.iterate("resi " + count, 'occu_vals.add(q)')
+    if 0.0 in occu_vals: # if any atoms in the selection fail occupancy check, the selection must not have electron density
+        return False
+    
+    else:
+        return True
 ###########################################################################################################################################################
 ## Method for getting each amino acid position and using it to make a separate residue selection, and calculate and write SASA to output. (ALL RESIDUES) ##
 ###########################################################################################################################################################
 def find_Allchain(seq, start):
     print("Length of fasta string (characters) is " + str(num_aa))
 
-    header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
-
-    with open('SASA' + jobquery + '.csv', 'w') as file: # write output values into csv row by row, vals in separate columns
-        writer = csv.writer(file, delimiter = ',')
-        writer.writerow(header)
-    
-        for count, ltr in enumerate(seq, start):  # 6sl6 is truncated but also has no electron density until res 89; need to implement code to detect problems like this
+    for count, ltr in enumerate(seq, start):  # 6sl6 is truncated but also has no electron density until res 89; need to implement code to detect problems like this
                                                # and account for them at runtime.
+        ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
+        count = str(count)
+        residue = "" + ltr + count
+            
+        # Method call: Qualify this selection is actually present in the structure model
+        presence = occupancy(count)
+        occu_vals.clear()
 
-            ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
-            count = str(count)
-            residue = "" + ltr + count
-
-            ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
-            ## note that this specific line of code can be universally useful for making discrete selections.
-            ## SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
-            ## and then typecast to string so it can be printed easily. TODO In the future, make rounding optional.
-
+        # Calculations are not performed if the electron density is missing from the model; instead, their values are
+        # defaulted to "Not present in structure model", "N/A", and "N/A"
+        if presence == True:
             # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
             # Chain A must be specified every time, otherwise the value will be multiplied by the number of identical chains.
             sasa = cmd.get_area("resi " + count + " and chain A", 1, 0)
             rel_sasa = sasa / Max_SASA[ltr]
             burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
+        
             if rel_sasa <= threshold:
                 burial = "Buried"
-            sasa = str(round(sasa, 3))
-            rel_sasa = str(round(rel_sasa, 3))
-            ## Each SASA printed to console and then to output
-            print("\n" + residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
-            current_row = [residue, sasa, rel_sasa, burial]
-            writer.writerow(current_row)            
+        
+            sasa = str(sasa)
+            rel_sasa = str(rel_sasa)
+        
+        else:
+            sasa = "Not present in structure model"
+            rel_sasa = "N/A"
+            burial = "N/A"
+    
+        ## Each SASA printed to console and then to output
+        print("\n" + residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
+        current_row = [residue, sasa, rel_sasa, burial]
+        writer.writerow(current_row)            
     
     return
 ################################################################################################################################################################
@@ -127,36 +146,31 @@ def find_Allchain(seq, start):
 def find_res(seq, ch, start):
     print("Length of fasta string (characters) is " + str(num_aa))
 
-    header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
+    for count, ltr in enumerate(seq, start):    
+        if ltr == ch:
+            ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
+            count = str(count)
+            residue = "" + ltr + count
+            ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
+            ## note that this specific line of code can be universally useful for making discrete selections.
+            cmd.select("sele", "resn " + ltr + " and resi " + count + " and chain A")
 
-    with open('SASA' + jobquery + '.csv', 'w') as file: # write output values into csv row by row, vals in separate columns
-        writer = csv.writer(file, delimiter = ',')
-        writer.writerow(header)
-        for count, ltr in enumerate(seq, start):    
-            if ltr == ch:
-                ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
-                count = str(count)
-                residue = "" + ltr + count
-                ## selection algebra for picking one specific residue at a time and performing operation(s) on it.
-                ## note that this specific line of code can be universally useful for making discrete selections.
-                cmd.select("sele", "resn " + ltr + " and resi " + count + " and chain A")
-
-                ## SASA and relative SASA are calculated for each K in the string fasta, rounded to 3 decimal places, 
-                ## and then typecast to string so it can be printed easily. TODO In the future, make rounding optional.
-
-                # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
-                sasa = cmd.get_area("sele", 1, 0)
-                rel_sasa = sasa / Max_SASA[ch]
-                # threshold check: exposure is "buried" or "exposed".
-                burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
-                if rel_sasa <= threshold:
-                    burial = "Buried"
-                sasa = str(round(sasa, 3))
-                rel_sasa = str(round(rel_sasa, 3))
-                ## Each SASA printed to console and then to output
-                print("\n" + residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
-                current_row = [residue, sasa, rel_sasa, burial]
-                writer.writerow(current_row)
+            ## SASA and relative SASA are calculated for each residue <ch> in the string fasta and then typecast to string so it can be printed easily.
+            # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
+            sasa = cmd.get_area("sele", 1, 0)
+            rel_sasa = sasa / Max_SASA[ch]
+            # threshold check: exposure is "buried" or "exposed".
+            burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
+            
+            if rel_sasa <= threshold:
+                burial = "Buried"
+            
+            sasa = str(sasa)
+            rel_sasa = str(rel_sasa)
+            ## Each SASA printed to console and then to output
+            print("\n" + residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
+            current_row = [residue, sasa, rel_sasa, burial]
+            writer.writerow(current_row)
 
     return
 ################################################################################################################################################
@@ -166,57 +180,57 @@ def find_res(seq, ch, start):
 print("Welcome to SASAfrass. \nThis script automates the calculation the solvent-accessible surface area (SASA) of a target list of amino acid residue sidechains from a list of protein models.\nThe calculation uses PyMOL's built-in SASA algorithm, which requires that the protein has a structural model file that can be read by PyMOL.")
 #TODO print("Does your job contain more than one protein?") #if yes, provide the name of the list file or manually enter a list of PDB IDs or filenames
 print("")
+
 jobquery = str(input("Enter the PDB ID of the protein model you would like to analyze, then press ENTER:\n"))
+jobquery = jobquery.upper() # fully capitalize the input to make it case-insensitive
 print("You entered " + jobquery + ".\n")
-jobquery1 = str(input("Currently this script can calculate each residue's SASA (default), or it can calculate the SASA for each occurrence of an amino acid.\nTo get all residues, type 'all' and press ENTER;\nTo get only one kind of residue, type the single letter amino acid code (for example, 'K' for lysines) and press ENTER.\n"))
+
+jobquery1 = str(input("Currently this script can calculate each residue's SASA, or it can calculate the SASA for each occurrence of an amino acid.\nTo get all residues, type 'all' and press ENTER;\nTo get only one kind of residue, type the single letter amino acid code (for example, 'K' for lysines) and press ENTER.\n"))
+jobquery1 = jobquery1.upper() # fully capitalize the input to make it case-insensitive
 print("You entered " + jobquery1 + ".\n")
 
-jobquery1 = jobquery1.upper() # fully capitalize the input to make it case-insensitive
-
 ## "Stopwatch" starts now
-start = time.time()
+start_time = time.time()
 
-## start with a fresh pymol session
-cmd.reinitialize
+with open('SASA_' + jobquery + '.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
+    writer = csv.writer(file, delimiter = ',')
+    writer.writerow(header)
 
-## SASA settings
-cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
-cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
+    ## start with a fresh pymol session
+    cmd.reinitialize
 
-## load the pymol session, or fetch a PDB entry, containing the objects this script will work on.
-## When loading:
-# cmd.load('5KSD_C-terminal.pse','all') 
-#jobquery = "5KSD"
+    ## SASA settings
+    cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
+    cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
-## When fetching:
-cmd.fetch(jobquery, "Chain A")
-unwantedHeader = ">Chain_A_A"
+    ## When fetching:
+    cmd.fetch(jobquery, "Chain A")
+    unwantedHeader = ">Chain_A_A"
 
-## Get the full aa sequence and count all lysines in the selection using this string
-fasta = cmd.get_fastastr('Chain A')
-clean_fasta = re.sub(unwantedHeader, "", fasta)
-clean_fasta = re.sub("\n", "", clean_fasta)     # remove Chain A header and all whitespace, leaving pyMOL's fasta string with capitalized aa letters.                                               
-num_aa = len(clean_fasta)
+    ## Get the full aa sequence and count all lysines in the selection using this string
+    fasta = cmd.get_fastastr('Chain A')
+    clean_fasta = re.sub(unwantedHeader, "", fasta)
+    clean_fasta = re.sub("\n", "", clean_fasta)     # remove Chain A header and all whitespace, leaving pyMOL's fasta string with capitalized aa letters.                                               
+    num_aa = len(clean_fasta)
 
-print("FASTA sequence is: \n" + fasta)
-print("'Clean' FASTA sequence is: \n" + clean_fasta)
+    print("FASTA sequence is: \n" + fasta)
+    print("'Clean' FASTA sequence is: \n" + clean_fasta)
 
-# Iterate the residue positions into a Set, move the set into a List, and then use List[0] to set enumerate startpoint
-stored_residues = set()
-cmd.iterate("chain A", 'stored_residues.add(resv)')
-residues = []
-for i in stored_residues:
-    residues.append(i)
+    # Iterate the residue positions into a Set, move the set into a List, and then use List[0] to set enumerator's startpoint
+    cmd.iterate("chain A", 'stored_residues.add(resv)')
 
-start = residues[0]
+    for i in stored_residues:
+        residues.append(i)
 
-if len(jobquery1) == 1:
-    ch = jobquery1
-    find_res(clean_fasta, ch, start)
+    start = residues[0]
 
-elif jobquery1 == "ALL":
-    find_Allchain(clean_fasta, start)
+    if len(jobquery1) == 1:
+        ch = jobquery1
+        find_res(clean_fasta, ch, start)
+
+    elif jobquery1 == "ALL":
+        find_Allchain(clean_fasta, start)
 
 ## "Stopwatch" stops now; print runtime
-stop = time.time()
-print("Time (seconds) taken for SASA calculations: " + str(stop - start))
+stop_time = time.time()
+print("Time (seconds) taken for SASA calculations: " + str(stop_time - start_time))
