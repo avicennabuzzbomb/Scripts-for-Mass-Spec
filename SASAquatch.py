@@ -1,13 +1,16 @@
 ## Calculate the Solvent-Accessible Surface Area (SASA) of individual residues at a time or as a group in PyMOL,
 ## then print to an output file.
-
-## This script works by starting a fresh PyMOL session and then loading each requested pymol session (or fetching each requested PDB ID). 
+## TODO the driver script (NunuDrives.py) will loop through THIS script
+## NOTE This script works by starting a fresh PyMOL session and then loading each requested pymol session (or fetching each requested PDB ID). 
 ## To access individual residues one at a time, a string is made from PyMOL's fasta sequence command, and this string is copied and "cleaned" 
 ## so that a version containing only the amino acids is left. Then, the string is used to get the position (index) of each residue from python's enumerator.
 ## Whenever a residue is found in the string, its index is recorded where the first index of the string is set to '1'. Then, PyMOL selection and SASA calculation
-## functions are called and written to a new csv output file.
+## functions are called and written to a new csv output file. 
+
+## NOTE this script is written to be driven by an external script which will loop it, passing a PDB ID to it with each iteration. Header and subheader will be printed on each pass.
 """
-The recommended way to run PyMOL-Python scripts is by using PyMOL as the interpreter. This is supported by all versions of PyMOL, including the pre-compiled bundles provided by Schrödinger.
+The recommended way to run PyMOL-Python scripts is by using PyMOL as the interpreter. This is supported by all versions of PyMOL, 
+including the pre-compiled bundles provided by Schrödinger.
 
 Example from a shell:
 
@@ -24,7 +27,7 @@ PyMOL> run script.py
 ## NOTE - 'reinitialize' removes all objects from this pymol session's memory (it's a reset as if the program was restarted) 
 """
 
-## TODO TODO TODO Add arguments and a docstring - this is all you need to do to allow this to be looped on the cluster (by another script, on the cluster. REEEE)
+## TODO TODO TODO Make this MORE agnostic by accounting for aa sequences with nonsense characters (? or -)
 
 from pymol import cmd     # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
 import pymol              # this one might be unnecessary since we specifically need pymol.cmd()
@@ -33,8 +36,15 @@ import decimal            # methods for correct rounding
 import csv                # methods for handling csv file i/o
 import time               # methods for tracking efficiency of the code (CPU time)
 import os                 # methods for directory handling
+import sys                # methods for taking command line arguments. Script's name is sys.arg[0] by default
 
-## Dictionary containing maximum sidechain SASA values (unrounded) for each biological amino acid; calculated with Pymol's get_area command, with dot_solvent = 1 (SASA = true)
+query = str(sys.argv[3].upper()) # assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
+depth = str(sys.argv[4].upper()) # assign query type ('ALL' or aa single letter code) to the second argument. NOTE On its own, this script must take arguments
+                                 # at [3] and [4] because the "pymol" and "-cq" flag used to set pymol as the interpreter are being interpreted
+                                 # by this script as its arguments. If run by an external script as a subprocess, the ranges are lower [0] and [1] because the 
+                                 # interpreter argument is stated when invoking the external script instead of when invoking this one.
+
+## NOTE This Dictionary contains maximum sidechain SASA values (unrounded) for each biological amino acid; calculated with Pymol's get_area command, with dot_solvent = 1 (SASA = true)
 ## and with dot_density = 4 (maximum accuracy to the discrete surface area calculation); variables declared above methods are accessible to those methods! Key = residue name, value = SASA
 Max_SASA = {'R' : 249.4673309,   # arg	
             'H' : 194.6491394,   # his
@@ -57,7 +67,7 @@ Max_SASA = {'R' : 249.4673309,   # arg
             'Y' : 231.1389923,   # tyr
             'W' : 262.1514587}   # trp
 
-## Dictionary of 3-letter codes (required for pyMOL's selection algebra)
+## NOTE This Dictionary of 3-letter codes (required for pyMOL's selection algebra)
 aa_codes = {'R' : 'lys',   # arg	
             'H' : 'his',   # his
             'K' : 'lys',   # lys
@@ -79,8 +89,8 @@ aa_codes = {'R' : 'lys',   # arg
             'Y' : 'tyr',   # tyr
             'W' : 'trp'}   # trp
 
-header = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?"]
-threshold = 0.25   # the cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
+# The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
+threshold = 0.25
 
 # Initialize empty data stuctures for handling python's iterator stream
 stored_residues = set()
@@ -102,11 +112,8 @@ def occupancy(count):
 ## Method for getting each amino acid position and using it to make a separate residue selection, and calculate and write SASA to output. (ALL RESIDUES) ##
 ###########################################################################################################################################################
 def find_Allchain(seq, start):
-    print("Length of fasta string (characters) is " + str(num_aa))
-
-    for count, ltr in enumerate(seq, start):  # 6sl6 is truncated but also has no electron density until res 89; need to implement code to detect problems like this
-                                               # and account for them at runtime.
-        ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
+    for count, ltr in enumerate(seq, start): 
+        ## Typecasting count (index or aa position) to a string allows the script to use "count" in a PyMOL selection-expression.
         count = str(count)
         residue = "" + ltr + count
             
@@ -134,9 +141,9 @@ def find_Allchain(seq, start):
             sasa = "Not present in structure model"
             rel_sasa = "N/A"
             burial = "N/A"
-    
+
         ## Each SASA printed to console and then to output
-        print("\n" + residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
+        print(residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
         current_row = [residue, sasa, rel_sasa, burial]
         writer.writerow(current_row)            
     
@@ -146,8 +153,6 @@ def find_Allchain(seq, start):
 ## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output. (ONLY SPECIFIED RESIDUES)#
 ################################################################################################################################################################
 def find_res(seq, ch, start):
-    print("Length of fasta string (characters) is " + str(num_aa))
-
     for count, ltr in enumerate(seq, start):    
         if ltr == ch:
             ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
@@ -180,35 +185,26 @@ def find_res(seq, ch, start):
                 burial = "N/A"
     
             ## Each SASA printed to console and then to output
-            print("\n" + residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
+            print(residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
             current_row = [residue, sasa, rel_sasa, burial]
             writer.writerow(current_row)
 
     return
     
 ################################################################################################################################################
-
-##~~~~~~~~~~~~~~~~ ___DRIVER CODE___~~~~~~~~~~~~~~~~##
-## Query the user for job parameters:
-print("Welcome to SASAfrass. \nThis script automates the calculation the solvent-accessible surface area (SASA) of a target list of amino acid residue sidechains from a list of protein models.\nThe calculation uses PyMOL's built-in SASA algorithm, which requires that the protein has a structural model file that can be read by PyMOL.")
-#TODO print("Does your job contain more than one protein?") #if yes, provide the name of the list file or manually enter a list of PDB IDs or filenames
-#TODO purpose is to direct user to using the HTC cluster for jobs containing multiple proteins. More than one is too heavy for a personal machine.
-print("")
-
-jobquery = str(input("Enter the PDB ID of the protein model you would like to analyze, then press ENTER:\n"))
-jobquery = jobquery.upper() # fully capitalize the input to make it case-insensitive
-print("You entered " + jobquery + ".\n")
-
-jobquery1 = str(input("Currently this script can calculate each residue's SASA, or it can calculate the SASA for each occurrence of an amino acid.\nTo get all residues, type 'all' and press ENTER;\nTo get only one kind of residue, type the single letter amino acid code (for example, 'K' for lysines) and press ENTER.\n"))
-jobquery1 = jobquery1.upper() # fully capitalize the input to make it case-insensitive
-print("You entered " + jobquery1 + ".\n")
+##~~~~~~~~~~~~~~~~ ___DRIVER CODE___~~~~~~~~~~~~~~~~##  NOTE Writes to the csv file with each method call.
 
 ## "Stopwatch" starts now
 start_time = time.time()
 
-with open('SASA_' + jobquery + '_' + jobquery1 + '.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
+header = ["SOLVENT ACCESSIBLE SURFACE AREAS OF TARGET PROTEOME"]
+
+with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
+                                                                              # NOTE: the last argument, "newline = ''" prevents the file being written 
+                                                                              # at every other line  
     writer = csv.writer(file, delimiter = ',')
-    writer.writerow("\nPDB ID: " + jobquery)
+    
+    # Begin writing into the csv output file with a master header describing the job
     writer.writerow(header)
 
     ## start with a fresh pymol session
@@ -219,33 +215,41 @@ with open('SASA_' + jobquery + '_' + jobquery1 + '.csv', 'w', newline = '') as f
     cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
     ## When fetching:
-    cmd.fetch(jobquery, "Chain A")
+    cmd.fetch(query, "Chain A")
     unwantedHeader = ">Chain_A_A"
 
     ## Get the full aa sequence and count all lysines in the selection using this string
     fasta = cmd.get_fastastr('Chain A')
     clean_fasta = re.sub(unwantedHeader, "", fasta)
-    clean_fasta = re.sub("\n", "", clean_fasta)     # remove Chain A header and all whitespace, leaving pyMOL's fasta string with capitalized aa letters.                                               
-    num_aa = len(clean_fasta)
+    clean_fasta = re.sub("\n", "", clean_fasta)     # remove Chain A header and all whitespace, leaving pyMOL's fasta string with capitalized aa single-letter codes.                                               
 
-    print("FASTA sequence is: \n" + fasta)
-    print("'Clean' FASTA sequence is: \n" + clean_fasta)
+    # Begin writing into the csv output file. NOTE For a multiprotein job, this provides spacer and subheaders for each individual protein output
+    subheader = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?", "PDB ID: " + query, "FASTA:", clean_fasta]
+    writer.writerow("")
+    writer.writerow(subheader)
 
-    # Iterate the residue positions into a Set, move the set into a List, and then use List[0] to set enumerator's startpoint
+    # Iterate the residue positions into a Set named stored_residues, move the set into a List (so elements can be accessed by index) named residues, 
+    # and then use List[0] to set enumerator's startpoint
     cmd.iterate("chain A", 'stored_residues.add(resv)')
-
     for i in stored_residues:
         residues.append(i)
-
+      
     start = residues[0]
 
-    if len(jobquery1) == 1:
-        ch = jobquery1
+    # Run the job with the query (requested PDB ID) based on its type
+    if len(depth) == 1:
+        ch = depth
         find_res(clean_fasta, ch, start)
 
-    elif jobquery1 == "ALL":
+    elif depth == "ALL":
         find_Allchain(clean_fasta, start)
-
+    
 ## "Stopwatch" stops now; print runtime
 stop_time = time.time()
-print("\nTime (seconds) taken for SASA calculations: " + str(stop_time - start_time) + "\n\nOutput file: " + "SASA_" + jobquery + "_" + jobquery1 + ".csv was saved in the working directory: " + os.getcwd())
+print("\nTime (seconds) taken for SASA calculations: " + str(stop_time - start_time) + "\n\nOutput file: " + "SASA_" + query + "_" + depth + ".csv was saved in the working directory: " + os.getcwd())
+
+'''
+NOTE: WARNING. The following exceptions are thrown once the script finishes (it actually works! but throws this pair of exceptions):
+Error: unsupported file type: 6sl6
+Error: Argument processing aborted due to exception (above).
+'''
