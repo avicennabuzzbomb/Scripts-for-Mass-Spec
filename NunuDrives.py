@@ -8,23 +8,22 @@
 import re
 import os
 
+# collect the arguments into a list
 batch_file = open("batch.txt", "r")
 query_list = batch_file.readlines()
 batch_file.close()
+
+# organize the list elements so that depth is considered separately from the query list
 query_string = query_list[0]
 query_list = query_string.split(',')
+depth = query_list[len(query_list) - 1]
+query_list = query_list[:-1]
 
 list_index = 0
 count = 0
 for i in query_list:
-
-    depth = query_list[len(query_list) - 1]
-    
     if count < len(query_list) - 1:        
         query = query_list[count]
-        # TODO use query_list[count] as the depth argument to SASAquatch.py
-        # TODO use query to set the current job as an argument
-        # TODO invoke SASAquatch.py with these arguments inside this loop
 
         os.system("SASAquatch.py " + query + depth)
 

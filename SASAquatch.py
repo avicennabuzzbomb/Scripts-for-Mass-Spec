@@ -38,8 +38,8 @@ import time               # methods for tracking efficiency of the code (CPU tim
 import os                 # methods for directory handling
 import sys                # methods for taking command line arguments. Script's name is sys.arg[0] by default
 
-query = str(sys.argv[3].upper()) # assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
-depth = str(sys.argv[4].upper()) # assign query type ('ALL' or aa single letter code) to the second argument. NOTE On its own, this script must take arguments
+query = str(sys.argv[0].upper()) # assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
+depth = str(sys.argv[1].upper()) # assign query type ('ALL' or aa single letter code) to the second argument. NOTE On its own, this script must take arguments
                                  # at [3] and [4] because the "pymol" and "-cq" flag used to set pymol as the interpreter are being interpreted
                                  # by this script as its arguments. If run by an external script as a subprocess, the ranges are lower [0] and [1] because the 
                                  # interpreter argument is stated when invoking the external script instead of when invoking this one.
@@ -75,9 +75,9 @@ aa_codes = {'R' : 'lys',   # arg
             'E' : 'glu',   # glu
             'S' : 'ser',   # ser
             'T' : 'thr',   # thr
-            'N' : 'asn',   # asn
-            'Q' : 'gln',   # gln
-            'C' : 'cys',   # cys
+            'N' : 'asn',   # asn                # TODO TODO TODO several rhomboid protease files throw a key mismatch error because
+            'Q' : 'gln',   # gln                # the fasta enumeration returns a '?' at one or more aa positions. Need to troubleshoot
+            'C' : 'cys',   # cys                # how the retrieved fasta is pulling a '?' or if it's even present there. Unusual cases.
             'G' : 'gly',   # gly
             'P' : 'pro',   # pro
             'A' : 'ala',   # ala
@@ -88,6 +88,28 @@ aa_codes = {'R' : 'lys',   # arg
             'F' : 'phe',   # phe
             'Y' : 'tyr',   # tyr
             'W' : 'trp'}   # trp
+
+# NOTE / TODO When running the commands in this script individually in pymol's command line for the protease structures,
+# this is returned:
+'''
+PyMOL>print(cmd.get_fastastr('all'))
+>2xov
+ERAGPVTWVMMIACVVVFIAMQILGDQEVMLWLAWPFDPTLKFEFWRYFTHALMHFSLMHILFNLLWWWY
+LGGAVEKRLGSGKLIVITLISALLSGYVQQKFSGPWFGGLSGVVYALMGYVWLRGERDPQSGIYLQRGLI
+IFALIWIVAGWFDLFGMSMANGAHIAGLAVGLAMAFVDSLN
+
+PyMOL>reinitialize
+PyMOL>fetch 3zmi
+please wait ...
+ ExecutiveLoad-Detail: Detected mmCIF
+ CmdLoad: loaded as "3zmi".
+PyMOL>print(cmd.get_fastastr('all'))
+>3zmi
+RAGPVTWVMMIACVVVFIAMQILGDQEVMLWLAWPFDPTLKFEFWRYFTHALMHFSLMHILFNLLWWWYL
+GGAVEKRLGSGKLIVITLISALLSGYVQQKFSGPWFGGLSGVVYALMGYVWLRGERDPQSGIYLQRGLII
+FALIWIVAGWFDLFGMSMANGAHIAGLAVGLAMAFVDSL
+'''
+# NOTE / TODO: this implies that there is nothing wrong with the string itself, instead that there is an issue retrieving it.
 
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 threshold = 0.25
@@ -216,6 +238,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
 
     ## When fetching:
     cmd.fetch(query, "Chain A")
+    cmd.remove("het")
     unwantedHeader = ">Chain_A_A"
 
     ## Get the full aa sequence and count all lysines in the selection using this string
@@ -233,10 +256,11 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     cmd.iterate("chain A", 'stored_residues.add(resv)')
     for i in stored_residues:
         residues.append(i)
-      
+
+    print("The first amino acid is at position " + str(residues[0]))  
     start = residues[0]
 
-    # Run the job with the query (requested PDB ID) based on its type
+    # Run the job with the query (requested PDB ID) based on its type. NOTE / TODO Currently, this check works by looking for a single letter only (not robust, needs improving)
     if len(depth) == 1:
         ch = depth
         find_res(clean_fasta, ch, start)
