@@ -14,20 +14,21 @@ including the pre-compiled bundles provided by Schrödinger.
 
 Example from a shell:
 
-shell> pymol -cq script.py
+shell> pymol -c script.py
 With arguments (sys.argv becomes ["script.py", "foo", "bar"]):
 
-shell> pymol -cq script.py -- foo bar
-Example from a running PyMOL instance:
+shell> pymol -c script.py foo bar
 
+Example from a running PyMOL instance:
 PyMOL> run script.py
 
-## NOTE - To run a sript in PyMOL, it needs to be saved in Pymol's working directory.
-## NOTE - to find a PyMOL session's working directory, simply use 'pwd' in PyMOL's command line; use cd to change directories.
+## NOTE - To run a script from the PyMOL command line, it needs to be saved in Pymol's working directory.
+## NOTE - PyMOL's command line commands are Unix-like (same as Bash and Windows command line)
 ## NOTE - 'reinitialize' removes all objects from this pymol session's memory (it's a reset as if the program was restarted) 
 """
 
-## TODO TODO TODO Make this MORE agnostic by accounting for aa sequences with nonsense characters (? or -)
+## TODO TODO TODO Subsume this all into a TRY-CATCH-FINALLY block to handle exceptions and log them into separate output files when the job for an entry fails.
+## TODO TODO TODO This will allow me to record each exception that occurs due to the PDB being stupid and bad at file structure, so I can adapt this code to it.
 
 from pymol import cmd     # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
 import pymol              # this one might be unnecessary since we specifically need pymol.cmd()
@@ -36,13 +37,15 @@ import decimal            # methods for correct rounding
 import csv                # methods for handling csv file i/o
 import time               # methods for tracking efficiency of the code (CPU time)
 import os                 # methods for directory handling
-import sys                # methods for taking command line arguments. Script's name is sys.arg[0] by default
+import sys                # methods for taking command line arguments. Script's name is sys.arg[0] by default when -c flag is used
 
-query = str(sys.argv[0].upper()) # assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
-depth = str(sys.argv[1].upper()) # assign query type ('ALL' or aa single letter code) to the second argument. NOTE On its own, this script must take arguments
-                                 # at [3] and [4] because the "pymol" and "-cq" flag used to set pymol as the interpreter are being interpreted
-                                 # by this script as its arguments. If run by an external script as a subprocess, the ranges are lower [0] and [1] because the 
-                                 # interpreter argument is stated when invoking the external script instead of when invoking this one.
+query = str(sys.argv[3].upper()) # query: assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
+depth = str(sys.argv[4].upper()) # depth: assign query type ('ALL' or aa single letter code) to the second argument. 
+                                 # NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpreted
+                                 # by this script as additional arguments [0], [1], and [2]. Unclear why this is the case. TODO eventually fix that, but for now everything works!
+
+print("query: " + query)
+print("depth: " + depth)
 
 ## NOTE This Dictionary contains maximum sidechain SASA values (unrounded) for each biological amino acid; calculated with Pymol's get_area command, with dot_solvent = 1 (SASA = true)
 ## and with dot_density = 4 (maximum accuracy to the discrete surface area calculation); variables declared above methods are accessible to those methods! Key = residue name, value = SASA
@@ -75,9 +78,9 @@ aa_codes = {'R' : 'lys',   # arg
             'E' : 'glu',   # glu
             'S' : 'ser',   # ser
             'T' : 'thr',   # thr
-            'N' : 'asn',   # asn                # TODO TODO TODO several rhomboid protease files throw a key mismatch error because
-            'Q' : 'gln',   # gln                # the fasta enumeration returns a '?' at one or more aa positions. Need to troubleshoot
-            'C' : 'cys',   # cys                # how the retrieved fasta is pulling a '?' or if it's even present there. Unusual cases.
+            'N' : 'asn',   # asn                
+            'Q' : 'gln',   # gln                
+            'C' : 'cys',   # cys                
             'G' : 'gly',   # gly
             'P' : 'pro',   # pro
             'A' : 'ala',   # ala
@@ -88,28 +91,6 @@ aa_codes = {'R' : 'lys',   # arg
             'F' : 'phe',   # phe
             'Y' : 'tyr',   # tyr
             'W' : 'trp'}   # trp
-
-# NOTE / TODO When running the commands in this script individually in pymol's command line for the protease structures,
-# this is returned:
-'''
-PyMOL>print(cmd.get_fastastr('all'))
->2xov
-ERAGPVTWVMMIACVVVFIAMQILGDQEVMLWLAWPFDPTLKFEFWRYFTHALMHFSLMHILFNLLWWWY
-LGGAVEKRLGSGKLIVITLISALLSGYVQQKFSGPWFGGLSGVVYALMGYVWLRGERDPQSGIYLQRGLI
-IFALIWIVAGWFDLFGMSMANGAHIAGLAVGLAMAFVDSLN
-
-PyMOL>reinitialize
-PyMOL>fetch 3zmi
-please wait ...
- ExecutiveLoad-Detail: Detected mmCIF
- CmdLoad: loaded as "3zmi".
-PyMOL>print(cmd.get_fastastr('all'))
->3zmi
-RAGPVTWVMMIACVVVFIAMQILGDQEVMLWLAWPFDPTLKFEFWRYFTHALMHFSLMHILFNLLWWWYL
-GGAVEKRLGSGKLIVITLISALLSGYVQQKFSGPWFGGLSGVVYALMGYVWLRGERDPQSGIYLQRGLII
-FALIWIVAGWFDLFGMSMANGAHIAGLAVGLAMAFVDSL
-'''
-# NOTE / TODO: this implies that there is nothing wrong with the string itself, instead that there is an issue retrieving it.
 
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 threshold = 0.25
@@ -171,9 +152,9 @@ def find_Allchain(seq, start):
     
     return
 
-################################################################################################################################################################
-## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output. (ONLY SPECIFIED RESIDUES)#
-################################################################################################################################################################
+##################################################################################################################################################################
+## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output. (ONLY SPECIFIED RESIDUES) ##
+##################################################################################################################################################################
 def find_res(seq, ch, start):
     for count, ltr in enumerate(seq, start):    
         if ltr == ch:
@@ -236,13 +217,13 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
     cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
-    ## When fetching:
+    ## Import structure, get rid of unwanted (non-amino acid) objects
     cmd.fetch(query, "Chain A")
     cmd.remove("het")
-    unwantedHeader = ">Chain_A_A"
 
-    ## Get the full aa sequence and count all lysines in the selection using this string
+    ## Get the full fasta string sequence, exclude anything but AA single-letter characters
     fasta = cmd.get_fastastr('Chain A')
+    unwantedHeader = ">Chain_A_A"
     clean_fasta = re.sub(unwantedHeader, "", fasta)
     clean_fasta = re.sub("\n", "", clean_fasta)     # remove Chain A header and all whitespace, leaving pyMOL's fasta string with capitalized aa single-letter codes.                                               
 
@@ -260,7 +241,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     print("The first amino acid is at position " + str(residues[0]))  
     start = residues[0]
 
-    # Run the job with the query (requested PDB ID) based on its type. NOTE / TODO Currently, this check works by looking for a single letter only (not robust, needs improving)
+    # Run the job with the query (requested PDB ID) based on its type.
     if len(depth) == 1:
         ch = depth
         find_res(clean_fasta, ch, start)

@@ -1,12 +1,13 @@
-# driver script to pass arguments to SASAquatch.py, including a list of PDB IDs
-
-# TODO Implement a list reader?
-# TODO Implement a for loop iterating through the list of PDB IDs, calling SASAquatch.py with each PDB ID as an argument
-# TODO Implement an additional argument, taken from the header of the list of PDB IDs, specifying SASA parameters such as threshold, dot_density and dot_solvent;
-# TODO Most importantly, have one of these arguments be 1) whether the SASA is for a specific amino acid / set of amino acids, or 2) if ALL amino acids are requested per protein.
+# This is a "driver" script to pass arguments to other scripts, such as SASAquatch.py. It reads the contents of a batch text file,
+# (for example, batch.txt) such as a list of PDB IDs. It then parses the list into a pair of variables, 'query' and 'depth', and loops through the list
+# for each possible value of 'query'. At each iteration in the loop, it passes those variables to the script it is calling (currently, SASAquatch.py).
+# NOTE that this command line call inside the loop is programmable, so this script could in principle be used to drive ANY script written for PyMOL.
 
 import re
 import os
+
+script_name = "SASAquatch.py"
+print("PyMOL script: " + script_name)
 
 # collect the arguments into a list
 batch_file = open("batch.txt", "r")
@@ -17,18 +18,14 @@ batch_file.close()
 query_string = query_list[0]
 query_list = query_string.split(',')
 depth = query_list[len(query_list) - 1]
-query_list = query_list[:-1]
+del query_list[-1]
 
-list_index = 0
+# loops through the query list, calling the named script with the current values of 'query' and 'depth'
 count = 0
-for i in query_list:
-    if count < len(query_list) - 1:        
-        query = query_list[count]
-
-        os.system("SASAquatch.py " + query + depth)
-
-        count += 1
-        print("current query: " + query)
+for i in query_list:         
+    os.system("pymol -c " + script_name + " " + i + " " + depth)
+    print("current query: " + i)
+    count += 1
 
 print("depth = " + depth)
 print("len(query_list) = " + str(len(query_list)))
