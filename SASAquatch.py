@@ -1,13 +1,12 @@
 ## Calculate the Solvent-Accessible Surface Area (SASA) of individual residues at a time or as a group in PyMOL,
 ## then print to an output file.
-## TODO the driver script (NunuDrives.py) will loop through THIS script
+## NOTE the driver script (NunuDrives.py) will loop through this script
 ## NOTE This script works by starting a fresh PyMOL session and then loading each requested pymol session (or fetching each requested PDB ID). 
 ## To access individual residues one at a time, a string is made from PyMOL's fasta sequence command, and this string is copied and "cleaned" 
 ## so that a version containing only the amino acids is left. Then, the string is used to get the position (index) of each residue from python's enumerator.
 ## Whenever a residue is found in the string, its index is recorded where the first index of the string is set to '1'. Then, PyMOL selection and SASA calculation
 ## functions are called and written to a new csv output file. 
 
-## NOTE this script is written to be driven by an external script which will loop it, passing a PDB ID to it with each iteration. Header and subheader will be printed on each pass.
 """
 The recommended way to run PyMOL-Python scripts is by using PyMOL as the interpreter. This is supported by all versions of PyMOL, 
 including the pre-compiled bundles provided by Schrödinger.
@@ -27,6 +26,11 @@ PyMOL> run script.py
 ## NOTE - 'reinitialize' removes all objects from this pymol session's memory (it's a reset as if the program was restarted) 
 """
 
+## TODO: Can now distinguish between unique chains, but getting residue positions with cmd.iterate() now needs to be able to separately target each chain.
+## TODO: Make a new set() for each unique chain? Can call it by making chain ID (A, B, C etc.) itself a variable; would need to create a dictionary for each new unique chain,
+## TODO: and use the unique fasta sequence as the key? would need to first store the chain IDs in a dictionary with their associated, cleaned sequences... then capture
+## TODO: those sequences into fasta_list if unique by calling them from the dictionary.
+
 ## TODO TODO TODO Subsume this all into a TRY-CATCH-FINALLY block to handle exceptions and log them into separate output files when the job for an entry fails.
 ## TODO TODO TODO This will allow me to record each exception that occurs due to the PDB being stupid and bad at file structure, so I can adapt this code to it.
 
@@ -42,7 +46,7 @@ import sys                # methods for taking command line arguments. Script's 
 query = str(sys.argv[3].upper()) # query: assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
 depth = str(sys.argv[4].upper()) # depth: assign query type ('ALL' or aa single letter code) to the second argument. 
                                  # NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpreted
-                                 # by this script as additional arguments [0], [1], and [2]. Unclear why this is the case. TODO eventually fix that, but for now everything works!
+                                 # by this script as initial arguments [0], [1], and [2]. Unclear why this is the case. TODO eventually fix that, but for now everything works!
 
 print("query: " + query)
 print("depth: " + depth)
@@ -95,14 +99,14 @@ aa_codes = {'R' : 'lys',   # arg
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 threshold = 0.25
 
-# Initialize empty data stuctures for handling python's iterator stream
+# Initialize empty data stuctures for handling python's iterator stream and generally crappy API
 stored_residues = set()
 residues = []
 occu_vals = set()
 
-###########################################################################################################################################################
-## Helper Method: evaluate if current residue position is actually present in the structure model, and annotate accordingly                              ##
-###########################################################################################################################################################
+#############################################################################################################################################################
+## Helper Method: evaluate if electron density exists at the current residue position is actually present in the structure model, and annotate accordingly ##
+#############################################################################################################################################################
 def occupancy(count):
     cmd.iterate("resi " + count, 'occu_vals.add(q)')
     if 0.0 in occu_vals: # if any atoms in the selection fail occupancy check, the selection must not have electron density
@@ -195,7 +199,7 @@ def find_res(seq, ch, start):
     return
     
 ################################################################################################################################################
-##~~~~~~~~~~~~~~~~ ___DRIVER CODE___~~~~~~~~~~~~~~~~##  NOTE Writes to the csv file with each method call.
+##~~~~~~~~~~~~~~~~ ___DRIVER CODE___~~~~~~~~~~~~~~~~##  (Writes to the csv file with each method call).
 
 ## "Stopwatch" starts now
 start_time = time.time()
@@ -203,58 +207,66 @@ start_time = time.time()
 header = ["SOLVENT ACCESSIBLE SURFACE AREAS OF TARGET PROTEOME"]
 
 with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
-                                                                              # NOTE: the last argument, "newline = ''" prevents the file being written 
-                                                                              # at every other line  
+    # create a .csv file writer object                                                                         
     writer = csv.writer(file, delimiter = ',')
     
     # Begin writing into the csv output file with a master header describing the job
     writer.writerow(header)
 
-    ## start with a fresh pymol session
+    # start with a fresh pymol session
     cmd.reinitialize
 
-    ## SASA settings
+    # SASA settings
     cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
     cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
-    ## Import structure, get rid of unwanted (non-amino acid) objects
-    cmd.fetch(query, "Chain A")
+    # Import structure, then remove unwanted (non-amino acid, or "het") objects
+    cmd.fetch(query)
     cmd.remove("het")
-
-    ## Get the full fasta string sequence, exclude anything but AA single-letter characters
-    fasta = cmd.get_fastastr('Chain A')
-    unwantedHeader = ">Chain_A_A"
-    clean_fasta = re.sub(unwantedHeader, "", fasta)
-    clean_fasta = re.sub("\n", "", clean_fasta)     # remove Chain A header and all whitespace, leaving pyMOL's fasta string with capitalized aa single-letter codes.                                               
-
-    # Begin writing into the csv output file. NOTE For a multiprotein job, this provides spacer and subheaders for each individual protein output
-    subheader = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?", "PDB ID: " + query, "FASTA:", clean_fasta]
-    writer.writerow("")
-    writer.writerow(subheader)
-
-    # Iterate the residue positions into a Set named stored_residues, move the set into a List (so elements can be accessed by index) named residues, 
-    # and then use List[0] to set enumerator's startpoint
-    cmd.iterate("chain A", 'stored_residues.add(resv)')
-    for i in stored_residues:
-        residues.append(i)
-
-    print("The first amino acid is at position " + str(residues[0]))  
-    start = residues[0]
-
-    # Run the job with the query (requested PDB ID) based on its type.
-    if len(depth) == 1:
-        ch = depth
-        find_res(clean_fasta, ch, start)
-
-    elif depth == "ALL":
-        find_Allchain(clean_fasta, start)
     
-## "Stopwatch" stops now; print runtime
-stop_time = time.time()
-print("\nTime (seconds) taken for SASA calculations: " + str(stop_time - start_time) + "\n\nOutput file: " + "SASA_" + query + "_" + depth + ".csv was saved in the working directory: " + os.getcwd())
+    # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
+    # leaving only the AA single-letter characters in the string.
+    fasta_list = []
+    for chain in cmd.get_chains():
+        fasta = cmd.get_fastastr("Chain " + str(chain))      
+        fasta = fasta.split("\n",1)[1]
+        fasta = re.sub("\n", "", fasta)
+        
+        # add only unique chain strings to the list of chains to run per protein
+        if fasta not in fasta_list:
+            fasta_list.append(fasta)
 
-'''
-NOTE: WARNING. The following exceptions are thrown once the script finishes (it actually works! but throws this pair of exceptions):
-Error: unsupported file type: 6sl6
-Error: Argument processing aborted due to exception (above).
-'''
+    # Begin writing into the csv output file. For a multichain protein, this writes each chain to the same file separated by subheaders.
+    chain_count = 0
+    subheader = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", fasta]
+
+    for fasta in fasta_list:
+        chain_count += 1
+        writer.writerow("")
+        writer.writerow(subheader)
+
+        # Iterate the residue positions into a Set named stored_residues, move the set into a List (so elements can be accessed by index) named residues, 
+        # and then use List[0] to set enumerator's startpoint
+        cmd.iterate("chain A", 'stored_residues.add(resv)')   # TODO TODO TODO calling iterate now needs to be chain-agnostic (not always calling Chain A anymore!)
+        for i in stored_residues:
+            residues.append(i)
+
+        print("The first amino acid is at position " + str(residues[0]))  
+        start = residues[0]
+
+        # Run the job with the query (requested PDB ID) based on its type. If a single amino acid is requested, the input is compared to an amino acid dictionary
+        # to ensure it's a real amino acid; otherwise the job is skipped and the user is given an error message.
+        if len(depth) == 1:
+            if depth in Max_SASA.keys():
+                find_res(fasta, depth, start)
+            else:
+                print("\n\n####################################################################################\n# ATTN user! Check your batch file: '" + depth + "' is not a valid single-letter residue code. #\n####################################################################################\n\n")
+                                                                                                                        
+        elif depth == "ALL":
+            find_Allchain(fasta, start)
+    
+    ## "Stopwatch" stops now; print runtime
+    stop_time = time.time()
+    print("\nTime (seconds) taken for SASA calculations: " + str(stop_time - start_time) + "\n\nOutput file: " + "SASA_" + query + "_" + depth + ".csv was saved in the working directory: " + os.getcwd())
+
+    ## End
