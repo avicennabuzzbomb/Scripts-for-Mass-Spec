@@ -51,9 +51,13 @@ depth = str(sys.argv[4].upper()) # depth: assign query type ('ALL' or aa single 
 print("query: " + query)
 print("depth: " + depth)
 
+## TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO keys and values in a dict key:value pair can both be lists! Which means these dictionaries are redundant and can be combined
+# into a single dictionary with listkeys and listvalues (ex, in MAX_SASA[0], it could be {'R': '249.4673309', 'arg'}) where the integer is stringcast (when needed to get
+# relative SASA, it could be re-cast to an integer type)
+
 ## NOTE This Dictionary contains maximum sidechain SASA values (unrounded) for each biological amino acid; calculated with Pymol's get_area command, with dot_solvent = 1 (SASA = true)
 ## and with dot_density = 4 (maximum accuracy to the discrete surface area calculation); variables declared above methods are accessible to those methods! Key = residue name, value = SASA
-Max_SASA = {'R' : 249.4673309,   # arg	
+Max_SASA = {'R' : 249.4673309,   # arg
             'H' : 194.6491394,   # his
             'K' : 214.5114136,   # lys
             'D' : 142.6577301,   # asp
@@ -119,6 +123,9 @@ def occupancy(count):
 ## Method for getting each amino acid position and using it to make a separate residue selection, and calculate and write SASA to output. (ALL RESIDUES) ##
 ###########################################################################################################################################################
 def find_Allchain(seq, start):
+
+    print("Start of chain is position " + str(start) + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
+
     for count, ltr in enumerate(seq, start): 
         ## Typecasting count (index or aa position) to a string allows the script to use "count" in a PyMOL selection-expression.
         count = str(count)
@@ -153,7 +160,7 @@ def find_Allchain(seq, start):
         print(residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
         current_row = [residue, sasa, rel_sasa, burial]
         writer.writerow(current_row)            
-    
+
     return
 
 ##################################################################################################################################################################
@@ -226,45 +233,55 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     
     # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
     # leaving only the AA single-letter characters in the string.
-    fasta_list = []
-    for chain in cmd.get_chains():
-        fasta = cmd.get_fastastr("Chain " + str(chain))      
-        fasta = fasta.split("\n",1)[1]
-        fasta = re.sub("\n", "", fasta)
-        
-        # add only unique chain strings to the list of chains to run per protein
-        if fasta not in fasta_list:
-            fasta_list.append(fasta)
+    chainID_list = []    # for recording chain ID's
+    chainPlusFasta = {}   # dictionary for matching the current retrieved chain ID with its associated fasta
 
+    for chain in cmd.get_chains():
+        fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
+        fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
+        fasta = re.sub("\n", "", fasta)  # removes remaining /n
+        chainID_list.append(chain)       # collects chain IDs
+
+        # Build a dictionary containing the chain ID and its associated (unique) fasta sequence
+        if fasta not in chainPlusFasta.values():
+            chainPlusFasta.update({chain:fasta})
+
+    # print(chainPlusFasta)    #NOTE Test print statement
+    
     # Begin writing into the csv output file. For a multichain protein, this writes each chain to the same file separated by subheaders.
     chain_count = 0
-    subheader = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", fasta]
 
-    for fasta in fasta_list:
+    for keyVal in chainPlusFasta:
         chain_count += 1
+        subheader = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", chainPlusFasta[keyVal]]
         writer.writerow("")
-        writer.writerow(subheader)
+        writer.writerow(subheader)   # subheaders are labeled by chain number with each iteration
 
-        # Iterate the residue positions into a Set named stored_residues, move the set into a List (so elements can be accessed by index) named residues, 
-        # and then use List[0] to set enumerator's startpoint
-        cmd.iterate("chain A", 'stored_residues.add(resv)')   # TODO TODO TODO calling iterate now needs to be chain-agnostic (not always calling Chain A anymore!)
+        # For each unique chain, iterate the residue positions into a Set named stored_residues, move the set into a List (so elements can be accessed by index) named residues, 
+        # and then use List[0] to set enumerator's startpoint for recording residue positions
+        cmd.iterate("chain " + str(keyVal), 'stored_residues.add(resv)')   # TODO TODO TODO calling iterate now needs to be chain-agnostic (not always calling Chain A anymore!)
         for i in stored_residues:
             residues.append(i)
 
-        print("The first amino acid is at position " + str(residues[0]))  
+        # start should take the smallest value from the list, not the one in [0] because that could vary if set() elements are added randomly... unless they "store" the order they are iterated... (?)
+        # in which case, [0] is always the true start value because iterate() works in order?  
         start = residues[0]
-
+        
         # Run the job with the query (requested PDB ID) based on its type. If a single amino acid is requested, the input is compared to an amino acid dictionary
         # to ensure it's a real amino acid; otherwise the job is skipped and the user is given an error message.
         if len(depth) == 1:
             if depth in Max_SASA.keys():
-                find_res(fasta, depth, start)
+                find_res(chainPlusFasta[keyVal], depth, start)
             else:
                 print("\n\n####################################################################################\n# ATTN user! Check your batch file: '" + depth + "' is not a valid single-letter residue code. #\n####################################################################################\n\n")
                                                                                                                         
         elif depth == "ALL":
-            find_Allchain(fasta, start)
-    
+            find_Allchain(chainPlusFasta[keyVal], start)
+        
+        # clear container objects for the next chain (if applicable) in this protein
+        stored_residues.clear()
+        residues.clear()
+
     ## "Stopwatch" stops now; print runtime
     stop_time = time.time()
     print("\nTime (seconds) taken for SASA calculations: " + str(stop_time - start_time) + "\n\nOutput file: " + "SASA_" + query + "_" + depth + ".csv was saved in the working directory: " + os.getcwd())
