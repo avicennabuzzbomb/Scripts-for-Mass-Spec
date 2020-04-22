@@ -10,6 +10,6 @@
 
 2. `NunuDrives.py` Reads arguments from a batch file and passes them to a second script. Currently, used to run SASAquatch.py on large PDB ID lists. Run only from a terminal with `python NunuDrives.py`.
 
-3. `batch.txt` a text file with arguments (delimiter = ','); changes periodically as I run tests.
+3. `batch.txt` a text file with arguments (delimiter = ','); changes periodically as I run tests. Needs to be in the working directory (with `NunuDrives.py`)
 
 **Directory folders** contain other scripts, input files and output files for handling chemical crosslinking and/or footprinting data from mass spectrometry experiments. These are currently unfinished; development will begin again in the near future.
