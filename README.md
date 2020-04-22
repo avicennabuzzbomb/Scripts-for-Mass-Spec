@@ -1,6 +1,7 @@
 # **Scripts for analyzing protein structure files.** #
 
-1. `SASAquatchy.py` calculates solvent accessible surface areas in a PyMOL subshell. Can be invoked with arguments in the terminal or PyMOL's command line.\
+1. `SASAquatchy.py` calculates solvent accessible surface areas in a PyMOL subshell. Can be invoked with arguments in the terminal or PyMOL's command line.
+
     *From the terminal:* run with `pymol -c SASAquatch.py <PDB_ID> <depth>`. For example, with structure file 4h1w and calculating for all residues in the protein, run with:\
      `pymol -c SASAquatch.py 4H1W all`.
     
