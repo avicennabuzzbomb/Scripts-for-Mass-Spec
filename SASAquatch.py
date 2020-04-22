@@ -26,11 +26,6 @@ PyMOL> run script.py
 ## NOTE - 'reinitialize' removes all objects from this pymol session's memory (it's a reset as if the program was restarted) 
 """
 
-## TODO: Can now distinguish between unique chains, but getting residue positions with cmd.iterate() now needs to be able to separately target each chain.
-## TODO: Make a new set() for each unique chain? Can call it by making chain ID (A, B, C etc.) itself a variable; would need to create a dictionary for each new unique chain,
-## TODO: and use the unique fasta sequence as the key? would need to first store the chain IDs in a dictionary with their associated, cleaned sequences... then capture
-## TODO: those sequences into fasta_list if unique by calling them from the dictionary.
-
 ## TODO TODO TODO Subsume this all into a TRY-CATCH-FINALLY block to handle exceptions and log them into separate output files when the job for an entry fails.
 ## TODO TODO TODO This will allow me to record each exception that occurs due to the PDB being stupid and bad at file structure, so I can adapt this code to it.
 
@@ -51,54 +46,28 @@ depth = str(sys.argv[4].upper()) # depth: assign query type ('ALL' or aa single 
 print("query: " + query)
 print("depth: " + depth)
 
-## TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO keys and values in a dict key:value pair can both be lists! Which means these dictionaries are redundant and can be combined
-# into a single dictionary with listkeys and listvalues (ex, in MAX_SASA[0], it could be {'R': '249.4673309', 'arg'}) where the integer is stringcast (when needed to get
-# relative SASA, it could be re-cast to an integer type)
-
-## NOTE This Dictionary contains maximum sidechain SASA values (unrounded) for each biological amino acid; calculated with Pymol's get_area command, with dot_solvent = 1 (SASA = true)
-## and with dot_density = 4 (maximum accuracy to the discrete surface area calculation); variables declared above methods are accessible to those methods! Key = residue name, value = SASA
-Max_SASA = {'R' : 249.4673309,   # arg
-            'H' : 194.6491394,   # his
-            'K' : 214.5114136,   # lys
-            'D' : 142.6577301,   # asp
-            'E' : 173.6901855,   # glu
-            'S' : 110.3298187,   # ser
-            'T' : 141.3123779,   # thr
-            'N' : 155.2926178,   # asn
-            'Q' : 184.1813354,   # gln
-            'C' : 131.9754333,   # cys
-            'G' : 34.49541855,   # gly
-            'P' : 153.1377106,   # pro
-            'A' : 91.39417267,   # ala
-            'V' : 157.4189758,   # val
-            'I' : 183.812027,    # ile
-            'L' : 181.1264496,   # leu
-            'M' : 192.694458,    # met
-            'F' : 218.0111237,   # phe
-            'Y' : 231.1389923,   # tyr
-            'W' : 262.1514587}   # trp
-
-## NOTE This Dictionary of 3-letter codes (required for pyMOL's selection algebra)
-aa_codes = {'R' : 'lys',   # arg	
-            'H' : 'his',   # his
-            'K' : 'lys',   # lys
-            'D' : 'asp',   # asp
-            'E' : 'glu',   # glu
-            'S' : 'ser',   # ser
-            'T' : 'thr',   # thr
-            'N' : 'asn',   # asn                
-            'Q' : 'gln',   # gln                
-            'C' : 'cys',   # cys                
-            'G' : 'gly',   # gly
-            'P' : 'pro',   # pro
-            'A' : 'ala',   # ala
-            'V' : 'val',   # val
-            'I' : 'ile',   # ile
-            'L' : 'leu',   # leu
-            'M' : 'met',   # met
-            'F' : 'phe',   # phe
-            'Y' : 'tyr',   # tyr
-            'W' : 'trp'}   # trp
+## NOTE This Dictionary contains the maximum calculated SASA (dot_solvent = 1, dot_density = 4) value and 3-letter residue code as a tuple value
+## associated with each single-character amino acid letter code (the key) currently being analyzed.
+AA_attributes = {'R' : ('arg', 249.4673309),   # arginine
+                 'H' : ('his', 194.6491394),   # histidine
+                 'K' : ('lys', 214.5114136),   # lysine
+                 'D' : ('asp', 142.6577301),   # aspartic acid
+                 'E' : ('glu', 173.6901855),   # glutamic acid
+                 'S' : ('ser', 110.3298187),   # serine
+                 'T' : ('thr', 141.3123779),   # threonine
+                 'N' : ('asn', 155.2926178),   # aspargine
+                 'Q' : ('gln', 184.1813354),   # glutamine
+                 'C' : ('cys', 131.9754333),   # cysteine
+                 'G' : ('gly', 34.49541855),   # glycine
+                 'P' : ('pro', 153.1377106),   # proline
+                 'A' : ('ala', 91.39417267),   # alanine
+                 'V' : ('val', 157.4189758),   # valine
+                 'I' : ('ile', 183.812027),    # isoleucine
+                 'L' : ('leu', 181.1264496),   # leucine
+                 'M' : ('met', 192.694458),    # methionine
+                 'F' : ('phe', 218.0111237),   # phenylalanine
+                 'Y' : ('tyr', 231.1389923),   # tyrosine
+                 'W' : ('trp', 262.1514587)}   # tryptophan
 
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 threshold = 0.25
@@ -112,17 +81,15 @@ occu_vals = set()
 ## Helper Method: evaluate if electron density exists at the current residue position is actually present in the structure model, and annotate accordingly ##
 #############################################################################################################################################################
 def occupancy(count):
-    cmd.iterate("resi " + count, 'occu_vals.add(q)')
+    cmd.iterate("resi " + count, 'occu_vals.add(q)') # 'q' is occupancy, or the presence of electron density in the map
     if 0.0 in occu_vals: # if any atoms in the selection fail occupancy check, the selection must not have electron density
-        return False
-    
+        return False 
     else:
         return True
-
 ###########################################################################################################################################################
 ## Method for getting each amino acid position and using it to make a separate residue selection, and calculate and write SASA to output. (ALL RESIDUES) ##
 ###########################################################################################################################################################
-def find_Allchain(seq, start):
+def find_Allchain(seq, chain, start):
 
     print("Start of chain is position " + str(start) + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
 
@@ -139,10 +106,10 @@ def find_Allchain(seq, start):
         # defaulted to "Not present in structure model", "N/A", and "N/A"
         if presence == True:
             # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
-            # Chain A must be specified every time, otherwise the value will be multiplied by the number of identical chains.
-
-            sasa = cmd.get_area("resi " + count + " and sidechain" + " and chain A", 1, 0)
-            rel_sasa = sasa / Max_SASA[ltr]
+            # Chain A must be specified every time, otherwise the value will be multiplied by the number of identical chains.            
+            cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and sidechain and chain " + keyVal)
+            sasa = cmd.get_area("sele", 1, 0)            
+            rel_sasa = sasa / AA_attributes[ltr][1]  # Retrieves max SASA attribute from the tuple value at [ltr]
             burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
         
             if rel_sasa <= threshold:
@@ -150,23 +117,25 @@ def find_Allchain(seq, start):
         
             sasa = str(sasa)
             rel_sasa = str(rel_sasa)
-        
+               
         else:
             sasa = "Not present in structure model"
             rel_sasa = "N/A"
             burial = "N/A"
-
+        
         ## Each SASA printed to console and then to output
         print(residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
         current_row = [residue, sasa, rel_sasa, burial]
         writer.writerow(current_row)            
-
+                    
+        # at the end of each calculation, clear the current selection
+        cmd.delete("sele")
     return
 
 ##################################################################################################################################################################
 ## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output. (ONLY SPECIFIED RESIDUES) ##
 ##################################################################################################################################################################
-def find_res(seq, ch, start):
+def find_res(seq, chain, ch, start):
     for count, ltr in enumerate(seq, start):    
         if ltr == ch:
             ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
@@ -181,10 +150,10 @@ def find_res(seq, ch, start):
             # defaulted to "Not present in structure model", "N/A", and "N/A"
             if presence == True:
                 # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
-                # Chain A must be specified every time, otherwise the value will be multiplied by the number of identical chains.
-
-                sasa = cmd.get_area("resi " + count + " and sidechain" + " and chain A", 1, 0)
-                rel_sasa = sasa / Max_SASA[ltr]
+                # Chain must be specified every time, otherwise the value will be multiplied by the number of identical chains.
+                cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and sidechain and chain " + keyVal)
+                sasa = cmd.get_area("sele", 1, 0)                
+                rel_sasa = sasa / AA_attributes[ltr][1]
                 burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
         
                 if rel_sasa <= threshold:
@@ -197,12 +166,13 @@ def find_res(seq, ch, start):
                 sasa = "Not present in structure model"
                 rel_sasa = "N/A"
                 burial = "N/A"
-    
             ## Each SASA printed to console and then to output
             print(residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
             current_row = [residue, sasa, rel_sasa, burial]
             writer.writerow(current_row)
-
+            
+            # at the end of each calculation, clear the current selection
+            cmd.delete("sele")
     return
     
 ################################################################################################################################################
@@ -242,7 +212,8 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         fasta = re.sub("\n", "", fasta)  # removes remaining /n
         chainID_list.append(chain)       # collects chain IDs
 
-        # Build a dictionary containing the chain ID and its associated (unique) fasta sequence
+        # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
+        # it is added as the value and its associated chain ID (value of 'chain') is its key.
         if fasta not in chainPlusFasta.values():
             chainPlusFasta.update({chain:fasta})
 
@@ -259,7 +230,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
 
         # For each unique chain, iterate the residue positions into a Set named stored_residues, move the set into a List (so elements can be accessed by index) named residues, 
         # and then use List[0] to set enumerator's startpoint for recording residue positions
-        cmd.iterate("chain " + str(keyVal), 'stored_residues.add(resv)')   # TODO TODO TODO calling iterate now needs to be chain-agnostic (not always calling Chain A anymore!)
+        cmd.iterate("chain " + str(keyVal), 'stored_residues.add(resv)')
         for i in stored_residues:
             residues.append(i)
 
@@ -270,13 +241,13 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         # Run the job with the query (requested PDB ID) based on its type. If a single amino acid is requested, the input is compared to an amino acid dictionary
         # to ensure it's a real amino acid; otherwise the job is skipped and the user is given an error message.
         if len(depth) == 1:
-            if depth in Max_SASA.keys():
-                find_res(chainPlusFasta[keyVal], depth, start)
+            if depth in AA_attributes.keys():
+                find_res(chainPlusFasta[keyVal], keyVal, depth, start)
             else:
                 print("\n\n####################################################################################\n# ATTN user! Check your batch file: '" + depth + "' is not a valid single-letter residue code. #\n####################################################################################\n\n")
                                                                                                                         
         elif depth == "ALL":
-            find_Allchain(chainPlusFasta[keyVal], start)
+            find_Allchain(chainPlusFasta[keyVal], keyVal, start)
         
         # clear container objects for the next chain (if applicable) in this protein
         stored_residues.clear()
