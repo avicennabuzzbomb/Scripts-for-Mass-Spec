@@ -26,8 +26,8 @@ PyMOL> run script.py
 ## NOTE - 'reinitialize' removes all objects from this pymol session's memory (it's a reset as if the program was restarted) 
 """
 
-## TODO TODO TODO Subsume this all into a TRY-CATCH-FINALLY block to handle exceptions and log them into separate output files when the job for an entry fails.
-## TODO TODO TODO This will allow me to record each exception that occurs due to the PDB being stupid and bad at file structure, so I can adapt this code to it.
+## NOTE: "Bad" residue selections are detected if cmd.count_atom("sele") == 0. The moment a residue is detected like this,
+## that entire protein is logged in an error file as failed due to bad selection algebra, and the loop skips to the next query. 
 
 from pymol import cmd     # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
 import pymol              # this one might be unnecessary since we specifically need pymol.cmd()
@@ -81,6 +81,21 @@ occu_vals = set()
 ## Helper Method: evaluate if electron density exists at the current residue position is actually present in the structure model, and annotate accordingly ##
 #############################################################################################################################################################
 def occupancy(count):
+    ##TODO implement an if branch to check for a valid selection; if invalid, print to error file and skip SASA calculation.
+    ##TODO if this script writes the file, each bad query will have its own file; if Nunu writes the file, it will be one file that is a
+    ##TODO list of the bad queries.
+
+    
+    '''
+    TODO
+    if cmd.count_atoms("sele") == 0:
+        <do not call this method>; else, call this method>
+        <write this part carefully; each method forks off before this occupancy check occurs, so each calculation method will need to use this code block>
+        <which also means this code block needs to contain the call to occupancy() in each SASA method>
+    TODO
+    '''
+
+
     cmd.iterate("resi " + count, 'occu_vals.add(q)') # 'q' is occupancy, or the presence of electron density in the map
     if 0.0 in occu_vals: # if any atoms in the selection fail occupancy check, the selection must not have electron density
         return False 
@@ -142,7 +157,7 @@ def find_res(seq, chain, ch, start):
             count = str(count)
             residue = "" + ltr + count
             
-            # Method call: Qualify this selection is actually present in the structure model
+            # Method call: Qualify this selection as valid; then check if electron density is actually present in the structure model
             presence = occupancy(count)
             occu_vals.clear()
 
@@ -217,8 +232,8 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         if fasta not in chainPlusFasta.values():
             chainPlusFasta.update({chain:fasta})
 
-    # print(chainPlusFasta)    #NOTE Test print statement
-    
+    # print(chainPlusFasta)    #NOTE this print() is for testing
+
     # Begin writing into the csv output file. For a multichain protein, this writes each chain to the same file separated by subheaders.
     chain_count = 0
 
