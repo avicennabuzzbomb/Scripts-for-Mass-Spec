@@ -77,8 +77,8 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         countBrackets = seq.count('[')
         countBrackets1 = seq.count(']')
 
-        countRemaining = length - sum([countR, countH, countK, countN, countQ, countW, countBrackets, countBrackets1])
-        mZshift = (R*countR + H*countH + K*countK + N*countN + Q*countQ + W*countW + neutron*countRemaining) / charge
+        countRemaining = length - sum([countR, countH, countK, countN, countQ, countW, countBrackets, countBrackets1])   # count the backbone nitrogens of amino acids without N-containing R-groups; ignores brackets automatically (no need for string cleanup)
+        mZshift = (R*countR + H*countH + K*countK + N*countN + Q*countQ + W*countW + neutron*countRemaining) / charge    # add backbone neutrons of above to the summed shifts of amino acids with N-containing R-groups
         # print("Peptide sequence is",seq," and its m/z shift is ",mZshift)
         return mZshift
 
@@ -104,7 +104,6 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
     #    with open('DSSO-ArabidopsisProteome.csv', mode='w') as outfile:
     #        writer = csv.writer(outfile)
         datadict = {rows[0]:rows[1] for rows in reader}
-
     for key, value in datadict.items():
         print(key, ' : ', value)      
 """
