@@ -7,7 +7,8 @@ cleanedStr = ""
 
 print(seq)
 
-seq = re.sub('[a-z]', '', seq)
+seq = re.sub('[a-z]', '', seq)  # remove lowercase (aa modifications due to MS)
+seq = seq[4:(len(seq) - 4)]
 
 print(seq)
 

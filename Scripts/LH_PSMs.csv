@@ -1,0 +1,3441 @@
+Annotated Sequence,Master Protein Accessions,m/z [Da],Charge,RT [min],XCorr
+[K].GYLADDIDADSLEDIYTSAHEAIR.[A],P26321,885.079 (light),3,56.4654,2.31
+ , ,894.717 (heavy), , , 
+[K].AVDDFLLSLDGTANK.[S],P00925,789.903 (light),2,54.0582,2.31
+ , ,798.378 (heavy), , , 
+[K].EGADIQAALYEINGQR.[T],P25373,874.435 (light),2,45.405,2.19
+ , ,885.402 (heavy), , , 
+[K].AVDDFLISLDGTANK.[S],P00924,789.905 (light),2,51.7641,1.95
+ , ,798.379 (heavy), , , 
+[K].TIAETLAEELINAAK.[G],P26783,793.935 (light),2,64.5232,1.89
+ , ,802.41 (heavy), , , 
+[R].ELLKPSMSVALHR.[H],P33298,494.281 (light),3,27.3682,1.87
+ , ,500.596 (heavy), , , 
+[K].AGHAIVYGDATSTYAK.[E],P38427,542.27 (light),3,19.4205,1.84
+ , ,548.584 (heavy), , , 
+[K].NVNDVIAPAFVK.[A],P00924,643.859 (light),2,40.7227,1.78
+ , ,651.337 (heavy), , , 
+[K].IHEGLAEIK.[K],P04076,505.288 (light),2,16.2187,1.78
+ , ,511.27 (heavy), , , 
+[R].FFDNHIFAScSDDNILR.[F],Q12363,690.984 (light),3,45.6656,1.77
+ , ,698.628 (heavy), , , 
+[R].SFVTTDANPYYDAFIR.[W],P26637,940.447 (light),2,51.4322,1.76
+ , ,950.417 (heavy), , , 
+[K].EVTAALENAAVGLVAGGK.[S],P25087,557.308 (light),3,51.2327,1.76
+ , ,563.955 (heavy), , , 
+[K].ERPVTVNGQIVSRPMMYLALTYDHR.[L],P19262,737.382 (light),4,44.5032,1.76
+ , ,746.854 (heavy), , , 
+[R].IAALEGGAAALAVSSGQAAQTLAIQGLAHTGDNIVSTSYLYGGTYNQFK.[I],P06106,1218.124 (light),4,70.7311,1.73
+ , ,1232.581 (heavy), , , 
+[K].TFGALDPVQISQMAK.[Y],P28240,803.419 (light),2,48.0189,1.73
+ , ,812.392 (heavy), , , 
+[K].AGLLGVESIELTPHIISK.[T],P07259,626.363 (light),3,49.9596,1.72
+ , ,633.343 (heavy), , , 
+[K].YFDNSNWSLDDIK.[G],Q03104,808.866 (light),2,46.6944,1.72
+ , ,817.341 (heavy), , , 
+[K].GGDYSHFVVSNSSVGK.[S],Q12480,547.262 (light),3,24.7881,1.71
+ , ,553.909 (heavy), , , 
+[K].MISAAVDQLAELSPLR.[E],P36013,857.465 (light),2,57.3369,1.69
+ , ,867.435 (heavy), , , 
+[K].LGANAILGVSMAAAR.[A],P00925,707.895 (light),2,44.3596,1.69
+ , ,717.367 (heavy), , , 
+[R].LAGADPVLGVEMASTGEVATFGHSK.[Y],P07259,815.409 (light),3,47.9069,1.69
+ , ,824.714 (heavy), , , 
+[K].ELFTDSGAGTMIR.[R],Q01217,699.34 (light),2,37.4794,1.68
+ , ,707.316 (heavy), , , 
+[K].LGANAILGVSmAAAR.[A],P00925,715.893 (light),2,40.3715,1.68
+ , ,724.866 (heavy), , , 
+[K].TIVWNGPPGVFEFEK.[F],P00560,860.441 (light),2,55.3487,1.67
+ , ,869.414 (heavy), , , 
+[K].SPIILQTSNGGAAYFAGK.[G],P14540,598.985 (light),3,40.7724,1.67
+ , ,605.964 (heavy), , , 
+[R].VSGDLNPIHVSR.[H],P07149,431.902 (light),3,22.5243,1.66
+ , ,437.884 (heavy), , , 
+[R].VSQFQSVVIPVGITK.[K],P38708,801.467 (light),2,46.5223,1.65
+ , ,810.44 (heavy), , , 
+[R].FVNVGAFPIGIDVDK.[F],Q00764,795.93 (light),2,55.265,1.64
+ , ,804.405 (heavy), , , 
+[K].HVVFGEVVDGYDIVK.[K],P14832,559.295 (light),3,42.8365,1.64
+ , ,565.277 (heavy), , , 
+[K].LSGAQVVDNLK.[L],P06106,572.322 (light),2,28.003,1.64
+ , ,579.301 (heavy), , , 
+[R].HIDTAWAYETEPFVGEAIK.[E],P38115,726.359 (light),3,48.3026,1.63
+ , ,734.003 (heavy), , , 
+[R].NASVEIVDEIISDYK.[D],P07284,847.928 (light),2,58.4161,1.62
+ , ,856.403 (heavy), , , 
+[K].VGQSLSIVSNDELSK.[A],P38248,788.415 (light),2,33.4317,1.61
+ , ,797.389 (heavy), , , 
+[R].LLSIVVVGGGPTGVEAAGELQDYVHQDLR.[K],P32340,998.196 (light),3,59.6821,1.6
+ , ,1010.161 (heavy), , , 
+[R].GEGGFLVNSEGER.[F],Q00711,675.818 (light),2,25.5807,1.6
+ , ,684.293 (heavy), , , 
+[K].LADDIPSNSPMAINcEYGSFDNEHLVLPR.[T],P04806,1092.175 (light),3,51.5644,1.59
+ , ,1104.14 (heavy), , , 
+[R].EAAAEYAQLLAK.[R],P0CX37,639.341 (light),2,36.2669,1.57
+ , ,646.32 (heavy), , , 
+[R].GTITWIAPAGEYTLDEK.[I],P17255,932.971 (light),2,48.6492,1.57
+ , ,942.443 (heavy), , , 
+[K].LEEVDEEEEK.[K],P02829,624.777 (light),2,14.448,1.57
+ , ,630.261 (heavy), , , 
+[R].FDDSEKPVPEIGWNScIPSENLFFGLDPYKR.[Y],P33734,914.939 (light),4,61.7661,1.56
+ , ,924.411 (heavy), , , 
+[-].mNQAIDFAQASIDSYKK.[H],P14306,986.478 (light),2,57.243,1.56
+ , ,996.947 (heavy), , , 
+[K].LHDAGFYADVDLTGNTLQK.[K],P04801,693.344 (light),3,40.1697,1.55
+ , ,701.321 (heavy), , , 
+[K].AISLETQTESLLSK.[Y],P38736,760.413 (light),2,42.0834,1.55
+ , ,768.39 (heavy), , , 
+[R].WAmVVENGIVTYAAK.[E],P38013,834.428 (light),2,41.0812,1.55
+ , ,842.902 (heavy), , , 
+[K].AVVESVGAEVDEAR.[I],P02400,715.86 (light),2,27.7636,1.54
+ , ,724.335 (heavy), , , 
+[R].AIGVSNFSIEYLER.[L],P38115,799.414 (light),2,50.3474,1.54
+ , ,808.388 (heavy), , , 
+[K].TTVTGIEMFR.[K],P02992,577.798 (light),2,36.8535,1.54
+ , ,584.279 (heavy), , , 
+[K].ELQEVANPImSK.[L],P10592,687.85 (light),2,37.1345,1.54
+ , ,694.829 (heavy), , , 
+[K].ITDSIATAAHK.[T],Q06523,376.54 (light),3,13.1928,1.53
+ , ,381.193 (heavy), , , 
+[R].VENQDAIDAAMVGMLADPK.[E],P19456,994.477 (light),2,54.2958,1.53
+ , ,1005.444 (heavy), , , 
+[K].APLVIADPTYFPEK.[C],P39958,780.92 (light),2,45.7324,1.53
+ , ,788.397 (heavy), , , 
+[K].IPATIVMPVcTPSIK.[Y],P00927,813.952 (light),2,46.8624,1.53
+ , ,821.429 (heavy), , , 
+[K].GIDFHPTEPWVLTTLYSGR.[V],P41811,730.373 (light),3,57.4189,1.53
+ , ,738.681 (heavy), , , 
+[R].VHEGVTVPIVEWK.[F],Q00955,498.277 (light),3,37.4993,1.53
+ , ,503.926 (heavy), , , 
+[K].KPQVTVGAQNAYLK.[A],P00942,506.287 (light),3,20.4952,1.52
+ , ,512.602 (heavy), , , 
+[R].VVEIGPSPTLAGMAQR.[T],P19097,542.628 (light),3,39.9207,1.52
+ , ,549.275 (heavy), , , 
+[K].AVDDFLISLDGTANK.[S],P00924,526.938 (light),3,54.1761,1.52
+ , ,532.588 (heavy), , , 
+[K].LIVDPMDAPDQPQDLTIDFER.[G],P22768,810.063 (light),3,59.0439,1.52
+ , ,818.704 (heavy), , , 
+[K].DPITIVPAEDGSGAGAAVIAALSEK.[R],P04806,784.748 (light),3,63.5053,1.51
+ , ,793.389 (heavy), , , 
+[R].YLDLIMNK.[D],P15180,505.273 (light),2,37.4055,1.51
+ , ,510.259 (heavy), , , 
+[R].VNPETGIIDYDTLEK.[N],P37291,569.622 (light),3,41.107,1.51
+ , ,575.271 (heavy), , , 
+[K].HLSMFPQDLTYGFYTR.[E],P32316,659.317 (light),3,50.8882,1.5
+ , ,666.628 (heavy), , , 
+[K].WTQEDLADYLR.[D],Q03104,705.339 (light),2,47.2573,1.5
+ , ,713.315 (heavy), , , 
+[R].TEWIADYGAAASGR.[G],P15624,734.347 (light),2,35.3634,1.49
+ , ,743.321 (heavy), , , 
+[K].WLTGPQLADLYHSLmK.[R],P00924,630.327 (light),3,57.103,1.49
+ , ,636.974 (heavy), , , 
+[K].ALSGGVLPVScVLSSHDIMScFTPGSHGSTFGGNPLASR.[V],P07991,990.727 (light),4,57.454,1.49
+ , ,1001.943 (heavy), , , 
+[K].GVLGYTEDAVVSSDFLGDSHSSIFDASAGIQLSPK.[F],P00359,1190.582 (light),3,67.7155,1.49
+ , ,1203.544 (heavy), , , 
+[K].ILVAYGLPVSPDEK.[W],P08566,750.919 (light),2,44.778,1.49
+ , ,758.397 (heavy), , , 
+[R].VVTADQGEALAK.[E],P07560,601.325 (light),2,17.7319,1.49
+ , ,608.305 (heavy), , , 
+[R].VGLFSYGSGLAASLYScK.[I],P54839,940.467 (light),2,56.1159,1.48
+ , ,949.44 (heavy), , , 
+[K].GVLGYTEDAVVSSDFLGDSHSSIFDASAGIQLSPK.[F],P00359,1190.581 (light),3,64.6317,1.48
+ , ,1203.542 (heavy), , , 
+[K].AANLGGVAVSGLEMAQNSQR.[I],P07262,658.334 (light),3,42.5927,1.48
+ , ,667.307 (heavy), , , 
+[K].HLEGISDADIAK.[L],P00950,634.827 (light),2,25.7668,1.47
+ , ,642.305 (heavy), , , 
+[K].FGFmGLFSK.[A],P19262,525.259 (light),2,50.6717,1.47
+ , ,529.746 (heavy), , , 
+[K].WTTENPFGYQLR.[G],P04397,756.368 (light),2,44.6974,1.47
+ , ,765.341 (heavy), , , 
+[K].LPNGLEYEQPTGLFINNK.[F],P46367,1024.029 (light),2,48.6517,1.47
+ , ,1035.495 (heavy), , , 
+[R].WAMVVENGIVTYAAK.[E],P38013,826.429 (light),2,47.8123,1.47
+ , ,835.402 (heavy), , , 
+[K].KFSDALNDANEcVK.[I],P15705,537.587 (light),3,22.7589,1.47
+ , ,543.237 (heavy), , , 
+[K].DDVTGEALVQR.[S],P07170,601.805 (light),2,25.6494,1.47
+ , ,609.282 (heavy), , , 
+[K].QQTIDEQSQISPEK.[Q],P38764,815.9 (light),2,19.1212,1.46
+ , ,825.372 (heavy), , , 
+[K].LGNLIAIYDDNK.[I],P23254,674.859 (light),2,41.3403,1.46
+ , ,682.337 (heavy), , , 
+[K].IIVHTDTEPLINAAFLK.[E],P39676,632.36 (light),3,46.6625,1.46
+ , ,639.339 (heavy), , , 
+[K].SSEAEYFHWLGNIQDWcISR.[Q],P07806,833.378 (light),3,59.0111,1.46
+ , ,842.684 (heavy), , , 
+[K].TAEHLVEQLNVPK.[E],P00815,493.271 (light),3,27.5343,1.46
+ , ,499.254 (heavy), , , 
+[R].KPLMESVK.[L],P16862,466.267 (light),2,11.8574,1.46
+ , ,471.252 (heavy), , , 
+[K].GQDHVWSGLSGADANELAFK.[A],P17649,701.337 (light),3,41.5724,1.46
+ , ,709.978 (heavy), , , 
+[R].VDHLANYSADFVSK.[Q],P08566,522.591 (light),3,28.8082,1.46
+ , ,528.573 (heavy), , , 
+[R].AAVEEGILPGGGTALVK.[A],P19882,791.446 (light),2,39.9762,1.45
+ , ,800.419 (heavy), , , 
+[K].TMELGILPR.[D],P39522,515.292 (light),2,39.5068,1.45
+ , ,521.274 (heavy), , , 
+[K].LGANAILGVSMAAAR.[A],P00925,707.895 (light),2,45.1243,1.45
+ , ,717.367 (heavy), , , 
+[K].AAQDSFAAGWGVMVSHR.[S],P00924,597.287 (light),3,41.2388,1.45
+ , ,605.263 (heavy), , , 
+[K].NGVHmVFASFIR.[T],P00549,465.24 (light),3,34.815,1.45
+ , ,470.889 (heavy), , , 
+[K].DVAELEDPVGK.[V],P54885,586.295 (light),2,30.744,1.44
+ , ,592.277 (heavy), , , 
+[K].QLENVSSNIVK.[N],P38701,615.838 (light),2,23.876,1.44
+ , ,623.316 (heavy), , , 
+[K].LGANAILGVSLAASR.[A],P00924,706.915 (light),2,47.8551,1.44
+ , ,716.387 (heavy), , , 
+[K].HGVTLDEFK.[Q],P32356,523.269 (light),2,21.8366,1.44
+ , ,529.251 (heavy), , , 
+[K].SPVMADLNGGLQFVPELK.[E],P19097,958.003 (light),2,57.354,1.43
+ , ,968.472 (heavy), , , 
+[K].FIAEGSNMGSTPEAIAVFETAR.[S],P07262,1149.557 (light),2,52.7451,1.43
+ , ,1162.519 (heavy), , , 
+[K].HVVFGEVVDGYDIVK.[K],P14832,838.438 (light),2,42.086,1.43
+ , ,847.411 (heavy), , , 
+[K].APEGELGDSLQTAFDEGK.[D],P23301,932.434 (light),2,42.5038,1.43
+ , ,942.405 (heavy), , , 
+[K].KQEEVLDDTK.[R],P48606,602.806 (light),2,11.3706,1.43
+ , ,609.287 (heavy), , , 
+[K].LDTYNVLQNNGK.[I],Q04344,689.851 (light),2,28.4771,1.42
+ , ,698.326 (heavy), , , 
+[K].ISQAYSSGEVK.[N],P40582,584.796 (light),2,13.7212,1.42
+ , ,591.277 (heavy), , , 
+[K].FAIPAINVTSSSTAVAALEAAR.[D],P14540,1080.585 (light),2,62.4169,1.42
+ , ,1093.547 (heavy), , , 
+[K].LNGVNGVK.[M],P27616,400.735 (light),2,12.1546,1.42
+ , ,406.219 (heavy), , , 
+[K].FAEQYSDAAFYK.[L],P22803,720.328 (light),2,33.4684,1.42
+ , ,727.307 (heavy), , , 
+[R].ALIENWAADSVSSR.[V],P07149,759.881 (light),2,38.9213,1.41
+ , ,769.353 (heavy), , , 
+[K].ALYTISGQWSGSSK.[I],P35844,742.873 (light),2,34.3311,1.41
+ , ,751.348 (heavy), , , 
+[K].LSGNHTFDTTQSK.[Y],P04806,718.343 (light),2,11.8478,1.41
+ , ,727.317 (heavy), , , 
+[K].EAIDALNGMLLNGQEIYVAPHLSR.[K],P04147,1312.679 (light),2,56.9138,1.41
+ , ,1328.632 (heavy), , , 
+[K].GVmNAVNNVNNVIAAAFVK.[A],P00925,654.347 (light),3,53.261,1.41
+ , ,662.323 (heavy), , , 
+[K].AVDDFLLSLDGTANK.[S],P00925,789.903 (light),2,53.2967,1.41
+ , ,798.377 (heavy), , , 
+[K].IADISLAAFGR.[K],P39954,567.319 (light),2,44.2915,1.41
+ , ,574.298 (heavy), , , 
+[K].TALAMGVSQSLGK.[D],Q12464,631.842 (light),2,30.3939,1.41
+ , ,639.32 (heavy), , , 
+[R].LSETLYYEALR.[S],P47133,679.353 (light),2,39.4419,1.4
+ , ,686.332 (heavy), , , 
+[K].LGANAILGVSLAASR.[A],P00924,706.915 (light),2,47.9255,1.4
+ , ,716.387 (heavy), , , 
+[K].LSGVLGAIGGAFLANK.[I],P40159,744.434 (light),2,57.4318,1.4
+ , ,753.407 (heavy), , , 
+[K].QIQWYQLYVNSDR.[K],P00175,856.923 (light),2,47.5756,1.4
+ , ,867.392 (heavy), , , 
+[R].TGELLcYDHYK.[A],P07991,466.884 (light),3,25.1319,1.4
+ , ,471.204 (heavy), , , 
+[K].YDAIVKPTTDK.[L],P36139,625.836 (light),2,15.6298,1.4
+ , ,632.316 (heavy), , , 
+[K].SGSLTFNSK.[N],P19097,470.741 (light),2,15.8187,1.39
+ , ,476.224 (heavy), , , 
+[K].GVmNAVNNVNNVIAAAFVK.[A],P00925,654.347 (light),3,56.3655,1.39
+ , ,662.323 (heavy), , , 
+[K].IKPFIENLPQEFK.[D],Q05016,534.968 (light),3,41.3235,1.39
+ , ,540.618 (heavy), , , 
+[K].ITSQLIVPDSFEK.[N],P20449,738.901 (light),2,41.3386,1.39
+ , ,746.379 (heavy), , , 
+[R].SSIVGNPIASLLK.[N],P09440,649.888 (light),2,51.1874,1.39
+ , ,657.366 (heavy), , , 
+[R].NNYIGPGPPK.[N],Q06252,528.777 (light),2,18.0707,1.38
+ , ,535.258 (heavy), , , 
+[K].DIEVVAVNDPFISNDYAAYmVK.[Y],P00360,830.402 (light),3,62.1343,1.38
+ , ,838.378 (heavy), , , 
+[K].GVmNAVNNVNNVIAAAFVK.[A],P00925,654.347 (light),3,55.6018,1.38
+ , ,662.323 (heavy), , , 
+[K].NNTGDANTEEAAAR.[S],P16547,717.316 (light),2,11.195,1.38
+ , ,727.286 (heavy), , , 
+[R].GHTEAGVDLcK.[L],Q99258,593.78 (light),2,12.4261,1.38
+ , ,600.261 (heavy), , , 
+[R].IVAALPTIK.[Y],P00560,463.308 (light),2,33.5686,1.38
+ , ,468.293 (heavy), , , 
+[K].TPAYALFASQQK.[S],P38707,662.849 (light),2,33.2664,1.37
+ , ,670.327 (heavy), , , 
+[R].QVALAAGLSNHIVASTVNK.[V],P41338,631.69 (light),3,34.2682,1.37
+ , ,639.999 (heavy), , , 
+[R].TLVNQSPNLK.[I],P38817,557.317 (light),2,19.2076,1.37
+ , ,564.296 (heavy), , , 
+[K].APQAAGVIHNDLMNTFILAQVMK.[C],P38219,828.103 (light),3,60.0189,1.37
+ , ,838.074 (heavy), , , 
+[K].IVDLEQSSEFASLFPLK.[Q],P36008,962.01 (light),2,63.7659,1.37
+ , ,971.482 (heavy), , , 
+[K].EDYYTGTMIYGPYK.[G],P26637,850.879 (light),2,41.6396,1.37
+ , ,858.357 (heavy), , , 
+[R].AGANSMIQNVVDSDTISETAAR.[L],P31539,750.694 (light),3,43.649,1.37
+ , ,760.0 (heavy), , , 
+[K].LTDILEQLTK.[E],P42846,587.34 (light),2,46.7634,1.37
+ , ,593.322 (heavy), , , 
+[K].LLGVEAGGDGVDTK.[F],P00931,665.846 (light),2,28.6094,1.36
+ , ,673.324 (heavy), , , 
+[K].ATLSTLFQELNVPK.[S],P17695,780.936 (light),2,56.385,1.36
+ , ,789.411 (heavy), , , 
+[R].ALLDIDTLDEK.[T],Q05775,623.332 (light),2,43.3242,1.36
+ , ,629.314 (heavy), , , 
+[K].GVSTALVGILSR.[G],P16603,586.853 (light),2,45.4718,1.36
+ , ,594.331 (heavy), , , 
+[K].mITGDQLAIGK.[E],P19456,581.811 (light),2,25.6611,1.36
+ , ,587.793 (heavy), , , 
+[R].NSVIDAIVETHK.[N],P09457,442.574 (light),3,32.7837,1.36
+ , ,447.891 (heavy), , , 
+[R].WGLGPVAQK.[K],P33322,478.272 (light),2,29.7481,1.35
+ , ,484.254 (heavy), , , 
+[K].AGIVGLANVGK.[S],P38219,499.804 (light),2,30.261,1.35
+ , ,506.285 (heavy), , , 
+[R].GIETRPAQVILPMSPNHGTFGGDGmYSESK.[L],P19097,798.881 (light),4,38.2906,1.35
+ , ,808.104 (heavy), , , 
+[K].SAAIVNESLGGLDPK.[I],P08417,735.893 (light),2,35.9265,1.35
+ , ,744.367 (heavy), , , 
+[R].AVVAGAGTGGTISGISK.[Y],P32582,723.402 (light),2,25.1366,1.35
+ , ,732.375 (heavy), , , 
+[K].LLGAPSEGGSSVFEVTYFK.[G],P04802,994.505 (light),2,53.7598,1.35
+ , ,1004.476 (heavy), , , 
+[K].VIITGAPAAFSPTcTVSHIPGYINYLDELVK.[E],P38013,837.444 (light),4,67.0811,1.35
+ , ,845.918 (heavy), , , 
+[K].FGGEEGLLGLcNAK.[S],P38694,732.861 (light),2,40.6112,1.35
+ , ,740.338 (heavy), , , 
+[K].NFRPSPGLLVDVK.[F],P32528,481.277 (light),3,34.4535,1.35
+ , ,487.259 (heavy), , , 
+[K].ILDEAVAK.[F],P39954,429.75 (light),2,17.8961,1.34
+ , ,434.237 (heavy), , , 
+[K].DTDMVLIPAGVPR.[K],P17505,692.369 (light),2,47.9543,1.34
+ , ,700.345 (heavy), , , 
+[K].LSGAQVVDNLK.[L],P06106,572.322 (light),2,28.011,1.33
+ , ,579.302 (heavy), , , 
+[K].ALAAEDDEATR.[E],P40069,581.273 (light),2,13.107,1.33
+ , ,588.252 (heavy), , , 
+[R].EAIDIITGKDDR.[V],P32449,673.351 (light),2,25.9514,1.33
+ , ,681.327 (heavy), , , 
+[K].YVMADLINVGGTQSVIK.[Y],P39522,904.485 (light),2,51.4812,1.33
+ , ,914.455 (heavy), , , 
+[K].LIDLTQFPAFVTPmGK.[G],P06169,897.48 (light),2,62.9917,1.33
+ , ,905.954 (heavy), , , 
+[K].ESGNYLAIDLGGTNLR.[V],P04806,846.932 (light),2,45.9512,1.33
+ , ,857.4 (heavy), , , 
+[K].EELPSLVLR.[Q],P07259,528.309 (light),2,40.2944,1.33
+ , ,534.291 (heavy), , , 
+[K].ITAVAELLNQWPTEK.[Q],P07259,856.967 (light),2,54.8474,1.32
+ , ,866.439 (heavy), , , 
+[R].ENTEGEYSGIEHIVcPGVVQSIK.[L],P28241,849.08 (light),3,43.979,1.32
+ , ,858.053 (heavy), , , 
+[K].FDDMELDENLLR.[G],P10081,755.349 (light),2,48.4842,1.32
+ , ,763.325 (heavy), , , 
+[K].EFLPHITQLEGFESR.[K],P08518,601.641 (light),3,46.6056,1.32
+ , ,608.62 (heavy), , , 
+[R].ELHDLVVSTScDVIQSR.[N],P32179,653.326 (light),3,37.0007,1.32
+ , ,660.638 (heavy), , , 
+[K].ARPVITDLFK.[K],P32340,580.345 (light),2,34.0885,1.32
+ , ,587.325 (heavy), , , 
+[K].ELQEVANPIMSK.[L],P10592,679.853 (light),2,31.5068,1.31
+ , ,687.33 (heavy), , , 
+[K].TTLENLMITR.[R],Q08977,596.323 (light),2,38.6564,1.31
+ , ,603.303 (heavy), , , 
+[K].LSALDEEFDVVATK.[W],P36068,768.893 (light),2,45.5845,1.31
+ , ,776.371 (heavy), , , 
+[R].DGMNTTALEYVTVK.[S],P31688,771.381 (light),2,43.1794,1.31
+ , ,779.357 (heavy), , , 
+[K].NHIALFDTAYQGFATGDLDK.[D],P23542,733.024 (light),3,48.8011,1.31
+ , ,741.332 (heavy), , , 
+[K].TIEGDSQLSDEMSIK.[E],Q03690,826.888 (light),2,33.7035,1.3
+ , ,835.363 (heavy), , , 
+[K].EDLYQTFAR.[T],P32324,571.778 (light),2,33.718,1.3
+ , ,578.259 (heavy), , , 
+[K].GFEVGYTASGVK.[K],Q04728,607.806 (light),2,28.1928,1.3
+ , ,614.287 (heavy), , , 
+[R].EDDVEEAVQAADR.[A],P46367,723.822 (light),2,30.0533,1.3
+ , ,732.296 (heavy), , , 
+[K].GSNTLIEYMGPAPPK.[G],P14306,787.898 (light),2,38.7363,1.3
+ , ,796.372 (heavy), , , 
+[K].LNLAFVAHLFNTHPGLEPIQEEEKPEIEEFDAEGEREAR.[V],P32599,751.541 (light),6,55.7536,1.3
+ , ,760.349 (heavy), , , 
+[R].mGTTGVQSSVASDLDELISR.[V],P00931,1041.504 (light),2,54.1285,1.3
+ , ,1052.97 (heavy), , , 
+[K].SPIILQTSNGGAAYFAGK.[G],P14540,897.973 (light),2,41.4716,1.3
+ , ,908.442 (heavy), , , 
+[K].INNALAQVLLAK.[R],P00931,634.39 (light),2,45.4476,1.3
+ , ,642.366 (heavy), , , 
+[R].SHPDAFALDPLEFEK.[Q],Q12305,858.417 (light),2,46.0542,1.3
+ , ,867.39 (heavy), , , 
+[K].LSNAALPLAMGHEMSGIVSK.[V],P39714,676.021 (light),3,43.7349,1.3
+ , ,683.997 (heavy), , , 
+[R].VSGDLNPIHVSR.[H],P07149,647.349 (light),2,22.553,1.3
+ , ,656.323 (heavy), , , 
+[K].AVDTEAQNIDGKK.[S],P39076,463.572 (light),3,11.7425,1.3
+ , ,469.222 (heavy), , , 
+[R].GATDQTLDEAER.[S],P39076,653.299 (light),2,16.5197,1.3
+ , ,661.276 (heavy), , , 
+[K].NVNDVIAPAFVK.[A],P00924,643.859 (light),2,39.9536,1.3
+ , ,651.337 (heavy), , , 
+[K].TSIQHVGMINGR.[K],P07149,656.844 (light),2,17.803,1.29
+ , ,666.315 (heavy), , , 
+[R].HNVIDLVGNTPLIALK.[K],P32582,859.004 (light),2,51.7912,1.29
+ , ,869.473 (heavy), , , 
+[K].YDFHMLPSGLVNPNcQNLLGNGVVIHVPSFFK.[E],P80210,904.208 (light),4,65.4833,1.29
+ , ,914.427 (heavy), , , 
+[R].MIEIMLPVFDAPQNLVEQAK.[L],P06169,762.736 (light),3,69.7479,1.29
+ , ,770.712 (heavy), , , 
+[K].cGNADVVVAGGcESMTNAPYYMPAAR.[A],P41338,921.067 (light),3,43.8004,1.29
+ , ,930.705 (heavy), , , 
+[R].FPFNPNGSTNGIAGIK.[S],P38972,817.419 (light),2,41.6212,1.29
+ , ,827.389 (heavy), , , 
+[K].KLIQSLPPTLK.[V],P49167,619.398 (light),2,27.6484,1.29
+ , ,626.377 (heavy), , , 
+[-].mEAHNQFLK.[T],P49723,580.282 (light),2,28.1464,1.28
+ , ,586.763 (heavy), , , 
+[R].VVTGVLSSLETSR.[D],P40024,674.378 (light),2,37.0339,1.28
+ , ,682.354 (heavy), , , 
+[R].TGTTTNDVDYPIPPNHEmIFTTDDK.[Y],P00549,946.763 (light),3,39.0189,1.28
+ , ,956.401 (heavy), , , 
+[K].cYGDSAQFVSDEDLR.[F],P08566,881.373 (light),2,34.121,1.28
+ , ,890.346 (heavy), , , 
+[R].TcVVETPTLNSDK.[S],P07702,732.356 (light),2,25.8643,1.28
+ , ,739.335 (heavy), , , 
+[K].FDQLGLASR.[L],P22137,503.77 (light),2,27.8154,1.28
+ , ,510.25 (heavy), , , 
+[K].NQILVSAFSELETPLGNLK.[V],P47085,1037.065 (light),2,64.0851,1.28
+ , ,1048.531 (heavy), , , 
+[R].SAVQENGDTMR.[S],Q12680,604.272 (light),2,11.6447,1.28
+ , ,612.249 (heavy), , , 
+[K].LWGATIGDQSMELR.[G],P53753,788.893 (light),2,44.8624,1.28
+ , ,798.365 (heavy), , , 
+[K].QDLAQIIELTR.[Y],P54114,650.368 (light),2,48.7649,1.28
+ , ,658.344 (heavy), , , 
+[R].WAMVVENGIVTYAAK.[E],P38013,551.289 (light),3,48.0835,1.28
+ , ,557.271 (heavy), , , 
+[R].YYFVHSFAAILNSEK.[K],P33734,596.97 (light),3,47.715,1.28
+ , ,603.285 (heavy), , , 
+[K].IPHEYITIESMGK.[L],Q12447,506.593 (light),3,31.6297,1.27
+ , ,511.911 (heavy), , , 
+[K].GWDQGVAGMcVGEK.[R],P32472,747.329 (light),2,33.873,1.27
+ , ,755.306 (heavy), , , 
+[R].SLHDALSVLSQTTK.[E],P39076,500.607 (light),3,37.1267,1.27
+ , ,506.589 (heavy), , , 
+[K].HDVVDMITGIGGSK.[S],P49095,714.862 (light),2,39.1427,1.27
+ , ,723.337 (heavy), , , 
+[K].QFYVNVEEEEYK.[Y],P10081,788.862 (light),2,34.9958,1.27
+ , ,796.34 (heavy), , , 
+[K].EcINIKPQVDR.[Y],P39954,686.356 (light),2,19.4872,1.27
+ , ,694.332 (heavy), , , 
+[K].ASSGINGAcTETQR.[H],P32614,726.332 (light),2,12.0593,1.27
+ , ,735.305 (heavy), , , 
+[R].APEALFHPSVLGLESAGIDQTTYNSIMK.[C],P60010,748.13 (light),4,56.3546,1.27
+ , ,756.355 (heavy), , , 
+[K].FPQFSQPAEGYHGTIYNEAYGNLAYIVHVR.[T],P06106,861.17 (light),4,53.645,1.27
+ , ,871.39 (heavy), , , 
+[K].QLYSFDLEGFWMDVGQPK.[D],P41940,1080.51 (light),2,69.3339,1.27
+ , ,1091.478 (heavy), , , 
+[K].ESNFLIDFLMGGVSAAVAK.[T],P18239,985.009 (light),2,77.5269,1.27
+ , ,995.478 (heavy), , , 
+[K].LNLPTNSSISVTLSQDDLR.[T],P32377,1037.045 (light),2,49.045,1.27
+ , ,1049.507 (heavy), , , 
+[R].IVLcGMNGPIVTNIR.[A],P39730,828.951 (light),2,45.3482,1.27
+ , ,838.422 (heavy), , , 
+[K].GHYTEGAELVDSVMDVIR.[R],P02557,664.324 (light),3,54.5865,1.27
+ , ,671.968 (heavy), , , 
+[R].ILAVDTVSK.[A],P23254,473.285 (light),2,22.8558,1.27
+ , ,478.27 (heavy), , , 
+[K].YDVYSGESQVSK.[E],Q05506,681.315 (light),2,21.0457,1.27
+ , ,688.294 (heavy), , , 
+[K].GADSSTFTK.[V],Q06252,457.217 (light),2,11.4764,1.27
+ , ,462.202 (heavy), , , 
+[K].VISSMGASAK.[S],P36101,475.753 (light),2,12.6933,1.27
+ , ,481.236 (heavy), , , 
+[K].ALLPHLTNAIVETNK.[W],P16521,817.467 (light),2,36.5185,1.27
+ , ,827.438 (heavy), , , 
+[K].LSHHQVPIWQSIEIMDR.[Y],P47085,523.022 (light),4,40.8463,1.27
+ , ,529.752 (heavy), , , 
+[K].LPLVGGHEGAGVVVK.[L],P07246,716.419 (light),2,28.5625,1.26
+ , ,725.393 (heavy), , , 
+[K].LGDGHLIVK.[I],Q03640,476.284 (light),2,17.9144,1.26
+ , ,482.266 (heavy), , , 
+[K].KGSYVGIHSTGFK.[D],Q07478,460.913 (light),3,14.438,1.26
+ , ,466.563 (heavy), , , 
+[K].TNEAAGDGTTSATVLGR.[A],P19882,810.894 (light),2,21.4736,1.26
+ , ,821.363 (heavy), , , 
+[R].ENEIVLNNYNER.[V],Q12513,753.862 (light),2,26.9373,1.26
+ , ,763.334 (heavy), , , 
+[K].LNVNTGSLAPK.[N],P38682,557.317 (light),2,24.4496,1.26
+ , ,564.296 (heavy), , , 
+[K].NYIASGFDNGFTVLSLGNDEPTLSLDPVGK.[L],P41811,1047.519 (light),3,69.3677,1.26
+ , ,1058.819 (heavy), , , 
+[K].VFKDEPNYTENFIQSIMEAIPEGSK.[G],P37012,962.8 (light),3,66.8197,1.26
+ , ,972.77 (heavy), , , 
+[K].LPNcPRPNmSIcIFGDAFDVDR.[A],P0CX43,870.734 (light),3,48.5381,1.26
+ , ,879.708 (heavy), , , 
+[K].QGLDDIATLMK.[Y],P07263,602.816 (light),2,46.7729,1.26
+ , ,609.296 (heavy), , , 
+[R].DAAAYADK.[V],P54115,412.693 (light),2,11.3563,1.26
+ , ,417.179 (heavy), , , 
+[K].YRPNcPIILVTR.[C],P00549,501.282 (light),3,30.1298,1.26
+ , ,507.264 (heavy), , , 
+[K].HLEGISDADIAK.[L],P00950,634.828 (light),2,21.6075,1.25
+ , ,642.306 (heavy), , , 
+[K].LcVQELEK.[R],P22141,509.766 (light),2,24.3579,1.25
+ , ,514.252 (heavy), , , 
+[K].ILEGLTGADFVGFQTR.[E],P38427,862.453 (light),2,54.334,1.25
+ , ,872.424 (heavy), , , 
+[K].LNLAFVAHLFNTHPGLEPIQEEEKPEIEEFDAEGER.[E],P32599,830.411 (light),5,58.6839,1.25
+ , ,839.783 (heavy), , , 
+[K].GVLGYTEDAVVSSDFLGDSHSSIFDASAGIQLSPK.[F],P00359,1190.582 (light),3,66.1754,1.25
+ , ,1203.543 (heavy), , , 
+[K].NLVNDEIIAALIELAK.[E],P12709,580.337 (light),3,77.5324,1.25
+ , ,586.651 (heavy), , , 
+[R].LNIGIVHVGAPSAALNAATR.[A],P16861,973.054 (light),2,42.7138,1.25
+ , ,986.514 (heavy), , , 
+[R].LNIDPDTITIK.[R],P07245,621.851 (light),2,39.8884,1.25
+ , ,628.331 (heavy), , , 
+[K].VVADDLVLVTPK.[K],P38934,634.877 (light),2,40.9085,1.25
+ , ,641.358 (heavy), , , 
+[K].EGADIQAALYEINGQR.[T],P25373,583.292 (light),3,45.4174,1.25
+ , ,590.603 (heavy), , , 
+[K].TAVVDGVFDEVSLDK.[Y],P34760,797.404 (light),2,47.8523,1.25
+ , ,805.38 (heavy), , , 
+[K].LELIELLEK.[I],P22137,550.334 (light),2,54.877,1.25
+ , ,555.319 (heavy), , , 
+[K].MSLGLAHSIGR.[H],Q12499,571.311 (light),2,26.0018,1.25
+ , ,579.287 (heavy), , , 
+[K].NTDENLINHSK.[L],P32860,642.813 (light),2,12.0326,1.25
+ , ,651.288 (heavy), , , 
+[R].ScSSALAPATFHK.[L],P38137,459.559 (light),3,18.3425,1.25
+ , ,464.544 (heavy), , , 
+[K].DNNGSISSSELATVMR.[S],P06787,840.896 (light),2,39.6888,1.25
+ , ,851.365 (heavy), , , 
+[K].YGSANVEGTILK.[L],P40825,626.333 (light),2,28.2926,1.24
+ , ,633.313 (heavy), , , 
+[K].TGEFDFEAAVK.[M],P53549,607.291 (light),2,37.6999,1.24
+ , ,613.273 (heavy), , , 
+[R].NMQIEFSSAVQDHADSLGR.[E],P06208,702.33 (light),3,38.0345,1.24
+ , ,711.303 (heavy), , , 
+[R].GLSAVAQAESmK.[F],P05750,604.302 (light),2,21.3634,1.24
+ , ,610.783 (heavy), , , 
+[R].EASDMSVDETGGGR.[R],P32558,705.794 (light),2,15.2874,1.24
+ , ,714.269 (heavy), , , 
+[R].TFIAVKPDGVQR.[G],P36010,665.877 (light),2,23.0395,1.24
+ , ,674.352 (heavy), , , 
+[K].YIEDFVGVPVEWVGTGPAR.[E],P80210,697.691 (light),3,60.8438,1.24
+ , ,705.334 (heavy), , , 
+[K].HcLVNGLDDIGITLQK.[E],P07264,898.473 (light),2,43.6863,1.24
+ , ,908.443 (heavy), , , 
+[R].YNEIVNLTLPDGTVR.[Q],P16140,852.451 (light),2,47.4729,1.24
+ , ,862.422 (heavy), , , 
+[R].EmSVDALQNYLQVK.[A],P46367,827.412 (light),2,44.5942,1.24
+ , ,835.887 (heavy), , , 
+[K].ADVLTAFLNK.[V],P08524,546.308 (light),2,47.1226,1.24
+ , ,552.29 (heavy), , , 
+[K].VLNQENIHR.[R],P22137,561.804 (light),2,11.6794,1.24
+ , ,570.279 (heavy), , , 
+[K].HYYAQDFPR.[N],P40363,598.779 (light),2,19.1131,1.24
+ , ,606.256 (heavy), , , 
+[K].GVSDEANLNETGR.[V],P07251,681.319 (light),2,17.3482,1.24
+ , ,690.292 (heavy), , , 
+[K].VGQSLSIVSNDELSK.[A],P38248,788.415 (light),2,33.4991,1.24
+ , ,797.388 (heavy), , , 
+[K].LASASPLGEK.[N],P21826,486.772 (light),2,16.7117,1.23
+ , ,492.255 (heavy), , , 
+[R].ANNcINLDEK.[G],P11986,595.776 (light),2,16.8649,1.23
+ , ,602.257 (heavy), , , 
+[K].GSTANMSLGGGK.[S],P09232,540.261 (light),2,13.8667,1.23
+ , ,547.241 (heavy), , , 
+[K].EHVNGLNELFTIISR.[I],P38427,581.313 (light),3,54.73,1.23
+ , ,588.624 (heavy), , , 
+[K].LLVDVDKEPFFKPSSTTVGDILTK.[D],P30952,663.115 (light),4,50.6571,1.23
+ , ,669.845 (heavy), , , 
+[K].GVLGYTEDAVVSSDFLGDSHSSIFDASAGIQLSPK.[F],P00359,1190.584 (light),3,65.3982,1.23
+ , ,1203.545 (heavy), , , 
+[K].GVLGYTEDAVVSSDFLGDSHSSIFDASAGIQLSPK.[F],P00359,1190.582 (light),3,76.3637,1.23
+ , ,1203.544 (heavy), , , 
+[R].DGQLVEIPANEVVPGDILQLEDGTVIPTDGR.[I],P05030,1087.228 (light),3,71.3736,1.23
+ , ,1099.525 (heavy), , , 
+[K].ELTNHNYIDHELSATLDSTDAFEGPEK.[L],P21182,762.353 (light),4,44.1794,1.23
+ , ,770.828 (heavy), , , 
+[K].APEGELGDSMQAAFDEGK.[D],P19211,926.407 (light),2,40.0332,1.23
+ , ,936.377 (heavy), , , 
+[K].TTVANFEPSLDYIVAK.[I],P03965,884.462 (light),2,50.2864,1.23
+ , ,893.435 (heavy), , , 
+[K].GPIYNDQNMVISDSGYLLSK.[A],Q08220,1107.54 (light),2,49.6928,1.23
+ , ,1119.505 (heavy), , , 
+[K].LEAEEIPSEDQNEFLLER.[T],P19097,721.015 (light),3,46.1072,1.23
+ , ,728.659 (heavy), , , 
+[K].LLGAVVEPLADIAHK.[Y],Q00955,515.971 (light),3,44.373,1.23
+ , ,521.953 (heavy), , , 
+[R].YYGGNEHIDR.[M],P37291,612.276 (light),2,12.1731,1.23
+ , ,620.252 (heavy), , , 
+[K].FHVSISNPEFLAK.[Y],P15180,496.933 (light),3,37.7817,1.23
+ , ,502.582 (heavy), , , 
+[R].LNITGTVLSK.[R],P13188,523.316 (light),2,31.8267,1.23
+ , ,529.298 (heavy), , , 
+[K].KLEDLSPSTHNMEVPVVK.[R],P23301,1012.03 (light),2,30.8723,1.22
+ , ,1023.496 (heavy), , , 
+[R].SDEVTPLVQNVTGDK.[E],P16120,801.404 (light),2,35.162,1.22
+ , ,810.377 (heavy), , , 
+[K].TVILDAENSPAK.[Q],P21264,629.338 (light),2,23.5834,1.22
+ , ,636.317 (heavy), , , 
+[K].NNSHLDSIDAK.[I],P15625,607.294 (light),2,11.7431,1.22
+ , ,615.27 (heavy), , , 
+[K].AVDDFLISLDGTANK.[S],P00924,789.904 (light),2,57.1741,1.22
+ , ,798.379 (heavy), , , 
+[K].IAMFcHVGPEQVVNVHDVNSTYHVPLLLLEQK.[M],P28274,738.182 (light),5,52.9618,1.22
+ , ,746.557 (heavy), , , 
+[R].YGITHGLTNWAAAYATGLLIAR.[R],P26321,778.418 (light),3,60.3959,1.22
+ , ,788.056 (heavy), , , 
+[R].MSANISETTAMITDIATAPAEIDR.[C],P06169,841.408 (light),3,62.2484,1.22
+ , ,850.714 (heavy), , , 
+[K].LIHNDSSYNHEYLGITGLPSLTSNAAK.[I],P23542,729.618 (light),4,41.4553,1.22
+ , ,738.342 (heavy), , , 
+[K].HSGNIQLDEIIEIAR.[Q],P0CX53,569.973 (light),3,45.8036,1.22
+ , ,577.284 (heavy), , , 
+[K].TAGIQIVADDLTVTNPK.[R],P00924,878.479 (light),2,45.1924,1.22
+ , ,888.45 (heavy), , , 
+[R].SGAATLLVATAVAAR.[G],P06634,457.936 (light),3,42.8479,1.22
+ , ,463.918 (heavy), , , 
+[R].LGEEQFPDLIPR.[L],P33892,707.372 (light),2,47.9692,1.22
+ , ,715.348 (heavy), , , 
+[K].IALALEYASK.[N],P00958,539.81 (light),2,34.8326,1.22
+ , ,545.294 (heavy), , , 
+[K].ANGHLQILYGSLAPGGAVGK.[I],P39522,962.026 (light),2,37.8504,1.21
+ , ,974.489 (heavy), , , 
+[R].HIYQSAAAGLK.[K],P46367,579.816 (light),2,14.4485,1.21
+ , ,587.294 (heavy), , , 
+[R].GQTYSPAQIGGFVLNK.[M],P0CS90,560.63 (light),3,44.1766,1.21
+ , ,567.277 (heavy), , , 
+[K].TAGIQIVADDLTVTNPAR.[I],P00925,619.002 (light),3,47.3202,1.21
+ , ,626.646 (heavy), , , 
+[R].GFGHIcFSVSDINK.[T],P50107,527.589 (light),3,37.4695,1.21
+ , ,533.239 (heavy), , , 
+[R].cPDASVAGLMVK.[E],P28777,624.311 (light),2,33.2725,1.21
+ , ,630.293 (heavy), , , 
+[K].VIVTSSTAALVTPTDMNK.[G],P53111,924.493 (light),2,38.581,1.2
+ , ,934.463 (heavy), , , 
+[K].VISEILTR.[E],P23248,465.785 (light),2,27.773,1.2
+ , ,471.268 (heavy), , , 
+[K].HLEGISDADIAK.[L],P00950,634.827 (light),2,22.5972,1.2
+ , ,642.305 (heavy), , , 
+[K].YTSAFWGENFVHELYSTSSSSTSSSATK.[N],Q00764,1021.127 (light),3,53.8423,1.2
+ , ,1032.095 (heavy), , , 
+[K].LGANAILGVSLAASR.[A],P00924,706.915 (light),2,46.2141,1.2
+ , ,716.387 (heavy), , , 
+[K].cGHTNQLRPK.[K],P0CH08,404.208 (light),3,5.1225,1.2
+ , ,409.858 (heavy), , , 
+[R].QLGNAVMNLFDPNDR.[S],P22855,852.412 (light),2,52.8633,1.2
+ , ,863.379 (heavy), , , 
+[R].FVDESLLSTLPAGK.[S],P07257,738.902 (light),2,46.841,1.2
+ , ,746.38 (heavy), , , 
+[K].YMATTQMEPTDAR.[R],P32454,757.834 (light),2,22.5933,1.2
+ , ,766.308 (heavy), , , 
+[K].AGFAGDDAPR.[A],P60010,488.728 (light),2,14.978,1.2
+ , ,495.209 (heavy), , , 
+[K].ERGPIPIEEEFPLNSK.[V],P22147,618.991 (light),3,40.0257,1.2
+ , ,625.971 (heavy), , , 
+[K].GDSMDAEVAFEK.[V],P53852,649.781 (light),2,29.1089,1.2
+ , ,656.262 (heavy), , , 
+[K].SDDVALEEGSYVR.[I],P27692,720.335 (light),2,28.9657,1.2
+ , ,728.312 (heavy), , , 
+[K].FATVPTGGASSAAAGAAGAAAGGDAAEEEK.[E],P02400,855.068 (light),3,32.6877,1.19
+ , ,865.371 (heavy), , , 
+[K].DLVSGGVVVSNASDK.[I],P22203,723.876 (light),2,30.5447,1.19
+ , ,732.351 (heavy), , , 
+[K].AQDTFIYYGGK.[N],P32319,631.806 (light),2,30.6566,1.19
+ , ,638.287 (heavy), , , 
+[K].ESVQIQDIIK.[E],Q04493,586.83 (light),2,37.3586,1.19
+ , ,593.31 (heavy), , , 
+[K].NDSDVPELATIPAAK.[R],P48570,770.896 (light),2,37.3312,1.19
+ , ,779.371 (heavy), , , 
+[K].AYGAQAVVISVDPK.[R],P33734,709.388 (light),2,34.8155,1.19
+ , ,717.364 (heavy), , , 
+[K].ALGIKPQIYAK.[L],P32582,601.369 (light),2,23.6307,1.19
+ , ,608.348 (heavy), , , 
+[K].LVEDPQVIAPFLGK.[L],P16521,763.435 (light),2,51.4149,1.19
+ , ,771.411 (heavy), , , 
+[K].VDSIIIGGGMAFTFK.[K],P00560,778.411 (light),2,60.8155,1.19
+ , ,786.387 (heavy), , , 
+[R].VLEVNLLHAPQVADAILGNNIFSHYDKPTIASLSEK.[A],P22137,980.026 (light),4,61.1989,1.19
+ , ,991.492 (heavy), , , 
+[K].DLINFNDIGLGIGEISHR.[S],P33330,661.681 (light),3,60.3048,1.19
+ , ,669.99 (heavy), , , 
+[K].VINDAFGIEEGLmTTVHSLTATQK.[T],P00359,864.439 (light),3,62.2997,1.19
+ , ,873.745 (heavy), , , 
+[R].QLLELQSQPTEVDFSHYR.[S],P30902,730.699 (light),3,42.9193,1.19
+ , ,739.34 (heavy), , , 
+[K].TAQLSEFDEELYK.[V],P07284,786.875 (light),2,39.5724,1.19
+ , ,794.353 (heavy), , , 
+[K].DVDDIVLVGGSTR.[I],P16474,673.352 (light),2,40.909,1.19
+ , ,681.329 (heavy), , , 
+[R].FDASANLSYQPIDQWK.[S],P32497,941.952 (light),2,46.0509,1.19
+ , ,952.421 (heavy), , , 
+[K].ITAVAELLNQWPTEK.[Q],P07259,856.964 (light),2,54.6967,1.19
+ , ,866.435 (heavy), , , 
+[R].DYGVLIEEEGVALR.[G],P34760,781.905 (light),2,50.8871,1.19
+ , ,790.38 (heavy), , , 
+[K].NGEVSQWVVPGGVFK.[A],Q03629,801.918 (light),2,48.0374,1.19
+ , ,811.39 (heavy), , , 
+[K].SVDSAMDAVDK.[I],P29547,569.258 (light),2,20.9804,1.19
+ , ,575.241 (heavy), , , 
+[K].KLQSNGAIQGDSFVcK.[N],P38248,584.63 (light),3,21.6085,1.19
+ , ,591.277 (heavy), , , 
+[R].VQDFLNENDTK.[K],P32386,661.815 (light),2,24.6478,1.19
+ , ,669.292 (heavy), , , 
+[K].cEcPETFSK.[K],P38787,579.234 (light),2,14.5753,1.19
+ , ,583.222 (heavy), , , 
+[K].GFEVHWAEYNK.[I],P16861,690.322 (light),2,31.095,1.18
+ , ,698.299 (heavy), , , 
+[R].LFNDSALLDAK.[I],P00815,603.822 (light),2,38.4111,1.18
+ , ,610.302 (heavy), , , 
+[K].LLDEMQDVYNK.[I],P32497,684.329 (light),2,34.4084,1.18
+ , ,691.308 (heavy), , , 
+[K].VSDSGIVTLAYK.[Q],P04840,626.843 (light),2,34.2518,1.18
+ , ,633.324 (heavy), , , 
+[K].EMLNHNLITK.[Q],P53312,606.824 (light),2,20.3979,1.18
+ , ,614.302 (heavy), , , 
+[K].TVESGIVEDDKK.[E],P40517,440.561 (light),3,12.8137,1.18
+ , ,445.214 (heavy), , , 
+[K].DYLYTLHDYGYDVEIESYSK.[W],P07702,825.041 (light),3,51.4785,1.18
+ , ,832.685 (heavy), , , 
+[K].ESGDFLAIDLGGTNLR.[V],P04807,839.425 (light),2,52.7948,1.18
+ , ,849.396 (heavy), , , 
+[K].LLFLGLDNAGK.[T],P20606,580.838 (light),2,47.8578,1.18
+ , ,587.319 (heavy), , , 
+[K].NHDEIVNDPK.[K],P17967,590.783 (light),2,11.2827,1.18
+ , ,598.261 (heavy), , , 
+[K].GVEVVLPVDFIIADAFSADANTK.[T],P00560,1196.126 (light),2,77.5224,1.18
+ , ,1208.589 (heavy), , , 
+[K].DELDDAFNDVAR.[Y],P35719,690.308 (light),2,42.6618,1.18
+ , ,698.284 (heavy), , , 
+[R].IGEFESSFLSYLK.[S],P07251,760.388 (light),2,58.9044,1.18
+ , ,767.367 (heavy), , , 
+[K].DHGEGGIIVGSALENKR.[I],P13298,584.639 (light),3,23.8083,1.18
+ , ,592.616 (heavy), , , 
+[K].ETQDALDNFTK.[Q],P32454,641.3 (light),2,27.4166,1.18
+ , ,648.279 (heavy), , , 
+[K].NRPAPSVEQVK.[T],P13663,612.838 (light),2,11.5279,1.18
+ , ,621.313 (heavy), , , 
+[R].MGHSGAIVEGSGTDAESK.[K],P53598,578.264 (light),3,12.8176,1.18
+ , ,585.244 (heavy), , , 
+[K].FVcVDcREDFVK.[D],P22768,525.243 (light),3,28.1978,1.18
+ , ,529.895 (heavy), , , 
+[K].FLSTDGEMLQTR.[G],P32860,699.34 (light),2,33.4027,1.17
+ , ,707.317 (heavy), , , 
+[K].IAGVLGATGSVGQR.[F],P13663,643.364 (light),2,27.8959,1.17
+ , ,652.338 (heavy), , , 
+[K].WHMYDTVK.[G],Q00711,540.252 (light),2,21.3226,1.17
+ , ,546.234 (heavy), , , 
+[K].SHLGMGSENVGIK.[L],P41921,664.835 (light),2,19.2918,1.17
+ , ,673.31 (heavy), , , 
+[K].mNANSLDTFR.[A],P0CZ17,592.772 (light),2,21.7345,1.17
+ , ,599.751 (heavy), , , 
+[R].AQFIAATDAQALLGFK.[L],P00931,832.954 (light),2,56.3371,1.17
+ , ,842.426 (heavy), , , 
+[R].mIEIMLPVFDAPQNLVEQAK.[L],P06169,768.065 (light),3,69.1447,1.17
+ , ,775.709 (heavy), , , 
+[K].GScLDGVDSLHSIVQMPR.[G],P21264,657.653 (light),3,43.0168,1.17
+ , ,665.297 (heavy), , , 
+[K].DFSPLNVGSDWK.[A],P31116,682.828 (light),2,48.0368,1.17
+ , ,690.306 (heavy), , , 
+[K].DFGALHFTGSTNVFK.[S],P07275,547.607 (light),3,45.1895,1.17
+ , ,553.922 (heavy), , , 
+[R].SYTSVAELNR.[E],Q06146,570.287 (light),2,22.7337,1.17
+ , ,577.266 (heavy), , , 
+[R].ARDDADEDEEDPDTR.[S],P16140,874.846 (light),2,11.2084,1.17
+ , ,885.315 (heavy), , , 
+[R].ATVVMQGDR.[G],P11914,488.748 (light),2,13.2576,1.17
+ , ,495.228 (heavy), , , 
+[R].GKVDELSALK.[D],P36101,530.305 (light),2,18.9713,1.17
+ , ,536.288 (heavy), , , 
+[K].DPLTADLPDDK.[T],P15625,600.293 (light),2,32.2496,1.16
+ , ,606.275 (heavy), , , 
+[K].FPcGDFLEK.[V],Q05506,556.758 (light),2,35.9311,1.16
+ , ,561.244 (heavy), , , 
+[K].SSPSNSILDR.[I],P00937,538.273 (light),2,18.628,1.16
+ , ,545.252 (heavy), , , 
+[K].IESSVESQFSAGR.[L],P0CX39,698.838 (light),2,25.9668,1.16
+ , ,707.313 (heavy), , , 
+[R].QDNNNNNGGFGGPGGPGGQGFGR.[Q],P40159,725.65 (light),3,26.8643,1.16
+ , ,736.618 (heavy), , , 
+[K].QGVTSLGIK.[A],P23639,451.769 (light),2,21.9843,1.16
+ , ,457.253 (heavy), , , 
+[R].GcLMGGIHGMFLAQYDVLR.[E],P06168,713.35 (light),3,53.8917,1.16
+ , ,721.326 (heavy), , , 
+[K].VLVEPLLNAVLEDYMNNVPDAR.[D],P30822,828.765 (light),3,76.3648,1.16
+ , ,838.07 (heavy), , , 
+[K].NLVNDEIIAALIELAK.[E],P12709,870.001 (light),2,77.5236,1.16
+ , ,879.473 (heavy), , , 
+[R].SGSDLQYLSVYSDNGTLK.[L],P28319,973.971 (light),2,43.8665,1.16
+ , ,984.44 (heavy), , , 
+[K].RLTEIANVIPVIGK.[S],P25342,508.315 (light),3,42.9204,1.16
+ , ,514.63 (heavy), , , 
+[K].ENVIILYGTLAR.[H],P33892,681.393 (light),2,48.0627,1.16
+ , ,689.369 (heavy), , , 
+[K].ELNLTGPK.[V],P38764,436.248 (light),2,20.5434,1.16
+ , ,441.233 (heavy), , , 
+[K].AVVESVGAEVDEAR.[I],P02400,477.576 (light),3,27.105,1.16
+ , ,483.225 (heavy), , , 
+[K].SANVDVPHR.[L],P11412,497.756 (light),2,11.5919,1.16
+ , ,505.234 (heavy), , , 
+[K].HLQILQMPEK.[F],P16550,618.841 (light),2,28.0808,1.16
+ , ,626.319 (heavy), , , 
+[K].SSAAGNTVIIGGGDTATVAK.[K],P00560,895.469 (light),2,28.441,1.15
+ , ,906.436 (heavy), , , 
+[K].LcNESSEVAALSGEISK.[W],P37292,897.433 (light),2,37.8856,1.15
+ , ,906.407 (heavy), , , 
+[K].FGDIDTATATPTELSTQPAK.[E],P07213,1032.511 (light),2,37.3801,1.15
+ , ,1043.478 (heavy), , , 
+[K].INEKPTVVNDYEAAR.[A],O14467,573.629 (light),3,20.7075,1.15
+ , ,580.608 (heavy), , , 
+[K].TNGNNISIR.[K],P38787,494.762 (light),2,13.6198,1.15
+ , ,502.24 (heavy), , , 
+[R].AVGGEVGASAALAPK.[I],P0CX53,649.359 (light),2,24.6843,1.15
+ , ,657.335 (heavy), , , 
+[R].DDSTIVGLHYK.[I],P23292,624.316 (light),2,27.4368,1.15
+ , ,631.296 (heavy), , , 
+[K].YLSNGFGGVLSFGVK.[D],P06106,772.909 (light),2,53.2123,1.15
+ , ,781.384 (heavy), , , 
+[K].EFGTTPEKPEETPLEELAETFQDTFSGALGK.[Q],P19097,1133.544 (light),3,77.529,1.15
+ , ,1144.844 (heavy), , , 
+[K].DSQSANNYALQLADTVQIPLDETEPPR.[F],P32558,995.819 (light),3,62.8029,1.15
+ , ,1007.451 (heavy), , , 
+[K].LGANAILGVSMAAAR.[A],P00925,707.896 (light),2,45.8827,1.15
+ , ,717.368 (heavy), , , 
+[K].QAATSVSATASK.[A],P53551,561.293 (light),2,11.1767,1.15
+ , ,568.273 (heavy), , , 
+[R].LAMFLTDSNTIR.[E],P15180,691.361 (light),2,42.9713,1.15
+ , ,699.337 (heavy), , , 
+[R].ISLGLPVGAIMNcADNSGAR.[N],P0CX42,672.671 (light),3,54.204,1.15
+ , ,680.647 (heavy), , , 
+[K].ATVILTPGENK.[L],P40483,571.824 (light),2,22.6764,1.15
+ , ,578.304 (heavy), , , 
+[R].LNEPLLAR.[Q],P23615,463.277 (light),2,25.8197,1.15
+ , ,469.259 (heavy), , , 
+[R].LILIESR.[I],P05756,422.268 (light),2,29.1073,1.15
+ , ,427.254 (heavy), , , 
+[R].KVVADDLVLVTPK.[K],P38934,698.924 (light),2,33.2404,1.15
+ , ,706.402 (heavy), , , 
+[K].IEGDNSLEAADFR.[W],P38631,718.836 (light),2,31.0465,1.14
+ , ,727.31 (heavy), , , 
+[K].AMLNNSMSLYR.[C],P21801,650.313 (light),2,32.7359,1.14
+ , ,658.29 (heavy), , , 
+[R].YGGVYVGTLSKPEVK.[E],P06169,798.936 (light),2,27.9455,1.14
+ , ,807.411 (heavy), , , 
+[R].EAAAEVTNLDK.[D],P10964,580.794 (light),2,18.8305,1.14
+ , ,587.274 (heavy), , , 
+[K].NVAAGcNPMDLR.[R],P19882,659.306 (light),2,26.7453,1.14
+ , ,667.282 (heavy), , , 
+[R].SPEYDQSTLSNYK.[D],Q10740,766.349 (light),2,24.4778,1.14
+ , ,774.325 (heavy), , , 
+[R].LISDYDADELAEALQPVIVNTPHLK.[K],P38788,922.152 (light),3,62.3168,1.14
+ , ,932.122 (heavy), , , 
+[K].MLVLVEESLANK.[K],P04385,673.374 (light),2,43.3568,1.14
+ , ,680.353 (heavy), , , 
+[R].AANQGALPPDLSLIVK.[A],P07143,803.962 (light),2,48.8985,1.14
+ , ,813.434 (heavy), , , 
+[R].DDLFAINASIVR.[D],P17505,667.359 (light),2,51.6853,1.14
+ , ,675.336 (heavy), , , 
+[R].IPNSIFFDIDAISDKK.[S],Q08686,608.324 (light),3,51.6439,1.14
+ , ,614.639 (heavy), , , 
+[R].ENYSAMIFETIVDGK.[L],P07149,858.911 (light),2,60.8345,1.14
+ , ,867.386 (heavy), , , 
+[K].VQGSVIGIDLGTTNSAVAIMEGK.[V],P0CS90,1130.596 (light),2,57.0415,1.14
+ , ,1143.558 (heavy), , , 
+[K].FDDmELDENLLR.[G],P10081,763.345 (light),2,47.3218,1.14
+ , ,770.823 (heavy), , , 
+[K].ETLINIAK.[T],P12612,451.271 (light),2,27.536,1.14
+ , ,456.256 (heavy), , , 
+[K].TAISGMSDmELAQIK.[T],Q12513,805.892 (light),2,35.4428,1.14
+ , ,813.868 (heavy), , , 
+[R].SLLALQGPK.[A],P48015,463.787 (light),2,30.1208,1.14
+ , ,469.271 (heavy), , , 
+[K].FEFGIDEK.[T],P27616,492.737 (light),2,34.1715,1.14
+ , ,497.223 (heavy), , , 
+[K].KIQEIQDAVHNQALQLPR.[V],P00815,701.055 (light),3,32.1914,1.14
+ , ,710.693 (heavy), , , 
+[R].GGAEQVIAEVER.[S],P42943,629.325 (light),2,32.2032,1.13
+ , ,637.302 (heavy), , , 
+[K].LLDNTNTDVK.[I],Q08421,566.796 (light),2,17.3521,1.13
+ , ,573.277 (heavy), , , 
+[K].TASEFDSAIAQDK.[L],P22217,691.825 (light),2,24.623,1.13
+ , ,699.303 (heavy), , , 
+[K].IATYQERDPANLPWGSSNVDIAIDSTGVFK.[E],P00359,1088.876 (light),3,55.4499,1.13
+ , ,1101.505 (heavy), , , 
+[K].HTLDIINVLTDQNPIQVVVDAITNTGPR.[E],P26783,1019.55 (light),3,77.5329,1.13
+ , ,1032.179 (heavy), , , 
+[R].IGMAEEIVPLFQVAWNDAANPDK.[G],Q00955,843.421 (light),3,73.5743,1.13
+ , ,852.726 (heavy), , , 
+[K].FAIPAINVTSSSTAVAALEAAR.[D],P14540,1080.587 (light),2,60.1128,1.13
+ , ,1093.548 (heavy), , , 
+[K].VGAQPNALATTVLAAAK.[N],P39676,798.459 (light),2,43.2903,1.13
+ , ,808.43 (heavy), , , 
+[K].GcIISETGITSEQVADISSAK.[V],P07262,1083.534 (light),2,42.3641,1.13
+ , ,1094.501 (heavy), , , 
+[R].SLTTVWAEHLSDEVK.[R],P14126,857.937 (light),2,40.9602,1.13
+ , ,867.408 (heavy), , , 
+[K].TAGIQIVADDLTVTNPK.[R],P00924,878.477 (light),2,45.0247,1.13
+ , ,888.447 (heavy), , , 
+[K].GLNTGGMGAYAPAPVATPSLLK.[T],P07244,696.038 (light),3,48.4404,1.13
+ , ,704.014 (heavy), , , 
+[K].NIDDLSVLMDHVK.[Q],P39676,749.882 (light),2,45.4514,1.13
+ , ,758.357 (heavy), , , 
+[K].IAYEIELGDGIPK.[M],P25087,709.382 (light),2,44.5287,1.13
+ , ,716.362 (heavy), , , 
+[K].FKPGNVMGVTNLDLVR.[A],P32419,587.322 (light),3,41.8692,1.13
+ , ,594.634 (heavy), , , 
+[K].QNIMHEIFDLK.[N],P38858,463.239 (light),3,43.3264,1.13
+ , ,468.556 (heavy), , , 
+[R].LTEIANVIPVIGK.[S],P25342,683.918 (light),2,49.6654,1.13
+ , ,691.396 (heavy), , , 
+[K].AAQDSFAAGWGVMVSHR.[S],P00924,597.286 (light),3,50.5345,1.13
+ , ,605.262 (heavy), , , 
+[K].SEPVGTPNIEENK.[A],Q12114,707.346 (light),2,20.544,1.13
+ , ,715.323 (heavy), , , 
+[K].HEVAYVLGQTK.[N],P47120,622.835 (light),2,19.0175,1.13
+ , ,630.313 (heavy), , , 
+[R].IPQQQPAPAEITPSYALGK.[V],P31539,670.361 (light),3,37.4427,1.13
+ , ,678.005 (heavy), , , 
+[K].GYFIKPTVFGDVK.[E],P46367,735.903 (light),2,38.4155,1.13
+ , ,743.38 (heavy), , , 
+[R].LEVGTETLIDK.[S],P54839,609.335 (light),2,33.1031,1.12
+ , ,615.317 (heavy), , , 
+[R].IAFGFVDR.[T],P04050,462.751 (light),2,37.9535,1.12
+ , ,468.234 (heavy), , , 
+[K].NVQFSYGTAGFR.[T],P38628,673.828 (light),2,34.7113,1.12
+ , ,682.302 (heavy), , , 
+[R].SEVSNPPAYGAK.[I],P23542,610.301 (light),2,14.8124,1.12
+ , ,617.28 (heavy), , , 
+[K].IPDGKPENQFAFSGEAK.[N],P00817,612.304 (light),3,26.7289,1.12
+ , ,619.283 (heavy), , , 
+[K].NVSFSVDAQSK.[I],P32386,591.294 (light),2,23.0603,1.12
+ , ,598.273 (heavy), , , 
+[K].LSEVDASGFR.[I],P16861,540.77 (light),2,24.6051,1.12
+ , ,547.25 (heavy), , , 
+[K].VNGASVPINLHPSK.[L],P05743,716.899 (light),2,23.7863,1.12
+ , ,726.371 (heavy), , , 
+[K].TELDGILPLVAR.[G],P27616,648.881 (light),2,53.3953,1.12
+ , ,656.358 (heavy), , , 
+[R].MSANISETTAMITDIATAPAEIDR.[C],P06169,1261.607 (light),2,61.6677,1.12
+ , ,1275.566 (heavy), , , 
+[K].INEMAAGDVLLGLASSGVHSNGFSLVR.[K],P07244,905.47 (light),3,62.0828,1.12
+ , ,916.77 (heavy), , , 
+[K].ASTNANILVTDTFVSMGEEFAK.[Q],P05150,1173.071 (light),2,63.5152,1.12
+ , ,1185.534 (heavy), , , 
+[R].NPAIEALDSDQELIK.[D],P36114,828.428 (light),2,42.2876,1.12
+ , ,837.401 (heavy), , , 
+[K].SMIEYLEATGR.[G],P19414,635.311 (light),2,40.3187,1.12
+ , ,642.291 (heavy), , , 
+[R].IEFELYDNVVPK.[T],P25719,733.382 (light),2,48.4179,1.12
+ , ,740.362 (heavy), , , 
+[K].DFAcNGNIVKDPEMGEIIQLQGDQR.[A],P32911,949.786 (light),3,48.4529,1.12
+ , ,960.753 (heavy), , , 
+[K].YLTNTGNLLLASQIR.[H],P09436,838.97 (light),2,45.7839,1.12
+ , ,849.439 (heavy), , , 
+[K].GGVEAQQAENEEK.[A],P33330,694.817 (light),2,11.359,1.12
+ , ,703.292 (heavy), , , 
+[K].VcEFMISQLGLQK.[K],P32911,776.896 (light),2,47.013,1.12
+ , ,784.374 (heavy), , , 
+[K].LNQTFESNVGK.[E],P00899,618.814 (light),2,18.7542,1.12
+ , ,626.291 (heavy), , , 
+[R].LIQMEDATDQIEVQK.[N],P32563,880.94 (light),2,36.3262,1.11
+ , ,890.412 (heavy), , , 
+[K].DLETLTmHTK.[T],P38061,602.798 (light),2,19.383,1.11
+ , ,608.78 (heavy), , , 
+[R].STADDSLNNSYK.[Q],P32787,657.793 (light),2,14.7961,1.11
+ , ,665.271 (heavy), , , 
+[K].SDGTTLYLTR.[D],Q05506,563.79 (light),2,26.0793,1.11
+ , ,570.271 (heavy), , , 
+[K].NPLSLTEATK.[T],P32499,537.295 (light),2,24.6402,1.11
+ , ,543.278 (heavy), , , 
+[K].AVIEASNQPVDFHFLYDVNSSVEDK.[L],P07245,941.787 (light),3,52.3597,1.11
+ , ,952.09 (heavy), , , 
+[R].LSSFFQNNFFNILK.[E],Q03103,859.948 (light),2,65.8766,1.11
+ , ,869.42 (heavy), , , 
+[K].ADVDGFLVGGASLKPEFVDIINSR.[N],P00942,840.442 (light),3,60.4656,1.11
+ , ,850.08 (heavy), , , 
+[K].GGVAGGSILNGVFK.[L],P32481,638.355 (light),2,42.8229,1.11
+ , ,646.332 (heavy), , , 
+[K].FDDmELDENLLR.[G],P10081,763.346 (light),2,45.5822,1.11
+ , ,770.823 (heavy), , , 
+[K].DAGLSTSDISEVLLVGGMSR.[M],P0CS90,1004.006 (light),2,63.0898,1.11
+ , ,1015.472 (heavy), , , 
+[K].LSGGVAVIR.[V],P19882,436.272 (light),2,21.7941,1.11
+ , ,442.254 (heavy), , , 
+[R].GTETEESINK.[R],P15454,554.263 (light),2,11.2692,1.11
+ , ,560.245 (heavy), , , 
+[K].VALTVLSHSK.[V],Q00955,527.816 (light),2,19.5432,1.11
+ , ,534.297 (heavy), , , 
+[K].STFFQAITR.[C],P38219,535.785 (light),2,36.5921,1.11
+ , ,542.266 (heavy), , , 
+[K].LEEEFAPYGTITSAK.[V],P04147,828.412 (light),2,38.6887,1.11
+ , ,836.388 (heavy), , , 
+[R].LVEAFQWTDK.[N],P34760,618.817 (light),2,38.7223,1.11
+ , ,625.297 (heavy), , , 
+[K].VMSLLGTIDNK.[D],Q06151,595.826 (light),2,39.5233,1.11
+ , ,602.307 (heavy), , , 
+[R].EAIDIITGK.[D],P32449,480.274 (light),2,30.9586,1.11
+ , ,485.259 (heavy), , , 
+[K].NPSITLINADPK.[F],P04385,641.853 (light),2,32.4558,1.1
+ , ,649.33 (heavy), , , 
+[R].TcSSFIAAMER.[L],P07259,636.789 (light),2,33.6908,1.1
+ , ,643.269 (heavy), , , 
+[K].LGDFNLIAK.[T],P35844,495.784 (light),2,37.8806,1.1
+ , ,501.268 (heavy), , , 
+[R].ETVESESSQTALSK.[S],P32324,748.36 (light),2,15.9512,1.1
+ , ,756.336 (heavy), , , 
+[K].VLVAGTSAYcR.[L],P37291,598.808 (light),2,22.4757,1.1
+ , ,605.289 (heavy), , , 
+[R].GmTMQVAVPR.[D],P07149,553.278 (light),2,22.9394,1.1
+ , ,559.759 (heavy), , , 
+[K].EVTAALENAAVGLVAGGK.[S],P25087,835.46 (light),2,51.1681,1.1
+ , ,845.43 (heavy), , , 
+[K].DVTNLGVPLPTLK.[Y],Q12285,683.901 (light),2,52.261,1.1
+ , ,691.379 (heavy), , , 
+[R].QFNGLIDVYK.[K],P18239,598.819 (light),2,39.5238,1.1
+ , ,605.3 (heavy), , , 
+[K].DMHVPNTSYVIPAGYHVLVSPGYTHLR.[D],P10614,756.635 (light),4,45.501,1.1
+ , ,765.857 (heavy), , , 
+[R].VASIDEK.[M],P05694,381.206 (light),2,11.2786,1.1
+ , ,385.194 (heavy), , , 
+[K].SGFFGGFFSTK.[N],P21576,591.284 (light),2,50.8321,1.1
+ , ,597.266 (heavy), , , 
+[R].FVDESLLSTLPAGK.[S],P07257,738.902 (light),2,46.6972,1.1
+ , ,746.379 (heavy), , , 
+[K].IVSSTGALSLK.[E],P09624,538.321 (light),2,25.9344,1.1
+ , ,544.303 (heavy), , , 
+[K].GVPYVVTHDGR.[T],P0CX36,400.543 (light),3,17.9445,1.1
+ , ,405.861 (heavy), , , 
+[R].KLFAATVAK.[A],P00560,474.798 (light),2,15.687,1.1
+ , ,480.281 (heavy), , , 
+[K].LGHLLLNPALSLK.[D],P09457,694.935 (light),2,40.9768,1.1
+ , ,703.41 (heavy), , , 
+[K].RLHVPAEVIFNAK.[D],P33330,498.624 (light),3,30.5995,1.1
+ , ,505.271 (heavy), , , 
+[R].STATGPSEAVWYGPPK.[A],P07262,824.405 (light),2,32.9161,1.09
+ , ,833.378 (heavy), , , 
+[K].LISHIHDGQDGGTQDYFERPTDGTLK.[A],P38288,725.851 (light),4,27.6479,1.09
+ , ,734.824 (heavy), , , 
+[R].VNAGTVWINTYNDFHHAVPFGGFNASGLGR.[E],P46367,1073.523 (light),3,56.1237,1.09
+ , ,1087.482 (heavy), , , 
+[K].YLPNIDLPHNLVADPDLLHSIK.[G],P41911,625.092 (light),4,53.9423,1.09
+ , ,632.32 (heavy), , , 
+[K].LHAVTIDNVAEANFFK.[D],Q02642,894.967 (light),2,43.6999,1.09
+ , ,905.436 (heavy), , , 
+[R].SDIVGSPVAELLK.[S],P07245,664.377 (light),2,48.1188,1.09
+ , ,671.356 (heavy), , , 
+[R].VASVIGDAITHINTVFDHR.[G],P38427,517.026 (light),4,50.2091,1.09
+ , ,523.756 (heavy), , , 
+[K].TGVIVGEDVHNLFTYAK.[E],P14540,621.66 (light),3,45.2572,1.09
+ , ,628.639 (heavy), , , 
+[R].TAAESIANDRK.[-],P32614,588.305 (light),2,11.1088,1.09
+ , ,596.281 (heavy), , , 
+[R].HYSLcSASTK.[N],P39676,577.269 (light),2,11.5408,1.09
+ , ,583.251 (heavy), , , 
+[K].DLLAVAIAASYHYPEIEDLVDR.[I],P05317,825.092 (light),3,71.6272,1.09
+ , ,834.065 (heavy), , , 
+[K].MSSGYYLGEILR.[L],P04807,694.847 (light),2,46.4857,1.09
+ , ,702.325 (heavy), , , 
+[K].LGASYDWSR.[E],P07806,527.751 (light),2,26.7125,1.09
+ , ,534.232 (heavy), , , 
+[K].DRPNWGYGTPATGVGK.[W],P14306,559.278 (light),3,26.5156,1.09
+ , ,566.59 (heavy), , , 
+[K].LcADPHNQIWIISGR.[D],P31688,593.971 (light),3,38.5211,1.09
+ , ,601.282 (heavy), , , 
+[K].LVGDVDFDSVK.[E],P09440,597.306 (light),2,34.7264,1.09
+ , ,603.288 (heavy), , , 
+[R].ELAEEGYSGVEVR.[V],P05750,719.347 (light),2,28.2593,1.08
+ , ,727.323 (heavy), , , 
+[R].IcFQNESFSR.[H],P31688,644.292 (light),2,28.427,1.08
+ , ,651.272 (heavy), , , 
+[K].WIGGHGTTIGGIIVDSGK.[F],P06106,589.985 (light),3,38.5409,1.08
+ , ,597.296 (heavy), , , 
+[K].LTDFEIEDYNPHPR.[I],P06785,582.609 (light),3,33.9039,1.08
+ , ,589.256 (heavy), , , 
+[K].GMLSGAVVGEIFASPSTK.[Q],P54838,875.956 (light),2,52.4805,1.08
+ , ,885.427 (heavy), , , 
+[K].LIVDPMDAPDQPQDLTIDFER.[G],P22768,1214.59 (light),2,59.0292,1.08
+ , ,1227.552 (heavy), , , 
+[K].QVNVNTVFGLPGDFNLSLLDK.[I],P06169,764.074 (light),3,69.2843,1.08
+ , ,772.715 (heavy), , , 
+[K].TSWFVNEEAFGK.[V],P38858,707.836 (light),2,43.3595,1.08
+ , ,715.314 (heavy), , , 
+[K].NVNEATHILIYTTPNNGSDGIVEIQR.[V],P39986,956.821 (light),3,44.6031,1.08
+ , ,968.786 (heavy), , , 
+[R].VAVYDAHVEGPLVIGYVNSK.[A],Q99257,710.712 (light),3,43.817,1.08
+ , ,718.689 (heavy), , , 
+[K].IcDQVSDAILDAcLAEDPHSK.[V],P10659,786.364 (light),3,42.3521,1.08
+ , ,794.008 (heavy), , , 
+[R].TAEAIVQFMIK.[Q],P17967,625.844 (light),2,48.37,1.08
+ , ,632.325 (heavy), , , 
+[K].KPSADSTEATQQHLK.[K],P16451,547.613 (light),3,11.1082,1.08
+ , ,554.592 (heavy), , , 
+[K].GNNTANATNSANTVQK.[N],P39015,802.885 (light),2,11.1732,1.08
+ , ,814.351 (heavy), , , 
+[K].LSNQEIGNK.[I],Q12447,501.764 (light),2,11.4072,1.08
+ , ,508.245 (heavy), , , 
+[K].EDVEDASVYR.[A],P40032,591.767 (light),2,20.4835,1.08
+ , ,598.248 (heavy), , , 
+[R].GSEIVIATPGR.[L],P24783,550.309 (light),2,26.2855,1.08
+ , ,557.288 (heavy), , , 
+[K].IAGVLGATGSVGQR.[F],P13663,643.364 (light),2,27.5835,1.08
+ , ,652.337 (heavy), , , 
+[K].TEYATEEGK.[E],P38234,514.232 (light),2,11.1027,1.08
+ , ,519.218 (heavy), , , 
+[K].SLNHPENEPSSVK.[D],P40202,479.904 (light),3,11.3987,1.08
+ , ,485.886 (heavy), , , 
+[R].INENPVNR.[L],P32356,478.251 (light),2,12.3366,1.08
+ , ,485.23 (heavy), , , 
+[K].LLHYLADVAVNGSSIK.[G],P11154,567.317 (light),3,37.7387,1.08
+ , ,573.964 (heavy), , , 
+[R].ITPSYVAFTDDER.[L],P16474,757.364 (light),2,35.5207,1.08
+ , ,765.34 (heavy), , , 
+[R].LSNFNIKPIFTDNR.[N],Q00955,560.302 (light),3,38.8254,1.08
+ , ,567.281 (heavy), , , 
+[R].HLVHEVTSPQAFEGLENAGR.[K],P07264,548.528 (light),4,31.252,1.08
+ , ,555.757 (heavy), , , 
+[R].NMAEEFEYDDEPDEQGNPK.[K],P07143,1128.948 (light),2,33.28,1.07
+ , ,1140.414 (heavy), , , 
+[R].EMDDGVDVLK.[H],P28240,560.763 (light),2,29.8811,1.07
+ , ,566.246 (heavy), , , 
+[R].cFTDcVNDFTTSK.[L],O74700,797.829 (light),2,34.7472,1.07
+ , ,804.31 (heavy), , , 
+[K].LNNFNDVSSYNENK.[S],P32582,829.376 (light),2,24.6596,1.07
+ , ,839.346 (heavy), , , 
+[R].IVNMYGTTETQR.[A],P07702,706.845 (light),2,21.9198,1.07
+ , ,715.32 (heavy), , , 
+[K].NGKPWDAVLTHTFNDEQIEWFK.[Y],P19414,669.578 (light),4,54.5652,1.07
+ , ,677.305 (heavy), , , 
+[K].QTVHVTSIVENFPNPELPDAPPVVGVTTNLLR.[N],P16603,1151.952 (light),3,62.3498,1.07
+ , ,1165.578 (heavy), , , 
+[K].LHAVTIDNVAEANFFK.[D],Q02642,894.968 (light),2,43.6243,1.07
+ , ,905.437 (heavy), , , 
+[R].FYLYYGSDFK.[V],Q04336,651.806 (light),2,44.3192,1.07
+ , ,657.29 (heavy), , , 
+[K].FPGVILYSEIYQVTGPVRR.[F],Q07505,732.072 (light),3,55.523,1.07
+ , ,740.713 (heavy), , , 
+[R].HLGSLFSDAVQTASVQWFER.[T],Q05911,760.046 (light),3,59.062,1.07
+ , ,769.352 (heavy), , , 
+[K].YLIENFSAQLQNPEGK.[S],P49723,925.967 (light),2,45.5485,1.07
+ , ,936.436 (heavy), , , 
+[K].NQAAMNPSNTVFDAKR.[L],P10591,588.621 (light),3,22.6923,1.07
+ , ,596.597 (heavy), , , 
+[K].LDSGIYSEAQR.[V],P50088,619.804 (light),2,21.8112,1.07
+ , ,627.282 (heavy), , , 
+[K].NEEASVPINR.[D],P38853,564.786 (light),2,17.0835,1.07
+ , ,572.264 (heavy), , , 
+[R].FGQmFFPESR.[E],Q00055,631.288 (light),2,38.1643,1.07
+ , ,637.768 (heavy), , , 
+[K].QINFGGTVETVYER.[A],P06168,806.902 (light),2,40.4029,1.07
+ , ,816.374 (heavy), , , 
+[R].EQLITLVGNVR.[G],P32895,621.365 (light),2,40.974,1.07
+ , ,629.341 (heavy), , , 
+[K].VPcIPWSGTGVDTVHVDEK.[T],Q00955,699.342 (light),3,41.0386,1.07
+ , ,706.654 (heavy), , , 
+[K].EIPVGISYSIQGK.[K],P80210,695.883 (light),2,38.7559,1.07
+ , ,703.36 (heavy), , , 
+[K].VMWYASDLATR.[V],P41921,656.822 (light),2,39.6547,1.07
+ , ,664.299 (heavy), , , 
+[K].GNFTEFVK.[K],P16521,471.241 (light),2,28.2943,1.07
+ , ,476.226 (heavy), , , 
+[K].LEELQISNFTHR.[R],P07347,496.26 (light),3,34.3713,1.07
+ , ,502.574 (heavy), , , 
+[K].LPNSNVNIEFATR.[Y],P04840,737.884 (light),2,35.2108,1.07
+ , ,747.356 (heavy), , , 
+[K].LLQTPIDmSLKPNDAESEK.[E],P06169,715.697 (light),3,33.22,1.07
+ , ,723.008 (heavy), , , 
+[R].ENSLETTFSSVNTR.[D],Q01560,792.877 (light),2,33.0335,1.06
+ , ,802.349 (heavy), , , 
+[K].AGTTVIGGGVGAIGK.[I],Q12466,629.362 (light),2,28.2485,1.06
+ , ,637.338 (heavy), , , 
+[K].NAVSTKPTPPPAPEASAESGLSSK.[V],P16862,775.065 (light),3,22.8535,1.06
+ , ,784.038 (heavy), , , 
+[R].APTASQLQNPPPPPSTTK.[G],P53252,916.483 (light),2,22.2141,1.06
+ , ,927.45 (heavy), , , 
+[R].NAESLSVLDIENEIVR.[L],P19262,600.983 (light),3,55.8416,1.06
+ , ,607.962 (heavy), , , 
+[K].DFNKPVTHINTVPIESLDFLK.[Q],P32558,607.579 (light),4,50.8007,1.06
+ , ,614.309 (heavy), , , 
+[K].LIEAFNEIAEDSEQFEK.[F],P02829,1006.48 (light),2,52.9431,1.06
+ , ,1016.451 (heavy), , , 
+[K].ATVDEFPLcVHLVSNELEQLSSEALEAAR.[I],P41805,1076.534 (light),3,75.4483,1.06
+ , ,1088.166 (heavy), , , 
+[K].AAQDSFAAGWGVMVSHR.[S],P00924,597.286 (light),3,42.0049,1.06
+ , ,605.262 (heavy), , , 
+[R].TGTTTNDVDYPIPPNHEMIFTTDDK.[Y],P00549,941.431 (light),3,42.0697,1.06
+ , ,951.402 (heavy), , , 
+[R].mIEImLPVFDAPQNLVEQAK.[L],P06169,773.397 (light),3,62.9467,1.06
+ , ,780.709 (heavy), , , 
+[K].LSVVEDVSLLK.[H],P39692,601.356 (light),2,44.9952,1.06
+ , ,607.338 (heavy), , , 
+[K].LGANAILGVSmAAAR.[A],P00925,715.893 (light),2,43.4499,1.06
+ , ,724.866 (heavy), , , 
+[R].AQIPVTTTLQGLGSFDQEDPK.[S],P07342,1123.069 (light),2,50.0435,1.06
+ , ,1135.532 (heavy), , , 
+[K].GLPmIPAFVTGSPNGTER.[G],P17709,930.47 (light),2,49.0871,1.06
+ , ,940.939 (heavy), , , 
+[R].DFLNNGEVDSASDFISK.[L],P40016,929.43 (light),2,49.0545,1.06
+ , ,939.4 (heavy), , , 
+[K].YGLFDFQAAR.[D],P26637,594.295 (light),2,46.4852,1.06
+ , ,601.275 (heavy), , , 
+[K].NcTTMLNNVEK.[L],P53095,662.305 (light),2,21.0276,1.06
+ , ,669.285 (heavy), , , 
+[R].LLDTLSDESK.[S],P33892,560.79 (light),2,24.9215,1.06
+ , ,566.273 (heavy), , , 
+[K].ERYDQcVSNVSNFLR.[A],P05453,629.632 (light),3,37.3818,1.06
+ , ,637.276 (heavy), , , 
+[K].LIQELGQLQIK.[D],P15625,641.89 (light),2,40.7233,1.06
+ , ,649.368 (heavy), , , 
+[K].TTVEFTGESLR.[I],P16140,620.314 (light),2,28.7747,1.06
+ , ,627.294 (heavy), , , 
+[K].LNGQKPVDEFLEAK.[E],P05694,529.95 (light),3,28.9102,1.06
+ , ,535.933 (heavy), , , 
+[R].SIAPAYGIPVVLHSDHcAK.[K],P14540,509.516 (light),4,34.931,1.06
+ , ,515.249 (heavy), , , 
+[K].IDLLVSDK.[E],P39522,451.764 (light),2,31.2249,1.05
+ , ,456.25 (heavy), , , 
+[K].IFEGIPPPYDK.[K],P26785,638.335 (light),2,37.0499,1.05
+ , ,644.317 (heavy), , , 
+[K].ADAVLLGAVGGPK.[W],P04173,584.34 (light),2,34.5516,1.05
+ , ,591.319 (heavy), , , 
+[K].ELQDIANPImSK.[L],P10591,687.85 (light),2,34.4017,1.05
+ , ,694.829 (heavy), , , 
+[K].GmLTGPITcLR.[W],P05694,617.817 (light),2,34.0522,1.05
+ , ,623.8 (heavy), , , 
+[R].GSEFIADDVTSNK.[S],P21965,691.826 (light),2,26.4997,1.05
+ , ,699.303 (heavy), , , 
+[K].NASNNPNELAASGAALQAR.[L],P38788,934.964 (light),2,27.5532,1.05
+ , ,948.424 (heavy), , , 
+[K].DFAcNGNIVK.[D],P32911,569.272 (light),2,23.553,1.05
+ , ,575.254 (heavy), , , 
+[R].AcEALGAGEILLNcIDK.[D],P33734,616.306 (light),3,53.4856,1.05
+ , ,621.956 (heavy), , , 
+[K].GLPMIPAFVTGSPNGTER.[G],P17709,615.317 (light),3,52.8057,1.05
+ , ,622.629 (heavy), , , 
+[R].mIEIMLPVFDAPQNLVEQAK.[L],P06169,768.066 (light),3,66.6183,1.05
+ , ,775.71 (heavy), , , 
+[K].AEDPSNYENVIDIAEQAGK.[Y],P22137,1031.983 (light),2,48.5532,1.05
+ , ,1043.448 (heavy), , , 
+[K].EVASAALSELALGTK.[E],P40069,730.404 (light),2,44.6623,1.05
+ , ,738.38 (heavy), , , 
+[K].FDDmELDENLLR.[G],P10081,763.347 (light),2,43.1636,1.05
+ , ,770.825 (heavy), , , 
+[R].MIEImLPVFDAPQNLVEQAK.[L],P06169,768.067 (light),3,65.8598,1.05
+ , ,775.711 (heavy), , , 
+[R].FQEQNAALGQGLGR.[-],O74700,496.923 (light),3,27.1863,1.05
+ , ,503.902 (heavy), , , 
+[R].VGQAVETVGQAGRPK.[K],P38764,499.611 (light),3,13.7016,1.05
+ , ,506.59 (heavy), , , 
+[K].EHASVIMEK.[I],P33892,522.263 (light),2,12.0337,1.05
+ , ,528.245 (heavy), , , 
+[K].IDVAVDSTGVFK.[E],P00360,625.835 (light),2,38.5235,1.05
+ , ,632.316 (heavy), , , 
+[K].DVENLNTSSSPSSDLYIR.[S],P16649,998.976 (light),2,39.0539,1.05
+ , ,1010.442 (heavy), , , 
+[K].GVATDLSHIPTNSVVK.[G],P17505,819.447 (light),2,31.6847,1.04
+ , ,829.417 (heavy), , , 
+[K].EVVLTHPADETTSVHILK.[Y],Q03161,498.021 (light),4,29.5649,1.04
+ , ,503.754 (heavy), , , 
+[R].APTAAELQAPPPPPSSTK.[S],Q12230,587.314 (light),3,26.3642,1.04
+ , ,593.96 (heavy), , , 
+[R].LFLESGFTYcQLMPR.[S],P07259,931.454 (light),2,57.6674,1.04
+ , ,940.428 (heavy), , , 
+[K].LNLILDDGGDLTTLVHEK.[H],P39954,656.022 (light),3,52.1804,1.04
+ , ,663.333 (heavy), , , 
+[K].SGYMMLPTDYSLIQDPK.[Y],P00431,979.966 (light),2,53.5947,1.04
+ , ,989.438 (heavy), , , 
+[K].DVTFLNDcVGPEVEAAVK.[A],P00560,981.979 (light),2,52.942,1.04
+ , ,991.451 (heavy), , , 
+[R].AEVSDVGNAILDGADcVMLSGETAK.[G],P00549,841.398 (light),3,59.0275,1.04
+ , ,850.039 (heavy), , , 
+[K].YVDPNVLPETESLALVIDR.[L],P00950,715.048 (light),3,61.0033,1.04
+ , ,722.691 (heavy), , , 
+[K].NGLDDIPQLLDDIK.[H],P53912,784.912 (light),2,60.5957,1.04
+ , ,793.387 (heavy), , , 
+[R].NVQFSLEAAEILQK.[K],P32473,795.431 (light),2,50.4383,1.04
+ , ,804.404 (heavy), , , 
+[K].QFESLLLQNDYQNAAK.[V],P22137,941.472 (light),2,43.1647,1.04
+ , ,952.439 (heavy), , , 
+[R].QTVATLNVLIK.[D],Q05775,600.372 (light),2,39.3894,1.04
+ , ,607.351 (heavy), , , 
+[K].EHAPYTDELEEDVYLDPLAR.[V],P19097,792.373 (light),3,50.1873,1.04
+ , ,800.681 (heavy), , , 
+[K].EVFTNPLEAVTNPTYK.[I],Q12452,911.965 (light),2,50.194,1.04
+ , ,921.437 (heavy), , , 
+[K].AAQDSFAANWGVMVSHR.[S],P00925,616.293 (light),3,50.2285,1.04
+ , ,624.602 (heavy), , , 
+[R].LPAASLGDMVmATVK.[K],P0CX42,760.396 (light),2,47.3111,1.04
+ , ,767.874 (heavy), , , 
+[K].KVESLGSPSGATK.[A],P14832,630.843 (light),2,11.3128,1.04
+ , ,638.32 (heavy), , , 
+[K].ETVELESEAFELK.[Q],P05626,762.377 (light),2,42.6857,1.04
+ , ,769.357 (heavy), , , 
+[K].AVDDFLLSLDGTANK.[S],P00925,789.905 (light),2,52.5272,1.04
+ , ,798.38 (heavy), , , 
+[R].GAVTNLANLFVQNFK.[I],P10963,818.447 (light),2,60.7683,1.04
+ , ,828.418 (heavy), , , 
+[K].EDTVILNGSGPK.[E],P19882,615.322 (light),2,22.8391,1.04
+ , ,622.301 (heavy), , , 
+[K].TDPAGYYVGYK.[A],P21243,617.292 (light),2,27.466,1.04
+ , ,623.274 (heavy), , , 
+[R].QELGVPLK.[E],P00427,442.266 (light),2,25.2331,1.04
+ , ,447.251 (heavy), , , 
+[R].LYASETSNGQK.[G],P21734,599.29 (light),2,11.3139,1.04
+ , ,606.27 (heavy), , , 
+[K].LGDEFGSDDK.[D],Q12008,541.735 (light),2,18.1711,1.04
+ , ,547.219 (heavy), , , 
+[K].DIDIEYHQNK.[N],P15992,637.805 (light),2,19.5581,1.04
+ , ,645.283 (heavy), , , 
+[K].LADNLNLDPNccK.[V],P38787,773.854 (light),2,30.0555,1.04
+ , ,781.332 (heavy), , , 
+[R].LSAAQAELAYAETGAHDK.[V],P15454,615.971 (light),3,29.6854,1.04
+ , ,623.282 (heavy), , , 
+[R].GGIIHFEVSPK.[N],P07342,592.327 (light),2,28.0956,1.04
+ , ,599.307 (heavy), , , 
+[K].LDEQMEELVAR.[S],Q00955,666.826 (light),2,35.2186,1.04
+ , ,674.304 (heavy), , , 
+[K].LDELQTDNTPDYVR.[L],P00927,839.899 (light),2,31.0103,1.03
+ , ,849.371 (heavy), , , 
+[K].NSTLVMSTGVIGQR.[L],Q04728,731.888 (light),2,33.4657,1.03
+ , ,741.36 (heavy), , , 
+[K].NAEAVTTIcFADSR.[G],P47119,777.865 (light),2,33.4905,1.03
+ , ,786.34 (heavy), , , 
+[R].TFLVSGVAANVHEAK.[R],P06105,514.947 (light),3,29.0977,1.03
+ , ,521.262 (heavy), , , 
+[K].LLQISTDcDSDALK.[F],P00815,789.888 (light),2,34.9969,1.03
+ , ,797.366 (heavy), , , 
+[R].SSSSTSNLSLNR.[S],Q12044,626.809 (light),2,15.9353,1.03
+ , ,635.284 (heavy), , , 
+[K].SMVEEAEASGR.[I],P32582,583.261 (light),2,16.9333,1.03
+ , ,590.24 (heavy), , , 
+[K].DLALAcGNNER.[S],P21954,616.787 (light),2,21.3095,1.03
+ , ,624.265 (heavy), , , 
+[R].FSDDTYTNDYISTIGVDFK.[I],P01123,1100.998 (light),2,54.7151,1.03
+ , ,1111.467 (heavy), , , 
+[K].QIVVIGQTLDGSSPSFLR.[S],P39692,959.025 (light),2,52.035,1.03
+ , ,970.491 (heavy), , , 
+[K].KPQVGVGScWWSGNPcNMHLLDLNNR.[C],P39522,1013.808 (light),3,47.0283,1.03
+ , ,1026.105 (heavy), , , 
+[K].VHLVTLDIFTGK.[K],P19211,671.89 (light),2,45.0948,1.03
+ , ,679.368 (heavy), , , 
+[K].ADSMASDAIPIDFDPYAK.[F],P53622,963.944 (light),2,52.8954,1.03
+ , ,973.416 (heavy), , , 
+[K].EIINSFIVAETDPIcK.[R],P41810,924.976 (light),2,52.0954,1.03
+ , ,933.451 (heavy), , , 
+[K].EVPVQEETK.[S],P39935,529.772 (light),2,12.5701,1.03
+ , ,535.256 (heavy), , , 
+[K].LVTLAQTDK.[K],P33201,494.786 (light),2,18.9386,1.03
+ , ,500.27 (heavy), , , 
+[K].ADQEYEIEK.[T],P22203,562.759 (light),2,16.2237,1.03
+ , ,568.243 (heavy), , , 
+[K].IATVIEPIK.[N],P40029,492.31 (light),2,29.5671,1.03
+ , ,497.296 (heavy), , , 
+[K].GHESFGYIFR.[A],P32179,606.793 (light),2,31.0624,1.03
+ , ,614.27 (heavy), , , 
+[K].ELQDIANPImSK.[L],P10591,687.851 (light),2,33.9545,1.03
+ , ,694.831 (heavy), , , 
+[K].FQAFHEFQNLHALK.[K],P27472,577.299 (light),3,33.4071,1.03
+ , ,584.611 (heavy), , , 
+[R].ELAEEGYSGVEVR.[V],P05750,719.347 (light),2,28.0228,1.02
+ , ,727.323 (heavy), , , 
+[R].LSFDTQATIEK.[A],P15019,626.825 (light),2,30.2786,1.02
+ , ,633.306 (heavy), , , 
+[K].NVNDVIAPAFVK.[A],P00924,643.859 (light),2,39.1926,1.02
+ , ,651.337 (heavy), , , 
+[K].GVVHTTGGYLLGAALTTR.[Y],P52910,596.332 (light),3,38.5393,1.02
+ , ,603.976 (heavy), , , 
+[R].IEEELGDNAVFAGENFHHGDKL.[-],P00924,1221.074 (light),2,36.2229,1.02
+ , ,1235.531 (heavy), , , 
+[K].QQEITTNLENHFK.[K],P21243,534.602 (light),3,26.2014,1.02
+ , ,541.249 (heavy), , , 
+[R].QQVVSEGGPTATIQSR.[F],P40515,829.429 (light),2,21.9541,1.02
+ , ,840.397 (heavy), , , 
+[K].DGEIMLWNLAAK.[K],P38011,680.85 (light),2,55.3515,1.02
+ , ,688.327 (heavy), , , 
+[K].YDNIPEHAFYMVGGIEDVVAK.[A],P00830,789.716 (light),3,55.165,1.02
+ , ,798.024 (heavy), , , 
+[R].IVTEDcFLQIDQSAITGESLAVDK.[H],P05030,884.774 (light),3,57.0704,1.02
+ , ,893.415 (heavy), , , 
+[R].mIEImLPVFDAPQNLVEQAK.[L],P06169,1159.591 (light),2,64.4827,1.02
+ , ,1170.559 (heavy), , , 
+[R].mLNGLGGSADFLR.[N],P32316,683.843 (light),2,41.1093,1.02
+ , ,691.819 (heavy), , , 
+[-].MLNILVLGNGAR.[E],P07244,635.869 (light),2,47.8937,1.02
+ , ,644.343 (heavy), , , 
+[K].ATSWQDYVEIK.[K],P40363,670.329 (light),2,41.7388,1.02
+ , ,677.309 (heavy), , , 
+[K].DPDGYSIEVVPHGLIA.[-],P50107,841.425 (light),2,54.6222,1.02
+ , ,850.399 (heavy), , , 
+[K].AcLSYLAHHGIIFLPLGYK.[N],P25349,544.046 (light),4,50.2063,1.02
+ , ,549.779 (heavy), , , 
+[K].QAINVDEAFYSLIR.[L],P01119,819.928 (light),2,58.3529,1.02
+ , ,829.4 (heavy), , , 
+[K].QEIFDVTSNGLK.[K],P07149,675.848 (light),2,36.9506,1.02
+ , ,683.326 (heavy), , , 
+[K].GHVITTIFFEPSTR.[T],P07259,535.619 (light),3,39.0748,1.02
+ , ,541.934 (heavy), , , 
+[R].AISDAMFANPK.[A],P49090,582.789 (light),2,29.8496,1.02
+ , ,589.27 (heavy), , , 
+[R].IGNLLVPNDNYcK.[F],P38791,760.381 (light),2,34.9293,1.02
+ , ,768.358 (heavy), , , 
+[K].QFVVDVLHPNR.[A],P0CX32,662.363 (light),2,33.6232,1.02
+ , ,671.336 (heavy), , , 
+[K].TFLVANVK.[D],P38061,446.269 (light),2,28.5256,1.01
+ , ,451.254 (heavy), , , 
+[K].DLYSVSAAVTER.[L],P39976,655.833 (light),2,37.6972,1.01
+ , ,663.311 (heavy), , , 
+[K].SDGSAATSGFEFSK.[E],P38764,695.81 (light),2,26.9395,1.01
+ , ,703.287 (heavy), , , 
+[K].YGEHSIEVPGAVK.[L],P41277,693.357 (light),2,23.0739,1.01
+ , ,701.333 (heavy), , , 
+[K].NSSTGQYEYAMSSGGLVTALEGLK.[K],Q00764,821.729 (light),3,57.705,1.01
+ , ,830.702 (heavy), , , 
+[R].QWVNGLSSLIMDLK.[Q],Q03690,802.429 (light),2,64.1056,1.01
+ , ,811.402 (heavy), , , 
+[K].QGNLLGNISVTDVK.[H],P38314,729.402 (light),2,40.3671,1.01
+ , ,738.375 (heavy), , , 
+[K].NIGVSNFAVEDLQR.[I],Q07551,781.402 (light),2,41.6531,1.01
+ , ,791.372 (heavy), , , 
+[R].DIALGSSVVSIK.[N],P31382,594.846 (light),2,41.1847,1.01
+ , ,601.327 (heavy), , , 
+[K].VFQVGNIVHPSVVVSNDEENNELVR.[T],P07284,931.81 (light),3,45.0082,1.01
+ , ,943.442 (heavy), , , 
+[R].KPENAETPSQTSQEATQ.[-],P25087,923.428 (light),2,11.585,1.01
+ , ,934.395 (heavy), , , 
+[K].DLLHYVSSVAFAR.[Q],P42826,493.265 (light),3,55.1177,1.01
+ , ,499.247 (heavy), , , 
+[K].TVAGGAYTVSTAAAATVR.[S],P0CX25,556.297 (light),3,31.5381,1
+ , ,563.276 (heavy), , , 
+[K].IGVVQTAYANGSSTAYIK.[N],P38628,921.983 (light),2,34.8605,1
+ , ,932.452 (heavy), , , 
+[K].LDSQETPSTEESR.[A],P32591,739.834 (light),2,13.0205,1
+ , ,748.309 (heavy), , , 
+[K].IAVmTSGGDSPGMNAAVR.[A],P16861,875.416 (light),2,27.152,1
+ , ,885.885 (heavy), , , 
+[K].VLNADLDGETGK.[F],P33892,616.312 (light),2,21.7655,1
+ , ,623.291 (heavy), , , 
+[R].mSANISETTAMITDIATAPAEIDR.[C],P06169,1269.606 (light),2,58.5066,1
+ , ,1283.066 (heavy), , , 
+[R].SVISPDPNIETNEIGVPPVFAVK.[L],P10964,808.1 (light),3,58.5854,1
+ , ,816.741 (heavy), , , 
+[R].HINTDSDSELLLNIFAAELEK.[H],P04046,791.404 (light),3,66.0003,1
+ , ,800.045 (heavy), , , 
+[K].NEYGSIISDFNR.[F],P34160,707.833 (light),2,40.1801,1
+ , ,716.308 (heavy), , , 
+[K].NINAIVVNSGcANSVTGDLGMK.[D],Q04728,745.368 (light),3,44.4943,1
+ , ,754.009 (heavy), , , 
+[R].DYVPFFEYFDGDTGR.[G],Q04336,914.397 (light),2,66.2735,1
+ , ,923.37 (heavy), , , 
+[R].SHATQSLVFNTSDILAVK.[D],P16862,644.347 (light),3,43.176,1
+ , ,651.991 (heavy), , , 
+[R].MPELIPVLSETMWDTK.[K],P16521,945.474 (light),2,65.9795,1
+ , ,954.447 (heavy), , , 
+[K].ENNIFNmVVEIPR.[W],P00817,795.9 (light),2,48.634,1
+ , ,804.874 (heavy), , , 
+[R].YLLTTVVEFAGR.[R],Q03690,684.879 (light),2,52.1012,1
+ , ,692.357 (heavy), , , 
+[K].HSGNIQLDEIIEIAR.[Q],P0CX53,569.973 (light),3,45.819,1
+ , ,577.285 (heavy), , , 
+[K].DDVIAQNLIESK.[Y],P32074,672.854 (light),2,37.5152,1
+ , ,680.332 (heavy), , , 
+[K].LLDVVHPAAK.[T],P42943,354.882 (light),3,20.9872,1
+ , ,359.202 (heavy), , , 
+[K].HAFmGTLK.[K],P14126,460.736 (light),2,12.9142,1
+ , ,465.721 (heavy), , , 
+[K].NLVSGNIK.[S],P38968,422.748 (light),2,16.5574,1
+ , ,428.231 (heavy), , , 
+[R].cGTAFALGIAcAGK.[G],P32565,698.84 (light),2,37.3395,1
+ , ,705.32 (heavy), , , 
+[K].NQDLEQQLEDSEAK.[L],P40414,823.879 (light),2,29.1145,1
+ , ,833.351 (heavy), , , 
+[K].TVNEHANDEAQLLLVGNK.[S],P07560,983.004 (light),2,31.4104,0.99
+ , ,995.467 (heavy), , , 
+[K].GVGVIGSHVDALTVK.[L],P14904,484.612 (light),3,30.9561,0.99
+ , ,490.594 (heavy), , , 
+[K].DLVSGGVVVSNASDK.[I],P22203,723.875 (light),2,30.7217,0.99
+ , ,732.35 (heavy), , , 
+[K].cTGGIILTASHNPGGPENDMGIK.[Y],P37012,780.376 (light),3,33.8685,0.99
+ , ,789.35 (heavy), , , 
+[K].cLTDDcDTITAFPPGHVYDSK.[T],P49089,804.688 (light),3,39.1937,0.99
+ , ,812.0 (heavy), , , 
+[K].VVVFEDAPAGIAAGK.[A],P41277,722.396 (light),2,38.216,0.99
+ , ,730.372 (heavy), , , 
+[K].NESATINEMMK.[H],P19097,634.286 (light),2,25.1224,0.99
+ , ,641.265 (heavy), , , 
+[K].ENLTVNPNVNEVR.[D],P15496,749.386 (light),2,27.4486,0.99
+ , ,759.356 (heavy), , , 
+[K].ATSNTLEEFEHGR.[T],P19097,745.848 (light),2,23.1189,0.99
+ , ,755.32 (heavy), , , 
+[R].QATGGQAFPQmVFDHWSTLGSDPLDPTSK.[A],P32324,1045.49 (light),3,57.9486,0.99
+ , ,1057.122 (heavy), , , 
+[R].VLNNcFSYDLVPAPAVIEK.[A],P00427,1075.054 (light),2,53.4789,0.99
+ , ,1085.523 (heavy), , , 
+[K].ILEQFEYVLYPSK.[T],P19097,814.931 (light),2,54.0748,0.99
+ , ,822.409 (heavy), , , 
+[K].YDLSPIDTLFAMGR.[G],P05694,533.601 (light),3,66.4073,0.99
+ , ,539.251 (heavy), , , 
+[R].ELVAPGAIQNLIR.[S],P07259,697.412 (light),2,49.3144,0.99
+ , ,706.385 (heavy), , , 
+[K].IGSSSAVAQFAAHSDPSVQIEQDKPYAELWMGTHSK.[M],P29952,775.376 (light),5,46.4147,0.99
+ , ,784.549 (heavy), , , 
+[K].NIPSFLSTDNIGTR.[E],P17255,767.898 (light),2,43.1242,0.99
+ , ,777.37 (heavy), , , 
+[K].SQIFSTAVDNQPTVMIK.[V],P16474,939.986 (light),2,42.3701,0.99
+ , ,950.455 (heavy), , , 
+[K].VLENTEIGDSIFDK.[A],P00560,790.397 (light),2,42.8005,0.99
+ , ,798.373 (heavy), , , 
+[R].GEEWTIDFEQFEK.[A],P47039,829.373 (light),2,53.8809,0.99
+ , ,837.349 (heavy), , , 
+[K].FILALNDEGEPIK.[V],P38764,729.895 (light),2,45.5049,0.99
+ , ,737.373 (heavy), , , 
+[K].LGANAILGVSMAAAR.[A],P00925,707.895 (light),2,45.8667,0.99
+ , ,717.367 (heavy), , , 
+[K].DILDISASLEK.[I],P40008,602.328 (light),2,48.4898,0.99
+ , ,608.31 (heavy), , , 
+[K].GcEVVVSGK.[L],P05750,467.737 (light),2,12.7525,0.99
+ , ,472.224 (heavy), , , 
+[K].LPWTEEEMIQK.[K],P38787,702.348 (light),2,37.9007,0.99
+ , ,709.327 (heavy), , , 
+[R].WLATLQGVDAVK.[A],P16861,650.866 (light),2,41.539,0.99
+ , ,658.344 (heavy), , , 
+[R].QLIELLQAK.[V],P41807,528.327 (light),2,39.4548,0.99
+ , ,534.309 (heavy), , , 
+[K].AAIEDGWVPGK.[N],P06168,571.797 (light),2,31.1995,0.99
+ , ,578.277 (heavy), , , 
+[K].SSAAGNTVIIGGGDTATVAK.[K],P00560,895.468 (light),2,29.2064,0.98
+ , ,906.436 (heavy), , , 
+[K].SAVIIDNmcK.[L],P16521,583.78 (light),2,17.2826,0.98
+ , ,588.766 (heavy), , , 
+[K].LNLDYSNK.[E],P38934,483.748 (light),2,20.9416,0.98
+ , ,489.232 (heavy), , , 
+[K].ESNSVEVNVK.[S],P46680,552.781 (light),2,14.9309,0.98
+ , ,559.261 (heavy), , , 
+[R].SNGSGTMSDVVK.[G],P09232,591.277 (light),2,15.2151,0.98
+ , ,598.257 (heavy), , , 
+[K].TGLSALMSK.[N],P25087,454.249 (light),2,27.6318,0.98
+ , ,459.234 (heavy), , , 
+[K].HLEGISDADIAK.[L],P00950,634.828 (light),2,22.3724,0.98
+ , ,642.305 (heavy), , , 
+[K].NFAVDLcHAK.[Q],P38625,587.787 (light),2,23.1075,0.98
+ , ,594.268 (heavy), , , 
+[K].ATNQTNINSLAVR.[G],P21243,701.376 (light),2,23.255,0.98
+ , ,711.346 (heavy), , , 
+[R].NAESLSVLDIENEIVR.[L],P19262,900.971 (light),2,55.9483,0.98
+ , ,911.44 (heavy), , , 
+[K].ENEMTISGHDIPKPITTFDEAGFPDYVLNEVK.[A],P24783,902.438 (light),4,56.939,0.98
+ , ,911.91 (heavy), , , 
+[R].AVIQAVDQIcDDFEVTPEK.[L],P17709,1089.025 (light),2,52.4285,0.98
+ , ,1099.494 (heavy), , , 
+[K].LIDLTQFPAFVTPmGK.[G],P06169,598.655 (light),3,61.8656,0.98
+ , ,604.305 (heavy), , , 
+[K].AIEDAIESAPVVLFMK.[G],Q02784,866.963 (light),2,62.217,0.98
+ , ,875.438 (heavy), , , 
+[K].AIEMEGLTWGAHQFIPIGFGIK.[K],P32471,805.756 (light),3,62.7007,0.98
+ , ,814.729 (heavy), , , 
+[R].LGEHNIDVLEGNEQFINAAK.[I],CP_Trypsin,737.707 (light),3,40.9734,0.98
+ , ,746.68 (heavy), , , 
+[K].GPGLLAPYSPEINDPImK.[E],P38999,964.495 (light),2,48.8996,0.98
+ , ,973.967 (heavy), , , 
+[R].ILDSALVTAAQLAK.[R],P31539,707.417 (light),2,46.9928,0.98
+ , ,715.394 (heavy), , , 
+[K].KPQVGVGScWWSGNPcNMHLLDLNNR.[C],P39522,760.608 (light),4,47.0255,0.98
+ , ,769.83 (heavy), , , 
+[R].WIETQDVFLK.[D],P19097,639.841 (light),2,43.7993,0.98
+ , ,646.321 (heavy), , , 
+[K].AFEELINTIYQK.[V],P38555,734.888 (light),2,49.8539,0.98
+ , ,742.366 (heavy), , , 
+[K].GLLDSPTAVEIFR.[K],P32521,709.387 (light),2,53.8352,0.98
+ , ,717.364 (heavy), , , 
+[K].DVTSEELFSYLGR.[R],Q04409,758.37 (light),2,56.6367,0.98
+ , ,766.346 (heavy), , , 
+[K].ILSNEQIYNR.[W],P36112,625.33 (light),2,22.5648,0.98
+ , ,633.307 (heavy), , , 
+[K].LASNLANVGDAK.[T],P06106,586.818 (light),2,20.8578,0.98
+ , ,594.295 (heavy), , , 
+[R].SAAGAFGPELSR.[K],P53252,581.796 (light),2,26.6127,0.98
+ , ,589.274 (heavy), , , 
+[K].NFVIDEcDK.[V],Q07478,570.255 (light),2,25.0033,0.98
+ , ,575.241 (heavy), , , 
+[K].DMHPGEDIDK.[S],Q05050,578.751 (light),2,13.7077,0.98
+ , ,585.232 (heavy), , , 
+[K].GISNEGQNASIK.[G],P14540,609.309 (light),2,13.2659,0.98
+ , ,617.286 (heavy), , , 
+[K].VPIQQQQMGDTSSR.[N],P34909,787.882 (light),2,16.942,0.98
+ , ,798.351 (heavy), , , 
+[K].TIIGSEDGLGVEcLR.[G],Q00955,809.909 (light),2,41.1739,0.98
+ , ,818.384 (heavy), , , 
+[R].LLGPAVDVLK.[L],P07278,512.824 (light),2,39.4661,0.98
+ , ,518.307 (heavy), , , 
+[K].TAEQLENLNIQDDQK.[Q],P04147,879.929 (light),2,30.1369,0.98
+ , ,890.398 (heavy), , , 
+[K].AALNHFAMDIASEEPSDK.[V],P40580,649.304 (light),3,35.2282,0.98
+ , ,656.615 (heavy), , , 
+[K].KIQEIQDAVHNQALQLPR.[V],P00815,701.055 (light),3,32.054,0.98
+ , ,710.693 (heavy), , , 
+[K].YKPNLVLGENSLDATK.[K],P32368,587.984 (light),3,31.6524,0.98
+ , ,594.631 (heavy), , , 
+[R].SNYGMIAINPGR.[V],P07149,646.825 (light),2,33.2866,0.97
+ , ,655.299 (heavy), , , 
+[K].LELYNPGGSIK.[D],P32582,595.824 (light),2,32.85,0.97
+ , ,602.305 (heavy), , , 
+[R].TALTYIDGSGNWHR.[V],P19456,795.887 (light),2,30.9592,0.97
+ , ,806.355 (heavy), , , 
+[K].TFDVINPSNEEK.[I],P40047,696.836 (light),2,29.3446,0.97
+ , ,704.314 (heavy), , , 
+[R].LISPNELSGMSESAK.[I],P18759,781.89 (light),2,34.5064,0.97
+ , ,790.364 (heavy), , , 
+[R].VLSHQAAAVVK.[E],Q05911,561.836 (light),2,12.1229,0.97
+ , ,569.313 (heavy), , , 
+[R].AQGYADDYELSTR.[V],P36114,744.835 (light),2,25.7188,0.97
+ , ,753.309 (heavy), , , 
+[K].QQLGNQQVGVVATGNGR.[I],P46680,863.453 (light),2,22.5715,0.97
+ , ,876.414 (heavy), , , 
+[R].TPANAAVPASTPLK.[Q],P06169,669.375 (light),2,23.3534,0.97
+ , ,677.352 (heavy), , , 
+[K].AQYNEIQGWDHLSLLPTFGAK.[D],P06169,796.737 (light),3,56.5173,0.97
+ , ,806.043 (heavy), , , 
+[R].DYGVLIEEEGVALR.[G],P34760,781.906 (light),2,51.7135,0.97
+ , ,790.381 (heavy), , , 
+[K].GQDFHIAGESYAGHYIPVFASEILSHK.[D],P00729,744.119 (light),4,52.0498,0.97
+ , ,752.843 (heavy), , , 
+[K].QVNVNTVFGLPGDFNLSLLDK.[I],P06169,1145.607 (light),2,69.2669,0.97
+ , ,1158.568 (heavy), , , 
+[K].VDSIIIGGGMAFTFK.[K],P00560,778.411 (light),2,77.0857,0.97
+ , ,786.387 (heavy), , , 
+[R].ADVELDFNGFSR.[G],P25555,685.322 (light),2,43.6009,0.97
+ , ,693.298 (heavy), , , 
+[K].SSVINALLAR.[R],P40010,522.314 (light),2,40.4007,0.97
+ , ,529.293 (heavy), , , 
+[R].GPNGAAVGVGAQHSQDFSPWYGSIPGLK.[V],P32473,933.128 (light),3,47.9194,0.97
+ , ,944.76 (heavy), , , 
+[K].KLNLILDDGGDLTTLVHEK.[H],P39954,524.291 (light),4,45.0987,0.97
+ , ,530.274 (heavy), , , 
+[K].SLQDIIAILGMDELSEQDK.[L],P00830,706.693 (light),3,75.6215,0.97
+ , ,714.004 (heavy), , , 
+[K].VVNMEFPIDEATGK.[T],P06103,775.382 (light),2,42.8016,0.97
+ , ,783.359 (heavy), , , 
+[K].GVETLAEAVAATLGPK.[G],P19882,509.619 (light),3,60.1413,0.97
+ , ,515.269 (heavy), , , 
+[K].HGIPVVVDNTFGAGGYFcQPIK.[Y],P06106,792.733 (light),3,48.1037,0.97
+ , ,801.374 (heavy), , , 
+[K].IGSSVGFNTIVSESSSNLAQGILK.[Y],P53753,803.427 (light),3,57.4093,0.97
+ , ,812.733 (heavy), , , 
+[K].VLENTEIGDSIFDK.[A],P00560,790.397 (light),2,46.9401,0.97
+ , ,798.373 (heavy), , , 
+[R].ANPQLFPEVDAELATR.[D],P54839,590.972 (light),3,47.8111,0.97
+ , ,597.952 (heavy), , , 
+[K].cSSDVFNHVVK.[S],P00331,431.208 (light),3,20.2812,0.97
+ , ,435.861 (heavy), , , 
+[R].LGHIQEGcDILDEK.[V],P36114,542.931 (light),3,26.918,0.97
+ , ,548.581 (heavy), , , 
+[K].LGLAPEGSK.[E],P25087,436.248 (light),2,17.2407,0.97
+ , ,441.233 (heavy), , , 
+[K].mPGGFTITVAR.[K],P19097,583.305 (light),2,37.8585,0.97
+ , ,589.786 (heavy), , , 
+[K].ANFEIDLPDAK.[M],P46655,616.811 (light),2,39.9395,0.97
+ , ,623.292 (heavy), , , 
+[R].ILPMETVIATK.[G],P26637,608.355 (light),2,39.6833,0.97
+ , ,614.337 (heavy), , , 
+[K].AIIFYESNGK.[L],P00331,571.298 (light),2,29.8126,0.97
+ , ,577.281 (heavy), , , 
+[K].MNANSLDTFR.[A],P0CZ17,584.774 (light),2,27.8534,0.97
+ , ,592.252 (heavy), , , 
+[K].HIVGMTGDGVNDAPALK.[K],P19456,847.931 (light),2,28.0155,0.97
+ , ,858.4 (heavy), , , 
+[R].IPIVQDQLIK.[L],P36016,583.86 (light),2,37.3156,0.96
+ , ,590.341 (heavy), , , 
+[K].LIQSLPPTLK.[V],P49167,555.35 (light),2,33.9534,0.96
+ , ,561.333 (heavy), , , 
+[K].TIFTVTPGSEQIR.[A],P19414,724.89 (light),2,35.9576,0.96
+ , ,733.365 (heavy), , , 
+[K].VVITcDEGK.[R],P52910,510.755 (light),2,14.1331,0.96
+ , ,515.242 (heavy), , , 
+[R].SEELSEIDASTAK.[A],P41807,690.331 (light),2,23.4166,0.96
+ , ,697.31 (heavy), , , 
+[R].VINWDITPDVANFAR.[L],P07244,865.947 (light),2,55.5381,0.96
+ , ,876.416 (heavy), , , 
+[K].AVDDFLLSLDGTANK.[S],P00925,789.903 (light),2,54.2585,0.96
+ , ,798.378 (heavy), , , 
+[K].IGLGYTLPELPNPITK.[T],P03965,863.493 (light),2,56.8895,0.96
+ , ,872.466 (heavy), , , 
+[R].AEVSDVGNAILDGADcVMLSGETAK.[G],P00549,1261.593 (light),2,59.0946,0.96
+ , ,1274.554 (heavy), , , 
+[K].LIDLTQFPAFVTPmGK.[G],P06169,897.479 (light),2,61.5192,0.96
+ , ,905.954 (heavy), , , 
+[K].ITDVVNIGIGGSDLGPVMVTEALK.[H],P12709,1199.649 (light),2,64.3137,0.96
+ , ,1212.61 (heavy), , , 
+[K].EINLGPGILPR.[F],P20967,589.848 (light),2,42.8861,0.96
+ , ,597.326 (heavy), , , 
+[K].IITHPNFNGNTLDNDImLIK.[L],CP_Trypsin,767.063 (light),3,44.3425,0.96
+ , ,775.704 (heavy), , , 
+[R].WAMVVENGIVTYAAK.[E],P38013,826.43 (light),2,48.4551,0.96
+ , ,835.403 (heavy), , , 
+[K].GSGVAMAMYNTDESIEGFAHSSFK.[L],P21954,846.041 (light),3,49.3059,0.96
+ , ,855.347 (heavy), , , 
+[K].LGANAILGVSLAASR.[A],P00924,706.915 (light),2,45.4436,0.96
+ , ,716.387 (heavy), , , 
+[R].AGSSELEEPIAIRPTSETVMYPYYAK.[W],P38708,968.146 (light),3,46.1408,0.96
+ , ,978.116 (heavy), , , 
+[R].NSINNALLTLEIPALIK.[K],P49367,919.043 (light),2,65.9232,0.96
+ , ,929.512 (heavy), , , 
+[K].DGLILLQAYEK.[V],P32599,631.853 (light),2,50.0073,0.96
+ , ,638.334 (heavy), , , 
+[K].QTDLLPESATDIIVSEcK.[S],P13663,673.67 (light),3,49.4691,0.96
+ , ,679.984 (heavy), , , 
+[R].LPAASLGDMVMATVK.[K],P0CX42,752.399 (light),2,51.6999,0.96
+ , ,760.375 (heavy), , , 
+[K].YSYAFLDIQPTAEGHALIIPK.[Y],Q04344,783.083 (light),3,52.9779,0.96
+ , ,791.392 (heavy), , , 
+[R].SSGKLPPGFEIVSALSNNLK.[K],P32614,686.713 (light),3,53.8826,0.96
+ , ,694.689 (heavy), , , 
+[K].VLEDSTIHIK.[D],P32476,577.825 (light),2,21.0182,0.96
+ , ,584.305 (heavy), , , 
+[R].QTLLRPELVEK.[W],Q03690,442.598 (light),3,26.2806,0.96
+ , ,447.916 (heavy), , , 
+[R].LISQAWETR.[S],P38736,552.296 (light),2,26.4686,0.96
+ , ,559.275 (heavy), , , 
+[K].ASGAFTGENSVDQIK.[D],P00942,762.37 (light),2,26.2143,0.96
+ , ,771.343 (heavy), , , 
+[R].LLTEVNEEQASHLR.[H],P32867,546.953 (light),3,24.4439,0.96
+ , ,553.932 (heavy), , , 
+[K].TGFETSQGSLVR.[V],P39986,641.325 (light),2,24.562,0.96
+ , ,649.301 (heavy), , , 
+[R].IALVGANGcGK.[T],P43535,530.284 (light),2,19.8793,0.96
+ , ,536.267 (heavy), , , 
+[R].KPLLESGTLGTK.[G],P22515,622.367 (light),2,19.1422,0.96
+ , ,629.346 (heavy), , , 
+[R].ELAEEGYSGVEVR.[V],P05750,719.347 (light),2,28.0885,0.96
+ , ,727.323 (heavy), , , 
+[R].EAADVIINVPR.[K],P06105,598.835 (light),2,34.842,0.96
+ , ,606.312 (heavy), , , 
+[K].VVNGNSADAAYAQVEIQPR.[A],P19097,668.003 (light),3,32.5894,0.96
+ , ,676.644 (heavy), , , 
+[R].FALcAYTTGGR.[D],P07806,608.793 (light),2,31.7663,0.95
+ , ,615.273 (heavy), , , 
+[R].NLSFEETPDYEGYR.[M],P23292,860.379 (light),2,37.7508,0.95
+ , ,869.352 (heavy), , , 
+[K].ADAEWVQSTASK.[I],P39935,646.81 (light),2,20.3315,0.95
+ , ,654.288 (heavy), , , 
+[K].EASAAYESFK.[K],P04147,551.756 (light),2,19.6735,0.95
+ , ,557.24 (heavy), , , 
+[K].AGAEIVPK.[L],P00560,392.732 (light),2,14.8994,0.95
+ , ,397.218 (heavy), , , 
+[K].DGNNGGEIDVK.[I],P39533,559.259 (light),2,14.4463,0.95
+ , ,566.238 (heavy), , , 
+[K].IVTEAVEIEQR.[Y],P09938,643.851 (light),2,26.817,0.95
+ , ,651.329 (heavy), , , 
+[K].NGTVTVDLSDK.[K],Q04869,574.793 (light),2,22.1317,0.95
+ , ,581.274 (heavy), , , 
+[R].TPANAAVPASTPLK.[Q],P06169,669.375 (light),2,24.1196,0.95
+ , ,677.351 (heavy), , , 
+[K].DVTFLNDcVGPEVEAAVK.[A],P00560,654.988 (light),3,52.3167,0.95
+ , ,661.303 (heavy), , , 
+[R].IHYMAPSNEPWGEHEIDYILFYK.[I],P15496,713.84 (light),4,53.6047,0.95
+ , ,721.318 (heavy), , , 
+[K].ANPTALLLSSVMMLNHMGLTNHADQIQNAVLSTIASGPENR.[T],P28241,1083.299 (light),4,75.7312,0.95
+ , ,1097.008 (heavy), , , 
+[K].QIAPAELEGLLDLER.[V],P19097,833.955 (light),2,59.1094,0.95
+ , ,843.427 (heavy), , , 
+[R].HINAPFMLPIAAK.[M],P05453,711.9 (light),2,42.4902,0.95
+ , ,720.375 (heavy), , , 
+[R].TGNIVDVPVGPGLLGR.[V],P07251,782.446 (light),2,49.1275,0.95
+ , ,792.417 (heavy), , , 
+[K].ELGNNQEMVLIFGTADTHVDPQGR.[D],Q07505,881.093 (light),3,49.9358,0.95
+ , ,892.06 (heavy), , , 
+[K].YILVSGITPTPLGEGK.[S],P07245,822.964 (light),2,47.474,0.95
+ , ,831.438 (heavy), , , 
+[R].FGQmFFPESR.[E],Q00055,631.287 (light),2,41.638,0.95
+ , ,637.768 (heavy), , , 
+[K].LAEILKPVFQ.[-],P17695,579.35 (light),2,45.1577,0.95
+ , ,585.332 (heavy), , , 
+[K].TPVFGIcLGHQLIAR.[A],P07259,561.311 (light),3,44.0158,0.95
+ , ,567.958 (heavy), , , 
+[K].QIVFEIPSETH.[-],P26786,650.333 (light),2,42.5691,0.95
+ , ,657.312 (heavy), , , 
+[K].QTDLLPESATDIIVSEcK.[S],P13663,1010.003 (light),2,49.399,0.95
+ , ,1019.475 (heavy), , , 
+[K].LNLILDDGGDLTTLVHEK.[H],P39954,656.021 (light),3,51.4009,0.95
+ , ,663.333 (heavy), , , 
+[K].DVVQLYQEQLSAQGMPmIK.[V],P17709,1097.548 (light),2,53.6675,0.95
+ , ,1109.013 (heavy), , , 
+[R].SDIVGSPVAELLK.[S],P07245,664.377 (light),2,48.1915,0.95
+ , ,671.356 (heavy), , , 
+[K].LVIVGDGAcGK.[T],P06780,544.792 (light),2,23.3676,0.95
+ , ,550.276 (heavy), , , 
+[R].LTSNVLQHAK.[N],P40054,555.817 (light),2,13.1141,0.95
+ , ,563.295 (heavy), , , 
+[K].APSGLDQSR.[I],P07149,465.736 (light),2,11.4018,0.95
+ , ,472.217 (heavy), , , 
+[K].GcFDEEGYQK.[T],P38791,616.748 (light),2,17.7647,0.95
+ , ,622.232 (heavy), , , 
+[R].YDcSFcGK.[K],P0CX25,518.697 (light),2,16.1921,0.95
+ , ,522.187 (heavy), , , 
+[K].SHDVVIIGGGPAGYVAAIK.[A],P09624,608.672 (light),3,41.2568,0.95
+ , ,615.983 (heavy), , , 
+[R].LLINQLK.[A],Q04304,421.279 (light),2,28.5997,0.95
+ , ,426.265 (heavy), , , 
+[R].HITINDLPVGR.[N],P34760,617.849 (light),2,28.7419,0.95
+ , ,626.323 (heavy), , , 
+[K].EQcQGALFGAVQSPTTK.[V],P40495,911.443 (light),2,33.3497,0.95
+ , ,921.413 (heavy), , , 
+[K].GHLENISYNTLIGAQNK.[E],P39533,624.659 (light),3,33.2594,0.94
+ , ,632.635 (heavy), , , 
+[K].ISHVSTGGGASLELLEGK.[E],P00560,585.648 (light),3,32.7214,0.94
+ , ,592.627 (heavy), , , 
+[R].SQVALILETGEAR.[E],Q12680,693.883 (light),2,37.5893,0.94
+ , ,702.358 (heavy), , , 
+[K].IEVLEQELVR.[A],P53252,614.35 (light),2,37.784,0.94
+ , ,621.33 (heavy), , , 
+[K].LSVQDLDLK.[D],P00560,515.793 (light),2,38.1632,0.94
+ , ,521.276 (heavy), , , 
+[R].SFKPIIDQEVLK.[L],P13188,472.942 (light),3,33.9477,0.94
+ , ,477.927 (heavy), , , 
+[K].LVIGQHGLLSTPAASHIMR.[T],P37012,667.708 (light),3,34.0037,0.94
+ , ,676.681 (heavy), , , 
+[R].AGNFALHPEVVR.[E],Q03558,655.354 (light),2,25.0261,0.94
+ , ,664.327 (heavy), , , 
+[K].SGIINGVEEAAR.[V],P32263,608.321 (light),2,27.7788,0.94
+ , ,616.297 (heavy), , , 
+[K].FTEcIDDIK.[T],Q04493,570.766 (light),2,27.6991,0.94
+ , ,575.253 (heavy), , , 
+[R].ASSDASDLLR.[Q],P16861,517.759 (light),2,21.7044,0.94
+ , ,524.24 (heavy), , , 
+[K].LGANAILGVSMAAAR.[A],P00925,707.895 (light),2,43.5911,0.94
+ , ,717.367 (heavy), , , 
+[K].EIcNAYTELNDPFDQR.[A],P15180,992.938 (light),2,44.5271,0.94
+ , ,1003.407 (heavy), , , 
+[R].ANIQLDFPELKPYK.[Q],P19097,838.457 (light),2,43.7694,0.94
+ , ,847.43 (heavy), , , 
+[K].LSDDIPPSAPMAINcEYGSFDNEHVVLPR.[T],P04807,1081.842 (light),3,50.3597,0.94
+ , ,1093.474 (heavy), , , 
+[K].WVNWLEGSVEK.[T],P47018,673.84 (light),2,45.519,0.94
+ , ,681.318 (heavy), , , 
+[R].YSFSLTTFSPSGK.[L],P23639,711.351 (light),2,45.1265,0.94
+ , ,718.33 (heavy), , , 
+[K].FEELNLDLFK.[K],P16474,634.332 (light),2,54.6144,0.94
+ , ,640.314 (heavy), , , 
+[K].LGPMLNSFMGAGNVDISGK.[L],Q12154,954.471 (light),2,52.0328,0.94
+ , ,965.439 (heavy), , , 
+[K].NAPLIEPEAEK.[R],P53885,605.82 (light),2,22.8721,0.94
+ , ,612.3 (heavy), , , 
+[R].AVVAGAGTGGTISGISK.[Y],P32582,723.401 (light),2,25.4208,0.94
+ , ,732.375 (heavy), , , 
+[R].HTDAIVTENK.[A],P54885,564.288 (light),2,11.1115,0.94
+ , ,571.268 (heavy), , , 
+[K].RPWLGQQEAAYKPTAPLYDPK.[C],P08431,608.071 (light),4,33.171,0.94
+ , ,615.3 (heavy), , , 
+[K].EATGVDELTTAGSQDHPFK.[T],P38707,668.316 (light),3,29.7152,0.93
+ , ,675.96 (heavy), , , 
+[K].LNPLSAEIINR.[Q],P32481,620.356 (light),2,37.864,0.93
+ , ,628.333 (heavy), , , 
+[R].TLAcYSDAIVMR.[H],P07259,700.339 (light),2,36.5537,0.93
+ , ,707.318 (heavy), , , 
+[K].FQDGTIPcDK.[F],P40472,590.768 (light),2,18.9115,0.93
+ , ,596.252 (heavy), , , 
+[K].TAQVHIPTENEANK.[S],P53890,517.93 (light),3,16.7281,0.93
+ , ,524.577 (heavy), , , 
+[K].LLGPIEEK.[F],P39958,449.766 (light),2,24.292,0.93
+ , ,454.252 (heavy), , , 
+[K].IMDQGGLVSDDIMVNMIK.[D],P07170,989.985 (light),2,56.8906,0.93
+ , ,1000.454 (heavy), , , 
+[R].DYGVLIEEEGVALR.[G],P34760,781.907 (light),2,51.9206,0.93
+ , ,790.382 (heavy), , , 
+[K].NMITGTSQADcAILIIAGGVGEFEAGISK.[D],P02994,1462.232 (light),2,76.3324,0.93
+ , ,1477.686 (heavy), , , 
+[R].IIDQQAWFTHITPYMTIFLHEK.[K],P16521,911.468 (light),3,62.4353,0.93
+ , ,921.438 (heavy), , , 
+[K].QLNLVAENTVSETDDSQFTNVER.[E],P07702,870.416 (light),3,43.299,0.93
+ , ,880.719 (heavy), , , 
+[K].ELNLAGDSFLK.[A],P32602,603.821 (light),2,42.5516,0.93
+ , ,610.302 (heavy), , , 
+[R].VVDLIEYVAK.[A],P00360,574.832 (light),2,44.977,0.93
+ , ,580.315 (heavy), , , 
+[R].SLPNIQVWRPADGNEVSAAYK.[N],P23254,772.398 (light),3,41.8016,0.93
+ , ,782.036 (heavy), , , 
+[K].DVIASIETLDNGK.[A],P46367,687.859 (light),2,45.1594,0.93
+ , ,695.337 (heavy), , , 
+[R].INEIEESIASGDLSLVQEK.[L],P38934,1037.531 (light),2,50.2914,0.93
+ , ,1048.499 (heavy), , , 
+[R].FVGSIIDIDLLK.[T],P27614,666.892 (light),2,59.7149,0.93
+ , ,673.373 (heavy), , , 
+[K].GIPLAAIVcVK.[L],P13298,570.844 (light),2,46.3644,0.93
+ , ,576.327 (heavy), , , 
+[K].MPLVGLGcWK.[I],P38715,580.802 (light),2,45.6531,0.93
+ , ,586.286 (heavy), , , 
+[K].ASAPGSVILLENLR.[Y],P00560,720.414 (light),2,47.3409,0.93
+ , ,729.388 (heavy), , , 
+[K].RLVINcLEEK.[S],P07278,637.35 (light),2,22.5978,0.93
+ , ,644.329 (heavy), , , 
+[K].IVPELTEK.[L],Q12480,464.771 (light),2,22.1796,0.93
+ , ,469.257 (heavy), , , 
+[K].THPNYDVVLK.[Q],P31373,593.317 (light),2,20.2058,0.93
+ , ,600.296 (heavy), , , 
+[K].DGSLVQIAR.[G],P48015,479.769 (light),2,27.3345,0.93
+ , ,486.25 (heavy), , , 
+[R].AHSSmVGFDLPQR.[A],P00560,487.57 (light),3,25.2861,0.93
+ , ,493.552 (heavy), , , 
+[K].EIGSSGEENK.[V],P36139,525.242 (light),2,6.8693,0.93
+ , ,531.224 (heavy), , , 
+[R].NLGKPVQLAQK.[Y],P33734,598.362 (light),2,14.6833,0.93
+ , ,606.338 (heavy), , , 
+[K].VATETQTYETK.[Q],P53885,635.812 (light),2,12.2904,0.93
+ , ,642.293 (heavy), , , 
+[R].TATFAWSHDK.[I],P38968,582.278 (light),2,18.4432,0.93
+ , ,589.257 (heavy), , , 
+[R].YNWKPEEcQK.[L],P15625,691.315 (light),2,15.6694,0.93
+ , ,698.294 (heavy), , , 
+[K].NVSGQDVAAALEANAK.[S],P05694,779.397 (light),2,35.8801,0.93
+ , ,789.368 (heavy), , , 
+[K].VALVFGQMNEPPGAR.[A],P00830,793.411 (light),2,41.488,0.93
+ , ,803.381 (heavy), , , 
+[K].TAVALDTILNQK.[R],P07251,643.868 (light),2,40.1174,0.93
+ , ,651.346 (heavy), , , 
+[K].TYEQYALTNYK.[N],P26637,697.336 (light),2,29.4465,0.93
+ , ,704.315 (heavy), , , 
+[K].DRIDSVSQLQNVAETTK.[V],P05626,635.329 (light),3,32.294,0.93
+ , ,643.305 (heavy), , , 
+[K].VHAcIGGTSFVEDAEGLR.[D],P10081,639.976 (light),3,36.6848,0.92
+ , ,647.287 (heavy), , , 
+[K].LAIATNENDILDR.[F],P16120,729.383 (light),2,36.6359,0.92
+ , ,738.357 (heavy), , , 
+[K].DTSSGGVTHANEQLMK.[F],P47169,837.892 (light),2,17.3538,0.92
+ , ,848.361 (heavy), , , 
+[K].HEDLVNSIESK.[N],P07256,635.818 (light),2,19.8122,0.92
+ , ,643.295 (heavy), , , 
+[K].STTTGHLIYK.[C],P02994,560.804 (light),2,13.1294,0.92
+ , ,567.284 (heavy), , , 
+[K].HGVVLSDTGDK.[V],P21826,564.288 (light),2,11.8767,0.92
+ , ,571.267 (heavy), , , 
+[R].HIGQDTDVPAGDIGVGGR.[E],P07262,588.627 (light),3,25.6154,0.92
+ , ,596.603 (heavy), , , 
+[K].LcVNEKPPAESAVAVK.[S],P38708,571.306 (light),3,23.0762,0.92
+ , ,577.288 (heavy), , , 
+[K].VSGSIAIcGTDYPGSENMVVPTVVGAGSSQPINVIK.[E],P36135,1201.939 (light),3,57.5211,0.92
+ , ,1214.901 (heavy), , , 
+[R].LFVRPFPLDVQESELNEIFGPFGPMK.[E],Q01560,1002.852 (light),3,70.6807,0.92
+ , ,1013.487 (heavy), , , 
+[K].VTFDIEPYKPINTSLYLcDNK.[F],P12385,844.089 (light),3,50.5373,0.92
+ , ,852.065 (heavy), , , 
+[R].SAFDVPEWVDPNVQNLVSK.[V],P07259,1072.536 (light),2,59.6255,0.92
+ , ,1084.5 (heavy), , , 
+[R].GWLSEGGTLIGTAR.[S],P16861,709.375 (light),2,43.6148,0.92
+ , ,718.348 (heavy), , , 
+[K].GLVSDPAGSDALNVLK.[Y],P54839,778.42 (light),2,43.7503,0.92
+ , ,787.393 (heavy), , , 
+[K].GGEEGFSTFFHETGYGK.[F],P09733,617.273 (light),3,39.5467,0.92
+ , ,623.92 (heavy), , , 
+[R].DLATMTYEEVAK.[R],P07149,685.828 (light),2,41.4575,0.92
+ , ,692.309 (heavy), , , 
+[K].YQWHVVPGSQMLVHQGVAQFEK.[W],P08566,642.826 (light),4,41.4569,0.92
+ , ,650.802 (heavy), , , 
+[R].ELVGEELNDSNMDALAGGK.[K],P27472,981.459 (light),2,42.2035,0.92
+ , ,992.427 (heavy), , , 
+[R].VVNEPTAAALAYGLEK.[S],P0CS90,823.443 (light),2,41.4401,0.92
+ , ,832.416 (heavy), , , 
+[K].FHTEVLSELLQADDK.[F],P12385,582.296 (light),3,45.9821,0.92
+ , ,588.611 (heavy), , , 
+[R].VVDFDQVSLSSLNR.[H],P36101,789.909 (light),2,45.0297,0.92
+ , ,799.381 (heavy), , , 
+[R].VSGmFLGEVLR.[N],P17709,612.327 (light),2,43.2246,0.92
+ , ,618.807 (heavy), , , 
+[K].GFALANPSITLVPEEK.[I],P54838,843.46 (light),2,49.6459,0.92
+ , ,852.433 (heavy), , , 
+[R].NAPGSFALFGGNAFAK.[E],P38988,784.897 (light),2,48.814,0.92
+ , ,794.368 (heavy), , , 
+[K].FTNFNTNNLWINLK.[A],P32861,869.95 (light),2,53.4267,0.92
+ , ,880.419 (heavy), , , 
+[K].NIGSLIGLEFR.[D],P32558,609.847 (light),2,52.0215,0.92
+ , ,617.325 (heavy), , , 
+[K].DSFPIFHVYPSSSLAR.[T],P38314,608.308 (light),3,48.4297,0.92
+ , ,615.288 (heavy), , , 
+[K].ESEGYSTVPLR.[S],P17423,619.306 (light),2,24.0358,0.92
+ , ,626.285 (heavy), , , 
+[K].VHVAQLDITQAEK.[I],Q05016,484.6 (light),3,25.3024,0.92
+ , ,490.582 (heavy), , , 
+[R].GmGEEDFHR.[I],P37291,547.223 (light),2,13.7707,0.92
+ , ,553.703 (heavy), , , 
+[K].LDHTENDVR.[G],P17967,549.763 (light),2,8.4911,0.92
+ , ,557.24 (heavy), , , 
+[K].FcNGVPDIYISQK.[L],P27692,770.877 (light),2,37.8436,0.92
+ , ,778.355 (heavy), , , 
+[K].GQYVLVYPDGQVK.[S],Q03629,733.388 (light),2,35.7973,0.92
+ , ,741.364 (heavy), , , 
+[K].IHPIGELSSEEEEMLQK.[C],P17505,656.991 (light),3,36.8851,0.92
+ , ,663.97 (heavy), , , 
+[K].WVNNILYEGAESER.[V],Q06151,840.404 (light),2,40.0296,0.92
+ , ,850.375 (heavy), , , 
+[R].GATTEEDDALADQLR.[G],P00899,802.876 (light),2,30.1982,0.92
+ , ,812.347 (heavy), , , 
+[K].VFKPSQGMVVEISNGNTSSK.[T],P07149,703.693 (light),3,29.5339,0.92
+ , ,712.002 (heavy), , , 
+[R].TAFQIPGDDK.[I],P43585,546.272 (light),2,28.2558,0.92
+ , ,552.254 (heavy), , , 
+[R].VNEVMEEFTTR.[T],P31688,677.819 (light),2,33.9556,0.92
+ , ,685.297 (heavy), , , 
+[K].SDDEIIEIIKK.[N],P19358,651.861 (light),2,34.832,0.92
+ , ,658.342 (heavy), , , 
+[K].cNDEQVFAITTK.[K],P39966,713.338 (light),2,31.2951,0.92
+ , ,720.317 (heavy), , , 
+[K].SVEMHHEQLEQGVPGDNVGFNVK.[N],P02994,638.306 (light),4,31.0261,0.91
+ , ,646.283 (heavy), , , 
+[K].EAVDMEFGTGAVK.[I],P07806,677.321 (light),2,33.1553,0.91
+ , ,684.301 (heavy), , , 
+[R].LALSEPSK.[Y],Q08220,422.743 (light),2,17.2611,0.91
+ , ,427.229 (heavy), , , 
+[R].APFAVVGHATAEQK.[L],P38972,713.378 (light),2,19.1595,0.91
+ , ,722.352 (heavy), , , 
+[K].AVASSGQELSVEER.[N],P34730,731.363 (light),2,19.8224,0.91
+ , ,740.337 (heavy), , , 
+[K].VSSAEYYAK.[K],P26784,509.248 (light),2,13.6525,0.91
+ , ,514.233 (heavy), , , 
+[K].ILNENGVAK.[E],P38972,479.272 (light),2,14.132,0.91
+ , ,485.254 (heavy), , , 
+[K].NESATINEmmK.[H],P19097,650.281 (light),2,25.2771,0.91
+ , ,656.264 (heavy), , , 
+[K].EITALAPSSMK.[V],P60010,574.306 (light),2,27.7013,0.91
+ , ,580.288 (heavy), , , 
+[K].DVSSFFESAIER.[V],Q08421,693.831 (light),2,54.9144,0.91
+ , ,701.308 (heavy), , , 
+[K].WNNGVLDSFLVEITR.[D],P38720,881.959 (light),2,68.4891,0.91
+ , ,892.428 (heavy), , , 
+[R].VVSLPDFFTFDK.[Q],P23254,707.867 (light),2,61.1654,0.91
+ , ,714.348 (heavy), , , 
+[K].IVPAEDGSGAGAAVIAALAQK.[R],P04807,955.023 (light),2,50.0806,0.91
+ , ,966.489 (heavy), , , 
+[K].VFFVSGDPLLHTTAWK.[K],P38249,606.657 (light),3,49.8175,0.91
+ , ,613.304 (heavy), , , 
+[K].LEFANLTPGLK.[N],P04840,601.842 (light),2,43.0018,0.91
+ , ,608.323 (heavy), , , 
+[K].LLGAVVEPLADIAHK.[Y],Q00955,515.971 (light),3,44.1218,0.91
+ , ,521.954 (heavy), , , 
+[K].ALTTLVYSDNLNLQR.[S],P39968,860.965 (light),2,44.1421,0.91
+ , ,871.434 (heavy), , , 
+[K].TAVDDIIAFR.[K],P38081,560.804 (light),2,43.7677,0.91
+ , ,567.284 (heavy), , , 
+[K].ELYGDNYLVNLVNQK.[G],P32368,891.458 (light),2,51.8482,0.91
+ , ,901.428 (heavy), , , 
+[K].GVLAALDYLR.[N],P26637,545.816 (light),2,50.3822,0.91
+ , ,552.296 (heavy), , , 
+[K].STLATFPQHGSQDVLSALNSLK.[A],P15625,772.072 (light),3,50.7524,0.91
+ , ,781.378 (heavy), , , 
+[K].IGPDVVIGPNVTIGDGVR.[I],P41940,889.493 (light),2,47.9205,0.91
+ , ,900.461 (heavy), , , 
+[K].TAGIQIVADDLTVTNPAR.[I],P00925,619.002 (light),3,47.1749,0.91
+ , ,626.646 (heavy), , , 
+[K].GDTPDQGHLQTR.[V],P22137,662.816 (light),2,11.3367,0.91
+ , ,672.288 (heavy), , , 
+[K].VNTLVRPNGTK.[K],P04456,599.848 (light),2,11.8857,0.91
+ , ,608.323 (heavy), , , 
+[K].GATLVVGGDGR.[Y],P37012,501.272 (light),2,18.7052,0.91
+ , ,508.251 (heavy), , , 
+[K].LVTTGELYHNEK.[L],P23180,468.577 (light),3,18.2423,0.91
+ , ,473.894 (heavy), , , 
+[K].DGKPAVEVSVK.[G],P16474,376.88 (light),3,15.7061,0.91
+ , ,381.201 (heavy), , , 
+[R].IPQQQPAPAEITPSYALGK.[V],P31539,670.361 (light),3,37.2689,0.91
+ , ,678.005 (heavy), , , 
+[K].TFGIQYPLPK.[M],P32454,582.327 (light),2,40.711,0.91
+ , ,588.309 (heavy), , , 
+[K].VSSSDLDLLYDK.[V],P40093,677.84 (light),2,39.3698,0.91
+ , ,684.321 (heavy), , , 
+[K].LANQYDESScLIVGHGSSVR.[S],Q12008,731.351 (light),3,29.0789,0.91
+ , ,739.992 (heavy), , , 
+[K].ALANQLLTPSSNVSTHTLNK.[K],P10964,703.715 (light),3,31.9324,0.9
+ , ,712.688 (heavy), , , 
+[K].ESLLGFSK.[T],P25294,440.742 (light),2,31.6963,0.9
+ , ,445.229 (heavy), , , 
+[R].SNYGMIAINPGR.[V],P07149,646.824 (light),2,33.3336,0.9
+ , ,655.299 (heavy), , , 
+[R].LTISVTDTEVER.[A],P07256,681.859 (light),2,33.2082,0.9
+ , ,689.337 (heavy), , , 
+[K].YDSATDSLLTNGGR.[V],P07244,735.347 (light),2,28.4612,0.9
+ , ,744.32 (heavy), , , 
+[K].QLLcGAAIGTIDADK.[E],P50095,773.401 (light),2,38.2331,0.9
+ , ,781.377 (heavy), , , 
+[R].cAYPIDYIPSAK.[I],P10963,699.342 (light),2,38.2474,0.9
+ , ,705.324 (heavy), , , 
+[K].TLVILHSDESYLK.[D],P09436,759.414 (light),2,34.2172,0.9
+ , ,767.391 (heavy), , , 
+[K].HFISELEK.[G],P04807,501.766 (light),2,19.2506,0.9
+ , ,507.25 (heavy), , , 
+[K].YTQSNSVcYAK.[N],P54113,660.798 (light),2,13.4533,0.9
+ , ,667.279 (heavy), , , 
+[K].VASANATAAESDVAK.[Q],P26784,702.853 (light),2,15.2187,0.9
+ , ,711.327 (heavy), , , 
+[K].YTQSNSVcYAR.[N],P38009,674.802 (light),2,14.7014,0.9
+ , ,682.279 (heavy), , , 
+[K].FTcNATHELVVR.[T],P17255,723.861 (light),2,21.5874,0.9
+ , ,732.336 (heavy), , , 
+[K].YSFLEGGSK.[L],P07264,494.243 (light),2,25.3528,0.9
+ , ,499.228 (heavy), , , 
+[K].AVDDFLLSLDGTANK.[S],P00925,789.905 (light),2,55.4678,0.9
+ , ,798.38 (heavy), , , 
+[K].YLAAYLLLNAAGNTPDATK.[I],P05319,660.686 (light),3,55.3372,0.9
+ , ,667.997 (heavy), , , 
+[K].GIDFHPTEPWVLTTLYSGR.[V],P41811,730.373 (light),3,57.463,0.9
+ , ,738.681 (heavy), , , 
+[R].IIAEYVWIDGTGNLR.[S],P32288,860.457 (light),2,52.182,0.9
+ , ,870.427 (heavy), , , 
+[K].LLPWFDGmLEADEAYFK.[E],P14540,1030.987 (light),2,66.1776,0.9
+ , ,1039.961 (heavy), , , 
+[K].FAIPAINVTSSSTAVAALEAAR.[D],P14540,720.727 (light),3,60.8829,0.9
+ , ,729.368 (heavy), , , 
+[R].mIEImLPVFDAPQNLVEQAK.[L],P06169,1159.591 (light),2,64.9156,0.9
+ , ,1170.559 (heavy), , , 
+[K].LITSHLVDTDPEVDSIIK.[D],P37291,665.693 (light),3,43.3562,0.9
+ , ,672.672 (heavy), , , 
+[R].YDLTVPFAR.[Y],P07263,541.287 (light),2,42.8523,0.9
+ , ,547.27 (heavy), , , 
+[K].DSVVAAFQWATK.[E],P32324,661.841 (light),2,48.9074,0.9
+ , ,669.319 (heavy), , , 
+[K].ENLEVSGENVVEADLK.[R],P07257,872.934 (light),2,43.8329,0.9
+ , ,882.406 (heavy), , , 
+[R].GGGNPNGDIFDWELGK.[H],Q12012,838.389 (light),2,49.3178,0.9
+ , ,848.359 (heavy), , , 
+[R].SAYVTTEEFIDAVESR.[L],P41939,606.291 (light),3,53.0648,0.9
+ , ,612.606 (heavy), , , 
+[R].IEDDPFENLEDTDDIFQK.[D],P04806,1091.987 (light),2,58.4506,0.9
+ , ,1102.456 (heavy), , , 
+[K].SLSDATNETLR.[L],P33892,603.802 (light),2,20.6595,0.9
+ , ,611.28 (heavy), , , 
+[K].IINLTSTEVTMSNDTIHK.[I],P38217,673.014 (light),3,27.52,0.9
+ , ,680.658 (heavy), , , 
+[K].LIDVITK.[V],P40961,401.258 (light),2,26.158,0.9
+ , ,405.246 (heavy), , , 
+[R].QFNTWcGEPAR.[M],P17649,683.304 (light),2,25.7674,0.9
+ , ,691.28 (heavy), , , 
+[K].TGETTLLSmSK.[N],Q12363,592.298 (light),2,19.9783,0.9
+ , ,597.782 (heavy), , , 
+[K].cIAAcTGVPDDK.[W],P07149,653.793 (light),2,19.155,0.9
+ , ,659.276 (heavy), , , 
+[R].EAGEVKDDGAFVK.[F],P41805,682.839 (light),2,16.2226,0.9
+ , ,690.316 (heavy), , , 
+[R].LLMADVVHDEELK.[Y],P38427,504.597 (light),3,37.2323,0.9
+ , ,509.915 (heavy), , , 
+[K].SGNNLVDLSDADTLQR.[Y],P38249,859.421 (light),2,38.249,0.9
+ , ,870.388 (heavy), , , 
+[K].NFQLIDSTLR.[E],Q12122,603.828 (light),2,40.7216,0.9
+ , ,611.305 (heavy), , , 
+[K].ESALELGVLTEK.[E],P08417,644.854 (light),2,40.8229,0.9
+ , ,651.335 (heavy), , , 
+[K].GFFSFATQK.[L],P05694,516.761 (light),2,39.561,0.9
+ , ,522.245 (heavy), , , 
+[R].FIDAAVEYGR.[K],P53228,570.788 (light),2,30.4107,0.9
+ , ,577.269 (heavy), , , 
+[K].TIEGDSQLSDEMSIK.[E],Q03690,826.888 (light),2,33.784,0.9
+ , ,835.363 (heavy), , , 
+[K].SNTYITTAGAALK.[I],P53852,655.851 (light),2,28.5873,0.89
+ , ,663.329 (heavy), , , 
+[K].LAAVPAAGPASAGGAAAASGDAAAEEEK.[E],P05319,794.39 (light),3,30.581,0.89
+ , ,804.028 (heavy), , , 
+[R].GYWGTNLGQPHSLATK.[T],P25443,577.293 (light),3,29.9807,0.89
+ , ,584.605 (heavy), , , 
+[R].IDTVVISAQHADEISTADLR.[T],P19358,718.705 (light),3,38.7871,0.89
+ , ,727.346 (heavy), , , 
+[K].IQADLTVKPK.[D],P00958,556.837 (light),2,16.8461,0.89
+ , ,563.317 (heavy), , , 
+[K].ATNDVEPSTYDSK.[A],P49089,713.821 (light),2,15.0068,0.89
+ , ,721.298 (heavy), , , 
+[R].IVNGLQNTR.[-],P57744,507.788 (light),2,14.645,0.89
+ , ,515.266 (heavy), , , 
+[K].ELLASLK.[S],P07251,387.242 (light),2,26.7986,0.89
+ , ,391.23 (heavy), , , 
+[K].FANILESATLNTVQQDGIMTK.[D],P21954,1147.589 (light),2,54.6821,0.89
+ , ,1160.55 (heavy), , , 
+[R].NDPTWQGPILAPGLINR.[S],P30952,931.499 (light),2,52.5907,0.89
+ , ,943.464 (heavy), , , 
+[K].GSSTMIDALEPFVK.[E],P54838,747.879 (light),2,52.6285,0.89
+ , ,755.357 (heavy), , , 
+[K].AIEmEGLTWGAHQFIPIGFGIK.[K],P32471,811.088 (light),3,59.6127,0.89
+ , ,819.729 (heavy), , , 
+[K].FAIPAINVTSSSTAVAALEAAR.[D],P14540,720.727 (light),3,60.1139,0.89
+ , ,729.368 (heavy), , , 
+[R].AQFETLTAPLVK.[R],P0CS90,659.374 (light),2,40.5474,0.89
+ , ,666.353 (heavy), , , 
+[R].VVNEPTAAALAYGLEK.[S],P0CS90,823.443 (light),2,41.6033,0.89
+ , ,832.417 (heavy), , , 
+[R].ITDTALVSAAVLSNR.[Y],P33416,765.929 (light),2,42.141,0.89
+ , ,775.4 (heavy), , , 
+[K].IDYVSLADFK.[T],P40459,585.805 (light),2,46.0248,0.89
+ , ,591.289 (heavy), , , 
+[R].DEGLFNLYR.[G],P38988,563.78 (light),2,46.3175,0.89
+ , ,570.261 (heavy), , , 
+[R].NLHTHPVAAPVSK.[T],P31382,457.589 (light),3,11.3792,0.89
+ , ,463.904 (heavy), , , 
+[K].IGASALGGGLSAWNQPIEVIR.[V],Q04013,1055.079 (light),2,55.619,0.89
+ , ,1068.539 (heavy), , , 
+[K].YYSIYDLGNNAVGLAK.[A],P07267,880.947 (light),2,49.3957,0.89
+ , ,890.419 (heavy), , , 
+[R].YNPLTDSWILVSPHR.[A],P08431,599.981 (light),3,51.5666,0.89
+ , ,607.292 (heavy), , , 
+[K].SPVMADLNGGLQFVPELK.[E],P19097,639.004 (light),3,57.359,0.89
+ , ,645.983 (heavy), , , 
+[K].AGQTHLGQPVFASVK.[D],P53598,770.417 (light),2,24.1895,0.89
+ , ,780.387 (heavy), , , 
+[K].HIGGNDDLQELR.[E],P25373,683.839 (light),2,20.4129,0.89
+ , ,693.311 (heavy), , , 
+[K].AVEALNDSELNGEK.[L],P04147,744.862 (light),2,24.287,0.89
+ , ,753.337 (heavy), , , 
+[K].SIENPTQTK.[G],P32499,509.263 (light),2,12.3626,0.89
+ , ,515.246 (heavy), , , 
+[K].LGDEFGSDDK.[D],Q12008,541.736 (light),2,18.3094,0.89
+ , ,547.22 (heavy), , , 
+[K].VLQDSGLEK.[K],P16474,494.769 (light),2,15.4532,0.89
+ , ,500.252 (heavy), , , 
+[K].VSDVLNASR.[N],P05626,480.759 (light),2,16.5993,0.89
+ , ,487.239 (heavy), , , 
+[K].SESITITNDK.[G],P16474,554.28 (light),2,16.7534,0.89
+ , ,560.262 (heavy), , , 
+[R].ESSDTFSAQPPPVPK.[H],P34216,793.889 (light),2,29.4526,0.89
+ , ,802.364 (heavy), , , 
+[K].DALPSVTSEQVR.[E],P09436,651.338 (light),2,28.432,0.89
+ , ,659.315 (heavy), , , 
+[K].LLIQNQDEMLK.[Q],P18239,672.862 (light),2,33.693,0.89
+ , ,680.34 (heavy), , , 
+[K].DTDTETTVVEDANNPEDQESTSPATPK.[L],P36775,964.423 (light),3,30.9289,0.88
+ , ,974.726 (heavy), , , 
+[K].FAQFVVENQEK.[T],P47117,669.838 (light),2,28.7254,0.88
+ , ,677.316 (heavy), , , 
+[K].YVHVSEVGNcSGSGMGGVSALR.[G],P19097,741.681 (light),3,29.6793,0.88
+ , ,750.654 (heavy), , , 
+[K].EEVQEIEELNK.[T],P02829,680.336 (light),2,29.6988,0.88
+ , ,687.315 (heavy), , , 
+[K].EIEEHcSMLGLDPEIVSHSR.[I],P16521,780.032 (light),3,36.4692,0.88
+ , ,788.673 (heavy), , , 
+[R].ADHLVEEVLEAR.[L],P38088,690.86 (light),2,35.4261,0.88
+ , ,699.335 (heavy), , , 
+[K].SEHQVELIR.[S],P34730,370.868 (light),3,15.4007,0.88
+ , ,375.853 (heavy), , , 
+[R].DYGVLIEEEGVALR.[G],P34760,781.908 (light),2,52.8628,0.88
+ , ,790.383 (heavy), , , 
+[K].DAFEHLLcGASMLQIGTELQK.[E],P28272,787.725 (light),3,61.2313,0.88
+ , ,796.034 (heavy), , , 
+[K].ILGIDPNVTQYTGYLDVEDEDK.[H],P00729,1249.103 (light),2,59.5172,0.88
+ , ,1261.566 (heavy), , , 
+[K].AAQDSFAAGWGVMVSHR.[S],P00924,597.286 (light),3,40.4783,0.88
+ , ,605.263 (heavy), , , 
+[K].SAVLNTTFTQPFFTAR.[G],P04840,900.967 (light),2,52.1913,0.88
+ , ,911.436 (heavy), , , 
+[R].ELASGLSFPVGFK.[N],P32449,676.367 (light),2,50.406,0.88
+ , ,683.346 (heavy), , , 
+[K].DANLASIPVEELIEK.[A],P19456,820.941 (light),2,56.8723,0.88
+ , ,829.415 (heavy), , , 
+[R].APLEEIVISNDYLNK.[D],P22203,573.306 (light),3,48.2876,0.88
+ , ,579.288 (heavy), , , 
+[K].GVNEAFTEAAR.[V],Q00245,582.785 (light),2,22.2391,0.88
+ , ,590.263 (heavy), , , 
+[K].NKYESYDAALSLHR.[E],P19097,556.277 (light),3,23.526,0.88
+ , ,563.256 (heavy), , , 
+[K].NTIVSSYNR.[N],P19414,527.27 (light),2,15.6201,0.88
+ , ,534.249 (heavy), , , 
+[K].TTDMETIYELGNK.[M],Q12464,757.857 (light),2,37.9853,0.88
+ , ,765.334 (heavy), , , 
+[K].QAHVGIALLNGTEEGLK.[K],P39986,583.988 (light),3,36.0844,0.88
+ , ,591.3 (heavy), , , 
+[R].FGNFPAQWK.[A],Q12335,547.774 (light),2,36.1781,0.88
+ , ,554.255 (heavy), , , 
+[K].VLPGFSFHDVEEVK.[V],P40032,534.944 (light),3,40.3582,0.88
+ , ,540.593 (heavy), , , 
+[K].AVYLETIGNPK.[Y],P06106,602.832 (light),2,29.8292,0.88
+ , ,609.313 (heavy), , , 
+[R].SSLSLLAAAQK.[L],Q12480,544.819 (light),2,31.9643,0.88
+ , ,551.3 (heavy), , , 
+[K].QLLcGAAIGTIEADK.[E],P50094,780.409 (light),2,39.1887,0.87
+ , ,788.385 (heavy), , , 
+[R].AGITDYGNMSSEDQELER.[N],P23615,1007.936 (light),2,34.5385,0.87
+ , ,1019.402 (heavy), , , 
+[R].ALATPGSSVYLYGK.[E],P21264,713.882 (light),2,34.5724,0.87
+ , ,721.36 (heavy), , , 
+[R].SSDLcAFSTMPR.[D],P40482,686.306 (light),2,34.2715,0.87
+ , ,693.285 (heavy), , , 
+[K].AAHLVDSTNQVGHFQK.[V],P19456,584.633 (light),3,17.2448,0.87
+ , ,592.609 (heavy), , , 
+[K].SGSLTFNSK.[N],P19097,470.74 (light),2,15.8618,0.87
+ , ,476.224 (heavy), , , 
+[K].ILHQNGFSEQEIK.[E],P10823,514.935 (light),3,20.2959,0.87
+ , ,521.25 (heavy), , , 
+[K].HVLTSIGEK.[L],P06787,492.28 (light),2,13.2904,0.87
+ , ,498.262 (heavy), , , 
+[K].TGTLTTSETAHNMK.[V],P32324,746.359 (light),2,11.8789,0.87
+ , ,755.332 (heavy), , , 
+[R].ISIIEENSPER.[Q],P06738,643.833 (light),2,25.9939,0.87
+ , ,651.31 (heavy), , , 
+[K].ALAIFVPVPSLAGFHK.[V],P26786,833.987 (light),2,56.1277,0.87
+ , ,843.459 (heavy), , , 
+[K].ELYGNIVmSGGTTMFPGIAER.[M],P60010,1130.043 (light),2,54.598,0.87
+ , ,1142.007 (heavy), , , 
+[K].AVLEFTPETPSPLIGILENK.[I],P16861,1084.596 (light),2,65.4525,0.87
+ , ,1095.563 (heavy), , , 
+[K].FSPQGSLLAIAHDSNSFGcITLYETEFGER.[I],Q02793,1116.195 (light),3,63.1428,0.87
+ , ,1128.159 (heavy), , , 
+[K].TVISSSGALIAYSGVK.[T],P10963,776.932 (light),2,40.0079,0.87
+ , ,785.407 (heavy), , , 
+[R].QDGVLLVALSNEPAAR.[L],P19097,826.953 (light),2,45.7029,0.87
+ , ,837.422 (heavy), , , 
+[R].VETGVIKPGmVVTFAPAGVTTEVK.[S],P02994,816.113 (light),3,45.4207,0.87
+ , ,824.422 (heavy), , , 
+[R].WIQDADALFGER.[L],P09938,710.846 (light),2,47.1079,0.87
+ , ,719.321 (heavy), , , 
+[R].LALDYSIGEQLK.[D],P25293,675.369 (light),2,42.8551,0.87
+ , ,682.349 (heavy), , , 
+[R].TLLQIVQAFASPDNQIR.[S],P32337,638.687 (light),3,66.0838,0.87
+ , ,646.663 (heavy), , , 
+[K].LIDLTQFPAFVTPLGK.[G],P26263,880.504 (light),2,67.105,0.87
+ , ,889.478 (heavy), , , 
+[K].VIELGGIVVSLSDSK.[G],P39708,758.434 (light),2,54.5138,0.87
+ , ,766.411 (heavy), , , 
+[R].VSQFQSVVIPVGITK.[K],P38708,801.467 (light),2,46.5366,0.87
+ , ,810.44 (heavy), , , 
+[R].VVHPNWSPFEVFK.[-],P14065,529.277 (light),3,45.9506,0.87
+ , ,535.259 (heavy), , , 
+[R].LGEEQFPDLIPR.[L],P33892,707.372 (light),2,47.9199,0.87
+ , ,715.349 (heavy), , , 
+[K].GVmNAVNNVNNVIAAAFVK.[A],P00925,981.018 (light),2,57.953,0.87
+ , ,992.983 (heavy), , , 
+[K].IESSVESQFSAGR.[L],P0CX39,698.838 (light),2,25.1862,0.87
+ , ,707.313 (heavy), , , 
+[K].TFTTAETITNANTAK.[N],P12709,792.399 (light),2,25.22,0.87
+ , ,801.372 (heavy), , , 
+[R].VTWENDK.[G],P07262,446.214 (light),2,13.7864,0.87
+ , ,451.199 (heavy), , , 
+[R].SQFHSQSNVLNTANNK.[V],P38736,596.959 (light),3,15.0354,0.87
+ , ,605.268 (heavy), , , 
+[K].EDEFTNSSSSTK.[I],P38682,666.284 (light),2,12.1142,0.87
+ , ,673.263 (heavy), , , 
+[R].GSIEcTIEYLK.[D],P39976,656.826 (light),2,38.4387,0.87
+ , ,662.31 (heavy), , , 
+[K].QAEITQGLESIDTVK.[F],P11353,816.428 (light),2,37.9401,0.87
+ , ,825.402 (heavy), , , 
+[K].EDLASILK.[Q],P08431,444.756 (light),2,37.0624,0.87
+ , ,449.242 (heavy), , , 
+[K].FYYSEAINTVEK.[L],P38081,732.357 (light),2,35.5991,0.87
+ , ,739.336 (heavy), , , 
+[K].QINFGGTVETVYER.[A],P06168,806.901 (light),2,39.2527,0.87
+ , ,816.373 (heavy), , , 
+[K].EPEIFDAIK.[F],P10963,531.28 (light),2,39.8318,0.87
+ , ,536.265 (heavy), , , 
+[K].EcADLWPR.[V],P0CX42,523.74 (light),2,29.4112,0.87
+ , ,529.223 (heavy), , , 
+[K].QPVVELDGDEmTR.[I],P21954,752.852 (light),2,32.1314,0.86
+ , ,760.828 (heavy), , , 
+[R].GVLMYGPPGTGK.[T],P25694,588.808 (light),2,30.3437,0.86
+ , ,595.289 (heavy), , , 
+[K].NALKPVFQDLYESTK.[N],P06168,584.977 (light),3,38.4867,0.86
+ , ,591.292 (heavy), , , 
+[K].FVcGPEASTTALVEPNEDK.[G],P21182,1032.483 (light),2,35.3238,0.86
+ , ,1042.453 (heavy), , , 
+[K].TSDDIEALK.[T],P36775,496.251 (light),2,20.1036,0.86
+ , ,501.237 (heavy), , , 
+[R].GWSAEGGTNIGTAR.[C],P16862,688.832 (light),2,23.2049,0.86
+ , ,698.304 (heavy), , , 
+[K].TFTPEEISSMILTK.[M],P22202,798.913 (light),2,55.7684,0.86
+ , ,806.391 (heavy), , , 
+[K].SLEQIVNEYSTFSENK.[V],P07262,944.452 (light),2,50.7535,0.86
+ , ,954.422 (heavy), , , 
+[R].SEIIDTVTQIWAPYVDSHDFK.[I],P40459,822.072 (light),3,63.7331,0.86
+ , ,830.713 (heavy), , , 
+[R].QLLELQSQPTEVDFSHYR.[S],P30902,730.699 (light),3,42.7965,0.86
+ , ,739.34 (heavy), , , 
+[K].DVFEAMYAR.[S],P41939,551.255 (light),2,39.5578,0.86
+ , ,557.238 (heavy), , , 
+[R].TTPSFVAFTDTER.[L],P10591,736.356 (light),2,39.6935,0.86
+ , ,744.333 (heavy), , , 
+[R].QLISNEGVLVGGSSGSAFTAVVK.[Y],P32582,1110.597 (light),2,49.1165,0.86
+ , ,1123.558 (heavy), , , 
+[R].HSEFVAYPIQLLVTK.[E],P15108,582.326 (light),3,50.4533,0.86
+ , ,588.64 (heavy), , , 
+[R].NmIAQSQSGTGK.[T],P20449,619.295 (light),2,11.0545,0.86
+ , ,626.773 (heavy), , , 
+[K].NDNEPYcTK.[F],Q04894,570.734 (light),2,11.4248,0.86
+ , ,576.218 (heavy), , , 
+[K].GYIPLQAPVMMNK.[E],P07284,731.383 (light),2,44.2146,0.86
+ , ,739.36 (heavy), , , 
+[K].ETVELESEAFELK.[Q],P05626,762.378 (light),2,42.7008,0.86
+ , ,769.357 (heavy), , , 
+[K].WLQNEGIPAVYGVDTR.[S],P07259,909.462 (light),2,46.7983,0.86
+ , ,920.429 (heavy), , , 
+[K].GQcLATLLGHNDWVSQVR.[V],P38011,685.346 (light),3,45.682,0.86
+ , ,693.987 (heavy), , , 
+[R].NASVEIVDEIISDYK.[D],P07284,847.927 (light),2,58.2337,0.86
+ , ,856.402 (heavy), , , 
+[R].IGEFESSFLSYLK.[S],P07251,760.388 (light),2,58.6332,0.86
+ , ,767.367 (heavy), , , 
+[R].HQEEDIELEAEPK.[D],Q12114,522.914 (light),3,20.7163,0.86
+ , ,528.564 (heavy), , , 
+[K].TISLISVTDNR.[Y],P45978,609.838 (light),2,35.9818,0.86
+ , ,617.316 (heavy), , , 
+[R].TGDLAGTATTSSFTEAVIK.[R],P28241,935.476 (light),2,41.4417,0.86
+ , ,945.446 (heavy), , , 
+[R].AHSSMVGFDLPQR.[A],P00560,722.854 (light),2,29.6187,0.86
+ , ,732.326 (heavy), , , 
+[K].IEIYSSDDLK.[S],P00724,591.798 (light),2,29.6983,0.86
+ , ,597.282 (heavy), , , 
+[K].IVVGETEEVLR.[I],P47018,622.348 (light),2,31.2594,0.85
+ , ,629.327 (heavy), , , 
+[R].ALENTVHEVTTSIGK.[R],P27472,799.923 (light),2,29.0932,0.85
+ , ,809.395 (heavy), , , 
+[R].AHSSMVGFDLPQR.[A],P00560,722.854 (light),2,29.2136,0.85
+ , ,732.325 (heavy), , , 
+[K].AVSISYSALGSIK.[E],Q04894,648.364 (light),2,38.9379,0.85
+ , ,655.343 (heavy), , , 
+[K].RGELDNTPALcK.[F],P21954,687.346 (light),2,17.1997,0.85
+ , ,695.323 (heavy), , , 
+[K].HDVTDFDSK.[F],P35719,532.238 (light),2,13.6725,0.85
+ , ,538.221 (heavy), , , 
+[K].LAAPENEKPAPVR.[T],Q01855,464.593 (light),3,14.546,0.85
+ , ,470.575 (heavy), , , 
+[K].LLcALDNEESDK.[R],P16550,703.827 (light),2,25.5022,0.85
+ , ,710.307 (heavy), , , 
+[K].YIVLTGNAR.[M],P08566,503.788 (light),2,23.3551,0.85
+ , ,510.268 (heavy), , , 
+[K].EVTAALENAAVGLVAGGK.[S],P25087,835.459 (light),2,51.1355,0.85
+ , ,845.429 (heavy), , , 
+[R].EYLDDTLFDMQVK.[R],P06738,808.879 (light),2,53.1622,0.85
+ , ,816.357 (heavy), , , 
+[R].IYVQEGIYDELLAAFK.[A],P54115,936.493 (light),2,69.4651,0.85
+ , ,945.466 (heavy), , , 
+[K].TIAETLAEELINAAK.[G],P26783,793.935 (light),2,65.2823,0.85
+ , ,802.409 (heavy), , , 
+[K].ALGGAPKPDYPIATQDTLTEYDAFLFGIPTR.[F],Q12335,1113.569 (light),3,63.9486,0.85
+ , ,1125.533 (heavy), , , 
+[R].IALSRPNVEVVALNDPFITNDYAAYMFK.[Y],P00359,1057.878 (light),3,64.7473,0.85
+ , ,1069.51 (heavy), , , 
+[K].TcIHLFQDPNIIFLGGGLPLK.[D],P53090,785.096 (light),3,62.6692,0.85
+ , ,793.405 (heavy), , , 
+[K].LASAGATEVQIDEPVLVLDLPANAQAAIK.[K],P05694,973.202 (light),3,62.8644,0.85
+ , ,984.169 (heavy), , , 
+[K].GGQAIVVHPDYLYGAITEDR.[Y],P19097,1087.547 (light),2,44.0355,0.85
+ , ,1100.508 (heavy), , , 
+[K].IDGYSGPELGELMEK.[Y],P38088,819.39 (light),2,45.5659,0.85
+ , ,827.366 (heavy), , , 
+[R].HELSSLADVYINDAFGTAHR.[A],P00560,739.363 (light),3,46.5157,0.85
+ , ,748.668 (heavy), , , 
+[K].HVVFGEVVDGYDIVK.[K],P14832,838.439 (light),2,42.6375,0.85
+ , ,847.412 (heavy), , , 
+[K].EKPETLVLFDVDGTLTPAR.[L],P07283,701.044 (light),3,49.9478,0.85
+ , ,708.688 (heavy), , , 
+[R].LVNFLAEEFK.[R],P22202,605.329 (light),2,48.7978,0.85
+ , ,611.312 (heavy), , , 
+[R].FIGDSVAAIGIPVNK.[A],P07257,500.952 (light),3,47.3546,0.85
+ , ,506.602 (heavy), , , 
+[K].IIAENTNVAK.[D],Q12447,536.804 (light),2,14.7434,0.85
+ , ,543.285 (heavy), , , 
+[K].EFSVcGGR.[L],P40363,456.206 (light),2,17.2673,0.85
+ , ,461.191 (heavy), , , 
+[R].IGGTHSGLTPQSSISSDK.[A],Q04336,591.299 (light),3,17.3504,0.85
+ , ,598.611 (heavy), , , 
+[K].TPVTMEMPIQNHITITR.[N],P25045,661.344 (light),3,38.9885,0.85
+ , ,669.321 (heavy), , , 
+[K].LADPSDAQQLYER.[E],P42936,753.365 (light),2,29.4333,0.85
+ , ,762.338 (heavy), , , 
+[K].QGDPYIFGR.[G],P36150,526.762 (light),2,29.3419,0.84
+ , ,533.242 (heavy), , , 
+[K].TLNEIcNSVISK.[H],P32352,689.356 (light),2,29.3468,0.84
+ , ,696.336 (heavy), , , 
+[K].FDDcETLFSEAK.[R],P07213,731.313 (light),2,37.1734,0.84
+ , ,737.296 (heavy), , , 
+[K].ASGTVVVADTGDFGSIAK.[F],P15019,847.933 (light),2,38.0124,0.84
+ , ,857.405 (heavy), , , 
+[R].ImLTNILR.[M],P19097,495.294 (light),2,39.1551,0.84
+ , ,500.778 (heavy), , , 
+[R].NGKPVMEVTSSFFYR.[G],P07149,587.96 (light),3,39.1073,0.84
+ , ,594.607 (heavy), , , 
+[K].FSEQYPQADFYK.[L],P22217,761.846 (light),2,34.2577,0.84
+ , ,769.324 (heavy), , , 
+[K].EEWADVTETNDALK.[M],P36015,810.873 (light),2,35.5901,0.84
+ , ,819.348 (heavy), , , 
+[K].EKVEEQEQQQQQIIK.[I],P38701,942.987 (light),2,15.5326,0.84
+ , ,954.453 (heavy), , , 
+[K].SDVMSVDIDK.[K],P38011,554.762 (light),2,27.4519,0.84
+ , ,560.246 (heavy), , , 
+[K].ALAIFVPVPSLAGFHK.[V],P26786,556.327 (light),3,56.0714,0.84
+ , ,562.642 (heavy), , , 
+[K].EDQTIPVIGFPTPDEEGNEPPTDDEK.[K],P14904,957.101 (light),3,52.0394,0.84
+ , ,966.739 (heavy), , , 
+[R].GVTFEYLAQDAFSLHER.[G],Q12680,661.659 (light),3,51.4186,0.84
+ , ,669.303 (heavy), , , 
+[R].SIQTLEMELAQIMK.[G],P14742,817.929 (light),2,66.4747,0.84
+ , ,826.404 (heavy), , , 
+[R].GLGSSGAAVVAGVILGNEVAQLGFSK.[Q],P17423,801.108 (light),3,71.0211,0.84
+ , ,810.746 (heavy), , , 
+[R].IALSRPNVEVVALNDPFITNDYAAYmFK.[Y],P00359,1063.21 (light),3,61.5663,0.84
+ , ,1074.509 (heavy), , , 
+[K].SVPQANAYVPQDDDLFTLVMTDPDAPSK.[T],P14306,1012.151 (light),3,63.3876,0.84
+ , ,1022.786 (heavy), , , 
+[K].DIEVVAVNDPFISNDYAAYmVK.[Y],P00360,1245.1 (light),2,62.1669,0.84
+ , ,1257.064 (heavy), , , 
+[K].LGANAILGVSLAASR.[A],P00924,471.612 (light),3,45.5185,0.84
+ , ,477.926 (heavy), , , 
+[R].LDGLSVQELMDSK.[T],P50095,717.861 (light),2,46.8856,0.84
+ , ,725.339 (heavy), , , 
+[K].GLTPSQIGVLLR.[D],P05756,627.383 (light),2,46.1673,0.84
+ , ,635.36 (heavy), , , 
+[K].TGVIVGEDVHNLFTYAK.[E],P14540,621.66 (light),3,46.8109,0.84
+ , ,628.639 (heavy), , , 
+[K].QQGNAAFTAK.[D],P15705,518.265 (light),2,11.6736,0.84
+ , ,525.244 (heavy), , , 
+[R].IAPALcNLAFVHASYPK.[E],P32608,624.666 (light),3,42.8584,0.84
+ , ,631.313 (heavy), , , 
+[K].AFGAGGWGLVPR.[S],P32787,594.319 (light),2,43.7287,0.84
+ , ,602.295 (heavy), , , 
+[R].DEGLHTDFAcLLFAHLK.[N],P09938,662.996 (light),3,56.0692,0.84
+ , ,669.975 (heavy), , , 
+[K].NWIIVGSDDFR.[I],P41811,661.33 (light),2,47.493,0.84
+ , ,669.306 (heavy), , , 
+[K].QAWAYYSSGANDEVTHR.[E],P00175,652.295 (light),3,26.7031,0.84
+ , ,660.604 (heavy), , , 
+[K].KGDTYVSIQGFK.[A],P00549,671.854 (light),2,26.2132,0.84
+ , ,679.332 (heavy), , , 
+[K].ALcFVAEGSSK.[Q],P38858,584.788 (light),2,25.593,0.84
+ , ,590.271 (heavy), , , 
+[R].RQLANTPAK.[D],P15992,499.791 (light),2,7.3,0.84
+ , ,507.269 (heavy), , , 
+[K].LSQEcGVPIK.[F],P53095,565.798 (light),2,19.8061,0.84
+ , ,571.281 (heavy), , , 
+[K].LEEVDEEEEEK.[K],P15108,689.299 (light),2,15.7664,0.84
+ , ,695.282 (heavy), , , 
+[K].ILNNESYR.[E],P40482,504.76 (light),2,15.2034,0.84
+ , ,511.24 (heavy), , , 
+[K].VTDGVmVAR.[G],P00549,482.25 (light),2,15.3504,0.84
+ , ,487.734 (heavy), , , 
+[K].MAQVcMENYDAEFR.[T],P49367,882.364 (light),2,37.6015,0.84
+ , ,891.338 (heavy), , , 
+[K].TTEALALSDSEFTGK.[L],Q08220,785.386 (light),2,36.4902,0.84
+ , ,793.362 (heavy), , , 
+[K].EFLQLTDK.[I],P53852,497.266 (light),2,31.9789,0.84
+ , ,502.251 (heavy), , , 
+[K].ISHVSTGGGASLELLEGK.[E],P00560,585.647 (light),3,32.5872,0.84
+ , ,592.626 (heavy), , , 
+[K].TGDLVTIHYTGTLENGQK.[F],P20081,649.666 (light),3,31.4224,0.83
+ , ,657.31 (heavy), , , 
+[K].VGENPQAYPELMK.[E],P13188,738.363 (light),2,31.4503,0.83
+ , ,746.34 (heavy), , , 
+[K].VASSHGYSNTSLYPGSMNDWVSHGGDK.[L],Q12305,714.069 (light),4,33.5013,0.83
+ , ,722.793 (heavy), , , 
+[R].NAEDVVQLLK.[K],P41810,564.817 (light),2,39.2337,0.83
+ , ,571.298 (heavy), , , 
+[K].QEGcFAVSHGcTGK.[G],P22768,769.329 (light),2,12.6695,0.83
+ , ,777.305 (heavy), , , 
+[K].LSQIHEDGLNEVTR.[L],P07263,805.911 (light),2,22.9722,0.83
+ , ,816.38 (heavy), , , 
+[K].AIDEVTVVR.[D],P07806,501.284 (light),2,24.0978,0.83
+ , ,507.266 (heavy), , , 
+[R].NPTVENFIEATNLLEK.[A],P07213,916.475 (light),2,56.9561,0.83
+ , ,926.445 (heavy), , , 
+[K].QLTGGIELLFK.[K],P09624,609.858 (light),2,51.4203,0.83
+ , ,616.339 (heavy), , , 
+[R].QHQDcNFQVVYPTTPANLFHILR.[R],P20967,700.351 (light),4,52.4777,0.83
+ , ,708.826 (heavy), , , 
+[K].APVELPWYPDHLAWQLDVPK.[T],P38205,792.079 (light),3,60.8515,0.83
+ , ,800.72 (heavy), , , 
+[K].VDSIIIGGGMAFTFK.[K],P00560,778.413 (light),2,59.6277,0.83
+ , ,786.389 (heavy), , , 
+[R].NmIIVPEMIGSVVGIYNGK.[A],Q01855,684.029 (light),3,64.5834,0.83
+ , ,691.008 (heavy), , , 
+[K].ESGNYLAIDLGGTNLR.[V],P04806,846.932 (light),2,46.199,0.83
+ , ,857.4 (heavy), , , 
+[K].LGSNMENR.[V],P38682,460.715 (light),2,11.3024,0.83
+ , ,467.196 (heavy), , , 
+[K].LLPWFDGmLEADEAYFK.[E],P14540,687.66 (light),3,71.8929,0.83
+ , ,693.642 (heavy), , , 
+[K].GLPLcNAcGLFLK.[L],P43574,731.883 (light),2,49.4103,0.83
+ , ,738.364 (heavy), , , 
+[R].ISILcVDNAIHYFK.[I],P40482,564.964 (light),3,49.1656,0.83
+ , ,570.614 (heavy), , , 
+[K].VGFLPPPTHNDK.[L],P07702,441.234 (light),3,22.6572,0.83
+ , ,446.552 (heavy), , , 
+[R].GGAGNIFHDPHLTR.[S],Q12515,497.919 (light),3,21.3504,0.83
+ , ,505.231 (heavy), , , 
+[K].AATASANVR.[G],P38431,430.733 (light),2,7.8351,0.83
+ , ,437.213 (heavy), , , 
+[K].INWGSAIGSYR.[L],P28495,612.312 (light),2,37.4976,0.83
+ , ,620.288 (heavy), , , 
+[K].LLQTPIDMSLKPNDAESEK.[E],P06169,710.364 (light),3,37.7812,0.83
+ , ,718.008 (heavy), , , 
+[K].QGDQGDYFYVVEK.[G],P07278,774.355 (light),2,36.3334,0.83
+ , ,782.331 (heavy), , , 
+[K].SNPcLIGEPGIGK.[T],P31539,671.346 (light),2,30.0522,0.83
+ , ,678.325 (heavy), , , 
+[R].YVRPPIIVGDLSRPK.[A],P05694,428.257 (light),4,30.5267,0.83
+ , ,433.741 (heavy), , , 
+[K].IVGAFAEEYSSK.[Y],P54838,650.824 (light),2,28.8742,0.83
+ , ,657.305 (heavy), , , 
+[K].EAVDMEFGTGAVK.[I],P07806,677.321 (light),2,33.3141,0.83
+ , ,684.301 (heavy), , , 
+[K].LVVLPNHEEGEVVEEEAEK.[-],P33416,717.026 (light),3,32.4575,0.82
+ , ,724.67 (heavy), , , 
+[R].FLQEEIVDK.[R],Q06494,560.799 (light),2,28.6899,0.82
+ , ,566.282 (heavy), , , 
+[K].LAAAQQQAQASGIMPSNEDVATK.[S],P38879,1165.076 (light),2,29.8683,0.82
+ , ,1179.533 (heavy), , , 
+[K].NLTEEVWAVK.[D],P16521,594.816 (light),2,37.0202,0.82
+ , ,601.297 (heavy), , , 
+[K].AANLGGVAVSGLEmAQNSQR.[I],P07262,994.995 (light),2,39.2174,0.82
+ , ,1007.957 (heavy), , , 
+[R].VVVATSSSLLHTPVDLNNETK.[L],P05694,1112.594 (light),2,38.463,0.82
+ , ,1125.555 (heavy), , , 
+[K].YMATcLLYR.[G],P09733,595.788 (light),2,35.5668,0.82
+ , ,601.272 (heavy), , , 
+[K].QEASQmAAmAEK.[L],P32589,663.787 (light),2,18.6624,0.82
+ , ,670.268 (heavy), , , 
+[K].ADFQIEQR.[K],Q10740,503.752 (light),2,20.7091,0.82
+ , ,510.232 (heavy), , , 
+[K].AGGASAGGWGSSR.[S],P06634,560.76 (light),2,13.1576,0.82
+ , ,569.235 (heavy), , , 
+[K].SLNSTVTITHSK.[T],P07245,644.349 (light),2,14.4953,0.82
+ , ,652.326 (heavy), , , 
+[R].SVAELVIGEIISLAR.[Q],P40510,785.464 (light),2,77.5349,0.82
+ , ,794.438 (heavy), , , 
+[K].DLETLTMHTK.[T],P38061,594.8 (light),2,24.6242,0.82
+ , ,601.281 (heavy), , , 
+[K].TGIWAGVDASQPPATVWADILNK.[L],P07170,1205.622 (light),2,66.1013,0.82
+ , ,1219.581 (heavy), , , 
+[K].FALGQGVGVILcIGETLEEK.[K],P00942,1067.067 (light),2,75.3978,0.82
+ , ,1077.536 (heavy), , , 
+[R].IIYVDDGVLSFQVLEVVDDK.[T],P00549,1133.597 (light),2,70.9466,0.82
+ , ,1144.564 (heavy), , , 
+[K].YDLSPIDTLFAmGR.[G],P05694,807.896 (light),2,62.1009,0.82
+ , ,815.872 (heavy), , , 
+[R].LAAcFVDSMATEGIPAWGYGLR.[Y],P06738,1193.071 (light),2,63.0294,0.82
+ , ,1205.534 (heavy), , , 
+[K].FSAADVVMLSGSK.[D],Q08601,656.335 (light),2,42.9032,0.82
+ , ,663.314 (heavy), , , 
+[K].ALPDAVTIIEPKEEEPILAPSVK.[D],P05750,1230.185 (light),2,49.8987,0.82
+ , ,1242.648 (heavy), , , 
+[K].VETYYQESAGVADLITTcSGGR.[N],P41911,1189.052 (light),2,47.7946,0.82
+ , ,1201.515 (heavy), , , 
+[K].VTVVEFQPQIGASMDGEVAK.[A],P09624,1053.032 (light),2,46.5028,0.82
+ , ,1064.498 (heavy), , , 
+[K].GNYPINAVTTMAETAVIAEQAIAYLPNYDDMR.[N],P00549,1172.568 (light),3,77.5458,0.82
+ , ,1185.53 (heavy), , , 
+[K].AGTVWINTYNDFDSR.[V],P54115,879.907 (light),2,43.6269,0.82
+ , ,890.376 (heavy), , , 
+[R].QLQLIQVEIK.[A],P31539,606.372 (light),2,42.67,0.82
+ , ,613.351 (heavy), , , 
+[K].SFDELGLAPELLK.[G],P20449,716.39 (light),2,55.1255,0.82
+ , ,723.369 (heavy), , , 
+[R].LDQLIYVPLPDENAR.[L],P25694,878.468 (light),2,52.3418,0.82
+ , ,888.438 (heavy), , , 
+[K].IQLIDNLLDK.[V],P00560,592.848 (light),2,50.47,0.82
+ , ,599.328 (heavy), , , 
+[K].GNVGFVFTNEPLTEIK.[N],P05317,882.962 (light),2,51.1693,0.82
+ , ,892.434 (heavy), , , 
+[K].mAIFDELLQMPETK.[L],P47143,841.412 (light),2,56.4502,0.82
+ , ,848.89 (heavy), , , 
+[K].QLGNTSSVANTPSEIPDAHK.[A],P32591,689.343 (light),3,24.1658,0.82
+ , ,697.984 (heavy), , , 
+[K].NDPIVDASLSK.[G],P34216,579.803 (light),2,26.6303,0.82
+ , ,586.284 (heavy), , , 
+[R].LAQGLLHLGK.[G],P38764,525.327 (light),2,27.0695,0.82
+ , ,532.306 (heavy), , , 
+[K].DDDEITITPGDK.[I],P38822,659.804 (light),2,27.6396,0.82
+ , ,666.285 (heavy), , , 
+[R].VPSLVATSESPR.[A],P38968,621.838 (light),2,25.0014,0.82
+ , ,629.315 (heavy), , , 
+[R].VFVAASQK.[F],P38249,425.245 (light),2,13.1741,0.82
+ , ,430.23 (heavy), , , 
+[K].QAISSELNK.[L],P38817,495.267 (light),2,14.611,0.82
+ , ,501.249 (heavy), , , 
+[K].ANFQGAITNR.[Q],P54115,546.283 (light),2,18.7212,0.82
+ , ,554.259 (heavy), , , 
+[R].IITDGFEIAR.[K],P39079,567.811 (light),2,37.4363,0.82
+ , ,574.292 (heavy), , , 
+[K].DLYGDLPYSTTASR.[K],Q01532,779.875 (light),2,40.3072,0.82
+ , ,788.35 (heavy), , , 
+[R].TLEDELEVTEGMR.[F],P19882,761.36 (light),2,41.3131,0.82
+ , ,769.337 (heavy), , , 
+[K].SVSILNGADITFHR.[S],P00498,510.607 (light),3,38.8386,0.82
+ , ,517.254 (heavy), , , 
+[K].LGSGSGSFEATITDDGK.[L],P28319,821.384 (light),2,31.0061,0.82
+ , ,830.357 (heavy), , , 
+[K].GVATDLSHIPTNSVVK.[G],P17505,546.633 (light),3,31.7104,0.82
+ , ,553.28 (heavy), , , 
+[K].GNNAFEYMTGGR.[A],Q12680,658.788 (light),2,31.0794,0.81
+ , ,667.263 (heavy), , , 
+[K].TTVEFTGESLR.[I],P16140,620.315 (light),2,28.9427,0.81
+ , ,627.294 (heavy), , , 
+[K].MVAEVDmK.[E],P16521,469.72 (light),2,13.2023,0.81
+ , ,473.708 (heavy), , , 
+[R].TAIPGHVQQGGVPSSK.[D],P16861,781.918 (light),2,15.5496,0.81
+ , ,792.387 (heavy), , , 
+[R].FQEQNAALGQGLGR.[-],O74700,744.881 (light),2,27.0434,0.81
+ , ,755.35 (heavy), , , 
+[R].HETASMTAFSSGVANR.[G],P32288,833.387 (light),2,22.3598,0.81
+ , ,844.354 (heavy), , , 
+[R].GcLMGGIHGMFLAQYDVLR.[E],P06168,713.35 (light),3,57.162,0.81
+ , ,721.326 (heavy), , , 
+[R].TGKPLSVELGPGLMETIYDGIQRPLK.[A],P17255,938.181 (light),3,57.1041,0.81
+ , ,948.816 (heavy), , , 
+[K].LSIYLPSAMDEPVVYNGK.[K],P17967,998.509 (light),2,53.5762,0.81
+ , ,1008.479 (heavy), , , 
+[K].FADGFLIHSGQPVNDFIDTATR.[H],P05750,807.733 (light),3,52.6013,0.81
+ , ,817.371 (heavy), , , 
+[K].DVTFLNDcVGPEVEAAVK.[A],P00560,981.978 (light),2,52.8449,0.81
+ , ,991.449 (heavy), , , 
+[K].VFKDEPNYTENFIQSIMEAIPEGSK.[G],P37012,962.8 (light),3,67.1985,0.81
+ , ,972.77 (heavy), , , 
+[K].VINDAFGIEEGLMTTVHSLTATQK.[T],P00359,859.107 (light),3,62.7676,0.81
+ , ,868.745 (heavy), , , 
+[R].LSESIESVNMFEK.[M],Q03103,756.866 (light),2,39.7769,0.81
+ , ,764.344 (heavy), , , 
+[R].FLVVENAVGNISR.[Q],P38205,709.393 (light),2,40.586,0.81
+ , ,718.367 (heavy), , , 
+[K].IPESLINSLIK.[T],P25375,613.872 (light),2,48.9098,0.81
+ , ,620.352 (heavy), , , 
+[K].AEDPSNYENVIDIAEQAGK.[Y],P22137,1031.983 (light),2,48.5853,0.81
+ , ,1043.449 (heavy), , , 
+[K].GISLSNAYHVLSYIK.[D],P33324,555.638 (light),3,48.5068,0.81
+ , ,561.953 (heavy), , , 
+[K].ALDADVVSIEFSK.[K],P05694,697.364 (light),2,45.1271,0.81
+ , ,704.343 (heavy), , , 
+[K].QGFSVDDVAQSLNcSR.[E],P04385,891.907 (light),2,42.2789,0.81
+ , ,902.376 (heavy), , , 
+[R].IGSNLLDLEVVQFAIK.[C],P36068,880.004 (light),2,65.4202,0.81
+ , ,889.475 (heavy), , , 
+[R].LGGIPLGVIGVETR.[T],Q00955,690.914 (light),2,50.1562,0.81
+ , ,699.389 (heavy), , , 
+[K].SQEIFENQDSSVFQLVGK.[N],P17967,1028.005 (light),2,51.0594,0.81
+ , ,1039.471 (heavy), , , 
+[K].ASAPGSVILLENLR.[Y],P00560,720.414 (light),2,46.5793,0.81
+ , ,729.387 (heavy), , , 
+[K].VGIPAGVVNIVPGPGR.[T],P54115,751.446 (light),2,46.7316,0.81
+ , ,761.416 (heavy), , , 
+[R].AGMIILGGGLIK.[H],P38791,571.852 (light),2,48.3241,0.81
+ , ,578.332 (heavy), , , 
+[R].DLSSEVVGQMDAIK.[A],P31539,746.372 (light),2,48.2396,0.81
+ , ,754.349 (heavy), , , 
+[K].VDLDAAIEELK.[E],P39692,608.327 (light),2,47.749,0.81
+ , ,614.309 (heavy), , , 
+[K].AAQDSFAAGWGVMVSHR.[S],P00924,597.286 (light),3,47.603,0.81
+ , ,605.262 (heavy), , , 
+[K].AVASSGQELSVEER.[N],P34730,731.362 (light),2,20.5929,0.81
+ , ,740.335 (heavy), , , 
+[K].VPSDSSGPVGVcTYDDHR.[V],P08566,649.955 (light),3,21.7799,0.81
+ , ,657.267 (heavy), , , 
+[R].HALALSPLGAEGER.[K],P17709,710.881 (light),2,26.8476,0.81
+ , ,720.352 (heavy), , , 
+[K].NASNNPNELAASGAALQAR.[L],P38788,623.645 (light),3,27.6324,0.81
+ , ,632.618 (heavy), , , 
+[K].APQALmLAPTR.[E],P10081,592.826 (light),2,27.1902,0.81
+ , ,599.806 (heavy), , , 
+[K].TDGSMDASNILKPK.[L],P33416,738.872 (light),2,25.064,0.81
+ , ,747.346 (heavy), , , 
+[R].AVGGEVGASAALAPK.[I],P0CX53,649.359 (light),2,25.3681,0.81
+ , ,657.336 (heavy), , , 
+[K].ATNSSLEAYK.[T],P34730,542.269 (light),2,14.8276,0.81
+ , ,548.251 (heavy), , , 
+[K].LGGFSGQGQR.[L],P34223,503.757 (light),2,14.3626,0.81
+ , ,511.235 (heavy), , , 
+[R].ILASGGTAR.[M],P38009,423.245 (light),2,11.4377,0.81
+ , ,429.228 (heavy), , , 
+[K].SVAVDSSESNLK.[K],P54115,618.31 (light),2,16.0175,0.81
+ , ,625.289 (heavy), , , 
+[R].KPTVLIIGALGR.[C],P38998,413.271 (light),3,35.6817,0.81
+ , ,418.589 (heavy), , , 
+[K].HDVVDMITGIGGSK.[S],P49095,476.91 (light),3,39.1847,0.81
+ , ,482.56 (heavy), , , 
+[K].LVETLPSSYPSR.[E],P07702,674.859 (light),2,29.664,0.81
+ , ,682.337 (heavy), , , 
+[R].TDIDANVANPLK.[F],P43585,635.836 (light),2,31.1928,0.81
+ , ,643.314 (heavy), , , 
+[K].HVSPAGAAVGLPLSDVER.[Q],P54113,592.319 (light),3,34.7727,0.81
+ , ,599.963 (heavy), , , 
+[K].AVVVVGDSNGHVGLGIK.[T],P25443,540.974 (light),3,32.127,0.81
+ , ,547.954 (heavy), , , 
+[R].TDEEVAEVIGcER.[V],P04046,753.84 (light),2,31.6381,0.81
+ , ,761.318 (heavy), , , 
+[K].cDLGITGVDQVR.[E],P00498,666.832 (light),2,32.654,0.81
+ , ,674.309 (heavy), , , 
+[K].SVYDVLRTEDDDEDEEAEK.[Q],P34167,752.993 (light),3,33.5809,0.81
+ , ,760.636 (heavy), , , 
+[K].ITADLVAVENESGK.[Q],P53860,723.378 (light),2,31.5419,0.8
+ , ,731.354 (heavy), , , 
+[K].SPTVYDNAILK.[G],P38972,610.829 (light),2,30.7095,0.8
+ , ,617.31 (heavy), , , 
+[K].VVITAPSSSAPmFVVGVNHTK.[Y],P00360,719.717 (light),3,37.4308,0.8
+ , ,727.693 (heavy), , , 
+[K].ASTQQVVDDVLSR.[L],P40495,709.368 (light),2,36.9897,0.8
+ , ,718.341 (heavy), , , 
+[K].TGHIAADGSVYNK.[Y],P04806,666.83 (light),2,12.3236,0.8
+ , ,675.305 (heavy), , , 
+[R].IEEELGDK.[A],P00925,466.732 (light),2,14.8958,0.8
+ , ,471.219 (heavy), , , 
+[K].YASPNLNMK.[Y],P19097,519.257 (light),2,21.3999,0.8
+ , ,525.239 (heavy), , , 
+[K].AGAEIVPK.[L],P00560,392.732 (light),2,14.3659,0.8
+ , ,397.218 (heavy), , , 
+[K].TLEYQVVR.[T],P15624,504.279 (light),2,23.7029,0.8
+ , ,510.262 (heavy), , , 
+[K].AVDDFLISLDGTANK.[S],P00924,789.905 (light),2,54.8293,0.8
+ , ,798.38 (heavy), , , 
+[K].VLKPGGTFAVYEWVMTDK.[Y],P25087,681.021 (light),3,51.5184,0.8
+ , ,688.0 (heavy), , , 
+[R].IALFQDDEIPIAILTVQDVYKPNK.[T],P08536,915.168 (light),3,67.5847,0.8
+ , ,924.806 (heavy), , , 
+[R].DPANLPWGSSNVDIAIDSTGVFK.[E],P00359,1202.095 (light),2,77.2357,0.8
+ , ,1215.555 (heavy), , , 
+[R].mIEImLPVFDAPQNLVEQAK.[L],P06169,773.397 (light),3,64.4805,0.8
+ , ,780.708 (heavy), , , 
+[K].EFLTFYGLNESDVVLVPNK.[D],P39692,1092.564 (light),2,62.7368,0.8
+ , ,1103.531 (heavy), , , 
+[R].TNAGLFDVSHMLQSK.[L],P48015,549.943 (light),3,43.2046,0.8
+ , ,556.59 (heavy), , , 
+[K].VGDPFDESTFQGAQTSQMQLNK.[I],P46367,1214.558 (light),2,43.6004,0.8
+ , ,1228.517 (heavy), , , 
+[R].WAmVVENGIVTYAAK.[E],P38013,834.427 (light),2,43.8986,0.8
+ , ,842.901 (heavy), , , 
+[R].INELLSSLEGK.[G],P02400,601.835 (light),2,39.504,0.8
+ , ,608.316 (heavy), , , 
+[K].TWFDTLTIK.[L],P49095,562.803 (light),2,49.5679,0.8
+ , ,568.287 (heavy), , , 
+[R].FPNMIPIPEEcPLGPTNPYGHTK.[Y],P04397,870.422 (light),3,49.8113,0.8
+ , ,879.395 (heavy), , , 
+[K].SNQNMLTNLSQLNETLK.[E],P36112,974.494 (light),2,47.366,0.8
+ , ,986.458 (heavy), , , 
+[K].LSQSLETLDSQLNLR.[T],P46655,858.959 (light),2,44.3447,0.8
+ , ,869.428 (heavy), , , 
+[K].GLNPGLAIAEIK.[K],P21801,598.355 (light),2,42.0666,0.8
+ , ,605.335 (heavy), , , 
+[R].WATPSTVEPVVFK.[F],P38249,730.893 (light),2,43.9479,0.8
+ , ,738.371 (heavy), , , 
+[K].FNWLFHTYFR.[I],Q03161,477.571 (light),3,50.0827,0.8
+ , ,483.221 (heavy), , , 
+[K].GFDIPNIENHDVVPMLQK.[Q],P04807,1033.524 (light),2,49.4018,0.8
+ , ,1045.489 (heavy), , , 
+[K].GIVVEAYSPLGSTDAPLLK.[E],P14065,965.53 (light),2,52.8736,0.8
+ , ,975.5 (heavy), , , 
+[K].TPAANLKPFVSVITGPLIR.[V],P33892,665.398 (light),3,54.0891,0.8
+ , ,673.374 (heavy), , , 
+[K].NINSETTDEQFQELFAK.[F],P04147,1007.476 (light),2,46.8361,0.8
+ , ,1018.443 (heavy), , , 
+[K].YFVILEESGIAK.[G],P40825,684.874 (light),2,47.0017,0.8
+ , ,691.355 (heavy), , , 
+[K].GVEAGDFEQPK.[G],P53551,588.78 (light),2,20.4947,0.8
+ , ,595.26 (heavy), , , 
+[R].AAEAATTDLTYR.[Q],Q12363,641.817 (light),2,21.4134,0.8
+ , ,649.294 (heavy), , , 
+[K].VTEcLISPDAR.[I],P32337,630.815 (light),2,25.7457,0.8
+ , ,637.296 (heavy), , , 
+[R].GTYAAVSPEK.[L],P53090,511.762 (light),2,14.1806,0.8
+ , ,517.245 (heavy), , , 
+[K].TIQTIDGR.[T],P25294,452.248 (light),2,14.4626,0.8
+ , ,458.231 (heavy), , , 
+[R].NIEYANNVR.[E],P34216,546.775 (light),2,16.483,0.8
+ , ,554.253 (heavy), , , 
+[K].WIGGHGTTIGGIIVDSGK.[F],P06106,589.985 (light),3,37.7486,0.8
+ , ,597.296 (heavy), , , 
+[K].KVGIPAGVVNIVPGPGR.[T],P54115,543.998 (light),3,38.3668,0.8
+ , ,551.309 (heavy), , , 
+[K].NFYDAEEYHQLYLDK.[N],P40029,649.964 (light),3,38.5273,0.8
+ , ,656.611 (heavy), , , 
+[K].ESALELGVLTEK.[E],P08417,644.854 (light),2,40.9563,0.8
+ , ,651.335 (heavy), , , 
+[R].AFSNGSWNGIDPIDR.[G],P46367,824.889 (light),2,41.5665,0.8
+ , ,835.358 (heavy), , , 
+[K].YNVTGNDLLISYHIR.[Q],P38115,593.313 (light),3,41.2262,0.8
+ , ,600.625 (heavy), , , 
+[K].LQAITFAEAAK.[V],P07213,581.827 (light),2,33.2021,0.8
+ , ,588.308 (heavy), , , 
+[R].SALGLLNTTGSQR.[I],P20606,659.359 (light),2,31.3067,0.79
+ , ,668.332 (heavy), , , 
+[K].MNQQLAEMQQIR.[N],P16649,745.366 (light),2,29.2973,0.79
+ , ,755.336 (heavy), , , 
+[R].mVLIGPPGAGK.[G],P07170,528.3 (light),2,28.099,0.79
+ , ,533.783 (heavy), , , 
+[K].EEINALVAGQPK.[G],P49095,634.846 (light),2,28.1887,0.79
+ , ,642.324 (heavy), , , 
+[K].SNPcLIGEPGIGK.[T],P31539,671.346 (light),2,29.7701,0.79
+ , ,678.325 (heavy), , , 
+[K].EAVGAEVDHYEScNFDINR.[N],P00729,742.324 (light),3,34.2366,0.79
+ , ,750.633 (heavy), , , 
+[K].NVPLYQHLADLSK.[S],P00925,749.407 (light),2,36.3201,0.79
+ , ,758.38 (heavy), , , 
+[R].FEGTEPEPR.[S],Q08686,531.249 (light),2,14.3798,0.79
+ , ,537.231 (heavy), , , 
+[R].NDLGAEIPASLPNSLAEVcNK.[K],P39013,1106.549 (light),2,50.6983,0.79
+ , ,1118.514 (heavy), , , 
+[K].GVLGYTEDAVVSSDFLGDSHSSIFDASAGIQLSPK.[F],P00359,1190.583 (light),3,70.8458,0.79
+ , ,1203.545 (heavy), , , 
+[K].LAAGIMGGLDELFIAPGK.[K],P15646,886.986 (light),2,64.9464,0.79
+ , ,896.458 (heavy), , , 
+[K].ELDEIAASLENL.[-],P17536,658.832 (light),2,64.4304,0.79
+ , ,665.313 (heavy), , , 
+[K].ITVDELFK.[V],P05694,482.771 (light),2,43.0981,0.79
+ , ,487.258 (heavy), , , 
+[R].QDTFAFGAcNGcQFLSR.[L],P38972,989.93 (light),2,45.5833,0.79
+ , ,1000.399 (heavy), , , 
+[K].ALESNIAPVVVLASNR.[G],Q03940,551.649 (light),3,46.0029,0.79
+ , ,558.629 (heavy), , , 
+[R].EHAPSIIFMDEIDSIGSTR.[V],Q01939,706.678 (light),3,52.518,0.79
+ , ,714.654 (heavy), , , 
+[K].VLADNDVVISLIPYTFHPNVVK.[S],P38999,818.454 (light),3,59.3779,0.79
+ , ,827.427 (heavy), , , 
+[K].LTNVSLSSDAFFPFPDNVYR.[A],P38009,1145.063 (light),2,61.917,0.79
+ , ,1157.526 (heavy), , , 
+[K].VmTGSIGYVVEDFEEVVR.[A],P39714,1022.999 (light),2,62.0474,0.79
+ , ,1032.969 (heavy), , , 
+[K].QEASQMAAmAEK.[L],P32589,655.789 (light),2,11.5305,0.79
+ , ,662.768 (heavy), , , 
+[K].NFGSVDSMWK.[T],P34160,585.766 (light),2,37.3113,0.79
+ , ,592.246 (heavy), , , 
+[K].NTNIPLPALQK.[L],P26637,604.854 (light),2,35.6331,0.79
+ , ,612.332 (heavy), , , 
+[K].IFILGSSYQK.[E],P24280,578.324 (light),2,36.7029,0.79
+ , ,584.307 (heavy), , , 
+[R].AIMPIIEGHDVLAQAQSGTGK.[T],P10081,1068.56 (light),2,41.4342,0.79
+ , ,1081.521 (heavy), , , 
+[R].VPAALNNLIGLKPTK.[G],P32528,516.987 (light),3,39.5146,0.79
+ , ,523.301 (heavy), , , 
+[R].HASFLcSFITQDK.[M],P07149,777.373 (light),2,38.3358,0.78
+ , ,785.35 (heavy), , , 
+[K].cVESVNDSNLSSQEEQcLSNcVNR.[F],P57744,943.401 (light),3,34.4697,0.78
+ , ,953.371 (heavy), , , 
+[R].GTVIIVcSDGHK.[I],P32861,643.332 (light),2,17.4013,0.78
+ , ,650.311 (heavy), , , 
+[K].AVFFGSHTPK.[F],Q01532,545.788 (light),2,18.3122,0.78
+ , ,552.269 (heavy), , , 
+[K].ANVTIEGSR.[S],P07245,473.751 (light),2,12.9921,0.78
+ , ,480.232 (heavy), , , 
+[K].MSDGFNGADIR.[N],P53549,591.764 (light),2,25.2542,0.78
+ , ,599.242 (heavy), , , 
+[K].VIEQPITSETAmK.[K],P04456,731.877 (light),2,23.2354,0.78
+ , ,738.856 (heavy), , , 
+[R].GIDVQQVSLVINYDLPANK.[E],P10081,1043.564 (light),2,55.4377,0.78
+ , ,1055.528 (heavy), , , 
+[K].ILDSDGNVLVDHFEIEPFR.[K],P07264,739.038 (light),3,55.2168,0.78
+ , ,747.347 (heavy), , , 
+[R].IALSRPNVEVVALNDPFITNDYAAYmFK.[Y],P00359,1063.211 (light),3,60.7971,0.78
+ , ,1074.51 (heavy), , , 
+[K].NVEVVALNDPFISNDYSAYmFK.[Y],P00358,851.406 (light),3,62.005,0.78
+ , ,859.715 (heavy), , , 
+[R].GDLVLDVGcGVGGPAR.[E],P25087,771.391 (light),2,39.9196,0.78
+ , ,780.364 (heavy), , , 
+[K].TIIGSEDGLGVEcLR.[G],Q00955,809.909 (light),2,41.4219,0.78
+ , ,818.384 (heavy), , , 
+[K].YVNLSLVANPSHLESQDPVVLGR.[T],P20967,836.446 (light),3,48.2034,0.78
+ , ,846.749 (heavy), , , 
+[K].GHIAALQYLEAYNENEGLcR.[E],P04397,1161.053 (light),2,45.5083,0.78
+ , ,1174.513 (heavy), , , 
+[R].SSGLTPNAVVLVATVR.[A],P07245,528.642 (light),3,47.0169,0.78
+ , ,535.289 (heavy), , , 
+[K].FNEYHWNQIGDVFDK.[L],P11075,637.96 (light),3,44.9461,0.78
+ , ,645.272 (heavy), , , 
+[K].LHDIPDEFLTDAMPIAK.[R],Q04344,642.661 (light),3,51.3325,0.78
+ , ,649.308 (heavy), , , 
+[R].ALDTVTNVLNFIK.[L],P07149,724.412 (light),2,58.8047,0.78
+ , ,732.388 (heavy), , , 
+[K].VDSIIIGGGMAFTFK.[K],P00560,778.413 (light),2,58.0996,0.78
+ , ,786.39 (heavy), , , 
+[R].NANDNNQFYQQK.[Q],P04147,742.333 (light),2,14.7138,0.78
+ , ,752.303 (heavy), , , 
+[R].EQDGSLKPLPAK.[H],P40825,641.854 (light),2,14.68,0.78
+ , ,649.332 (heavy), , , 
+[K].SLDPNDNNTANR.[I],P21734,665.802 (light),2,11.8403,0.78
+ , ,675.274 (heavy), , , 
+[K].EQDVYADGR.[I],Q01852,526.736 (light),2,12.4552,0.78
+ , ,533.216 (heavy), , , 
+[K].GHFDTGYK.[S],P53312,462.714 (light),2,11.4099,0.78
+ , ,468.198 (heavy), , , 
+[K].SKFDNLYGcR.[E],P39954,630.295 (light),2,19.2684,0.78
+ , ,637.274 (heavy), , , 
+[K].EEQNIADGVEQK.[K],Q08245,680.323 (light),2,16.682,0.78
+ , ,688.299 (heavy), , , 
+[K].QQLIVADFER.[V],P04802,609.827 (light),2,37.2607,0.78
+ , ,617.305 (heavy), , , 
+[K].LVGDVFSSVANR.[Y],P49017,632.338 (light),2,37.8707,0.78
+ , ,640.314 (heavy), , , 
+[K].ILLIGDSGVGK.[S],P07560,536.324 (light),2,36.1882,0.78
+ , ,542.306 (heavy), , , 
+[R].IVNVNPLVSSVK.[K],P07259,634.882 (light),2,35.5829,0.78
+ , ,642.36 (heavy), , , 
+[K].GmLTGPITcLR.[W],P05694,617.818 (light),2,35.7803,0.78
+ , ,623.8 (heavy), , , 
+[K].DFLLKPELSR.[A],Q07478,609.348 (light),2,36.5433,0.78
+ , ,616.327 (heavy), , , 
+[K].NYPNHIGLGLFDIHSPR.[I],P05694,488.255 (light),4,40.8962,0.78
+ , ,494.736 (heavy), , , 
+[K].LGANAILGVSmAAAR.[A],P00925,715.893 (light),2,40.7911,0.78
+ , ,724.867 (heavy), , , 
+[K].SDFTLYHTWPVR.[V],P17255,761.378 (light),2,39.7366,0.78
+ , ,770.352 (heavy), , , 
+[K].LAFANLENAVK.[L],P47018,595.333 (light),2,39.7035,0.78
+ , ,602.312 (heavy), , , 
+[K].STIEINFK.[A],P10963,476.261 (light),2,30.5607,0.78
+ , ,481.246 (heavy), , , 
+[K].YASLTDDQVANMR.[E],P39013,742.347 (light),2,29.3157,0.78
+ , ,751.32 (heavy), , , 
+[R].VNPEDASPQAIcLAPSR.[E],P20449,912.948 (light),2,34.4341,0.78
+ , ,923.417 (heavy), , , 
+[K].LPSGTEYTLTGMAK.[G],Q04728,734.872 (light),2,34.4546,0.77
+ , ,742.349 (heavy), , , 
+[K].NSLNIVAPLK.[S],P43574,534.825 (light),2,34.2802,0.77
+ , ,541.305 (heavy), , , 
+[K].QLQVIESFEK.[H],P30902,610.83 (light),2,36.0783,0.77
+ , ,617.311 (heavy), , , 
+[K].TQVTVEYEDDNGR.[W],P19358,763.342 (light),2,20.7254,0.77
+ , ,772.316 (heavy), , , 
+[K].TVASSGQELSVEER.[N],P29311,746.369 (light),2,20.2473,0.77
+ , ,755.342 (heavy), , , 
+[K].GVFQGVHDSAEK.[G],P22943,637.313 (light),2,14.5346,0.77
+ , ,645.289 (heavy), , , 
+[K].EFFESGAVEK.[C],P39968,571.771 (light),2,26.6463,0.77
+ , ,577.255 (heavy), , , 
+[K].GMNDSTVWMSHGDK.[L],P38625,522.222 (light),3,22.7969,0.77
+ , ,528.536 (heavy), , , 
+[R].SGGTIGPSLASQTGAR.[T],P14904,730.379 (light),2,22.9248,0.77
+ , ,740.349 (heavy), , , 
+[R].AVGGEVGASAALAPK.[I],P0CX53,649.359 (light),2,24.6079,0.77
+ , ,657.335 (heavy), , , 
+[R].QILNSMATFLLK.[G],P33416,689.892 (light),2,55.9643,0.77
+ , ,697.37 (heavy), , , 
+[R].LGGSSLLEcVVFGK.[T],P21375,733.388 (light),2,54.3432,0.77
+ , ,740.368 (heavy), , , 
+[K].YVQNLANLATFFR.[T],P25087,778.915 (light),2,57.7497,0.77
+ , ,788.387 (heavy), , , 
+[R].IAALEGGAAALAVSSGQAAQTLAIQGLAHTGDNIVSTSYLYGGTYNQFK.[I],P06106,1218.121 (light),4,76.9846,0.77
+ , ,1232.578 (heavy), , , 
+[K].LSGLVTLSELLR.[K],P32582,650.896 (light),2,59.5358,0.77
+ , ,658.373 (heavy), , , 
+[K].APEGELGDSMQAAFDEGK.[D],P19211,926.407 (light),2,39.4892,0.77
+ , ,936.377 (heavy), , , 
+[R].VIPDFmLQGGDFTAGNGTGGK.[S],P14832,1049.5 (light),2,45.8695,0.77
+ , ,1060.965 (heavy), , , 
+[K].DYGDAFEGIENTSLSPK.[F],Q12363,921.922 (light),2,47.0768,0.77
+ , ,931.394 (heavy), , , 
+[K].DVNAPLPTPFK.[V],P32565,599.827 (light),2,41.6707,0.77
+ , ,606.308 (heavy), , , 
+[K].NWDSGcVEETGAVYPFGADK.[E],Q05905,1101.478 (light),2,45.1941,0.77
+ , ,1112.446 (heavy), , , 
+[K].LDLLAQLGGHSVPR.[T],P21375,492.616 (light),3,41.6597,0.77
+ , ,499.263 (heavy), , , 
+[K].AILESVGIEIEDEK.[V],P05319,772.906 (light),2,44.794,0.77
+ , ,780.384 (heavy), , , 
+[R].NAAWLVFANK.[Q],P11076,567.308 (light),2,43.3225,0.77
+ , ,574.287 (heavy), , , 
+[R].TDSEAATLISSTIDTR.[D],P28240,840.918 (light),2,42.4538,0.77
+ , ,850.39 (heavy), , , 
+[K].NTNLILIQNGLGVLELLR.[E],P38787,997.094 (light),2,74.7605,0.77
+ , ,1009.557 (heavy), , , 
+[K].GGFQSQLTFLR.[A],P17555,627.335 (light),2,42.7437,0.77
+ , ,635.312 (heavy), , , 
+[K].NGVISEDSVLPNAIDDLGR.[F],P09436,992.503 (light),2,51.5671,0.77
+ , ,1004.467 (heavy), , , 
+[K].YLSNGFGGVLSFGVK.[D],P06106,772.909 (light),2,53.9773,0.77
+ , ,781.384 (heavy), , , 
+[R].AFETFLAMYPEWR.[D],P31688,830.896 (light),2,61.5685,0.77
+ , ,839.371 (heavy), , , 
+[R].SAYYTWAAEAFR.[V],P05694,718.336 (light),2,46.1501,0.77
+ , ,726.312 (heavy), , , 
+[K].KIVSNAScTTNcLAPLAK.[V],P00360,974.504 (light),2,24.5164,0.77
+ , ,984.474 (heavy), , , 
+[R].VHcVEGIK.[A],P08417,471.247 (light),2,11.2193,0.77
+ , ,476.232 (heavy), , , 
+[K].DDVKPELANK.[S],Q03690,564.798 (light),2,12.8462,0.77
+ , ,571.278 (heavy), , , 
+[R].QSDNGDLAVK.[L],P15624,523.759 (light),2,12.4766,0.77
+ , ,530.24 (heavy), , , 
+[K].GATLVVGGDGR.[Y],P37012,501.272 (light),2,18.8856,0.77
+ , ,508.251 (heavy), , , 
+[R].TDEYGGSIENR.[A],Q03558,620.776 (light),2,15.7146,0.77
+ , ,628.254 (heavy), , , 
+[K].NGASIEEVAK.[K],P06738,509.265 (light),2,16.0848,0.77
+ , ,515.247 (heavy), , , 
+[R].SIMITGDNPLTAVHVAK.[E],P39986,589.654 (light),3,40.7438,0.77
+ , ,596.633 (heavy), , , 
+[K].IENQQGVNNFDEILK.[V],P00549,880.945 (light),2,41.2054,0.77
+ , ,891.414 (heavy), , , 
+[R].VVNNLEGEVISSELENK.[F],Q03219,936.982 (light),2,41.2465,0.77
+ , ,947.451 (heavy), , , 
+[K].AGGEcITLDQLAVR.[A],P0CX49,751.886 (light),2,39.5762,0.77
+ , ,760.361 (heavy), , , 
+[K].IGPLGLSPK.[K],P0CX53,441.276 (light),2,29.729,0.77
+ , ,446.262 (heavy), , , 
+[K].GLIGYHLLSK.[D],P07702,550.827 (light),2,30.9847,0.77
+ , ,557.308 (heavy), , , 
+[K].TVVVVGTVTDDAR.[I],P0CX49,666.361 (light),2,28.8912,0.77
+ , ,674.337 (heavy), , , 
+[K].SINSESFSSPSLR.[A],Q06146,705.846 (light),2,28.9215,0.77
+ , ,714.321 (heavy), , , 
+[R].VLPEcASDNLPVDK.[D],P38720,778.885 (light),2,30.0286,0.76
+ , ,786.363 (heavy), , , 
+[K].NFLGSTTLAAGPVK.[K],P54783,688.382 (light),2,37.7648,0.76
+ , ,696.359 (heavy), , , 
+[R].DALGGGmISFR.[I],P31373,570.28 (light),2,34.0043,0.76
+ , ,576.76 (heavy), , , 
+[R].AYFScTSAHTcTGDGNAMVSR.[A],Q00711,764.987 (light),3,23.4346,0.76
+ , ,773.295 (heavy), , , 
+[R].EIGEDNVFLFGNLSENVEELR.[Y],P06738,1212.09 (light),2,64.4991,0.76
+ , ,1225.55 (heavy), , , 
+[K].FNEMVHEVFSSFK.[N],Q03690,800.877 (light),2,43.3092,0.76
+ , ,809.351 (heavy), , , 
+[R].WFNTVAASPIVK.[T],P36008,666.87 (light),2,40.9729,0.76
+ , ,674.347 (heavy), , , 
+[R].APEQFDEVVAAIGNK.[Q],P05694,529.939 (light),3,45.6305,0.76
+ , ,535.921 (heavy), , , 
+[R].DAEVLNcMTTVVEK.[V],P30822,804.885 (light),2,41.962,0.76
+ , ,812.363 (heavy), , , 
+[K].QLLRPGVTLGVGSSFDALK.[L],P04840,653.373 (light),3,45.1095,0.76
+ , ,661.349 (heavy), , , 
+[K].EFINNMWAWDKPVSVNGEPK.[E],P29547,787.716 (light),3,48.6556,0.76
+ , ,796.69 (heavy), , , 
+[K].NINDNNDVSASLK.[D],P06103,702.341 (light),2,20.5429,0.76
+ , ,711.315 (heavy), , , 
+[K].VATAVLSTTAR.[A],P32565,545.317 (light),2,20.166,0.76
+ , ,552.296 (heavy), , , 
+[K].GANDGEVYQK.[I],P23638,540.751 (light),2,11.366,0.76
+ , ,547.232 (heavy), , , 
+[R].DYVLFAAK.[S],P32497,463.753 (light),2,37.392,0.76
+ , ,468.239 (heavy), , , 
+[R].GSFGDVENVLK.[A],P11914,582.799 (light),2,37.4661,0.76
+ , ,589.279 (heavy), , , 
+[R].ELFQEYDIK.[A],P03965,592.795 (light),2,36.5229,0.76
+ , ,598.279 (heavy), , , 
+[K].GMLTGPITcLR.[W],P05694,609.82 (light),2,38.8882,0.76
+ , ,616.301 (heavy), , , 
+[K].DLQHVNFGMVQGMSTR.[K],Q05506,607.291 (light),3,39.9832,0.76
+ , ,615.268 (heavy), , , 
+[R].SPIMVATDVAAR.[G],P24783,615.829 (light),2,30.8435,0.76
+ , ,623.307 (heavy), , , 
+[K].WQTELQVEDScK.[D],P04397,761.846 (light),2,29.2086,0.76
+ , ,769.323 (heavy), , , 
+[K].YGATVYSWK.[L],Q03161,537.766 (light),2,28.7774,0.76
+ , ,543.25 (heavy), , , 
+[R].RPYQVNVLIGGYDK.[K],P22141,541.294 (light),3,33.021,0.76
+ , ,547.941 (heavy), , , 
+[R].TTQAVDIINGGVK.[A],P27614,658.365 (light),2,29.0583,0.75
+ , ,666.341 (heavy), , , 
+[K].EAAVPATDTATIK.[T],P42846,644.344 (light),2,21.1677,0.75
+ , ,651.323 (heavy), , , 
+[K].TGTLTTSETAHNmK.[V],P32324,503.24 (light),3,11.9158,0.75
+ , ,508.89 (heavy), , , 
+[K].LASASPLGEK.[N],P21826,486.771 (light),2,14.1207,0.75
+ , ,492.255 (heavy), , , 
+[K].SPFVNEDPHSNVFK.[S],P07278,539.595 (light),3,27.3311,0.75
+ , ,545.91 (heavy), , , 
+[K].DVFTAEYMLIDNEK.[D],P04397,844.398 (light),2,55.6851,0.75
+ , ,852.374 (heavy), , , 
+[K].VAGFLFNDEDMMIR.[V],P31539,829.389 (light),2,55.8824,0.75
+ , ,838.363 (heavy), , , 
+[K].GIVVEAYSPFGSANAPLLK.[E],Q12458,967.025 (light),2,54.0917,0.75
+ , ,977.494 (heavy), , , 
+[R].MIEImLPVFDAPQNLVEQAK.[L],P06169,1151.595 (light),2,65.1026,0.75
+ , ,1163.061 (heavy), , , 
+[K].LEVAGIELVK.[G],P09436,535.827 (light),2,44.9113,0.75
+ , ,541.31 (heavy), , , 
+[K].VLTTVGTITPESFSK.[L],P43577,790.433 (light),2,40.2557,0.75
+ , ,798.409 (heavy), , , 
+[R].DIGGSSSTTDFTNEIINK.[L],P28834,949.95 (light),2,42.0725,0.75
+ , ,960.419 (heavy), , , 
+[K].EVEDHSMQVMPGDNVEMEcDLIHPTPLEVGQR.[F],P02992,923.668 (light),4,47.8562,0.75
+ , ,933.888 (heavy), , , 
+[R].SDLQFYDMDYPGEK.[N],P06103,854.363 (light),2,43.6193,0.75
+ , ,862.34 (heavy), , , 
+[K].VLENTEIGDSIFDK.[A],P00560,790.396 (light),2,43.6159,0.75
+ , ,798.372 (heavy), , , 
+[K].IVGIATTFDLDFLK.[E],P41277,776.934 (light),2,64.8817,0.75
+ , ,784.412 (heavy), , , 
+[K].VFNLPLFPTTTIGSFPQTK.[D],P05694,703.386 (light),3,65.2683,0.75
+ , ,710.698 (heavy), , , 
+[K].DFSYLFSDETNAR.[K],P53090,782.849 (light),2,48.8695,0.75
+ , ,791.324 (heavy), , , 
+[R].LGGSSLLEcVVFGR.[T],P32614,747.393 (light),2,55.5342,0.75
+ , ,755.369 (heavy), , , 
+[K].GFQYLYLTSEGMETLK.[K],Q00955,627.31 (light),3,54.1184,0.75
+ , ,633.292 (heavy), , , 
+[R].LALVTGGEVVSTFDEPSK.[C],P39076,924.983 (light),2,46.5821,0.75
+ , ,934.455 (heavy), , , 
+[K].TIELEDPTFFK.[V],P32454,670.342 (light),2,46.7288,0.75
+ , ,676.325 (heavy), , , 
+[R].WAMVVENGIVTYAAK.[E],P38013,826.429 (light),2,48.0396,0.75
+ , ,835.402 (heavy), , , 
+[K].MTSGYYLGELLR.[L],P04806,701.855 (light),2,48.414,0.75
+ , ,709.333 (heavy), , , 
+[K].VSIFGGK.[S],P06738,354.208 (light),2,23.2594,0.75
+ , ,358.196 (heavy), , , 
+[K].YQVTVIDAPGHR.[D],P02994,678.358 (light),2,23.4078,0.75
+ , ,687.331 (heavy), , , 
+[K].THSTYAFESNTNSVAASQMR.[N],P32861,734.667 (light),3,24.8601,0.75
+ , ,743.973 (heavy), , , 
+[K].AAVIFNSSDK.[T],P38288,526.275 (light),2,20.0702,0.75
+ , ,532.257 (heavy), , , 
+[K].NSGGDGVPVSTAAK.[E],Q05050,630.316 (light),2,14.2984,0.75
+ , ,638.292 (heavy), , , 
+[K].SVDIPNADSENK.[D],P06105,644.805 (light),2,18.5933,0.75
+ , ,652.283 (heavy), , , 
+[R].AGVLEPQGMVGIK.[F],Q00955,649.861 (light),2,36.3381,0.75
+ , ,657.338 (heavy), , , 
+[K].ADDDSVTIISAGNDK.[M],P38011,760.858 (light),2,27.8117,0.75
+ , ,769.332 (heavy), , , 
+[K].LGNPmPMEATQAAPTIK.[F],Q06252,893.448 (light),2,32.0748,0.74
+ , ,902.92 (heavy), , , 
+[K].LIVDTLQDPSK.[V],Q08972,614.843 (light),2,32.1102,0.74
+ , ,621.324 (heavy), , , 
+[K].LYGTDDNTQEVEAVTNK.[L],P47089,948.945 (light),2,29.0905,0.74
+ , ,959.413 (heavy), , , 
+[R].VPLcEPEELPDDIQK.[E],P40970,891.435 (light),2,37.7176,0.74
+ , ,899.411 (heavy), , , 
+[K].LLQTPIDmSLKPNDAESEK.[E],P06169,715.697 (light),3,34.3511,0.74
+ , ,723.008 (heavy), , , 
+[K].EFSEWPTIPQLYVNK.[E],Q02784,925.969 (light),2,56.7996,0.74
+ , ,935.441 (heavy), , , 
+[R].ISDAQNLFSFDLTAEEVDK.[I],Q07551,1071.516 (light),2,56.9104,0.74
+ , ,1082.483 (heavy), , , 
+[K].AIAPNLTQLVGELVGAR.[L],Q12499,861.499 (light),2,69.2064,0.74
+ , ,872.467 (heavy), , , 
+[K].GFLFVEcGSMNDAK.[K],P06103,787.853 (light),2,43.1211,0.74
+ , ,795.331 (heavy), , , 
+[K].TQLLGADDDLNAQAQIIR.[W],P29547,978.014 (light),2,43.903,0.74
+ , ,990.477 (heavy), , , 
+[K].GcASFNATVIVLNHPGQISAGYSPVLDcHTAHIAcR.[F],P02994,974.22 (light),4,43.9708,0.74
+ , ,985.436 (heavy), , , 
+[K].VQSGSLNNGDVAWFLNGK.[L],P52910,953.477 (light),2,48.6843,0.74
+ , ,965.441 (heavy), , , 
+[K].ScSAFAPIVNPSNVPWGQK.[A],P40363,1030.007 (light),2,49.6682,0.74
+ , ,1041.473 (heavy), , , 
+[K].DIPAVNGAIEGDQIVYR.[D],P19262,915.474 (light),2,45.6204,0.74
+ , ,926.441 (heavy), , , 
+[K].YFGHSGPDGIDLLMK.[I],P21965,550.605 (light),3,42.2533,0.74
+ , ,556.587 (heavy), , , 
+[K].LIDLTQFPAFVTPMGK.[G],P06169,889.481 (light),2,66.1623,0.74
+ , ,898.454 (heavy), , , 
+[R].VGVGAQVFScLEcDR.[C],Q04894,848.893 (light),2,43.0179,0.74
+ , ,857.368 (heavy), , , 
+[K].TQDVIQLFEK.[D],P53075,610.83 (light),2,42.8155,0.74
+ , ,617.311 (heavy), , , 
+[R].FTVTLIPGDGVGK.[E],P28834,652.367 (light),2,43.9658,0.74
+ , ,659.346 (heavy), , , 
+[R].FPGWDFETEEIDPELLR.[S],P26321,1046.995 (light),2,65.8091,0.74
+ , ,1057.464 (heavy), , , 
+[R].IDDILVFNR.[L],P33416,552.807 (light),2,42.7514,0.74
+ , ,559.287 (heavy), , , 
+[K].VAGFLFNDEDMMIR.[V],P31539,829.388 (light),2,56.1555,0.74
+ , ,838.362 (heavy), , , 
+[K].SIGFELAVGDGVYWSGR.[W],P38013,906.95 (light),2,61.248,0.74
+ , ,917.419 (heavy), , , 
+[K].YPWGLVEIENDSHcDFR.[K],P32468,712.986 (light),3,47.6177,0.74
+ , ,720.63 (heavy), , , 
+[R].INDLIDDSEEDSK.[K],P42935,746.836 (light),2,26.2893,0.74
+ , ,754.314 (heavy), , , 
+[K].GQHLADILNSASR.[V],Q12118,691.362 (light),2,27.4449,0.74
+ , ,701.332 (heavy), , , 
+[K].EANMAAYDK.[A],P09624,506.724 (light),2,13.241,0.74
+ , ,512.208 (heavy), , , 
+[K].VASIANAQVR.[-],P46672,514.795 (light),2,16.5962,0.74
+ , ,522.273 (heavy), , , 
+[K].DITVQGPQK.[F],P06105,493.269 (light),2,16.6886,0.74
+ , ,499.251 (heavy), , , 
+[R].FAFYLGDTSK.[D],P07267,574.785 (light),2,40.6171,0.74
+ , ,580.269 (heavy), , , 
+[K].ANcIDSTVDAETVFAR.[E],P15646,884.911 (light),2,39.8901,0.74
+ , ,894.383 (heavy), , , 
+[K].SSAAGNTVIIGGGDTATVAK.[K],P00560,895.468 (light),2,29.9812,0.74
+ , ,906.436 (heavy), , , 
+[K].QTLSVGIVDGR.[N],P05694,572.82 (light),2,30.1325,0.74
+ , ,580.298 (heavy), , , 
+[K].QFVEALDANDNGISK.[Y],P40093,810.897 (light),2,33.2635,0.74
+ , ,820.369 (heavy), , , 
+[R].FQNPTSNVLEER.[I],P06106,717.355 (light),2,30.2108,0.73
+ , ,726.328 (heavy), , , 
+[K].QLLcGAAIGTIEADK.[E],P50094,780.41 (light),2,39.1393,0.73
+ , ,788.386 (heavy), , , 
+[R].GQSNLILLPNSTDK.[V],P39976,750.407 (light),2,36.2687,0.73
+ , ,759.381 (heavy), , , 
+[K].LVEGSIADK.[A],P40037,466.258 (light),2,15.6006,0.73
+ , ,471.244 (heavy), , , 
+[K].EYYSNSLPVEK.[F],P49723,664.822 (light),2,26.5795,0.73
+ , ,671.303 (heavy), , , 
+[K].YSYENAVVTK.[T],P11986,587.293 (light),2,21.8078,0.73
+ , ,593.275 (heavy), , , 
+[K].LSAEEVDFVEIIGGTTR.[I],P32589,918.473 (light),2,58.0037,0.73
+ , ,928.443 (heavy), , , 
+[R].mSANISETTAMITDIATAPAEIDR.[C],P06169,1269.608 (light),2,58.6493,0.73
+ , ,1283.068 (heavy), , , 
+[K].DINEILSNYVK.[E],P00958,654.345 (light),2,52.4934,0.73
+ , ,661.324 (heavy), , , 
+[K].LLFDSmNGVTGPYGK.[A],P37012,807.895 (light),2,40.1528,0.73
+ , ,815.871 (heavy), , , 
+[K].EAQADAAAEIAEDAAEAEDAGKPK.[T],P39015,1186.049 (light),2,40.2374,0.73
+ , ,1199.509 (heavy), , , 
+[K].NSIAAGADGVEIHSANGYLLNQFLDPHSNNR.[T],Q03558,1098.868 (light),3,48.3806,0.73
+ , ,1113.491 (heavy), , , 
+[K].DLDLNSVESYVK.[N],P39692,691.346 (light),2,48.238,0.73
+ , ,698.325 (heavy), , , 
+[K].VVGLSSLPEIYEK.[M],P00331,717.398 (light),2,45.2916,0.73
+ , ,724.377 (heavy), , , 
+[K].AVSNEELK.[K],P40825,445.234 (light),2,11.4237,0.73
+ , ,450.22 (heavy), , , 
+[R].DPANLPWGSSNVDIAIDSTGVFK.[E],P00359,801.733 (light),3,63.4603,0.73
+ , ,810.706 (heavy), , , 
+[K].FAIPAINVTSSSTAVAALEAAR.[D],P14540,1080.587 (light),2,65.5489,0.73
+ , ,1093.548 (heavy), , , 
+[R].HLGELLGIPHDLVWR.[H],P38625,585.662 (light),3,49.3647,0.73
+ , ,593.306 (heavy), , , 
+[K].ISAVSTYFESFPYR.[V],P37291,833.91 (light),2,51.1179,0.73
+ , ,842.385 (heavy), , , 
+[R].VVDLIEYVAK.[A],P00360,574.832 (light),2,47.2753,0.73
+ , ,580.316 (heavy), , , 
+[K].IQDAQVTTEGIR.[V],P21826,665.852 (light),2,22.0364,0.73
+ , ,674.327 (heavy), , , 
+[K].AVVESVGAEVDEAR.[I],P02400,715.858 (light),2,27.0026,0.73
+ , ,724.333 (heavy), , , 
+[K].FASDPGcAFTK.[S],P38013,600.771 (light),2,25.0219,0.73
+ , ,606.255 (heavy), , , 
+[R].AIHNGDIAMEDcK.[Q],P39714,737.327 (light),2,14.9044,0.73
+ , ,745.303 (heavy), , , 
+[K].ESVYAQSITSKPVK.[G],P05694,768.917 (light),2,19.0128,0.73
+ , ,777.392 (heavy), , , 
+[K].ALDGQYIEASDIYSK.[L],P32602,836.907 (light),2,37.6932,0.73
+ , ,845.382 (heavy), , , 
+[R].LLGYPVYGDEVGK.[V],P40008,705.369 (light),2,39.3883,0.73
+ , ,712.348 (heavy), , , 
+[R].LALATFDK.[F],Q10740,439.753 (light),2,30.2654,0.73
+ , ,444.24 (heavy), , , 
+[R].HITINDLPVGR.[N],P34760,617.849 (light),2,29.5135,0.73
+ , ,626.324 (heavy), , , 
+[R].ENVEDYEDAVVVSK.[N],P32895,798.375 (light),2,33.741,0.73
+ , ,806.352 (heavy), , , 
+[K].YGMDYMYDAcSTTAR.[R],P06168,902.853 (light),2,35.3964,0.73
+ , ,911.328 (heavy), , , 
+[R].AQDEFVMQSINK.[A],P07342,705.34 (light),2,31.3256,0.73
+ , ,713.316 (heavy), , , 
+[R].SSPDENSTLLSNDSISLK.[I],P16862,953.965 (light),2,38.6548,0.72
+ , ,964.434 (heavy), , , 
+[K].FGPIVSASLEK.[D],P04147,574.321 (light),2,34.5975,0.72
+ , ,580.304 (heavy), , , 
+[K].FQYIAISQSDADSEScK.[M],P38013,974.933 (light),2,34.0912,0.72
+ , ,984.405 (heavy), , , 
+[K].QIIENAGEEGSVIIGK.[L],P19882,828.943 (light),2,34.8793,0.72
+ , ,838.415 (heavy), , , 
+[R].LGQVTDISQLPR.[E],P40531,663.872 (light),2,34.8815,0.72
+ , ,672.347 (heavy), , , 
+[K].HFISELEK.[G],P04807,501.766 (light),2,19.4194,0.72
+ , ,507.25 (heavy), , , 
+[K].HEDLVNSIESK.[N],P07256,635.818 (light),2,19.6065,0.72
+ , ,643.295 (heavy), , , 
+[K].MGEQTEDPVYEDAER.[R],P39743,884.87 (light),2,24.8937,0.72
+ , ,894.342 (heavy), , , 
+[R].NQGVIAcSAGNHAQGVAFAAK.[H],P00927,691.01 (light),3,23.997,0.72
+ , ,699.983 (heavy), , , 
+[R].EQLKPFVVDSVVFMHNAIEAK.[K],P80210,801.091 (light),3,51.5432,0.72
+ , ,810.064 (heavy), , , 
+[K].LLEAYFDEISQDTGK.[F],P12385,864.92 (light),2,50.72,0.72
+ , ,873.394 (heavy), , , 
+[K].TDNVINDTFLVGLDSWPK.[D],Q03104,1017.512 (light),2,65.3216,0.72
+ , ,1028.479 (heavy), , , 
+[K].WLTGVELADMYHSLMK.[R],P00925,631.979 (light),3,59.3459,0.72
+ , ,638.626 (heavy), , , 
+[K].APEGELGDSLQTAFDEGK.[D],P23301,932.433 (light),2,43.3388,0.72
+ , ,942.404 (heavy), , , 
+[K].LTELTHATSASEAQNILVAPGPIK.[E],P40531,821.114 (light),3,40.6313,0.72
+ , ,830.752 (heavy), , , 
+[K].IPVMSIGLGPVYK.[R],P39730,687.397 (light),2,48.756,0.72
+ , ,694.377 (heavy), , , 
+[K].SGLIVGWPAQETDFDK.[L],Q04344,881.936 (light),2,50.4038,0.72
+ , ,891.407 (heavy), , , 
+[K].IEQLHPFPFAQLR.[D],P20967,532.628 (light),3,42.9735,0.72
+ , ,539.275 (heavy), , , 
+[K].LLFDSmNGVTGPYGK.[A],P37012,807.895 (light),2,43.2936,0.72
+ , ,815.872 (heavy), , , 
+[R].SLVTDLGAANFFTPDHLDK.[H],P47143,687.681 (light),3,53.6766,0.72
+ , ,695.325 (heavy), , , 
+[K].AIVVSPQAPLELVLTPEAK.[R],P36016,988.077 (light),2,59.1973,0.72
+ , ,998.546 (heavy), , , 
+[K].QAEAEGLDK.[I],P07264,480.735 (light),2,11.3417,0.72
+ , ,486.218 (heavy), , , 
+[K].NQGDYNPQTGR.[R],P25294,625.282 (light),2,11.4619,0.72
+ , ,634.255 (heavy), , , 
+[K].TQWPSDQPSDGR.[S],P40472,687.308 (light),2,19.1195,0.72
+ , ,696.282 (heavy), , , 
+[K].EAQVDIEAIK.[Q],P31539,558.301 (light),2,27.7625,0.72
+ , ,564.283 (heavy), , , 
+[R].SIVPGcYNYAVHPDELR.[I],Q06151,663.988 (light),3,36.5373,0.72
+ , ,671.299 (heavy), , , 
+[K].NYTGDVLHFGLSAER.[A],P54838,560.278 (light),3,39.3357,0.72
+ , ,567.257 (heavy), , , 
+[-].mTEDNIAPITSVK.[V],P11986,717.861 (light),2,28.2615,0.72
+ , ,724.841 (heavy), , , 
+[K].MNANSLDTFR.[A],P0CZ17,584.775 (light),2,28.0482,0.72
+ , ,592.252 (heavy), , , 
+[K].EPVSDWTDDVEAR.[I],P00549,759.839 (light),2,33.6853,0.71
+ , ,768.313 (heavy), , , 
+[K].EIVFASPPR.[K],P00815,508.282 (light),2,29.3457,0.71
+ , ,514.264 (heavy), , , 
+[K].IDVAVDSTGVFK.[E],P00360,625.835 (light),2,37.7654,0.71
+ , ,632.316 (heavy), , , 
+[K].GAPEQILELAK.[A],P19456,584.832 (light),2,38.9035,0.71
+ , ,591.313 (heavy), , , 
+[R].NKPLAVIGGGDSAcEEAQFLTK.[Y],P29509,1153.079 (light),2,38.9257,0.71
+ , ,1165.542 (heavy), , , 
+[K].LGNPMPMEATQAAPTIK.[F],Q06252,885.45 (light),2,36.4208,0.71
+ , ,895.42 (heavy), , , 
+[K].TGTKPAAVFAETLK.[H],P49626,717.404 (light),2,26.4692,0.71
+ , ,725.38 (heavy), , , 
+[K].SVEmHHEQLEQGVPGDNVGFNVK.[N],P02994,856.072 (light),3,27.6518,0.71
+ , ,866.374 (heavy), , , 
+[K].SSAAGNTVIIGGGDTATVAK.[K],P00560,895.468 (light),2,27.681,0.71
+ , ,906.436 (heavy), , , 
+[K].IAVLQGVSK.[K],P47169,457.787 (light),2,24.218,0.71
+ , ,463.271 (heavy), , , 
+[K].YSMQYEYcR.[T],P32191,650.261 (light),2,24.4093,0.71
+ , ,656.243 (heavy), , , 
+[K].DWTNVVVAYEPVWAIGTGLAATPEDAQDIHASIR.[K],P00942,1833.417 (light),2,72.2077,0.71
+ , ,1854.853 (heavy), , , 
+[K].YLPGITLPDNLVANPDLIDSVK.[D],Q00055,1184.145 (light),2,65.2722,0.71
+ , ,1196.608 (heavy), , , 
+[K].VINDAFGIEEGLmTTVHSLTATQK.[T],P00359,864.439 (light),3,60.7303,0.71
+ , ,873.744 (heavy), , , 
+[K].SIGFELAVGDGVYWSGR.[W],P38013,906.95 (light),2,59.2289,0.71
+ , ,917.419 (heavy), , , 
+[K].SIDDVDELIWTIGR.[K],P41921,816.417 (light),2,64.6148,0.71
+ , ,825.391 (heavy), , , 
+[K].FHAAQLPTETLEVETQPGVLcSR.[F],P00815,861.767 (light),3,43.1905,0.71
+ , ,871.405 (heavy), , , 
+[R].FELSFYALKPDVK.[C],P22768,778.922 (light),2,46.864,0.71
+ , ,786.4 (heavy), , , 
+[K].AAYSYMFDSLR.[E],Q12230,662.307 (light),2,43.2789,0.71
+ , ,669.286 (heavy), , , 
+[K].LFIDTANGIGGPQLK.[K],P38628,772.428 (light),2,43.7343,0.71
+ , ,781.401 (heavy), , , 
+[K].ISDVLLEQVYGGMR.[G],P08679,790.412 (light),2,50.456,0.71
+ , ,799.385 (heavy), , , 
+[R].GEEWTIDFEQFEK.[A],P47039,829.372 (light),2,53.8213,0.71
+ , ,837.349 (heavy), , , 
+[K].HASTNINELEIR.[S],P03965,698.863 (light),2,22.2178,0.71
+ , ,708.335 (heavy), , , 
+[K].FQDNPDAWQK.[A],P30822,624.786 (light),2,23.8077,0.71
+ , ,632.263 (heavy), , , 
+[R].EGIcGScAMNIGGR.[N],P21801,741.318 (light),2,27.2582,0.71
+ , ,749.295 (heavy), , , 
+[K].QIAQQDAER.[A],P40961,529.765 (light),2,10.2562,0.71
+ , ,537.242 (heavy), , , 
+[K].YDHEASSSYK.[A],P07267,396.172 (light),3,7.9715,0.71
+ , ,400.492 (heavy), , , 
+[R].GLVEDANAAAK.[D],P38088,529.778 (light),2,18.6541,0.71
+ , ,536.258 (heavy), , , 
+[K].QTMGTPGVALcHR.[S],P22138,476.568 (light),3,19.7912,0.71
+ , ,482.55 (heavy), , , 
+[K].QTGLGLTQGWSNTNNLQTK.[L],P04840,1031.022 (light),2,37.4717,0.71
+ , ,1044.482 (heavy), , , 
+[K].DcQWEFENDVEK.[F],Q10740,799.827 (light),2,36.8552,0.71
+ , ,807.305 (heavy), , , 
+[R].IVNALAPNSIAIK.[L],P46655,662.404 (light),2,36.6693,0.71
+ , ,670.38 (heavy), , , 
+[R].QAGAIIVPAGSWK.[T],P38998,649.367 (light),2,36.586,0.71
+ , ,657.343 (heavy), , , 
+[K].LEMLGGLAAcTER.[S],P32356,710.849 (light),2,38.9505,0.71
+ , ,718.327 (heavy), , , 
+[K].TADLYAAMGLSK.[L],P32527,620.816 (light),2,39.575,0.71
+ , ,627.297 (heavy), , , 
+[R].VNDNNDDDDWNEPELK.[E],P15891,966.398 (light),2,29.9319,0.71
+ , ,977.365 (heavy), , , 
+[R].QAITSAGSGcMAALDAEK.[Y],P29509,890.915 (light),2,30.1484,0.71
+ , ,900.387 (heavy), , , 
+[K].YFETNVQVGENMQK.[M],P87108,843.894 (light),2,30.8282,0.71
+ , ,853.365 (heavy), , , 
+[K].TVVVVGTVTDDAR.[I],P0CX49,666.362 (light),2,28.1244,0.71
+ , ,674.338 (heavy), , , 
+[R].ILYGGSANGSNAVTFK.[D],P00942,799.913 (light),2,31.2401,0.71
+ , ,809.385 (heavy), , , 

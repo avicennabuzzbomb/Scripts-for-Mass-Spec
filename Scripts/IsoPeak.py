@@ -3,6 +3,8 @@
 
 if __name__=='__main__':  # Run this script when invoked, instead of the modules imported into it
 
+    import re      # for string cleanup
+    import string  # substring manipulation
     import numpy   # may need for accurate math (double check this)
     import decimal # need for correct rounding TODO: build in decimal rounding, halfway cases always round up
     import csv     # tools for reading and writing into csv files
@@ -25,14 +27,13 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
 
     # FUNCTION: calculate the m/z value of all possible 15N-labeled dipeptides by adding 15N peptide shifts to original m/z value (mZ).
     # Returns a List of the labeled peptide expected m/z values.
-    def calc_Labeled(pepA, pepB, mZ, charge):
+    def calc_Labeled(seq, mZ, charge):
         """
         pepA and pepB must be strings, and receive the seqences of peptides A and B respectively.
         mZ must be a float, and receives the mass:charge values (m/z) of the unlabeled dipeptide AB.
         charge must be an integer, and receives the charge (z) of the unlabeled dipeptide AB.
         """
-        assert type(pepA)==str, "Error, pepA must be a string representing the peptide"
-        assert type(pepB)==str, "Error, pepB must be a string representing the peptide"
+        assert type(seq)==str, "Error, pepA must be a string representing the peptide"
         assert type(mZ)==float, "Error, mZ must be a float representing the m/z of the dipeptide"
         assert type(charge)==int, "Error, z must be an integer representing the charge of the dipeptide"
 
@@ -44,7 +45,7 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         #TODO: ...and that should be a different method, which is contigent on the boolean 'if response == y, boolean == true and call with (labeledPeps,x) where x is the integer
         #TODO: specifying the decimal places.
 
-        labeledPeps = [L, H]      # store predicted m/z in a List and output the List       
+        labeledPeps = [str(L) + " (light)", str(H) + " (heavy)"]      # store predicted m/z in a List and output the List       
         return labeledPeps
 
 
@@ -59,6 +60,12 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         assert type(seq)==str, "Error, seq must be a string representing the peptide"
         assert type(charge)==int, "Error, charge must be an integer represent string (peptide) charge"
 
+        # remove modification symbols from the string so they don't wrongly affect the amino acid calculation
+        seq = re.sub('[a-z]', '', seq)  # remove lowercase (aa modifications due to MS)
+        
+        if "[" in seq:
+            seq = seq[4:(len(seq) - 4)]
+
         length = len(seq)
         countR = seq.count('R')
         countH = seq.count('H')
@@ -67,61 +74,64 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
         countQ = seq.count('Q')
         countW = seq.count('W')
 
-        countMods = 0
-        cleanedStr = ""
-
-        ## TODO COME BACK TO THIS; this needs to be its own module (or method) for peak predictor
-
-        # remove modification symbols from the string so they don't wrongly affect the amino acid calculation
-        for char in seq:
-            if char.islower() == True:
-                continue
-            else:
-                cleanedStr += char
-                print(cleanedStr)
-
-        countOther = seq.count('[') + seq.count(']') + seq.count('.')
-
-        countRemaining = length - sum([countR, countH, countK, countN, countQ, countW, countOther])   # count the backbone nitrogens of amino acids without N-containing R-groups; ignores brackets automatically (no need for string cleanup)
+        countRemaining = length - sum([countR, countH, countK, countN, countQ, countW])   # count the backbone nitrogens of amino acids without N-containing R-groups; ignores brackets automatically (no need for string cleanup)
         mZshift = (R*countR + H*countH + K*countK + N*countN + Q*countQ + W*countW + neutron*countRemaining) / charge    # add backbone neutrons of above to the summed shifts of amino acids with N-containing R-groups
-        # print("Peptide sequence is",seq," and its m/z shift is ",mZshift)
         return mZshift
 
-    # FUNCTION: opens file stream and reads in CSM data (currently, exported .txt files from ProteomeDiscoverer)
-    def read_CSMs(): #TODO finish this code block once you learn how to read individual fields.
-        """
-        Reads .csv or .txt files and iteratively stores rows in a variable.
-        Fields in row are pulled into separate variables, to be used as params
-        for calling calc_Labeled to get mixed peptide specs. These are stored in
-        list as in the test method below, and the list is used to print a new output
-        file containing the analysis results
-        """
-        #TODO CODE BLOCK FOR OPENING AN INPUT STREAM OBJECT HERE (read a list of CSMs into this script and call functions with that imported data)
 
-        #FIXME A full .txt table of the required data can be output from a PDresultview file. To do this, make sure no filters are applied in any of the associated tables. Example of headers below:
-        #FIXME "Checked"	"Confidence"	"Max. XlinkX Score"	"Sequence A"	"Accession A"	"Position A"	"Sequence B"	"Accession B"	"Position B"	"Crosslinker"	"Crosslink Type"	"# CSMs"	"Protein Descriptions A"	"Protein Descriptions B"
-
-        return
-    
-"""
-    with open('DSSO-ArabidopsisProteome.csv', mode='r') as infile:
-        reader = csv.reader(infile)
-    #    with open('DSSO-ArabidopsisProteome.csv', mode='w') as outfile:
-    #        writer = csv.writer(outfile)
-        datadict = {rows[0]:rows[1] for rows in reader}
-
-    for key, value in datadict.items():
-        print(key, ' : ', value)      
-"""
-
-# collect the arguments into a list
-batch_file = open("batch.txt", "r")
+###########__DRIVER_CODE__###########
+# collect the rows into a List object. Each row of the input .csv is an element in this List.
+#batch_file = open("PSMyeastSearch.csv", "r")
+batch_file = open("PSMyeastSearch.csv", "r")
 query_list = batch_file.readlines()
 batch_file.close()
 
-    # create a new file object Output, open an empty file with it to 'w'rite into. 'w+' means create the file to write into if it does not exist.
-    #TODO csv.writer and writer.row(<val>) is superior for formatting an output .csv file; change this when there is time.
-Output = open('Predicted_mixedPeaks.csv', 'w+')
-print("HEADER:: Predicted m/z for light-light(LL), light-heavy(LH), heavy-light(HL), heavy-heavy(HH) dipeptides.", file = Output)  
-print("", file = Output)
-COUNT = 1
+# create a new file that contains the heavy-labeled peptide m/z
+with open('LH_PSMs.csv', 'w', newline = '') as file:
+    # create a .csv file writer object                                                                         
+    writer = csv.writer(file, delimiter = ',')
+
+    # parse the whole list into individual row-lists
+    rownum = 0
+    Xcorr = ""
+    header = []
+    current_row = []
+    light_heavy = []
+    for element in query_list:
+        if rownum == 0:   
+            # this branch causes the first row (headers) to be stored separately
+            # (peptide sequence [0], protein ID [2], m/z [4], charge [3], RT retention time [7], and Xcorr [9])
+            current_row = element.split(",")   # slice the string-element by the "," delimiter into separate elements for the new list
+            Xcorr = current_row[9]
+            Xcorr = Xcorr.strip("\n")
+            header = [current_row[0], current_row[2], current_row[4], current_row[3], current_row[7], Xcorr]
+            print(header)
+            writer.writerow(header)  
+            rownum += 1
+            continue    
+        else:             
+            # this branch gets the shifted m/z of the current peptide and stores it
+            current_row = element.split(",")   # slice the string-element by the "," delimiter into separate elements for the new list
+            seq = str(current_row[0])
+            z = int(current_row[3])
+            mZ = float(current_row[4])
+
+            # to console
+            print(seq + " | " + str(z) + " | " + str(mZ))
+        
+            # get m/z of fully labeled peptides
+            # labeledPeps = [str(L) + " (light)", str(H) + " (heavy)"]      # store predicted m/z in a List and output the List       
+            labeledPeps = calc_Labeled(seq, mZ, z)
+
+            # to console
+            print(labeledPeps)
+
+            #This block prints the contents of the array of lists: label names, and predicted m/z to the new file.
+            Xcorr = current_row[9]
+            Xcorr = Xcorr.strip("\n")
+            next_row = [current_row[0], current_row[2], labeledPeps[0], current_row[3], current_row[7], Xcorr]
+            heavy_row = [" "," ", labeledPeps[1], " ", " ", " "]
+            writer.writerow(next_row)
+            writer.writerow(heavy_row)
+
+print("\nDONE!")
