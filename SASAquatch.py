@@ -30,7 +30,6 @@ PyMOL> run script.py
 ## that entire protein is logged in an error file as failed due to bad selection algebra, and the loop skips to the next query. 
 
 from pymol import cmd     # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
-import pymol              # this one might be unnecessary since we specifically need pymol.cmd()
 import re                 # methods for string editing
 import decimal            # methods for correct rounding
 import csv                # methods for handling csv file i/o
