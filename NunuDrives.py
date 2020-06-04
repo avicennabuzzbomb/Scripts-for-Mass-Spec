@@ -21,6 +21,7 @@ depth = query_list[len(query_list) - 1]
 del query_list[-1]
 
 # loops through the query list, calling the named script with the current values of 'query' and 'depth'
+# note that the "./" preceding the first argument is linux command line syntax.
 count = 0
 for i in query_list:         
     os.system("pymol -c " + script_name + " " + i + " " + depth)
