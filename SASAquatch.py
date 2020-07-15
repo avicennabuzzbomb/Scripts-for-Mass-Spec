@@ -1,11 +1,13 @@
 ## Calculate the Solvent-Accessible Surface Area (SASA) of individual residues at a time or as a group in PyMOL,
 ## then print to an output file.
-## NOTE the driver script (NunuDrives.py) will loop through this script
+
 ## NOTE This script works by starting a fresh PyMOL session and then loading each requested pymol session (or fetching each requested PDB ID). 
 ## To access individual residues one at a time, a string is made from PyMOL's fasta sequence command, and this string is copied and "cleaned" 
 ## so that a version containing only the amino acids is left. Then, the string is used to get the position (index) of each residue from python's enumerator.
 ## Whenever a residue is found in the string, its index is recorded where the first index of the string is set to '1'. Then, PyMOL selection and SASA calculation
 ## functions are called and written to a new csv output file. 
+
+## NOTE This script can be run on a computing cluster for larger jobs
 
 """
 The recommended way to run PyMOL-Python scripts is by using PyMOL as the interpreter. This is supported by all versions of PyMOL, 
@@ -17,6 +19,7 @@ shell> pymol -c script.py
 With arguments (sys.argv becomes ["script.py", "foo", "bar"]):
 
 shell> pymol -c script.py foo bar
+(linux)> ./pymol -c script.py foo bar
 
 Example from a running PyMOL instance:
 PyMOL> run script.py
@@ -30,6 +33,7 @@ PyMOL> run script.py
 ## that entire protein is logged in an error file as failed due to bad selection algebra, and the loop skips to the next query. 
 
 from pymol import cmd     # PyMOL's methods and commands; this is required for the script to use PyMOL's functions.
+import pymol              # this one might be unnecessary since we specifically need pymol.cmd()
 import re                 # methods for string editing
 import decimal            # methods for correct rounding
 import csv                # methods for handling csv file i/o
@@ -38,14 +42,17 @@ import os                 # methods for directory handling
 import sys                # methods for taking command line arguments. Script's name is sys.arg[0] by default when -c flag is used
 
 query = str(sys.argv[3].upper()) # query: assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
-depth = str(sys.argv[4].upper()) # depth: assign query type ('ALL' or aa single letter code) to the second argument. 
+#depth = str(sys.argv[4].upper()) # depth: assign query type ('ALL' or aa single letter code) to the second argument. 
                                  # NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpreted
                                  # by this script as initial arguments [0], [1], and [2]. Unclear why this is the case. TODO eventually fix that, but for now everything works!
+
+# for testing, until a list (whether in text file or directly in submit file) of PDB IDs is ready
+depth = "ALL"
 
 print("query: " + query)
 print("depth: " + depth)
 
-## NOTE This Dictionary contains the maximum calculated SASA (dot_solvent = 1, dot_density = 4) value and 3-letter residue code as a tuple value
+## NOTE This Dictionary contains the maximum calculated SASA (dot_solvent = 1, dot_density = 4) value and 3-letter residue code as a tuple value (changes will only be coded directly)
 ## associated with each single-character amino acid letter code (the key) currently being analyzed.
 AA_attributes = {'R' : ('arg', 249.4673309),   # arginine
                  'H' : ('his', 194.6491394),   # histidine
@@ -73,31 +80,24 @@ threshold = 0.25
 
 # Initialize empty data stuctures for handling python's iterator stream and generally crappy API
 stored_residues = set()
-residues = []
-occu_vals = set()
+atmNum = 0
 
 #############################################################################################################################################################
 ## Helper Method: evaluate if electron density exists at the current residue position is actually present in the structure model, and annotate accordingly ##
 #############################################################################################################################################################
 def occupancy(count):
     ##TODO implement an if branch to check for a valid selection; if invalid, print to error file and skip SASA calculation.
-    ##TODO if this script writes the file, each bad query will have its own file; if Nunu writes the file, it will be one file that is a
-    ##TODO list of the bad queries.
+    ##TODO Each bad query will have its own file or entry in a file. Currently, invalid selections are treated as real objects, and default to 0
+    ##TODO when calculations are performed. This leads to falsely labeling residues as buried and their SASA as 0, when that may not reflect reality.
+    ##TODO this problem happens when a CIF file has inaccurately shown residues at nonexistent positions (ie., resi <= 1 is not real; PDB entry 6ied
+    ##TODO is an example of this, with residues starting at position -5. FIXME!) In this case, a simple correction can be made as the fasta string is generated,
+    ##TODO by checking resi of the current selection and checking that it is a postive integer greater than 1. If !(resi >= 1), then add (1 - resi) to every value of
+    ##TODO resi to "frameshift" the integers to the correct position. In the case of 6ied, these 0/negative position residues are a thrombin scar from removing a
+    ##TODO N-terminal His-tag. Need to carefully think about situations like this, not all situations will use negative integers to describe N-terminal tags.
 
-    
-    '''
-    TODO
-    if cmd.count_atoms("sele") == 0:
-        <do not call this method>; else, call this method>
-        <write this part carefully; each method forks off before this occupancy check occurs, so each calculation method will need to use this code block>
-        <which also means this code block needs to contain the call to occupancy() in each SASA method>
-    TODO
-    '''
-
-
-    cmd.iterate("resi " + count, 'occu_vals.add(q)') # 'q' is occupancy, or the presence of electron density in the map
-    if 0.0 in occu_vals: # if any atoms in the selection fail occupancy check, the selection must not have electron density
-        return False 
+    atmNum = cmd.count_atoms("resi " + count)
+    if atmNum == 1:
+        return False
     else:
         return True
 ###########################################################################################################################################################
@@ -114,15 +114,14 @@ def find_Allchain(seq, chain, start):
             
         # Method call: Qualify this selection is actually present in the structure model
         presence = occupancy(count)
-        occu_vals.clear()
 
         # Calculations are not performed if the electron density is missing from the model; instead, their values are
         # defaulted to "Not present in structure model", "N/A", and "N/A"
         if presence == True:
-            # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
-            # Chain A must be specified every time, otherwise the value will be multiplied by the number of identical chains.            
+            # Calculate SASA of the current selected sidechain, and then use this to calculate relative SASA based on the dictionary values.
+            # Chain identifier must be specified each time to avoid multiple selections occurring in identical chains.            
             cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and sidechain and chain " + keyVal)
-            sasa = cmd.get_area("sele", 1, 0)            
+            sasa = cmd.get_area("sele")            
             rel_sasa = sasa / AA_attributes[ltr][1]  # Retrieves max SASA attribute from the tuple value at [ltr]
             burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
         
@@ -158,7 +157,6 @@ def find_res(seq, chain, ch, start):
             
             # Method call: Qualify this selection as valid; then check if electron density is actually present in the structure model
             presence = occupancy(count)
-            occu_vals.clear()
 
             # Calculations are not performed if the electron density is missing from the model; instead, their values are
             # defaulted to "Not present in structure model", "N/A", and "N/A"
@@ -217,21 +215,27 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     
     # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
     # leaving only the AA single-letter characters in the string.
-    chainID_list = []    # for recording chain ID's
-    chainPlusFasta = {}   # dictionary for matching the current retrieved chain ID with its associated fasta
+    chainID_list = []     # List for recording chain ID's
+    chainPlusFasta = {}   # Dictionary for matching the current retrieved chain ID with its associated fasta
 
     for chain in cmd.get_chains():
         fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
         fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
         fasta = re.sub("\n", "", fasta)  # removes remaining /n
+                                         # checks fasta type (amino acid vs. nucleic acid)
+                                         # checks that the fasta chain A has logical values (avoid selector errors)
+                                         # NOTE additional fasta processing is required here; currently this is blind to terms like "?" and " UNK " and nucleic acids.
+                                         # fasta is collected in aa chain oriented fashion, so it should be possible to treat each chain uniquely
+                                         # (ie., make another dictionary of nested lists for nucleic acids that can be called when a nucleic acid term is recognized)
+
         chainID_list.append(chain)       # collects chain IDs
 
         # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
-        # it is added as the value and its associated chain ID (value of 'chain') is its key.
+        # it is added as the value and its associated chain ID (value of 'chain') is its key. NOTE that this is not always the correct way to 
+        # look at surface area - a biological unit may actually be multimeric vs. just being a crystallization artifact. TODO implements more code
+        # to deal with this?
         if fasta not in chainPlusFasta.values():
             chainPlusFasta.update({chain:fasta})
-
-    # print(chainPlusFasta)    #NOTE this print() is for testing
 
     # Begin writing into the csv output file. For a multichain protein, this writes each chain to the same file separated by subheaders.
     chain_count = 0
@@ -242,15 +246,11 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         writer.writerow("")
         writer.writerow(subheader)   # subheaders are labeled by chain number with each iteration
 
-        # For each unique chain, iterate the residue positions into a Set named stored_residues, move the set into a List (so elements can be accessed by index) named residues, 
-        # and then use List[0] to set enumerator's startpoint for recording residue positions
+        # For each unique chain, iterate the residue positions into a Set named stored_residues
         cmd.iterate("chain " + str(keyVal), 'stored_residues.add(resv)')
-        for i in stored_residues:
-            residues.append(i)
 
-        # start should take the smallest value from the list, not the one in [0] because that could vary if set() elements are added randomly... unless they "store" the order they are iterated... (?)
-        # in which case, [0] is always the true start value because iterate() works in order?  
-        start = residues[0]
+        # The starting index of the fasta must be the minimum value in the set; this is defined as `start` point for calculating SASA. Accounts for negative resi values.
+        start = min(stored_residues)
         
         # Run the job with the query (requested PDB ID) based on its type. If a single amino acid is requested, the input is compared to an amino acid dictionary
         # to ensure it's a real amino acid; otherwise the job is skipped and the user is given an error message.
@@ -265,7 +265,6 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         
         # clear container objects for the next chain (if applicable) in this protein
         stored_residues.clear()
-        residues.clear()
 
     ## "Stopwatch" stops now; print runtime
     stop_time = time.time()
