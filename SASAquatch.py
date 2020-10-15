@@ -75,6 +75,17 @@ AA_attributes = {'R' : ('arg', 249.4673309),   # arginine
                  'Y' : ('tyr', 231.1389923),   # tyrosine
                  'W' : ('trp', 262.1514587)}   # tryptophan
 
+nucleic_attributes = {' GUA ' : ('guanine', 0),      # TODO
+                      ' CYT ' : ('cytosine', 0),
+                      ' ADE ' : ('adenine', 0),
+                      ' THY ' : ('thymine', 0)}     # TODO: complete this dictionary containing nucleic acid names and attributes; 0 is currently a placeholder for the actual SASA value
+                                                     # of the nitrogenous base 'sidechain'; need to confirm exactly how this string appears
+                                                    
+small_molecules = { ' AlF4 ' : ('aluminum tetrafluoride', 0),    # TODO
+                    ' PMSF ' : ('phenylmethylsulfonyl fluoride', 0)}   # TODO: make a dictionary of non-nucleic acid small molecule co-crystallants that are in-chain with fasta; 
+                                                                # or, make a way to count them as "not aa and not nucleic". Current entries are just examples that may exist.
+
+
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 threshold = 0.25
 
@@ -89,11 +100,6 @@ def occupancy(count):
     ##TODO implement an if branch to check for a valid selection; if invalid, print to error file and skip SASA calculation.
     ##TODO Each bad query will have its own file or entry in a file. Currently, invalid selections are treated as real objects, and default to 0
     ##TODO when calculations are performed. This leads to falsely labeling residues as buried and their SASA as 0, when that may not reflect reality.
-    ##TODO this problem happens when a CIF file has inaccurately shown residues at nonexistent positions (ie., resi <= 1 is not real; PDB entry 6ied
-    ##TODO is an example of this, with residues starting at position -5. FIXME!) In this case, a simple correction can be made as the fasta string is generated,
-    ##TODO by checking resi of the current selection and checking that it is a postive integer greater than 1. If !(resi >= 1), then add (1 - resi) to every value of
-    ##TODO resi to "frameshift" the integers to the correct position. In the case of 6ied, these 0/negative position residues are a thrombin scar from removing a
-    ##TODO N-terminal His-tag. Need to carefully think about situations like this, not all situations will use negative integers to describe N-terminal tags.
 
     atmNum = cmd.count_atoms("resi " + count)
     if atmNum == 1:
@@ -104,8 +110,12 @@ def occupancy(count):
 ## Method for getting each amino acid position and using it to make a separate residue selection, and calculate and write SASA to output. (ALL RESIDUES) ##
 ###########################################################################################################################################################
 def find_Allchain(seq, chain, start):
-
+    pattern = ""
     print("Start of chain is position " + str(start) + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
+    if "nucleic_" in seq:
+        pattern = "nucleic_"
+        seq = [re.sub(pattern,'',i) for i in seq]  # trim off the annotation; then check for all instances of nucleic acids and treat them as units
+        # TODO implement code to "enumerate" with substrings (nucleic acid codes)
 
     for count, ltr in enumerate(seq, start): 
         ## Typecasting count (index or aa position) to a string allows the script to use "count" in a PyMOL selection-expression.
@@ -210,7 +220,11 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
     # Import structure, then remove unwanted (non-amino acid, or "het") objects
-    cmd.fetch(query)
+    # TODO make it possible here to execute the script on pse or cif files that are saved in the current directory; currently the script attempts
+    # to call the PDB with whatever first argument is supplied to it. This should check that the query is
+    #query = "Full-length_AHA2 mixed xlinks_11-06-2019.pse" # NOTE temporary, remember to revert to fetching
+    #cmd.fetch(query)
+    cmd.load(query)  # NOTE temporary, remember to revert to fetching
     cmd.remove("het")
     
     # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
@@ -218,15 +232,24 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     chainID_list = []     # List for recording chain ID's
     chainPlusFasta = {}   # Dictionary for matching the current retrieved chain ID with its associated fasta
 
+    pattern = "a generic substring containing whitespace flanking ASCII characters - nucleic acids and small molecules are indicated this way in .cif files"
+
+    chaincontent = ""       # a string variable that preppends to the current fasta. "" indicates amino acids only. If other elements are present in the chain,
+                            # they are detected in the if branch below and the chain is modified to indicate
+
     for chain in cmd.get_chains():
         fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
         fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
         fasta = re.sub("\n", "", fasta)  # removes remaining /n
-                                         # checks fasta type (amino acid vs. nucleic acid)
-                                         # checks that the fasta chain A has logical values (avoid selector errors)
-                                         # NOTE additional fasta processing is required here; currently this is blind to terms like "?" and " UNK " and nucleic acids.
-                                         # fasta is collected in aa chain oriented fashion, so it should be possible to treat each chain uniquely
-                                         # (ie., make another dictionary of nested lists for nucleic acids that can be called when a nucleic acid term is recognized)
+        if pattern in fasta:             # TODO make sure this checks fasta type (amino acid vs. nucleic acid) appropriately and annotates the string
+            string = "this is pseudocode: check nucleic acids dictionary, then small molecules dictionary (impl. later) for a match"                             # checks that the fasta chain A has logical values (avoid selector errors)
+            # fasta is annotated with a notation that is detectable in method calls
+            if pattern in nucleic_attributes:
+                chaincontent = "nucleic_"
+                fasta = chaincontent + fasta                             # NOTE additional fasta processing is required here; currently this is blind to terms like "?" and " UNK " and nucleic acids.
+            if pattern in small_molecules:   # or, not a nucleic or amino acid
+                chaincontent = "smallMolecule_"                             # fasta is collected in aa chain oriented fashion, so it should be possible to treat each chain uniquely
+                fasta = chaincontent + fasta                         # (ie., make another dictionary of nested lists for nucleic acids that can be called when a nucleic acid term is recognized)
 
         chainID_list.append(chain)       # collects chain IDs
 

@@ -12,22 +12,25 @@ if __name__ == "__main__":
 
 # REQUIRED: your input file must be a .txt file named 'fasta'
 
-
+# initialize empty string
+fasta = ""
 
 # first get all lines from file by storing each line in a new List of strings called 'lines'
 with open('fasta.txt', 'r') as f:
     lines = f.readlines()
 
-# remove spaces from the List 'lines'
-lines = [line.replace(' ', '') for line in lines]   # this converts the string into a list! use the re module and regex instead.
-
-# remove all digits from the List 'lines'
+# remove all digits and whitespace from the List 'lines'
 pattern = '[0-9]'
+spaces = ' '
 lines = [re.sub(pattern, '', i) for i in lines] 
+lines = [re.sub(spaces, '', i) for i in lines]
 
-# finally, write the List 'lines' into a new file
+# combine the List elements from 'lines' into a single string; line breaks are stripped during concatenation.
+for line in lines:
+    fasta += line.strip()
+
 with open('cleanedFasta.txt', 'w') as f:
-    f.writelines(lines)
+    f.writelines(fasta)
 
 # close the input stream
 f.close()
