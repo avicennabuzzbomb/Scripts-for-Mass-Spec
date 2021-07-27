@@ -27,6 +27,7 @@ PyMOL> run script.py
 ## NOTE - To run a script from the PyMOL command line, it needs to be saved in Pymol's working directory.
 ## NOTE - PyMOL's command line commands are Unix-like (same as Bash and Windows command line)
 ## NOTE - 'reinitialize' removes all objects from this pymol session's memory (it's a reset as if the program was restarted) 
+## NOTE - the -c flag (or -cp) means CLASSPATH - it tells the shell that it needs to use the pymol 'class' to run
 """
 
 ## NOTE: "Bad" residue selections are detected if cmd.count_atom("sele") == 0. The moment a residue is detected like this,
@@ -74,7 +75,7 @@ AA_attributes = {'R' : ('arg', 249.4673309),   # arginine
                  'F' : ('phe', 218.0111237),   # phenylalanine
                  'Y' : ('tyr', 231.1389923),   # tyrosine
                  'W' : ('trp', 262.1514587)}   # tryptophan
-
+'''
 nucleic_attributes = {' GUA ' : ('guanine', 0),      # TODO
                       ' CYT ' : ('cytosine', 0),
                       ' ADE ' : ('adenine', 0),
@@ -84,12 +85,12 @@ nucleic_attributes = {' GUA ' : ('guanine', 0),      # TODO
 small_molecules = { ' AlF4 ' : ('aluminum tetrafluoride', 0),    # TODO
                     ' PMSF ' : ('phenylmethylsulfonyl fluoride', 0)}   # TODO: make a dictionary of non-nucleic acid small molecule co-crystallants that are in-chain with fasta; 
                                                                 # or, make a way to count them as "not aa and not nucleic". Current entries are just examples that may exist.
-
+'''
 
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 threshold = 0.25
 
-# Initialize empty data stuctures for handling python's iterator stream and generally crappy API
+# Initialize empty data stuctures for handling pymol's iterator stream and generally crappy API
 stored_residues = set()
 atmNum = 0
 
@@ -102,7 +103,7 @@ def occupancy(count):
     ##TODO when calculations are performed. This leads to falsely labeling residues as buried and their SASA as 0, when that may not reflect reality.
 
     atmNum = cmd.count_atoms("resi " + count)
-    if atmNum == 1:
+    if atmNum == 1:   # By default, pymol reports occupancy as '1' when it can't find electron density
         return False
     else:
         return True
@@ -112,17 +113,18 @@ def occupancy(count):
 def find_Allchain(seq, chain, start):
     pattern = ""
     print("Start of chain is position " + str(start) + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
+    '''
     if "nucleic_" in seq:
         pattern = "nucleic_"
         seq = [re.sub(pattern,'',i) for i in seq]  # trim off the annotation; then check for all instances of nucleic acids and treat them as units
         # TODO implement code to "enumerate" with substrings (nucleic acid codes)
-
+    '''
     for count, ltr in enumerate(seq, start): 
-        ## Typecasting count (index or aa position) to a string allows the script to use "count" in a PyMOL selection-expression.
+        ## Typecasting the variable `count` (index, or aa position) to a string type allows the script to use `count` in a PyMOL selection-expression.
         count = str(count)
         residue = "" + ltr + count
             
-        # Method call: Qualify this selection is actually present in the structure model
+        # Method call: Confirm that this selection is actually present in the structure model
         presence = occupancy(count)
 
         # Calculations are not performed if the electron density is missing from the model; instead, their values are
@@ -151,7 +153,7 @@ def find_Allchain(seq, chain, start):
         current_row = [residue, sasa, rel_sasa, burial]
         writer.writerow(current_row)            
                     
-        # at the end of each calculation, clear the current selection
+        # at the end of each calculation, clear the current selection from the pymol session (saves memory, allows calculations to be per-residue only)
         cmd.delete("sele")
     return
 
@@ -220,11 +222,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
     # Import structure, then remove unwanted (non-amino acid, or "het") objects
-    # TODO make it possible here to execute the script on pse or cif files that are saved in the current directory; currently the script attempts
-    # to call the PDB with whatever first argument is supplied to it. This should check that the query is
-    #query = "Full-length_AHA2 mixed xlinks_11-06-2019.pse" # NOTE temporary, remember to revert to fetching
-    #cmd.fetch(query)
-    cmd.load(query)  # NOTE temporary, remember to revert to fetching
+    cmd.fetch(query)
     cmd.remove("het")
     
     # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
@@ -232,7 +230,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     chainID_list = []     # List for recording chain ID's
     chainPlusFasta = {}   # Dictionary for matching the current retrieved chain ID with its associated fasta
 
-    pattern = "a generic substring containing whitespace flanking ASCII characters - nucleic acids and small molecules are indicated this way in .cif files"
+    # pattern = "a generic substring containing whitespace flanking ASCII characters - nucleic acids and small molecules are indicated this way in .cif files"
 
     chaincontent = ""       # a string variable that preppends to the current fasta. "" indicates amino acids only. If other elements are present in the chain,
                             # they are detected in the if branch below and the chain is modified to indicate
@@ -241,6 +239,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
         fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
         fasta = re.sub("\n", "", fasta)  # removes remaining /n
+        '''    
         if pattern in fasta:             # TODO make sure this checks fasta type (amino acid vs. nucleic acid) appropriately and annotates the string
             string = "this is pseudocode: check nucleic acids dictionary, then small molecules dictionary (impl. later) for a match"                             # checks that the fasta chain A has logical values (avoid selector errors)
             # fasta is annotated with a notation that is detectable in method calls
@@ -250,7 +249,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
             if pattern in small_molecules:   # or, not a nucleic or amino acid
                 chaincontent = "smallMolecule_"                             # fasta is collected in aa chain oriented fashion, so it should be possible to treat each chain uniquely
                 fasta = chaincontent + fasta                         # (ie., make another dictionary of nested lists for nucleic acids that can be called when a nucleic acid term is recognized)
-
+        '''
         chainID_list.append(chain)       # collects chain IDs
 
         # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
@@ -260,11 +259,11 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         if fasta not in chainPlusFasta.values():
             chainPlusFasta.update({chain:fasta})
 
-    # Begin writing into the csv output file. For a multichain protein, this writes each chain to the same file separated by subheaders.
+    # Begin writing into the csv output file. For a multichain protein containing unique chains, this writes each chain to the same file separated by subheaders.
     chain_count = 0
 
     for keyVal in chainPlusFasta:
-        chain_count += 1
+        chain_count += 1                ## TODO create a dictionary to handle alphanumeric conversion here (ie, Chain 1 = Chain A, Chain 2 = Chain B, etc.)
         subheader = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", chainPlusFasta[keyVal]]
         writer.writerow("")
         writer.writerow(subheader)   # subheaders are labeled by chain number with each iteration
@@ -272,11 +271,12 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         # For each unique chain, iterate the residue positions into a Set named stored_residues
         cmd.iterate("chain " + str(keyVal), 'stored_residues.add(resv)')
 
-        # The starting index of the fasta must be the minimum value in the set; this is defined as `start` point for calculating SASA. Accounts for negative resi values.
+        # The starting index of the fasta must be the minimum value in the set; this is defined as `start` point for calculating SASA.
+        # (This line of code explicitly accounts for negative resi values).
         start = min(stored_residues)
         
-        # Run the job with the query (requested PDB ID) based on its type. If a single amino acid is requested, the input is compared to an amino acid dictionary
-        # to ensure it's a real amino acid; otherwise the job is skipped and the user is given an error message.
+        # Run the job with the query (requested PDB ID) based on its type. If a single amino acid is requested the value of depth will be the character representing that amino acid.
+        # In that case the input is compared to an amino acid dictionary to ensure it's a real amino acid (user control); otherwise the job is skipped and the user is given an error message.
         if len(depth) == 1:
             if depth in AA_attributes.keys():
                 find_res(chainPlusFasta[keyVal], keyVal, depth, start)

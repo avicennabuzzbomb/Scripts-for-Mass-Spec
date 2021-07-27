@@ -7,16 +7,16 @@ if __name__=='__main__':  # Run this script when invoked, instead of the modules
     import decimal # need for correct rounding TODO: build in decimal rounding, halfway cases always round up
     import csv     # tools for reading and writing into csv files
 
-    """ProteomeDiscoverer's reported mass of a neutron; needed for calculating mass
-       shifts in heavy-nitrogen labeled peptides"""
+    # ProteomeDiscoverer's reported mass of a neutron; needed for calculating mass shifts in heavy-nitrogen labeled peptides
     neutron = 0.997035                          
 
-    R = 3.98814     # nitrogen mass shift in Arginine, R after heavy N labeling (4 nitrogens)
-    H = 2.991105    # nitrogen mass shift in Histidine, H after heavy N labeling (3 nitrogens)
-    K = 1.99407     # nitrogen mass shift in Lysine, K after heavy N labeling (2 nitrogens)
-    N = 1.99407     # nitrogen mass shift in Asparagine, N after heavy N labeling (2 nitrogens)
-    Q = 1.99407     # nitrogen mass shift in Glutamine, Q after heavy N labeling (2 nitrogens)
-    W = 1.99407     # nitrogen mass shift in Tryptophan, W after heavy N labeling (2 nitrogens)
+    # Amino acid symbol and additional mass due to sidechains containing extra nitrogen (beyond the 1 default nitrogen, present in the backbone)
+    R = 3.98814     # nitrogen mass shift in Arginine, R after heavy N labeling (extra mass from 4 additional nitrogens)
+    H = 2.991105    # nitrogen mass shift in Histidine, H after heavy N labeling (extra mass from 3 additional nitrogens)
+    K = 1.99407     # nitrogen mass shift in Lysine, K after heavy N labeling (extra mass from 2 additional nitrogens)
+    N = 1.99407     # nitrogen mass shift in Asparagine, N after heavy N labeling (extra mass from 2 additional nitrogens)
+    Q = 1.99407     # nitrogen mass shift in Glutamine, Q after heavy N labeling (extra mass from 2 additional nitrogens)
+    W = 1.99407     # nitrogen mass shift in Tryptophan, W after heavy N labeling (extra mass from 2 additional nitrogens)
 
     seqA = ""   # sequence of peptide A of the 14N/14N dipeptide (string)
     lenA = 0    # length of peptide A; needed to loop through the string during calculation
