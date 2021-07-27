@@ -13,7 +13,7 @@
 The recommended way to run PyMOL-Python scripts is by using PyMOL as the interpreter. This is supported by all versions of PyMOL, 
 including the pre-compiled bundles provided by Schrödinger.
 
-Example from a shell:
+Example from a shell (to run locally):
 
 shell> pymol -c script.py
 With arguments (sys.argv becomes ["script.py", "foo", "bar"]):
@@ -53,28 +53,30 @@ depth = "ALL"
 print("query: " + query)
 print("depth: " + depth)
 
-## NOTE This Dictionary contains the maximum calculated SASA (dot_solvent = 1, dot_density = 4) value and 3-letter residue code as a tuple value (changes will only be coded directly)
-## associated with each single-character amino acid letter code (the key) currently being analyzed.
-AA_attributes = {'R' : ('arg', 249.4673309),   # arginine
-                 'H' : ('his', 194.6491394),   # histidine
-                 'K' : ('lys', 214.5114136),   # lysine
-                 'D' : ('asp', 142.6577301),   # aspartic acid
-                 'E' : ('glu', 173.6901855),   # glutamic acid
-                 'S' : ('ser', 110.3298187),   # serine
-                 'T' : ('thr', 141.3123779),   # threonine
-                 'N' : ('asn', 155.2926178),   # aspargine
-                 'Q' : ('gln', 184.1813354),   # glutamine
-                 'C' : ('cys', 131.9754333),   # cysteine
-                 'G' : ('gly', 34.49541855),   # glycine
-                 'P' : ('pro', 153.1377106),   # proline
-                 'A' : ('ala', 91.39417267),   # alanine
-                 'V' : ('val', 157.4189758),   # valine
-                 'I' : ('ile', 183.812027),    # isoleucine
-                 'L' : ('leu', 181.1264496),   # leucine
-                 'M' : ('met', 192.694458),    # methionine
-                 'F' : ('phe', 218.0111237),   # phenylalanine
-                 'Y' : ('tyr', 231.1389923),   # tyrosine
-                 'W' : ('trp', 262.1514587)}   # tryptophan
+## Dictionary of residue attributes needed for SASA calculations. 1 entry per amino acid; the single-letter AA code is the key,
+## and indices [0] - [3] are, respectively, the 3-letter code for the amino acid, the total sidechain (R-group) SASA for the amino acid when free
+## in solution, the total SASA for the whole amino acid in solution, and then the full amino acid's name.
+## Dict. Name = { key: ( [0], [1], [2], [3] ) } 
+AA_attributes = {'R' : ('arg', 249.4673309, 380.2754517, 'arginine'),
+                 'H' : ('his', 194.6491394, 323.2107239, 'histidine'),
+                 'K' : ('lys', 214.5114136, 344.1722412, 'lysine'),
+                 'D' : ('asp', 142.6577301, 272.8369141, 'aspartic acid'),  
+                 'E' : ('glu', 173.6901855, 303.7915955, 'glutamic acid'),
+                 'S' : ('ser', 110.3298187, 240.5674744, 'serine'),
+                 'T' : ('thr', 141.3123779, 268.1856995, 'threonine'),
+                 'N' : ('asn', 155.2926178, 283.9153137, 'aspargine'),
+                 'Q' : ('gln', 184.1813354, 313.8310242, 'glutamine'),   
+                 'C' : ('cys', 131.9754333, 261.8157043, 'cysteine'),   
+                 'G' : ('gly', 34.49541855, 200.8881836, 'glycine'),   
+                 'P' : ('pro', 153.1377106, 258.9144592, 'proline'),   
+                 'A' : ('ala', 91.39417267, 229.5201416, 'alanine'),   
+                 'V' : ('val', 157.4189758, 279.6635132, 'valine'),   
+                 'I' : ('ile', 183.812027, 306.1242676, 'isoleucine'),    
+                 'L' : ('leu', 181.1264496, 308.8426819, 'leucine'),   
+                 'M' : ('met', 192.694458, 323.5989075, 'methionine'),    
+                 'F' : ('phe', 218.0111237, 342.800415, 'phenylalanine'),   
+                 'Y' : ('tyr', 231.1389923, 357.9006042, 'tyrosine'),   
+                 'W' : ('trp', 262.1514587, 387.6826172, 'tryptophan')}   
 '''
 nucleic_attributes = {' GUA ' : ('guanine', 0),      # TODO
                       ' CYT ' : ('cytosine', 0),
@@ -127,30 +129,47 @@ def find_Allchain(seq, chain, start):
         # Method call: Confirm that this selection is actually present in the structure model
         presence = occupancy(count)
 
-        # Calculations are not performed if the electron density is missing from the model; instead, their values are
-        # defaulted to "Not present in structure model", "N/A", and "N/A"
+        ## Calculations are performed if the density of the current residue can be explicity selected within the Pymol session.
         if presence == True:
-            # Calculate SASA of the current selected sidechain, and then use this to calculate relative SASA based on the dictionary values.
+            # Calculate the total SASA of the current selected residue (sidechain and backbone), and then use this to calculate relative SASA based on the dictionary values.
             # Chain identifier must be specified each time to avoid multiple selections occurring in identical chains.            
+            
+            # first, select the whole amino acid (current residue) and record its SASA
+            cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and chain " + keyVal)
+            tot_sasa = cmd.get_area("sele")
+
+            # next, clear the current selector, re-select the current residue, and record the SASA of its sidechain
+            cmd.delete("sele")
             cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and sidechain and chain " + keyVal)
-            sasa = cmd.get_area("sele")            
-            rel_sasa = sasa / AA_attributes[ltr][1]  # Retrieves max SASA attribute from the tuple value at [ltr]
-            burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
-        
-            if rel_sasa <= threshold:
-                burial = "Buried"
-        
-            sasa = str(sasa)
-            rel_sasa = str(rel_sasa)
-               
+            side_sasa = cmd.get_area("sele")
+
+            # now, calculate the relative SASA of the sidechain and the whole residue separately, and assess "burial" status based on the current threshold.
+            # Burial status defaults to "exposed" UNLESS the value falls below the threshold. Relative SASA values are calculated using the maximum SASA
+            # values stored in the Dictionary named `AA_attributes`.
+            totrel_sasa = tot_sasa / AA_attributes[ltr][2]
+            totburial = "Exposed"
+            siderel_sasa = side_sasa / AA_attributes[ltr][1]
+            sideburial = "Exposed"
+
+            if totrel_sasa <= threshold:
+                totburial = "Buried"
+
+            if siderel_sasa <= threshold:
+                sideburial = "Buried"
+            # before printing, typecast all float values to string types
+            tot_sasa = str(tot_sasa)
+            totrel_sasa = str(totrel_sasa)
+            side_sasa = str(side_sasa)
+            siderel_sasa = str(siderel_sasa)
+        ## When a residue's density cannot be selected in the Pymol session, all values default to "Not present..." and "N/A"    
         else:
-            sasa = "Not present in structure model"
-            rel_sasa = "N/A"
-            burial = "N/A"
+            side_sasa = tot_sasa = "Not present in structure model"
+            siderel_sasa = totrel_sasa = "N/A"
+            sideburial = totburial = "N/A"
         
         ## Each SASA printed to console and then to output
-        print(residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
-        current_row = [residue, sasa, rel_sasa, burial]
+        print(residue + " | " + tot_sasa + " | " + totrel_sasa + " | " + totburial + " | " + side_sasa + " | " + siderel_sasa + " | " + sideburial)
+        current_row = [residue, tot_sasa, totrel_sasa, totburial, side_sasa, siderel_sasa, sideburial]
         writer.writerow(current_row)            
                     
         # at the end of each calculation, clear the current selection from the pymol session (saves memory, allows calculations to be per-residue only)
@@ -160,7 +179,7 @@ def find_Allchain(seq, chain, start):
 ##################################################################################################################################################################
 ## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output. (ONLY SPECIFIED RESIDUES) ##
 ##################################################################################################################################################################
-def find_res(seq, chain, ch, start):
+def find_res(seq, chain, ch, start):    ### FIXME FIXME FIXME This will do better as a subsidiary or helper method to find_Allchain(). Ie,. in this method create a mini Dictionary containing only the desired residue positions, and then cycle through those using find_Allchain()
     for count, ltr in enumerate(seq, start):    
         if ltr == ch:
             ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
@@ -175,9 +194,9 @@ def find_res(seq, chain, ch, start):
             if presence == True:
                 # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
                 # Chain must be specified every time, otherwise the value will be multiplied by the number of identical chains.
-                cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and sidechain and chain " + keyVal)
-                sasa = cmd.get_area("sele", 1, 0)                
-                rel_sasa = sasa / AA_attributes[ltr][1]
+                cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and chain " + keyVal)
+                sasa = cmd.get_area("sele")                
+                rel_sasa = sasa / AA_attributes[ltr][2]
                 burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
         
                 if rel_sasa <= threshold:
@@ -201,6 +220,8 @@ def find_res(seq, chain, ch, start):
     
 ################################################################################################################################################
 ##~~~~~~~~~~~~~~~~ ___DRIVER CODE___~~~~~~~~~~~~~~~~##  (Writes to the csv file with each method call).
+
+## TODO Update this code to calculate SASAs for both the entire residue (and its relative SASA based on its total maximum SASA), as well as with sidechain SASAs.
 
 ## "Stopwatch" starts now
 start_time = time.time()
@@ -264,7 +285,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
 
     for keyVal in chainPlusFasta:
         chain_count += 1                ## TODO create a dictionary to handle alphanumeric conversion here (ie, Chain 1 = Chain A, Chain 2 = Chain B, etc.)
-        subheader = ["Residue", "Absolute SASA", "Relative SASA", "Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", chainPlusFasta[keyVal]]
+        subheader = ["Residue", "Total SASA", "Total Relative SASA", "Total: Exposed or Buried?", "Sidechain SASA", "Sidechain Relative SASA", "Sidechain: Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", chainPlusFasta[keyVal]]
         writer.writerow("")
         writer.writerow(subheader)   # subheaders are labeled by chain number with each iteration
 

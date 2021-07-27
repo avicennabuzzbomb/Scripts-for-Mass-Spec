@@ -14,24 +14,30 @@ aa = ["arg", "his", "lys", "asp", "glu", "ser", "thr", "asn", "gln", "cys", "gly
 
 ## a header for the table of residue sidechain SASA values
 header = ["Table of residue sidechain SASA values"]
-subheader = ["Residue", "SASA value"]
+subheader = ["Residue", "Sidechain SASA", "Total SASA"]
 
-with open('MaxSASAs.csv', 'w') as file: # write output values into csv row by row, vals in separate columns
+with open('MaxSASAs.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
     writer = csv.writer(file, delimiter = ',')
     writer.writerow(header)
     writer.writerow(subheader)
     for residue in aa:
         ## do a calculation of the residue when completely free in solution (not in a tripeptide)
-        cmd.fragment(residue)  # Summon a disembodied lysine
+        cmd.fragment(residue)  # Create a free amino acid object
         cmd.select("Rgroup", "sidechain and " + residue)    # Select only the sidechain (non-backbone atoms)
-        maximumSASA = cmd.get_area("Rgroup", 1, 0)  # get solvent exposed area of the residue sidechain
-        maximumSASA_str = str(maximumSASA)  #typecast to a string type (easier to deal with if printing into a string)
+        sidechainSASA = cmd.get_area("Rgroup")  # get solvent exposed area of the residue sidechain
+        sidechainSASA = str(sidechainSASA)  #typecast to a string type (easier to deal with if printing into a string)
+        cmd.delete("Rgroup") # clear the selection
+        cmd.select(residue) # Now select the whole amino acid
+        maxSASA = cmd.get_area("sele")
+        maxSASA = str(maxSASA)
 
-        ## banish the free lysine (clear the session for loading only the protein of interest)
+        ## reset the pymol session for the next round of calculation
         cmd.reinitialize
 
-        current_row = [residue, maximumSASA]
+        current_row = [residue, sidechainSASA, maxSASA]
         writer.writerow(current_row)
 
 
 cmd.reinitialize
+
+print("\n______________________________________________________________\nDone! Values have been printed to the file named MaxSASAs.csv")
