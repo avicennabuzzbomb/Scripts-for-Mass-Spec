@@ -47,6 +47,13 @@ query = str(sys.argv[3].upper()) # query: assign PDB ID to the first argument in
                                  # NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpreted
                                  # by this script as initial arguments [0], [1], and [2]. Unclear why this is the case. TODO eventually fix that, but for now everything works!
 
+# FIXME FIXME FIXME Include a new method for calculating each chain in the context of the entire crystal unit (covers true oligomeric structures and also artifactual ones)
+# FIXME FIXME FIXME This is a memory-intensive process because to get "relative" SASA values it would need to calculate each chain's per-res SASA in the absence of the other chains,
+# FIXME FIXME FIXME ...AND to then re-do the calculation on each chain in the presence of the other chains. To minimize memory, the second step has to happen first; then, each chain would need to 
+# FIXME FIXME FIXME be calculated on its own. Those values are then used as the "reference" for calculating the relative SASA of each chain.
+
+# FIXME FIXME FIXME Also, using a "threshold" for relative SASA is sketchy. It may be better to use the actual value of water's SASA as the hard cutoff for solvent-accessibility.
+
 # for testing, until a list (whether in text file or directly in submit file) of PDB IDs is ready
 depth = "ALL"
 
@@ -221,8 +228,6 @@ def find_res(seq, chain, ch, start):    ### FIXME FIXME FIXME This will do bette
 ################################################################################################################################################
 ##~~~~~~~~~~~~~~~~ ___DRIVER CODE___~~~~~~~~~~~~~~~~##  (Writes to the csv file with each method call).
 
-## TODO Update this code to calculate SASAs for both the entire residue (and its relative SASA based on its total maximum SASA), as well as with sidechain SASAs.
-
 ## "Stopwatch" starts now
 start_time = time.time()
 
@@ -286,7 +291,6 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
     for keyVal in chainPlusFasta:
         chain_count += 1                ## TODO create a dictionary to handle alphanumeric conversion here (ie, Chain 1 = Chain A, Chain 2 = Chain B, etc.)
         subheader = ["Residue", "Total SASA", "Total Relative SASA", "Total: Exposed or Buried?", "Sidechain SASA", "Sidechain Relative SASA", "Sidechain: Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", chainPlusFasta[keyVal]]
-        writer.writerow("")
         writer.writerow(subheader)   # subheaders are labeled by chain number with each iteration
 
         # For each unique chain, iterate the residue positions into a Set named stored_residues
