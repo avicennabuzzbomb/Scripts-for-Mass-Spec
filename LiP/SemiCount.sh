@@ -58,10 +58,10 @@ if [ $detectedFiles -gt 0 ]; then
 
     # TODO Once output files are done, generate a summary output file that shows a table comparing/describing all of the other new output files
     # Statement to user confirming outputs
-    printf "\n\n...done!\n\n\nYour output file(s) are located in an output folder named $out, shown here:\n______________________________________________________________________________________________\n"; ls; printf "\n\nAnd your output file(s) in $out/ are listed below:\n______________________________________________________________________________________________\n";ls $out
+    printf "\n\n...done!\n\n\nYour output file(s) are located in an output folder named $out, shown here:\n_____________________________________________________________________________________________________\n"; ls; printf "\n\nAnd your output file(s) in $out/ are listed below:\n_____________________________________________________________________________________________________\n";ls $out
 
 else
-
-echo "Warning - no input folders were found in $input. Make sure your input files are 1) .txt files and 2) copied into $input before starting."
+        
+printf "\n#########################################################\n#  WARNING - no input folders were found in $input/. #\n#  Before starting, your input files need to be         #\n#  1) .txt files and 2) copied into $input.          #\n#########################################################"
 
 fi
