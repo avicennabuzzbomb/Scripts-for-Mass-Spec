@@ -260,7 +260,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
 
     chaincontent = ""       # a string variable that preppends to the current fasta. "" indicates amino acids only. If other elements are present in the chain,
                             # they are detected in the if branch below and the chain is modified to indicate
-
+    # Using a loop, iterate through each chain, storing both its ID
     for chain in cmd.get_chains():
         fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
         fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
@@ -276,7 +276,7 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
                 chaincontent = "smallMolecule_"                             # fasta is collected in aa chain oriented fashion, so it should be possible to treat each chain uniquely
                 fasta = chaincontent + fasta                         # (ie., make another dictionary of nested lists for nucleic acids that can be called when a nucleic acid term is recognized)
         '''
-        chainID_list.append(chain)       # collects chain IDs
+        chainID_list.append(chain)       # collects chain IDs  TODO double-check, is this list necessary? (maybe not for calling `find_Allchain()`, but maybe necessary for `find_res()`)
 
         # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
         # it is added as the value and its associated chain ID (value of 'chain') is its key. NOTE that this is not always the correct way to 
@@ -293,7 +293,9 @@ with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # 
         subheader = ["Residue", "Total SASA", "Total Relative SASA", "Total: Exposed or Buried?", "Sidechain SASA", "Sidechain Relative SASA", "Sidechain: Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", chainPlusFasta[keyVal]]
         writer.writerow(subheader)   # subheaders are labeled by chain number with each iteration
 
-        # For each unique chain, iterate the residue positions into a Set named stored_residues
+        # FIXME Willing to bet that sets are not necessary here. It may be possible to pre-filter the iterator's resv parameter to only keep the minimum value, because
+        # FIXME that's really the only reason we would need to get the residue values.
+        # For each unique chain, iterate the residue positions into a Set named `stored_residues`
         cmd.iterate("chain " + str(keyVal), 'stored_residues.add(resv)')
 
         # The starting index of the fasta must be the minimum value in the set; this is defined as `start` point for calculating SASA.
