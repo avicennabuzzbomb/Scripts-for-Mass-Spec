@@ -42,120 +42,137 @@ import time               # methods for tracking efficiency of the code (CPU tim
 import os                 # methods for directory handling
 import sys                # methods for taking command line arguments. Script's name is sys.arg[0] by default when -c flag is used
 
-query = str(sys.argv[3].upper()) # query: assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
-#depth = str(sys.argv[4].upper()) # depth: assign query type ('ALL' or aa single letter code) to the second argument. 
-                                 # NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpreted
-                                 # by this script as initial arguments [0], [1], and [2]. Unclear why this is the case. TODO eventually fix that, but for now everything works!
+print("Number of arguments entered when running this instance of `SASAquatch.py`:", len(sys.argv)-1) # check number of arguments entered
+
+# NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpred by this script as initial arguments [0], [1], and [2].
+# QUERY: assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
+query = str(sys.argv[3].upper())
+
+# DEPTH: assign query type ('ALL' as default, unless a 4th argument is explicitly entered: an amino acid single letter code or 3-letter code).
+if len(sys.argv)-1 == 4:
+    depth = str(sys.argv[4].upper())
+
+else:
+    depth = "ALL"
 
 # FIXME FIXME FIXME Include a new method for calculating each chain in the context of the entire crystal unit (covers true oligomeric structures and also artifactual ones)
 # FIXME FIXME FIXME This is a memory-intensive process because to get "relative" SASA values it would need to calculate each chain's per-res SASA in the absence of the other chains,
 # FIXME FIXME FIXME ...AND to then re-do the calculation on each chain in the presence of the other chains. To minimize memory, the second step has to happen first; then, each chain would need to 
 # FIXME FIXME FIXME be calculated on its own. Those values are then used as the "reference" for calculating the relative SASA of each chain.
-
 # FIXME FIXME FIXME Also, using a "threshold" for relative SASA is sketchy. It may be better to use the actual value of water's SASA as the hard cutoff for solvent-accessibility.
-
-# for testing, until a list (whether in text file or directly in submit file) of PDB IDs is ready
-depth = "ALL"
-
-print("query: " + query)
-print("depth: " + depth)
 
 ## Dictionary of residue attributes needed for SASA calculations. 1 entry per amino acid; the single-letter AA code is the key,
 ## and indices [0] - [3] are, respectively, the 3-letter code for the amino acid, the total sidechain (R-group) SASA for the amino acid when free
 ## in solution, the total SASA for the whole amino acid in solution, and then the full amino acid's name.
-## Dict. Name = { key: ( [0], [1], [2], [3] ) } 
-AA_attributes = {'R' : ('arg', 249.4673309, 380.2754517, 'arginine'),
-                 'H' : ('his', 194.6491394, 323.2107239, 'histidine'),
-                 'K' : ('lys', 214.5114136, 344.1722412, 'lysine'),
-                 'D' : ('asp', 142.6577301, 272.8369141, 'aspartic acid'),  
-                 'E' : ('glu', 173.6901855, 303.7915955, 'glutamic acid'),
-                 'S' : ('ser', 110.3298187, 240.5674744, 'serine'),
-                 'T' : ('thr', 141.3123779, 268.1856995, 'threonine'),
-                 'N' : ('asn', 155.2926178, 283.9153137, 'aspargine'),
-                 'Q' : ('gln', 184.1813354, 313.8310242, 'glutamine'),   
-                 'C' : ('cys', 131.9754333, 261.8157043, 'cysteine'),   
-                 'G' : ('gly', 34.49541855, 200.8881836, 'glycine'),   
-                 'P' : ('pro', 153.1377106, 258.9144592, 'proline'),   
-                 'A' : ('ala', 91.39417267, 229.5201416, 'alanine'),   
-                 'V' : ('val', 157.4189758, 279.6635132, 'valine'),   
-                 'I' : ('ile', 183.812027, 306.1242676, 'isoleucine'),    
-                 'L' : ('leu', 181.1264496, 308.8426819, 'leucine'),   
-                 'M' : ('met', 192.694458, 323.5989075, 'methionine'),    
-                 'F' : ('phe', 218.0111237, 342.800415, 'phenylalanine'),   
-                 'Y' : ('tyr', 231.1389923, 357.9006042, 'tyrosine'),   
-                 'W' : ('trp', 262.1514587, 387.6826172, 'tryptophan')}   
-'''
-nucleic_attributes = {' GUA ' : ('guanine', 0),      # TODO
-                      ' CYT ' : ('cytosine', 0),
-                      ' ADE ' : ('adenine', 0),
-                      ' THY ' : ('thymine', 0)}     # TODO: complete this dictionary containing nucleic acid names and attributes; 0 is currently a placeholder for the actual SASA value
-                                                     # of the nitrogenous base 'sidechain'; need to confirm exactly how this string appears
-                                                    
-small_molecules = { ' AlF4 ' : ('aluminum tetrafluoride', 0),    # TODO
-                    ' PMSF ' : ('phenylmethylsulfonyl fluoride', 0)}   # TODO: make a dictionary of non-nucleic acid small molecule co-crystallants that are in-chain with fasta; 
-                                                                # or, make a way to count them as "not aa and not nucleic". Current entries are just examples that may exist.
-'''
 
+#NOTE this Dictionary is used by all query types
+## Dict. Name = { 3-letter code (key): ( [0, single-letter code], [1, maxSASA], [2, sideSASA], [3, full name] ) }
+AA_attributes = {'ARG' : ('R', 249.4673309, 380.2754517, 'arginine'),
+                 'HIS' : ('H', 194.6491394, 323.2107239, 'histidine'),
+                 'LYS' : ('K', 214.5114136, 344.1722412, 'lysine'),
+                 'ASP' : ('D', 142.6577301, 272.8369141, 'aspartic acid'),  
+                 'GLU' : ('E', 173.6901855, 303.7915955, 'glutamic acid'),
+                 'SER' : ('S', 110.3298187, 240.5674744, 'serine'),
+                 'THR' : ('T', 141.3123779, 268.1856995, 'threonine'),
+                 'ASN' : ('N', 155.2926178, 283.9153137, 'aspargine'),
+                 'GLN' : ('Q', 184.1813354, 313.8310242, 'glutamine'),   
+                 'CYS' : ('C', 131.9754333, 261.8157043, 'cysteine'),   
+                 'GLY' : ('G', 34.49541855, 200.8881836, 'glycine'),   
+                 'PRO' : ('P', 153.1377106, 258.9144592, 'proline'),   
+                 'ALA' : ('A', 91.39417267, 229.5201416, 'alanine'),   
+                 'VAL' : ('V', 157.4189758, 279.6635132, 'valine'),   
+                 'ILE' : ('I', 183.812027, 306.1242676, 'isoleucine'),    
+                 'LEU' : ('L', 181.1264496, 308.8426819, 'leucine'),   
+                 'MET' : ('M', 192.694458, 323.5989075, 'methionine'),    
+                 'PHE' : ('F', 218.0111237, 342.800415, 'phenylalanine'),   
+                 'TYR' : ('Y', 231.1389923, 357.9006042, 'tyrosine'),   
+                 'TRP' : ('W', 262.1514587, 387.6826172, 'tryptophan')}
+
+# NOTE this Dictionary is used only by non-default queries
+AA_letterCode = {'R' : ('ARG'), 'H' : ('HIS'), 'K' : ('LYS'), 'D' : ('ASP'), 'E' : ('GLU'), 'S' : ('SER'), 'T' : ('THR'), 'N' : ('ASN'), 'Q' : ('GLN'), 'C' : ('CYS'),   
+                 'G' : ('GLY'), 'P' : ('PRO'), 'A' : ('ALA'), 'V' : ('VAL'), 'I' : ('ILE'), 'L' : ('LEU'), 'M' : ('MET'), 'F' : ('PHE'), 'Y' : ('TYR'), 'W' : ('TRP'),
+                 'ARG' : ('ARG'), 'HIS' : ('HIS'), 'LYS' : ('LYS'), 'ASP' : ('ASP'), 'GLU' : ('GLU'), 'SER' : ('SER'), 'THR' : ('THR'), 'ASN' : ('ASN'), 'GLN' : ('GLN'), 'CYS' : ('CYS'),   
+                 'GLY' : ('GLY'), 'PRO' : ('PRO'), 'ALA' : ('ALA'), 'VAL' : ('VAL'), 'ILE' : ('ILE'), 'LEU' : ('LEU'), 'MET' : ('MET'), 'PHE' : ('PHE'), 'TYR' : ('TYR'), 'TRP' : ('TRP'),} 
+                 
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
 threshold = 0.25
 
-# Initialize empty data stuctures for handling pymol's iterator stream and generally crappy API
-stored_residues = set()
+## Initialize empty variables and data stuctures for handling pymol's iterator stream
+stored_residues = set() # for capturing iterate's `resi` list
 atmNum = 0
+resname = set()         # for capturing iterate's `resn` list, called by the current `resi`, and clear duplicates; and a string variable to capture the `resn`
 
 #############################################################################################################################################################
 ## Helper Method: evaluate if electron density exists at the current residue position is actually present in the structure model, and annotate accordingly ##
 #############################################################################################################################################################
-def occupancy(count):
+def occupancy(position):
+
     ##TODO implement an if branch to check for a valid selection; if invalid, print to error file and skip SASA calculation.
     ##TODO Each bad query will have its own file or entry in a file. Currently, invalid selections are treated as real objects, and default to 0
     ##TODO when calculations are performed. This leads to falsely labeling residues as buried and their SASA as 0, when that may not reflect reality.
+    ##FIXME FIXME FIXME escalate this implementation - it may be required for detecting faulty index values
 
-    atmNum = cmd.count_atoms("resi " + count)
+    atmNum = cmd.count_atoms("resi " + position)
     if atmNum == 1:   # By default, pymol reports occupancy as '1' when it can't find electron density
         return False
+
     else:
         return True
-###########################################################################################################################################################
-## Method for getting each amino acid position and using it to make a separate residue selection, and calculate and write SASA to output. (ALL RESIDUES) ##
-###########################################################################################################################################################
-def find_Allchain(seq, chain, start):
+
+#######################################################################################################################
+## Helper Method: call the current value of `resn` so that SASA calculations can reference the amino acid Dictionary ##
+#######################################################################################################################
+def extractResCode(selexpression, stored_residues):
+
+    print("Gathering `resi` values with the selection expression ", selexpression)
+
+    # For each unique chain, iterate the residue positions into a Set named `stored_residues`
+    cmd.iterate(selexpression, 'stored_residues.add(resi)')
+    stored_residues = list(stored_residues)                 # re-casting the set to a list, then back to a set erases duplicates, because sets do not keep duplicate elements
+    stored_residues = list(set(stored_residues)) 
+    stored_residues.sort()                                  # sort() first to apply numerical character sorting
+    stored_residues.sort(key=len)                           # sort(key=len) uses the string element's length as the key to sort against, so now both sort rules apply
+
+    return stored_residues
+
+##################################################################################################################################################################
+#|  SASA METHOD: Uses a List `stored_residues` populated with `resi` values for all selection-expressions; `resi` retrieves the PSE residue position as shown.  |#
+##################################################################################################################################################################
+def find_Allchain_resi(seq, chain, resi, writer):   # seq is a string type, chain is a character type, resi is a List-type
     pattern = ""
-    print("Start of chain is position " + str(start) + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
-    '''
-    if "nucleic_" in seq:
-        pattern = "nucleic_"
-        seq = [re.sub(pattern,'',i) for i in seq]  # trim off the annotation; then check for all instances of nucleic acids and treat them as units
-        # TODO implement code to "enumerate" with substrings (nucleic acid codes)
-    '''
-    for count, ltr in enumerate(seq, start): 
-        ## Typecasting the variable `count` (index, or aa position) to a string type allows the script to use `count` in a PyMOL selection-expression.
-        count = str(count)
-        residue = "" + ltr + count
-            
-        # Method call: Confirm that this selection is actually present in the structure model
-        presence = occupancy(count)
+    print("Start of chain is position " + resi[0] + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
+
+    currRes = ""
+    currposition = ""
+    residue = ""
+
+    for i in range(len(resi)):
+        # store the current iteration of `resi` and use it to fetch its corresponding residue code
+        currposition = resi[i]        
+        cmd.iterate("resi " + currposition, 'resname.add(resn)')
+        
+        # pop the current `resn` from the set into `currRes`; this also empties the set, making it ready for the next pass in this loop.
+        currRes = resname.pop()
+        residue = "" + AA_attributes[currRes][0] + currposition
+        
+        # Method call to `occupancy()`: Confirm that this selection is actually present in the structure model
+        presence = occupancy(currposition)
 
         ## Calculations are performed if the density of the current residue can be explicity selected within the Pymol session.
-        if presence == True:
-            # Calculate the total SASA of the current selected residue (sidechain and backbone), and then use this to calculate relative SASA based on the dictionary values.
-            # Chain identifier must be specified each time to avoid multiple selections occurring in identical chains.            
+        if presence == True:           
             
             # first, select the whole amino acid (current residue) and record its SASA
-            cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and chain " + keyVal)
-            tot_sasa = cmd.get_area("sele")
+            tot_sasa = cmd.get_area("resi " + currposition + " and chain " + chain)
 
             # next, clear the current selector, re-select the current residue, and record the SASA of its sidechain
-            cmd.delete("sele")
-            cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and sidechain and chain " + keyVal)
-            side_sasa = cmd.get_area("sele")
+            side_sasa = cmd.get_area("resi " + currposition + " and chain " + chain + " and sidechain")
 
             # now, calculate the relative SASA of the sidechain and the whole residue separately, and assess "burial" status based on the current threshold.
             # Burial status defaults to "exposed" UNLESS the value falls below the threshold. Relative SASA values are calculated using the maximum SASA
             # values stored in the Dictionary named `AA_attributes`.
-            totrel_sasa = tot_sasa / AA_attributes[ltr][2]
+            totrel_sasa = tot_sasa / AA_attributes[currRes][2]    # relative SASA of the whole residue; divide calculated SASA by max SASA of naked residue
             totburial = "Exposed"
-            siderel_sasa = side_sasa / AA_attributes[ltr][1]
+            siderel_sasa = side_sasa / AA_attributes[currRes][1]  # relative SASA of the sidechain only; divide calculared SASA by max SASA of the sidechain of the nake residue
             sideburial = "Exposed"
 
             if totrel_sasa <= threshold:
@@ -163,11 +180,13 @@ def find_Allchain(seq, chain, start):
 
             if siderel_sasa <= threshold:
                 sideburial = "Buried"
+
             # before printing, typecast all float values to string types
             tot_sasa = str(tot_sasa)
             totrel_sasa = str(totrel_sasa)
             side_sasa = str(side_sasa)
             siderel_sasa = str(siderel_sasa)
+
         ## When a residue's density cannot be selected in the Pymol session, all values default to "Not present..." and "N/A"    
         else:
             side_sasa = tot_sasa = "Not present in structure model"
@@ -177,147 +196,102 @@ def find_Allchain(seq, chain, start):
         ## Each SASA printed to console and then to output
         print(residue + " | " + tot_sasa + " | " + totrel_sasa + " | " + totburial + " | " + side_sasa + " | " + siderel_sasa + " | " + sideburial)
         current_row = [residue, tot_sasa, totrel_sasa, totburial, side_sasa, siderel_sasa, sideburial]
-        writer.writerow(current_row)            
-                    
-        # at the end of each calculation, clear the current selection from the pymol session (saves memory, allows calculations to be per-residue only)
-        cmd.delete("sele")
-    return
+        writer.writerow(current_row)
 
-##################################################################################################################################################################
-## Method for getting each lysine position and using it to make a separate residue selection, and calculate and write SASA to output. (ONLY SPECIFIED RESIDUES) ##
-##################################################################################################################################################################
-def find_res(seq, chain, ch, start):    ### FIXME FIXME FIXME This will do better as a subsidiary or helper method to find_Allchain(). Ie,. in this method create a mini Dictionary containing only the desired residue positions, and then cycle through those using find_Allchain()
-    for count, ltr in enumerate(seq, start):    
-        if ltr == ch:
-            ## Typecasting count (index or aa position) to a string allows the script to use count in a PyMOL selection-expression.
-            count = str(count)
-            residue = "" + ltr + count
-            
-            # Method call: Qualify this selection as valid; then check if electron density is actually present in the structure model
-            presence = occupancy(count)
+    return    # DONE
 
-            # Calculations are not performed if the electron density is missing from the model; instead, their values are
-            # defaulted to "Not present in structure model", "N/A", and "N/A"
-            if presence == True:
-                # using the reference residue side chain, calculate relative SASA by accessing from the dictionary of max SASA values.
-                # Chain must be specified every time, otherwise the value will be multiplied by the number of identical chains.
-                cmd.select("sele, resn " + AA_attributes[ltr][0] + " and resi " + count + " and chain " + keyVal)
-                sasa = cmd.get_area("sele")                
-                rel_sasa = sasa / AA_attributes[ltr][2]
-                burial = "Exposed"  # intialized arbitrarily to "Exposed"; if threshold minimum is met, does not update.
-        
-                if rel_sasa <= threshold:
-                    burial = "Buried"
-        
-                sasa = str(sasa)
-                rel_sasa = str(rel_sasa)
-        
-            else:
-                sasa = "Not present in structure model"
-                rel_sasa = "N/A"
-                burial = "N/A"
-            ## Each SASA printed to console and then to output
-            print(residue + " | " + sasa + " | " + rel_sasa + " | " + burial)
-            current_row = [residue, sasa, rel_sasa, burial]
-            writer.writerow(current_row)
-            
-            # at the end of each calculation, clear the current selection
-            cmd.delete("sele")
-    return
+####################################################################################################################################################################
+#|  WRITER METHOD: Uses a List `stored_residues` populated with `resi` values for all selection-expressions; `resi` retrieves the PSE residue position as shown.  |#
+####################################################################################################################################################################
+def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
+
+    ## Job description
+    print("Query: ", query,"\nResidue(s) requested:", depth)
+
+    ## "Stopwatch" starts now
+    start_time = time.time()
+
+    with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
+        # create a .csv file writer object                                                                         
+        writer = csv.writer(file, delimiter = ',')
     
-################################################################################################################################################
-##~~~~~~~~~~~~~~~~ ___DRIVER CODE___~~~~~~~~~~~~~~~~##  (Writes to the csv file with each method call).
+        # Begin writing into the csv output file with a master header describing the job
+        writer.writerow(header)
 
-## "Stopwatch" starts now
-start_time = time.time()
+        # start with a fresh pymol session
+        cmd.reinitialize()
 
-header = ["SOLVENT ACCESSIBLE SURFACE AREAS OF TARGET PROTEOME"]
+        # SASA settings
+        cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
+        cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
-with open('SASA_' + query + '_' + depth + '.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
-    # create a .csv file writer object                                                                         
-    writer = csv.writer(file, delimiter = ',')
+        # Import structure, then remove unwanted (non-amino acid, or "het") objects. `async=0` argument ensures the structure is fully loaded before other commands are executed.
+        cmd.fetch(query)
+        cmd.remove("het")
     
-    # Begin writing into the csv output file with a master header describing the job
-    writer.writerow(header)
+        # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
+        # leaving only the AA single-letter characters in the string.
+        chainID_list = []     # List for recording chain ID's
+        chainPlusFasta = {}   # Dictionary for matching the current retrieved chain ID with its associated fasta
 
-    # start with a fresh pymol session
-    cmd.reinitialize
+        # Build a list of all chains in the structure file
+        for chain in cmd.get_chains():
+            fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
+            fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
+            fasta = re.sub("\n", "", fasta)  # removes remaining /n
+            chainID_list.append(chain)       # collects chain IDs
 
-    # SASA settings
-    cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
-    cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
+            # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
+            # it is added as the value and its associated chain ID (value of 'chain') is its key. NOTE that this is not always the correct way to 
+            # look at surface area - a biological unit may actually be multimeric vs. just being a crystallization artifact. TODO need to implement more code
+            # to deal with this? Should keep all the chains by default, leave user to specify a single chain.
+            if fasta not in chainPlusFasta.values():
+                chainPlusFasta.update({chain:fasta})
 
-    # Import structure, then remove unwanted (non-amino acid, or "het") objects
-    cmd.fetch(query)
-    cmd.remove("het")
-    
-    # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
-    # leaving only the AA single-letter characters in the string.
-    chainID_list = []     # List for recording chain ID's
-    chainPlusFasta = {}   # Dictionary for matching the current retrieved chain ID with its associated fasta
+        # Begin writing into the csv output file. For a multichain protein containing unique chains, this writes each chain to the same file separated by subheaders.
+        for keyVal in chainPlusFasta:
 
-    # pattern = "a generic substring containing whitespace flanking ASCII characters - nucleic acids and small molecules are indicated this way in .cif files"
+            # Write the subheader. Subheaders are labeled by chain number and updated with each iteration
+            subheader = ["Residue", "Total SASA", "Total Relative SASA", "Total: Exposed or Buried?", "Sidechain SASA", "Sidechain Relative SASA", "Sidechain: Exposed or Buried?", "PDB ID: " + query, "Chain " + str(keyVal) + " FASTA:", chainPlusFasta[keyVal]]
+            writer.writerow(subheader)
 
-    chaincontent = ""       # a string variable that preppends to the current fasta. "" indicates amino acids only. If other elements are present in the chain,
-                            # they are detected in the if branch below and the chain is modified to indicate
-    # Using a loop, iterate through each chain, storing both its ID
-    for chain in cmd.get_chains():
-        fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
-        fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
-        fasta = re.sub("\n", "", fasta)  # removes remaining /n
-        '''    
-        if pattern in fasta:             # TODO make sure this checks fasta type (amino acid vs. nucleic acid) appropriately and annotates the string
-            string = "this is pseudocode: check nucleic acids dictionary, then small molecules dictionary (impl. later) for a match"                             # checks that the fasta chain A has logical values (avoid selector errors)
-            # fasta is annotated with a notation that is detectable in method calls
-            if pattern in nucleic_attributes:
-                chaincontent = "nucleic_"
-                fasta = chaincontent + fasta                             # NOTE additional fasta processing is required here; currently this is blind to terms like "?" and " UNK " and nucleic acids.
-            if pattern in small_molecules:   # or, not a nucleic or amino acid
-                chaincontent = "smallMolecule_"                             # fasta is collected in aa chain oriented fashion, so it should be possible to treat each chain uniquely
-                fasta = chaincontent + fasta                         # (ie., make another dictionary of nested lists for nucleic acids that can be called when a nucleic acid term is recognized)
-        '''
-        chainID_list.append(chain)       # collects chain IDs  TODO double-check, is this list necessary? (maybe not for calling `find_Allchain()`, but maybe necessary for `find_res()`)
+            # update the selection-expression string for iterating `resi`
+            selexpression = "" + "chain " + str(keyVal) + requested
 
-        # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
-        # it is added as the value and its associated chain ID (value of 'chain') is its key. NOTE that this is not always the correct way to 
-        # look at surface area - a biological unit may actually be multimeric vs. just being a crystallization artifact. TODO implements more code
-        # to deal with this?
-        if fasta not in chainPlusFasta.values():
-            chainPlusFasta.update({chain:fasta})
+            # Method call to `extractResCode()`: generate the list of `resi` based on `selexpression`'s value
+            stored_residues = extractResCode(selexpression, stored_residues)
 
-    # Begin writing into the csv output file. For a multichain protein containing unique chains, this writes each chain to the same file separated by subheaders.
-    chain_count = 0
+            # Method call to `find_Allchain_resi()`: get and print the SASA values for each requested residue.
+            find_Allchain_resi(chainPlusFasta[keyVal], keyVal, stored_residues, writer)  # the sorted list of indices `stored_residues[]` is passed to the counting method
 
-    for keyVal in chainPlusFasta:
-        chain_count += 1                ## TODO create a dictionary to handle alphanumeric conversion here (ie, Chain 1 = Chain A, Chain 2 = Chain B, etc.)
-        subheader = ["Residue", "Total SASA", "Total Relative SASA", "Total: Exposed or Buried?", "Sidechain SASA", "Sidechain Relative SASA", "Sidechain: Exposed or Buried?", "PDB ID: " + query, "Chain " + str(chain_count) + " FASTA:", chainPlusFasta[keyVal]]
-        writer.writerow(subheader)   # subheaders are labeled by chain number with each iteration
-
-        # FIXME Willing to bet that sets are not necessary here. It may be possible to pre-filter the iterator's resv parameter to only keep the minimum value, because
-        # FIXME that's really the only reason we would need to get the residue values.
-        # For each unique chain, iterate the residue positions into a Set named `stored_residues`
-        cmd.iterate("chain " + str(keyVal), 'stored_residues.add(resv)')
-
-        # The starting index of the fasta must be the minimum value in the set; this is defined as `start` point for calculating SASA.
-        # (This line of code explicitly accounts for negative resi values).
-        start = min(stored_residues)
-        
-        # Run the job with the query (requested PDB ID) based on its type. If a single amino acid is requested the value of depth will be the character representing that amino acid.
-        # In that case the input is compared to an amino acid dictionary to ensure it's a real amino acid (user control); otherwise the job is skipped and the user is given an error message.
-        if len(depth) == 1:
-            if depth in AA_attributes.keys():
-                find_res(chainPlusFasta[keyVal], keyVal, depth, start)
-            else:
-                print("\n\n####################################################################################\n# ATTN user! Check your batch file: '" + depth + "' is not a valid single-letter residue code. #\n####################################################################################\n\n")
-                                                                                                                        
-        elif depth == "ALL":
-            find_Allchain(chainPlusFasta[keyVal], keyVal, start)
-        
-        # clear container objects for the next chain (if applicable) in this protein
-        stored_residues.clear()
+            # clear container objects for the next chain (if applicable) in this protein
+            stored_residues.clear()
 
     ## "Stopwatch" stops now; print runtime
     stop_time = time.time()
     print("\nTime (seconds) taken for SASA calculations: " + str(stop_time - start_time) + "\n\nOutput file: " + "SASA_" + query + "_" + depth + ".csv was saved in the working directory: " + os.getcwd())
 
-    ## End
+    return    # DONE
+
+################################################################################################################################################
+##~~~~~~~~~~~~~~~~ ___DRIVER CODE (VROOM VROOM!)___~~~~~~~~~~~~~~~~##  (Writes to the csv file with each method call).
+
+header = ["SOLVENT ACCESSIBLE SURFACE AREAS OF TARGET PROTEOME"]
+requested = "" ## NOTE the `requested` variable stores the `selexpression` string's extension which affects which `resi` are iterated.
+selexpression = ""
+
+# check user's requested job parameters
+if depth == "ALL":
+    GO(query, header, requested, selexpression, stored_residues)    # NOTE: an empty string extends `selexpression` when set to default: 'ALL'
+
+elif depth in AA_letterCode.keys():
+    depth = AA_letterCode[depth]
+    requested = " and resn " + depth                                # NOTE: if `sys.argv[4]` is found to be valid, the request is run with the appropriate 3-letter code.
+    GO(query, header, requested, selexpression, stored_residues, depth)
+
+else:
+    err1 = "#   ATTN user! Check your batch file: `" + depth + "` is not a valid single-letter residue code.   #"
+    err2 = "#" * len(err1)
+    print("\n\n",err2,"\n\n",err1,"\n\n",err2,"\n\n")
+
+## End
