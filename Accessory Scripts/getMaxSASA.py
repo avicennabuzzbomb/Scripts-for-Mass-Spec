@@ -13,8 +13,8 @@ cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation
 aa = ["arg", "his", "lys", "asp", "glu", "ser", "thr", "asn", "gln", "cys", "gly", "pro", "ala", "val", "ile", "leu", "met", "phe", "tyr", "trp"]
 
 ## a header for the table of residue sidechain SASA values
-header = ["Table of residue sidechain SASA values"]
-subheader = ["Residue", "Sidechain SASA", "Total SASA"]
+header = ["Table of Amino Acid and SASA values"]
+subheader = ["Residue", "Sidechain SASA", "Total SASA", "Number of Atoms"]
 
 with open('MaxSASAs.csv', 'w', newline = '') as file: # write output values into csv row by row, vals in separate columns
     writer = csv.writer(file, delimiter = ',')
@@ -30,11 +30,12 @@ with open('MaxSASAs.csv', 'w', newline = '') as file: # write output values into
         cmd.select(residue) # Now select the whole amino acid
         maxSASA = cmd.get_area("sele")
         maxSASA = str(maxSASA)
+        atmNum = str(cmd.count_atoms("sele"))
 
         ## reset the pymol session for the next round of calculation
         cmd.reinitialize
 
-        current_row = [residue, sidechainSASA, maxSASA]
+        current_row = [residue, sidechainSASA, maxSASA, atmNum]
         writer.writerow(current_row)
 
 

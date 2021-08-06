@@ -105,23 +105,23 @@ resname = set()         # for capturing iterate's `resn` list, called by the cur
 #############################################################################################################################################################
 ## Helper Method: evaluate if electron density exists at the current residue position is actually present in the structure model, and annotate accordingly ##
 #############################################################################################################################################################
-def occupancy(position):
+def occupancy(position, chain):
 
     ##TODO implement an if branch to check for a valid selection; if invalid, print to error file and skip SASA calculation.
     ##TODO Each bad query will have its own file or entry in a file. Currently, invalid selections are treated as real objects, and default to 0
     ##TODO when calculations are performed. This leads to falsely labeling residues as buried and their SASA as 0, when that may not reflect reality.
     ##FIXME FIXME FIXME escalate this implementation - it may be required for detecting faulty index values
 
-    atmNum = cmd.count_atoms("resi " + position)
+    atmNum = cmd.count_atoms("resi " + position + " and chain " + chain)
     if atmNum == 1:   # By default, pymol reports occupancy as '1' when it can't find electron density
         return False
 
     else:
         return True
 
-#######################################################################################################################
-## Helper Method: call the current value of `resn` so that SASA calculations can reference the amino acid Dictionary ##
-#######################################################################################################################
+#################################################################################################
+## Helper Method: get and sort all values of `resi` so that SASA calculations can be performed ##
+#################################################################################################
 def extractResCode(selexpression, stored_residues):
 
     print("Gathering `resi` values with the selection expression ", selexpression)
@@ -135,6 +135,20 @@ def extractResCode(selexpression, stored_residues):
 
     return stored_residues
 
+#######################################################################################################################
+## Helper Method: call the current value of `resn` so that SASA calculations can reference the amino acid Dictionary ##
+#######################################################################################################################
+def getRESN(resi, chain):    # `resi` is the current position (from `currposition`)
+
+    # use the current `resi` to get the corresponding three-letter code, `resn`      
+    cmd.iterate("resi " + resi + " and chain " + chain, 'resname.add(resn)')
+    print("`resname` contents:",resname)
+
+    # pop the current `resn` from the set into `currRes`; this also empties the set, making it ready for the next pass in this loop.
+    currRes = resname.pop()
+
+    return currRes
+
 ##################################################################################################################################################################
 #|  SASA METHOD: Uses a List `stored_residues` populated with `resi` values for all selection-expressions; `resi` retrieves the PSE residue position as shown.  |#
 ##################################################################################################################################################################
@@ -143,21 +157,19 @@ def find_Allchain_resi(seq, chain, resi, writer):   # seq is a string type, chai
     print("Start of chain is position " + resi[0] + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
 
     currRes = ""
-    currposition = ""
+    currposition = ""  
     residue = ""
 
     for i in range(len(resi)):
-        # store the current iteration of `resi` and use it to fetch its corresponding residue code
+        # store the current `resi` and get its corresponding residue code, then call `occupancy()`: Confirm that this selection is actually present in the structure model
         currposition = resi[i]        
-        cmd.iterate("resi " + currposition, 'resname.add(resn)')
-        
-        # pop the current `resn` from the set into `currRes`; this also empties the set, making it ready for the next pass in this loop.
-        currRes = resname.pop()
+        #cmd.iterate("resi " + currposition, 'resname.add(resn)') 
+        presence = occupancy(currposition, chain)
+
+        currRes = getRESN(currposition, chain)
+
         residue = "" + AA_attributes[currRes][0] + currposition
         
-        # Method call to `occupancy()`: Confirm that this selection is actually present in the structure model
-        presence = occupancy(currposition)
-
         ## Calculations are performed if the density of the current residue can be explicity selected within the Pymol session.
         if presence == True:           
             
