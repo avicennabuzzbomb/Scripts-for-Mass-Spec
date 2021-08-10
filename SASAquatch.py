@@ -124,16 +124,21 @@ def occupancy(position, chain):
 #################################################################################################
 def extractResCode(selexpression, stored_residues):
 
+    resPositions = []     # For storing the typecasted instance of the set `stored_residues` during each chain's calculations
+
     print("Gathering `resi` values with the selection expression ", selexpression)
 
     # For each unique chain, iterate the residue positions into a Set named `stored_residues`
     cmd.iterate(selexpression, 'stored_residues.add(resi)')
-    stored_residues = list(stored_residues)                 # re-casting the set to a list, then back to a set erases duplicates, because sets do not keep duplicate elements
-    stored_residues = list(set(stored_residues)) 
-    stored_residues.sort()                                  # sort() first to apply numerical character sorting
-    stored_residues.sort(key=len)                           # sort(key=len) uses the string element's length as the key to sort against, so now both sort rules apply
+    resPositions = list(stored_residues)                 # re-casting the set to a list, then back to a set erases duplicates, because sets do not keep duplicate elements
+    resPositions.sort()                                  # sort() first to apply numerical character sorting
+    resPositions.sort(key=len)                           # sort(key=len) uses the string element's length as the key to sort against, so now both sort rules apply
+    
+    # Resets `stored_residues` list object reset to being an empty set
+    stored_residues.clear()
+    print("\nContents of set `stored_residues` should be empty and are now:", stored_residues,"\nContents of `resPositions` are now:", resPositions)
 
-    return stored_residues
+    return resPositions
 
 #######################################################################################################################
 ## Helper Method: call the current value of `resn` so that SASA calculations can reference the amino acid Dictionary ##
@@ -153,7 +158,7 @@ def getRESN(resi, chain):    # `resi` is the current position (from `currpositio
 #|  SASA METHOD: Uses a List `stored_residues` populated with `resi` values for all selection-expressions; `resi` retrieves the PSE residue position as shown.  |#
 ##################################################################################################################################################################
 def find_Allchain_resi(seq, chain, resi, writer):   # seq is a string type, chain is a character type, resi is a List-type
-    pattern = ""
+
     print("Start of chain is position " + resi[0] + " and this sequence of length " + str(len(seq)) + " is:\n" + seq + "\n\n")
 
     currRes = ""
@@ -163,9 +168,9 @@ def find_Allchain_resi(seq, chain, resi, writer):   # seq is a string type, chai
     for i in range(len(resi)):
         # store the current `resi` and get its corresponding residue code, then call `occupancy()`: Confirm that this selection is actually present in the structure model
         currposition = resi[i]        
-        #cmd.iterate("resi " + currposition, 'resname.add(resn)') 
-        presence = occupancy(currposition, chain)
 
+        # Method calls to check for the presence of electron density in the current selection, and then to collect the `resn` attached to each position.
+        presence = occupancy(currposition, chain)
         currRes = getRESN(currposition, chain)
 
         residue = "" + AA_attributes[currRes][0] + currposition
@@ -251,7 +256,7 @@ def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
             fasta = cmd.get_fastastr("Chain " + str(chain)) # gets the associated fasta with each chain ID     
             fasta = fasta.split("\n",1)[1]   # removes the first line from the /n delimited fasta string
             fasta = re.sub("\n", "", fasta)  # removes remaining /n
-            chainID_list.append(chain)       # collects chain IDs
+            chainID_list.append(chain)       # Records chain IDs. TODO Important to have this in addition to `chainPlusFasta{}` for when all chains present are called. 
 
             # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
             # it is added as the value and its associated chain ID (value of 'chain') is its key. NOTE that this is not always the correct way to 
@@ -264,20 +269,20 @@ def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
         for keyVal in chainPlusFasta:
 
             # Write the subheader. Subheaders are labeled by chain number and updated with each iteration
+            writer.writerow("")
             subheader = ["Residue", "Total SASA", "Total Relative SASA", "Total: Exposed or Buried?", "Sidechain SASA", "Sidechain Relative SASA", "Sidechain: Exposed or Buried?", "PDB ID: " + query, "Chain " + str(keyVal) + " FASTA:", chainPlusFasta[keyVal]]
             writer.writerow(subheader)
 
             # update the selection-expression string for iterating `resi`
             selexpression = "" + "chain " + str(keyVal) + requested
+            print("Requesting next set of `resi` with selexpression =`" + selexpression + "`")  ## DEBUG
+            print("Set `stored_residues` should be empty for this iteration before method call; `stored_residues` contains:",stored_residues)  ## DEBUG
 
-            # Method call to `extractResCode()`: generate the list of `resi` based on `selexpression`'s value
-            stored_residues = extractResCode(selexpression, stored_residues)
+            # Method call to `extractResCode()`: generate the List of `resi` based on `selexpression`'s value
+            resPositions = extractResCode(selexpression, stored_residues)
 
             # Method call to `find_Allchain_resi()`: get and print the SASA values for each requested residue.
-            find_Allchain_resi(chainPlusFasta[keyVal], keyVal, stored_residues, writer)  # the sorted list of indices `stored_residues[]` is passed to the counting method
-
-            # clear container objects for the next chain (if applicable) in this protein
-            stored_residues.clear()
+            find_Allchain_resi(chainPlusFasta[keyVal], keyVal, resPositions, writer)  # the sorted list of indices `resPositions[]` is passed to the counting method
 
     ## "Stopwatch" stops now; print runtime
     stop_time = time.time()
