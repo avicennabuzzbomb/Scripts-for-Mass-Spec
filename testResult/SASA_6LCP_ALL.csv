@@ -1,0 +1,1967 @@
+SOLVENT ACCESSIBLE SURFACE AREAS OF TARGET PROTEOME
+
+Residue,Total SASA,Total Relative SASA,Total: Exposed or Buried?,Sidechain SASA,Sidechain Relative SASA,Sidechain: Exposed or Buried?,PDB ID: 6LCP,Chain A FASTA:,MAPPQEEGGGNGTELSMQRSRWATRRLTVKSGARKRLSLMTRAQAKNSATEKRQSGVTDDGSPAADGDQKEGSISSSNNGGSAPRKLYFNLPLPPELKDEEGHPIQQFPRNKIRTAKYTPLSFIPKNLWFQFHNIANIFFLFLVILVIFPIFGGVNPGLNSVPLIVIITVTAIKDAIEDYRRTILDIELNNAPVHRLQGWENVNVEKDNVSLWRRFKKANSRFFGSIWHLIERLWKEDAQSMRQRFASADPRMSIETRTAPWDPSHRRSVASHTEEIQMTPVPSPVPHDPDVPTVSSAIENEATLLQNLKGDLINHEIPVSGKARFHKDAWKNLVVGDFVRIYNDDELPADIIILATSDPDGACYVETKNLDGETNLKVRQALRCGRTLKHARDCERAQFVIESEPPQPNLYKYNGAIRWKQRVPWDPHGEPREMSEPIGIDNLLLRGCHLRNTEWALGVVVFTGHDTKIMMNAGITPSKRARIARELNFNVICNFGILLIMCLIAAIANGIAWGKTDASLAWFEYGSIGGTPALTGFITFWAAVIVFQNLVPISLYISLEIVRTLQAFFIYSDVGMYYEKIDQPCIPKSWNISDDVGQIEYIFSDKTGTLTQNVMEFKKATINGQPYGEAYTEAQAGMDRRRGINVEEEAKVIREEIAAAKVRAIRGLRELHDNPYLHDEDMTFIAPDFVEDLAGKNGPEQQQATEHFMLALALCHTVVAEKQPGDPPKMIFKAQSPDEAALVATARDMGFTVLGMSDGGINVNVMGKDMHFPVLSIIEFNSSRKRMSTIVRMPDGRILLFCKGADSVIYSRLKKGEQADMRRETAQHLEMFAVEGLRTLCIAERELSEEEYREWRREHDLAATALENREEKLEEVADKIERDLTLLGGTAIEDRLQDGVPDTIALLADAGIKLWVLTGDKVETAINIGFSCNLLNNDMDLLRLQVNESDASTEDDYLQLAEEQLKTNLERFNMTGDDEELKRARKDHNAPSPTYALVIDGFTLRWVLSDSLKQKFLLLCKQCKSVLCCRVSPAQKAAVVSMVKNGLDVMTLSIGDGANDVAMIQEADVGVGIAGEEGRQAVMSSDFAIGQFRFLQRLVLVHGRWSYRRLAETISNFFYKNMIWTWSIFWYQCYCNFDIAYIFEYTYILMFNLFFTSVPVILMGVLDQDVSDTVSLAVPQLYRRGIERKEWTQTKFWLYMIDGVYQSVMSFFIPFIFVVLTPTAAGNGLDVSERTRLGAYIAHPAVITINGYILINTYRWDWLMLLSIVLSDVFIFFWTGVYTATTYSAGFYQAAPQVYQELTFWMCLIVTPALCLLPRLVVKCIQKQRFPYDVDIIREQANRGDFAAADAAAVAALGGPERVEGESLGSLSSSGKGSGRSKKSKHQQYASVDEDRRPIYPPSIATHNTRAQNGSDGTTYIMQSRTSTELQQEMPFDRDREEETPAVRPSIERTRPSYDRIRRSIDRVRPSFEASNDFTSAARLSRIESTHSSLGHTYSHQRESYAGESSGAQQGQEPGQRRFNLATVRKRGLSAFSKKSIDTTEGEPPREPPM
+M1,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A2,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P3,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P4,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q5,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E6,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E7,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G8,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G9,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G10,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N11,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G12,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T13,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E14,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L15,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S16,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M17,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q18,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R19,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S20,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R21,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+W22,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A23,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T24,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R25,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R26,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L27,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T28,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V29,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K30,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S31,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G32,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A33,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R34,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K35,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R36,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L37,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S38,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L39,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M40,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T41,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R42,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A43,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q44,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A45,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K46,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N47,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S48,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A49,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T50,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E51,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K52,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R53,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q54,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S55,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G56,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V57,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T58,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D59,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D60,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G61,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S62,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P63,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A64,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A65,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D66,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G67,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D68,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q69,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K70,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E71,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G72,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S73,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I74,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S75,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S76,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S77,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N78,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N79,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G80,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G81,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S82,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A83,95.7321548461914,0.41709696664892354,Exposed,56.27738952636719,0.6157656213987498,Exposed
+P84,92.8078384399414,0.3584498089705042,Exposed,67.33450317382812,0.4396990323938415,Exposed
+R85,11.144920349121094,0.029307493553155626,Buried,9.009367942810059,0.03611441991344951,Buried
+K86,64.43697357177734,0.18722304084463554,Buried,55.08921813964844,0.256812526732836,Exposed
+L87,9.60412883758545,0.03109715528469334,Buried,7.006107807159424,0.0386807549236002,Buried
+Y88,89.34645080566406,0.24964040227139708,Buried,58.39577865600586,0.2526435634028065,Exposed
+F89,5.3122053146362305,0.01549649615983175,Buried,1.8909257650375366,0.008673528822499879,Buried
+N90,59.79896926879883,0.21062255673882246,Buried,36.5004768371582,0.23504321940252723,Buried
+L91,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P92,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L93,110.06788635253906,0.3563881963315481,Exposed,87.39143371582031,0.48248852615846954,Exposed
+P94,86.77678680419922,0.33515620206119107,Exposed,83.03024291992188,0.542193314727025,Exposed
+P95,25.592819213867188,0.09884662020400282,Buried,19.12173080444336,0.124866244437922,Buried
+E96,144.5116729736328,0.47569345272961244,Exposed,117.99168395996094,0.6793226895365422,Exposed
+L97,146.91403198242188,0.4756921260967132,Exposed,104.3414535522461,0.5760696672555221,Exposed
+K98,35.15053176879883,0.10213064146673206,Buried,28.3676815032959,0.13224322672262648,Buried
+D99,76.28055572509766,0.2795829735016698,Exposed,68.63941192626953,0.4811475121478154,Exposed
+E100,112.11387634277344,0.3690486438844666,Exposed,103.82682800292969,0.5977702637834403,Exposed
+E101,155.95603942871094,0.5133652205619063,Exposed,112.5583267211914,0.6480407997560196,Exposed
+G102,22.266578674316406,0.11084065909348192,Buried,0.0,0.0,Buried
+H103,105.60538482666016,0.32673849293235085,Exposed,94.13450622558594,0.48361121202874396,Exposed
+P104,47.84196090698242,0.18477902336858915,Buried,40.17826843261719,0.2623669132521117,Exposed
+I105,104.96800231933594,0.34289343717268866,Exposed,95.50066375732422,0.5195561210873553,Exposed
+Q106,57.32099151611328,0.18264921915299054,Buried,39.160701751708984,0.21262035953133276,Buried
+Q107,149.2799835205078,0.4756699370339302,Exposed,117.11573028564453,0.6358718706827474,Exposed
+F108,66.52375030517578,0.1940597134492261,Buried,39.74613571166992,0.18231242074768464,Buried
+P109,53.570682525634766,0.20690494726002837,Buried,37.99144744873047,0.24808681871942828,Buried
+R110,141.1437225341797,0.3711618036431345,Exposed,129.1420440673828,0.5176711660059005,Exposed
+N111,1.638122320175171,0.005769756829341365,Buried,1.0566977262496948,0.006804558653332811,Buried
+K112,87.05743408203125,0.25294728528510757,Exposed,80.66246795654297,0.3760287930737079,Exposed
+I113,12.40854263305664,0.04053433179387912,Buried,8.795976638793945,0.04785310723326034,Buried
+R114,85.13888549804688,0.2238874087649841,Buried,77.58383178710938,0.3109979631690098,Exposed
+T115,8.002232551574707,0.02983840140057396,Buried,6.732284069061279,0.04764114912725759,Buried
+A116,4.1784586906433105,0.018205193938601642,Buried,4.1784586906433105,0.04571909311691689,Buried
+K117,25.83124351501465,0.07505324492454928,Buried,22.29380226135254,0.10392828002580716,Buried
+Y118,20.226171493530273,0.05651337621723488,Buried,12.4378023147583,0.053810922125225084,Buried
+T119,45.66929626464844,0.17028982660072237,Buried,43.235172271728516,0.30595460153054654,Exposed
+P120,118.46755981445312,0.45755482401599734,Exposed,90.14208984375,0.5886341743687398,Exposed
+L121,169.91818237304688,0.5501771365528569,Exposed,133.2208709716797,0.7355130698243405,Exposed
+S122,38.15706253051758,0.15861272445780633,Buried,37.92519760131836,0.34374385862485207,Exposed
+F123,39.042484283447266,0.11389275676182384,Buried,39.042484283447266,0.17908482659431962,Buried
+I124,92.80905151367188,0.30317443383790027,Exposed,92.00006866455078,0.5005116921133282,Exposed
+P125,80.38188171386719,0.3104572914244844,Exposed,65.56908416748047,0.4281707223555716,Exposed
+K126,98.80831909179688,0.28708973956554196,Exposed,87.96835327148438,0.4100870522233339,Exposed
+N127,0.5935705900192261,0.002090660705418744,Buried,0.5935705900192261,0.0038222717758784933,Buried
+L128,68.61542510986328,0.2221695028929979,Buried,67.5462417602539,0.3729231258572293,Exposed
+W129,171.78562927246094,0.4431089289304894,Exposed,168.4917755126953,0.6427268280262113,Exposed
+F130,42.166622161865234,0.12300633347210281,Buried,40.05070877075195,0.18370947358569095,Buried
+Q131,14.503809928894043,0.04621534778426168,Buried,10.658099174499512,0.05786742262104107,Buried
+F132,46.66115188598633,0.13611754783315047,Buried,40.549415588378906,0.18599700281430595,Buried
+H133,89.6848373413086,0.27748100761983596,Exposed,73.0812759399414,0.37545131802386694,Exposed
+N134,20.41357421875,0.07190022247380451,Buried,19.75570297241211,0.12721598265447046,Buried
+I135,70.65702056884766,0.23081156264674935,Buried,69.34781646728516,0.3772757289014889,Exposed
+A136,1.6995748281478882,0.007404904930347465,Buried,0.0,0.0,Buried
+N137,15.468623161315918,0.054483229381775744,Buried,14.295823097229004,0.09205732571035971,Buried
+I138,85.43604278564453,0.27908941507793267,Exposed,81.37488555908203,0.44270707900458567,Exposed
+F139,17.92612075805664,0.052293171109657616,Buried,13.14171028137207,0.060279998829124284,Buried
+F140,5.144548416137695,0.015007415951167082,Buried,3.2829530239105225,0.015058649156031676,Buried
+L141,83.4955062866211,0.27034963487869224,Exposed,82.40187072753906,0.45494112488549027,Exposed
+F142,78.35716247558594,0.22857954380126974,Buried,75.36393737792969,0.3456884956092251,Exposed
+L143,3.547226905822754,0.011485546246393847,Buried,2.688844680786133,0.014845124423982154,Buried
+V144,24.25567054748535,0.08673162354983013,Buried,23.23678207397461,0.1476110612198165,Buried
+I145,101.29759979248047,0.33090352681494,Exposed,94.2379150390625,0.5126863381962623,Exposed
+L146,14.820196151733398,0.047986230596624664,Buried,12.996922492980957,0.07175607163770606,Buried
+V147,6.328849792480469,0.02263023059412982,Buried,1.0914667844772339,0.006933514710856313,Buried
+I148,94.26727294921875,0.3079379288949216,Exposed,85.27281188964844,0.4639131251713384,Exposed
+F149,126.51654052734375,0.3690676410859764,Exposed,124.84461212158203,0.5726524867298871,Exposed
+P150,133.8102264404297,0.5168124903254908,Exposed,89.14815521240234,0.5821437114549781,Exposed
+I151,78.0896224975586,0.2550912513724495,Exposed,54.11363983154297,0.29439662199874966,Exposed
+F152,38.01460266113281,0.1108942725787914,Buried,16.263689041137695,0.07460027160594693,Buried
+G153,47.5217170715332,0.23655805045336278,Buried,0.0,0.0,Buried
+G154,22.076366424560547,0.10989380275605493,Buried,0.0,0.0,Buried
+V155,87.04011535644531,0.3112315738313671,Exposed,80.4270248413086,0.5109106092996737,Exposed
+N156,52.32029724121094,0.18428134981297747,Buried,50.95840072631836,0.3281443860515459,Exposed
+P157,93.5266342163086,0.3612259991399839,Exposed,66.28489685058594,0.4328450294240323,Exposed
+G158,30.33199691772461,0.15098945280982973,Buried,0.0,0.0,Buried
+L159,82.47225189208984,0.2670364451724114,Exposed,63.602561950683594,0.3511500506477304,Exposed
+N160,33.43425369262695,0.11776136079773196,Buried,28.138444900512695,0.18119628156923695,Buried
+S161,37.283599853515625,0.15498188167999333,Buried,34.43700408935547,0.3121278045692598,Exposed
+V162,77.13510131835938,0.27581396098387917,Exposed,74.19609832763672,0.47132880868125127,Exposed
+P163,46.21171569824219,0.17848256076940713,Buried,38.83503341674805,0.2535954943076448,Exposed
+L164,18.17877769470215,0.05886096307306464,Buried,17.284488677978516,0.09542774518105784,Buried
+I165,106.93109893798828,0.3493061813632847,Exposed,106.71491241455078,0.5805654513268099,Exposed
+V166,74.89146423339844,0.26779133028998375,Exposed,72.69083404541016,0.4617666559955484,Exposed
+I167,27.4638671875,0.08971476649928946,Buried,27.415077209472656,0.14914735263472534,Buried
+I168,38.18070983886719,0.12472291118310277,Buried,38.00343322753906,0.2067516138513562,Buried
+T169,69.50920867919922,0.25918312873800053,Exposed,65.8682861328125,0.46611830549921346,Exposed
+V170,65.2311019897461,0.2332485251413415,Buried,55.49550247192383,0.35253375388765446,Exposed
+T171,14.107940673828125,0.05260511913994924,Buried,12.465250015258789,0.08821060264147454,Buried
+A172,17.38328742980957,0.0757375248578601,Buried,16.522518157958984,0.18078305952412735,Buried
+I173,94.86907958984375,0.3099038189086181,Exposed,94.52992248535156,0.5142749581089793,Exposed
+K174,24.963621139526367,0.07253234907175415,Buried,20.722414016723633,0.09660285049151171,Buried
+D175,15.203909873962402,0.055725266957058,Buried,13.775959968566895,0.096566515946316,Buried
+A176,32.714881896972656,0.14253599561639804,Buried,24.104633331298828,0.2637436570308945,Exposed
+I177,76.94065856933594,0.25133799150438846,Exposed,73.89849090576172,0.40203294698317926,Exposed
+E178,9.795092582702637,0.03224280305247166,Buried,6.308784484863281,0.03632205508159401,Buried
+D179,13.684974670410156,0.05015807599038578,Buried,13.684974670410156,0.09592872857865664,Buried
+Y180,136.26112365722656,0.38072336860622313,Exposed,135.24171447753906,0.5851099078168779,Exposed
+R181,146.36595153808594,0.3848945570474381,Exposed,143.85995483398438,0.5766685133279084,Exposed
+R182,12.58465576171875,0.0330935265620217,Buried,9.376646041870117,0.03758666919649204,Buried
+T183,46.01212692260742,0.17156815970572445,Buried,45.23356246948242,0.32009625159299243,Exposed
+I184,78.57923889160156,0.25669065542454095,Exposed,76.2254409790039,0.41469234751980566,Exposed
+L185,30.575958251953125,0.09900172496835556,Buried,26.954622268676758,0.14881659927748486,Buried
+D186,10.209183692932129,0.03741863056400889,Buried,10.209183692932129,0.07156418152578,Buried
+I187,50.32155227661133,0.16438276086744105,Buried,49.352508544921875,0.2684944470196277,Exposed
+E188,122.47028350830078,0.40313914315743726,Exposed,113.76325988769531,0.6549780550939379,Exposed
+L189,26.816650390625,0.08682948297705803,Buried,17.89483642578125,0.09879747803426965,Buried
+N190,0.16175556182861328,0.0005697317264102661,Buried,0.16175556182861328,0.0010416178445580514,Buried
+N191,78.76934814453125,0.2774395897072432,Exposed,58.617984771728516,0.3774679415039684,Exposed
+A192,26.77413558959961,0.11665266238925852,Buried,22.619342803955078,0.24749217748955937,Buried
+P193,84.23799133300781,0.32535066443677324,Exposed,62.18666458129883,0.4060832850226692,Exposed
+V194,9.050066947937012,0.032360556600263046,Buried,5.493955612182617,0.03490021189797766,Buried
+H195,33.55508041381836,0.1038179674514765,Buried,32.24716567993164,0.1656681646748223,Buried
+R196,25.202260971069336,0.0662736993892297,Buried,25.202260971069336,0.10102429396325151,Buried
+L197,2.772663116455078,0.008977590465792022,Buried,0.8581773042678833,0.0047380010272551785,Buried
+Q198,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G199,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+W200,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E201,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N202,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V203,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N204,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V205,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E206,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K207,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D208,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N209,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V210,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S211,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L212,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+W213,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R214,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R215,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F216,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K217,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K218,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A219,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N220,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S221,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R222,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F223,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F224,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G225,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S226,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I227,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+W228,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H229,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L230,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I231,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E232,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R233,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L234,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+W235,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K236,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E237,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D238,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A239,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q240,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S241,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M242,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R243,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q244,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R245,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F246,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A247,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S248,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A249,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D250,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P251,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R252,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M253,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S254,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I255,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E256,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T257,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R258,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T259,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A260,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P261,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+W262,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D263,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P264,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S265,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H266,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R267,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R268,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S269,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V270,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A271,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S272,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H273,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T274,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E275,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E276,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I277,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q278,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M279,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T280,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P281,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V282,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P283,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S284,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P285,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V286,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P287,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H288,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D289,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P290,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D291,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V292,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P293,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T294,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V295,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S296,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S297,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A298,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I299,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E300,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N301,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E302,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A303,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T304,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L305,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L306,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q307,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N308,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L309,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K310,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G311,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D312,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L313,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I314,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N315,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H316,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E317,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I318,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P319,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V320,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S321,55.774803161621094,0.23184681678489238,Buried,17.340333938598633,0.1571681540214353,Buried
+G322,68.9113998413086,0.34303361505085855,Exposed,0.0,0.0,Buried
+K323,72.056640625,0.2093621506887523,Buried,50.13945007324219,0.2337379127375355,Buried
+A324,63.922019958496094,0.27850287784283984,Exposed,48.806583404541016,0.5340229248616165,Exposed
+R325,95.32622528076172,0.2506767787786753,Exposed,95.32622528076172,0.3821190732143345,Exposed
+F326,2.7074148654937744,0.00789793345347547,Buried,0.0,0.0,Buried
+H327,103.82649230957031,0.32123467642643494,Exposed,101.35381317138672,0.5207000322930107,Exposed
+K328,128.56344604492188,0.3735439139329459,Exposed,96.244384765625,0.4486678967352859,Exposed
+D329,30.12327003479004,0.11040760424283819,Buried,16.008155822753906,0.11221372870248623,Buried
+A330,16.128496170043945,0.07027050461720326,Buried,14.147969245910645,0.15480165564816906,Buried
+W331,10.409319877624512,0.026850107319241735,Buried,10.409319877624512,0.039707274295721906,Buried
+K332,51.755680084228516,0.1503772643132863,Buried,51.372520446777344,0.23948618670040475,Buried
+N333,64.99629211425781,0.22892844794887093,Buried,58.41135025024414,0.37613732756744184,Exposed
+L334,2.3416104316711426,0.007581887377954228,Buried,0.4781471788883209,0.002639852875956339,Buried
+V335,73.1207504272461,0.26145974349880297,Exposed,70.27619171142578,0.4464277025961046,Exposed
+V336,23.4491024017334,0.08384755713543471,Buried,3.7032876014709473,0.023525039358507548,Buried
+G337,16.16021728515625,0.08044384192020865,Buried,0.0,0.0,Buried
+D338,9.836257934570312,0.03605178561345674,Buried,9.836257934570312,0.06895005218206757,Buried
+F339,0.6074782609939575,0.0017721048003805874,Buried,0.6074782609939575,0.0027864553454157418,Buried
+V340,0.17624600231647491,0.0006302073527569306,Buried,0.17624600231647491,0.001119598202318344,Buried
+R341,27.86510467529297,0.07327610696594689,Buried,23.219818115234375,0.09307759068678269,Buried
+I342,5.150094032287598,0.016823540559734434,Buried,4.343095302581787,0.023627916918525615,Buried
+Y343,80.27855682373047,0.22430405504112996,Buried,80.27855682373047,0.347317239834356,Exposed
+N344,49.32736587524414,0.1737397156652355,Buried,33.62986755371094,0.21655805684866844,Buried
+D345,78.06918334960938,0.28613863929349204,Exposed,62.06306076049805,0.4350487051559924,Exposed
+D346,59.95703887939453,0.21975413069442326,Buried,58.72052764892578,0.411618267077178,Exposed
+E347,35.8018684387207,0.1178500951607817,Buried,22.104782104492188,0.1272655794618412,Buried
+L348,0.13629797101020813,0.00044131844138803317,Buried,0.13629797101020813,0.0007525017539470841,Buried
+P349,2.3367843627929688,0.009025314267937063,Buried,2.0627598762512207,0.013469966791127023,Buried
+A350,0.37202292680740356,0.0016208726790337758,Buried,0.2872123122215271,0.0031425670130914604,Buried
+D351,1.2923431396484375,0.004736687276761856,Buried,0.9939296245574951,0.006967232857699136,Buried
+I352,0.5155097842216492,0.0016839886241728625,Buried,0.46671855449676514,0.0025391078163604884,Buried
+I353,6.528108596801758,0.021325028061257037,Buried,6.038834095001221,0.0328533132111166,Buried
+I354,1.9013367891311646,0.006210996612707501,Buried,0.5088364481925964,0.0027682434958001766,Buried
+L355,10.510509490966797,0.0340319201552912,Buried,10.510509490966797,0.058028573486524064,Buried
+A356,0.0,0.0,Buried,0.0,0.0,Buried
+T357,0.08282273262739182,0.00030882605889055546,Buried,0.0,0.0,Buried
+S358,36.580570220947266,0.15205950144417055,Buried,15.121246337890625,0.13705493687982126,Buried
+D359,53.0462532043457,0.1944247660890316,Buried,48.65187454223633,0.34103917473054146,Exposed
+P360,84.20893096923828,0.32523842519042395,Exposed,80.23004150390625,0.5239078029151772,Exposed
+D361,99.51644134521484,0.3647469832793232,Exposed,96.1771240234375,0.6741809501386248,Exposed
+G362,0.0,0.0,Buried,0.0,0.0,Buried
+A363,20.7563533782959,0.09043369019207637,Buried,19.473474502563477,0.21307129255250226,Buried
+C364,0.0,0.0,Buried,0.0,0.0,Buried
+Y365,47.06698226928711,0.1315085297899788,Buried,47.06698226928711,0.20363064578994924,Buried
+V366,0.6392391920089722,0.002285743981024165,Buried,0.6392391920089722,0.004060750546497789,Buried
+E367,16.061384201049805,0.052869745045497164,Buried,16.022300720214844,0.09224643680408093,Buried
+T368,9.341419219970703,0.034831906538591195,Buried,9.255508422851562,0.06549679908012901,Buried
+K369,42.49385070800781,0.12346681580085493,Buried,32.28665542602539,0.15051252930639114,Buried
+N370,1.3892210721969604,0.004893082567800077,Buried,0.6710547804832458,0.004321227821321754,Buried
+L371,7.0466837882995605,0.022816418200192947,Buried,4.924489498138428,0.02718813022070316,Buried
+D372,12.046630859375,0.044153229408538455,Buried,11.483438491821289,0.08049643355303386,Buried
+G373,1.7718883752822876,0.008820271772731026,Buried,0.0,0.0,Buried
+E374,21.667980194091797,0.071325146959478,Buried,21.628305435180664,0.12452232331331503,Buried
+T375,17.68668556213379,0.06594939847690794,Buried,11.507346153259277,0.08143197591227624,Buried
+N376,38.809478759765625,0.13669385512883528,Buried,38.809478759765625,0.24991193599265624,Buried
+L377,19.895885467529297,0.06442077676935656,Buried,19.326284408569336,0.10670050923677651,Buried
+K378,26.781835556030273,0.07781521096138382,Buried,22.74831771850586,0.10604712046196622,Buried
+V379,55.14543914794922,0.19718496173117953,Buried,48.22264862060547,0.30633313662180156,Exposed
+R380,17.837705612182617,0.046907328707230925,Buried,17.837705612182617,0.07150317257105274,Buried
+Q381,61.91452407836914,0.19728618047306853,Buried,61.91452407836914,0.3361606861189537,Exposed
+A382,0.48560258746147156,0.002115729731065448,Buried,0.0,0.0,Buried
+L383,18.726388931274414,0.060634070446706656,Buried,14.694071769714355,0.08112604096290063,Buried
+R384,116.72686004638672,0.30695344525807766,Exposed,100.16714477539062,0.4015240970191124,Exposed
+C385,55.19345474243164,0.21081032892965254,Buried,46.4619026184082,0.35204963118244376,Exposed
+G386,8.078047752380371,0.0402116620680141,Buried,0.0,0.0,Buried
+R387,63.9323844909668,0.168121250543943,Buried,63.333736419677734,0.2538758730098624,Exposed
+T388,95.38410949707031,0.3556644134079577,Exposed,78.22661590576172,0.5535722848080509,Exposed
+L389,30.280170440673828,0.0980439952612451,Buried,29.96672248840332,0.16544641908778032,Buried
+K390,78.7254638671875,0.22873856297271747,Buried,68.65180206298828,0.32003799196905897,Exposed
+H391,90.802978515625,0.28094048805051114,Exposed,83.80661010742188,0.4305521738536999,Exposed
+A392,14.553590774536133,0.06340877394498842,Buried,9.900671005249023,0.1083293465656471,Buried
+R393,124.06661987304688,0.32625461180419096,Exposed,114.3808364868164,0.4585002616341233,Exposed
+D394,34.56455612182617,0.1266857757713738,Buried,33.437828063964844,0.23439198170702452,Buried
+C395,0.4184976816177368,0.001598443770730436,Buried,0.28013932704925537,0.002122662680807091,Buried
+E396,84.15252685546875,0.27700742252913557,Exposed,58.807464599609375,0.33857678504010447,Exposed
+R397,180.8989715576172,0.4757050994191671,Exposed,150.2689666748047,0.6023592994428622,Exposed
+A398,8.351576805114746,0.03638711943490169,Buried,2.7129082679748535,0.029683602233267565,Buried
+Q399,91.09813690185547,0.29027766497616864,Exposed,84.04130554199219,0.4562965371028154,Exposed
+F400,14.3843412399292,0.04196127137106646,Buried,12.544942855834961,0.057542673249543735,Buried
+V401,18.633935928344727,0.06662984282479051,Buried,18.390777587890625,0.11682694220584952,Buried
+I402,7.70317268371582,0.025163547941195043,Buried,7.377140045166016,0.04013415316488521,Buried
+E403,69.07463836669922,0.2273750801203426,Buried,68.605224609375,0.39498618999042406,Exposed
+S404,6.84285831451416,0.02844465292567481,Buried,0.22091886401176453,0.0020023495607517437,Buried
+E405,73.18476104736328,0.24090449548780646,Buried,72.74937438964844,0.41884562550397203,Exposed
+P406,53.19474792480469,0.20545298276954896,Buried,42.80344772338867,0.2795095183001167,Exposed
+P407,35.840553283691406,0.13842623310583885,Buried,21.222482681274414,0.13858430165975338,Buried
+Q408,79.27819061279297,0.252614255760355,Exposed,75.61954498291016,0.4105711624833303,Exposed
+P409,53.48276138305664,0.2065653712361563,Buried,49.332618713378906,0.3221454631918659,Exposed
+N410,62.00995635986328,0.21841004471279168,Buried,57.775535583496094,0.3720430269126167,Exposed
+L411,20.181432723999023,0.06534534864107144,Buried,17.586223602294922,0.09709362515045357,Buried
+Y412,110.64251708984375,0.3091431413958025,Exposed,84.89874267578125,0.36730601717597455,Exposed
+K413,96.11212921142578,0.2792559006976237,Exposed,93.68768310546875,0.4367491758744755,Exposed
+Y414,15.556917190551758,0.04346714425175525,Buried,9.193330764770508,0.0397740367096448,Buried
+N415,68.11896514892578,0.23992705522360055,Buried,67.78248596191406,0.43648234489298476,Exposed
+G416,19.163148880004883,0.09539211583575134,Buried,0.0,0.0,Buried
+A417,8.546592712402344,0.03723678738093957,Buried,8.312885284423828,0.09095640391033946,Buried
+I418,6.23935604095459,0.02038177531585735,Buried,6.23935604095459,0.03394422085859806,Buried
+R419,72.11177062988281,0.1896303595394107,Buried,72.07154846191406,0.28890174998827495,Exposed
+W420,93.12449645996094,0.24020807827945334,Buried,90.44132995605469,0.3449964780075996,Exposed
+K421,98.95899200439453,0.28752752301975754,Exposed,93.06497955322266,0.43384628347450627,Exposed
+Q422,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R423,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V424,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P425,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+W426,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D427,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P428,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H429,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G430,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E431,181.6954345703125,0.5980923674707534,Exposed,104.7892837524414,0.6033114850490007,Exposed
+P432,63.10471725463867,0.24372805385076257,Buried,52.08200454711914,0.3400991456843625,Exposed
+R433,136.57875061035156,0.3591574212844504,Exposed,130.74501037597656,0.5240967220208333,Exposed
+E434,121.84490966796875,0.4010805811379622,Exposed,94.6323471069336,0.544834164547159,Exposed
+M435,50.261566162109375,0.1553205681391535,Buried,41.721500396728516,0.21651634836705327,Buried
+S436,77.60966491699219,0.3226107981162402,Exposed,47.92000961303711,0.43433416439609457,Exposed
+E437,36.93899154663086,0.1215931977506957,Buried,34.77875518798828,0.20023442941160471,Buried
+P438,105.71336364746094,0.40829455401639825,Exposed,83.53955078125,0.5455191308132956,Exposed
+I439,2.313612937927246,0.007557757364569179,Buried,0.855216920375824,0.004652671178996487,Buried
+G440,31.602523803710938,0.15731400044233831,Buried,0.0,0.0,Buried
+I441,21.936429977416992,0.07165857888169919,Buried,16.24775505065918,0.08839331852131296,Buried
+D442,84.18770599365234,0.30856420683161634,Exposed,83.30266571044922,0.5839337668702274,Exposed
+N443,16.83108901977539,0.059282075349975705,Buried,16.83108901977539,0.10838305940242442,Buried
+L444,4.4682769775390625,0.014467809144934972,Buried,3.7545671463012695,0.02072898328539461,Buried
+L445,0.940238356590271,0.0030443925392886926,Buried,0.7355333566665649,0.004060883202265148,Buried
+L446,7.169172763824463,0.023213024571991526,Buried,7.169172763824463,0.03958103733417664,Buried
+R447,2.4199790954589844,0.00636375312852987,Buried,2.2753043174743652,0.009120650424509612,Buried
+G448,0.0,0.0,Buried,0.0,0.0,Buried
+C449,1.9254440069198608,0.0073541960061861,Buried,1.9254440069198608,0.014589412277533784,Buried
+H450,18.139108657836914,0.05612161762135428,Buried,18.139108657836914,0.093188743159873,Buried
+L451,0.38478344678878784,0.0012458881797735996,Buried,0.38478344678878784,0.002124391261676825,Buried
+R452,59.344947814941406,0.15605779323814659,Buried,58.53694534301758,0.23464773977351908,Buried
+N453,55.91358184814453,0.19693753436359474,Buried,27.097381591796875,0.17449240006176828,Buried
+T454,0.27265477180480957,0.0010166640962331012,Buried,0.0,0.0,Buried
+E455,101.60074615478516,0.3344422546896468,Exposed,101.13530731201172,0.5822741625894096,Exposed
+W456,37.85467529296875,0.09764346817087251,Buried,37.85467529296875,0.14440001776335243,Buried
+A457,0.45830148458480835,0.0019967811164194943,Buried,0.09836620837450027,0.001076285341842028,Buried
+L458,0.0,0.0,Buried,0.0,0.0,Buried
+G459,0.23574484884738922,0.001173512770252303,Buried,0.0,0.0,Buried
+V460,7.378018856048584,0.026381771335226806,Buried,7.378018856048584,0.04686867525692912,Buried
+V461,1.0875897407531738,0.0038889225423389046,Buried,1.0875897407531738,0.006908885890192495,Buried
+V462,2.693537950515747,0.009631352762809199,Buried,2.693537950515747,0.01711063063920498,Buried
+F463,7.460031986236572,0.02176202728995113,Buried,7.460031986236572,0.03421858416959562,Buried
+T464,0.8561338782310486,0.0031923174122528057,Buried,0.8561338782310486,0.0060584493089267345,Buried
+G465,0.17338266968727112,0.0008630804788025925,Buried,0.0,0.0,Buried
+H466,72.86954498291016,0.2254552203702736,Buried,62.25190734863281,0.31981599066156885,Exposed
+D467,16.691970825195312,0.06117929782433099,Buried,16.204885482788086,0.11359276129957212,Buried
+T468,0.5168509483337402,0.001927212932297832,Buried,0.5168509483337402,0.0036575065540224005,Buried
+K469,8.883563041687012,0.02581138737602239,Buried,5.908801078796387,0.027545392478810212,Buried
+I470,3.2853169441223145,0.010731971594016529,Buried,1.4005136489868164,0.007619271012047631,Buried
+M471,22.668720245361328,0.07005190598599696,Buried,21.06769371032715,0.10933212054457295,Buried
+M472,73.49336242675781,0.22711251714209763,Buried,47.71253204345703,0.24760718361426373,Buried
+N473,28.918367385864258,0.10185560972037225,Buried,9.584145545959473,0.06171668480920845,Buried
+A474,32.69154357910156,0.14243431252354005,Buried,3.8025360107421875,0.0416058912691527,Buried
+G475,43.1756706237793,0.2149238937305982,Buried,0.0,0.0,Buried
+I476,63.20540237426758,0.20646975448825078,Buried,56.44467544555664,0.30707824926796895,Exposed
+T477,12.830060958862305,0.04784021289271729,Buried,7.254760265350342,0.051338462866177145,Buried
+P478,65.59294891357422,0.25333829990122936,Exposed,49.832496643066406,0.32540970116257184,Exposed
+S479,61.26064682006836,0.2546505797296941,Exposed,34.65085983276367,0.3140661358919071,Exposed
+K480,33.1977424621582,0.09645676928043379,Buried,23.191476821899414,0.10811302034093451,Buried
+R481,58.90068435668945,0.15488952571978354,Buried,42.48201370239258,0.17029088958915292,Buried
+A482,1.9469313621520996,0.00848261659556287,Buried,0.0,0.0,Buried
+R483,49.58094024658203,0.13038164842072564,Buried,49.42239761352539,0.1981117023829327,Buried
+I484,5.1002936363220215,0.01666086023270251,Buried,4.881125450134277,0.02655498407693571,Buried
+A485,7.302773952484131,0.031817573401515066,Buried,4.299595355987549,0.04704452406951854,Buried
+R486,123.65308380126953,0.3251671472572983,Exposed,112.97642517089844,0.4528706214289257,Exposed
+E487,65.06222534179688,0.21416729858741884,Buried,61.05147933959961,0.351496425453467,Exposed
+L488,4.184697151184082,0.013549607604233417,Buried,4.14022970199585,0.02285822811157145,Buried
+N489,37.99040222167969,0.13380892255013185,Buried,37.09288787841797,0.23885802431503586,Buried
+F490,94.43340301513672,0.2754763380760106,Exposed,91.33724212646484,0.41895679714101136,Exposed
+N491,3.8507468700408936,0.013563012223108885,Buried,3.8507468700408936,0.024796715546390215,Buried
+V492,5.882264137268066,0.021033362807901915,Buried,5.125309944152832,0.03255839976156694,Buried
+I493,92.07154083251953,0.30076524659203313,Exposed,86.27623748779297,0.4693721020104575,Exposed
+C494,41.40979766845703,0.1581639183148764,Buried,31.43832778930664,0.23821348415536245,Buried
+N495,1.7530428171157837,0.006174527165407294,Buried,1.7530428171157837,0.011288642318938252,Buried
+F496,72.42521667480469,0.21127517209920732,Buried,72.42521667480469,0.3322088132276559,Exposed
+G497,31.02271270751953,0.1544277625073789,Buried,0.0,0.0,Buried
+I498,58.5722541809082,0.19133489363686176,Buried,55.55716323852539,0.30224988073563536,Exposed
+L499,0.0,0.0,Buried,0.0,0.0,Buried
+L500,56.88432693481445,0.18418544543410292,Buried,56.750308990478516,0.31331872907466585,Exposed
+I501,94.03113555908203,0.3071665513364287,Exposed,92.3133773803711,0.5022161981836536,Exposed
+M502,5.78088903427124,0.017864365114617208,Buried,5.260038375854492,0.027297299727501723,Buried
+C503,0.0,0.0,Buried,0.0,0.0,Buried
+L504,86.1668930053711,0.2789993030602908,Exposed,85.41935729980469,0.47160068277407835,Exposed
+I505,87.7783203125,0.2867408095433856,Exposed,81.09153747558594,0.44116556897327475,Exposed
+A506,2.439699649810791,0.010629566681178761,Buried,2.439699649810791,0.0266942582720224,Buried
+A507,12.285133361816406,0.05352529532343408,Buried,8.437905311584473,0.09232432511919003,Buried
+I508,108.7900161743164,0.35537860826005424,Exposed,101.77079772949219,0.553667784369149,Exposed
+A509,29.320878982543945,0.12774860967820154,Buried,20.314620971679688,0.22227479475119677,Buried
+N510,0.5673481822013855,0.001998300742597054,Buried,0.5673481822013855,0.003653413731051068,Buried
+G511,12.809041023254395,0.06376204311130222,Buried,0.0,0.0,Buried
+I512,115.3421401977539,0.3767820862489306,Exposed,103.38368225097656,0.5624424252226791,Exposed
+A513,15.681164741516113,0.06832151911462621,Buried,13.246777534484863,0.14494116142738603,Buried
+W514,34.248741149902344,0.08834221507598289,Buried,16.512279510498047,0.06298755533301958,Buried
+G515,45.78707504272461,0.2279231870297254,Buried,0.0,0.0,Buried
+K516,98.58477020263672,0.2864402133620901,Exposed,89.33275604248047,0.41644756585800835,Exposed
+T517,129.48829650878906,0.4828307279254801,Exposed,101.66806030273438,0.7194561567329932,Exposed
+D518,56.6517333984375,0.20763954754917638,Buried,53.1575927734375,0.3726232902778922,Exposed
+A519,15.441299438476562,0.06727644611420265,Buried,11.618209838867188,0.12712199803829338,Buried
+S520,5.6914963722229,0.02365862794385682,Buried,0.9284905195236206,0.00841559000516712,Buried
+L521,7.355464935302734,0.023816218956693155,Buried,3.909391403198242,0.02158376875288921,Buried
+A522,48.28800964355469,0.2103868066084998,Buried,21.412349700927734,0.23428572167551667,Buried
+W523,142.00282287597656,0.3662862779393571,Exposed,128.41444396972656,0.4898482907801824,Exposed
+F524,26.643640518188477,0.07772347801325875,Buried,25.102468490600586,0.11514306272345765,Buried
+E525,4.144448757171631,0.013642407553607357,Buried,3.660353899002075,0.021074039897332454,Buried
+Y526,80.60811614990234,0.22522486747425935,Buried,64.20933532714844,0.2777953416176957,Exposed
+G527,29.409791946411133,0.14639881460111492,Buried,0.0,0.0,Buried
+S528,59.6596565246582,0.247995522559546,Buried,42.25016403198242,0.3829441988558477,Exposed
+I529,63.917205810546875,0.20879496523308913,Buried,36.76411819458008,0.20000931818558357,Buried
+G530,8.637277603149414,0.04299544875345976,Buried,0.0,0.0,Buried
+G531,81.9217529296875,0.4077977681992815,Exposed,0.0,0.0,Buried
+T532,67.71809387207031,0.2525044922168578,Exposed,59.72783279418945,0.4226652589234326,Exposed
+P533,63.2758674621582,0.2443890837833834,Buried,58.978179931640625,0.38513165503494623,Exposed
+A534,74.44589233398438,0.3243545068202606,Exposed,51.325828552246094,0.5615875394766139,Exposed
+L535,76.26290130615234,0.2469312234856368,Buried,72.23950958251953,0.3988346800925729,Exposed
+T536,4.562005043029785,0.01701062007234202,Buried,4.562005043029785,0.03228312417372311,Buried
+G537,7.6376729011535645,0.03801952292207178,Buried,0.0,0.0,Buried
+F538,114.65161895751953,0.3344558931106298,Exposed,108.90225219726562,0.4995261266903218,Exposed
+I539,8.159847259521484,0.026655342692999504,Buried,7.885926246643066,0.04290212330144788,Buried
+T540,0.5736231803894043,0.002138902937251523,Buried,0.5736231803894043,0.004059256442456371,Buried
+F541,29.18498992919922,0.08513697373790875,Buried,29.18498992919922,0.13386926975964766,Buried
+W542,65.75345611572266,0.16960640791846845,Buried,65.75345611572266,0.25082239268013906,Exposed
+A543,1.7434015274047852,0.007595854181909346,Buried,0.6971967816352844,0.007628459903594468,Buried
+A544,0.0,0.0,Buried,0.0,0.0,Buried
+V545,3.3514561653137207,0.011983887804902683,Buried,3.3514561653137207,0.021290039198144248,Buried
+I546,13.60494327545166,0.04444255067431858,Buried,7.183209419250488,0.03907910454222067,Buried
+V547,16.946928024291992,0.060597565375546426,Buried,2.9171130657196045,0.01853088581535292,Buried
+F548,1.5380511283874512,0.004486724814459315,Buried,1.5380511283874512,0.007054920420042085,Buried
+Q549,29.152618408203125,0.09289272302672211,Buried,29.152618408203125,0.15828215353575467,Buried
+N550,31.590600967407227,0.11126768949415505,Buried,31.09710121154785,0.20024841909483126,Buried
+L551,1.4388689994812012,0.004658905921387808,Buried,0.22471043467521667,0.0012406273913692209,Buried
+V552,1.9946587085723877,0.007132352324938138,Buried,1.6287891864776611,0.010346841466857397,Buried
+P553,2.0756611824035645,0.008016783569434442,Buried,1.7201021909713745,0.011232388052765984,Buried
+I554,24.482479095458984,0.07997562325718402,Buried,22.09605598449707,0.12021006647457878,Buried
+S555,20.036590576171875,0.08328885950249588,Buried,18.199125289916992,0.16495200938744034,Buried
+L556,1.2541180849075317,0.004060701963835432,Buried,1.2541180849075317,0.006923991982822655,Buried
+Y557,19.3358097076416,0.054025641423160256,Buried,18.611759185791016,0.08052193617611014,Buried
+I558,33.19009780883789,0.10842034206907773,Buried,33.145545959472656,0.18032305339559013,Buried
+S559,5.063287734985352,0.021047266458666995,Buried,3.8937747478485107,0.035292134018965,Buried
+L560,7.557329177856445,0.024469834063620223,Buried,7.557329177856445,0.04172405076423717,Buried
+E561,34.517005920410156,0.11362067427704778,Buried,33.093666076660156,0.1905327349463862,Buried
+I562,70.21173858642578,0.22935698347890726,Buried,66.58811950683594,0.36226203798316164,Exposed
+V563,0.0,0.0,Buried,0.0,0.0,Buried
+R564,18.6561222076416,0.04905949654188946,Buried,18.6561222076416,0.07478382897005453,Buried
+T565,42.26939392089844,0.1576124081176015,Buried,39.94734191894531,0.28268820122193494,Exposed
+L566,62.55326843261719,0.20254087954355762,Buried,62.22998809814453,0.3435720638016886,Exposed
+Q567,3.3312034606933594,0.01061464037593183,Buried,0.6286680698394775,0.003413310412122669,Buried
+A568,6.3598480224609375,0.027709324236757694,Buried,3.8824799060821533,0.04248060672424656,Buried
+F569,73.68643188476562,0.2149543252004687,Buried,68.35860443115234,0.3135555804263411,Exposed
+F570,6.734310150146484,0.019644988324026634,Buried,6.061281204223633,0.027802623560458407,Buried
+I571,3.4796061515808105,0.011366645901224234,Buried,3.1073293685913086,0.016904929559322626,Buried
+Y572,86.77690124511719,0.24246089620073683,Buried,86.77690124511719,0.3754316845531959,Exposed
+S573,0.04384078085422516,0.00018223902031464797,Buried,0.04384078085422516,0.00039736112476930187,Buried
+D574,8.143282890319824,0.02984670500757516,Buried,7.890534400939941,0.05531094876813788,Buried
+V575,43.41489028930664,0.1552397371846598,Buried,31.038936614990234,0.1971740475203259,Buried
+G576,27.026920318603516,0.13453713321644825,Buried,0.0,0.0,Buried
+M577,2.5986039638519287,0.008030323661868137,Buried,0.0,0.0,Buried
+Y578,25.6440372467041,0.07165128235540459,Buried,6.012707710266113,0.026013385497770526,Buried
+Y579,46.108428955078125,0.12883026296684338,Buried,45.96123504638672,0.19884673974321346,Buried
+E580,68.67577362060547,0.2260621249497518,Buried,61.67302322387695,0.35507488834984835,Exposed
+K581,148.57925415039062,0.43170028364969326,Exposed,109.04156494140625,0.5083252359929731,Exposed
+I582,39.84174346923828,0.13014892214065776,Buried,10.905810356140137,0.05933132088326373,Buried
+D583,34.64179992675781,0.12696888923930919,Buried,32.53044128417969,0.2280313955744042,Buried
+Q584,28.358440399169922,0.09036213188756474,Buried,27.780010223388672,0.1508296710036161,Buried
+P585,4.6374006271362305,0.01791093723179841,Buried,4.2773308753967285,0.02793127087141349,Buried
+C586,1.0541092157363892,0.004026149686302027,Buried,0.23295648396015167,0.0017651503627239972,Buried
+I587,50.21294403076172,0.16402797603871416,Buried,50.21294403076172,0.27317550897124765,Exposed
+P588,22.278663635253906,0.08604642515559403,Buried,7.140957355499268,0.04663095280398732,Buried
+K589,17.402488708496094,0.05056331285701636,Buried,12.022859573364258,0.05604764507208607,Buried
+S590,14.01636028289795,0.058263737929893436,Buried,12.660970687866211,0.11475565569715027,Buried
+W591,37.342063903808594,0.09632122320445528,Buried,37.15814208984375,0.1417430300564021,Buried
+N592,25.116127014160156,0.08846344597212952,Buried,24.770496368408203,0.15950852474075689,Buried
+I593,0.2684343755245209,0.0008768804173188682,Buried,0.2684343755245209,0.0014603743830349082,Buried
+S594,1.6136513948440552,0.006707687308388915,Buried,1.6136513948440552,0.014625705125391048,Buried
+D595,0.13218985497951508,0.00048450135648090835,Buried,0.13218985497951508,0.0009266224472158139,Buried
+D596,1.5995573997497559,0.00586268689127413,Buried,1.5995573997497559,0.011212553281399475,Buried
+V597,1.565459132194519,0.0055976523869060765,Buried,1.565459132194519,0.009944538923842491,Buried
+G598,0.6707653403282166,0.0033389984831751775,Buried,0.0,0.0,Buried
+Q599,2.879446506500244,0.009175149314317677,Buried,1.217505693435669,0.006610364132671334,Buried
+I600,0.0,0.0,Buried,0.0,0.0,Buried
+E601,6.529219627380371,0.021492430087258194,Buried,6.529219627380371,0.037591183454521504,Buried
+Y602,13.864730834960938,0.03873905400621545,Buried,13.325942039489746,0.057653370843607964,Buried
+I603,0.04516356810927391,0.00014753344601966444,Buried,0.0,0.0,Buried
+F604,0.33374980092048645,0.0009735980072267021,Buried,0.33374980092048645,0.0015308842744178124,Buried
+S605,0.0,0.0,Buried,0.0,0.0,Buried
+D606,7.034048080444336,0.025781145134438157,Buried,7.034048080444336,0.049307163905619546,Buried
+K607,7.517475605010986,0.021842190348647407,Buried,7.517475605010986,0.035044641582703116,Buried
+T608,2.720362663269043,0.01014357837998384,Buried,1.5237421989440918,0.01078279356407385,Buried
+G609,10.258124351501465,0.05106385138076118,Buried,0.0,0.0,Buried
+T610,0.0,0.0,Buried,0.0,0.0,Buried
+L611,0.1975763440132141,0.0006397313441190336,Buried,0.1975763440132141,0.0010908199462284062,Buried
+T612,2.3300676345825195,0.008688262047255504,Buried,1.3621373176574707,0.009639193239118727,Buried
+Q613,79.88267517089844,0.25454040235356196,Exposed,46.5753173828125,0.2528775094482918,Exposed
+N614,23.659290313720703,0.08333220919080246,Buried,4.278162479400635,0.02754903961314145,Buried
+V615,63.91511535644531,0.2285429179699131,Buried,61.65501022338867,0.3916618686537578,Exposed
+M616,18.67507553100586,0.05771056421445384,Buried,0.18172197043895721,0.0009430575862174366,Buried
+E617,45.35563659667969,0.14929852329202992,Buried,42.90110778808594,0.24699788110990265,Buried
+F618,0.8604834079742432,0.0025101585946861915,Buried,0.0,0.0,Buried
+K619,14.370221138000488,0.04175299288489071,Buried,14.037348747253418,0.06543870329169943,Buried
+K620,23.56021499633789,0.06845472172361207,Buried,23.56021499633789,0.10983198796251786,Buried
+A621,0.7004213333129883,0.0030516769832499456,Buried,0.7004213333129883,0.007663741711870658,Buried
+T622,0.0,0.0,Buried,0.0,0.0,Buried
+I623,1.2084988355636597,0.003947739410005729,Buried,1.2084988355636597,0.0065746450615207005,Buried
+N624,59.819400787353516,0.21069452016442433,Buried,43.30917739868164,0.278887547986725,Exposed
+G625,17.071264266967773,0.08497893684458489,Buried,0.0,0.0,Buried
+Q626,78.35433959960938,0.24967047091454947,Buried,78.35433959960938,0.42541954335080456,Exposed
+P627,56.15507125854492,0.2168865788031081,Buried,44.421546936035156,0.2900758197441353,Exposed
+Y628,2.188593626022339,0.006115087821420165,Buried,2.097912073135376,0.009076409186782528,Buried
+G629,12.502701759338379,0.06223711885529926,Buried,0.0,0.0,Buried
+E630,84.77095031738281,0.279043105777371,Exposed,66.62822723388672,0.3836038693958716,Exposed
+A631,35.74797439575195,0.1557509251543262,Buried,9.168645858764648,0.1003198080458607,Buried
+Y632,73.43241882324219,0.2051754536357449,Buried,38.82114791870117,0.1679558586476591,Buried
+T633,17.937021255493164,0.06688284009525707,Buried,14.136641502380371,0.10003823948376409,Buried
+E634,98.04218292236328,0.3227284242705894,Exposed,78.8851089477539,0.45417136679696796,Exposed
+A635,18.702171325683594,0.08148379133661006,Buried,14.889749526977539,0.16291793111077724,Buried
+Q636,55.97224426269531,0.17835153297981465,Buried,55.1894416809082,0.2996473098701846,Exposed
+A637,20.656850814819336,0.09000016587136568,Buried,17.81119155883789,0.19488322984386933,Buried
+G638,7.76398229598999,0.038648277648073624,Buried,0.0,0.0,Buried
+M639,54.11259460449219,0.16722119064784602,Buried,52.536338806152344,0.2726406319695626,Exposed
+D640,36.349796295166016,0.13322902590022373,Buried,36.349796295166016,0.2548042525959553,Exposed
+R641,112.55818176269531,0.295991185493332,Exposed,93.69712829589844,0.37558877131473906,Exposed
+R642,124.20712280273438,0.3266240885323347,Exposed,82.67713165283203,0.3314146640145579,Exposed
+R643,117.36119842529297,0.30862154761932786,Exposed,99.89004516601562,0.4004133319005884,Exposed
+G644,76.65657806396484,0.3815882880229539,Exposed,0.0,0.0,Buried
+I645,81.8987045288086,0.267534178753258,Exposed,76.55396270751953,0.4164796175579933,Exposed
+N646,61.01715850830078,0.2149132349119243,Buried,48.595176696777344,0.3129265085824147,Exposed
+V647,92.41581726074219,0.3304536090650176,Exposed,86.9945068359375,0.5526303699654581,Exposed
+E648,91.7690200805664,0.3020788640631317,Exposed,91.57728576660156,0.5272450225266272,Exposed
+E649,117.55571746826172,0.38696171720873596,Exposed,113.78792572021484,0.6551200656079375,Exposed
+E650,63.68130874633789,0.20962169358743132,Buried,63.50395584106445,0.36561625896279815,Exposed
+A651,29.524354934692383,0.12863513732989254,Buried,27.807477951049805,0.30425876331804214,Exposed
+K652,92.19865417480469,0.26788521309371854,Exposed,85.72132110595703,0.39961193517563504,Exposed
+V653,74.57718658447266,0.26666755963670935,Exposed,68.90528869628906,0.4377190764081255,Exposed
+I654,40.65998840332031,0.1328218397126524,Buried,40.65998840332031,0.2212041783496589,Buried
+R655,144.94284057617188,0.3811522409038318,Exposed,135.77505493164062,0.5442598613686479,Exposed
+E656,118.2559585571289,0.3892667220187429,Exposed,116.17777252197266,0.6688793162810724,Exposed
+E657,102.55059814453125,0.33756891126545746,Exposed,90.74075317382812,0.5224287884350732,Exposed
+I658,47.16521072387695,0.15407210638231986,Buried,46.110504150390625,0.25085683947324416,Exposed
+A659,49.755638122558594,0.2167811407561392,Buried,38.000308990478516,0.41578481297366193,Exposed
+A660,39.92050552368164,0.17393029319951256,Buried,36.15413284301758,0.39558466132803144,Exposed
+A661,2.5986666679382324,0.01132217264168084,Buried,2.3137407302856445,0.025316064062858204,Buried
+K662,51.49075698852539,0.14960752444472675,Buried,51.49075698852539,0.2400373766802933,Buried
+V663,78.9368896484375,0.28225666174759867,Exposed,76.93449401855469,0.4887243969640583,Exposed
+R664,106.50846099853516,0.2800823995406358,Exposed,95.92251586914062,0.38450932842822433,Exposed
+A665,3.808903217315674,0.016595071747357592,Buried,2.8366751670837402,0.031037812195381626,Buried
+I666,24.699398040771484,0.08068422093554888,Buried,22.894868850708008,0.1245558803979024,Buried
+R667,135.41680908203125,0.35610189528842323,Exposed,129.9272918701172,0.520818863942546,Exposed
+G668,13.334358215332031,0.06637701619067271,Buried,0.0,0.0,Buried
+L669,12.878885269165039,0.04170047089972845,Buried,11.910125732421875,0.06575586149192578,Buried
+R670,100.57556915283203,0.264480835413421,Exposed,77.65917205810547,0.3112999677269785,Exposed
+E671,151.18333435058594,0.4976547626400215,Exposed,108.54005432128906,0.6249060878646425,Exposed
+L672,43.4205322265625,0.14059109951849727,Buried,28.240488052368164,0.1559158704580944,Buried
+H673,101.99519348144531,0.3155687170608924,Exposed,89.55997467041016,0.46010979008936814,Exposed
+D674,121.52455139160156,0.4454109583832211,Exposed,97.92008209228516,0.6863987112625812,Exposed
+N675,14.993597984313965,0.05281010660861005,Buried,12.325212478637695,0.07936766507800924,Buried
+P676,56.42167663574219,0.21791628327778684,Buried,48.21839904785156,0.3148695305612827,Exposed
+Y677,37.51039505004883,0.10480673854657,Buried,37.42543411254883,0.16191744084431064,Buried
+L678,5.219101428985596,0.016898899455469324,Buried,1.4270052909851074,0.007878503079680018,Buried
+H679,35.76919174194336,0.11066833213433287,Buried,35.2902946472168,0.18130208412941382,Buried
+D680,72.80482482910156,0.2668437482855314,Exposed,66.3535385131836,0.4651240312506808,Exposed
+E681,143.86268615722656,0.4735571631613046,Exposed,109.9722671508789,0.6331518780655508,Exposed
+D682,49.81315994262695,0.1825748546780934,Buried,36.04179382324219,0.25264522152411695,Exposed
+M683,25.3435001373291,0.07831763195099509,Buried,5.0121541023254395,0.02601088871131644,Buried
+T684,39.228477478027344,0.1462735617565147,Buried,25.763776779174805,0.18231790563602712,Buried
+F685,0.8228632807731628,0.0024004150659303106,Buried,0.18569034337997437,0.0008517471045903992,Buried
+I686,8.497926712036133,0.02775972901024634,Buried,8.453225135803223,0.04598842237784159,Buried
+A687,0.12091846764087677,0.0005268316183405351,Buried,0.0,0.0,Buried
+P688,14.597227096557617,0.05637857051962441,Buried,11.336402893066406,0.07402750667128236,Buried
+D689,40.28693771362305,0.1476594098218583,Buried,39.10196304321289,0.2740963494638759,Exposed
+F690,2.748579978942871,0.00801801823647988,Buried,2.748579978942871,0.012607521727768018,Buried
+V691,12.143671035766602,0.04342243611551184,Buried,9.091533660888672,0.05775373403800708,Buried
+E692,67.50343322753906,0.22220309655518122,Buried,62.04885482788086,0.3572386928441668,Exposed
+D693,13.011820793151855,0.04769083698250146,Buried,13.011820793151855,0.0912100647054376,Buried
+L694,14.794116020202637,0.04790178588396281,Buried,9.892491340637207,0.054616492304043966,Buried
+A695,70.82015228271484,0.3085574616198078,Exposed,29.018136978149414,0.31750533026789546,Exposed
+G696,33.689273834228516,0.1677016200281305,Buried,0.0,0.0,Buried
+K697,119.49085998535156,0.3471833160301702,Exposed,107.4032211303711,0.5006876759044914,Exposed
+N698,107.44676971435547,0.378446545605812,Exposed,49.878273010253906,0.32118895100661965,Exposed
+G699,14.561752319335938,0.07248685342454328,Buried,0.0,0.0,Buried
+P700,117.44042205810547,0.4535877309478028,Exposed,95.25411224365234,0.6220160394878749,Exposed
+E701,109.5336685180664,0.36055529560582067,Exposed,103.1107406616211,0.593647478496251,Exposed
+Q702,19.26671028137207,0.06139198739348877,Buried,19.26671028137207,0.10460728954716912,Buried
+Q703,45.823551177978516,0.146013451967629,Buried,45.823551177978516,0.2487958461070997,Buried
+Q704,97.01571655273438,0.3091336071697859,Exposed,96.73368072509766,0.5252089225817268,Exposed
+A705,26.970531463623047,0.11750834273458399,Buried,12.760754585266113,0.13962328464137203,Buried
+T706,0.0,0.0,Buried,0.0,0.0,Buried
+E707,45.28255081176758,0.1490579445992856,Buried,45.09615707397461,0.25963560890994963,Exposed
+H708,26.464094161987305,0.08187876269283435,Buried,24.091472625732422,0.1237687086621274,Buried
+F709,0.9710589647293091,0.002832724005685084,Buried,0.9710589647293091,0.004454171641560641,Buried
+M710,0.6137600541114807,0.0018966691168803799,Buried,0.6137600541114807,0.003185146373599809,Buried
+L711,22.43222999572754,0.07263319259412097,Buried,22.43222999572754,0.12384844977233816,Buried
+A712,0.41475537419319153,0.0018070543670019744,Buried,0.0,0.0,Buried
+L713,4.135252475738525,0.013389510964930284,Buried,3.211671829223633,0.017731655626863414,Buried
+A714,0.0,0.0,Buried,0.0,0.0,Buried
+L715,6.8864922523498535,0.022297734917933482,Buried,1.448401689529419,0.00799663269902365,Buried
+C716,0.14308375120162964,0.0005465056100595018,Buried,0.14308375120162964,0.0010841695884140708,Buried
+H717,7.238388538360596,0.022395261057613056,Buried,0.4043669104576111,0.0020774143245845303,Buried
+T718,48.1745719909668,0.17963139750099463,Buried,37.309688568115234,0.26402279207641327,Exposed
+V719,4.987203121185303,0.017832870166437222,Buried,1.3415738344192505,0.008522313320877613,Buried
+V720,79.45708465576172,0.28411673638290585,Exposed,77.01976013183594,0.48926604775836646,Exposed
+A721,24.862207412719727,0.10832255173512723,Buried,1.814728856086731,0.019856067439214458,Buried
+E722,71.99585723876953,0.2369909447964617,Buried,68.68927001953125,0.3954700711603031,Exposed
+K723,96.85943603515625,0.2814272170743451,Exposed,70.77678680419922,0.3299441536298711,Exposed
+Q724,71.49335479736328,0.22780843601938344,Buried,69.71687316894531,0.3785230084119876,Exposed
+P725,111.417724609375,0.43032639024346536,Exposed,85.05237579345703,0.5553979843385293,Exposed
+G726,72.85755157470703,0.36267713844124294,Exposed,0.0,0.0,Buried
+D727,116.18814086914062,0.4258519828682545,Exposed,100.54198455810547,0.7047776835340622,Exposed
+P728,76.85069274902344,0.2968188527843463,Exposed,70.16593170166016,0.4581884594378947,Exposed
+P729,32.42488098144531,0.1252339520999811,Buried,32.42488098144531,0.2117367489327303,Buried
+K730,83.86127471923828,0.24366077411369771,Buried,81.60099029541016,0.3804039557893723,Exposed
+M731,12.192405700683594,0.03767752429968755,Buried,6.913641929626465,0.03587877929331244,Buried
+I732,64.38018798828125,0.21030736469545172,Buried,61.32905197143555,0.33365092030368365,Exposed
+F733,33.13541030883789,0.09666093989074631,Buried,6.499408721923828,0.029812280270925588,Buried
+K734,68.27392578125,0.1983713896948933,Buried,61.33469772338867,0.28592743245708896,Exposed
+A735,15.899435043334961,0.06927250450657164,Buried,0.6015655994415283,0.006582100169707989,Buried
+Q736,52.74370193481445,0.16806401492416392,Buried,50.60643005371094,0.27476416078646226,Exposed
+S737,27.935129165649414,0.11612180422695335,Buried,24.934022903442383,0.22599532200121691,Buried
+P738,36.958824157714844,0.14274530774338015,Buried,32.02669906616211,0.20913659307482235,Buried
+D739,28.193042755126953,0.10333294835901002,Buried,28.13847541809082,0.19724465963650448,Buried
+E740,26.175731658935547,0.08616344904424962,Buried,23.850303649902344,0.13731520627515445,Buried
+A741,21.035024642944336,0.09164783751137394,Buried,17.992340087890625,0.19686528760270275,Buried
+A742,8.894083976745605,0.03875077766484615,Buried,1.486446738243103,0.016264130357744645,Buried
+L743,2.5686471462249756,0.008317008291802997,Buried,2.5686471462249756,0.014181513257161396,Buried
+V744,0.5926388502120972,0.0021191139431487953,Buried,0.5926388502120972,0.0037647230723000117,Buried
+A745,28.011032104492188,0.12204171672788908,Buried,25.923248291015625,0.2836422447262318,Exposed
+T746,6.159093379974365,0.022965778531283565,Buried,6.159093379974365,0.043584953218555704,Buried
+A747,0.6594818830490112,0.0028733072333073676,Buried,0.0,0.0,Buried
+R748,14.3898286819458,0.03784054063341949,Buried,14.3898286819458,0.05768221686595918,Buried
+D749,2.9729673862457275,0.010896499823173039,Buried,2.9729673862457275,0.020839861843881445,Buried
+M750,5.47626256942749,0.016922994616190075,Buried,4.385012149810791,0.02275629613494536,Buried
+G751,6.010612487792969,0.02992018933159874,Buried,0.0,0.0,Buried
+F752,1.332566261291504,0.0038872947726492804,Buried,1.332566261291504,0.006112377380913907,Buried
+T753,1.9694404602050781,0.007343570010917298,Buried,1.9694404602050781,0.013936786638738447,Buried
+V754,2.5769612789154053,0.009214506566941765,Buried,2.0615618228912354,0.0130960185226363,Buried
+L755,53.74244689941406,0.17401236956236282,Buried,51.510440826416016,0.2843893917214839,Exposed
+G756,35.51420593261719,0.17678593780971988,Buried,0.0,0.0,Buried
+M757,92.42374420166016,0.2856120402744566,Exposed,59.09233856201172,0.3066634047254837,Exposed
+S758,63.63926696777344,0.2645381181578944,Exposed,42.03655242919922,0.3810080803585986,Exposed
+D759,155.53884887695312,0.5700799299465216,Exposed,113.02801513671875,0.7923020719416224,Exposed
+G760,38.81006622314453,0.19319237959969554,Buried,0.0,0.0,Buried
+G761,1.2149553298950195,0.006047918340056213,Buried,0.0,0.0,Buried
+I762,11.443835258483887,0.03738297309195061,Buried,11.18370246887207,0.060843148576301104,Buried
+N763,26.687156677246094,0.09399689058493393,Buried,26.687156677246094,0.17185077472012386,Buried
+V764,0.4775928854942322,0.0017077411351572485,Buried,0.24191276729106903,0.0015367446399754117,Buried
+N765,31.325851440429688,0.11033519478815519,Buried,30.28512191772461,0.19501971405188465,Buried
+V766,10.111673355102539,0.03615656986998953,Buried,10.111673355102539,0.0642341452402115,Buried
+M767,20.705970764160156,0.06398652864475494,Buried,18.464712142944336,0.0958237841118624,Buried
+G768,48.7898063659668,0.24287046401452356,Buried,0.0,0.0,Buried
+K769,101.85693359375,0.29594755590576666,Exposed,98.24898529052734,0.45801285648013346,Exposed
+D770,106.2123794555664,0.3892888900533361,Exposed,72.83576202392578,0.51056302362914,Exposed
+M771,68.11157989501953,0.21048148901744834,Buried,62.5467529296875,0.32459030518504844,Exposed
+H772,97.76838684082031,0.30249116013573063,Exposed,73.82715606689453,0.379283239034421,Exposed
+F773,1.036238431930542,0.0030228622445820025,Buried,0.9960108399391174,0.004568623944664881,Buried
+P774,52.46945571899414,0.20265170157400827,Buried,52.3370475769043,0.34176459457207203,Exposed
+V775,60.59033203125,0.21665440492381685,Buried,40.441097259521484,0.25690103149255455,Exposed
+L776,41.81509780883789,0.13539287235686284,Buried,18.688249588012695,0.10317791592163299,Buried
+S777,5.948482513427734,0.024726877680633513,Buried,0.2415321171283722,0.0021891825797804216,Buried
+I778,72.46389770507812,0.23671399289312053,Buried,50.24708557128906,0.273361250574148,Exposed
+I779,9.812129974365234,0.03205276749632388,Buried,7.363101482391357,0.04005777860439653,Buried
+E780,66.73885345458984,0.2196863061492754,Buried,63.430747985839844,0.36519477368996095,Exposed
+F781,119.74639892578125,0.34931812706755694,Exposed,99.93457794189453,0.4583921051634602,Exposed
+N782,74.16512298583984,0.2612226935536371,Exposed,71.77458953857422,0.4621893207506624,Exposed
+S783,67.86568450927734,0.28210665086184794,Exposed,49.13990020751953,0.44539092682764947,Exposed
+S784,94.5321273803711,0.39295473179050466,Exposed,59.24616241455078,0.5369913873931779,Exposed
+R785,46.53180694580078,0.1223634256110484,Buried,35.216373443603516,0.14116627342166957,Buried
+K786,92.86174774169922,0.2698118460045616,Exposed,88.42286682128906,0.41220588376789785,Exposed
+R787,2.0874838829040527,0.005489399522299095,Buried,2.0340137481689453,0.008153427307819669,Buried
+M788,11.68066692352295,0.036096125953462774,Buried,11.68066692352295,0.06061755509088357,Buried
+S789,1.0746067762374878,0.004466966196979319,Buried,1.0746067762374878,0.009739948718301372,Buried
+T790,1.7463833093643188,0.006511843519696392,Buried,1.7463833093643188,0.012358318042034157,Buried
+I791,0.0,0.0,Buried,0.0,0.0,Buried
+V792,2.118123769760132,0.007573829512201564,Buried,2.118123769760132,0.01345532683716096,Buried
+R793,70.91590881347656,0.18648563428549222,Buried,69.58602905273438,0.2789384437701312,Exposed
+M794,24.254343032836914,0.07495186933793005,Buried,19.145692825317383,0.09935777616041963,Buried
+P795,79.03517150878906,0.30525592024869447,Exposed,33.73442077636719,0.2202881357191139,Buried
+D796,92.31732177734375,0.33836081925302697,Exposed,51.27097702026367,0.35939851968991665,Exposed
+G797,47.586891174316406,0.23688248020137112,Buried,0.0,0.0,Buried
+R798,79.45604705810547,0.20894340326966065,Buried,70.18405151367188,0.28133564126601185,Exposed
+I799,5.425317764282227,0.017722599409764096,Buried,3.9562079906463623,0.021523118237776476,Buried
+L800,0.0,0.0,Buried,0.0,0.0,Buried
+L801,0.6973655223846436,0.0022579959417994015,Buried,0.6973655223846436,0.0038501584054935483,Buried
+F802,0.0,0.0,Buried,0.0,0.0,Buried
+C803,0.0,0.0,Buried,0.0,0.0,Buried
+K804,16.95653533935547,0.04926758555609938,Buried,13.204967498779297,0.061558344505633786,Buried
+G805,7.260122299194336,0.0361401162034019,Buried,0.0,0.0,Buried
+A806,21.855337142944336,0.09522187024889991,Buried,15.670097351074219,0.1714561978437593,Buried
+D807,51.79195022583008,0.18982750335186435,Buried,51.698368072509766,0.36239443902738616,Exposed
+S808,86.28643798828125,0.35867873744565215,Exposed,69.09104919433594,0.6262228109175343,Exposed
+V809,21.08590316772461,0.07539740499735884,Buried,18.906877517700195,0.12010545375241982,Buried
+I810,0.0,0.0,Buried,0.0,0.0,Buried
+Y811,66.89886474609375,0.18692023416845005,Buried,55.92891311645508,0.2419709135179745,Buried
+S812,79.3943099975586,0.3300292784615882,Exposed,56.45497512817383,0.5116928115479068,Exposed
+R813,34.03192138671875,0.0894928169425109,Buried,33.55778121948242,0.1345177386490506,Buried
+L814,9.731218338012695,0.031508657670456186,Buried,2.46285343170166,0.013597425650094894,Buried
+K815,80.08576202392578,0.232690939120182,Buried,78.24272155761719,0.36474852430704036,Exposed
+K816,139.36920166015625,0.4049402740157891,Exposed,112.77318572998047,0.5257211438654212,Exposed
+G817,81.7616958618164,0.40700102114824643,Exposed,0.0,0.0,Buried
+E818,82.59061431884766,0.2718660277053242,Exposed,70.13163757324219,0.40377432594337453,Exposed
+Q819,67.32857513427734,0.21453766499315188,Buried,48.771419525146484,0.2648010962632345,Exposed
+A820,67.91258239746094,0.2958894235775469,Exposed,52.84237289428711,0.5781809862767382,Exposed
+D821,88.81707000732422,0.32553172029636374,Exposed,86.6539306640625,0.6074254132833878,Exposed
+M822,26.96910858154297,0.08334116079036197,Buried,21.801912307739258,0.11314239409905218,Buried
+R823,33.65167236328125,0.08849288644019314,Buried,30.68240737915039,0.12299168499722138,Buried
+R824,147.12106323242188,0.3868802537074782,Exposed,133.40635681152344,0.534764838066111,Exposed
+E825,80.56118774414062,0.265185702756351,Exposed,80.56118774414062,0.46382118547590945,Exposed
+T826,0.0,0.0,Buried,0.0,0.0,Buried
+A827,39.083778381347656,0.17028474324254103,Buried,29.086877822875977,0.3182574662380384,Exposed
+Q828,99.64969635009766,0.3175265944599293,Exposed,99.1417007446289,0.5382831030588179,Exposed
+H829,23.4641170501709,0.07259696326607837,Buried,23.4641170501709,0.12054570147342197,Buried
+L830,7.439673900604248,0.024088878696543425,Buried,4.8066911697387695,0.026537765082647373,Buried
+E831,96.1294174194336,0.31643211610649574,Exposed,91.69895935058594,0.5279455433052429,Exposed
+M832,82.74022674560547,0.2556875960578003,Exposed,75.84253692626953,0.39358961183133523,Exposed
+F833,6.596515655517578,0.019243021206720473,Buried,6.596515655517578,0.03025770219227386,Buried
+A834,29.373586654663086,0.12797825258340242,Buried,25.94896125793457,0.2839235861527994,Exposed
+V835,37.02947998046875,0.1324072617009116,Buried,29.714374542236328,0.18875980097843026,Buried
+E836,59.52748489379883,0.1959484257483312,Buried,39.33320236206055,0.22645610198890911,Buried
+G837,3.3624143600463867,0.01673774086554281,Buried,0.0,0.0,Buried
+L838,2.256298065185547,0.007305654941554071,Buried,1.148278832435608,0.006339652960522713,Buried
+R839,37.508819580078125,0.09863592144167355,Buried,35.45439529418945,0.14212039374567043,Buried
+T840,21.468664169311523,0.08005148749294712,Buried,4.76064395904541,0.0336887966205925,Buried
+L841,26.56048011779785,0.08600003067710005,Buried,25.993568420410156,0.14351061635566978,Buried
+C842,1.201661467552185,0.004589722647711263,Buried,0.0,0.0,Buried
+I843,4.3105058670043945,0.014080902180015193,Buried,4.212487697601318,0.022917367086111935,Buried
+A844,0.0,0.0,Buried,0.0,0.0,Buried
+E845,35.40530776977539,0.11654472439075553,Buried,34.45285415649414,0.1983580940817991,Buried
+R846,47.42721939086914,0.12471806733473965,Buried,45.509483337402344,0.1824266254551984,Buried
+E847,91.2780532836914,0.3004627337812293,Exposed,73.3047103881836,0.4220429045956865,Exposed
+L848,4.620051383972168,0.014959238650401604,Buried,2.2743027210235596,0.012556436268949863,Buried
+S849,30.861600875854492,0.12828667280490222,Buried,27.151029586791992,0.2460896782638508,Buried
+E850,79.51216888427734,0.26173261558935174,Exposed,73.16061401367188,0.42121328734300806,Exposed
+E851,102.4543685913086,0.3372521495292933,Exposed,101.914306640625,0.5867591559491138,Exposed
+E852,89.92089080810547,0.29599532093739395,Exposed,86.05179595947266,0.49543269075196333,Exposed
+Y853,20.124176025390625,0.05622839355181683,Buried,20.124176025390625,0.08706525811651479,Buried
+R854,115.21875,0.30298760933665597,Exposed,107.9144058227539,0.4325793098175722,Exposed
+E855,83.71228790283203,0.27555827462920063,Exposed,83.33540344238281,0.4797933930606736,Exposed
+W856,16.02493667602539,0.0413351952475041,Buried,12.69698715209961,0.048433784099709117,Buried
+R857,75.81949615478516,0.19938046438663964,Buried,74.61111450195312,0.29908170433691494,Exposed
+R858,121.65689849853516,0.31991783312510663,Exposed,116.5777816772461,0.4673068062927116,Exposed
+E859,94.90733337402344,0.3124093450242386,Exposed,90.68272399902344,0.5220946925583394,Exposed
+H860,36.415931701660156,0.11266931759642693,Buried,36.415931701660156,0.18708498693552486,Buried
+D861,87.96260833740234,0.32239995320120923,Exposed,85.28853607177734,0.5978542909100818,Exposed
+L862,106.38668823242188,0.3444688654363802,Exposed,103.01949310302734,0.5687711172528132,Exposed
+A863,9.57988166809082,0.04173874066697953,Buried,6.351414680480957,0.06949474452177845,Buried
+A864,47.71167755126953,0.20787577603720656,Buried,28.926904678344727,0.31650710141873123,Exposed
+T865,106.0860824584961,0.39556949776323214,Exposed,74.76342010498047,0.5290649072361302,Exposed
+A866,24.723329544067383,0.10771747251339002,Buried,17.135475158691406,0.18748980003969223,Buried
+L867,151.50555419921875,0.4905589903155764,Exposed,121.44376373291016,0.670491604076085,Exposed
+E868,104.34639739990234,0.3434801980883054,Exposed,98.33624267578125,0.5661588902833041,Exposed
+N869,95.28758239746094,0.3356197351797193,Exposed,81.31350708007812,0.5236147618092257,Exposed
+R870,82.66407012939453,0.2173794541820921,Buried,82.50275421142578,0.33071566490803295,Exposed
+E871,80.92561340332031,0.26638529374101894,Exposed,73.32979583740234,0.42218733100151096,Exposed
+E872,103.50579071044922,0.3407131475776762,Exposed,96.91676330566406,0.5579864114179558,Exposed
+K873,54.34393310546875,0.15789749026822084,Buried,50.6348876953125,0.2360475223464403,Buried
+L874,31.608665466308594,0.10234552190730925,Buried,30.689376831054688,0.1694361971916811,Buried
+E875,43.632049560546875,0.14362493961932818,Buried,41.76677703857422,0.24046711055285397,Buried
+E876,131.64889526367188,0.43335265759079195,Exposed,119.43197631835938,0.6876149966364068,Exposed
+V877,17.876983642578125,0.06392318911403179,Buried,14.11264419555664,0.0896502097274898,Buried
+A878,2.482234239578247,0.010814886320104323,Buried,1.5376882553100586,0.016824795393271308,Buried
+D879,36.90596008300781,0.1352674736288839,Buried,30.81500816345215,0.2160065784157051,Buried
+K880,161.31065368652344,0.468691644404829,Exposed,131.79473876953125,0.6143949944560491,Exposed
+I881,8.483610153198242,0.027712961862544745,Buried,7.495133876800537,0.0407760797763279,Buried
+E882,2.625539541244507,0.0086425680635543,Buried,2.625539541244507,0.015116222794548783,Buried
+R883,109.67813873291016,0.28841761476477173,Exposed,103.35848999023438,0.4143167348500075,Exposed
+D884,67.76019287109375,0.24835419757847843,Buried,66.74419403076172,0.4678624423925396,Exposed
+L885,5.297661781311035,0.01715326958281745,Buried,0.0,0.0,Buried
+T886,22.419891357421875,0.08359838499674319,Buried,22.419891357421875,0.15865483045857,Buried
+L887,8.662409782409668,0.028047968399699575,Buried,0.044664088636636734,0.00024659064833034046,Buried
+L888,29.1231632232666,0.09429772803454795,Buried,19.63071632385254,0.10838127930628051,Buried
+G889,0.0,0.0,Buried,0.0,0.0,Buried
+G890,0.0,0.0,Buried,0.0,0.0,Buried
+T891,4.212138652801514,0.015706052413139625,Buried,4.212138652801514,0.02980728734026571,Buried
+A892,0.0,0.0,Buried,0.0,0.0,Buried
+I893,0.0,0.0,Buried,0.0,0.0,Buried
+E894,30.123384475708008,0.09915805743779375,Buried,30.123384475708008,0.17343170190642698,Buried
+D895,13.113094329833984,0.04806202405964679,Buried,9.607209205627441,0.06734446986428982,Buried
+R896,94.81302642822266,0.24932723373114501,Buried,93.91654968261719,0.3764683309185042,Exposed
+L897,21.34852409362793,0.06912426728809574,Buried,12.110618591308594,0.06686278353080793,Buried
+Q898,18.81654167175293,0.059957557477687155,Buried,17.63670539855957,0.09575728919684862,Buried
+D899,79.00797271728516,0.2895794836923247,Exposed,78.62967681884766,0.5511771199761131,Exposed
+G900,20.18922996520996,0.10049983828521192,Buried,0.0,0.0,Buried
+V901,0.0,0.0,Buried,0.0,0.0,Buried
+P902,5.82808780670166,0.02250970387945665,Buried,4.556696891784668,0.02975555056903579,Buried
+D903,65.23748779296875,0.2391079961015024,Buried,58.805419921875,0.4122133436488416,Exposed
+T904,0.12288835644721985,0.00045822113810069074,Buried,0.039673276245594025,0.0002807487697480323,Buried
+I905,11.504284858703613,0.0375804406128814,Buried,9.973031044006348,0.05425668388938634,Buried
+A906,19.873973846435547,0.08658923660421596,Buried,11.553722381591797,0.12641640100303997,Buried
+L907,27.33798599243164,0.08851751261920265,Buried,26.92215919494629,0.14863737049117473,Buried
+L908,2.9029440879821777,0.009399426498058064,Buried,2.9029440879821777,0.01602716828156818,Buried
+A909,62.320289611816406,0.27152427310900723,Exposed,38.89342498779297,0.42555694582658743,Exposed
+D910,76.33600616455078,0.2797862100748294,Exposed,73.17808532714844,0.5129626363454134,Exposed
+A911,0.0,0.0,Buried,0.0,0.0,Buried
+G912,14.315428733825684,0.07126068082894291,Buried,0.0,0.0,Buried
+I913,10.697037696838379,0.03494344888336575,Buried,1.252910852432251,0.006816261551983489,Buried
+K914,29.170364379882812,0.08475513387766734,Buried,26.10425567626953,0.12169168641509308,Buried
+L915,17.674116134643555,0.05722692221785021,Buried,9.71203899383545,0.0536202140288375,Buried
+W916,8.396533966064453,0.021658267855050102,Buried,8.315017700195312,0.03171837281176766,Buried
+V917,3.505565643310547,0.012534941019651564,Buried,3.505565643310547,0.022269015698363773,Buried
+L918,1.4057224988937378,0.004551581051704816,Buried,1.4057224988937378,0.007761000682109863,Buried
+T919,0.0,0.0,Buried,0.0,0.0,Buried
+G920,1.3775043487548828,0.006857070057926906,Buried,0.0,0.0,Buried
+D921,5.983126640319824,0.021929315027096708,Buried,5.765030860900879,0.040411626182890445,Buried
+K922,56.2230110168457,0.16335719237791252,Buried,56.016143798828125,0.26113362855032773,Exposed
+V923,27.85845184326172,0.09961418107244788,Buried,25.859453201293945,0.1642715121850891,Buried
+E924,123.96637725830078,0.4080638802869738,Exposed,123.0914535522461,0.7086839892415573,Exposed
+T925,24.60869789123535,0.0917599183592388,Buried,24.088708877563477,0.17046425256965034,Buried
+A926,1.4310808181762695,0.006235099055795762,Buried,0.0,0.0,Buried
+I927,39.409217834472656,0.1287360134609356,Buried,39.409217834472656,0.21439956066896892,Buried
+N928,25.053367614746094,0.08824239625629639,Buried,25.053367614746094,0.1613300617226513,Buried
+I929,10.168834686279297,0.03321799596615612,Buried,9.899442672729492,0.05385633809875505,Buried
+G930,1.5667651891708374,0.007799190380906194,Buried,0.0,0.0,Buried
+F931,46.824127197265625,0.13659297115280805,Buried,33.888832092285156,0.15544542644034431,Buried
+S932,11.14072322845459,0.0463101807766852,Buried,9.250160217285156,0.0838409808543006,Buried
+C933,1.5324287414550781,0.0058530818292670235,Buried,0.14861781895160675,0.001126102148221602,Buried
+N934,23.66977310180664,0.08336913142634278,Buried,11.514188766479492,0.07414511346127552,Buried
+L935,18.18507957458496,0.058881367894846534,Buried,16.205644607543945,0.08947144187573114,Buried
+L936,3.806810140609741,0.012326049356877254,Buried,2.653140068054199,0.014647999085243479,Buried
+N937,56.30864715576172,0.19832902432047192,Buried,45.409019470214844,0.29240938889121393,Exposed
+N938,104.901611328125,0.36948204716766214,Exposed,72.03126525878906,0.46384217279122375,Exposed
+D939,110.65270233154297,0.405563531227254,Exposed,98.06795501708984,0.6874352686555878,Exposed
+M940,26.51071548461914,0.08192461368127191,Buried,1.8485653400421143,0.009593246008362703,Buried
+D941,68.67931365966797,0.25172295283509794,Exposed,64.51396942138672,0.45222904763845473,Exposed
+L942,91.0571517944336,0.29483344476304263,Exposed,59.528621673583984,0.32865780677006096,Exposed
+L943,3.2538816928863525,0.010535725414856763,Buried,0.3126150071620941,0.0017259489591524247,Buried
+R944,93.87362670898438,0.2468569198703929,Buried,66.6962890625,0.26735480281879265,Exposed
+L945,2.0488929748535156,0.006634099154458598,Buried,1.994322419166565,0.011010663674857153,Buried
+Q946,80.3570556640625,0.2560519816958954,Exposed,76.81876373291016,0.41708223890372637,Exposed
+V947,2.9870848655700684,0.01068099599905215,Buried,0.41195493936538696,0.002616933170044084,Buried
+N948,85.33613586425781,0.3005689786582928,Exposed,77.40487670898438,0.4984453079970192,Exposed
+E949,129.71316528320312,0.4269807565601436,Exposed,103.87603759765625,0.5980535820065449,Exposed
+S950,42.803077697753906,0.17792545648371286,Buried,36.547943115234375,0.33126079192255914,Exposed
+D951,134.14627075195312,0.49167199825015584,Exposed,110.99022674560547,0.7780176136813877,Exposed
+A952,105.07750701904297,0.4578138819823862,Exposed,51.62815856933594,0.5648955186207709,Exposed
+S953,42.497962951660156,0.17665714393707813,Buried,21.885265350341797,0.19836219807312885,Buried
+T954,86.79763793945312,0.32364752520837947,Exposed,78.84056854248047,0.5579169334923524,Exposed
+E955,89.80903625488281,0.2956271259152816,Exposed,81.17035675048828,0.46732840152610855,Exposed
+D956,99.65132141113281,0.3652413447786199,Exposed,96.4200210571289,0.6758836060936939,Exposed
+D957,76.25800323486328,0.2795003142680072,Exposed,70.9433364868164,0.49729752770555546,Exposed
+Y958,29.726123809814453,0.08305692547309328,Buried,29.44205093383789,0.1273781227514588,Buried
+L959,32.26027297973633,0.1044553582467007,Buried,28.875783920288086,0.15942334200254807,Buried
+Q960,93.0213394165039,0.29640581154660717,Exposed,90.70514678955078,0.4924774087046324,Exposed
+L961,81.429443359375,0.2636599412309889,Exposed,79.91233825683594,0.44119640413266253,Exposed
+A962,0.42180562019348145,0.001837771697303107,Buried,0.1512366235256195,0.0016547731557425946,Buried
+E963,39.2108039855957,0.12907139159350345,Buried,39.2108039855957,0.22575140830623214,Buried
+E964,92.93062591552734,0.30590255718752213,Exposed,92.56509399414062,0.5329322075837187,Exposed
+Q965,45.45032501220703,0.1448241936184174,Buried,44.3040885925293,0.24054602762169625,Buried
+L966,1.14064621925354,0.003693292041878037,Buried,0.8344965577125549,0.004607259511548196,Buried
+K967,102.5956802368164,0.2980940004897072,Exposed,100.49846649169922,0.46849939033593324,Exposed
+T968,69.44647216796875,0.2589491993698521,Exposed,67.04698181152344,0.4744593701407344,Exposed
+N969,17.957334518432617,0.06324891138984948,Buried,17.957334518432617,0.11563546788527779,Buried
+L970,0.9679614305496216,0.003134156926091703,Buried,0.9679614305496216,0.005344119716845714,Buried
+E971,121.46302795410156,0.39982352952914907,Exposed,114.59980773925781,0.6597943770361038,Exposed
+R972,133.45252990722656,0.35093648383200793,Exposed,96.8565444946289,0.38825342037853544,Exposed
+F973,27.803354263305664,0.08110653618463579,Buried,10.891003608703613,0.04995618307848579,Buried
+N974,134.73553466796875,0.4745624070504963,Exposed,110.68489074707031,0.712750498479074,Exposed
+M975,46.1355094909668,0.14257004094170744,Buried,27.911420822143555,0.14484807249694517,Buried
+T976,54.22672653198242,0.2021984268105333,Buried,51.401187896728516,0.36374158202264967,Exposed
+G977,16.547361373901367,0.08237100399518654,Buried,0.0,0.0,Buried
+D978,85.29747009277344,0.3126317066520928,Exposed,51.874794006347656,0.3636311468714982,Exposed
+D979,94.36029815673828,0.3458487223695596,Exposed,82.85784912109375,0.580815698266138,Exposed
+E980,95.49542236328125,0.3143451753696762,Exposed,89.88697814941406,0.5175132831521678,Exposed
+E981,46.43607711791992,0.15285504209388148,Buried,46.07577133178711,0.2652756181884964,Exposed
+L982,28.055513381958008,0.09084079055835322,Buried,28.055513381958008,0.15489462441248011,Buried
+K983,132.9512939453125,0.38629290230310565,Exposed,127.53020477294922,0.5945147749142856,Exposed
+R984,95.2625732421875,0.25050939474615447,Exposed,85.06565856933594,0.34098917185847816,Exposed
+A985,9.180665016174316,0.03999938720922398,Buried,5.628535747528076,0.06158528036411269,Buried
+R986,76.96834564208984,0.20240156259891923,Buried,67.8212661743164,0.27186431958701174,Exposed
+K987,154.0299835205078,0.44753749745610755,Exposed,118.80834197998047,0.5538555733986383,Exposed
+D988,66.19380187988281,0.24261307198197346,Buried,58.31113052368164,0.4087484812972055,Exposed
+H989,52.65610122680664,0.16291569967554112,Buried,26.745805740356445,0.13740520930531505,Buried
+N990,100.89484405517578,0.3553695034632286,Exposed,89.31128692626953,0.5751161142849222,Exposed
+A991,79.8018798828125,0.34769009519821814,Exposed,49.38008499145508,0.5402979593650178,Exposed
+P992,34.81947708129883,0.13448255145303536,Buried,15.28519344329834,0.09981338615688003,Buried
+S993,47.70185089111328,0.1982888626572923,Buried,33.81915283203125,0.3065277658435167,Exposed
+P994,84.34382629394531,0.32575942863350643,Exposed,76.57960510253906,0.5000701969651822,Exposed
+T995,57.726863861083984,0.21524959745694414,Buried,57.726863861083984,0.40850536038629626,Exposed
+Y996,36.66887664794922,0.1024554756757497,Buried,36.66887664794922,0.15864426976628823,Buried
+A997,0.0,0.0,Buried,0.0,0.0,Buried
+L998,0.18336401879787445,0.0005937133354425596,Buried,0.18336401879787445,0.0010123536303108457,Buried
+V999,2.8776168823242188,0.010289568522534811,Buried,2.8776168823242188,0.018279987324909396,Buried
+I1000,0.3734458386898041,0.0012199158257448913,Buried,0.3734458386898041,0.002031672490559087,Buried
+D1001,28.67110252380371,0.10508512976838316,Buried,28.67110252380371,0.20097826107078728,Buried
+G1002,4.715790748596191,0.02347470450519914,Buried,0.0,0.0,Buried
+F1003,35.374568939208984,0.10319289998295068,Buried,29.13054084777832,0.1336195160750796,Buried
+T1004,1.0617727041244507,0.003959095157213819,Buried,0.9700304865837097,0.0068644410418891525,Buried
+L1005,0.26029279828071594,0.0008428006021686989,Buried,0.21629850566387177,0.00119418509081112,Buried
+R1006,116.71526336669922,0.30692294978529433,Exposed,103.15912628173828,0.41351757726982713,Exposed
+W1007,53.4224853515625,0.1377995375118988,Buried,53.4224853515625,0.20378481056898465,Buried
+V1008,0.23156341910362244,0.000828007259345344,Buried,0.23156341910362244,0.0014710006714681119,Buried
+L1009,29.322721481323242,0.09494387660711232,Buried,7.950209140777588,0.04389314293044912,Buried
+S1010,63.0081787109375,0.26191478656076167,Exposed,22.7888240814209,0.20655181300883346,Buried
+D1011,107.05403137207031,0.39237370692747586,Exposed,67.26851654052734,0.4715378303956859,Exposed
+S1012,68.73329162597656,0.28571315302454936,Exposed,60.486873626708984,0.5482368623407244,Exposed
+L1013,8.057281494140625,0.02608862688463989,Buried,7.724074363708496,0.042644651737867974,Buried
+K1014,70.4756851196289,0.20476864977229578,Buried,70.4756851196289,0.32854049086192266,Exposed
+Q1015,45.509891510009766,0.14501399798194256,Buried,41.019989013671875,0.2227152329229549,Buried
+K1016,45.33481216430664,0.13172129165978375,Buried,45.33481216430664,0.2113398602129516,Buried
+F1017,3.5953409671783447,0.01048814648365681,Buried,3.5953409671783447,0.01649154825753666,Buried
+L1018,19.799062728881836,0.06410727496302653,Buried,15.684734344482422,0.08659549380623657,Buried
+L1019,3.5446810722351074,0.011477303105996333,Buried,3.35793137550354,0.018539155285819394,Buried
+L1020,0.24815477430820465,0.000803498961936079,Buried,0.24815477430820465,0.0013700637033201397,Buried
+C1021,4.520949840545654,0.01726768015170454,Buried,1.2124789953231812,0.009187156768540658,Buried
+K1022,39.55979919433594,0.11494186473727719,Buried,28.182153701782227,0.13137834126781506,Buried
+Q1023,44.19491195678711,0.14082391015816947,Buried,43.52656936645508,0.23632454000795067,Buried
+C1024,3.4026265144348145,0.012996265917402475,Buried,0.3864535987377167,0.002928223754031931,Buried
+K1025,77.65081024169922,0.2256161332795459,Buried,67.04669189453125,0.3125553590334983,Exposed
+S1026,2.500941038131714,0.010396006543982381,Buried,2.500941038131714,0.02266786139594838,Buried
+V1027,1.9762340784072876,0.0070664709021015315,Buried,1.9762340784072876,0.012553976217696161,Buried
+L1028,0.7477812170982361,0.0024212366389835967,Buried,0.7477812170982361,0.00412850369865714,Buried
+C1029,3.2986271381378174,0.01259904231855437,Buried,3.2986271381378174,0.024994251245529477,Buried
+C1030,0.0,0.0,Buried,0.0,0.0,Buried
+R1031,121.83661651611328,0.3203904327020047,Exposed,100.57870483398438,0.40317385234823294,Exposed
+V1032,6.1666107177734375,0.022050108171827964,Buried,1.2350568771362305,0.007845667085938635,Buried
+S1033,24.35096549987793,0.10122301678816614,Buried,21.713531494140625,0.19680564828246766,Buried
+P1034,8.340518951416016,0.032213415107007724,Buried,8.340518951416016,0.05446417423074638,Buried
+A1035,57.90156555175781,0.2522722631143489,Exposed,44.304813385009766,0.4847662831303549,Exposed
+Q1036,27.52610969543457,0.08770996992920807,Buried,26.400747299194336,0.14334105701784555,Buried
+K1037,0.7200425863265991,0.002092099536604346,Buried,0.0,0.0,Buried
+A1038,12.770345687866211,0.05563932471827218,Buried,10.94845962524414,0.11979384795982682,Buried
+A1039,32.08194351196289,0.13977833617702373,Buried,24.376056671142578,0.26671346716117256,Exposed
+V1040,3.218348503112793,0.011507931321778134,Buried,3.218348503112793,0.020444476193274743,Buried
+V1041,0.0,0.0,Buried,0.0,0.0,Buried
+S1042,31.219602584838867,0.12977482788437533,Buried,29.0494327545166,0.263296297381812,Exposed
+M1043,8.268763542175293,0.02555250759669296,Buried,2.015122175216675,0.010457603172046987,Buried
+V1044,0.8033731579780579,0.002872642014632525,Buried,0.8033731579780579,0.005103407349052629,Buried
+K1045,60.493431091308594,0.17576499162277182,Buried,49.86749267578125,0.2324701135426262,Buried
+N1046,92.37055969238281,0.3253454647747055,Exposed,67.77742004394531,0.43644972313645497,Exposed
+G1047,22.10396957397461,0.11003120829638788,Buried,0.0,0.0,Buried
+L1048,19.93893814086914,0.0645601767806341,Buried,17.06031608581543,0.09419008722078671,Buried
+D1049,53.91337203979492,0.19760292414110295,Buried,43.7374382019043,0.3065900331601049,Exposed
+V1050,9.11588191986084,0.03259589288410913,Buried,5.386202335357666,0.03421571197490707,Buried
+M1051,1.1865085363388062,0.003666602416878698,Buried,0.9583961367607117,0.0049736569837452805,Buried
+T1052,0.0,0.0,Buried,0.0,0.0,Buried
+L1053,1.444818139076233,0.004678168607356058,Buried,1.444818139076233,0.007976847899724044,Buried
+S1054,0.0,0.0,Buried,0.0,0.0,Buried
+I1055,0.0,0.0,Buried,0.0,0.0,Buried
+G1056,0.0,0.0,Buried,0.0,0.0,Buried
+D1057,7.3298563957214355,0.026865339757635952,Buried,4.640297889709473,0.032527490003217654,Buried
+G1058,0.9621317982673645,0.004789389704389585,Buried,0.0,0.0,Buried
+A1059,6.746487617492676,0.029393880512892975,Buried,5.2387261390686035,0.05732013306782969,Buried
+N1060,4.284556865692139,0.01509096783070824,Buried,4.201221942901611,0.027053584403556957,Buried
+D1061,2.2032415866851807,0.008075306063158484,Buried,2.2032415866851807,0.015444249569516882,Buried
+V1062,3.7406513690948486,0.013375543081373436,Buried,3.7406513690948486,0.023762391732540092,Buried
+A1063,4.498635768890381,0.019600178605372477,Buried,1.095907211303711,0.011990996573279783,Buried
+M1064,0.0,0.0,Buried,0.0,0.0,Buried
+I1065,0.14158301055431366,0.00046250175350134073,Buried,0.14158301055431366,0.0007702597749727969,Buried
+Q1066,25.92604637145996,0.08261148316215437,Buried,13.457769393920898,0.07306804114919507,Buried
+E1067,77.11365509033203,0.2538373550572173,Exposed,76.20670318603516,0.4387507732037925,Exposed
+A1068,2.6081488132476807,0.011363485553233384,Buried,0.0,0.0,Buried
+D1069,26.691102981567383,0.09782804892663673,Buried,21.362516403198242,0.14974664456124162,Buried
+V1070,0.11272135376930237,0.0004030606369758726,Buried,0.11272135376930237,0.0007160595042399098,Buried
+G1071,0.0,0.0,Buried,0.0,0.0,Buried
+V1072,0.4970100522041321,0.0017771715963844656,Buried,0.4970100522041321,0.0031572435894614177,Buried
+G1073,0.043432705104351044,0.00021620338402199106,Buried,0.0,0.0,Buried
+I1074,3.0490338802337646,0.009960118170761333,Buried,1.3422962427139282,0.007302548503607591,Buried
+A1075,18.848360061645508,0.08212072339382658,Buried,13.854775428771973,0.15159364130137568,Buried
+G1076,21.24547004699707,0.10575768901022146,Buried,0.0,0.0,Buried
+E1077,137.26123046875,0.4518269514429341,Exposed,90.06696319580078,0.518549525043836,Exposed
+E1078,26.032241821289062,0.0856911191978287,Buried,22.6734561920166,0.13053965096960876,Buried
+G1079,28.244394302368164,0.14059758914743936,Buried,0.0,0.0,Buried
+R1080,90.15139770507812,0.23706867561937373,Buried,84.07067108154297,0.3370007238151878,Exposed
+Q1081,6.850114822387695,0.021827398485696606,Buried,3.898426055908203,0.021166238410866702,Buried
+A1082,1.0647119283676147,0.004638860541586624,Buried,0.3616721034049988,0.003957277502920239,Buried
+V1083,6.055839538574219,0.02165402082410162,Buried,6.055839538574219,0.03846956510673867,Buried
+M1084,10.101264953613281,0.0312153864537175,Buried,10.101264953613281,0.05242114930785026,Buried
+S1085,13.173002243041992,0.054758035249348705,Buried,9.252449035644531,0.08386172609240888,Buried
+S1086,1.1090846061706543,0.004610284947858497,Buried,0.0,0.0,Buried
+D1087,0.5937057733535767,0.0021760463583603354,Buried,0.5937057733535767,0.004161749755427916,Buried
+F1088,2.2464981079101562,0.006553370444169843,Buried,2.2464981079101562,0.010304511392737508,Buried
+A1089,1.839474081993103,0.008014434241674863,Buried,1.7604900598526,0.019262607324093413,Buried
+I1090,1.3085308074951172,0.004274508577036175,Buried,0.6826116442680359,0.003713639718841879,Buried
+G1091,7.9702582359313965,0.03967509732579113,Buried,0.0,0.0,Buried
+Q1092,17.47530174255371,0.05568379285349734,Buried,17.47530174255371,0.09488095905375715,Buried
+F1093,0.04044632241129875,0.00011798796221206078,Buried,0.0,0.0,Buried
+R1094,85.50115966796875,0.22484007128448766,Buried,84.1883773803711,0.3374725543286401,Exposed
+F1095,8.955633163452148,0.0261249192579074,Buried,8.955633163452148,0.04107878997851405,Buried
+L1096,0.0,0.0,Buried,0.0,0.0,Buried
+Q1097,24.511810302734375,0.07810512158642846,Buried,24.511810302734375,0.13308520241478483,Buried
+R1098,38.93537139892578,0.10238728591305958,Buried,38.93537139892578,0.15607402884561739,Buried
+L1099,1.9304622411727905,0.006250632941329832,Buried,1.9304622411727905,0.010658091324795617,Buried
+V1100,0.5772061347961426,0.002063930786649871,Buried,0.5772061347961426,0.0036666871440548567,Buried
+L1101,0.41741034388542175,0.0013515306282069356,Buried,0.41741034388542175,0.0023045245175800197,Buried
+V1102,0.0,0.0,Buried,0.0,0.0,Buried
+H1103,5.619385242462158,0.017386134886417853,Buried,4.390753269195557,0.022557270392922973,Buried
+G1104,0.0,0.0,Buried,0.0,0.0,Buried
+R1105,20.451433181762695,0.05378057692216448,Buried,16.89450454711914,0.06772231252151958,Buried
+W1106,4.782693386077881,0.012336620663109477,Buried,2.7516744136810303,0.010496506208000857,Buried
+S1107,3.3401825428009033,0.013884597454962113,Buried,3.3401825428009033,0.03027452217503647,Buried
+Y1108,6.17365837097168,0.017249645009042094,Buried,5.232446193695068,0.022637661182254225,Buried
+R1109,29.0756778717041,0.07645951833525651,Buried,28.65565299987793,0.11486735716655687,Buried
+R1110,8.467249870300293,0.02226609641103029,Buried,7.456626892089844,0.029890193899091592,Buried
+L1111,1.0008476972579956,0.0032406391859466483,Buried,1.0008476972579956,0.005525684953623668,Buried
+A1112,2.6724724769592285,0.01164373835920999,Buried,0.7963807582855225,0.008713692952405632,Buried
+E1113,15.637918472290039,0.05147581007483809,Buried,15.637918472290039,0.09003340302316643,Buried
+T1114,1.205789566040039,0.004496099412787813,Buried,1.1198786497116089,0.00792484470471577,Buried
+I1115,0.1381576657295227,0.00045131236021460293,Buried,0.0487913079559803,0.00026544132477240075,Buried
+S1116,1.0808851718902588,0.004493064470108012,Buried,0.0,0.0,Buried
+N1117,0.14347708225250244,0.0005053516852708689,Buried,0.0,0.0,Buried
+F1118,4.402313232421875,0.012842205084325454,Buried,4.356836318969727,0.01998446797129979,Buried
+F1119,3.3789303302764893,0.009856844339807725,Buried,2.5608022212982178,0.011746199816950981,Buried
+Y1120,0.0,0.0,Buried,0.0,0.0,Buried
+K1121,1.5729730129241943,0.004570307609468519,Buried,1.4877121448516846,0.006935351923165382,Buried
+N1122,1.679788589477539,0.005916512806535307,Buried,1.4556684494018555,0.009373713123160807,Buried
+M1123,3.11905574798584,0.009638647336860493,Buried,3.11905574798584,0.01618653582650436,Buried
+I1124,5.098703861236572,0.016655666998275483,Buried,3.8955113887786865,0.021192908061335326,Buried
+W1125,8.842720985412598,0.022809175838933122,Buried,7.697230339050293,0.029361768106195524,Buried
+T1126,1.8332945108413696,0.006835914496035124,Buried,1.681225061416626,0.011897224336613657,Buried
+W1127,43.31281280517578,0.11172234937433709,Buried,43.31281280517578,0.16522056760607978,Buried
+S1128,8.25047492980957,0.034295887049515326,Buried,7.698276996612549,0.06977512595706412,Buried
+I1129,9.531240463256836,0.031135200544475997,Buried,8.794035911560059,0.04784254901644743,Buried
+F1130,18.44156837463379,0.05379680877759086,Buried,18.44156837463379,0.08459003403886307,Buried
+W1131,58.92195510864258,0.1519850323292818,Buried,58.92195510864258,0.2247630259272045,Buried
+Y1132,4.503172874450684,0.012582188522750429,Buried,4.503172874450684,0.019482532261825922,Buried
+Q1133,4.296059608459473,0.013689085135578104,Buried,4.296059608459473,0.02332516266715847,Buried
+C1134,56.7537727355957,0.21676993321441376,Buried,40.15735626220703,0.30427902571021176,Exposed
+Y1135,78.36320495605469,0.2189524243224362,Buried,74.3953628540039,0.3218641827314218,Exposed
+C1136,0.0,0.0,Buried,0.0,0.0,Buried
+N1137,33.3105354309082,0.11732560317653694,Buried,30.911361694335938,0.19905235762170234,Buried
+F1138,34.726402282714844,0.10130210105700964,Buried,34.36053466796875,0.15760908931991688,Buried
+D1139,5.309837341308594,0.019461579672325556,Buried,5.309837341308594,0.03722081753008766,Buried
+I1140,9.960808753967285,0.032538448624343186,Buried,5.1996331214904785,0.028287774235199955,Buried
+A1141,5.30059289932251,0.023094238537723653,Buried,1.3026829957962036,0.014253457936534365,Buried
+Y1142,75.04280090332031,0.20967497685861777,Buried,68.10961151123047,0.2946695009504481,Exposed
+I1143,3.2800984382629395,0.010714924576149282,Buried,1.1816760301589966,0.0064287198691247585,Buried
+F1144,1.8545310497283936,0.005409944004088774,Buried,1.4451484680175781,0.00662878317166152,Buried
+E1145,11.335442543029785,0.037313219690535464,Buried,5.187024116516113,0.029863656956691506,Buried
+Y1146,111.7542495727539,0.31224940182080285,Exposed,105.65478515625,0.45710498304465436,Exposed
+T1147,12.450563430786133,0.04642515784398166,Buried,12.450563430786133,0.08810667271905084,Buried
+Y1148,4.032737731933594,0.011267758938121385,Buried,4.032737731933594,0.01744724112450668,Buried
+I1149,51.65072250366211,0.1687246911478184,Buried,28.42462730407715,0.15463964881948203,Buried
+L1150,92.21759796142578,0.29859084694545185,Exposed,72.65109252929688,0.4011070315226721,Exposed
+M1151,22.1943359375,0.0685859421126136,Buried,22.1943359375,0.11517890118822204,Buried
+F1152,2.1237399578094482,0.006195266589188488,Buried,2.1237399578094482,0.009741429344366285,Buried
+N1153,26.457561492919922,0.09318821569757377,Buried,18.613887786865234,0.11986331385589687,Buried
+L1154,106.32762145996094,0.34427761346272956,Exposed,93.5723648071289,0.5166134764622964,Exposed
+F1155,96.59809875488281,0.2817910787969227,Exposed,88.09210968017578,0.4040716280211337,Exposed
+F1156,0.53499436378479,0.0015606584484000408,Buried,0.53499436378479,0.002453977369159306,Buried
+T1157,0.0,0.0,Buried,0.0,0.0,Buried
+S1158,26.020692825317383,0.10816380265127555,Buried,25.39154815673828,0.2301422086605702,Buried
+V1159,63.02577590942383,0.22536288408974983,Buried,61.71965408325195,0.39207251711297153,Exposed
+P1160,0.9918439388275146,0.00383077848140323,Buried,0.0,0.0,Buried
+V1161,1.2663241624832153,0.004528027800242964,Buried,1.2663241624832153,0.008044291712913147,Buried
+I1162,22.266557693481445,0.07273698968085811,Buried,22.266557693481445,0.12113765381348765,Buried
+L1163,25.708499908447266,0.08324140870131223,Buried,25.708499908447266,0.14193675172909295,Buried
+M1164,2.654557228088379,0.008203232973178005,Buried,0.6015670895576477,0.0031218702177602206,Buried
+G1165,0.0,0.0,Buried,0.0,0.0,Buried
+V1166,3.337312698364258,0.011933314647226056,Buried,3.337312698364258,0.02120019318766434,Buried
+L1167,13.868345260620117,0.04490423789646582,Buried,7.194595813751221,0.03972139811518296,Buried
+D1168,1.4160939455032349,0.005190257887846544,Buried,0.08355523645877838,0.0005857042334839335,Buried
+Q1169,9.83240032196045,0.03133023685922907,Buried,8.75095272064209,0.047512701010865244,Buried
+D1170,6.917360305786133,0.025353461897207892,Buried,6.017481803894043,0.042181252986963395,Buried
+V1171,8.420050621032715,0.030107791054641998,Buried,0.3583574891090393,0.0022764567440988225,Buried
+S1172,30.58610725402832,0.12714149047086773,Buried,30.58610725402832,0.2772243044937435,Exposed
+D1173,34.570980072021484,0.1267093207898934,Buried,30.641115188598633,0.2147876260691928,Buried
+T1174,42.15557098388672,0.1571879897491951,Buried,36.88423156738281,0.2610120367055462,Exposed
+V1175,2.1799981594085693,0.0077950753548946304,Buried,1.9991220235824585,0.01269937130147723,Buried
+S1176,0.36749497056007385,0.0015276170291792107,Buried,0.0,0.0,Buried
+L1177,44.94203567504883,0.14551756706218666,Buried,36.3880500793457,0.2008985996231094,Buried
+A1178,51.52145767211914,0.2244746683796885,Buried,13.644708633422852,0.14929517095898726,Buried
+V1179,14.727560997009277,0.05266171774963341,Buried,13.434691429138184,0.08534353219402781,Buried
+P1180,8.81599235534668,0.034049826273073125,Buried,8.458613395690918,0.055235339241717245,Buried
+Q1181,43.985347747802734,0.14015614887000943,Buried,43.07418441772461,0.23386834677996698,Buried
+L1182,8.6012601852417,0.02784997245952778,Buried,0.45987334847450256,0.0025389629702900255,Buried
+Y1183,1.3127301931381226,0.003667862467213244,Buried,0.13731451332569122,0.0005940776671184406,Buried
+R1184,98.39454650878906,0.25874545955812234,Exposed,96.98650360107422,0.388774366772504,Exposed
+R1185,68.05203247070312,0.1789545766535293,Buried,65.02568817138672,0.26065813081333894,Exposed
+G1186,6.461146354675293,0.032162898976380076,Buried,0.0,0.0,Buried
+I1187,11.646042823791504,0.03804351388113049,Buried,9.547331809997559,0.05194073514023954,Buried
+E1188,68.34896087646484,0.22498634553721497,Buried,52.25033950805664,0.30082493928856235,Exposed
+R1189,51.68779754638672,0.13592199368988803,Buried,38.77935791015625,0.15544864239438674,Buried
+K1190,92.50636291503906,0.26877926759143606,Exposed,82.75926208496094,0.38580353695902797,Exposed
+E1191,29.983827590942383,0.0986986738115419,Buried,29.983827590942383,0.1726282202107636,Buried
+W1192,5.364704132080078,0.013837876381526034,Buried,1.2931060791015625,0.004932667876478852,Buried
+T1193,40.98497772216797,0.15282312889382071,Buried,31.32059097290039,0.22164081758686752,Buried
+Q1194,97.46028900146484,0.31055020532117567,Exposed,80.04496002197266,0.4345986516393379,Exposed
+T1195,81.92013549804688,0.30546049118494056,Exposed,80.4349594116211,0.56919967384981,Exposed
+K1196,43.076534271240234,0.12515981568138226,Buried,42.00495529174805,0.19581687793114264,Buried
+F1197,1.7343571186065674,0.005059378701763146,Buried,0.18451189994812012,0.0008463416765927164,Buried
+W1198,95.7210922241211,0.2469058141307892,Buried,95.38898468017578,0.3638697459598602,Exposed
+L1199,105.35637664794922,0.3411328252940845,Exposed,98.29069519042969,0.5426634012177407,Exposed
+Y1200,9.500460624694824,0.02654496950607502,Buried,9.500460624694824,0.04110280368603486,Buried
+M1201,12.821532249450684,0.03962167965431306,Buried,11.325089454650879,0.05877226346930475,Buried
+I1202,107.3275375366211,0.3506012064252991,Exposed,103.85194396972656,0.5649899283778996,Exposed
+D1203,24.07172203063965,0.08822751169886381,Buried,19.597990036010742,0.13737769430561506,Buried
+G1204,0.0,0.0,Buried,0.0,0.0,Buried
+V1205,41.64201736450195,0.14890042997751324,Buried,41.64201736450195,0.26452984561027715,Exposed
+Y1206,74.20470428466797,0.20733327469657278,Buried,69.6231689453125,0.3012177575601228,Exposed
+Q1207,0.040493350476026535,0.00012902915057314636,Buried,0.040493350476026535,0.00021985588489780564,Buried
+S1208,0.24730701744556427,0.001028015188097948,Buried,0.0,0.0,Buried
+V1209,44.46548080444336,0.1589963606466035,Buried,44.42525100708008,0.28221026582921066,Exposed
+M1210,52.88393020629883,0.16342431627739296,Buried,52.68565368652344,0.2734155109251945,Exposed
+S1211,3.3026437759399414,0.013728554885389533,Buried,2.8145384788513184,0.025510224815146174,Buried
+F1212,0.3045826852321625,0.0008885131753185377,Buried,0.3045826852321625,0.0013970969924052663,Buried
+F1213,49.47416687011719,0.14432353260166617,Buried,49.35263442993164,0.22637668020024815,Buried
+I1214,10.835042953491211,0.03539426337688757,Buried,10.835042953491211,0.058946322122279904,Buried
+P1215,0.0,0.0,Buried,0.0,0.0,Buried
+F1216,18.45014762878418,0.053821835743064025,Buried,18.45014762878418,0.08462938640769997,Buried
+I1217,38.0660514831543,0.12434836277956782,Buried,38.0660514831543,0.20709227847835168,Buried
+F1218,2.175875663757324,0.006347354228720302,Buried,1.044739007949829,0.00479213624616453,Buried
+V1219,0.0,0.0,Buried,0.0,0.0,Buried
+V1220,20.335208892822266,0.07271312821662095,Buried,9.923895835876465,0.06304129337294587,Buried
+L1221,82.8550796508789,0.2682760010409005,Exposed,54.050540924072266,0.29841329658610094,Exposed
+T1222,1.96981680393219,0.00734497330620043,Buried,0.0,0.0,Buried
+P1223,11.966872215270996,0.04621940486540041,Buried,11.921395301818848,0.07784754816504909,Buried
+T1224,2.6320583820343018,0.009814312944133331,Buried,1.7824703454971313,0.012613688708560973,Buried
+A1225,3.3096823692321777,0.014420008397346588,Buried,3.2112584114074707,0.035136358452551114,Buried
+A1226,4.180688858032227,0.018214910590802054,Buried,0.0,0.0,Buried
+G1227,17.29440689086914,0.08608971708014956,Buried,0.0,0.0,Buried
+N1228,85.52692413330078,0.3012409687195424,Exposed,64.3562240600586,0.4144190816780641,Exposed
+G1229,2.8099629878997803,0.013987696725332831,Buried,0.0,0.0,Buried
+L1230,21.531557083129883,0.06971690878562431,Buried,21.166444778442383,0.11686004349550494,Buried
+D1231,9.31074333190918,0.03412567306965146,Buried,6.630043983459473,0.046475182093616334,Buried
+V1232,0.0,0.0,Buried,0.0,0.0,Buried
+S1233,15.425378799438477,0.06412079952999031,Buried,14.068609237670898,0.12751411543533062,Buried
+E1234,17.49112892150879,0.05757607906407269,Buried,17.49112892150879,0.10070303552936667,Buried
+R1235,34.64558410644531,0.09110654908583811,Buried,34.64558410644531,0.13887824101638838,Buried
+T1236,8.226428985595703,0.030674376004883524,Buried,7.401908874511719,0.05237976307885566,Buried
+R1237,4.855057716369629,0.012767213067962621,Buried,4.855057716369629,0.019461697444928365,Buried
+L1238,1.2384226322174072,0.0040098817449668285,Buried,1.2384226322174072,0.006837337312978541,Buried
+G1239,0.6039031744003296,0.003006165736471568,Buried,0.0,0.0,Buried
+A1240,2.0239806175231934,0.00881831373671126,Buried,1.9834873676300049,0.021702558376362233,Buried
+Y1241,0.0,0.0,Buried,0.0,0.0,Buried
+I1242,2.898864269256592,0.009469567022515245,Buried,0.7024672031402588,0.0038216607183177344,Buried
+A1243,1.1904301643371582,0.005186604347830179,Buried,1.0315775871276855,0.011287126487291889,Buried
+H1244,0.996049702167511,0.0030817346966361316,Buried,0.5227568745613098,0.002685636711123881,Buried
+P1245,0.10806258022785187,0.00041736788498311823,Buried,0.10806258022785187,0.0007056562345385609,Buried
+A1246,6.765891075134277,0.02947841974986947,Buried,6.765891075134277,0.07402978633620445,Buried
+V1247,0.33816269040107727,0.0012091770089408904,Buried,0.33816269040107727,0.0021481698040693087,Buried
+I1248,46.69499588012695,0.15253608035133426,Buried,42.43265151977539,0.2308480691515109,Buried
+T1249,0.0,0.0,Buried,0.0,0.0,Buried
+I1250,0.9211848378181458,0.003009185926487279,Buried,0.9211848378181458,0.005011559106620079,Buried
+N1251,0.40675240755081177,0.0014326539919597573,Buried,0.35780075192451477,0.0023040422461376962,Buried
+G1252,19.343814849853516,0.09629145180768868,Buried,0.0,0.0,Buried
+Y1253,0.578109860420227,0.001615280481888125,Buried,0.578109860420227,0.002501135159704627,Buried
+I1254,1.6977653503417969,0.005546000529955361,Buried,1.5744297504425049,0.008565433808324767,Buried
+L1255,26.15032196044922,0.08467198186329834,Buried,25.74271583557129,0.14212565802742533,Buried
+I1256,29.398386001586914,0.09603415708290261,Buried,23.769392013549805,0.12931358410812696,Buried
+N1257,5.110467433929443,0.017999971073520304,Buried,0.6109843850135803,0.003934407144842274,Buried
+T1258,0.0,0.0,Buried,0.0,0.0,Buried
+Y1259,26.328937530517578,0.07356494295216275,Buried,26.328937530517578,0.11390954537149107,Buried
+R1260,34.61183547973633,0.0910178012411952,Buried,34.61183547973633,0.13874295826578842,Buried
+W1261,69.21623992919922,0.17853841482268867,Buried,65.02539825439453,0.24804515136727917,Buried
+D1262,7.735355854034424,0.028351573611477172,Buried,1.727829933166504,0.012111716147139956,Buried
+W1263,148.80665588378906,0.38383628587355983,Exposed,137.51332092285156,0.5245567642643507,Exposed
+L1264,35.0745849609375,0.11356780333974137,Buried,35.0745849609375,0.1936469523826933,Buried
+M1265,2.6949374675750732,0.008328017818091902,Buried,2.23811411857605,0.011614833876416155,Buried
+L1266,64.98611450195312,0.21041817828468068,Buried,63.537166595458984,0.3507890025767887,Exposed
+L1267,69.63948059082031,0.2254852864325561,Buried,61.20885467529297,0.337934381259428,Exposed
+S1268,16.462182998657227,0.06843062654132942,Buried,14.064112663269043,0.12747335968629706,Buried
+I1269,17.298500061035156,0.05650809782790039,Buried,17.298500061035156,0.0941097290714016,Buried
+V1270,85.92957305908203,0.3072605792434207,Exposed,82.18588256835938,0.5220837078293288,Exposed
+L1271,102.33618927001953,0.33135377740034944,Exposed,96.9393081665039,0.5352023869544446,Exposed
+S1272,7.671768665313721,0.031890298904487815,Buried,5.503299713134766,0.04988043828929781,Buried
+D1273,27.44951057434082,0.10060775927219308,Buried,26.933481216430664,0.18879790949674352,Buried
+V1274,82.91131591796875,0.29646811973886317,Exposed,80.23228454589844,0.5096735265755581,Exposed
+F1275,60.378639221191406,0.17613350678467354,Buried,57.90434646606445,0.265602715509807,Exposed
+I1276,2.598357915878296,0.008487918766614947,Buried,2.598357915878296,0.01413595159297327,Buried
+F1277,42.93854522705078,0.12525814832240148,Buried,38.57355499267578,0.17693388455607406,Buried
+F1278,115.5805435180664,0.3371657047674998,Exposed,106.45040893554688,0.48827971311239504,Exposed
+W1279,57.21113967895508,0.14757210445017363,Buried,57.21113967895508,0.21823696866942166,Buried
+T1280,5.4385294914245605,0.02027896901872115,Buried,3.0025475025177,0.021247590247490275,Buried
+G1281,30.228923797607422,0.15047636578664064,Buried,0.0,0.0,Buried
+V1282,76.9090576171875,0.2750056907215721,Exposed,62.241519927978516,0.39538765648593754,Exposed
+Y1283,20.548059463500977,0.057412754330021826,Buried,16.11499786376953,0.06971994514388791,Buried
+T1284,2.3349952697753906,0.008706636014256945,Buried,0.19261512160301208,0.001363044939625293,Buried
+A1285,71.32766723632812,0.31076866169172895,Exposed,36.713191986083984,0.40170167214758357,Exposed
+T1286,59.73646545410156,0.22274291867714432,Buried,56.95545959472656,0.4030465019492575,Exposed
+T1287,64.23808288574219,0.2395283678641567,Buried,53.406944274902344,0.3779353590150176,Exposed
+Y1288,165.78152465820312,0.4632054897721325,Exposed,136.9818115234375,0.5926382656615808,Exposed
+S1289,15.497615814208984,0.06442107709224462,Buried,0.0,0.0,Buried
+A1290,46.93183898925781,0.20447808485169483,Buried,23.792707443237305,0.2603306835452894,Exposed
+G1291,26.726869583129883,0.1330435125858238,Buried,0.0,0.0,Buried
+F1292,2.5306107997894287,0.007382169592150082,Buried,2.5306107997894287,0.011607714124127642,Buried
+Y1293,23.084047317504883,0.06449848658150123,Buried,22.5806884765625,0.09769311638797215,Buried
+Q1294,65.30467224121094,0.20808864390536866,Buried,63.396080017089844,0.34420469305105195,Exposed
+A1295,1.7418009042739868,0.007588880401222212,Buried,1.110392689704895,0.012149491124715655,Buried
+A1296,10.997762680053711,0.0479163292745795,Buried,9.772340774536133,0.10692520637854507,Buried
+P1297,63.7591438293457,0.24625563217423316,Buried,52.41750717163086,0.34229000137364507,Exposed
+Q1298,8.373018264770508,0.02668002083641834,Buried,8.373018264770508,0.04546073165658299,Buried
+V1299,2.5059545040130615,0.008960605819969587,Buried,2.5059545040130615,0.015919011613929338,Buried
+Y1300,40.95630645751953,0.11443486257607031,Buried,38.5748176574707,0.1668901351244262,Buried
+Q1301,153.9859161376953,0.49066505304957453,Exposed,111.9718246459961,0.607943385809527,Exposed
+E1302,13.704700469970703,0.04511217779877884,Buried,8.594449996948242,0.04948149472123306,Buried
+L1303,32.853851318359375,0.10637730224411503,Buried,28.639617919921875,0.15811946837786342,Buried
+T1304,6.5155744552612305,0.024295010760859867,Buried,5.887180805206299,0.04166075819184342,Buried
+F1305,0.0,0.0,Buried,0.0,0.0,Buried
+W1306,106.47305297851562,0.2746397394536461,Exposed,106.10660552978516,0.4047530616688694,Exposed
+M1307,13.090399742126465,0.04045254615739537,Buried,13.090399742126465,0.06793345215006892,Buried
+C1308,0.0,0.0,Buried,0.0,0.0,Buried
+L1309,16.050382614135742,0.05196944449320864,Buried,9.925396919250488,0.05479816416194186,Buried
+I1310,52.374732971191406,0.1710897779578433,Buried,45.70408248901367,0.24864576728166798,Buried
+V1311,0.0,0.0,Buried,0.0,0.0,Buried
+T1312,0.5373827815055847,0.0020037712022209623,Buried,0.1826491355895996,0.0012925204310046475,Buried
+P1313,16.36751937866211,0.0632159340549572,Buried,14.42636775970459,0.09420519415617143,Buried
+A1314,15.472345352172852,0.06741171055539665,Buried,5.75265645980835,0.06294336161430837,Buried
+L1315,21.506046295166016,0.06963430754732743,Buried,20.988018035888672,0.11587494859110115,Buried
+C1316,0.4454449415206909,0.0017013683068082136,Buried,0.14352749288082123,0.0010875318935650825,Buried
+L1317,26.51382064819336,0.08584895224028087,Buried,24.863061904907227,0.1372690844424702,Buried
+L1318,10.114140510559082,0.03274851924072442,Buried,9.45836353302002,0.05221967058874001,Buried
+P1319,54.00489807128906,0.2085820090471373,Buried,44.53561019897461,0.29082066085800956,Exposed
+R1320,46.905738830566406,0.12334674410582366,Buried,42.24394607543945,0.16933658576871177,Buried
+L1321,41.4912109375,0.13434416085965223,Buried,40.99427032470703,0.2263295637674059,Buried
+V1322,24.07955551147461,0.08610188449665306,Buried,24.07955551147461,0.15296475783242017,Buried
+V1323,90.26734161376953,0.3227712495666722,Exposed,85.39754486083984,0.5424857100413166,Exposed
+K1324,25.218433380126953,0.07327271162892074,Buried,21.84339141845703,0.1018285743022908,Buried
+C1325,0.5419120788574219,0.0020698226651693708,Buried,0.5419120788574219,0.004106158739600985,Buried
+I1326,55.62021255493164,0.18169161494771885,Buried,55.46893310546875,0.30176987877658706,Exposed
+Q1327,54.14177703857422,0.17251888074669902,Buried,53.854827880859375,0.2924011152590404,Exposed
+K1328,17.907114028930664,0.052029512800030736,Buried,17.907114028930664,0.08347860716783168,Buried
+Q1329,7.581074237823486,0.024156548120596824,Buried,3.4342496395111084,0.01864602421332595,Buried
+R1330,134.24522399902344,0.3530210098992394,Exposed,110.73172760009766,0.44387265940038023,Exposed
+F1331,111.8915786743164,0.32640444345528696,Exposed,111.65817260742188,0.5121673184028539,Exposed
+P1332,32.82234573364258,0.12676907205205085,Buried,15.916372299194336,0.10393502839263641,Buried
+Y1333,72.9444808959961,0.203812120013169,Buried,70.14514923095703,0.303476053663478,Exposed
+D1334,33.31361389160156,0.12210083082596176,Buried,30.378860473632812,0.21294927693254254,Buried
+V1335,20.96837615966797,0.07497716065904005,Buried,20.62108039855957,0.13099488351873503,Buried
+D1336,11.120427131652832,0.04075851381157676,Buried,7.508029460906982,0.05262967142154873,Buried
+I1337,0.0,0.0,Buried,0.0,0.0,Buried
+I1338,2.6155149936676025,0.008543964887766391,Buried,2.575840950012207,0.01401345163345708,Buried
+R1339,21.398229598999023,0.056270341678221515,Buried,15.781708717346191,0.0632616249206288,Buried
+E1340,10.69426155090332,0.03520262479053118,Buried,3.2487895488739014,0.018704508487463738,Buried
+Q1341,26.36777114868164,0.08401900741297597,Buried,26.36777114868164,0.14316201525750064,Buried
+A1342,33.878231048583984,0.14760461026390367,Buried,8.341429710388184,0.0912687260762988,Buried
+N1343,94.06269836425781,0.33130547675793726,Exposed,64.6307144165039,0.4161866502871453,Exposed
+R1344,148.49269104003906,0.3904871860021751,Exposed,103.49750518798828,0.41487398295641237,Exposed
+G1345,16.893728256225586,0.08409518147599791,Buried,0.0,0.0,Buried
+D1346,104.00755310058594,0.38120777550821133,Exposed,51.81391525268555,0.36320439990433817,Exposed
+F1347,25.177793502807617,0.07344738337848167,Buried,22.418668746948242,0.10283268287630151,Buried
+A1348,63.3243293762207,0.2758987901226561,Exposed,53.01170349121094,0.5800337367528022,Exposed
+A1349,81.52848052978516,0.355212749353694,Exposed,59.65828323364258,0.6527580642264003,Exposed
+A1350,44.550872802734375,0.19410441494226743,Buried,30.670791625976562,0.3355880438539623,Exposed
+D1351,55.328651428222656,0.20279019651990213,Buried,53.62126159667969,0.37587350898610494,Exposed
+A1352,63.018531799316406,0.2745664557367823,Exposed,47.25621032714844,0.517059337008039,Exposed
+A1353,69.06852722167969,0.30092577819183297,Exposed,43.62679672241211,0.4773476847362779,Exposed
+A1354,71.93316650390625,0.3134067711986208,Exposed,32.507774353027344,0.3556876046179033,Exposed
+V1355,123.08657836914062,0.44012383653750303,Exposed,79.85395812988281,0.5072702177362458,Exposed
+A1356,112.32064819335938,0.4893716403726695,Exposed,49.111087799072266,0.5373546952101564,Exposed
+A1357,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1358,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1359,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1360,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1361,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1362,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1363,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V1364,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1365,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1366,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1367,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1368,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1369,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1370,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1371,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1372,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1373,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1374,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1375,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1376,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K1377,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1378,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1379,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1380,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1381,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1382,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K1383,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K1384,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1385,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K1386,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H1387,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1388,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1389,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Y1390,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1391,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1392,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V1393,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1394,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1395,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1396,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1397,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1398,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1399,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1400,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Y1401,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1402,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1403,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1404,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1405,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1406,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1407,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H1408,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N1409,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1410,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1411,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1412,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1413,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N1414,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1415,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1416,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1417,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1418,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1419,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1420,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Y1421,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1422,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M1423,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1424,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1425,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1426,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1427,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1428,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1429,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1430,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1431,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1432,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1433,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1434,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M1435,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1436,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F1437,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1438,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1439,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1440,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1441,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1442,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1443,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1444,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1445,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1446,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1447,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V1448,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1449,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1450,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1451,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1452,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1453,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1454,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1455,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1456,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1457,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1458,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Y1459,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1460,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1461,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1462,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1463,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1464,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1465,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1466,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1467,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1468,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V1469,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1470,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1471,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1472,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F1473,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1474,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1475,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1476,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N1477,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1478,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F1479,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1480,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1481,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1482,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1483,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1484,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1485,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1486,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1487,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1488,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1489,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1490,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1491,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H1492,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1493,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1494,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1495,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1496,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H1497,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1498,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Y1499,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1500,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H1501,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1502,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1503,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1504,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1505,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Y1506,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1507,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1508,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1509,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1510,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1511,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1512,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1513,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1514,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1515,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1516,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1517,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1518,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1519,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1520,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q1521,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1522,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1523,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F1524,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+N1525,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1526,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1527,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1528,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+V1529,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1530,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K1531,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1532,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1533,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+L1534,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1535,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A1536,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+F1537,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1538,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K1539,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+K1540,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S1541,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+I1542,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D1543,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1544,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+T1545,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1546,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G1547,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1548,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1549,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1550,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R1551,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+E1552,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1553,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P1554,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+M1555,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+
+Residue,Total SASA,Total Relative SASA,Total: Exposed or Buried?,Sidechain SASA,Sidechain Relative SASA,Sidechain: Exposed or Buried?,PDB ID: 6LCP,Chain B FASTA:,MAPRRRRGAGQDGSDDGRSDSDAPKNRPPNTAFRQQRMRAWQCVLTPKLIVTVFSILAAIYLGFGAWLTYLAHTVRDLKIDYTDCLTSAPKDDFETIPQNHITAHFSAKDSTFDPYKAQWKTTEREVQVANYTDNRQFCIVRFNIPEDLQPTISFFYYLENFYQNHRRYVNSFNAKQLLGDAVDGKTINDSTCDPITHDPKGTGKIVYPCGLVANSIFNDTFSSPLALAVRNSSDSSRPYNMTTKGIAWPGLKDLYGKTSYSLDQIVPPPNWERRYKYGYQENNPPPDLKTDELFQNWMMLAAAPNFYKLYQKNDTHPMLAGQYEIEIESNFDVTVYKGRKAFVITTLSTMGSRNIWPGIIFLIVGGICLVLDIYFILSFFIWRPRKLGDPSYLSWNQPSAPGGHSS
+M1,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A2,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P3,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R4,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R5,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R6,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R7,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G8,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A9,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G10,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+Q11,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D12,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G13,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S14,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D15,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D16,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G17,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+R18,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S19,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D20,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S21,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+D22,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A23,138.1306610107422,0.6018237007341677,Exposed,57.12042236328125,0.6249897635107204,Exposed
+P24,57.218841552734375,0.22099515697010702,Buried,36.5136833190918,0.2384369152185288,Buried
+K25,164.03182983398438,0.47659808142012466,Exposed,131.33535766601562,0.6122534715608048,Exposed
+N26,66.62432098388672,0.2346626538584161,Buried,58.41542053222656,0.3761635379697139,Exposed
+R27,119.60397338867188,0.31451931186719795,Exposed,105.78739166259766,0.42405308655425894,Exposed
+P28,4.984390735626221,0.019251110003771547,Buried,1.0851291418075562,0.007085969468630388,Buried
+P29,58.9798698425293,0.22779674037814143,Buried,50.54536437988281,0.33006477752503904,Exposed
+N30,104.7822494506836,0.3690616335031582,Exposed,67.91830444335938,0.4373569420462135,Exposed
+T31,66.64259338378906,0.24849420945276415,Buried,61.00165557861328,0.4316794925196237,Exposed
+A32,49.41998291015625,0.21531871915748352,Buried,44.35504913330078,0.48531594342951206,Exposed
+F33,74.60883331298828,0.2176451079062675,Buried,74.03501892089844,0.33959285042159726,Exposed
+R34,51.55076599121094,0.13556164554076824,Buried,50.2669792175293,0.2014972422889273,Buried
+Q35,10.8701810836792,0.034637050659312094,Buried,5.582198143005371,0.030308164130106372,Buried
+Q36,14.900854110717773,0.047480500529551446,Buried,10.287185668945312,0.05585357303770159,Buried
+R37,121.36441802978516,0.31914870520101246,Exposed,97.28428649902344,0.38996804169929666,Exposed
+M38,22.36919403076172,0.06912629651186854,Buried,16.886310577392578,0.08763256999011658,Buried
+R39,211.48443603515625,0.5561348624785717,Exposed,196.93283081054688,0.7894133075464226,Exposed
+A40,49.726524353027344,0.2166542945049636,Buried,0.6518827676773071,0.007132651334687191,Buried
+W41,115.9589614868164,0.2991079721972544,Exposed,115.10653686523438,0.43908409831493483,Exposed
+Q42,48.93056106567383,0.1559137156385504,Buried,39.77787780761719,0.2159712748375327,Buried
+C43,13.868297576904297,0.05296969337260758,Buried,9.284602165222168,0.07035098830944447,Buried
+V44,15.35595417022705,0.05490867934296926,Buried,10.332329750061035,0.0656358593209767,Buried
+L45,45.068668365478516,0.14592759034540204,Buried,39.3249397277832,0.2171131815073308,Buried
+T46,39.27606201171875,0.14645099304304535,Buried,39.27606201171875,0.2779378749079754,Exposed
+P47,17.102632522583008,0.066055146458128,Buried,16.803401947021484,0.10972739425961801,Buried
+K48,160.30133056640625,0.46575903392875445,Exposed,145.56752014160156,0.6786003490380317,Exposed
+L49,47.0505485534668,0.15234470917041598,Buried,46.41549301147461,0.2562601603132987,Exposed
+I50,5.8479695320129395,0.019103253648790237,Buried,5.007410526275635,0.027242017880993362,Buried
+V51,24.346040725708008,0.08705476251489787,Buried,22.847129821777344,0.14513580529709777,Buried
+T52,66.8948745727539,0.24943490535651736,Buried,63.211326599121094,0.4473162757465784,Exposed
+V53,46.47894287109375,0.16619594862149414,Buried,46.47894287109375,0.2952562906402403,Exposed
+F54,1.5159410238265991,0.004422226337814087,Buried,1.5159410238265991,0.006953503096991739,Buried
+S55,56.94818115234375,0.2367243589116873,Buried,51.56216812133789,0.467345716043834,Exposed
+I56,104.67266845703125,0.34192868562058176,Exposed,97.05218505859375,0.527996925133706,Exposed
+L57,42.80131149291992,0.13858612815303337,Buried,42.80131149291992,0.23630624675436646,Buried
+A58,6.3010077476501465,0.02745296209616031,Buried,6.0217719078063965,0.06588791967677644,Buried
+A59,65.25596618652344,0.28431476963903823,Exposed,43.557010650634766,0.4765841122924491,Exposed
+I60,74.34883880615234,0.24287143057635965,Buried,63.777584075927734,0.3469717684791525,Exposed
+Y61,15.415430068969727,0.04307181906950725,Buried,15.415430068969727,0.06669333423830855,Buried
+L62,59.372657775878906,0.1922423980086507,Buried,53.3389778137207,0.2944847532291093,Exposed
+G63,40.88325881958008,0.20351251172137175,Buried,0.0,0.0,Buried
+F64,56.07150650024414,0.16356895746536404,Buried,54.83253860473633,0.2515125727262894,Exposed
+G65,0.0,0.0,Buried,0.0,0.0,Buried
+A66,58.85466766357422,0.2564248490493883,Exposed,45.50755310058594,0.49792620000950805,Exposed
+W67,100.11056518554688,0.25822815040969777,Exposed,93.83386993408203,0.3579376227750208,Exposed
+L68,2.488887071609497,0.00805875359033235,Buried,2.3392295837402344,0.012914897790500469,Buried
+T69,35.58794021606445,0.13269887351344195,Buried,34.90358352661133,0.24699593938834516,Buried
+Y70,142.67955017089844,0.3986569133903084,Exposed,135.0048370361328,0.5840850809841175,Exposed
+L71,12.469663619995117,0.04037545440054384,Buried,12.389432907104492,0.06840211871024547,Buried
+A72,0.786392092704773,0.0034262443688940847,Buried,0.6064824461936951,0.00663589842192173,Buried
+H73,108.49726867675781,0.33568585648267785,Exposed,88.9255142211914,0.4568502819755668,Exposed
+T74,54.880393981933594,0.20463579558586267,Buried,38.380226135253906,0.27159847357754996,Exposed
+V75,7.865243434906006,0.028123952763481216,Buried,2.488757371902466,0.01580976727395571,Buried
+R76,34.21711349487305,0.08997981158633134,Buried,33.45871353149414,0.13412062176953424,Buried
+D77,17.507030487060547,0.06416664894781753,Buried,16.87171173095703,0.11826706985405083,Buried
+L78,5.52046012878418,0.017874667111496094,Buried,5.092392921447754,0.028115125828910157,Buried
+K79,33.84016036987305,0.09832332860978286,Buried,33.84016036987305,0.1577545912450835,Buried
+I80,1.1838324069976807,0.0038671628887146764,Buried,1.1838324069976807,0.0064404512931990066,Buried
+D81,15.524975776672363,0.05690203551775314,Buried,13.408856391906738,0.09399319884388611,Buried
+Y82,1.561401128768921,0.004362666926084282,Buried,0.4408912658691406,0.001907472475682073,Buried
+T83,13.045123100280762,0.048642127915850195,Buried,6.526745319366455,0.046186649862937836,Buried
+D84,35.615726470947266,0.13053851817827486,Buried,35.200565338134766,0.2467483908054609,Buried
+C85,0.8710393309593201,0.003326917815293634,Buried,0.0,0.0,Buried
+L86,68.64569854736328,0.22226752508770803,Buried,43.50978088378906,0.24021770967120565,Buried
+T87,90.58100128173828,0.3377547775687357,Exposed,53.60992431640625,0.3793717515272684,Exposed
+S88,68.70772552490234,0.28560687888612735,Exposed,43.71711730957031,0.3962402714396041,Exposed
+A89,7.816733360290527,0.034056851419660014,Buried,0.0,0.0,Buried
+P90,31.07377052307129,0.12001558591622792,Buried,22.707914352416992,0.14828427474491052,Buried
+K91,127.31949615478516,0.3699295902274677,Exposed,109.95325469970703,0.5125753117488525,Exposed
+D92,110.13702392578125,0.40367347024535655,Exposed,87.5182876586914,0.6134843698784704,Exposed
+D93,97.52243041992188,0.3574385480117915,Exposed,95.54023742675781,0.6697165121005791,Exposed
+F94,66.57447814941406,0.19420769414591887,Buried,37.23305130004883,0.17078509879745565,Buried
+E95,105.81800079345703,0.34832431956945636,Exposed,99.25955200195312,0.5714747308042522,Exposed
+T96,82.96489715576172,0.3093561562396496,Exposed,72.72505950927734,0.5146404058159816,Exposed
+I97,7.3588547706604,0.024038782773915572,Buried,0.47514572739601135,0.0025849545057027817,Buried
+P98,62.68453598022461,0.2421051963413274,Buried,53.13459014892578,0.34697260355233356,Exposed
+Q99,106.25794219970703,0.3385832948497481,Exposed,85.7567367553711,0.4656103538891547,Exposed
+N100,123.87881469726562,0.4363231172100937,Exposed,80.92696380615234,0.521125633353528,Exposed
+H101,14.141691207885742,0.04375378093042829,Buried,11.876708030700684,0.061015980174945916,Buried
+I102,9.236688613891602,0.030173003552795112,Buried,2.4904539585113525,0.013548917332331864,Buried
+T103,47.539085388183594,0.17726182073397093,Buried,45.059852600097656,0.31886699006639285,Exposed
+A104,10.492293357849121,0.04571404184707562,Buried,0.0,0.0,Buried
+H105,77.6145248413086,0.24013598281881943,Buried,70.09735870361328,0.360121595809189,Exposed
+F106,18.33167266845703,0.05347622659224911,Buried,5.7762956619262695,0.026495417132361074,Buried
+S107,71.47061920166016,0.2970917800916987,Exposed,39.84978485107422,0.36118780326677197,Exposed
+A108,49.533931732177734,0.21581518461462007,Buried,37.82937240600586,0.41391449039751843,Exposed
+K109,169.9453582763672,0.4937799680875809,Exposed,139.415771484375,0.6499223940798972,Exposed
+D110,146.57061767578125,0.5372096300065184,Exposed,110.30618286132812,0.7732226132015829,Exposed
+S111,47.22745132446289,0.19631686054922015,Buried,25.127946853637695,0.22775299687533787,Buried
+T112,118.21855926513672,0.4408085870556894,Exposed,76.49678039550781,0.5413310676127814,Exposed
+F113,45.072837829589844,0.13148419855206372,Buried,42.93524169921875,0.19694060087640725,Buried
+D114,57.882591247558594,0.21215087935770857,Buried,57.22357940673828,0.4011249819173891,Exposed
+P115,19.577322006225586,0.07561308884299493,Buried,14.923714637756348,0.09745290418202418,Buried
+Y116,90.79426574707031,0.25368570122986767,Exposed,79.02877807617188,0.34191019563500913,Exposed
+K117,112.3814468383789,0.3265267601086793,Exposed,107.0709228515625,0.4991385822071824,Exposed
+A118,3.8767082691192627,0.016890492669159554,Buried,3.334454298019409,0.03648432061482995,Buried
+Q119,54.50902557373047,0.17368909180563566,Buried,54.50902557373047,0.2959530370183779,Exposed
+W120,9.643424034118652,0.024874532945963233,Buried,9.643424034118652,0.036785696642467905,Buried
+K121,31.45315933227539,0.09138784470999166,Buried,31.45315933227539,0.14662697338299294,Buried
+T122,0.6719196438789368,0.0025054268185501693,Buried,0.6719196438789368,0.004754853423770295,Buried
+T123,35.45545959472656,0.1322048851256014,Buried,32.94173049926758,0.23311284537706148,Buried
+E124,114.03608703613281,0.37537604306809336,Exposed,87.27067565917969,0.502450241549081,Exposed
+R125,82.28263092041016,0.21637639388125182,Buried,79.94786834716797,0.3204743004173777,Exposed
+E126,108.94393920898438,0.35861406576991484,Exposed,76.98318481445312,0.4432212712125471,Exposed
+V127,31.243663787841797,0.11171877028340856,Buried,27.06560707092285,0.17193357365829623,Buried
+Q128,128.2003631591797,0.40850124198517557,Exposed,91.6759033203125,0.49774806508603747,Exposed
+V129,68.06574249267578,0.2433844219213498,Buried,31.523290634155273,0.20025089398501394,Buried
+A130,24.38128662109375,0.10622722019571006,Buried,3.492445707321167,0.03821300204698452,Buried
+N131,109.78483581542969,0.3866816283514533,Exposed,76.49957275390625,0.49261564289185583,Exposed
+Y132,44.352699279785156,0.12392462812105294,Buried,15.289504051208496,0.06614852777139366,Buried
+T133,49.61875915527344,0.18501642424551962,Buried,44.23786926269531,0.3130502077744409,Exposed
+D134,22.855995178222656,0.08377163791643491,Buried,18.727176666259766,0.1312734799097982,Buried
+N135,65.09335327148438,0.2292703145285973,Buried,60.46350860595703,0.38935211127567865,Exposed
+R136,24.86370086669922,0.06538339710214647,Buried,22.05184555053711,0.08839572488702611,Buried
+Q137,60.750457763671875,0.19357696683600178,Buried,56.31550979614258,0.3057612199077506,Exposed
+F138,16.002849578857422,0.0466827018831276,Buried,16.002849578857422,0.0734038213613291,Buried
+C139,0.0,0.0,Buried,0.0,0.0,Buried
+I140,15.254737854003906,0.049831847614043606,Buried,15.254737854003906,0.08299096692951384,Buried
+V141,0.9687046408653259,0.0034638220402121657,Buried,0.9687046408653259,0.006153671347068477,Buried
+R142,76.77813720703125,0.20190137665683888,Buried,76.25325012207031,0.3056642721392515,Exposed
+F143,1.6074389219284058,0.004689139369707023,Buried,1.519177794456482,0.006968349911112732,Buried
+N144,16.821470260620117,0.059248196377299236,Buried,16.482685089111328,0.10613952757457688,Buried
+I145,5.098969459533691,0.01665653461422505,Buried,5.098969459533691,0.027740129646324455,Buried
+P146,11.133291244506836,0.042999882196254086,Buried,2.094515800476074,0.013677335205480565,Buried
+E147,36.68272399902344,0.12074963409915478,Buried,35.502079010009766,0.20439887785144753,Buried
+D148,71.15079498291016,0.2607814093544249,Exposed,66.47478485107422,0.46597394199723224,Exposed
+L149,6.1601033210754395,0.0199457642421005,Buried,3.1735942363739014,0.017521429053473266,Buried
+Q150,115.38504028320312,0.3676661368242226,Exposed,105.1053695678711,0.5706624362322389,Exposed
+P151,45.269805908203125,0.17484464192567242,Buried,22.397233963012695,0.14625550999332163,Buried
+T152,30.778583526611328,0.11476593861639266,Buried,30.778583526611328,0.21780529054851697,Buried
+I153,0.0,0.0,Buried,0.0,0.0,Buried
+S154,0.8434635996818542,0.0035061414756318954,Buried,0.8434635996818542,0.007644928720270382,Buried
+F155,0.5238178372383118,0.0015280548515039336,Buried,0.5238178372383118,0.0024027115146616333,Buried
+F156,0.0,0.0,Buried,0.0,0.0,Buried
+Y157,7.881917953491211,0.02202264500533417,Buried,7.881917953491211,0.03410033882669657,Buried
+Y158,22.537181854248047,0.06297050518991007,Buried,22.377710342407227,0.09681495155677905,Buried
+L159,0.2952460050582886,0.0009559753957643915,Buried,0.2952460050582886,0.0016300546149406142,Buried
+E160,55.71414566040039,0.1833959414469726,Buried,55.55546188354492,0.31985377713552454,Exposed
+N161,49.252140045166016,0.17347475697351233,Buried,45.94682693481445,0.29587257646715037,Exposed
+F162,1.6862962245941162,0.004919177897127447,Buried,1.6862962245941162,0.0077349090999346845,Buried
+Y163,42.83300018310547,0.11967847966853326,Buried,37.28409194946289,0.16130593794867423,Buried
+Q164,0.08800079673528671,0.0002804082131765439,Buried,0.04516356810927391,0.0002452125130442176,Buried
+N165,0.0,0.0,Buried,0.0,0.0,Buried
+H166,2.1521804332733154,0.006658753172865609,Buried,2.1521804332733154,0.011056716921057785,Buried
+R167,36.34721755981445,0.09558128824073776,Buried,32.08143615722656,0.12859974907931546,Buried
+R168,71.7582778930664,0.18870078931541612,Buried,62.708885192871094,0.2513711313086049,Exposed
+Y169,4.223080158233643,0.01179958935155562,Buried,4.143784999847412,0.017927676151106124,Buried
+V170,15.476359367370605,0.05533921529585721,Buried,7.899343490600586,0.050180376606163805,Buried
+N171,90.35037231445312,0.3182300071701033,Exposed,80.17481994628906,0.5162822359627263,Exposed
+S172,0.09417330473661423,0.0003914631642182391,Buried,0.09417330473661423,0.0008535616739540081,Buried
+F173,70.55401611328125,0.20581660063999996,Buried,56.975181579589844,0.26134070873370685,Exposed
+N174,33.60658264160156,0.11836833386561199,Buried,31.059696197509766,0.2000075511478033,Buried
+A175,55.86543273925781,0.24340100328370404,Buried,43.90845489501953,0.4804294804829763,Exposed
+K176,126.90064239501953,0.36871260143631696,Exposed,126.15711212158203,0.588113751172362,Exposed
+Q177,3.3774547576904297,0.010762016809205027,Buried,2.633911609649658,0.014300643460584107,Buried
+L178,13.723600387573242,0.044435569278008014,Buried,13.510894775390625,0.07459371508262935,Buried
+L179,77.94534301757812,0.2523787921347478,Exposed,70.2275161743164,0.38772645480219475,Exposed
+G180,13.278056144714355,0.06609675047464741,Buried,0.0,0.0,Buried
+D181,51.78987503051758,0.18981989736013358,Buried,51.78987503051758,0.36303588311838403,Exposed
+A182,53.67018127441406,0.2338364768349989,Buried,23.360681533813477,0.2556036216681196,Exposed
+V183,44.78119659423828,0.16012527369708476,Buried,11.692089080810547,0.07427369554014432,Buried
+D184,69.2936019897461,0.2539744382402326,Exposed,61.09547424316406,0.4282661318130987,Exposed
+G185,36.93313980102539,0.18384923960766697,Buried,0.0,0.0,Buried
+K186,129.64544677734375,0.37668769080655234,Exposed,128.94125366210938,0.6010927413985835,Exposed
+T187,73.9883804321289,0.2758848833851743,Exposed,63.22022247314453,0.44737922758530363,Exposed
+I188,0.23448775708675385,0.000765988789210104,Buried,0.05347070470452309,0.000290898836040381,Buried
+N189,67.93379974365234,0.2392748698840345,Buried,55.384368896484375,0.35664521392648185,Exposed
+D190,102.4069595336914,0.3753412908641727,Exposed,73.5496597290039,0.5155672929707151,Exposed
+S191,27.911516189575195,0.11602364891259462,Buried,12.503692626953125,0.11333012937284129,Buried
+T192,85.24174499511719,0.3178459744648584,Exposed,66.20005798339844,0.46846609594415745,Exposed
+C193,0.0,0.0,Buried,0.0,0.0,Buried
+D194,85.08273315429688,0.31184465428718494,Exposed,78.73916625976562,0.5519446174039861,Exposed
+P195,57.250911712646484,0.2211190208903037,Buried,19.243932723999023,0.125664231550808,Buried
+I196,7.746890544891357,0.025306358772620736,Buried,5.6991682052612305,0.031005415142183437,Buried
+T197,0.47336333990097046,0.0017650580951314686,Buried,0.34286195039749146,0.0024262697683858836,Buried
+H198,97.26515197753906,0.30093417323502075,Exposed,90.96849822998047,0.4673460078497551,Exposed
+D199,9.482658386230469,0.03475577495629822,Buried,7.896442890167236,0.055352366006608957,Buried
+P200,91.35795593261719,0.35284995752997783,Exposed,47.6674690246582,0.3112719188362883,Exposed
+K201,155.7706298828125,0.4525949836619552,Exposed,141.23646545410156,0.6584100262257633,Exposed
+G202,76.42851257324219,0.38045300228023066,Exposed,0.0,0.0,Buried
+T203,73.6224136352539,0.2745202811802197,Exposed,52.7413330078125,0.37322514695163517,Exposed
+G204,69.8453369140625,0.34768265441204627,Exposed,0.0,0.0,Buried
+K205,74.19688415527344,0.21558067523568034,Buried,71.44265747070312,0.3330482806100119,Exposed
+I206,14.366264343261719,0.04692951805452264,Buried,14.163043975830078,0.07705178059882925,Buried
+V207,0.09081745147705078,0.00032473829152000647,Buried,0.09081745147705078,0.0005769155275945505,Buried
+Y208,4.110800266265869,0.011485871267120563,Buried,3.2052745819091797,0.013867303608163994,Buried
+P209,9.008960723876953,0.03479512404101746,Buried,3.669381618499756,0.023961319547764977,Buried
+C210,2.9318416118621826,0.01119811212127577,Buried,0.6616719365119934,0.005013599273494437,Buried
+G211,0.6657586693763733,0.0033140758079728753,Buried,0.0,0.0,Buried
+L212,1.9899728298187256,0.006443321944934599,Buried,1.9899728298187256,0.010986649571133236,Buried
+V213,0.29724395275115967,0.0010628628287973594,Buried,0.29724395275115967,0.0018882345742663616,Buried
+A214,1.996190071105957,0.008697232657623793,Buried,1.7732927799224854,0.01940268977897938,Buried
+N215,4.348233222961426,0.015315247234448227,Buried,0.7699800729751587,0.00495825290270275,Buried
+S216,2.0814080238342285,0.008652075801292231,Buried,0.09101907908916473,0.0008249726153965368,Buried
+I217,23.595510482788086,0.07707820966882432,Buried,22.200441360473633,0.1207779584546643,Buried
+F218,19.27130889892578,0.056217285789825495,Buried,2.7694787979125977,0.012703382978400736,Buried
+N219,53.50411605834961,0.18845096927348165,Buried,46.519439697265625,0.2995598912317751,Exposed
+D220,6.275211334228516,0.022999861858606602,Buried,0.6957127451896667,0.004876796684638029,Buried
+T221,51.17453384399414,0.1908175340422808,Buried,50.850440979003906,0.35984420993176075,Exposed
+F222,12.75643539428711,0.03721242692861708,Buried,1.6605870723724365,0.007616983226312486,Buried
+S223,45.40171432495117,0.1887275677569784,Buried,40.021183013916016,0.36274131042251057,Exposed
+S224,38.763275146484375,0.16113265204768004,Buried,18.44122314453125,0.16714631966064536,Buried
+P225,1.634403109550476,0.006312521574115611,Buried,1.634403109550476,0.010672767035283576,Buried
+L226,55.217369079589844,0.17878801187676724,Buried,55.17266845703125,0.30460856809634745,Exposed
+A227,7.951052188873291,0.03464206728632173,Buried,7.951052188873291,0.08699736489308155,Buried
+L228,33.83919906616211,0.10956775423002862,Buried,31.667295455932617,0.1748352906263372,Buried
+A229,35.43931579589844,0.15440612553150515,Buried,14.33588695526123,0.15685777918275268,Buried
+V230,57.58620834350586,0.20591248277111987,Buried,34.94995880126953,0.22201871549255456,Buried
+R231,190.78787231445312,0.5017096724533405,Exposed,159.60140991210938,0.6397687798892042,Exposed
+N232,143.26260375976562,0.5045962540475872,Exposed,96.7035140991211,0.6227180368848229,Exposed
+S233,57.64979553222656,0.23964085617147984,Buried,47.42803955078125,0.42987507919091006,Exposed
+S234,84.93550872802734,0.35306314346885515,Exposed,58.167816162109375,0.527217545061636,Exposed
+D235,65.48870086669922,0.2400287405490019,Buried,52.0697021484375,0.36499741101963246,Exposed
+S236,83.2507095336914,0.3460597062895856,Exposed,71.58090209960938,0.6487901724396595,Exposed
+S237,49.13402557373047,0.20424218068662764,Buried,38.93977355957031,0.3529397040473004,Exposed
+R238,129.41737365722656,0.34032534332330283,Exposed,123.91094970703125,0.4967021102923551,Exposed
+P239,82.25911712646484,0.3177076992170735,Exposed,64.14688110351562,0.41888363651373295,Exposed
+Y240,23.740541458129883,0.06633277837347078,Buried,19.60602569580078,0.08482353193940433,Buried
+N241,117.83507537841797,0.41503599732886814,Exposed,100.91674041748047,0.6498489229375363,Exposed
+M242,10.994253158569336,0.033974939048795574,Buried,0.2885676622390747,0.0014975400187122907,Buried
+T243,62.068965911865234,0.2314402521371772,Buried,57.58235168457031,0.40748271694443206,Exposed
+T244,54.724788665771484,0.20405558077033664,Buried,47.750633239746094,0.33790835558323795,Exposed
+K245,136.43121337890625,0.39640388458761694,Exposed,130.9022216796875,0.6102342970140564,Exposed
+G246,39.243473052978516,0.1953498326766618,Buried,0.0,0.0,Buried
+I247,1.7931337356567383,0.005857535404542813,Buried,0.04384307563304901,0.00023852125646298982,Buried
+A248,7.82615327835083,0.03409789321230896,Buried,0.08972150087356567,0.0009816982664477537,Buried
+W249,28.367170333862305,0.07317111749487619,Buried,28.367170333862305,0.1082090882672716,Buried
+P250,92.8069839477539,0.358446508682872,Exposed,84.55160522460938,0.5521279173714471,Exposed
+G251,5.030211925506592,0.02503985966403348,Buried,0.0,0.0,Buried
+L252,15.434900283813477,0.04997657768303908,Buried,15.020700454711914,0.08292935950483023,Buried
+K253,54.42207717895508,0.15812453958868278,Buried,51.681514739990234,0.24092664288885296,Buried
+D254,73.53974914550781,0.2695373878864283,Exposed,63.903587341308594,0.4479504005602329,Exposed
+L255,23.792217254638672,0.07703668776695295,Buried,19.39242172241211,0.1070656536648202,Buried
+Y256,18.651973724365234,0.052114954558562986,Buried,16.719079971313477,0.07233344666318109,Buried
+G257,5.234403610229492,0.02605630414107389,Buried,0.0,0.0,Buried
+K258,127.03770446777344,0.36911083829666347,Exposed,106.04584503173828,0.49435991890614384,Exposed
+T259,26.565549850463867,0.09905654887636493,Buried,4.657139301300049,0.032956343743615175,Buried
+S260,75.83483123779297,0.3152331021761476,Exposed,43.89235305786133,0.39782856144457096,Exposed
+Y261,21.533798217773438,0.06016697922571833,Buried,4.338208198547363,0.01876882889978474,Buried
+S262,77.2081298828125,0.3209416820597943,Exposed,44.4942741394043,0.40328421331308045,Exposed
+L263,45.76230239868164,0.1481735041191586,Buried,36.694549560546875,0.20259078473399766,Buried
+D264,104.79571533203125,0.3840965423528489,Exposed,96.10546875,0.6736786620860442,Exposed
+Q265,59.96359634399414,0.19106968948289893,Buried,59.60136795043945,0.32360156267191154,Exposed
+I266,3.8364078998565674,0.012532191354621528,Buried,0.0,0.0,Buried
+V267,20.75933265686035,0.07422967844223002,Buried,20.75933265686035,0.13187312743817478,Buried
+P268,0.9823504686355591,0.003794112046391108,Buried,0.0,0.0,Buried
+P269,3.9125723838806152,0.015111447989308026,Buried,0.157076895236969,0.001025723152197686,Buried
+P270,47.598609924316406,0.1838391338644729,Buried,28.223407745361328,0.18430083377099493,Buried
+N271,67.44602966308594,0.23755685730412202,Buried,51.76945495605469,0.33336713418488517,Exposed
+W272,15.70005989074707,0.04049719846646524,Buried,15.098712921142578,0.05759538015167481,Buried
+E273,69.65868377685547,0.2292976000939284,Buried,68.14637756347656,0.3923444342425241,Exposed
+R274,126.5237808227539,0.3327161410423325,Exposed,118.43827056884766,0.4747646521152067,Exposed
+R275,100.8651351928711,0.26524229934369725,Exposed,99.93358612060547,0.4005878675980393,Exposed
+Y276,13.801752090454102,0.03856308686962005,Buried,13.69478702545166,0.05924914221169969,Buried
+K277,88.4164047241211,0.25689580430962744,Exposed,70.3201675415039,0.32781550576432317,Exposed
+Y278,161.77505493164062,0.45201112552813244,Exposed,128.7626953125,0.5570790719091493,Exposed
+G279,9.83352279663086,0.048950230025529784,Buried,0.0,0.0,Buried
+Y280,10.059209823608398,0.028106154908828174,Buried,0.0,0.0,Buried
+Q281,72.83535766601562,0.2320846316952995,Buried,72.6929931640625,0.3946816489639943,Exposed
+E282,153.7518768310547,0.5061097117515704,Exposed,113.38719177246094,0.6528128889151363,Exposed
+N283,76.98458862304688,0.2711533506938371,Exposed,49.93074035644531,0.3215268121807997,Exposed
+N284,23.45502281188965,0.08261274288527272,Buried,23.45502281188965,0.1510375904802968,Buried
+P285,65.57511901855469,0.2532694358637607,Exposed,63.93360137939453,0.4174909049436614,Exposed
+P286,14.510947227478027,0.056045333552688766,Buried,12.783917427062988,0.08347987818921324,Buried
+P287,25.727279663085938,0.09936594403641531,Buried,18.037803649902344,0.11778812403051783,Buried
+D288,48.32918930053711,0.17713581558404348,Buried,46.86629867553711,0.32852267201142793,Exposed
+L289,5.88927698135376,0.019068857144753863,Buried,5.88927698135376,0.03251472655904011,Buried
+K290,92.61445617675781,0.26909333493557125,Exposed,86.12175750732422,0.40147867221608863,Exposed
+T291,83.49415588378906,0.3113296347995209,Exposed,70.29478454589844,0.4974425141698676,Exposed
+D292,50.385860443115234,0.18467391265335834,Buried,44.7418327331543,0.3136306227625466,Exposed
+E293,4.969483375549316,0.016358199006033122,Buried,2.0013105869293213,0.01152230093581955,Buried
+L294,42.07054901123047,0.13621999638266472,Buried,40.445980072021484,0.2233024506434177,Buried
+F295,3.0248751640319824,0.00882401254978639,Buried,2.7928669452667236,0.01281066258394192,Buried
+Q296,0.5014539361000061,0.0015978469221718395,Buried,0.0,0.0,Buried
+N297,4.438126564025879,0.01563186749664176,Buried,4.121456623077393,0.026539939125666493,Buried
+W298,0.045478228479623795,0.0001173078865595932,Buried,0.045478228479623795,0.00017348073783433727,Buried
+M299,17.361438751220703,0.05365110434194128,Buried,2.074007272720337,0.01076319108627575,Buried
+M300,9.026670455932617,0.02789462586777311,Buried,7.21023416519165,0.03741796333961847,Buried
+L301,12.960775375366211,0.04196562241860979,Buried,11.586711883544922,0.06397029207569098,Buried
+A302,1.9833811521530151,0.008641425272425918,Buried,1.8951815366744995,0.02073634982743916,Buried
+A303,3.094010591506958,0.013480344556858526,Buried,0.8326829075813293,0.009110897153015711,Buried
+A304,8.936919212341309,0.03893740719242093,Buried,6.098816871643066,0.06673091613471101,Buried
+P305,14.288841247558594,0.055187498186499866,Buried,14.288841247558594,0.09330713637793273,Buried
+N306,65.02659606933594,0.22903518384375168,Buried,59.72793197631836,0.3846153978371428,Exposed
+F307,10.429943084716797,0.030425701452890006,Buried,4.973964214324951,0.022815185435994114,Buried
+Y308,38.1614875793457,0.10662593784843269,Buried,31.443145751953125,0.13603566165566053,Buried
+K309,1.2799606323242188,0.0037189537071946137,Buried,1.1426469087600708,0.005326741778368807,Buried
+L310,7.101086616516113,0.02299256881474488,Buried,3.390421152114868,0.018718531498863256,Buried
+Y311,21.169010162353516,0.05914773519220987,Buried,21.169010162353516,0.09158562971875306,Buried
+Q312,7.350358963012695,0.02342139048154913,Buried,7.350358963012695,0.03990827271965092,Buried
+K313,25.798765182495117,0.0749588784166453,Buried,25.4051456451416,0.11843260560724589,Buried
+N314,22.015113830566406,0.07754112852760293,Buried,19.44200325012207,0.1251959270540552,Buried
+D315,85.8621826171875,0.31470148715183516,Exposed,58.094547271728516,0.4072302792915987,Exposed
+T316,101.55358123779297,0.37866889035145207,Exposed,75.06887817382812,0.531226487653833,Exposed
+H317,113.55438995361328,0.3513323709789608,Exposed,113.420654296875,0.5826928115196948,Exposed
+P318,51.8005256652832,0.20006810676135156,Buried,46.67931365966797,0.30481919493752685,Exposed
+M319,1.1981521844863892,0.0037025841457341423,Buried,1.1492005586624146,0.005963848522630654,Buried
+L320,105.62284088134766,0.3419956083516566,Exposed,105.43045043945312,0.5820820243111149,Exposed
+A321,28.54427719116211,0.12436502083075619,Buried,16.057392120361328,0.1756938287339204,Buried
+G322,0.7287709712982178,0.0036277443413462065,Buried,0.0,0.0,Buried
+Q323,65.14894104003906,0.20759241762701122,Buried,63.35291290283203,0.34397032014804274,Exposed
+Y324,12.71048641204834,0.035514012166756606,Buried,12.71048641204834,0.05499066291485402,Buried
+E325,26.82444190979004,0.08829882823335064,Buried,25.4932861328125,0.14677447697706844,Buried
+I326,1.8779672384262085,0.00613465653392782,Buried,1.8779672384262085,0.010216781072906663,Buried
+E327,42.95997619628906,0.1414126553619192,Buried,42.58906555175781,0.24520133609827832,Buried
+I328,0.7355685234069824,0.002402842901589624,Buried,0.7355685234069824,0.004001743168889501,Buried
+E329,22.766700744628906,0.07494183868766345,Buried,22.766700744628906,0.131076495077086,Buried
+S330,7.869149208068848,0.032710777829360826,Buried,1.0641142129898071,0.009644846928311024,Buried
+N331,34.111610412597656,0.12014713108656687,Buried,16.27814292907715,0.10482238730782185,Buried
+F332,10.079948425292969,0.02940471476760893,Buried,8.926838874816895,0.04094671282508001,Buried
+D333,94.66499328613281,0.3469654888833564,Exposed,86.81774139404297,0.6085736912621952,Exposed
+V334,4.214580059051514,0.015070182058527875,Buried,1.6720539331436157,0.010621679658670577,Buried
+T335,84.67951965332031,0.3157495713276103,Exposed,68.8016357421875,0.4868762154075075,Exposed
+V336,62.80691909790039,0.2245803121731662,Buried,43.61384582519531,0.2770558352546168,Exposed
+Y337,2.6209778785705566,0.007323200485869861,Buried,1.4462764263153076,0.006257171980909893,Buried
+K338,141.60140991210938,0.41142600407981245,Exposed,120.79608154296875,0.5631219314428533,Exposed
+G339,4.073667049407959,0.02027828106365515,Buried,0.0,0.0,Buried
+R340,80.52007293701172,0.21174144314877877,Buried,80.06620788574219,0.32094866929825394,Exposed
+K341,6.914061069488525,0.02008895617317009,Buried,6.6366472244262695,0.030938434058346394,Buried
+A342,0.23679152131080627,0.0010316807913245305,Buried,0.0,0.0,Buried
+F343,0.2173822522163391,0.0006341364908100801,Buried,0.2173822522163391,0.0009971154156128003,Buried
+V344,2.5301170349121094,0.009047004401688642,Buried,2.5301170349121094,0.01607250347077985,Buried
+I345,8.596590995788574,0.028082030422434155,Buried,7.501652717590332,0.040811544489362125,Buried
+T346,0.6111023426055908,0.0022786537229424154,Buried,0.6111023426055908,0.004324478518350591,Buried
+T347,13.00721549987793,0.04850077958716039,Buried,12.332886695861816,0.08727393084128278,Buried
+L348,27.020029067993164,0.08748800166403801,Buried,1.04977285861969,0.005795801004977519,Buried
+S349,19.830415725708008,0.08243182406585554,Buried,8.188132286071777,0.0742150434266215,Buried
+T350,87.75981903076172,0.32723526718381835,Exposed,71.86128234863281,0.5085278686590753,Exposed
+M351,6.104365825653076,0.018863987745858124,Buried,5.225945472717285,0.02712037246404505,Buried
+G352,0.16460196673870087,0.0008193710739425535,Buried,0.0,0.0,Buried
+S353,2.8669137954711914,0.011917295979523287,Buried,1.6226099729537964,0.014706903283924242,Buried
+R354,65.75602722167969,0.17291683417302134,Buried,49.64583206176758,0.1990073485079628,Buried
+N355,5.269299030303955,0.018559404075934333,Buried,4.831937313079834,0.03111504836181488,Buried
+I356,49.14952087402344,0.1605541476974478,Buried,45.034339904785156,0.24500213963031459,Buried
+W357,116.01551055908203,0.2992538365454525,Exposed,116.01551055908203,0.4425514591236644,Exposed
+P358,4.020370960235596,0.015527796217553213,Buried,4.020370960235596,0.02625330458763954,Buried
+G359,0.6372023820877075,0.003171925648730429,Buried,0.0,0.0,Buried
+I360,67.22663116455078,0.2196056904981903,Buried,66.98213195800781,0.3644055998468904,Exposed
+I361,22.569061279296875,0.07372516219062691,Buried,20.739049911499023,0.11282749148671878,Buried
+F362,0.0,0.0,Buried,0.0,0.0,Buried
+L363,62.32171630859375,0.20179113821053032,Buried,54.07755661010742,0.2985624503187271,Exposed
+I364,98.86042785644531,0.3229421457877432,Exposed,93.85424041748047,0.5105990176446967,Exposed
+V365,1.2034465074539185,0.0043031945557849,Buried,1.2034465074539185,0.007644863024537087,Buried
+G366,0.0,0.0,Buried,0.0,0.0,Buried
+G367,29.33463478088379,0.14602469022913594,Buried,0.0,0.0,Buried
+I368,66.84838104248047,0.2183700807733038,Buried,66.31914520263672,0.3607987262043344,Exposed
+C369,0.15181605517864227,0.0005798584755812995,Buried,0.15181605517864227,0.0011503357206908468,Buried
+L370,81.09629821777344,0.2625812524320442,Exposed,80.35552215576172,0.44364322457166805,Exposed
+V371,83.34152221679688,0.298006419440192,Exposed,81.03933715820312,0.514800307563703,Exposed
+L372,45.618125915527344,0.14770667588716901,Buried,45.618125915527344,0.25185789273886006,Exposed
+D373,19.942691802978516,0.07309381822017359,Buried,18.936445236206055,0.13274040756804426,Buried
+I374,92.96031951904297,0.30366857305318373,Exposed,92.96031951904297,0.5057357836494724,Exposed
+Y375,125.02152252197266,0.349319115572403,Exposed,124.43473815917969,0.5383545931431305,Exposed
+F376,5.92283821105957,0.017277803502832895,Buried,5.92283821105957,0.027167596361779452,Buried
+I377,60.89156723022461,0.1989112712546825,Buried,60.009952545166016,0.32647457037817235,Exposed
+L378,60.42057800292969,0.19563545307670016,Buried,60.31233596801758,0.33298469716163187,Exposed
+S379,10.363773345947266,0.04308052604283094,Buried,10.06572151184082,0.09123301053553548,Buried
+F380,11.906804084777832,0.034733925525667265,Buried,6.1706156730651855,0.02830413223114443,Buried
+F381,103.8875503540039,0.30305549762535705,Exposed,75.65058898925781,0.3470033441658638,Exposed
+I382,129.01568603515625,0.42144873729427995,Exposed,99.42498779296875,0.5409057797560154,Exposed
+W383,129.76390075683594,0.3347168405280667,Exposed,121.67447662353516,0.4641380872985208,Exposed
+R384,124.8943099975586,0.3284311659856707,Exposed,114.3262939453125,0.45828162562552394,Exposed
+P385,74.47248077392578,0.2876335334999544,Exposed,66.32183837890625,0.43308626019714214,Exposed
+R386,25.113313674926758,0.06603979710670016,Buried,11.47410774230957,0.04599443021623145,Buried
+K387,127.86241912841797,0.37150706484232865,Exposed,115.47405242919922,0.5383119270498306,Exposed
+L388,65.98888397216797,0.21366503996858333,Buried,61.7963752746582,0.3411780853162497,Exposed
+G389,2.10310435295105,0.010469029662484588,Buried,0.0,0.0,Buried
+D390,20.115535736083984,0.07372732462701602,Buried,20.066743850708008,0.14066355771006345,Buried
+P391,81.38963317871094,0.31434950921702304,Exposed,68.29855346679688,0.44599434848020303,Exposed
+S392,64.07777404785156,0.2663609210167256,Exposed,56.587379455566406,0.5128928889970741,Exposed
+Y393,89.59220123291016,0.2503270466200296,Exposed,81.47012329101562,0.35247243435791176,Exposed
+L394,9.026080131530762,0.02922549459809869,Buried,9.026080131530762,0.04983303184854545,Buried
+S395,72.4246826171875,0.30105766707582604,Exposed,37.72798538208008,0.34195637975864884,Exposed
+W396,60.820640563964844,0.15688255770463996,Buried,29.649612426757812,0.11310107742214831,Buried
+N397,79.28340911865234,0.2792502034688675,Exposed,41.301631927490234,0.2659600469913016,Exposed
+Q398,181.47398376464844,0.5782538046620836,Exposed,91.11663055419922,0.4947115317429674,Exposed
+P399,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S400,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+A401,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+P402,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G403,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+G404,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+H405,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S406,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A
+S407,Not present in structure model,N/A,N/A,Not present in structure model,N/A,N/A

@@ -259,9 +259,16 @@ def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
             chainID_list.append(chain)       # Records chain IDs. TODO Important to have this in addition to `chainPlusFasta{}` for when all chains present are called. 
 
             # Build a dictionary containing the chain ID and its associated (unique) fasta sequence. When the current value of 'fasta' is unique,
-            # it is added as the value and its associated chain ID (value of 'chain') is its key. NOTE that this is not always the correct way to 
-            # look at surface area - a biological unit may actually be multimeric vs. just being a crystallization artifact. TODO need to implement more code
-            # to deal with this? Should keep all the chains by default, leave user to specify a single chain.
+            # it is added as the value and its associated chain ID (value of 'chain') is its key.
+            # NOTE that this is not always the correct way to look at surface area - a biological unit may actually be multimeric vs. just being a crystallization artifact.
+            # TODO need to implement more code to deal with this? Should keep all the chains by default, leave user to specify that unique chains are desired.
+
+            # NOTE FIXME NOTE FIXME a simple implementation would be to 1) add another parameter that this method accepts, with a default value if not specified
+            # and 2) to have this value passed here, and checked in an if-then branch that builds in the `if fasta not in ...` statement. This branch is taken if unique chains
+            # are desired. 3) Finally, the alternative branch is all chains that are present. 4) Yet another branch may specify that chains are done either in isolation,
+            # or in complex. The value in this type of calculation would be in comparing protein components in a complex before and after they adopt a multimeric or complex configuration.
+            # NOTE FIXME NOTE FIXME if additional conditions are in consideration, switch statements may be preferable to/faster than multiple if-then-else branches.
+
             if fasta not in chainPlusFasta.values():
                 chainPlusFasta.update({chain:fasta})
 
