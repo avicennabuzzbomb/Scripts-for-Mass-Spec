@@ -54,11 +54,11 @@ for filename in Results/*.csv; do
 	if [ $total_rows -gt 0 ]; then
 							
 		# calculate percentage of detected residues (bash is clunky at this, so it has to be this way:)							## LINE 50
-		perc=$(echo "$exposed / $total_rows" | bc -l)													
+		perc=$(echo "scale=2; $exposed / $total_rows" | bc -l)													
 		perc=$(echo "$perc * 100" | bc -l | xargs printf "%.*f\n" "$4")   # last section of pipe round val of $perc to <= 2 sig figs 
 
 		# calculate the percentage of detected residues that have no density (instances of "N/A")
-		percNA=$(echo "$NA / $total_rows" | bc -l)
+		percNA=$(echo "scale=2; $NA / $total_rows" | bc -l)
 		percNA=$(echo "$percNA * 100" | bc -l | xargs printf "%.*f\n" "$4")
 	
 		## 2ND CHECK: does the current result file contain too many residues flagged "Buried"? 

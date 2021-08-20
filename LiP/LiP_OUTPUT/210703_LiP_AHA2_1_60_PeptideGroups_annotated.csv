@@ -218,5 +218,5 @@ Annotated Sequence,Modifications,NtermCut,CtermCut,Cleavage Type,PSMs
 "[K].WSEQEAAILVPGDIVSIK.[L]","",K,K,Tryptic,"3"
 
 
-Unique Semitryptics,Unique Tryptics,
-98,119
+Unique Semitryptics,Unique Tryptics,Total IDs
+98,119,217

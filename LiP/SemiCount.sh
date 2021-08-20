@@ -1,9 +1,12 @@
+#!/bin/bash
 ## bash shell script for analyzing peptide sequence data and annotating a peptide ID as 'tryptic' or 'semitryptic'
 
 out=$(echo "LiP_OUTPUT")
 input=$(echo "LiP_INPUT")
 declare -i detectedFiles
+declare -i total
 detectedFiles=0
+total=0
 
 if [ ! -e $out ]; then
     mkdir $out
@@ -14,6 +17,10 @@ let detectedFiles=$( ls $input/*txt | wc -l )
 
 if [ $detectedFiles -gt 0 ]; then
     printf "\nFound $detectedFiles text files in the input folder $input. Beginning annotation:\n_______________________________________________________________________________\n"
+
+    # create a summary file describing statistics on each output file that will be generated
+    echo "Datafile","Total IDs","Tryptics","Semitryptics" > $out/summary.csv
+
     for filename in $input/*.txt
     do
         # get the basename for copying the original filenames, and set headers to use in the output file
@@ -48,17 +55,20 @@ if [ $detectedFiles -gt 0 ]; then
     # use grep (patterns matching the substring "Semi") and pipe to "wc -l" to count the number of semitryptics. Also do this for all lines minus the headers. Store outputs
     # in separate variables and use to calculate % semitryptic. Print these outputs at the bottom of the current output file
     
-        let semiCount=$( grep "Semitryptic" $out/$name.csv | wc -l ); let tryptCount=$( grep "Tryptic" $out/$name.csv | wc -l )
-    
-        printf "\nUnique Semitryptics","Unique Tryptics","\n"$semiCount,$tryptCount >> $out/$name.csv
+        # Append a tally of unique semitryptic and tryptic IDs of the current file to it at the bottom    
+        let semiCount=$( grep "Semitryptic" $out/$name.csv | wc -l ); let tryptCount=$( grep "Tryptic" $out/$name.csv | wc -l ); let total=$( tail -n +2 $filename | wc -l )
+        echo "" >> $out/$name.csv; echo "Unique Semitryptics","Unique Tryptics","Total IDs" >> $out/$name.csv; echo $semiCount,$tryptCount,$total >> $out/$name.csv
 
-        # grep "Semitryptic" $out/$name.csv | awk 'BEGIN{ sumPSMs += $6 } END{ print sumPSMs };
+        # Print these same stats to the overall summary file with associated annotated filename
+        echo $name.csv,$total,$tryptCount,$semiCount >> $out/summary.csv
 
     done
 
     # TODO Once output files are done, generate a summary output file that shows a table comparing/describing all of the other new output files
+    
+
     # Statement to user confirming outputs
-    printf "\n\n...done!\n\n\nYour output file(s) are located in an output folder named $out, shown here:\n_____________________________________________________________________________________________________\n"; ls; printf "\n\nAnd your output file(s) in $out/ are listed below:\n_____________________________________________________________________________________________________\n";ls $out
+    printf "\n\n...done!\n\n\nYour output file(s) and a summary file are located in an output folder named $out, shown here:\n_____________________________________________________________________________________________________\n"; ls; printf "\n\nAnd your output file(s) in $out/ are listed below:\n_____________________________________________________________________________________________________\n";ls $out
 
 else
         
