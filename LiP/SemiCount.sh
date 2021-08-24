@@ -19,7 +19,7 @@ if [ $detectedFiles -gt 0 ]; then
     printf "\nFound $detectedFiles text files in the input folder $input. Beginning annotation:\n_______________________________________________________________________________\n"
 
     # create a summary file describing statistics on each output file that will be generated
-    echo "Datafile","Total IDs","Tryptics","Semitryptics" > $out/summary.csv
+    echo "Datafile","Total IDs","Tryptics","Semitryptics","% Tryptics","% Semitryptics" > $out/summary.csv
 
     for filename in $input/*.txt
     do
@@ -59,8 +59,9 @@ if [ $detectedFiles -gt 0 ]; then
         let semiCount=$( grep "Semitryptic" $out/$name.csv | wc -l ); let tryptCount=$( grep "Tryptic" $out/$name.csv | wc -l ); let total=$( tail -n +2 $filename | wc -l )
         echo "" >> $out/$name.csv; echo "Unique Semitryptics","Unique Tryptics","Total IDs" >> $out/$name.csv; echo $semiCount,$tryptCount,$total >> $out/$name.csv
 
-        # Print these same stats to the overall summary file with associated annotated filename
-        echo $name.csv,$total,$tryptCount,$semiCount >> $out/summary.csv
+        # Print these same stats to the overall summary file with associated annotated filename; include percentages
+        awk -v name=$name -v total=$total -v tryptCount=$tryptCount -v semiCount=$semiCount 'BEGIN {
+            print name, total, tryptCount, semiCount, ( tryptCount / total * 100 ), ( semiCount / total * 100) }' >> $out/summary.csv
 
     done
 
