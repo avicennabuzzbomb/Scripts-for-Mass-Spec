@@ -61,7 +61,7 @@ if [ $detectedFiles -gt 0 ]; then
 
         # Print these same stats to the overall summary file with associated annotated filename; include percentages
         awk -v name=$name -v total=$total -v tryptCount=$tryptCount -v semiCount=$semiCount 'BEGIN {
-            print name, total, tryptCount, semiCount, ( tryptCount / total * 100 ), ( semiCount / total * 100) }' >> $out/summary.csv
+            print name "," total "," tryptCount "," semiCount "," ( tryptCount / total * 100 ) "," ( semiCount / total * 100) }' >> $out/summary.csv
 
     done
 
