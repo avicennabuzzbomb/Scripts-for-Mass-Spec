@@ -59,9 +59,13 @@ if [ $detectedFiles -gt 0 ]; then
         let semiCount=$( grep "Semitryptic" $out/$name.csv | wc -l ); let tryptCount=$( grep "Tryptic" $out/$name.csv | wc -l ); let total=$( tail -n +2 $filename | wc -l )
         echo "" >> $out/$name.csv; echo "Unique Semitryptics","Unique Tryptics","Total IDs" >> $out/$name.csv; echo $semiCount,$tryptCount,$total >> $out/$name.csv
 
-        # Print these same stats to the overall summary file with associated annotated filename; include percentages
-        awk -v name=$name -v total=$total -v tryptCount=$tryptCount -v semiCount=$semiCount 'BEGIN {
-            print name "," total "," tryptCount "," semiCount "," ( tryptCount / total * 100 ) "," ( semiCount / total * 100) }' >> $out/summary.csv
+        # Print these same stats to the overall summary file with associated annotated filename; include percentages, rounded to 2 decimal places
+        percTrypt=$(awk -v total=$total -v tryptCount=$tryptCount 'BEGIN { printf("%.2f\n", (tryptCount / total * 100)) }')
+        percSemi=$(awk -v total=$total -v semiCount=$semiCount 'BEGIN { printf("%.2f\n", (semiCount / total * 100)) }')
+        echo $name,$total,$tryptCount,$semiCount,$percTrypt,$percSemi >> $out/summary.csv
+
+       # awk -v name=$name -v total=$total -v tryptCount=$tryptCount -v semiCount=$semiCount 'BEGIN {
+       #     print name "," total "," tryptCount "," semiCount "," ( tryptCount / total * 100 ) "," ( semiCount / total * 100) }' >> $out/summary.csv
 
     done
 
