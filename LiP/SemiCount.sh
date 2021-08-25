@@ -1,7 +1,9 @@
 #!/bin/bash
 ## bash shell script for analyzing peptide sequence data and annotating a peptide ID as 'tryptic' or 'semitryptic'
 
+date=$(date '+%Y-%m-%d')
 out=$(echo "LiP_OUTPUT")
+summary=$(echo $date"_LiPsummary.csv")
 input=$(echo "LiP_INPUT")
 declare -i detectedFiles
 declare -i total
@@ -19,7 +21,7 @@ if [ $detectedFiles -gt 0 ]; then
     printf "\nFound $detectedFiles text files in the input folder $input. Beginning annotation:\n_______________________________________________________________________________\n"
 
     # create a summary file describing statistics on each output file that will be generated
-    echo "Datafile","Total IDs","Tryptics","Semitryptics","% Tryptics","% Semitryptics" > $out/summary.csv
+    echo "Datafile","Total IDs","Tryptics","Semitryptics","% Tryptics","% Semitryptics" > $out/$summary
 
     for filename in $input/*.txt
     do
@@ -62,15 +64,9 @@ if [ $detectedFiles -gt 0 ]; then
         # Print these same stats to the overall summary file with associated annotated filename; include percentages, rounded to 2 decimal places
         percTrypt=$(awk -v total=$total -v tryptCount=$tryptCount 'BEGIN { printf("%.2f\n", (tryptCount / total * 100)) }')
         percSemi=$(awk -v total=$total -v semiCount=$semiCount 'BEGIN { printf("%.2f\n", (semiCount / total * 100)) }')
-        echo $name,$total,$tryptCount,$semiCount,$percTrypt,$percSemi >> $out/summary.csv
-
-       # awk -v name=$name -v total=$total -v tryptCount=$tryptCount -v semiCount=$semiCount 'BEGIN {
-       #     print name "," total "," tryptCount "," semiCount "," ( tryptCount / total * 100 ) "," ( semiCount / total * 100) }' >> $out/summary.csv
+        echo $name,$total,$tryptCount,$semiCount,$percTrypt,$percSemi >> $out/$summary
 
     done
-
-    # TODO Once output files are done, generate a summary output file that shows a table comparing/describing all of the other new output files
-    
 
     # Statement to user confirming outputs
     printf "\n\n...done!\n\n\nYour output file(s) and a summary file are located in an output folder named $out, shown here:\n_____________________________________________________________________________________________________\n"; ls; printf "\n\nAnd your output file(s) in $out/ are listed below:\n_____________________________________________________________________________________________________\n";ls $out
