@@ -69,7 +69,7 @@ if [ $detectedFiles -gt 0 ]; then
     done
 
     # Statement to user confirming outputs
-    printf "\n\n...done!\n\n\nYour output file(s) and a summary file are located in an output folder named $out, shown here:\n_____________________________________________________________________________________________________\n"; ls; printf "\n\nAnd your output file(s) in $out/ are listed below:\n_____________________________________________________________________________________________________\n";ls $out
+    printf "\n\n...done!\n\n\nYour output file(s) and a summary file are located in an output folder named $out, shown here:\n_________________________________________________________\n"; ls; printf "\n\nAnd your output file(s) in $out/ are listed below:\n_________________________________________________________\n";ls $out
 
 else
         
