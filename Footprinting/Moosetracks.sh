@@ -5,6 +5,14 @@
 ## 3) Then, pulls only the following columns for downstream analysis: `Annotated Sequence`, `Modifications`, `Charge`, `Precursor Abundance`, `Spectrum File`, and `File ID`.
 ## 4) Finally, to the same file, adds a column recording modification status as yes (1) or no (0), done by pattern matching to the substring "GEE"
 
+
+#### WARNING: MAJOR BUG DETECTED. As written, the script pulls data columns of interest by calling their column number in the exported file.
+#### This makes it dependent on each data column having an identical column number regardless of what is in the file. INSTEAD this needs to be changed to
+#### pull the column data by its header name. This ensures the same data is always pulled regardless of file's contents. Ex) The column named "Precursor Abundance"
+#### will always have Precursor Abundance values in it, whereas column #10, #12, or #36 may all have the desired Precursor Abundance values (depending on the file's contents).
+#### Contents between files are most likely to vary if one result was searched with the Precolator node while the other was not.
+
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Begin by storing output filenames in variables for ease of use
 # specify extension of output files
@@ -13,37 +21,28 @@ ext=.csv
 # output file creation
 file1=mergedPSMs.txt
 file1A=mergedPeptideGroups.txt
-file2=trimmed$ext
-file3=final$ext
+file2=trimmed.txt
+file3=trimmedFiltered$ext
 temp=temp$ext
 
 # user message flag
 msg1=$(echo "\n>> "); msg2=$(echo "\t! ")
 
-## clean up any files left over previously
-if [ -e $file1 ]; then
-    rm $file1
-fi
-
-if [ -e $file1A ]; then
-    rm $file1A
-fi
-
-if [ -e $file2 ]; then
-    rm $file2
-fi
-
-if [ -e $file3 ]; then
-    rm $file3
-fi
+## clear previous output files
+if [ -e $file1 ]; then rm $file1; fi
+if [ -e $file1A ]; then rm $file1A; fi
+if [ -e $file2 ]; then rm $file2; fi
+if [ -e $file3 ]; then rm $file3; fi
 
 ## prepare empty output files, descriptive variables and data structures
 touch $file1; touch $file1A; touch $file2; touch $file3            # output files to store an image of the data at each step of analysis
-declare -i numPSMfiles; numPSMfiles=0                              # var to keep track of data
-declare -i numPepGroupfiles; numPepGroupfiles=0
-declare -i numgoal; numgoal=0                                      # var to keep track of data
-declare -i actual; actual=0                                        # var to keep track of data
-declare -a fnames=()                                               # associative array to store the source file names for referencing
+declare -i numPSMfiles; numPSMfiles=0                              # var to keep track of data processing steps
+declare -i numPepGroupfiles; numPepGroupfiles=0                    # ditto
+declare -i numgoalPSMs; numgoalPSMs=0                              # ditto
+declare -i numgoalPepGrps; numgoalPepGrps=0                        # ditto
+declare -i actual; actual=0                                        # ditto
+declare -i actual1A; actual1A=0                                    # ditto
+declare -a fnames=()                                               # array to store the source file names for referencing
 
 ## First, get only one instance of the headers row (record #1)  [works for my purposes, wastes compute power though -  in future modify this so a loop isn't used]
 ## Also, store base filenames in an array for later sorting of the data
@@ -76,70 +75,78 @@ done
 sed -i 's/\"//g' $file1; sed -i 's/\"//g' $file1A
 
 # count all non-header rows that should have been exported
-numgoal=$(cat PDoutputTextFiles/*txt | wc -l)
-numgoal="$((numgoal-numfiles))"
+numgoalPSMs=$(cat PDoutputTextFiles/*PSMs* | wc -l); numgoalPepGrps=$(cat PDoutputTextFiles/*PeptideGroups* | wc -l)
+numgoalPSMs="$((numgoalPSMs-numPSMfiles))"; numgoalPepGrps="$((numgoalPepGrps-numPepGroupfiles))"
 
 # count actual export numbers
-actual=$(awk 'NR >= 2' $file1 | wc -l)
+actual=$(awk 'NR >= 2' $file1 | wc -l); actual1A=$(awk 'NR >= 2' $file1A | wc -l)
 
 ## check
-echo -e $msg2"Found "$numgoal" records to export; exported "$actual" records."; echo -e $msg2"Merged data was saved in '"$file1"'."
+echo -e $msg2"Found "$numgoalPSMs" PSM records and "$numgoalPepGrps" Peptide Groups records to export; exported "$actual" PSM records and "$actual1A" Peptide Groups records."
+echo -e $msg2"Merged data were saved in '"$file1"' and in '"$file1A"'."
 
 ## Begin Step 2
+# awk the desired columns to new CSV file "trimmed" and also add a column marking whether a GEE or hydroGEE mod is present
+echo -e $msg1"Extracting the following values to "$file2": 'Annotated Sequence' 'Modifications' 'Charge' 'Spectrum File' 'Precursor Abundance' 'XCorr' 'Rank'\n"
 
-# Store column headers
-Seq=$(awk -F "\t" 'NR == 1 {print $7}' $file1)
-Mods=$(awk -F "\t" 'NR == 1 {print $8}' $file1)
-Charge=$(awk -F "\t" 'NR == 1 {print $13}' $file1)
-Filename=$(awk -F "\t" 'NR == 1 {print $29}' $file1)
-Precursor=$(awk -F "\t" 'NR == 1 {print $36}' $file1)
-GEE=$(echo "GEE?")
+awk -F "\t" '
+NR==1 {
+    for (i=1; i<=NF; i++) {
+        f[$i] = i
+    }
+}
+{ print $(f["Annotated Sequence"]) "\t" $(f["Modifications"]) "\t" $(f["Charge"]) "\t" $(f["Spectrum File"]) "\t" $(f["Precursor Abundance"]) "\t" $(f["XCorr"]) "\t" $(f["Rank"])}
+' $file1 >> $file2
 
-echo -e $msg1"Extracting the following values to "$file2": '"$Seq"' '"$Mods"' '"$Charge"' '"$Filename"' '"$Precursor"'\n"
-echo $Seq,$Mods,$Charge,$Filename,$Precursor,$GEE > $file2
-
-## Remove records where the Xcorr score is less than 2.0
+## Filter out low-confidence results and flag PSMs marked with the covalent label of interest: Xcorr < 2 and/or Rank != 1.
 echo -e $msg1"Now filtering for PSMs with a minimum XCorr of 2 and annotating GEE label events..."
+Seq=$(awk -F "\t" 'NR==1 {print $1}' $file2)
+Mods=$(awk -F "\t" 'NR==1 {print $2}' $file2)
+Z=$(awk -F "\t" 'NR==1 {print $3}' $file2)
+name=$(awk -F "\t" 'NR==1 {print $4}' $file2) 
+Precursor=$(awk -F "\t" 'NR==1 {print $5}' $file2)
+LabelStatus="Label?"
+Score=$(awk -F "\t" 'NR==1 {print $6}' $file2)
+Rank=$(awk -F "\t" 'NR==1 {print $7}' $file2); echo $Seq,$Mods,$Z,$name,$Precursor,$LabelStatus,$Score,$Rank > $file3
 
-## AWK desired columns to new CSV file "trimmed" and also add a column marking whether a GEE or hydroGEE mod is present -- SUCCESS, everything through this block works
-awk -F "\t" 'BEGIN{ seq = ""; mods = ""; charge = 0; name = ""; ID = 0; xcorr = 0; abundance = 0; GEEstatus = "" };
+awk -F "\t" 'BEGIN{ seq = ""; mods = ""; charge = 0; name = ""; abundance = 0; label = ""; xcorr = 0; rank = 0 };
 
-        NR >= 2 { seq = $7; mods = $8; charge = $13; name = $29; xcorr = $32; abundance = $36;
+        NR >= 2 { seq = $1; mods = $2; charge = $3; name = $4; abundance = $5; xcorr = $6; rank = $7; 
 
         if ( mods ~ /GEE/ )
-            GEEstatus = "GEE";
+            label = "GEE";
         else
-            GEEstatus = "";
+            label = "";
 
-        if ( xcorr >= 2 )
-            print seq "," mods "," charge "," name "," abundance "," GEEstatus;
+        if ( xcorr >= 2 && rank == 1)
+            print seq "," mods "," charge "," name "," abundance "," label "," xcorr "," rank;
 
-        };' $file1 >> $file2
+        };' $file2 >> $file3
 
 ## Report the number of removed records for failing XCorr threshold   ### NOTE functions as expected (compared to manual work in Excel)
-lenfile=$(awk 'NR >= 2' $file2 | wc -l)
+lenfile=$(awk 'NR >= 2' $file3 | wc -l)
 filtered=$((actual-lenfile))
 
 ## Copy to backup file
-head -n1 $file2 > backup_$file2
-awk -F"," 'NR >= 2' $file2 | sort -k4n >> backup_$file2
+head -n1 $file3 > backup_$file3
+awk -F"," 'NR >= 2' $file3 | sort -k4n >> backup_$file3
 
 ## User message
 if [ $actual != 0 ]; then
-    echo -e $msg2"Found and removed "$filtered" PSMs with Xcorr score < 2 ("$lenfile" records retained)."; echo -e $msg2"These changes are also copied in 'backup_"$file2"', review as needed.\n" 
+    echo -e $msg2"Found and removed "$filtered" PSMs with insufficient Xcorr score and/or rank ("$lenfile" records retained)."; echo -e $msg2"These changes are also copied in 'backup_"$file3"', review as needed.\n" 
 else
     echo -e $msg2"Found 0 failing PSMs; all records retained.\n"
 fi
 
 ## Now remove redundant records where applicable (uses a temporary file); NOTE functions as expected (compared to manual work in Excel)
-echo -e $msg1"Now checking '"$file2"' for redundant PSMs..."
+echo -e $msg1"Now checking '"$file3"' for redundant PSMs..."
 touch $temp
-awk -F "," 'NR == 1' $file2 > $temp
-awk -F "," 'NR >= 2' $file2 | sort -k4n | uniq >> $temp
-cat temp$ext > $file2
+awk -F "," 'NR == 1' $file3 > $temp
+awk -F "," 'NR >= 2' $file3 | sort -k4n | uniq >> $temp
+cat temp$ext > $file3
 
 ## Track the data
-trim=$(awk 'NR >= 2' $file2 | wc -l)
+trim=$(awk 'NR >= 2' $file3 | wc -l)
 diff=$((lenfile-trim))
 
 ## User message
@@ -153,29 +160,71 @@ fi
 echo -e $msg1"Sorting records by source .raw file ... matching unique sequences and precursor abundances..."
 
 ## Use the var 'numPSMfiles' to re-sort PSM records by source filename (which corresponds to original number of input files)
-awk 'NR == 1' $file2 > $temp
+awk 'NR == 1' $file3 > $temp
 
 for ((i = 0; i < $numPSMfiles; i++)); do     ## this requires file IDs to start with 1; otherwise it cannot match some records and ends up excluding valuable data
 
     identifier=$(echo ${fnames[i]})
-    grep $identifier $file2 >> $temp
+    grep $identifier $file3 >> $temp
 
 done
 
-cat $temp > $file2
+cat $temp > $file3
 
 
 ## Update trimmed.csv with positions in the master protein sequence ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # First, extract only unique records (exclude headers) in file1A into an array
+### WARNING extracting original data by column number makes this code blind to the data in the file - number alone is not enough, use the column's header instead!!
 declare -a MasterPositions=(); MasterPositions=($(awk -F "\t" 'NR > 1 {print $4, $12}' $file1A | sort -k1 | uniq))  # use for later.............
 
 
+# Now, copy only the unique sequence-position pairs from mergedPeptideGroups.txt into the temp file. 
+awk -F "\t" 'NR >= 2 {print $0}' $file1A | cut -f4,10 | sort -k1 | uniq > temp1.txt         ## WARNING: cut-ting by column # creates an inflexible dependency. Update this to avoid pulling the wrong data.
+                                                                                            ## It should be updated thus: find the column by its header NAME, then pull the column. Rather than getting its number.
+                                                                                            ## This will make the code agnostic to whatever additional data the user decides to export into their output files.
+
+# initialize the variables
+col1=""; refseq=""; col2=""; col3=""; col4=""; col5=""; col6=""; position=""  # WORKS!
+
+# store the number of rows in trimmed.csv that need a matching position value
+lenTrim=$(awk '{print 0}' $file3 | wc -l)
+
+# This echo is only for debugging (remove when complete)
+echo -e "\nlength of "$file3" is "$lenTrim"."
+
+
+# use the rowcount in trimmmed.csv to store the position value, row by row, and print it appended with the other row values to a new file (updated version of trimmed.csv)
+echo -e "Matching sequences with their positions in the master protein..."
+for ((i = 1; i <= $lenTrim; i++ )); do
+    #break # only until necessary corrections are made above.
+    col1=$(awk -F "," -v i=$i 'NR==i {print $1}' $file3)
+
+    # Explanation of awk substr: Syntax is to print from the original input string ($0) starting at char position 4 (non-0 indexed, so starting at '.')
+    # and continuing for the *original* string's length, minus 6 chars (ie, the flanking [char] combined is 6 chars)
+    refseq=$(echo ${col1^^} | cut -f1 | awk '{print substr($0, 4, length($0)-6)}'); echo -e "\nrefseq currently equals: "$refseq
+    col2=$(awk -F "," -v i=$i 'NR==i {print $2}' $file3)
+    col3=$(awk -F "," -v i=$i 'NR==i {print $3}' $file3)
+    col4=$(awk -F "," -v i=$i 'NR==i {print $4}' $file3)
+    col5=$(awk -F "," -v i=$i 'NR==i {print $5}' $file3)
+    col6=$(awk -F "," -v i=$i 'NR==i {print $6}' $file3)
+
+    if [[ ! $i -gt 1 ]]; then
+        position=$(echo "Position in Master Protein")
+    else
+        position=$(grep -w -m1 $refseq temp1.txt | cut -f2)     #-m1 forces grep to stop after the first match
+        echo "Sequence "$col1" was matched to positions "$position
+    fi
+
+    echo "$col1,$position,$col2,$col3,$col4,$col5,$col6" >> updatedTrimmed.csv      ### everything here works exactly as desired. Incorporate this block into the main script!!
+
+done
+
 ## Extract relevant data from output file 2 into separate arrays for cross-referencing by array index 
-declare -a PSMs=(); PSMs=($(awk -F "," 'NR > 1 {print $1}' $file2))
-declare -a Precabundances=(); Precabundances=($(awk -F "," 'NR > 1 {print $5}' $file2))
-declare -a Modstatus=(); Modstatus=($(awk -F "," 'NR > 1 {print $6}' $file2))
-declare -a source=(); source=($(awk -F "," 'NR > 1 {print $4}' $file2))
-declare -a SourceList=(); SourceList=($(awk -F "," 'NR > 1 {print $4}' $file2 | uniq))
+declare -a PSMs=(); PSMs=($(awk -F "," 'NR > 1 {print $1}' $file3))
+declare -a Precabundances=(); Precabundances=($(awk -F "," 'NR > 1 {print $5}' $file3))
+declare -a Modstatus=(); Modstatus=($(awk -F "," 'NR > 1 {print $6}' $file3))
+declare -a source=(); source=($(awk -F "," 'NR > 1 {print $4}' $file3))
+declare -a SourceList=(); SourceList=($(awk -F "," 'NR > 1 {print $4}' $file3 | uniq))
 
 ## Set up data structures for searching the above arrays and calculating abundances
 declare -a MasterSeqs=()                    # unique, case-insensitive representations of each PSM are stored here
@@ -191,6 +240,9 @@ raw=""                                      # stores the source filename value c
 
 ## Identify and store the unique "master" peptide sequences from the available PSMs in a separate array
 for element in "${PSMs[@]}"; do
+
+    break     # only until work continues on these blocks
+
     master=$(echo ${element^^})
     if [[ ! " ${MasterSeqs[@]} " =~ " ${master} " ]]; then
         # if a unique "master" peptide sequence is not yet recorded, store it in MasterSeqs
