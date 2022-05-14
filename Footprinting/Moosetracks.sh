@@ -197,10 +197,12 @@ echo -e "\nlength of "$file3" is "$lenTrim"."
 echo -e "Matching sequences with their positions in the master protein..."
 for ((i = 1; i <= $lenTrim; i++ )); do
     #break # only until necessary corrections are made above.
-    col1=$(awk -F "," -v i=$i 'NR==i {print $1}' $file3)
+    col1=$(awk -F "," -v i=$i 'NR==i {print $1}' $file3)     # store the current PSM sequence value
 
     # Explanation of awk substr: Syntax is to print from the original input string ($0) starting at char position 4 (non-0 indexed, so starting at '.')
     # and continuing for the *original* string's length, minus 6 chars (ie, the flanking [char] combined is 6 chars)
+    ##### WARNING - VERY STRANGE BUG happening here (at time of writing, all code above this point runs correctly; this code block worked perfectly in the past
+    ##### until making important bug fixes on 5/13 in code above it). Refer to output file 'updatedTrimmed.csv' to troubleshoot this issue...
     refseq=$(echo ${col1^^} | cut -f1 | awk '{print substr($0, 4, length($0)-6)}'); echo -e "\nrefseq currently equals: "$refseq
     col2=$(awk -F "," -v i=$i 'NR==i {print $2}' $file3)
     col3=$(awk -F "," -v i=$i 'NR==i {print $3}' $file3)
@@ -227,7 +229,7 @@ declare -a source=(); source=($(awk -F "," 'NR > 1 {print $4}' $file3))
 declare -a SourceList=(); SourceList=($(awk -F "," 'NR > 1 {print $4}' $file3 | uniq))
 
 ## Set up data structures for searching the above arrays and calculating abundances
-declare -a MasterSeqs=()                    # unique, case-insensitive representations of each PSM are stored here
+declare -a MasterSeqs=()                    # unique, case-insensitive representations of each PSM (extracted, annotated master sequence) are stored here
 declare -i Mastercount=0                    # incremented during the for-loop (below) to count the number of unique PSMs that have been found
 pre=0                                       # current value of precursor abundance until it gets added to the rolling value of labeled or unlabeled
 modstring=""                                # stores current value of Modstatus; used to check where the value of pre should be stored
@@ -254,7 +256,14 @@ done
 echo -e $msg2"Identified "$Mastercount" unique master peptide sequences from among "${#PSMs[@]}" unique PSMs across "${#SourceList[@]}" .raw files."
 
 ## NOTE I believe it is necessary to begin with a while loop in here; the while loop would use the source file's name [ex., `JB1`] as a condition for doing the searches.
-## ie, 'while source == JB1; do ... search commands; when source filename changes, restart the search using the new filename'
+## ie, 'while source == JB1; do ... search commands; when source filename changes, restart the search using the new filename'...
+
+## More thoughts... if I pre-filter the search space to ONLY the GEE-labeled peptides it will save a significant amount of CPU power.
+## this is because the search will blindly be combinatorial (ie,. check every possible peptide for labeled and unlabeled abundances, regardless of label status)
+## after all... ultimately the results are focused only on those peptides which labeled at all anyway.
+## so... 1) for each PSM flagged 'GEE', identify its Master Sequence 2) Match the sequence corresponding abundance value (append it into a variable, as in below code)
+## and so on as below (skipping over unlabeled)
+
 for src in "${SourceList[@]}"; do    # the outermost for loop controls how the data is sorted; it forces results to be associated with the file they originate from.
     
     break     # only until work continues on these blocks
