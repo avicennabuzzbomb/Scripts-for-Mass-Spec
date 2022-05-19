@@ -39,6 +39,7 @@ if [ $detectedFiles -gt 0 ]; then
 
         # Prints all desired fields, including N- and C-terminal cutsites. Classifies peptides as "semi" or "tryptic", then prints all with updated cleavage "type";
         # accounts for peptides that can only get cut once (ie, peptides with one end being the Protein's N- or C-terminus, designated as [-])
+        # NOTE: awk substrings have the syntax 'substr(s, a, b)', which returns 'b' number of chars from string 's' starting at position 'a' (take note of "" in input files)
         awk -F "\t" 'BEGIN{ seq = ""; mods = ""; type = ""; PSMs = ""; Nterm = ""; Cterm = ""; C_noCut = "" };
     
                 NR >= 2 { seq = $4; mods = $5; type = "BUKKAW"; PSMs = $8; Nterm = substr(seq, 3, 1); Cterm = substr(seq, (length(seq)-5), 1); C_noCut = substr(seq, (length(seq)-2), 1);

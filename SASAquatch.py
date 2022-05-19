@@ -11,7 +11,7 @@
 
 """
 The recommended way to run PyMOL-Python scripts is by using PyMOL as the interpreter. This is supported by all versions of PyMOL, 
-including the pre-compiled bundles provided by Schrödinger.
+including the pre-compiled bundles provided by Schrodinger.
 
 Example from a shell (to run locally):
 
@@ -49,11 +49,24 @@ print("Number of arguments entered when running this instance of `SASAquatch.py`
 query = str(sys.argv[3].upper())
 
 # DEPTH: assign query type ('ALL' as default, unless a 4th argument is explicitly entered: an amino acid single letter code or 3-letter code).
+# checking first for another argument must be done before attempting to assign it; else a nonexistent argument will make the script close instead.
+
 if len(sys.argv)-1 == 4:
     depth = str(sys.argv[4].upper())
 
 else:
     depth = "ALL"
+
+# Additional arguments should be added here. Ex) If "load", "PDB" or somesuch is included in the args array this should trigger a "load" path instead.
+##TODO in short; there may be a situation where a pre-existing file (like a homology or computationally folded model, or a modified .pse file) is desired for analysis instead
+##TODO of a fetched PDB structure. Need to implement a way to check the <args> array for something like this. And however that is done, to then modify the `BulkSubmit.sh` helper
+##TODO script to write an appropriate submit file describing this, and to include that file with the .sub and executable during submission on Condor.
+"""
+if len(sys.argv)-1 == 5:
+    mode = "load"
+
+else
+"""
 
 # FIXME FIXME FIXME Include a new method for calculating each chain in the context of the entire crystal unit (covers true oligomeric structures and also artifactual ones)
 # FIXME FIXME FIXME This is a memory-intensive process because to get "relative" SASA values it would need to calculate each chain's per-res SASA in the absence of the other chains,
@@ -95,6 +108,7 @@ AA_letterCode = {'R' : ('ARG'), 'H' : ('HIS'), 'K' : ('LYS'), 'D' : ('ASP'), 'E'
                  'GLY' : ('GLY'), 'PRO' : ('PRO'), 'ALA' : ('ALA'), 'VAL' : ('VAL'), 'ILE' : ('ILE'), 'LEU' : ('LEU'), 'MET' : ('MET'), 'PHE' : ('PHE'), 'TYR' : ('TYR'), 'TRP' : ('TRP'),} 
                  
 # The cutoff value for relative SASA. Residues with a value greater than 0.25 are considered solvent-exposed, otherwise are considered buried.
+# FIXME/NOTE Note that this is an *arbitrary* cutoff, generally accepted. There are arguments to be made against this value.
 threshold = 0.25
 
 ## Initialize empty variables and data stuctures for handling pymol's iterator stream
@@ -107,10 +121,8 @@ resname = set()         # for capturing iterate's `resn` list, called by the cur
 #############################################################################################################################################################
 def occupancy(position, chain):
 
-    ##TODO implement an if branch to check for a valid selection; if invalid, print to error file and skip SASA calculation.
-    ##TODO Each bad query will have its own file or entry in a file. Currently, invalid selections are treated as real objects, and default to 0
-    ##TODO when calculations are performed. This leads to falsely labeling residues as buried and their SASA as 0, when that may not reflect reality.
-    ##FIXME FIXME FIXME escalate this implementation - it may be required for detecting faulty index values
+    #NOTE Currently, pymol treats invalid selections are treated as real objects, and default to 0 when calculations are performed. This leads to falsely labeling residues
+    # as buried and their SASA as 0, when that may not reflect reality. May need to extend this method to check for bad selections.
 
     atmNum = cmd.count_atoms("resi " + position + " and chain " + chain)
     if atmNum == 1:   # By default, pymol reports occupancy as '1' when it can't find electron density
@@ -134,7 +146,7 @@ def extractResCode(selexpression, stored_residues):
     resPositions.sort()                                  # sort() first to apply numerical character sorting
     resPositions.sort(key=len)                           # sort(key=len) uses the string element's length as the key to sort against, so now both sort rules apply
     
-    # Resets `stored_residues` list object reset to being an empty set
+    # Resets `stored_residues` list object to an empty set
     stored_residues.clear()
     print("\nContents of set `stored_residues` should be empty and are now:", stored_residues,"\nContents of `resPositions` are now:", resPositions)
 
@@ -242,7 +254,7 @@ def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
         cmd.set('dot_solvent', 1)  ## 1 is for solvent surface area. 0 is for total molecular surface area [default]
         cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
-        # Import structure, then remove unwanted (non-amino acid, or "het") objects. `async=0` argument ensures the structure is fully loaded before other commands are executed.
+        # Import structure, then remove unwanted (non-amino acid, or "het") objects. #FIXME this may remove biochemically important groups from proteins (ex, the `CHO` fluorophore in GFP; see 2B3P, resi #65-67 for details)
         cmd.fetch(query)
         cmd.remove("het")
     
@@ -297,25 +309,29 @@ def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
 
     return    # DONE
 
-################################################################################################################################################
-##~~~~~~~~~~~~~~~~ ___DRIVER CODE (VROOM VROOM!)___~~~~~~~~~~~~~~~~##  (Writes to the csv file with each method call).
+#######################################################################################################################################################
+##~~~~~~~~~~~~~~~~ ___DRIVER CODE (VROOM VROOM!)___~~~~~~~~~~~~~~~~##  (MAIN method; calls all others. Writes to the csv file with each method call).
 
+# BEGIN ~ ~ ~
 header = ["SOLVENT ACCESSIBLE SURFACE AREAS OF TARGET PROTEOME"]
 requested = "" ## NOTE the `requested` variable stores the `selexpression` string's extension which affects which `resi` are iterated.
 selexpression = ""
 
 # check user's requested job parameters
 if depth == "ALL":
+    # call GO()
     GO(query, header, requested, selexpression, stored_residues)    # NOTE: an empty string extends `selexpression` when set to default: 'ALL'
 
 elif depth in AA_letterCode.keys():
-    depth = AA_letterCode[depth]
+    # call GO()
+    depth = AA_letterCode[depth]        ## NOTE currently this only works with 1 requested lettercode at a time; converting depth into a list that accepts all valid, unique instances of an amino acid and then getting their resi values (and sorting in order) will allow multiple aa requests in the same run.
     requested = " and resn " + depth                                # NOTE: if `sys.argv[4]` is found to be valid, the request is run with the appropriate 3-letter code.
     GO(query, header, requested, selexpression, stored_residues, depth)
 
 else:
+    # error - user must enter appropriate <args>
     err1 = "#   ATTN user! Check your batch file: `" + depth + "` is not a valid single-letter residue code.   #"
     err2 = "#" * len(err1)
     print("\n\n",err2,"\n\n",err1,"\n\n",err2,"\n\n")
 
-## End
+## END ~ ~ ~
