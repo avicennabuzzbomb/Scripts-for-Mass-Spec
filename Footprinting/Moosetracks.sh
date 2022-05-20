@@ -11,10 +11,57 @@
 #### in it, whereas column #10, #12, or #36 may all have the desired Precursor Abundance values (depending on the file's contents). Contents between files are most 
 #### likely to vary if one result was searched with the Precolator node while the other was not.
 
+## function to be called at the very end of data analysis, when the final datafile needs peptide positions to correctly graph % label by peptide and map labels to structure
+function assignPositions() {   # NOTE now that this block is a function, need to ensure that the variables it uses are visible to it (they may need to be passed to it!)
+    
+    # initialize the variables
+    col1=""; refseq=""; col2=""; col3=""; col4=""; col5=""; col6=""; position=""
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Begin by storing output filenames in variables for ease of use
-# specify extension of output files
+    # use the rowcount in trimmmed.csv to store the position value, row by row, and print it appended with the other row values to a new file (updated version of trimmed.csv)
+    echo -e "Matching sequences with their positions in the master protein..."
+
+    ## this can potentially be done in awk (more efficient).
+    for (( i = 1; i -le $lenTrim; i++ )); do
+        
+        # store the current PSM sequence value
+        col1=$(awk -F "," -v i=$i 'NR==i {print $1}' $file3)
+
+        # Explanation of awk substr: Syntax is to print from the original input string ($0) starting at char position 4 (non-0 indexed, so starting at '.')
+        # and continuing for the *original* string's length, minus 6 chars (ie, the flanking [char] combined is 6 chars)
+        refseq=$(echo ${col1^^} | awk '{print substr($0, 4, length($0)-6)}')
+        col2=$(awk -F "," -v i=$i 'NR==i {print $2}' $file3)
+        col3=$(awk -F "," -v i=$i 'NR==i {print $3}' $file3)
+        col4=$(awk -F "," -v i=$i 'NR==i {print $4}' $file3)
+        col5=$(awk -F "," -v i=$i 'NR==i {print $5}' $file3)
+        col6=$(awk -F "," -v i=$i 'NR==i {print $6}' $file3)
+
+        ## if this is the first row, it is a header - store that value as such
+        if [[ ! $i -gt 1 ]]; then
+            position=$(echo "Position in Master Protein")
+
+        ## if this is not the first row, it contains position values - extract the exact sequence-position match
+        else 
+            position=$(grep -w -m1 $refseq $file2A | cut -f2)   #-m1 forces grep to stop after the first match. Without it, near-exact matches are also made
+                                                                # important: these are subsequences of the same peptide. It will be necessary to check for this situation
+                                                                # and then collapse the ID values together as part of the matching process.
+                                                                # Furthermore, this should be refined to retrieve *only* the integer characters so that they can be seamlessly
+                                                                # used later in selection-expressions when running the pymol mapping script in a subshell to this script.
+
+            echo "Sequence "$col1" was matched to positions "$position
+        fi
+
+        echo "$col1,$position,$col2,$col3,$col4,$col5,$col6" >> $temp
+    
+        ## only while testing this code block
+        if [[ $i -eq 50 ]]; then break; fi
+
+    done; awk -F"," '{print $0}' $temp > $file3; return
+}
+
+## Capture an argument from command line when running the script. Use this argument to generalize this script to ~any~ covalent labeling/footprinting data.
+if [[ $# != 0 ]]; then keyword=$(echo $1); fi
+
+# Begin by storing output filenames in variables for ease of use
 ext=.csv
 
 ## Create variables for merged-output files
@@ -52,6 +99,7 @@ declare -a fnames=()                                               # array to st
 
 # count all original files to be processed
 numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutputTextFiles/*PeptideGroups* | wc -l)
+
 echo -e $msg1"Beginning file merge ..."; echo -e $msg2"Identified "$numPSMfiles" PSM output files and "$numPepGroupfiles" Peptide Group output files to merge."
 
 # Merge PSMs into one file
@@ -81,7 +129,7 @@ done
 sed -i 's/\"//g' $file1; sed -i 's/\"//g' $file1A
 
 # count all non-header rows that should have been exported
-numgoalPSMs=$(cat PDoutputTextFiles/*PSMs* | wc -l); numgoalPepGrps=$(cat PDoutputTextFiles/*PeptideGroups* | wc -l)
+numgoalPSMs=$(awk -F"\t" 'NR >= 1' PDoutputTextFiles/*PSMs* | wc -l); numgoalPepGrps=$(awk -F"\t" 'NR >= 1' PDoutputTextFiles/*PeptideGroups* | wc -l)
 numgoalPSMs="$((numgoalPSMs-numPSMfiles))"; numgoalPepGrps="$((numgoalPepGrps-numPepGroupfiles))"
 
 # count actual export numbers
@@ -202,159 +250,33 @@ fi
 ## Now calculate percent labeling of each unique PSM in each file.
 echo -e $msg1"Now matching unique sequences and precursor abundances and summing total abundances associated with each labeling event... "
 
-
-###########| TURN THE CODE BLOCK BELOW (lines 211-268) INTO A METHOD TO BE CALLED AT THE VERY END; TAKES WAY TO LONG TO RUN THIS ON THE INTERMEDIATE FILES |##################
-## FYI- another example of awk pattern matching: awk '$6 ~/GEE/' trimmedFiltered.csv | wc -l  > prints rows that contain the string 'GEE' in the 6th column of the file
-## IMPORTANT - THIS BLOCK FUNCTIONS PERFECTLY NOW; use it as a method call in the final data processing steps ##
-
-## Update trimmed.csv with positions in the master protein sequence ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# initialize the variables
-col1=""; refseq=""; col2=""; col3=""; col4=""; col5=""; col6=""; position=""
-
-# use the rowcount in trimmmed.csv to store the position value, row by row, and print it appended with the other row values to a new file (updated version of trimmed.csv)
-echo -e "Matching sequences with their positions in the master protein..."
-
-## this can potentially be done in awk (more efficient)...or better yet save this for editing the final file, as final step before graphing
-## and/or mapping in a pse file but after precursor abundance calculations are done (subst. reduce CPU time). If the latter, convert this block into a method
-## and then it may be called whenever is convenient instead of worrying about what to do with it until then.
-for (( i = 1; i -le $lenTrim; i++ )); do
-    #break # only until necessary corrections are made above.
-    col1=$(awk -F "," -v i=$i 'NR==i {print $1}' $file3)     # store the current PSM sequence value
-    echo "Value of col1 at i="$i" is "$col1
-
-    # Explanation of awk substr: Syntax is to print from the original input string ($0) starting at char position 4 (non-0 indexed, so starting at '.')
-    # and continuing for the *original* string's length, minus 6 chars (ie, the flanking [char] combined is 6 chars)
-    refseq=$(echo ${col1^^} | awk '{print substr($0, 4, length($0)-6)}')
-    echo -e "\nrefseq currently equals: "$refseq
-    
-    col2=$(awk -F "," -v i=$i 'NR==i {print $2}' $file3)
-    col3=$(awk -F "," -v i=$i 'NR==i {print $3}' $file3)
-    col4=$(awk -F "," -v i=$i 'NR==i {print $4}' $file3)
-    col5=$(awk -F "," -v i=$i 'NR==i {print $5}' $file3)
-    col6=$(awk -F "," -v i=$i 'NR==i {print $6}' $file3)
-
-    ## if this is the first row, it is a header - store that value as such
-    if [[ ! $i -gt 1 ]]; then
-        position=$(echo "Position in Master Protein")
-
-    ## if this is not the first row, it contains position values - extract the exact sequence-position match
-    else
-    
-        position=$(grep -w -m1 $refseq $file2A | cut -f2)     #-m1 forces grep to stop after the first match. Without it, near-exact matches are also made
-                                                                # important: these are subsequences of the same peptide. It will be necessary to check for this situation
-                                                                # and then collapse the ID values together as part of the matching process.
-                                                                # Furthermore, this should be refined to retrieve *only* the integer characters so that they can be seamlessly
-                                                                # used later in selection-expressions when running the pymol mapping script in a subshell to this script.
-
-        echo "Sequence "$col1" was matched to positions "$position
-    
-    fi
-
-    echo "$col1,$position,$col2,$col3,$col4,$col5,$col6" >> $temp
-    
-    
-    ## only while testing this code block
-    if [[ $i -eq 50 ]]; then break; fi
-
-done; awk -F"," '{print $0}' $temp > $file3
-
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 5/18/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
-
-# Extract only unique records (exclude headers) in file2A into an array. File2A's formatting is set by this script so pulling data by column number is safe.
-declare -a MasterPositions=(); MasterPositions=($(awk -F "\t" 'NR > 1 {print $1, $2}' $file2A | sort -k1 | uniq))  # use for later.............
-
-## 5/18/2022: TODO Next time - 1). Make sure this array ^ works as desired (ie., test how the comma affects appending elements to the array)
-#                              2). Move the sequence-appending loop (just above) into a Method block and reserve its method call for the final stages of data processing.
-#                              3). Develop the below loop into an awk loop for searching GEE-only PSM abundances (and their corresponding non-GEE PSMs, if not 100% labeled).
-
-
-
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 5/20/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
 
 
 
 ### FINAL SEGMENT: DO ABUNDANCE MATCHING, SUMMATION AND % LABELING CALCULATIONS. USE *ONLY* UNIQUE, GEE-LABELED IDs AS THE SEARCH KEYS
 ######################################################################################################################################
-## Extract relevant data from output file 2 into separate arrays for cross-referencing by array index. Printing by column number here is safe because
+## Extract relevant data from output file 3 into separate arrays for cross-referencing by array index. Printing by column number here is safe because
 ## the output file made by this script are always formatted the same way regardless of how they started.
-declare -a PSMs=(); PSMs=($(awk -F "," 'NR > 1 {print $1}' $file3))
-declare -a Precabundances=(); Precabundances=($(awk -F "," 'NR > 1 {print $5}' $file3))
-declare -a Modstatus=(); Modstatus=($(awk -F "," 'NR > 1 {print $6}' $file3))
-declare -a source=(); source=($(awk -F "," 'NR > 1 {print $4}' $file3))
-declare -a SourceList=(); SourceList=($(awk -F "," 'NR > 1 {print $4}' $file3 | uniq))
 
-## Set up data structures for searching the above arrays and calculating abundances
-declare -a MasterSeqs=()                    # unique, case-insensitive representations of each PSM (extracted, annotated master sequence) are stored here
-declare -i Mastercount=0                    # incremented during the for-loop (below) to count the number of unique PSMs that have been found
-pre=0                                       # current value of precursor abundance until it gets added to the rolling value of labeled or unlabeled
-modstring=""                                # stores current value of Modstatus; used to check where the value of pre should be stored
-labeled=0                                   # precursor abundance stored here when a GEE mod is detected
-unlabeled=0                                 # precursor abundance stored here when a GEE mod is not found
-percLabeled=0                               # calculated from the final summed values stored in the labeled and unlabeled vars
-declare -i index=0                          # stores the current index value of the PSMs array (incremented during loop). Used to extract corresponding values from the other arrays.
-master=""                                   # stores the uppercased (case-insensitive) equivalent of the current element in the PSMs() array.
-raw=""                                      # stores the source filename value corresponding to the current 
 
-## Identify and store the unique "master" peptide sequences from the available PSMs in a separate array
-for element in "${PSMs[@]}"; do
-
-    break     # only until work continues on these blocks
-
-    master=$(echo ${element^^})
-    if [[ ! " ${MasterSeqs[@]} " =~ " ${master} " ]]; then
-        # if a unique "master" peptide sequence is not yet recorded, store it in MasterSeqs
-        MasterSeqs+=( $master )
-        let "++Mastercount"
-    fi
-done
-
-echo -e $msg2"Identified "$Mastercount" unique master peptide sequences from among "${#PSMs[@]}" unique PSMs across "${#SourceList[@]}" .raw files."
-
-## NOTE I believe it is necessary to begin with a while loop in here; the while loop would use the source file's name [ex., `JB1`] as a condition for doing the searches.
-## ie, 'while source == JB1; do ... search commands; when source filename changes, restart the search using the new filename'...
-
-## More thoughts... if I pre-filter the search space to ONLY the GEE-labeled peptides it will save a significant amount of CPU power.
-## this is because the search will blindly be combinatorial (ie,. check every possible peptide for labeled and unlabeled abundances, regardless of label status)
-## after all... ultimately the results are focused only on those peptides which labeled at all anyway.
-## so... 1) for each PSM flagged 'GEE', identify its Master Sequence 2) Match the sequence corresponding abundance value (append it into a variable, as in below code)
-## and so on as below (skipping over unlabeled)
-
-for src in "${SourceList[@]}"; do    # the outermost for loop controls how the data is sorted; it forces results to be associated with the file they originate from.
-    
-    break     # only until work continues on these blocks
-    
-    for element in "${PSMs[@]}"; do
-    
-        pre=$(echo ${Precabundances[index]}); modstring=$(echo ${Modstatus[index]}); raw=$(echo ${source[index]})  # <--for each source .raw filename, get all data for each PSM associated with that filename
-        master=$(echo ${element^^}) # convert current PSM to its master sequence. TODO need to implement a way to detect when this master sequence changes. This needs to happen
-                                    # inside of the test condition [if raw == src]
-
-        # check that the current data's source file matches the outer loop's current selection of unique source filename
-        if [[ " $raw " == " $src " ]]; then   ## TODO this should really be an until loop, using case statements. Or it should only be case statements.
-
-            ## UPDATE: awk is OPTIMAL for iterative calculation; bash is quite bad at it, requiring the bc class just to handle it.
-            ## UPDATE: initial testing of these loops as written also shows that it takes a long time to run; therefore it's best to use awk
-            ## UPDATE: anyway owing to how much more efficient it is in the first place. TLDR; may want to turn this entire block into awk.
-            ## ADDITIONALLY: the above filtering steps do not address whether near-identical peptide groups are actually the same peptide.
-            ## ex., [KR].ADIGIAVADATDAAR.[SG] and [K].KADIGIAVADATDAAR.[SG] are the exact same peptide. Therefore - add a function here to check
-            ## whether substrings (like ADIGIAVADATDAAR) should be subsumed into a specific ID (like KADIGIAVADATDAAR), of which they are a substring.
-
-            # detect the GEE modification and store the precursor value in the appropriate variable
-            if [[ " $modstring " == "GEE" ]]; then
-                labeled=$(echo $pre)
-            else
-                unlabeled=$(echo $pre)
-            fi
-
-            : # TODO: extend code here to lasso the PSM master sequence with its corresponding source file affiliation, and labeled/unlabeled abundance values
-
-        else
-            # whenever the current data source does not match the outer loop selection, skip to the next iteration of the nested for loop
-            # (may want to put this condition first, rather than second to save computing power)
-            #### or possibly better, can this branchpoint be redone as an until loop?
-            continue
-        fi
-    done
-done
+## Put it all in one awk statement, similar to above (line 183). Think about it, why bother creating multiple arrays when you coud just awk the entire file
+## (which itself is structured as an array anyway)
+## DEPRECATE EVERYTHING FROM THIS POINT, AND MAKE IT INTO ONE BIG AWK STATEMENT INSTEAD!
+## OPTIONAL: BUILD A SMALL TEST FILE STRUCTURED IN THE SAME WAY AS FILE3. Or, just use File 3 itself.
+## step 1 ('BEGIN'): populate awk array with unique peptide IDs that were labeled with GEE.
+## step 2: populate a second awk array with unique raw file names.
+## step 3: awk loop - for element in raw array, iterate through the peptide ID array. For the current value of the peptide ID array, search the trimmedFiltered.csv .
+## for IDs which match the current element of both arrays. When a GEE match is found, add its value to a variable storing GEE abundance. Else, store add into a non-GEE variable.
+## A third variable, %label, is equal to GEE/nonGEE+GEE * 100 and updates in real time.
+## step 4: Continue until the given ID value has no more matches. At the bottom of this loop, print the current raw file, the ID value, the ID's summed GEE abundance,
+## its summed nonGEE abundance, and the ID's %labeled value.
+## step 5: Repeat step 4 until all ID values have been iterated and printed with their abundances.
+## step 6: Repeat the nested loops until all raw files have been sampled for the unique IDs and abundances and everything has been printed. This is the calculated abundances file.
+## step 7: New awk block: reading the calculated abundances file, use pattern matching with the same awk array of peptide IDs as above to iterate through the abundances file and get theh average.
+## To get the average of the %labeled across files, use a counter to track the number of replicates. Sum all matched percent values, then divide at the end by the counter value.
+## standard deviation on the other hand will be tricky. Perhaps instead of doing the statistics (including averaging) here, it might be time to call a script using matplotlib or R for this work.
+## Because (well done!) it would be the final step!
 
 
 
@@ -362,13 +284,24 @@ done
 
 
 
-####### UP NEXT ####### 
-## 1) Create new file, "final.csv"; add headers "Unique Sequence", and then (using a loop), "FileIDxx-unlabeled", "FileIDxx-labeled", "FileIDxx-%labeled" for each file ID
-## 2) Extract unique sequences to this new file;
-## 3) Use each *current* value of the first column after record 1 to sum all associated abundances in a given file ID (ie, timepoint-type) (for fileID#... etc) and print them to unlabeled and labeled columns
-## 4) Use those values to calculate a percent labeling, and print it to %labeled.
-## 5) Underneath these calculations, print the unique sequences again, this time with columns printed containing the average and standard deviations of each percentage labeling event.
-## 6) Need to explicitly group file IDs into distinct treatment groups (ie., J1-J4 and SP1-SP4 are always timepoints from the mock/untreated/wildtype group)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## NOTE: Excel's 'remove duplicates' function is case insensitive. Therefore for PSMs labeled in different sites, this destroys data.
 ## NOTE: An approach that preserves this information while collapsing PSM sequences into a master sequence would be to create 2 arrays:
