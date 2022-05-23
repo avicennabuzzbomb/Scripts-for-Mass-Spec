@@ -27,7 +27,7 @@ function assignPositions() {   # NOTE now that this block is a function, need to
         col1=$(awk -F "," -v i=$i 'NR==i {print $1}' $file3)
 
         # Explanation of awk substr: Syntax is to print from the original input string ($0) starting at char position 4 (non-0 indexed, so starting at '.')
-        # and continuing for the *original* string's length, minus 6 chars (ie, the flanking [char] combined is 6 chars)
+        # and continuing for the *original* string's length, minus 6 chars (ie, ignoring the flanking [char], 6 chars total)
         refseq=$(echo ${col1^^} | awk '{print substr($0, 4, length($0)-6)}')
         col2=$(awk -F "," -v i=$i 'NR==i {print $2}' $file3)
         col3=$(awk -F "," -v i=$i 'NR==i {print $3}' $file3)
@@ -104,13 +104,15 @@ echo -e $msg1"Beginning file merge ..."; echo -e $msg2"Identified "$numPSMfiles"
 
 # Merge PSMs into one file
 for filename in PDoutputTextFiles/*PSMs*; do
-    awk -F "\t" 'NR == 1' $filename > $file1
-    # get unique portion of each filename and store it in the array fnames() for later
 
-    # WARNING- column containing spectrum file name may not always be 29! Search instead by the desired column's header.
+    awk -F "\t" 'NR == 1' $filename > $file1
     
+    # get unique portion of each filename and store it in the array fnames() for later
+    # WARNING- column containing spectrum file name may not always be 29! Search instead by the desired column's header.
+    # WARNING- this filename extraction can be much faster using awk substr()
     name=$(tail -n1 $filename | cut -f29 | sed 's/"//g' | sed 's/.raw//g' | sed 's/[0-9][0-9][0-9][0-9][0-9][0-9]//g' | sed 's/_//g')
     fnames+=( $name )
+
 done
 for filename in PDoutputTextFiles/*PSMs*; do
     awk -F "\t" 'NR >= 2' $filename >> $file1
@@ -191,9 +193,7 @@ awk -F "\t" 'BEGIN{ seq = ""; mods = ""; charge = 0; name = ""; abundance = 0; l
             label = "";
 
         if ( xcorr >= 2 && rank == 1)
-            print seq "," mods "," charge "," name "," abundance "," label "," xcorr "," rank;
-
-        };' $file2 >> $file3
+            print seq "," mods "," charge "," name "," abundance "," label "," xcorr "," rank}' $file2 >> $file3
 
 ## Report the number of removed records for failing XCorr threshold   ### NOTE functions as expected (compared to manual work in Excel)
 lenfile=$(awk 'NR >= 2' $file3 | wc -l)
@@ -213,8 +213,8 @@ fi
 ## Now remove redundant records where applicable (uses a temporary file); NOTE functions as expected (compared to manual work in Excel)
 echo -e $msg1"Now checking '"$file3"' for redundant PSMs and sorting the unique records by associated spectrum file... "
 touch $temp
-awk -F "," 'NR == 1 {print $1",", $2",", $3",", $4",", $5",", $6","}' $file3 > $temp
-awk -F "," 'NR >= 2 {print $1",", $2",", $3",", $4",", $5",", $6","}' $file3 | sort -k4n | uniq >> $temp
+awk -F "," 'NR == 1 {print $1",", $2",", $3",", $4",", $5",", $6}' $file3 > $temp
+awk -F "," 'NR >= 2 {print $1",", $2",", $3",", $4",", $5",", $6}' $file3 | sort -k4n | uniq >> $temp
 cat $temp > $file3
 
 ## Track the data
@@ -251,6 +251,9 @@ fi
 echo -e $msg1"Now matching unique sequences and precursor abundances and summing total abundances associated with each labeling event... "
 
 #######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 5/20/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+
+
+
 
 
 

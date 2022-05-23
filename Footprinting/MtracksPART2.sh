@@ -1,23 +1,33 @@
-### DUMP FAULTY CODE HERE FOR ISOLATED TROUBLESHOOTING! ###
+file3=trimmedFiltered.csv
+file4=fileArray.csv
+file5=masterIDs.csv
 
+## THIS IS WHAT WORKS (before END, that is just for printing) - note that the array is filled in a random order in this method.
+awk -F"," 'NR > 1{ fileArray[$4] = 1 } END{ for (i in fileArray) print i}' $file3 > $file4
+awk -F"," 'NR > 1{ fileArray[$1] = 1 } END{ for (i in fileArray) print i}' $file3 > $file5
 
+# note: this method works; however arrays in awk are far more complicated than expected. It doesn't seem trivial to create them
+# with specific conditions. Accessing specific arrays by their index is also complicated because they are associative (ie., index is
+# an arbitrary string that can be a string of any number(s)). So accessing them is not trivial. Also, filling them with specific elements
+# are stored first in a variable is also not trivial.
+# .
+# .
+# .
+# On reflecting upon these problems, I think it will be best to create reference files - each a list of unique filenames and a list of unique peptide IDs.
+# Bash can rapidly create them as specified with great ease, and because they will be small, it can loop them fairly quickly.
+# Each element can be stored via a nested for loop (ie, for i in filename; do; for j in masterIDs; do; ... then pass those var names into awk for
+# pattern matching and cumulative addition. No need to ever touch an awk array. They are far too wacky. Additionally, unique GEE master IDs can be matched to their
+# positions in the same ref file: col A = seq, col B = position; sending only current col A value to awk for matching and summing by current filename value.)
 
+## AS OF 5/22/2022 - INSTEAD OF AWK ARRAYS, CREATE AUXILIARY FILES CONTAINING THE DESIRED UNIQUE VALUES.
+## USE BASH AND/OR AWK WHERE FEASIBLE TO MAKE THOSE FILES. SPECIFICALLY WHEN MAKING THE IDs FILE: USE AWK TO GEE-PATTERN-MATCH TO ONLY THOSE IDs
+## WHICH ARE LABELED (AFTER ALL, THOSE ARE THE ONLY ONES I CARE ABOUT ANYWAY; IF ALL OTHERS ARE COMPLETELY UNLABLED, THAT'S ALL I NEED TO KNOW ABOUT THOSE ONES.
+## THEN, FOR MASTER IDs SPECIFICALLY, CALL THE POSITIONS FUNCTION TO APPEND THEIR POSITION-IN-MASTER-PROTEIN VALUES INTO THAT FILE. THEN, USE BASH TO FOR-LOOP
+## THROUGH 1) FILENAME; 2) NESTED UNDER 1, FOR-LOOP THROUGH COL-A OF MASTER IDs FILE. THOSE CURRENT VALUES OF EACH WILL THEN BE PASSED TO AWK
+## FOR *ALL* CALCULATIONS TO BE PERFORMED ON THE TRIMMED FILE.
 
-## otherwise, next block to add can be developed here. From main script, do this:
-### FINAL SEGMENT: DO ABUNDANCE MATCHING, SUMMATION AND % LABELING CALCULATIONS. USE *ONLY* UNIQUE, GEE-LABELED IDs AS THE SEARCH KEYS
-######################################################################################################################################
-## Extract relevant data from output file 3 into separate arrays for cross-referencing by array index. Printing by column number here is safe because
-## the output file made by this script are always formatted the same way regardless of how they started.
-
-
-## Put it all in one awk statement, similar to above (line 183). Think about it, why bother creating multiple arrays when you coud just awk the entire file
-## (which itself is structured as an array anyway)
-## DEPRECATE EVERYTHING FROM THIS POINT, AND MAKE IT INTO ONE BIG AWK STATEMENT INSTEAD!
-## OPTIONAL: BUILD A SMALL TEST FILE STRUCTURED IN THE SAME WAY AS FILE3. Or, just use File 3 itself.
-## step 1 ('BEGIN'): populate awk array with unique peptide IDs that were labeled with GEE.
-## step 2: populate a second awk array with unique raw file names.
-## step 3: awk loop - for element in raw array, iterate through the peptide ID array. For the current value of the peptide ID array, search the trimmedFiltered.csv .
-## for IDs which match the current element of both arrays. When a GEE match is found, add its value to a variable storing GEE abundance. Else, store add into a non-GEE variable.
+## NOW, for the current values of the filename/masterpeptide ID , search the trimmedFiltered.csv for IDs which match the current elements
+## of both files. When a GEE match is found, add its value to a variable storing GEE abundance. Else, store it into the non-GEE abundance variable.
 ## A third variable, %label, is equal to GEE/nonGEE+GEE * 100 and updates in real time.
 ## step 4: Continue until the given ID value has no more matches. At the bottom of this loop, print the current raw file, the ID value, the ID's summed GEE abundance,
 ## its summed nonGEE abundance, and the ID's %labeled value.
