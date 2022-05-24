@@ -1,11 +1,8 @@
-file3=trimmedFiltered.csv
-file4=fileArray.csv
-file5=masterIDs.csv
-
-## THIS IS WHAT WORKS (before END, that is just for printing) - note that the array is filled in a random order in this method.
-awk -F"," 'NR > 1{ fileArray[$4] = 1 } END{ for (i in fileArray) print i}' $file3 > $file4
-awk -F"," 'NR > 1{ fileArray[$1] = 1 } END{ for (i in fileArray) print i}' $file3 > $file5
-
+for filename in *BSA/*PSMs*; do
+    #name=$(basename $filename | sed 's/.txt//g' | sed 's/[0-9][0-9][0-9][0-9][0-9][0-9]//g' | sed 's/_PSMs//g'); echo "name is "$name
+    name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); echo "name is "$name
+    fnames+=( $name )
+done
 # note: this method works; however arrays in awk are far more complicated than expected. It doesn't seem trivial to create them
 # with specific conditions. Accessing specific arrays by their index is also complicated because they are associative (ie., index is
 # an arbitrary string that can be a string of any number(s)). So accessing them is not trivial. Also, filling them with specific elements

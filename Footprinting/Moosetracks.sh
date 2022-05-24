@@ -12,14 +12,255 @@
 #### likely to vary if one result was searched with the Precolator node while the other was not.
 
 ## function to be called at the very end of data analysis, when the final datafile needs peptide positions to correctly graph % label by peptide and map labels to structure
+function 4_CALCULATE!() {
+
+    echo -e $msg1"Now matching unique sequences and precursor abundances and summing total abundances associated with each labeling event... "
+
+    len=$(awk -F"," 'NR > 1' $file3)
+
+    # Use the number of unique peptide IDs as the searching index
+    #for (( i = 1; i -le $len; i++ )); do
+    for f in ${fnames[*]}; do
+
+        echo "replicate name is "$f
+
+
+        # This is the nested part of the loop. Here, a master peptide ID is stored in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
+        for m in ${mseqs[*]}; do
+            echo -e $msg3"sequence is "$m
+        
+            ## NEXT: some awk block here that takes these bash variables (see below) and uses them to search trimmedFiltered and sum abundances.
+
+        done
+        # awk will then use those vars to pattern-match abundances with the master sequence. Remember that within awk the value of each PSM string must be uppercased
+        # and then checked for a match with the current value of m (if ~ /*/ etc.)
+
+        echo ""
+
+        # 1. awk provides a function, "toupper", which capitalizes the string given to it.
+        # $ awk '{print toupper($0)}' file1
+        # HELLO
+        # WELCOME
+        # STRING
+
+    done
+
+    return
+
+}
+
+function 3_CleanData() {
+
+    ## Now remove redundant records where applicable (uses a temporary file); NOTE functions as expected (compared to manual work in Excel)
+    echo -e $msg1"Now checking '"$file3"' for redundant PSMs and sorting the unique records by associated spectrum file... "
+    touch $temp
+    awk -F "," 'NR == 1 {print $1",", $2",", $3",", $4",", $5",", $6}' $file3 > $temp
+    awk -F "," 'NR >= 2 {print $1",", $2",", $3",", $4",", $5",", $6}' $file3 | sort -k4n | uniq >> $temp
+    cat $temp > $file3
+
+    ## Track the data
+    trim=$(awk 'NR >= 2' $file3 | wc -l); diff=$((lenfile-trim))
+
+    ## User message
+    if [ $trim != 0 ]; then
+        echo -e $msg2"Found and removed "$diff" duplicate records ("$trim" records retained in $file3)."
+    else
+        echo -e $msg3"Found 0 duplicate records; all records retained."
+    fi
+
+    ## Use the var 'numPSMfiles' to re-sort PSM records by source filename (which corresponds to original number of input files)
+    awk -F"," 'NR == 1' $file3 > $temp
+    for ((i = 0; i < $numPSMfiles; i++)); do
+
+        ## in order of appearance, use each unique filename in fnames and use it to gather all values associated with it; then print to a temporary file
+        identifier=$(echo ${fnames[i]}); grep $identifier $file3 >> $temp
+
+    done
+
+    # bounce the sorted records back to File 3 and reset the temp file
+    awk -F"," '{print $0}' $temp > $file3; rm $temp
+
+    ## Track the data
+    trim1=$(awk 'NR >= 2' $file3 | wc -l)
+    if [ $trim1 == $trim ]; then
+        echo -e $msg2"Records have been sorted by source file (all records retained in $file3)."
+    else
+        echo -e $msg3"Error during record sorting! Review contents of "$file3" to identify what changed."
+    fi
+
+    return
+}
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function 2_ExtractData() {
+
+    # Use awk to export the desired columns from MergedPSMs to new text file "trimmed"
+    echo -e $msg1"Extracting data... "
+
+    awk -F "\t" '
+    NR==1 {
+        for (i=1; i<=NF; i++) {
+            f[$i] = i
+        }
+    }
+    { print $(f["Annotated Sequence"]) "\t" $(f["Modifications"]) "\t" $(f["Charge"]) "\t" $(f["Spectrum File"]) "\t" $(f["Precursor Abundance"]) "\t" $(f["XCorr"]) "\t" $(f["Rank"])}
+    ' $file1 >> $file2
+
+    echo -e $msg2"Copied 'Annotated Sequence' 'Modifications' 'Charge' 'Spectrum File' 'Precursor Abundance' 'XCorr' 'Rank' to "$file2
+
+    # Repeat for to get sequence/position matches from merged peptide groups 
+    awk -F "\t" '
+    NR==1 {
+        for (i=1; i<=NF; i++) {
+            f[$i] = i
+        }
+    }
+    { print $(f["Annotated Sequence"]) "\t" $(f["Positions in Master Proteins"]) "\t" $(f["Modifications"]) }
+    ' $file1A >> $temp 
+
+    # Now isolate unique sequence-position pairs which have been GEE labeled; store in file3A
+    awk -F"\t" 'NR==1' $temp > $file2A; awk -F"\t" 'NR>=2' $temp | grep "GEE" | sort | uniq >> $file2A
+    awk -F"\t" 'NR==1 {print $1"\t",$2}' $file2A > $file3A; awk -F"\t" 'NR > 1 {print $1"\t",$2}' $file2A | sort | uniq >> $file3A
+    numUniqPepGrps=$(awk 'NR > 1' $file3A | wc -l); echo -e $msg2"Extracted "$numUniqPepGrps" unique, labeled sequence groups with their positions from among "$actual1A" total peptide groups."
+
+    # Now store the unique IDs in a bash array for later use
+    mseqs=($( awk -F"\t" 'NR > 1 {print $1}' $file3A))
+
+    ## First print headers to File 3
+    echo -e $msg1"Filtering out low-scoring PSMs and annotating labeled PSMs..."
+    Seq=$(awk -F "\t" 'NR==1 {print $1}' $file2)
+    Mods=$(awk -F "\t" 'NR==1 {print $2}' $file2)
+    Z=$(awk -F "\t" 'NR==1 {print $3}' $file2)
+    name=$(awk -F "\t" 'NR==1 {print $4}' $file2) 
+    Precursor=$(awk -F "\t" 'NR==1 {print $5}' $file2)
+    LabelStatus="Label?"
+    Score=$(awk -F "\t" 'NR==1 {print $6}' $file2)
+    Rank=$(awk -F "\t" 'NR==1 {print $7}' $file2); echo -e $Seq,$Mods,$Z,$name,$Precursor,$LabelStatus,$Score,$Rank > $file3
+
+    ### Find records meeting required Xcorr and Rank scores, and tag labeled PSMs; print to File 3
+    awk -F "\t" 'BEGIN{ seq = ""; mods = ""; charge = 0; name = ""; abundance = 0; label = ""; xcorr = 0; rank = 0 };
+
+            NR >= 2 { seq = $1; mods = $2; charge = $3; name = $4; abundance = $5; xcorr = $6; rank = $7; 
+
+            if ( mods ~ /GEE/ )
+                label = "GEE";
+
+            else
+                label = "";
+
+            if ( xcorr >= 2 && rank == 1)
+                print seq "," mods "," charge "," name "," abundance "," label "," xcorr "," rank}' $file2 >> $file3
+
+    ## Report the number of removed records for failing XCorr threshold   ### NOTE functions as expected (compared to manual work in Excel)
+    lenfile=$(awk 'NR >= 2' $file3 | wc -l)
+    filtered=$((actual-lenfile))
+
+    ## Copy to backup file
+    head -n1 $file3 > backup_$file3
+    awk -F"," 'NR >= 2' $file3 | sort -k4n >> backup_$file3
+
+    ## User message
+    if [ $actual != 0 ]; then
+        echo -e $msg2"Found and removed "$filtered" PSMs with insufficient Xcorr score and/or rank ("$lenfile" records retained)."
+        echo -e $msg2"These changes are also copied in 'backup_"$file3"', review as needed." 
+    else
+        echo -e $msg3"Found 0 failing PSMs; all records retained."
+    fi
+
+    return
+}
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function 1_MergeFiles() {
+
+    # count all original files to be processed
+    numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutputTextFiles/*PeptideGroups* | wc -l)
+
+    echo -e $msg1"Beginning file merge..."; echo -e $msg2"Identified "$numPSMfiles" PSM output files and "$numPepGroupfiles" Peptide Group output files to merge."
+
+    # Get the unique headers from PSM files into the new merged PSM file, and repeat for Peptide Groups.
+    awk -F"\t" 'NR==1' PDoutputTextFiles/*PSMs* > $file1; awk -F"\t" 'NR==1' PDoutputTextFiles/*PeptideGroups* > $file1A
+    
+    # Now merge the file contents into their respective mergefiles, and remove all ". Also, build an array fnames() containing unique filenames for later use
+    for filename in PDoutputTextFiles/*PSMs*; do
+
+        # sed's -i flag edits the file 'in-place' without requiring a temporary file
+        awk -F"\t" 'NR > 1' $filename >> $file1; sed -i 's/\"//g' $file1
+
+        # use _ as a delimiter to print only the core of the filename
+        name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); fnames+=( $name )
+
+    done
+
+    for filename in PDoutputTextFiles/*PeptideGroups*; do
+
+        awk -F"\t" 'NR > 1' $filename >> $file1A; sed -i 's/\"//g' $file1A          # sed's -i flag edits the file 'in-place' without requiring a temporary file
+
+    done
+
+    # count all non-header rows that should have been exported
+    numgoalPSMs=$(awk -F"\t" 'NR > 1' PDoutputTextFiles/*PSMs* | wc -l); numgoalPepGrps=$(awk -F"\t" 'NR > 1' PDoutputTextFiles/*PeptideGroups* | wc -l)
+
+    # count actual export numbers
+    actual=$(awk 'NR > 1' $file1 | wc -l); actual1A=$(awk 'NR > 1' $file1A | wc -l)
+
+    ## check
+    echo -e $msg2"Found "$numgoalPSMs" PSM records and "$numgoalPepGrps" Peptide Groups records to export; exported "$actual" PSM records and "$actual1A" Peptide Groups records (excluded redundant header records)."
+    echo -e $msg2"Merged data were saved in '"$file1"' and in '"$file1A"'."  
+
+    return
+}
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function 0_Initialize() {
+    # Begin by storing output filenames in variables for ease of use
+    ext=.csv
+
+    ## Create variables for merged-output files
+    file1=mergedPSMs.txt; file1A=mergedPeptideGroups.txt
+
+    ## Create  variables for data analysis snapshot files
+    file2=trimmed.txt; file2A=SequencePositions.txt; file3=trimmedFiltered$ext; file3A=GEE_sequencePositions.txt; temp=temp$ext
+
+    # user message flag
+    msg1=$(echo "\n>> "); msg2=$(echo "\t~ "); msg3=$(echo "\t! ")
+
+    ## Before starting, remove previous output files from the working directory
+    if [ -e $file1 ]; then rm $file1; fi
+    if [ -e $file1A ]; then rm $file1A; fi
+    if [ -e $file2 ]; then rm $file2; fi
+    if [ -e $file2A ]; then rm $file2A; fi
+    if [ -e $file3 ]; then rm $file3; fi
+    if [ -e $file3A ]; then rm $file3A; fi
+    if [ -e $temp ]; then rm $temp; fi
+
+    ## Initialize empty output files, descriptive variables and data structures
+    touch $file1; touch $file1A; touch $file2; touch $file3            # output files to store an image of the data at each step of analysis
+    declare -i numPSMfiles; numPSMfiles=0                              # var to keep track of data processing steps
+    declare -i numPepGroupfiles; numPepGroupfiles=0                    # ditto
+    declare -i numgoalPSMs; numgoalPSMs=0                              # ditto
+    declare -i numgoalPepGrps; numgoalPepGrps=0                        # ditto
+    declare -i actual; actual=0                                        # ditto
+    declare -i actual1A; actual1A=0                                    # ditto
+    declare -a fnames=()                                               # Array. Store the basenames of the original .raw files here
+    declare -a -u mseqs=()                                             # Array. Store the unique master peptide sequences across all .raw files here
+    
+    return
+}
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function assignPositions() {   # NOTE now that this block is a function, need to ensure that the variables it uses are visible to it (they may need to be passed to it!)
     
+    ## 5/23/2022 THIS FUNCITON IS NO LONGER NEEDED HERE. DOING ASSIGNMENTS BY PRINTING UNIQUE IDS WITH THEIR CORRESPONDING POSITIONS IS ANALOGOUS TO CREATING A PERMANENT ARRAY
+    ## OF THESE RECORDS, WHICH CAN BE EASILY ACCESSED BY STANDARD FILE READING. USE THIS FOR REFERENCE WITH OTHER CODE BLOCKS, BUT EVENTUALLY DEPRECATE THIS.
+
     # initialize the variables
     col1=""; refseq=""; col2=""; col3=""; col4=""; col5=""; col6=""; position=""
 
     # use the rowcount in trimmmed.csv to store the position value, row by row, and print it appended with the other row values to a new file (updated version of trimmed.csv)
     echo -e "Matching sequences with their positions in the master protein..."
 
+    ## REPURPOSE THIS BLOCK FOR USE IN THE SEARCHING-PRECURSOR SUMMING CODE
     ## this can potentially be done in awk (more efficient).
     for (( i = 1; i -le $lenTrim; i++ )); do
         
@@ -39,6 +280,7 @@ function assignPositions() {   # NOTE now that this block is a function, need to
         if [[ ! $i -gt 1 ]]; then
             position=$(echo "Position in Master Protein")
 
+        ## repurpose this code for searching... the position match functionality is no longer needed but this has applications in Step 4
         ## if this is not the first row, it contains position values - extract the exact sequence-position match
         else 
             position=$(grep -w -m1 $refseq $file2A | cut -f2)   #-m1 forces grep to stop after the first match. Without it, near-exact matches are also made
@@ -53,206 +295,42 @@ function assignPositions() {   # NOTE now that this block is a function, need to
         echo "$col1,$position,$col2,$col3,$col4,$col5,$col6" >> $temp
     
         ## only while testing this code block
-        if [[ $i -eq 50 ]]; then break; fi
+        #if [[ $i -eq 50 ]]; then break; fi
 
-    done; awk -F"," '{print $0}' $temp > $file3; return
-}
-
-## Capture an argument from command line when running the script. Use this argument to generalize this script to ~any~ covalent labeling/footprinting data.
-if [[ $# != 0 ]]; then keyword=$(echo $1); fi
-
-# Begin by storing output filenames in variables for ease of use
-ext=.csv
-
-## Create variables for merged-output files
-file1=mergedPSMs.txt
-file1A=mergedPeptideGroups.txt
-
-## Create  variables for data analysis snapshot files
-file2=trimmed.txt
-file2A=SequencePositions.txt
-file3=trimmedFiltered$ext
-file3A=GEE_sequencePositions.txt
-temp=temp$ext
-
-# user message flag
-msg1=$(echo "\n>> "); msg2=$(echo "\t! ")
-
-## Before starting, remove previous output files from the working directory
-if [ -e $file1 ]; then rm $file1; fi
-if [ -e $file1A ]; then rm $file1A; fi
-if [ -e $file2 ]; then rm $file2; fi
-if [ -e $file2A ]; then rm $file2A; fi
-if [ -e $file3 ]; then rm $file3; fi
-if [ -e $file3A ]; then rm $file3A; fi
-if [ -e $temp ]; then rm $temp; fi
-
-## Initialize empty output files, descriptive variables and data structures
-touch $file1; touch $file1A; touch $file2; touch $file3            # output files to store an image of the data at each step of analysis
-declare -i numPSMfiles; numPSMfiles=0                              # var to keep track of data processing steps
-declare -i numPepGroupfiles; numPepGroupfiles=0                    # ditto
-declare -i numgoalPSMs; numgoalPSMs=0                              # ditto
-declare -i numgoalPepGrps; numgoalPepGrps=0                        # ditto
-declare -i actual; actual=0                                        # ditto
-declare -i actual1A; actual1A=0                                    # ditto
-declare -a fnames=()                                               # array to store the source file names for referencing
-
-# count all original files to be processed
-numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutputTextFiles/*PeptideGroups* | wc -l)
-
-echo -e $msg1"Beginning file merge ..."; echo -e $msg2"Identified "$numPSMfiles" PSM output files and "$numPepGroupfiles" Peptide Group output files to merge."
-
-# Merge PSMs into one file
-for filename in PDoutputTextFiles/*PSMs*; do
-
-    awk -F "\t" 'NR == 1' $filename > $file1
+    done; awk -F"," '{print $0}' $temp > $file3
     
-    # get unique portion of each filename and store it in the array fnames() for later
-    # WARNING- column containing spectrum file name may not always be 29! Search instead by the desired column's header.
-    # WARNING- this filename extraction can be much faster using awk substr()
-    name=$(tail -n1 $filename | cut -f29 | sed 's/"//g' | sed 's/.raw//g' | sed 's/[0-9][0-9][0-9][0-9][0-9][0-9]//g' | sed 's/_//g')
-    fnames+=( $name )
-
-done
-for filename in PDoutputTextFiles/*PSMs*; do
-    awk -F "\t" 'NR >= 2' $filename >> $file1
-done
-
-# Merge Peptide Groups into one file
-for filename in PDoutputTextFiles/*PeptideGroups*; do
-    awk -F "\t" 'NR == 1' $filename > $file1A
-done
-for filename in PDoutputTextFiles/*PeptideGroups*; do
-    awk -F "\t" 'NR >= 2' $filename >> $file1A
-done
-
-## Data cleaning
-# Eliminate all instances of "" in both merged files
-sed -i 's/\"//g' $file1; sed -i 's/\"//g' $file1A
-
-# count all non-header rows that should have been exported
-numgoalPSMs=$(awk -F"\t" 'NR >= 1' PDoutputTextFiles/*PSMs* | wc -l); numgoalPepGrps=$(awk -F"\t" 'NR >= 1' PDoutputTextFiles/*PeptideGroups* | wc -l)
-numgoalPSMs="$((numgoalPSMs-numPSMfiles))"; numgoalPepGrps="$((numgoalPepGrps-numPepGroupfiles))"
-
-# count actual export numbers
-actual=$(awk 'NR >= 2' $file1 | wc -l); actual1A=$(awk 'NR >= 2' $file1A | wc -l)
-
-## check
-echo -e $msg2"Found "$numgoalPSMs" PSM records and "$numgoalPepGrps" Peptide Groups records to export; exported "$actual" PSM records and "$actual1A" Peptide Groups records."
-echo -e $msg2"Merged data were saved in '"$file1"' and in '"$file1A"'."
-
-## Begin Step 2
-
-# Use awk to export the desired columns from MergedPSMs to new text file "trimmed"
-echo -e $msg1"Extracting the following values to "$file2": 'Annotated Sequence' 'Modifications' 'Charge' 'Spectrum File' 'Precursor Abundance' 'XCorr' 'Rank'\n"
-awk -F "\t" '
-NR==1 {
-    for (i=1; i<=NF; i++) {
-        f[$i] = i
-    }
+    return
 }
-{ print $(f["Annotated Sequence"]) "\t" $(f["Modifications"]) "\t" $(f["Charge"]) "\t" $(f["Spectrum File"]) "\t" $(f["Precursor Abundance"]) "\t" $(f["XCorr"]) "\t" $(f["Rank"])}
-' $file1 >> $file2
 
-# Repeat for to get unique sequence/position matches from merged peptide groups 
-awk -F "\t" '
-NR==1 {
-    for (i=1; i<=NF; i++) {
-        f[$i] = i
-    }
-}
-{ print $(f["Annotated Sequence"]) "\t" $(f["Positions in Master Proteins"]) }
-' $file1A >> $temp
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-awk -F"\t" 'NR==1' $temp > $file2A; awk -F"\t" 'NR>=2' $temp | sort | uniq >> $file2A; awk -F"\t" 'NR==1' $file2A > $file3A; grep "GEE" $file2A >> $file3A
 
-## for debugging (could eventually convert it to a user message, like "Removed (actual1A-numUniqPepGrps) redundant peptide groups")
-numUniqPepGrps=$(awk 'NR > 1' $file2A | wc -l); echo "#---Found "$numUniqPepGrps" unique peptide groups from among "$actual1A" total peptide groups."
-
-## First print headers to File 3
-echo -e $msg1"Now filtering for PSMs with a minimum XCorr of 2 and annotating GEE label events..."
-Seq=$(awk -F "\t" 'NR==1 {print $1}' $file2)
-Mods=$(awk -F "\t" 'NR==1 {print $2}' $file2)
-Z=$(awk -F "\t" 'NR==1 {print $3}' $file2)
-name=$(awk -F "\t" 'NR==1 {print $4}' $file2) 
-Precursor=$(awk -F "\t" 'NR==1 {print $5}' $file2)
-LabelStatus="Label?"
-Score=$(awk -F "\t" 'NR==1 {print $6}' $file2)
-Rank=$(awk -F "\t" 'NR==1 {print $7}' $file2); echo -e $Seq,$Mods,$Z,$name,$Precursor,$LabelStatus,$Score,$Rank > $file3
-
-### Find records meeting required Xcorr and Rank scores, and tag labeled PSMs; print to File 3
-
-awk -F "\t" 'BEGIN{ seq = ""; mods = ""; charge = 0; name = ""; abundance = 0; label = ""; xcorr = 0; rank = 0 };
-
-        NR >= 2 { seq = $1; mods = $2; charge = $3; name = $4; abundance = $5; xcorr = $6; rank = $7; 
-
-        if ( mods ~ /GEE/ )
-            label = "GEE";
-
-        else
-            label = "";
-
-        if ( xcorr >= 2 && rank == 1)
-            print seq "," mods "," charge "," name "," abundance "," label "," xcorr "," rank}' $file2 >> $file3
-
-## Report the number of removed records for failing XCorr threshold   ### NOTE functions as expected (compared to manual work in Excel)
-lenfile=$(awk 'NR >= 2' $file3 | wc -l)
-filtered=$((actual-lenfile))
-
-## Copy to backup file
-head -n1 $file3 > backup_$file3
-awk -F"," 'NR >= 2' $file3 | sort -k4n >> backup_$file3
-
-## User message
-if [ $actual != 0 ]; then
-    echo -e $msg2"Found and removed "$filtered" PSMs with insufficient Xcorr score and/or rank ("$lenfile" records retained)."; echo -e $msg2"These changes are also copied in 'backup_"$file3"', review as needed.\n" 
-else
-    echo -e $msg2"Found 0 failing PSMs; all records retained.\n"
+## Check for command line arguments
+if [[ $# != 0 ]]; then 
+    labelkey=$(echo ${1^^})     # accepts a string, case insensitive and content insensitive. labelkey will be used to search for the label specified by this string.
+    graph=$(echo ${2^^})        # accepts true or false, case insensitive. Allows user to request the final data to be graphed for them (will call a separate script).        
+    map=$(echo ${3^^})          # accepts true or false, case insensitive. Allows user to request the final data to be mapped to a protein structure in a pymol session (will call a separate script).
 fi
 
-## Now remove redundant records where applicable (uses a temporary file); NOTE functions as expected (compared to manual work in Excel)
-echo -e $msg1"Now checking '"$file3"' for redundant PSMs and sorting the unique records by associated spectrum file... "
-touch $temp
-awk -F "," 'NR == 1 {print $1",", $2",", $3",", $4",", $5",", $6}' $file3 > $temp
-awk -F "," 'NR >= 2 {print $1",", $2",", $3",", $4",", $5",", $6}' $file3 | sort -k4n | uniq >> $temp
-cat $temp > $file3
+## Begin (Step 0): Initialize variables and data structures
+0_Initialize
 
-## Track the data
-trim=$(awk 'NR >= 2' $file3 | wc -l); diff=$((lenfile-trim))
+## Step 1: Merge the output files by calling 'mergeFiles'
+1_MergeFiles
 
-## User message
-if [ $trim != 0 ]; then
-    echo -e $msg2"Found and removed "$diff" duplicate records ("$trim" records retained in $file3)."
-else
-    echo -e $msg2"Found 0 duplicate records; all records retained."
-fi
+## Step 2: Extract the desired information by calling ExtractData
+2_ExtractData
 
-## Use the var 'numPSMfiles' to re-sort PSM records by source filename (which corresponds to original number of input files)
-awk -F"," 'NR == 1' $file3 > $temp
-for ((i = 0; i < $numPSMfiles; i++)); do
+## Step 3: Clean the data (remove redundant records and sort the unique records)
+3_CleanData
 
-    ## in order of appearance, store the unique filename and use it to gather all values associated with it; then print to a temporary file
-    identifier=$(echo ${fnames[i]}); grep $identifier $file3 >> $temp
+## Step 4: Calculate percent labeling of each unique PSM in each file.
+4_CALCULATE!
 
-done
-
-# bounce the sorted records back to File 3 and reset the temp file
-awk -F"," '{print $0}' $temp > $file3; rm $temp
-
-## Track the data
-trim1=$(awk 'NR >= 2' $file3 | wc -l)
-if [ $trim1 == $trim ]; then
-    echo -e $msg2"Records have been sorted by source file (all records retained in $file3)."
-else
-    echo -e $msg2"Error during record sorting! Review contents of "$file3" to identify what changed."
-fi
-
-## Now calculate percent labeling of each unique PSM in each file.
-echo -e $msg1"Now matching unique sequences and precursor abundances and summing total abundances associated with each labeling event... "
 
 #######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 5/20/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
-
-
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Now break all of this up into separate functions, to be called down here |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| This will organize the code and make development easier to work on |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
 
 
 
@@ -280,26 +358,6 @@ echo -e $msg1"Now matching unique sequences and precursor abundances and summing
 ## To get the average of the %labeled across files, use a counter to track the number of replicates. Sum all matched percent values, then divide at the end by the counter value.
 ## standard deviation on the other hand will be tricky. Perhaps instead of doing the statistics (including averaging) here, it might be time to call a script using matplotlib or R for this work.
 ## Because (well done!) it would be the final step!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
