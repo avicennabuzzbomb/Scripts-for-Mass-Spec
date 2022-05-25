@@ -11,7 +11,7 @@
 #### in it, whereas column #10, #12, or #36 may all have the desired Precursor Abundance values (depending on the file's contents). Contents between files are most 
 #### likely to vary if one result was searched with the Precolator node while the other was not.
 
-## function to be called at the very end of data analysis, when the final datafile needs peptide positions to correctly graph % label by peptide and map labels to structure
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
 
     echo -e $msg1"Now matching unique sequences and precursor abundances and summing total abundances associated with each labeling event... "
@@ -21,21 +21,45 @@ function 4_CALCULATE!() {
     # Use the number of unique peptide IDs as the searching index
     #for (( i = 1; i -le $len; i++ )); do
     for f in ${fnames[*]}; do
-
-        echo "replicate name is "$f
-
+        
+        echo "Replicate Filename","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
 
         # This is the nested part of the loop. Here, a master peptide ID is stored in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
         for m in ${mseqs[*]}; do
-            echo -e $msg3"sequence is "$m
-        
+
+            # test statement demonstrating that the variables are capturing the correct values at each iteration of the loops
+            echo "Replicate: "$f" | Sequence: "$m
+
             ## NEXT: some awk block here that takes these bash variables (see below) and uses them to search trimmedFiltered and sum abundances.
+            ## WARNING This compiles but is extremely buggy. Need to confirm that toupper() actually works, that pattern matching is working,
+            ## that all of the conditional statements are working (the if ( sum > 0 ) is confirmed to work), and that the nested loop structure
+            ## is appropriate. Whew! getting close...
+            awk -F "," -v f=$f -v m=$m 'NR > 1 { Labeled=0; Unlabeled=0; sum=0; PercLabel=0; seq=""; file=""; abundance=0 };
+
+                                        { seq=toupper($1); file=$4; abundance=$5;
+                                        
+                                        if ( f ~ file && seq ~ m )                                            
+                                            if ($6 ~ /GEE/ )
+                                                Labeled += abundance;                                                
+                                            else
+                                                Unlabeled += abundance;
+                                        
+                                        sum = Labeled + Unlabeled;
+
+                                        if ( sum > 0 )
+                                            PercLabel = 100 * Labeled / sum;
+                                        else
+                                            PercLabel = 0;
+
+                                        print f "," m "," Labeled "," Unlabled "," PercLabel }' $file3 >> $file4
 
         done
         # awk will then use those vars to pattern-match abundances with the master sequence. Remember that within awk the value of each PSM string must be uppercased
         # and then checked for a match with the current value of m (if ~ /*/ etc.)
 
+        # test statement
         echo ""
+        echo "" >> $file4
 
         # 1. awk provides a function, "toupper", which capitalizes the string given to it.
         # $ awk '{print toupper($0)}' file1
@@ -49,6 +73,7 @@ function 4_CALCULATE!() {
 
 }
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 3_CleanData() {
 
     ## Now remove redundant records where applicable (uses a temporary file); NOTE functions as expected (compared to manual work in Excel)
@@ -220,7 +245,7 @@ function 0_Initialize() {
     file1=mergedPSMs.txt; file1A=mergedPeptideGroups.txt
 
     ## Create  variables for data analysis snapshot files
-    file2=trimmed.txt; file2A=SequencePositions.txt; file3=trimmedFiltered$ext; file3A=GEE_sequencePositions.txt; temp=temp$ext
+    file2=trimmed.txt; file2A=SequencePositions.txt; file3=trimmedFiltered$ext; file3A=GEE_sequencePositions.txt; file4=final$ext; temp=temp$ext
 
     # user message flag
     msg1=$(echo "\n>> "); msg2=$(echo "\t~ "); msg3=$(echo "\t! ")
@@ -232,18 +257,19 @@ function 0_Initialize() {
     if [ -e $file2A ]; then rm $file2A; fi
     if [ -e $file3 ]; then rm $file3; fi
     if [ -e $file3A ]; then rm $file3A; fi
+    if [ -e $file4 ]; then rm $file4; fi
     if [ -e $temp ]; then rm $temp; fi
 
     ## Initialize empty output files, descriptive variables and data structures
-    touch $file1; touch $file1A; touch $file2; touch $file3            # output files to store an image of the data at each step of analysis
-    declare -i numPSMfiles; numPSMfiles=0                              # var to keep track of data processing steps
-    declare -i numPepGroupfiles; numPepGroupfiles=0                    # ditto
-    declare -i numgoalPSMs; numgoalPSMs=0                              # ditto
-    declare -i numgoalPepGrps; numgoalPepGrps=0                        # ditto
-    declare -i actual; actual=0                                        # ditto
-    declare -i actual1A; actual1A=0                                    # ditto
-    declare -a fnames=()                                               # Array. Store the basenames of the original .raw files here
-    declare -a -u mseqs=()                                             # Array. Store the unique master peptide sequences across all .raw files here
+    touch $file1; touch $file1A; touch $file2; touch $file3; touch $file4            # output files to store an image of the data at each step of analysis
+    declare -i numPSMfiles; numPSMfiles=0                                            # var to keep track of data processing steps
+    declare -i numPepGroupfiles; numPepGroupfiles=0                                  # ditto
+    declare -i numgoalPSMs; numgoalPSMs=0                                            # ditto
+    declare -i numgoalPepGrps; numgoalPepGrps=0                                      # ditto
+    declare -i actual; actual=0                                                      # ditto
+    declare -i actual1A; actual1A=0                                                  # ditto
+    declare -a fnames=()                                                             # Array. Store the basenames of the original .raw files here
+    declare -a -u mseqs=()                                                           # Array. Store the unique master peptide sequences across all .raw files here
     
     return
 }
