@@ -14,58 +14,91 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
 
+    temp1=tempByFile.csv; temp2=tempByFile_Peptide.csv; temp3=tempByFile_Peptide_GEE.csv
+
+    # for loop breaks during implementation and testing (see further down)
+    i=0; j=0
+
     echo -e $msg1"Now matching unique sequences and precursor abundances and summing total abundances associated with each labeling event... "
+    
+    # store an all-uppercased version of file3 in temp; simplifies peptide ID matching further down
+    awk -F"," '{print toupper($0)}' $file3 > $temp
 
-    len=$(awk -F"," 'NR > 1' $file3)
-
-    # Use the number of unique peptide IDs as the searching index
-    #for (( i = 1; i -le $len; i++ )); do
     for f in ${fnames[*]}; do
         
+    let "i++"
+
         echo "Replicate Filename","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
+        fupper=$(echo ${f^^})
 
         # This is the nested part of the loop. Here, a master peptide ID is stored in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
         for m in ${mseqs[*]}; do
 
+        let "j++"
+
             # test statement demonstrating that the variables are capturing the correct values at each iteration of the loops
             echo "Replicate: "$f" | Sequence: "$m
 
-            ## NEXT: some awk block here that takes these bash variables (see below) and uses them to search trimmedFiltered and sum abundances.
-            ## WARNING This compiles but is extremely buggy. Need to confirm that toupper() actually works, that pattern matching is working,
-            ## that all of the conditional statements are working (the if ( sum > 0 ) is confirmed to work), and that the nested loop structure
-            ## is appropriate. Whew! getting close...
-            awk -F "," -v f=$f -v m=$m 'NR > 1 { Labeled=0; Unlabeled=0; sum=0; PercLabel=0; seq=""; file=""; abundance=0 };
+            ## 5/25: For column summing use something like this form:
+            ##
+            ##   awk -F"," '$1 ~ /smiths/ {sum += $3} END {print sum}' inputfilename
+            ##
+            ## where (in this example) /smiths/ is a specific pattern to be matched, $1 is the column with fields containing the match, and $3 is the column with fields
+            ## that should be summed if the match is found in their record number.
 
-                                        { seq=toupper($1); file=$4; abundance=$5;
-                                        
-                                        if ( f ~ file && seq ~ m )                                            
-                                            if ($6 ~ /GEE/ )
-                                                Labeled += abundance;                                                
-                                            else
-                                                Unlabeled += abundance;
-                                        
-                                        sum = Labeled + Unlabeled;
+            # Slice the data into separate streams by file and then by master peptide for awk to handle one a time
+            # (eliminates unnecessary pattern matching steps during the search-sum process). Pattern matching is implicitly done by using temporary files to carve up the data
+            # into subcategories, and then summing all abundance of each category. Hacky but it will have to do until I can determine why pattern matching is not working here.
 
-                                        if ( sum > 0 )
-                                            PercLabel = 100 * Labeled / sum;
-                                        else
-                                            PercLabel = 0;
+            ## NOTE all pattern matching syntax has been corrected - stripping []. from the peptide IDs solved the problem of regex characters interfering with matching.
+            ## now; unexpected abundance matching is taking place (ie., files with *no* GEE labeling are showing high GEE abundance in output; something is screwy with the calculations;
+            ## check up on syntax). Also while this temp file system seems to do the job it is by no means the most efficient. Once confirmed to work, re-implement as one continuous awk
+            ## statement, as below.
+            awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1
+            awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2
+            awk -F"," '$0 ~ /GEE/{ print $0 }' $temp2 > $temp3
+            Total=$(awk -F"," '{sum += $5} END {print sum}' $temp1); echo "All precursor abundance is "$Total
+            Labeled=$(awk -F"," '{sum += $5} END {print sum}' $temp2); echo "Labeled abundance is "$Labeled
+            Unlabeled=$(awk -F"," '{sum += $5} END {print sum}' $temp3); echo -e "Unlabeled abundance is "$Unlabeled"\n>>>>>>>>>>>>>>>>"
 
-                                        print f "," m "," Labeled "," Unlabled "," PercLabel }' $file3 >> $file4
+
+            # this code block is currently incorrect; as is it expects a specific input file. Deal with this last.
+            #Perclabeled=$(awk -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
+            #                if ( sum > 0 )
+            #                    perc = 100*Labeled/sum
+            #                else
+            #                    perc = 0 }END{ print perc }')   # this acts like it is expecting an input file (gets caught in a loop here - use different syntax, or print abundances to the file first
+                                                                # and then use this to update that file)
+                            
+            ## finally, print to file
+            echo $f,$m,$Labeled,$Unlabeled,$Perclabeled >> $file4
+
+            #awk -F "," -v f=$f -v m=$m 'NR > 1 { Labeled=0; Unlabeled=0; sum=0; PercLabel=0; seq=""; file=""; abundance=0 };
+            #
+            #                            { seq=toupper($1); file=$4; abundance=$5;
+            #                            
+            #                            if ( f ~ file && seq ~ m )                                            
+            #                                if ($6 ~ /GEE/ )
+            #                                    Labeled += abundance;                                                
+            #                                else
+            #                                    Unlabeled += abundance;
+            #                            
+            #                            sum = Labeled + Unlabeled;
+            #
+            #                            if ( sum > 0 )
+            #                                PercLabel = 100 * Labeled / sum;
+            #                            else
+            #                                PercLabel = 0;
+            #
+            #                            print f "," m "," Labeled "," Unlabled "," PercLabel }' $file3 >> $file4
 
         done
-        # awk will then use those vars to pattern-match abundances with the master sequence. Remember that within awk the value of each PSM string must be uppercased
-        # and then checked for a match with the current value of m (if ~ /*/ etc.)
+
+        if [[ $i -eq 5 ]]; then break; fi
 
         # test statement
         echo ""
         echo "" >> $file4
-
-        # 1. awk provides a function, "toupper", which capitalizes the string given to it.
-        # $ awk '{print toupper($0)}' file1
-        # HELLO
-        # WELCOME
-        # STRING
 
     done
 
@@ -143,13 +176,13 @@ function 2_ExtractData() {
     { print $(f["Annotated Sequence"]) "\t" $(f["Positions in Master Proteins"]) "\t" $(f["Modifications"]) }
     ' $file1A >> $temp 
 
-    # Now isolate unique sequence-position pairs which have been GEE labeled; store in file3A
+    # Now isolate UNIQUE sequence-position pairs which have been GEE labeled; store in file3A
     awk -F"\t" 'NR==1' $temp > $file2A; awk -F"\t" 'NR>=2' $temp | grep "GEE" | sort | uniq >> $file2A
     awk -F"\t" 'NR==1 {print $1"\t",$2}' $file2A > $file3A; awk -F"\t" 'NR > 1 {print $1"\t",$2}' $file2A | sort | uniq >> $file3A
     numUniqPepGrps=$(awk 'NR > 1' $file3A | wc -l); echo -e $msg2"Extracted "$numUniqPepGrps" unique, labeled sequence groups with their positions from among "$actual1A" total peptide groups."
 
-    # Now store the unique IDs in a bash array for later use
-    mseqs=($( awk -F"\t" 'NR > 1 {print $1}' $file3A))
+    # Now store the unique IDs in a bash array for later use, using substr() to eliminate the []. characters (regex characters cannot be string literals unless escaped)
+    mseqs=($( awk -F"\t" 'NR > 1 {print $1}' $file3A | awk '{print substr($0, 4, length($0)-6)}' ))
 
     ## First print headers to File 3
     echo -e $msg1"Filtering out low-scoring PSMs and annotating labeled PSMs..."
