@@ -14,7 +14,7 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
 
-    temp1=tempByFile.csv; temp2=tempByFile_Peptide.csv; temp3=tempByFile_Peptide_GEE.csv
+    temp1=tempByFile.csv; temp2=tempByFile_Peptide.csv
 
     # for loop breaks during implementation and testing (see further down)
     i=0; j=0
@@ -26,7 +26,7 @@ function 4_CALCULATE!() {
 
     for f in ${fnames[*]}; do
         
-    let "i++"
+        let "i++"
 
         echo "Replicate Filename","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
         fupper=$(echo ${f^^})
@@ -34,10 +34,10 @@ function 4_CALCULATE!() {
         # This is the nested part of the loop. Here, a master peptide ID is stored in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
         for m in ${mseqs[*]}; do
 
-        let "j++"
+            let "j++"
 
             # test statement demonstrating that the variables are capturing the correct values at each iteration of the loops
-            echo "Replicate: "$f" | Sequence: "$m
+            #echo "Replicate: "$f" | Sequence: "$m
 
             ## 5/25: For column summing use something like this form:
             ##
@@ -53,26 +53,30 @@ function 4_CALCULATE!() {
             ## NOTE all pattern matching syntax has been corrected - stripping []. from the peptide IDs solved the problem of regex characters interfering with matching.
             ## now; unexpected abundance matching is taking place (ie., files with *no* GEE labeling are showing high GEE abundance in output; something is screwy with the calculations;
             ## check up on syntax). Also while this temp file system seems to do the job it is by no means the most efficient. Once confirmed to work, re-implement as one continuous awk
-            ## statement, as below.
-            awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1
-            awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2
-            awk -F"," '$0 ~ /GEE/{ print $0 }' $temp2 > $temp3
-            Total=$(awk -F"," '{sum += $5} END {print sum}' $temp1); echo "All precursor abundance is "$Total
-            Labeled=$(awk -F"," '{sum += $5} END {print sum}' $temp2); echo "Labeled abundance is "$Labeled
-            Unlabeled=$(awk -F"," '{sum += $5} END {print sum}' $temp3); echo -e "Unlabeled abundance is "$Unlabeled"\n>>>>>>>>>>>>>>>>"
+            ## statement, as shown in the commented code below this block.
+            awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1                  # filter data by current value of filename (f); WORKS
+            awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
 
+            ## Sum the abundances separated
+            Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)   #; echo "Unlabeled abundance is "$Unlabeled
+            Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)      #; echo -e "Labeled abundance is "$Labeled"\n_____________________"
 
             # this code block is currently incorrect; as is it expects a specific input file. Deal with this last.
-            #Perclabeled=$(awk -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
-            #                if ( sum > 0 )
-            #                    perc = 100*Labeled/sum
-            #                else
-            #                    perc = 0 }END{ print perc }')   # this acts like it is expecting an input file (gets caught in a loop here - use different syntax, or print abundances to the file first
-                                                                # and then use this to update that file)
-                            
-            ## finally, print to file
-            echo $f,$m,$Labeled,$Unlabeled,$Perclabeled >> $file4
+            Perclabeled=$(awk -F"," -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
+                            if ( sum > 0 )
+                                perc = 100*Labeled/sum
+                            else
+                                perc = 0 }END{ print perc }' $file4)
 
+            ## finally, print to file
+            echo $f,$m,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 or less!
+                                                                    ### note - be wary of a bug (stripping the flanking [aa1aa2]. for ambiguous cleavage sites does not work as it assumes only nonambiguous cuts; correct it!)
+                                                                    ### ALSO - alert Ben that this script is finished as a functioning first draft (ie., can always be made more efficient)
+                                                                    ### RECALL - Ben did not point to the peptide groups during this analysis at all. Also they don't appear to match unique sequences from PSMs
+                                                                    ### (likely to do with how the software defines groups, nevertheless ask about it). EVEN SO - it seems incorrect to pull peptide IDs
+                                                                    ### from peptide groups. Just use this pipe [ awk -F"," 'NR>1{print toupper($1)' $file3 | sort | uniq ]
+                                                                    ### to populate the array of unique sequences. Potentially no need to include group IDs at all... ask about it
+                                                                    
             #awk -F "," -v f=$f -v m=$m 'NR > 1 { Labeled=0; Unlabeled=0; sum=0; PercLabel=0; seq=""; file=""; abundance=0 };
             #
             #                            { seq=toupper($1); file=$4; abundance=$5;
@@ -94,13 +98,15 @@ function 4_CALCULATE!() {
 
         done
 
-        if [[ $i -eq 5 ]]; then break; fi
+        #if [[ $i -eq 5 ]]; then break; fi
 
         # test statement
         echo ""
         echo "" >> $file4
 
     done
+
+    rm temp*
 
     return
 
