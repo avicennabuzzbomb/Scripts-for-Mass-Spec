@@ -1,16 +1,5 @@
 #!/bin/bash
 
-## 1) Iterates through all output text files (exported as-is from Proteome Discoverer) and gathers data into a single file.
-## 2) Then, exports from that file only unique records.
-## 3) Then, pulls only the following columns for downstream analysis: `Annotated Sequence`, `Modifications`, `Charge`, `Precursor Abundance`, `Spectrum File`, and `File ID`.
-## 4) Finally, to the same file, adds a column recording modification status as yes (1) or no (0), done by pattern matching to the substring "GEE"
-
-
-#### UPDATE: Column extraction algorithm in step 1 has been changed to seeking columns by their actual name, rather than their position in the file (which can vary).
-#### This ensures the same data is always pulled regardless of file's contents. Ex) The column named "Precursor Abundance" will always have Precursor Abundance values
-#### in it, whereas column #10, #12, or #36 may all have the desired Precursor Abundance values (depending on the file's contents). Contents between files are most 
-#### likely to vary if one result was searched with the Precolator node while the other was not.
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
 
@@ -39,21 +28,9 @@ function 4_CALCULATE!() {
             # test statement demonstrating that the variables are capturing the correct values at each iteration of the loops
             #echo "Replicate: "$f" | Sequence: "$m
 
-            ## 5/25: For column summing use something like this form:
-            ##
-            ##   awk -F"," '$1 ~ /smiths/ {sum += $3} END {print sum}' inputfilename
-            ##
-            ## where (in this example) /smiths/ is a specific pattern to be matched, $1 is the column with fields containing the match, and $3 is the column with fields
-            ## that should be summed if the match is found in their record number.
-
             # Slice the data into separate streams by file and then by master peptide for awk to handle one a time
             # (eliminates unnecessary pattern matching steps during the search-sum process). Pattern matching is implicitly done by using temporary files to carve up the data
             # into subcategories, and then summing all abundance of each category. Hacky but it will have to do until I can determine why pattern matching is not working here.
-
-            ## NOTE all pattern matching syntax has been corrected - stripping []. from the peptide IDs solved the problem of regex characters interfering with matching.
-            ## now; unexpected abundance matching is taking place (ie., files with *no* GEE labeling are showing high GEE abundance in output; something is screwy with the calculations;
-            ## check up on syntax). Also while this temp file system seems to do the job it is by no means the most efficient. Once confirmed to work, re-implement as one continuous awk
-            ## statement, as shown in the commented code below this block.
             awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1                  # filter data by current value of filename (f); WORKS
             awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
 
@@ -70,38 +47,27 @@ function 4_CALCULATE!() {
 
             ## finally, print to file
             echo $f,$m,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 or less!
-                                                                    ### note - be wary of a bug (stripping the flanking [aa1aa2]. for ambiguous cleavage sites does not work as it assumes only nonambiguous cuts; correct it!)
-                                                                    ### ALSO - alert Ben that this script is finished as a functioning first draft (ie., can always be made more efficient)
-                                                                    ### RECALL - Ben did not point to the peptide groups during this analysis at all. Also they don't appear to match unique sequences from PSMs
-                                                                    ### (likely to do with how the software defines groups, nevertheless ask about it). EVEN SO - it seems incorrect to pull peptide IDs
-                                                                    ### from peptide groups. Just use this pipe [ awk -F"," 'NR>1{print toupper($1)' $file3 | sort | uniq ]
-                                                                    ### to populate the array of unique sequences. Potentially no need to include group IDs at all... ask about it
-                                                                    
-            #awk -F "," -v f=$f -v m=$m 'NR > 1 { Labeled=0; Unlabeled=0; sum=0; PercLabel=0; seq=""; file=""; abundance=0 };
-            #
-            #                            { seq=toupper($1); file=$4; abundance=$5;
-            #                            
-            #                            if ( f ~ file && seq ~ m )                                            
-            #                                if ($6 ~ /GEE/ )
-            #                                    Labeled += abundance;                                                
-            #                                else
-            #                                    Unlabeled += abundance;
-            #                            
-            #                            sum = Labeled + Unlabeled;
-            #
-            #                            if ( sum > 0 )
-            #                                PercLabel = 100 * Labeled / sum;
-            #                            else
-            #                                PercLabel = 0;
-            #
-            #                            print f "," m "," Labeled "," Unlabled "," PercLabel }' $file3 >> $file4
+                                                                    ### NOTE: May be possible to make this leaner by compressing this interior loop's body
+                                                                    ### into a single awk statement and eliminate temprorary file handling. Worry about that later.
 
+            ## WARNING - Need to include the peptide's position in the master protein as a field. Extract this information from the peptide groups files paired with sequence
+            ## (already done in the extract data function #2). Use it to for pattern matching sequence ID with its corresponding starting position in the protein. Since positions
+            ## are listed as [i1-i2] (where i1 is an integer and i2 is a larger integer), AND the positions do not account for added protein length from any epitope tags,
+            ## starting positions should be extracted by stripping [] and using - as a delimiter like so:
+            ##
+            ##                sed -i 's/\[//g' filename | sed -i 's/\]//g' | awk -F"-" 'NR > 1 { print $0 }' filename; #note that sed's escaping of [] may need to be repetitive
+            ##                                                                                                         #because [] are regex characters for sed specifically. Refer to stack overflow.
+            ##
+            ## And then updated with a variable containing the length of any deletions that were made or tags that were added. Then the resulting number should be padded with 0's according
+            ## to its char length difference from the largest integer, and then sorted.
         done
 
-        #if [[ $i -eq 5 ]]; then break; fi
+        ## a test condition to limit the calculations during debugging. Note that the string comparison here is not working because passing "test" does not trigger a break.
+        if [[ $i -eq 5 && $# != 0 ]]; then
+            if [ "$labelkey" == "test" ]; then echo -e $msg3"Testing has triggered a -break- statement to cancel remaining calculations.\n"; break; fi
+        fi
 
-        # test statement
-        echo ""
+        ## add a newline between each block of data for easier reading
         echo "" >> $file4
 
     done
@@ -152,6 +118,10 @@ function 3_CleanData() {
         echo -e $msg3"Error during record sorting! Review contents of "$file3" to identify what changed."
     fi
 
+    ## use file3 to populate the mseqs array with unique GEE-labeled peptide sequences (update 6/01/2022: this works as desired (matches manual analysis in Excel))
+    mseqs=($( awk -F"." 'NR > 1 && $0 ~ /GEE/{ print toupper($2) }' $file3 | sort | uniq ))
+    numseqs=$(echo ${#mseqs[@]}); echo -e $msg2$numseqs" unique peptide sequences identified in "$file3
+
     return
 }
 
@@ -188,7 +158,8 @@ function 2_ExtractData() {
     numUniqPepGrps=$(awk 'NR > 1' $file3A | wc -l); echo -e $msg2"Extracted "$numUniqPepGrps" unique, labeled sequence groups with their positions from among "$actual1A" total peptide groups."
 
     # Now store the unique IDs in a bash array for later use, using substr() to eliminate the []. characters (regex characters cannot be string literals unless escaped)
-    mseqs=($( awk -F"\t" 'NR > 1 {print $1}' $file3A | awk '{print substr($0, 4, length($0)-6)}' ))
+    #mseqs=($( awk -F"\t" 'NR > 1 {print $1}' $file3A | awk '{print substr($0, 4, length($0)-6)}' ))  #TODO DEPRECATE THIS
+
 
     ## First print headers to File 3
     echo -e $msg1"Filtering out low-scoring PSMs and annotating labeled PSMs..."
@@ -368,13 +339,12 @@ function assignPositions() {   # NOTE now that this block is a function, need to
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
+## BEGIN ANALYSIS HERE
 ## Check for command line arguments
 if [[ $# != 0 ]]; then 
     labelkey=$(echo ${1^^})     # accepts a string, case insensitive and content insensitive. labelkey will be used to search for the label specified by this string.
-    graph=$(echo ${2^^})        # accepts true or false, case insensitive. Allows user to request the final data to be graphed for them (will call a separate script).        
-    map=$(echo ${3^^})          # accepts true or false, case insensitive. Allows user to request the final data to be mapped to a protein structure in a pymol session (will call a separate script).
+    graph=$(echo ${2^^})        # accepts true or false, case insensitive. Allows user to request the final data to be graphed for them (will call a separate python script).        
+    map=$(echo ${3^^})          # accepts true or false, case insensitive. Allows user to request the final data to be mapped to a protein structure in a pymol session (will call the same python script).
 fi
 
 ## Begin (Step 0): Initialize variables and data structures
@@ -393,40 +363,19 @@ fi
 4_CALCULATE!
 
 
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 5/20/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Now break all of this up into separate functions, to be called down here |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| This will organize the code and make development easier to work on |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 6/01/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Script is now complete; accurately calculates abundances and %labeling |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| NEXT: Debug for ambiguous cleavage in peptide IDs; re-tool to extract |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| unique peptide sequences from the PSMs in output file3 rather than from peptide groups |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
 
-
-
-
-### FINAL SEGMENT: DO ABUNDANCE MATCHING, SUMMATION AND % LABELING CALCULATIONS. USE *ONLY* UNIQUE, GEE-LABELED IDs AS THE SEARCH KEYS
+### NOTES ###
 ######################################################################################################################################
 ## Extract relevant data from output file 3 into separate arrays for cross-referencing by array index. Printing by column number here is safe because
 ## the output file made by this script are always formatted the same way regardless of how they started.
 
-
-## Put it all in one awk statement, similar to above (line 183). Think about it, why bother creating multiple arrays when you coud just awk the entire file
-## (which itself is structured as an array anyway)
-## DEPRECATE EVERYTHING FROM THIS POINT, AND MAKE IT INTO ONE BIG AWK STATEMENT INSTEAD!
-## OPTIONAL: BUILD A SMALL TEST FILE STRUCTURED IN THE SAME WAY AS FILE3. Or, just use File 3 itself.
-## step 1 ('BEGIN'): populate awk array with unique peptide IDs that were labeled with GEE.
-## step 2: populate a second awk array with unique raw file names.
-## step 3: awk loop - for element in raw array, iterate through the peptide ID array. For the current value of the peptide ID array, search the trimmedFiltered.csv .
-## for IDs which match the current element of both arrays. When a GEE match is found, add its value to a variable storing GEE abundance. Else, store add into a non-GEE variable.
-## A third variable, %label, is equal to GEE/nonGEE+GEE * 100 and updates in real time.
-## step 4: Continue until the given ID value has no more matches. At the bottom of this loop, print the current raw file, the ID value, the ID's summed GEE abundance,
-## its summed nonGEE abundance, and the ID's %labeled value.
-## step 5: Repeat step 4 until all ID values have been iterated and printed with their abundances.
-## step 6: Repeat the nested loops until all raw files have been sampled for the unique IDs and abundances and everything has been printed. This is the calculated abundances file.
-## step 7: New awk block: reading the calculated abundances file, use pattern matching with the same awk array of peptide IDs as above to iterate through the abundances file and get theh average.
 ## To get the average of the %labeled across files, use a counter to track the number of replicates. Sum all matched percent values, then divide at the end by the counter value.
 ## standard deviation on the other hand will be tricky. Perhaps instead of doing the statistics (including averaging) here, it might be time to call a script using matplotlib or R for this work.
 ## Because (well done!) it would be the final step!
-
-
-
-
 
 
 ## NOTE: Excel's 'remove duplicates' function is case insensitive. Therefore for PSMs labeled in different sites, this destroys data.
