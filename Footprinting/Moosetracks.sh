@@ -347,6 +347,21 @@ if [[ $# != 0 ]]; then
     map=$(echo ${3^^})          # accepts true or false, case insensitive. Allows user to request the final data to be mapped to a protein structure in a pymol session (will call the same python script).
 fi
 
+
+
+## 6/02/2022 - HEADS UP - several major extensions to this need to be made to this code_________________________________________________________________________________________
+## 1) This script is originally written to handle multiple result files from a "batched" search. Unbatched compresses all results into a single file.
+##    Make sure that this script knows how to distinguish between the two formats and that it no longer tries to merge files by default. A simple if branch
+##    controlling Function 1 should do the trick. Something like "if [[ numPSMfiles -eq 1 ]]; then pass; else; ...run existing code to build fnames array and merge files... "
+##
+## 2) Add methods for handling hydroxyradical footprinting. Think carefully about how to do this one - may be best to add functionality that lets the user submit a list file
+##    as a command-line argument (like a csv, with a list of strings which are the modification keywords). Or, the user may specify a number of mods they want searched, and then
+##    manually enter them one by one. Think about it.
+##
+## 3) This one should actually be completed first: appending positions in master proteins to the final file while simultaneously correcting amino acid index by the length of any
+##    added tags. Use the unique sequence ID-position pairs in file3A (unique peptide groups) to do the pattern matching here.
+##
+
 ## Begin (Step 0): Initialize variables and data structures
 0_Initialize
 
