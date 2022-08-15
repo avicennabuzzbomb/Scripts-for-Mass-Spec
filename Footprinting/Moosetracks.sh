@@ -3,7 +3,9 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
 
-    temp1=tempByFile.csv; temp2=tempByFile_Peptide.csv
+    temp1=tempByFile.csv; temp2=tempByFile_Peptide.csv; temp3=temp3.csv
+    # temp3.csv is for re-sorting the PSMs by their sequence positions. At each pass of this loop (for f in...), print all results (except header!) instead to temp3; then
+    # use awk -F"," '{print $0}' $temp3 | sort >> $file4                                                                        
 
     # for loop breaks during implementation and testing (see further down)
     i=0; j=0
@@ -18,15 +20,12 @@ function 4_CALCULATE!() {
         let "i++"
 
         echo "Replicate Filename","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
-        fupper=$(echo ${f^^})
+        fupper=$(echo ${f^^})   # stores uppercased version of filename "f"
 
         # This is the nested part of the loop. Here, a master peptide ID is stored in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
         for m in ${mseqs[*]}; do
 
             let "j++"
-
-            # test statement demonstrating that the variables are capturing the correct values at each iteration of the loops
-            #echo "Replicate: "$f" | Sequence: "$m
 
             # Slice the data into separate streams by file and then by master peptide for awk to handle one a time
             # (eliminates unnecessary pattern matching steps during the search-sum process). Pattern matching is implicitly done by using temporary files to carve up the data
@@ -34,11 +33,15 @@ function 4_CALCULATE!() {
             awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1                  # filter data by current value of filename (f); WORKS
             awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
 
+            ## Extract the position of the current peptide
+            position=$(grep -w -m1 $m $file3A | cut -f2)
+            #echo "Current sequence is "$m "at positions "$position
+
             ## Sum the abundances separated
             Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)   #; echo "Unlabeled abundance is "$Unlabeled
             Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)      #; echo -e "Labeled abundance is "$Labeled"\n_____________________"
 
-            # this code block is currently incorrect; as is it expects a specific input file. Deal with this last.
+            # this code block is currently incorrect; as is it expects a specific input file. Deal with this last. 8/03/2022 is this still true?
             Perclabeled=$(awk -F"," -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
                             if ( sum > 0 )
                                 perc = 100*Labeled/sum
@@ -46,33 +49,27 @@ function 4_CALCULATE!() {
                                 perc = 0 }END{ print perc }' $file4)
 
             ## finally, print to file
-            echo $f,$m,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 or less!
+            echo $f,$m,$position,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 min or less!
                                                                     ### NOTE: May be possible to make this leaner by compressing this interior loop's body
-                                                                    ### into a single awk statement and eliminate temprorary file handling. Worry about that later.
+                                                                    ### into a single awk statement and eliminate temporary file handling. Worry about that later.
 
-            ## WARNING - Need to include the peptide's position in the master protein as a field. Extract this information from the peptide groups files paired with sequence
-            ## (already done in the extract data function #2). Use it to for pattern matching sequence ID with its corresponding starting position in the protein. Since positions
-            ## are listed as [i1-i2] (where i1 is an integer and i2 is a larger integer), AND the positions do not account for added protein length from any epitope tags,
-            ## starting positions should be extracted by stripping [] and using - as a delimiter like so:
-            ##
-            ##                sed -i 's/\[//g' filename | sed -i 's/\]//g' | awk -F"-" 'NR > 1 { print $0 }' filename; #note that sed's escaping of [] may need to be repetitive
-            ##                                                                                                         #because [] are regex characters for sed specifically. Refer to stack overflow.
-            ##
-            ## And then updated with a variable containing the length of any deletions that were made or tags that were added. Then the resulting number should be padded with 0's according
-            ## to its char length difference from the largest integer, and then sorted.
         done
 
         ## a test condition to limit the calculations during debugging. Note that the string comparison here is not working because passing "test" does not trigger a break.
-        if [[ $i -eq 5 && $# != 0 ]]; then
-            if [ "$labelkey" == "test" ]; then echo -e $msg3"Testing has triggered a -break- statement to cancel remaining calculations.\n"; break; fi
+        #echo "labelkey == "$labelkey
+        if [[ $i -eq 5 && $# != 0 && $labelkey == "TEST" ]]; then
+            echo -e $msg3"Testing has triggered a -break- statement to cancel remaining calculations.\n"; break
         fi
 
         ## add a newline between each block of data for easier reading
         echo "" >> $file4
 
+        ## for testing (until a proper test condition is working)
+        #if [[ $i -eq 6 ]]; then echo "Analysis aborted after "$i"th file."; break; fi
+
     done
 
-    rm temp*
+    rm temp*    # delete all temporary files at the end to keep working directory clean
 
     return
 
@@ -131,6 +128,9 @@ function 2_ExtractData() {
     # Use awk to export the desired columns from MergedPSMs to new text file "trimmed"
     echo -e $msg1"Extracting data... "
 
+    # this builds an associative awk array, where each element is an entire record. The columns are then printed by the pattern matched in each element.
+    # because of how this works, the RAW output files need to be named simplistically such as *_MB1_* and so on; otherwise, add code to assign arbitrary file IDs at
+    # the very beginning to avoid this problem.
     awk -F "\t" '
     NR==1 {
         for (i=1; i<=NF; i++) {
@@ -208,9 +208,6 @@ function 2_ExtractData() {
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 1_MergeFiles() {
 
-    # count all original files to be processed
-    numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutputTextFiles/*PeptideGroups* | wc -l)
-
     echo -e $msg1"Beginning file merge..."; echo -e $msg2"Identified "$numPSMfiles" PSM output files and "$numPepGroupfiles" Peptide Group output files to merge."
 
     # Get the unique headers from PSM files into the new merged PSM file, and repeat for Peptide Groups.
@@ -219,11 +216,8 @@ function 1_MergeFiles() {
     # Now merge the file contents into their respective mergefiles, and remove all ". Also, build an array fnames() containing unique filenames for later use
     for filename in PDoutputTextFiles/*PSMs*; do
 
-        # sed's -i flag edits the file 'in-place' without requiring a temporary file
+        # sed's -i flag edits the file 'in-place' without requiring a temporary file. This line eliminates "" from the file.
         awk -F"\t" 'NR > 1' $filename >> $file1; sed -i 's/\"//g' $file1
-
-        # use _ as a delimiter to print only the core of the filename
-        name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); fnames+=( $name )
 
     done
 
@@ -280,14 +274,14 @@ function 0_Initialize() {
     declare -i actual1A; actual1A=0                                                  # ditto
     declare -a fnames=()                                                             # Array. Store the basenames of the original .raw files here
     declare -a -u mseqs=()                                                           # Array. Store the unique master peptide sequences across all .raw files here
-    
+
     return
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function assignPositions() {   # NOTE now that this block is a function, need to ensure that the variables it uses are visible to it (they may need to be passed to it!)
     
-    ## 5/23/2022 THIS FUNCITON IS NO LONGER NEEDED HERE. DOING ASSIGNMENTS BY PRINTING UNIQUE IDS WITH THEIR CORRESPONDING POSITIONS IS ANALOGOUS TO CREATING A PERMANENT ARRAY
+    ## 5/23/2022 THIS FUNCTION IS NO LONGER NEEDED HERE. DOING ASSIGNMENTS BY PRINTING UNIQUE IDS WITH THEIR CORRESPONDING POSITIONS IS ANALOGOUS TO CREATING A PERMANENT ARRAY
     ## OF THESE RECORDS, WHICH CAN BE EASILY ACCESSED BY STANDARD FILE READING. USE THIS FOR REFERENCE WITH OTHER CODE BLOCKS, BUT EVENTUALLY DEPRECATE THIS.
 
     # initialize the variables
@@ -362,8 +356,18 @@ fi
 ##    added tags. Use the unique sequence ID-position pairs in file3A (unique peptide groups) to do the pattern matching here.
 ##
 
-## Begin (Step 0): Initialize variables and data structures
+## Begin (Step 0): Initialize variables and data structures; also tally the number of input files present
 0_Initialize
+
+# Calculate the number of files to process
+numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutputTextFiles/*PeptideGroups* | wc -l)
+
+# Populate fnames array in advance, so that successive methods can access its list of names
+### WARNING this name extraction code is buggy and leads to inconsistencies in source file matching. Re-work this so it extract PD's assigned File ID instead.
+for filename in PDoutputTextFiles/*PSMs*; do
+    #name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); fnames+=( $name )    ## original
+    name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); echo $name "added to fnames."; fnames+=( $name )     ## testing
+done
 
 ## Step 1: Merge the output files by calling 'mergeFiles'
 1_MergeFiles
