@@ -16,16 +16,12 @@ function 4_CALCULATE!() {
     awk -F"," '{print toupper($0)}' $file3 > $temp
 
     for f in ${fnames[*]}; do
-        
-        let "i++"
 
         echo "Replicate Filename","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
         fupper=$(echo ${f^^})   # stores uppercased version of filename "f"
 
-        # This is the nested part of the loop. Here, a master peptide ID is stored in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
+        # Here, a master peptide ID is referenced in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
         for m in ${mseqs[*]}; do
-
-            let "j++"
 
             # Slice the data into separate streams by file and then by master peptide for awk to handle one a time
             # (eliminates unnecessary pattern matching steps during the search-sum process). Pattern matching is implicitly done by using temporary files to carve up the data
@@ -52,7 +48,8 @@ function 4_CALCULATE!() {
             echo $f,$m,$position,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 min or less!
                                                                     ### NOTE: May be possible to make this leaner by compressing this interior loop's body
                                                                     ### into a single awk statement and eliminate temporary file handling. Worry about that later.
-
+            let "j++"          # currently unused
+        
         done
 
         ## a test condition to limit the calculations during debugging. Note that the string comparison here is not working because passing "test" does not trigger a break.
@@ -64,8 +61,7 @@ function 4_CALCULATE!() {
         ## add a newline between each block of data for easier reading
         echo "" >> $file4
 
-        ## for testing (until a proper test condition is working)
-        #if [[ $i -eq 6 ]]; then echo "Analysis aborted after "$i"th file."; break; fi
+        let "i++"              # currently unused
 
     done
 
@@ -118,6 +114,37 @@ function 3_CleanData() {
     ## use file3 to populate the mseqs array with unique GEE-labeled peptide sequences (update 6/01/2022: this works as desired (matches manual analysis in Excel))
     mseqs=($( awk -F"." 'NR > 1 && $0 ~ /GEE/{ print toupper($2) }' $file3 | sort | uniq ))
     numseqs=$(echo ${#mseqs[@]}); echo -e $msg2$numseqs" unique peptide sequences identified in "$file3
+
+
+    ## From 8/20/2022:
+    ## TODO: Do the positional matching with the unique sequences HERE; either populate the array with additional, corresponding elements
+    ## TODO: (ie., values for "Position in Master Protein" from the Peptide Groups file), or just redirect everything to create a new reference temporary folder.
+    ## TODO: This will create the opportunity to pre-sort unique sequences by position values, and also eliminates redundantly position-matching during the calculation
+    ## TODO: phase (see function 4_CALCULATE!() )
+    ### Currently testing. Sending unique, unsorted peptide sequence IDs to a separate temp file, then appending their positions from Peptide Groups and re-sorting by
+    ### position in master protein sequence. Doing it here is 2-birds-1-stone
+
+    if [ -e Sequence_Position.csv ]; then rm Sequence_Position.csv; fi
+
+    echo -e $msg2"Writing sequence-position list..."
+
+    mpos=""              # position in master
+    for m in ${mseqs[@]}; do
+
+        ## Extract the position of the current peptide
+        mpos=$(grep -w -m1 $m $file3A | cut -f2); mpos=$(echo $mpos | awk -F"[" '{print $2}' | awk -F"]" '{print $1}')
+        echo $m,$mpos >> Sequence_Position.csv
+
+        # Before sorting, consider trying  awk -F"," 'NR>1{print $2}' posref.csv | awk -F"\[" '{print $2}' | awk -F"\]" '{print $1}'
+        # to separate out the numeric values from the position string. This actually works for isolating the integer range from the string, confirmed by testing.
+        # Note: Bundling this awk pipe with bash code throws an escape special-character error.
+
+    done
+
+    ## 8/22/2022: Completed- new and efficient way of matching and sorting peptide IDs by their sequence position ranges.
+    # Finally, sort the unique reference peptide IDs by their position in the protein. This file will be used for sequence-matching in the final file!
+    sort -t"," -k 2n -o Sequence_Position.csv{,}
+    echo -e $msg2"Sequence-position list file completed."
 
     return
 }
@@ -273,7 +300,7 @@ function 0_Initialize() {
     declare -i actual; actual=0                                                      # ditto
     declare -i actual1A; actual1A=0                                                  # ditto
     declare -a fnames=()                                                             # Array. Store the basenames of the original .raw files here
-    declare -a -u mseqs=()                                                           # Array. Store the unique master peptide sequences across all .raw files here
+    declare -a -u mseqs=()                                                           # Array. Store the unique (uppercased) master peptide sequences across all .raw files here
 
     return
 }
