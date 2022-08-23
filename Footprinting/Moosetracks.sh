@@ -4,23 +4,22 @@
 function 4_CALCULATE!() {
 
     temp1=tempByFile.csv; temp2=tempByFile_Peptide.csv; temp3=temp3.csv
-    # temp3.csv is for re-sorting the PSMs by their sequence positions. At each pass of this loop (for f in...), print all results (except header!) instead to temp3; then
-    # use awk -F"," '{print $0}' $temp3 | sort >> $file4                                                                        
-
-    # for loop breaks during implementation and testing (see further down)
-    i=0; j=0
 
     echo -e $msg1"Now matching unique sequences and precursor abundances and summing total abundances associated with each labeling event... "
     
     # store an all-uppercased version of file3 in temp; simplifies peptide ID matching further down
+    # i is for loop breaks during implementation and testing (see further down)
+    i=1
     awk -F"," '{print toupper($0)}' $file3 > $temp
 
     for f in ${fnames[*]}; do
 
-        echo "Replicate Filename","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
+        echo "Replicate Filename","Master Peptide Sequence","Position in Master Protein","Labeled","Unlabeled","% labeled" >> $file4
         fupper=$(echo ${f^^})   # stores uppercased version of filename "f"
 
         # Here, a master peptide ID is referenced in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
+        # j is for referencing specific records in the position reference file
+        j=1
         for m in ${mseqs[*]}; do
 
             # Slice the data into separate streams by file and then by master peptide for awk to handle one a time
@@ -30,14 +29,12 @@ function 4_CALCULATE!() {
             awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
 
             ## Extract the position of the current peptide
-            position=$(grep -w -m1 $m $file3A | cut -f2)
-            #echo "Current sequence is "$m "at positions "$position
+            position=$(awk -F"," -v j=$j 'NR==j {print $2}' Sequence_Position.csv)
+            echo "Current file = "$f", position = "$position" with sequence = "$m 
 
             ## Sum the abundances separated
             Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)   #; echo "Unlabeled abundance is "$Unlabeled
             Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)      #; echo -e "Labeled abundance is "$Labeled"\n_____________________"
-
-            # this code block is currently incorrect; as is it expects a specific input file. Deal with this last. 8/03/2022 is this still true?
             Perclabeled=$(awk -F"," -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
                             if ( sum > 0 )
                                 perc = 100*Labeled/sum
@@ -45,10 +42,10 @@ function 4_CALCULATE!() {
                                 perc = 0 }END{ print perc }' $file4)
 
             ## finally, print to file
-            echo $f,$m,$position,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 min or less!
+            echo $f,$position,$m,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 min or less!
                                                                     ### NOTE: May be possible to make this leaner by compressing this interior loop's body
                                                                     ### into a single awk statement and eliminate temporary file handling. Worry about that later.
-            let "j++"          # currently unused
+            let "j++"          # used for awking out the corresponding position
         
         done
 
@@ -141,10 +138,14 @@ function 3_CleanData() {
 
     done
 
+
+
     ## 8/22/2022: Completed- new and efficient way of matching and sorting peptide IDs by their sequence position ranges.
     # Finally, sort the unique reference peptide IDs by their position in the protein. This file will be used for sequence-matching in the final file!
     sort -t"," -k 2n -o Sequence_Position.csv{,}
     echo -e $msg2"Sequence-position list file completed."
+
+    unset mseqs; mseqs=($( awk -F"," '{ print $1 }' Sequence_Position.csv ))
 
     return
 }
