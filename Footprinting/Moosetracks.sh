@@ -28,20 +28,21 @@ function 4_CALCULATE!() {
             awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1                  # filter data by current value of filename (f); WORKS
             awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
 
-            ## Extract the position of the current peptide
+            ## Extract the position of the current peptide. j starts at 1, iterates until each sequence 'm' is matched to a position,
+            ## and then resets in the outer loop at the beginning of each new sample file.
             position=$(awk -F"," -v j=$j 'NR==j {print $2}' Sequence_Position.csv)
             echo "Current file = "$f", position = "$position" with sequence = "$m 
 
-            ## Sum the abundances separated
-            Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)   #; echo "Unlabeled abundance is "$Unlabeled
-            Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)      #; echo -e "Labeled abundance is "$Labeled"\n_____________________"
+            ## Sum each abundance type separately, then calculate percent abundance.
+            Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)
+            Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)
             Perclabeled=$(awk -F"," -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
                             if ( sum > 0 )
                                 perc = 100*Labeled/sum
                             else
                                 perc = 0 }END{ print perc }' $file4)
 
-            ## finally, print to file
+            ## Finally, print the labeling data to final output file.
             echo $f,$position,$m,$Labeled,$Unlabeled,$Perclabeled >> $file4   ### SUCCESS! The calculations are accurate (match manual). Done in ~1 min or less!
                                                                     ### NOTE: May be possible to make this leaner by compressing this interior loop's body
                                                                     ### into a single awk statement and eliminate temporary file handling. Worry about that later.
@@ -61,7 +62,7 @@ function 4_CALCULATE!() {
         let "i++"              # currently unused
 
     done
-
+    echo -e $msg2"Done. Results of labeling calculations are stored in '"$file4"'."
     rm temp*    # delete all temporary files at the end to keep working directory clean
 
     return
