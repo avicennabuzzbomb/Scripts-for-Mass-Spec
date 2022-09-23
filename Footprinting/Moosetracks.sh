@@ -31,7 +31,7 @@ function 4_CALCULATE!() {
             ## Extract the position of the current peptide. j starts at 1, iterates until each sequence 'm' is matched to a position,
             ## and then resets in the outer loop at the beginning of each new sample file.
             position=$(awk -F"," -v j=$j 'NR==j {print $2}' Sequence_Position.csv)
-            echo "Current file = "$f", position = "$position" with sequence = "$m 
+            echo -e "\t\t\tCurrent file = "$f", position = "$position" with sequence = "$m 
 
             ## Sum each abundance type separately, then calculate percent abundance.
             Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)
@@ -278,7 +278,7 @@ function 0_Initialize() {
     file1=mergedPSMs.txt; file1A=mergedPeptideGroups.txt
 
     ## Create  variables for data analysis snapshot files
-    file2=trimmed.txt; file2A=SequencePositions.txt; file3=trimmedFiltered$ext; file3A=GEE_sequencePositions.txt; file4=final$ext; temp=temp$ext
+    file2=trimmed.txt; file2A=SequencePositions.txt; file3=trimmedFiltered$ext; file3A=GEE_sequencePositions.txt; file4=final$ext; temp=temp$ext; log=AnalysisLog.txt
 
     # user message flag
     msg1=$(echo "\n>> "); msg2=$(echo "\t~ "); msg3=$(echo "\t! ")
@@ -292,17 +292,18 @@ function 0_Initialize() {
     if [ -e $file3A ]; then rm $file3A; fi
     if [ -e $file4 ]; then rm $file4; fi
     if [ -e $temp ]; then rm $temp; fi
+    if [ -e $log ]; then rm $log; fi
 
     ## Initialize empty output files, descriptive variables and data structures
-    touch $file1; touch $file1A; touch $file2; touch $file3; touch $file4            # output files to store an image of the data at each step of analysis
-    declare -i numPSMfiles; numPSMfiles=0                                            # var to keep track of data processing steps
-    declare -i numPepGroupfiles; numPepGroupfiles=0                                  # ditto
-    declare -i numgoalPSMs; numgoalPSMs=0                                            # ditto
-    declare -i numgoalPepGrps; numgoalPepGrps=0                                      # ditto
-    declare -i actual; actual=0                                                      # ditto
-    declare -i actual1A; actual1A=0                                                  # ditto
-    declare -a fnames=()                                                             # Array. Store the basenames of the original .raw files here
-    declare -a -u mseqs=()                                                           # Array. Store the unique (uppercased) master peptide sequences across all .raw files here
+    touch $file1; touch $file1A; touch $file2; touch $file3; touch $file4; touch $log   # output files to store an image of the data at each step of analysis
+    declare -i numPSMfiles; numPSMfiles=0                                               # var to keep track of data processing steps
+    declare -i numPepGroupfiles; numPepGroupfiles=0                                     # ditto
+    declare -i numgoalPSMs; numgoalPSMs=0                                               # ditto
+    declare -i numgoalPepGrps; numgoalPepGrps=0                                         # ditto
+    declare -i actual; actual=0                                                         # ditto
+    declare -i actual1A; actual1A=0                                                     # ditto
+    declare -a fnames=()                                                                # Array. Store the basenames of the original .raw files here
+    declare -a -u mseqs=()                                                              # Array. Store the unique (uppercased) master peptide sequences across all .raw files here
 
     return
 }
