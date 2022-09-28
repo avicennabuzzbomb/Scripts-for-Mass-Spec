@@ -113,35 +113,17 @@ function 3_CleanData() {
     mseqs=($( awk -F"." 'NR > 1 && $0 ~ /GEE/{ print toupper($2) }' $file3 | sort | uniq ))
     numseqs=$(echo ${#mseqs[@]}); echo -e $msg2$numseqs" unique peptide sequences identified in "$file3
 
-
-    ## From 8/20/2022:
-    ## TODO: Do the positional matching with the unique sequences HERE; either populate the array with additional, corresponding elements
-    ## TODO: (ie., values for "Position in Master Protein" from the Peptide Groups file), or just redirect everything to create a new reference temporary folder.
-    ## TODO: This will create the opportunity to pre-sort unique sequences by position values, and also eliminates redundantly position-matching during the calculation
-    ## TODO: phase (see function 4_CALCULATE!() )
-    ### Currently testing. Sending unique, unsorted peptide sequence IDs to a separate temp file, then appending their positions from Peptide Groups and re-sorting by
-    ### position in master protein sequence. Doing it here is 2-birds-1-stone
-
+    ## Generate a reference file containing master sequence / position relationships
     if [ -e Sequence_Position.csv ]; then rm Sequence_Position.csv; fi
-
     echo -e $msg2"Writing sequence-position list..."
-
-    mpos=""              # position in master
+    mpos=""          # stores the current position in the master  sequence                               
     for m in ${mseqs[@]}; do
 
-        ## Extract the position of the current peptide
         mpos=$(grep -w -m1 $m $file3A | cut -f2); mpos=$(echo $mpos | awk -F"[" '{print $2}' | awk -F"]" '{print $1}')
         echo $m,$mpos >> Sequence_Position.csv
 
-        # Before sorting, consider trying  awk -F"," 'NR>1{print $2}' posref.csv | awk -F"\[" '{print $2}' | awk -F"\]" '{print $1}'
-        # to separate out the numeric values from the position string. This actually works for isolating the integer range from the string, confirmed by testing.
-        # Note: Bundling this awk pipe with bash code throws an escape special-character error.
-
     done
 
-
-
-    ## 8/22/2022: Completed- new and efficient way of matching and sorting peptide IDs by their sequence position ranges.
     # Finally, sort the unique reference peptide IDs by their position in the protein. This file will be used for sequence-matching in the final file!
     sort -t"," -k 2n -o Sequence_Position.csv{,}
     echo -e $msg2"Sequence-position list file completed."
@@ -305,60 +287,6 @@ function 0_Initialize() {
     declare -a fnames=()                                                                # Array. Store the basenames of the original .raw files here
     declare -a -u mseqs=()                                                              # Array. Store the unique (uppercased) master peptide sequences across all .raw files here
 
-    return
-}
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function assignPositions() {   # NOTE now that this block is a function, need to ensure that the variables it uses are visible to it (they may need to be passed to it!)
-    
-    ## 5/23/2022 THIS FUNCTION IS NO LONGER NEEDED HERE. DOING ASSIGNMENTS BY PRINTING UNIQUE IDS WITH THEIR CORRESPONDING POSITIONS IS ANALOGOUS TO CREATING A PERMANENT ARRAY
-    ## OF THESE RECORDS, WHICH CAN BE EASILY ACCESSED BY STANDARD FILE READING. USE THIS FOR REFERENCE WITH OTHER CODE BLOCKS, BUT EVENTUALLY DEPRECATE THIS.
-
-    # initialize the variables
-    col1=""; refseq=""; col2=""; col3=""; col4=""; col5=""; col6=""; position=""
-
-    # use the rowcount in trimmmed.csv to store the position value, row by row, and print it appended with the other row values to a new file (updated version of trimmed.csv)
-    echo -e "Matching sequences with their positions in the master protein..."
-
-    ## REPURPOSE THIS BLOCK FOR USE IN THE SEARCHING-PRECURSOR SUMMING CODE
-    ## this can potentially be done in awk (more efficient).
-    for (( i = 1; i -le $lenTrim; i++ )); do
-        
-        # store the current PSM sequence value
-        col1=$(awk -F "," -v i=$i 'NR==i {print $1}' $file3)
-
-        # Explanation of awk substr: Syntax is to print from the original input string ($0) starting at char position 4 (non-0 indexed, so starting at '.')
-        # and continuing for the *original* string's length, minus 6 chars (ie, ignoring the flanking [char], 6 chars total)
-        refseq=$(echo ${col1^^} | awk '{print substr($0, 4, length($0)-6)}')
-        col2=$(awk -F "," -v i=$i 'NR==i {print $2}' $file3)
-        col3=$(awk -F "," -v i=$i 'NR==i {print $3}' $file3)
-        col4=$(awk -F "," -v i=$i 'NR==i {print $4}' $file3)
-        col5=$(awk -F "," -v i=$i 'NR==i {print $5}' $file3)
-        col6=$(awk -F "," -v i=$i 'NR==i {print $6}' $file3)
-
-        ## if this is the first row, it is a header - store that value as such
-        if [[ ! $i -gt 1 ]]; then
-            position=$(echo "Position in Master Protein")
-
-        ## repurpose this code for searching... the position match functionality is no longer needed but this has applications in Step 4
-        ## if this is not the first row, it contains position values - extract the exact sequence-position match
-        else 
-            position=$(grep -w -m1 $refseq $file2A | cut -f2)   #-m1 forces grep to stop after the first match. Without it, near-exact matches are also made
-                                                                # important: these are subsequences of the same peptide. It will be necessary to check for this situation
-                                                                # and then collapse the ID values together as part of the matching process.
-                                                                # Furthermore, this should be refined to retrieve *only* the integer characters so that they can be seamlessly
-                                                                # used later in selection-expressions when running the pymol mapping script in a subshell to this script.
-
-            echo "Sequence "$col1" was matched to positions "$position
-        fi
-
-        echo "$col1,$position,$col2,$col3,$col4,$col5,$col6" >> $temp
-    
-        ## only while testing this code block
-        #if [[ $i -eq 50 ]]; then break; fi
-
-    done; awk -F"," '{print $0}' $temp > $file3
-    
     return
 }
 
