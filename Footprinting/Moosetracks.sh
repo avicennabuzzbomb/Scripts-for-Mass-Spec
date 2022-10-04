@@ -117,11 +117,11 @@ function 3_CleanData() {
     if [ -e Sequence_Position.csv ]; then rm Sequence_Position.csv; fi
     echo -e $msg2"Writing sequence-position list..."
     mpos=""          # stores the current position in the master  sequence                               
+    
+    # Use the array mseqs to cross reference file3A (GEE_sequencePositions.txt): find the current sequence ("m") in the list file and return the corresponding position values
     for m in ${mseqs[@]}; do
-
         mpos=$(grep -w -m1 $m $file3A | cut -f2); mpos=$(echo $mpos | awk -F"[" '{print $2}' | awk -F"]" '{print $1}')
         echo $m,$mpos >> Sequence_Position.csv
-
     done
 
     # Finally, sort the unique reference peptide IDs by their position in the protein. This file will be used for sequence-matching in the final file!
@@ -168,11 +168,8 @@ function 2_ExtractData() {
     awk -F"\t" 'NR==1 {print $1"\t",$2}' $file2A > $file3A; awk -F"\t" 'NR > 1 {print $1"\t",$2}' $file2A | sort | uniq >> $file3A
     numUniqPepGrps=$(awk 'NR > 1' $file3A | wc -l); echo -e $msg2"Extracted "$numUniqPepGrps" unique, labeled sequence groups with their positions from among "$actual1A" total peptide groups."
 
-    # Now store the unique IDs in a bash array for later use, using substr() to eliminate the []. characters (regex characters cannot be string literals unless escaped)
-    #mseqs=($( awk -F"\t" 'NR > 1 {print $1}' $file3A | awk '{print substr($0, 4, length($0)-6)}' ))  #TODO DEPRECATE THIS
-
-
-    ## First print headers to File 3
+    ## Now store the unique IDs in a bash array for later use, using substr() to eliminate the []. characters (regex characters cannot be string literals unless escaped)
+    # First print headers to File 3
     echo -e $msg1"Filtering out low-scoring PSMs and annotating labeled PSMs..."
     Seq=$(awk -F "\t" 'NR==1 {print $1}' $file2)
     Mods=$(awk -F "\t" 'NR==1 {print $2}' $file2)
@@ -233,9 +230,7 @@ function 1_MergeFiles() {
     done
 
     for filename in PDoutputTextFiles/*PeptideGroups*; do
-
         awk -F"\t" 'NR > 1' $filename >> $file1A; sed -i 's/\"//g' $file1A          # sed's -i flag edits the file 'in-place' without requiring a temporary file
-
     done
 
     # count all non-header rows that should have been exported
@@ -299,21 +294,6 @@ if [[ $# != 0 ]]; then
     map=$(echo ${3^^})          # accepts true or false, case insensitive. Allows user to request the final data to be mapped to a protein structure in a pymol session (will call the same python script).
 fi
 
-
-
-## 6/02/2022 - HEADS UP - several major extensions to this need to be made to this code_________________________________________________________________________________________
-## 1) This script is originally written to handle multiple result files from a "batched" search. Unbatched compresses all results into a single file.
-##    Make sure that this script knows how to distinguish between the two formats and that it no longer tries to merge files by default. A simple if branch
-##    controlling Function 1 should do the trick. Something like "if [[ numPSMfiles -eq 1 ]]; then pass; else; ...run existing code to build fnames array and merge files... "
-##
-## 2) Add methods for handling hydroxyradical footprinting. Think carefully about how to do this one - may be best to add functionality that lets the user submit a list file
-##    as a command-line argument (like a csv, with a list of strings which are the modification keywords). Or, the user may specify a number of mods they want searched, and then
-##    manually enter them one by one. Think about it.
-##
-## 3) This one should actually be completed first: appending positions in master proteins to the final file while simultaneously correcting amino acid index by the length of any
-##    added tags. Use the unique sequence ID-position pairs in file3A (unique peptide groups) to do the pattern matching here.
-##
-
 ## Begin (Step 0): Initialize variables and data structures; also tally the number of input files present
 0_Initialize
 
@@ -323,7 +303,6 @@ numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutp
 # Populate fnames array in advance, so that successive methods can access its list of names
 ### WARNING this name extraction code is buggy and leads to inconsistencies in source file matching. Re-work this so it extract PD's assigned File ID instead.
 for filename in PDoutputTextFiles/*PSMs*; do
-    #name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); fnames+=( $name )    ## original
     name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); echo $name "added to fnames."; fnames+=( $name )     ## testing
 done
 
@@ -369,3 +348,19 @@ done
 ## NOTE: matched to its corresponding master sequence in the second array, and then the second array's values will be summed with current values of 
 ## NOTE: labeled and unlabeled forthe current master sequence. During this looping, need to enforce pattern-matching to File ID value to keep replicates
 ## NOTE: distinct until final averaging and plotting.
+
+
+
+
+## 6/02/2022 - HEADS UP - several major extensions to this need to be made to this code_________________________________________________________________________________________
+## 1) This script is originally written to handle multiple result files from a "batched" search. Unbatched compresses all results into a single file.
+##    Make sure that this script knows how to distinguish between the two formats and that it no longer tries to merge files by default. A simple if branch
+##    controlling Function 1 should do the trick. Something like "if [[ numPSMfiles -eq 1 ]]; then pass; else; ...run existing code to build fnames array and merge files... "
+##
+## 2) Add methods for handling hydroxyradical footprinting. Think carefully about how to do this one - may be best to add functionality that lets the user submit a list file
+##    as a command-line argument (like a csv, with a list of strings which are the modification keywords). Or, the user may specify a number of mods they want searched, and then
+##    manually enter them one by one. Think about it.
+##
+## 3) This one should actually be completed first: appending positions in master proteins to the final file while simultaneously correcting amino acid index by the length of any
+##    added tags. Use the unique sequence ID-position pairs in file3A (unique peptide groups) to do the pattern matching here.
+##

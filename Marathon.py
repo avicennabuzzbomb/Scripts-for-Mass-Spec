@@ -4,7 +4,7 @@
 ## rapidly highlight the contours of the aqueous proton-binding pocket of AHA2.
 
 # TODO: algorithm: 
-# 0) Open a read-wrote object to stream data into an output file (.csv)
+# 0) Open a read-write object to stream data into an output file (.csv)
 # 1) Import arguments: PDB ID, fasta, and selected residue(s) to map nearest-neighbors.
 # 2) Make requisite selection (loop, if multiple selections to be used)
 # 3) Store all of the selected object's atoms as a list.
