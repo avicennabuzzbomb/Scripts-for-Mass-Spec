@@ -43,6 +43,7 @@ import os                 # methods for directory handling
 import sys                # methods for taking command line arguments. Script's name is sys.arg[0] by default when -c flag is used
 
 print("Number of arguments entered when running this instance of `SASAquatch.py`:", len(sys.argv)-1) # check number of arguments entered
+print("WARNING 10/20/2022: cmd.load is now supported but on Condor those files need to be available, explicitly listed in the batch list file and then sent to the cluster.\n This means `BulkSubmit.sh needs to be updated to check for the load condition and to then copy the listed files over to the cluster with everything else.")
 
 # NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpred by this script as initial arguments [0], [1], and [2].
 # QUERY: assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
