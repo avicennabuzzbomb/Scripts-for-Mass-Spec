@@ -50,23 +50,17 @@ query = str(sys.argv[3].upper())
 
 # DEPTH: assign query type ('ALL' as default, unless a 4th argument is explicitly entered: an amino acid single letter code or 3-letter code).
 # checking first for another argument must be done before attempting to assign it; else a nonexistent argument will make the script close instead.
-
 if len(sys.argv)-1 == 4:
     depth = str(sys.argv[4].upper())
 
 else:
     depth = "ALL"
 
-# Additional arguments should be added here. Ex) If "load", "PDB" or somesuch is included in the args array this should trigger a "load" path instead.
-##TODO in short; there may be a situation where a pre-existing file (like a homology or computationally folded model, or a modified .pse file) is desired for analysis instead
-##TODO of a fetched PDB structure. Need to implement a way to check the <args> array for something like this. And however that is done, to then modify the `BulkSubmit.sh` helper
-##TODO script to write an appropriate submit file describing this, and to include that file with the .sub and executable during submission on Condor.
-"""
-if len(sys.argv)-1 == 5:
+# check whether user is fetching a protein by its PDB ID or if the user wants to load an existing molecule file instead.
+if "." in query:   #NOTE greedy for all file extensions - refine later
     mode = "load"
-
-else
-"""
+else:
+    mode = "fetch"
 
 # FIXME FIXME FIXME Include a new method for calculating each chain in the context of the entire crystal unit (covers true oligomeric structures and also artifactual ones)
 # FIXME FIXME FIXME This is a memory-intensive process because to get "relative" SASA values it would need to calculate each chain's per-res SASA in the absence of the other chains,
@@ -124,10 +118,11 @@ def occupancy(position, chain):
     #NOTE Currently, pymol treats invalid selections are treated as real objects, and default to 0 when calculations are performed. This leads to falsely labeling residues
     # as buried and their SASA as 0, when that may not reflect reality. May need to extend this method to check for bad selections.
 
+    # By default, pymol reports occupancy as '1' when it can't find electron density. Check for absent density so it can be flagged in the output file.
     atmNum = cmd.count_atoms("resi " + position + " and chain " + chain)
-    if atmNum == 1:   # By default, pymol reports occupancy as '1' when it can't find electron density
-        return False
 
+    if atmNum == 1:   
+        return False
     else:
         return True
 
@@ -232,7 +227,7 @@ def find_Allchain_resi(seq, chain, resi, writer):   # seq is a string type, chai
 ####################################################################################################################################################################
 #|  WRITER METHOD: Uses a List `stored_residues` populated with `resi` values for all selection-expressions; `resi` retrieves the PSE residue position as shown.  |#
 ####################################################################################################################################################################
-def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
+def GO(query, header, requested, selexpression, stored_residues, mode, depth="ALL"):
 
     ## Job description
     print("Query: ", query,"\nResidue(s) requested:", depth)
@@ -255,7 +250,13 @@ def GO(query, header, requested, selexpression, stored_residues, depth="ALL"):
         cmd.set('dot_density', 4)  ## 1-4; defines quality (accuracy) of the calculation, better=more CPU
 
         # Import structure, then remove unwanted (non-amino acid, or "het") objects. #FIXME this may remove biochemically important groups from proteins (ex, the `CHO` fluorophore in GFP; see 2B3P, resi #65-67 for details)
-        cmd.fetch(query)
+        if mode == "fetch":
+            cmd.fetch(query)
+            print("Downloaded query ID: " + query)
+        else:
+            cmd.load(query)
+            print("Loaded query file: " + query)
+
         cmd.remove("het")
     
         # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
@@ -320,17 +321,21 @@ selexpression = ""
 # check user's requested job parameters
 if depth == "ALL":
     # call GO()
-    GO(query, header, requested, selexpression, stored_residues)    # NOTE: an empty string extends `selexpression` when set to default: 'ALL'
+    GO(query, header, requested, selexpression, stored_residues, mode)    # NOTE: an empty string extends `selexpression` when set to default: 'ALL'
 
 elif depth in AA_letterCode.keys():
     # call GO()
+    # TODO convert this case into a string-splitting process, where "," is the delimiter. This would avoid requiring a separate data structure by letting me stick with strings.
+    
+    # TODO this will need to be able to accept a string-as-list, where "," separates elements and each are bundled into a list type (even if only one code is requested)
+    # TODO then, the `requested=` needs to be modified to reflect the number of items requested when the number of aa codes > 1.
     depth = AA_letterCode[depth]        ## NOTE currently this only works with 1 requested lettercode at a time; converting depth into a list that accepts all valid, unique instances of an amino acid and then getting their resi values (and sorting in order) will allow multiple aa requests in the same run.
     requested = " and resn " + depth                                # NOTE: if `sys.argv[4]` is found to be valid, the request is run with the appropriate 3-letter code.
-    GO(query, header, requested, selexpression, stored_residues, depth)
+    GO(query, header, requested, selexpression, stored_residues, mode, depth)
 
 else:
     # error - user must enter appropriate <args>
-    err1 = "#   ATTN user! Check your batch file: `" + depth + "` is not a valid single-letter residue code.   #"
+    err1 = "#   ATTN user! Check your batch file: `" + depth + "` is not a valid single or 3-letter residue code.   #"
     err2 = "#" * len(err1)
     print("\n\n",err2,"\n\n",err1,"\n\n",err2,"\n\n")
 
