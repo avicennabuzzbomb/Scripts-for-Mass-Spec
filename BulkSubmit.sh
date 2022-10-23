@@ -11,10 +11,9 @@ d=$(date +%Y-%m-%d)
 
 ## Subsume everything below this comment into a for loop, which iterates through a list file of PDB ID
 
-### CHECK FOR VALID ARGUMENTS ###
+### CHECK FOR VALID ARGUMENTS and BEGIN WRITING EXECUTABLE SCRIPT ###
 if [ $# -gt 0 ]; then
 
-	### WRITE THE EXECUTABLE SCRIPT ###
 	echo "Modifying executable code..."  # informs user
 
 	## Begin writing/editing the current executable file:
@@ -54,9 +53,35 @@ if [ $# -gt 0 ]; then
 	echo "#" >> SASA$d.sub
 	echo "#" >> SASA$d.sub
 	echo "# transfer_input_files = file1,/absolute/pathto/file2,etc" >> SASA$d.sub
-	echo "transfer_input_files = SASAquatch.py, http://proxy.chtc.wisc.edu/SQUID/chtc/python37.tar.gz" >> SASA$d.sub
-	echo "request_cpus = 2" >> SASA$d.sub			# modified memory requests from original tutorial template
-	echo "request_memory = 2GB" >> SASA$d.sub		# new requests reflect the size of each job at time of execution
+
+	# TODO This is where detection of pdb load files and listing of load files to send to SQUID needs to be extended!!
+	files2transfer=$(echo "transfer_input_files = SASAquatch.py, http://proxy.chtc.wisc.edu/SQUID/chtc/python37.tar.gz")
+	# Something like... if current line in list file contains the char ".", append its name to a string variable via echo, which stores the string that
+	# lists the input files!
+
+	## first check whether coordinate files are to be loaded with the job. Make sure the listed files are also present in the working dir where this is running!
+	# NOTE if this does not work, comment out this block and switch back to the original echo statement directly below this comment:
+
+	
+	#echo "transfer_input_files = SASAquatch.py, http://proxy.chtc.wisc.edu/SQUID/chtc/python37.tar.gz" >> SASA$d.sub
+	
+
+	while IFS= read line; do
+		
+		name=$(echo $line)
+		
+		if [[ $line == *"."* ]]; then
+			files2transfer=$(echo "$files2transfer, $line")
+		fi
+
+	done < "$1"
+
+	# now echo the filename string to the submit file
+	echo $files2transfer >> SASA$d.sub
+
+	# request number of cpu's, memory and disk size to use (may change during the job run)
+	echo "request_cpus = 2" >> SASA$d.sub
+	echo "request_memory = 2GB" >> SASA$d.sub
 	echo "request_disk = 300MB" >> SASA$d.sub
 
 	### EXTEND THE SUBMIT FILE BY ADDING QUERIES AND QEUE COMMANDS (FOR-LOOP HERE FOR REPEATEDLY WRITING QUERIES FROM A LIST TO THE SUBMIT FILE) ###
@@ -64,7 +89,7 @@ if [ $# -gt 0 ]; then
 	# specify the list file as an input to be read through line by line; correctly reads delimiters as part of the same line.
 	while IFS= read line; do
 		
-		## to simplify downstream file handling, convert entire argument string to uppercase
+		## to simplify downstream file handling, first convert entire argument string to uppercase
 		line=$(echo ${line^^})
 		
 		## now write to the submit file
