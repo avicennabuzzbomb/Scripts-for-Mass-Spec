@@ -63,11 +63,18 @@ if "." in query:   #NOTE greedy for all file extensions - refine later
 else:
     mode = "fetch"
 
+# finally, check whether user wants to include -het- chains in the structure (matters if SASA modeling is expected to be affected by presence of a biological ligand)
+# TODO build another conditional - if het == someLigandCSVstring, import string into a list by default and call a remove-het helper method.
+# TODO also requires converting the cmd.remove(het) codeline into a call to a new helper method for parsing a user-requested list of hets worth keeping.
+# TODO example hets worth keeping: AMPPNP or AMPPCP in AHA2 or SERCA
+
+#_____________________________________________________________________________________________________________________________________________________________________________________________________________
 # FIXME FIXME FIXME Include a new method for calculating each chain in the context of the entire crystal unit (covers true oligomeric structures and also artifactual ones)
 # FIXME FIXME FIXME This is a memory-intensive process because to get "relative" SASA values it would need to calculate each chain's per-res SASA in the absence of the other chains,
 # FIXME FIXME FIXME ...AND to then re-do the calculation on each chain in the presence of the other chains. To minimize memory, the second step has to happen first; then, each chain would need to 
 # FIXME FIXME FIXME be calculated on its own. Those values are then used as the "reference" for calculating the relative SASA of each chain.
 # FIXME FIXME FIXME Also, using a "threshold" for relative SASA is sketchy. It may be better to use the actual value of water's SASA as the hard cutoff for solvent-accessibility.
+#______________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ## Dictionary of residue attributes needed for SASA calculations. 1 entry per amino acid; the single-letter AA code is the key,
 ## and indices [0] - [3] are, respectively, the 3-letter code for the amino acid, the total sidechain (R-group) SASA for the amino acid when free
@@ -258,6 +265,8 @@ def GO(query, header, requested, selexpression, stored_residues, mode, depth="AL
             cmd.load(query)
             print("Loaded query file: " + query)
 
+        # TODO convert this into a remove-het helper method for parsing user-requested hets that should remain in the structure while SASA analysis is happening.
+        # TODO example hets worth keeping: AMPPNP or AMPPCP in AHA2 or SERCA
         cmd.remove("het")
     
         # detect all chains present in the file and get the full fasta string sequence for each unique chain; remove the first line (unwanted header), then the whitespace,
