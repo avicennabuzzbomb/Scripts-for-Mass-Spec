@@ -47,12 +47,14 @@ print("WARNING 10/20/2022: cmd.load is now supported but on Condor those files n
 
 # NOTE This script must take arguments at [3] and [4] because the intrepreter argument "pymol", the "-c" flag, and the script name are being interpred by this script as initial arguments [0], [1], and [2].
 # QUERY: assign PDB ID to the first argument in the list of possible arguments, uppercase it (arg is case insensitive), and typecast to string
-query = str(sys.argv[3].upper())
+query = str(sys.argv[3].upper())            # TODO is the upper() method call necessary? Forces all queries to be case insensitive BUT if a file is being identified for cmd.load,
+                                            # TODO that is likely to be case-sensitive and may be causing the pdb file failures on the CHTC even though it works locally
 
 # DEPTH: assign query type ('ALL' as default, unless a 4th argument is explicitly entered: an amino acid single letter code or 3-letter code).
 # checking first for another argument must be done before attempting to assign it; else a nonexistent argument will make the script close instead.
 if len(sys.argv)-1 == 4:
-    depth = str(sys.argv[4].upper())
+    depth = str(sys.argv[4].upper())        # TODO is the upper() method call necessary? Forces all queries to be case insensitive BUT if a file is being identified for cmd.load,
+                                            # TODO that is likely to be case-sensitive and may be causing the pdb file failures on the CHTC even though it works locally
 
 else:
     depth = "ALL"
