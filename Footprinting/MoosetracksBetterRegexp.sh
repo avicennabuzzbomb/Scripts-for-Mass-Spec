@@ -29,8 +29,8 @@ function 4_CALCULATE!() {
             # (eliminates unnecessary pattern matching steps during the search-sum process). Pattern matching is implicitly done by using temporary files to carve up the data
             # into subcategories, and then summing all abundance of each category. Hacky but it will have to do until I can determine why pattern matching is not working here.
             
-            # here, testing == vs ~ in pattern matching. Else pattern boundaries may need to be defined using ^ and $ respectively. This is to try to deal with the
-            # globby behavior that Ben identified in the script here.
+            # here, testing == vs ~ in pattern matching. Else substring hard boundaries may need to be defined using ^ and $ respectively, to flank the variable namespace.
+            # This is to try to deal with the globby behavior that Ben identified in the script here. THIS NEEDS TO BE CORRECTED SOON
             awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1                  # filter data by current value of filename (f); WORKS
             awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
 
