@@ -17,7 +17,7 @@ function 4_CALCULATE!() {
     # Begin searching for mods in each file, one file at a time
     for f in ${fnames[*]}; do
 
-        echo "Replicate Filename","Master Peptide Sequence","Position in Master Protein","Labeled","Unlabeled","% labeled" >> $file4
+        echo "Replicate Filename","Position in Master Protein","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
         fupper=$(echo ${f^^})   # stores uppercased version of filename "f"
 
         ## Handle the data in subsets by exporting to temporary files and reading from those files (simplifies search process). j-iterator assists with seq-position matching.
