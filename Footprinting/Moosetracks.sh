@@ -10,32 +10,39 @@ function 4_CALCULATE!() {
     # store an all-uppercased version of file3 in temp; simplifies peptide ID matching further down
     # i is for loop breaks during implementation and testing (see further down)
     i=1
+
+    # make a temporary copy of trimmedFiltered with all chars uppercased (affects filenames and peptide sequences)
     awk -F"," '{print toupper($0)}' $file3 > $temp
 
+    # Begin searching for mods in each file, one file at a time
     for f in ${fnames[*]}; do
 
         echo "Replicate Filename","Master Peptide Sequence","Position in Master Protein","Labeled","Unlabeled","% labeled" >> $file4
         fupper=$(echo ${f^^})   # stores uppercased version of filename "f"
 
-        # Here, a master peptide ID is referenced in m. Then both replicate and m will be passed to awk as vars for pattern-matching and calculations.
-        # j is for referencing specific records in the position reference file
+        ## Handle the data in subsets by exporting to temporary files and reading from those files (simplifies search process). j-iterator assists with seq-position matching.
         j=1
         for m in ${mseqs[*]}; do
 
-            # Slice the data into separate streams by file and then by master peptide for awk to handle one a time
-            # (eliminates unnecessary pattern matching steps during the search-sum process). Pattern matching is implicitly done by using temporary files to carve up the data
-            # into subcategories, and then summing all abundance of each category. Hacky but it will have to do until I can determine why pattern matching is not working here.
-            awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1                  # filter data by current value of filename (f); WORKS
-            awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
+            # Sort first by file ID, and use awk substr() to strip away flanking "[X]." and ".[Y]" characters on the peptide sequence string
+            awk -F"," -v f=$fupper '$0 ~ f{
+                AnnotatedSequence = substr($1, 5, length($1)-8); Modifications = $2; Charge = $3; SpectFile = $4; PrecAbundance = $5; Label = $6};
+                {print AnnotatedSequence "," Modifications "," Charge "," SpectFile "," PrecAbundance "," Label}' $temp > $temp1
 
-            ## Extract the position of the current peptide. j starts at 1, iterates until each sequence 'm' is matched to a position,
-            ## and then resets in the outer loop at the beginning of each new sample file.
-            position=$(awk -F"," -v j=$j 'NR==j {print $2}' Sequence_Position.csv)
-            echo -e "\t\t\tCurrent file = "$f", position = "$position" with sequence = "$m 
+            # Extract data associated only with current value of "m" from within the file-sorted data
+            awk -F"," -v m=$m '$1 == m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); KIND OF WORKS, GLOBBY
 
-            ## Sum each abundance type separately, then calculate percent abundance.
-            Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)
-            Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)
+            # Log file for recording PSM pattern-matching behavior (quality control)
+            echo -e "__________________________________________________________________\nCurrent file f = "$fupper", current sequence m = |"$m"|\nMatched PSMs shown below:\n" >> $log
+            cat $temp2 >> $log
+            echo -e "__________________________________________________________________\n\n" >> $log 
+
+            ## Extract the position of the current peptide. (j iterates until each sequence 'm' is matched to 'position', then resets in the outer loop for the next file 'f'.
+            position=$(awk -F"," -v j=$j 'NR==j {print $2}' Sequence_Position.csv); echo -e "\t\t\tCurrent file = "$fupper", position = "$position" with sequence = "$m
+
+            ## Sum each abundance type separately, then calulate percent abundance of labeled peptides.
+            Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)    # changed from temp2 to temp1 during testing
+            Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)       # changed from temp2 to temp1 during testing
             Perclabeled=$(awk -F"," -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
                             if ( sum > 0 )
                                 perc = 100*Labeled/sum
@@ -139,7 +146,7 @@ function 2_ExtractData() {
     # Use awk to export the desired columns from MergedPSMs to new text file "trimmed"
     echo -e $msg1"Extracting data... "
 
-    # this builds an associative awk array, where each element is an entire record. The columns are then printed by the pattern matched in each element.
+    # Awk loop: this builds an associative awk array, where each element is an entire record. The columns are then printed by the pattern matched in each element.
     # because of how this works, the RAW output files need to be named simplistically such as *_MB1_* and so on; otherwise, add code to assign arbitrary file IDs at
     # the very beginning to avoid this problem.
     awk -F "\t" '
@@ -153,7 +160,7 @@ function 2_ExtractData() {
 
     echo -e $msg2"Copied 'Annotated Sequence' 'Modifications' 'Charge' 'Spectrum File' 'Precursor Abundance' 'XCorr' 'Rank' to "$file2
 
-    # Repeat for to get sequence/position matches from merged peptide groups 
+    # Repeat for to get sequence/position matches from merged peptide groups.
     awk -F "\t" '
     NR==1 {
         for (i=1; i<=NF; i++) {
@@ -168,7 +175,6 @@ function 2_ExtractData() {
     awk -F"\t" 'NR==1 {print $1"\t",$2}' $file2A > $file3A; awk -F"\t" 'NR > 1 {print $1"\t",$2}' $file2A | sort | uniq >> $file3A
     numUniqPepGrps=$(awk 'NR > 1' $file3A | wc -l); echo -e $msg2"Extracted "$numUniqPepGrps" unique, labeled sequence groups with their positions from among "$actual1A" total peptide groups."
 
-    ## Now store the unique IDs in a bash array for later use, using substr() to eliminate the []. characters (regex characters cannot be string literals unless escaped)
     # First print headers to File 3
     echo -e $msg1"Filtering out low-scoring PSMs and annotating labeled PSMs..."
     Seq=$(awk -F "\t" 'NR==1 {print $1}' $file2)
