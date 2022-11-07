@@ -14,7 +14,7 @@ function 4_CALCULATE!() {
     # make a temporary copy of trimmedFiltered with all chars uppercased (affects filenames and peptide sequences)
     awk -F"," '{print toupper($0)}' $file3 > $temp
 
-    # Begin searching one file at a time
+    # Begin searching for mods in each file, one file at a time
     for f in ${fnames[*]}; do
 
         echo "Replicate Filename","Master Peptide Sequence","Position in Master Protein","Labeled","Unlabeled","% labeled" >> $file4
@@ -29,22 +29,36 @@ function 4_CALCULATE!() {
             # (eliminates unnecessary pattern matching steps during the search-sum process). Pattern matching is implicitly done by using temporary files to carve up the data
             # into subcategories, and then summing all abundance of each category. Hacky but it will have to do until I can determine why pattern matching is not working here.
             
+            # add flanking "." delimiters to the value of m, in order to restrict substring matches to the actual peptide's sequence
+            #m=$(echo "."$m".")
+
             # here, testing == vs ~ in pattern matching. Else substring hard boundaries may need to be defined using ^ and $ respectively, to flank the variable namespace.
             # This is to try to deal with the globby behavior that Ben identified in the script here. THIS NEEDS TO BE CORRECTED SOON
             awk -F"," -v f=$fupper '$0 ~ f{ print $0 }' $temp > $temp1                  # filter data by current value of filename (f); WORKS
+
+            # pattern matching with awk is field-based. Therefore - is it possible to trap the peptide sequence from temp1 in a variable using . as delimiter, 
+            # and then check if it matches the value of m?
+
+
             awk -F"," -v m=$m '$0 ~ m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); WORKS
+            
+            # try to eliminate globbing using explicit grep
+            #grep -w -m1 $m $temp1 > $temp2
+            
+            echo "__________________________________________________________________" >> $log
+            echo "Current file f = "$fupper", current sequence m = "$m >> $log; cat $temp2 >> $log; echo -e "__________________________________________________________________\n\n" >> $log 
 
             ## Extract the position of the current peptide. j starts at 1, iterates until each sequence 'm' is matched to a position,
             ## and then resets in the outer loop at the beginning of each new sample file.
             position=$(awk -F"," -v j=$j 'NR==j {print $2}' Sequence_Position.csv)
-            echo -e "\t\t\tCurrent file = "$f", position = "$position" with sequence = "$m
+            echo -e "\t\t\tCurrent file = "$fupper", position = "$position" with sequence = "$m
 
             ## Sum each abundance type separately.
-            Unlabeled=""; Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)
-            Labeled=""; Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)
+            Unlabeled=$(awk -F"," '$0 !~ /GEE/{ sum += $5 } END { print sum }' $temp2)
+            Labeled=$(awk -F"," '$0 ~ /GEE/{ sum += $5 } END { print sum }' $temp2)
 
             ## Now calculate percent abundance.
-            Perclabeled=""; Perclabeled=$(awk -F"," -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
+            Perclabeled=$(awk -F"," -v Labeled=$Labeled -v Unlabeled=$Unlabeled 'BEGIN{ sum = Labeled + Unlabeled;
                             if ( sum > 0 )
                                 perc = 100*Labeled/sum
                             else

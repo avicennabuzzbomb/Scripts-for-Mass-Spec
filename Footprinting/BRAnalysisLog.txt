@@ -1,0 +1,857 @@
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULAMPPNP1.RAW, 558953.6875, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULAMPPNP1.RAW, 447727.09375, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULAMPPNP1.RAW, 955430.625, 
+[R].EGLTTQEGEDR.[I], D10(GEE85), 2, 220915_2ULAMPPNP1.RAW, 24550.4765625, GEE
+[R].EGLTTQEGEDR.[I], E9(GEE85), 2, 220915_2ULAMPPNP1.RAW, 39111.84765625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTKHPGQEVFSGSTCK.[Q], Q27(DEAMIDATED); C35(CARBOXYMETHYL), 4, 220915_2ULAMPPNP1.RAW, , 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP1.RAW, 2196492.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = VDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTKHPGQEVFSGSTCK.[Q], Q27(DEAMIDATED); C35(CARBOXYMETHYL), 4, 220915_2ULAMPPNP1.RAW, , 
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP1.RAW, 994973.5625, 
+[K].VDQSALTGESLPVTK.[H], E9(GEE85), 2, 220915_2ULAMPPNP1.RAW, 21893.486328125, GEE
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP1.RAW, 2196492.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULAMPPNP1.RAW, 64412.1484375, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULAMPPNP1.RAW, 734129.75, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULAMPPNP1.RAW, 3064604.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULAMPPNP1.RAW, 1641481.375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP1.RAW, 118041.7265625, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP1.RAW, 69016.109375, 
+[K].DANLASIPVEELIEK.[A], E14(GEE85), 2, 220915_2ULAMPPNP1.RAW, 69128.859375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = ADGFAGVFPEHK
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP1.RAW, 118041.7265625, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP1.RAW, 69016.109375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP1.RAW, 422939.09375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP1.RAW, 1095857.625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP1, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP1.RAW, 2251364.75, 
+[K].ADIGIAVADATDAAR.[G], D12(GEE85), 2, 220915_2ULAMPPNP1.RAW, 63821.94921875, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP1.RAW, 422939.09375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP1.RAW, 1095857.625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULAMPPNP2.RAW, 365297.5625, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULAMPPNP2.RAW, 291372.59375, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULAMPPNP2.RAW, 615436.3125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP2.RAW, 1974180.375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP2.RAW, 633819.3125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP2.RAW, 1974180.375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULAMPPNP2.RAW, 43421.17578125, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULAMPPNP2.RAW, 531401.875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULAMPPNP2.RAW, 2240184.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULAMPPNP2.RAW, 1174177.625, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP2.RAW, 126473.0390625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULAMPPNP2.RAW, 603067.875, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP2.RAW, 1104632.125, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP2.RAW, 126473.0390625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP2.RAW, 285291.15625, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP2.RAW, 1063061.625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP2, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP2.RAW, 1677210.5, 
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP2.RAW, 285291.15625, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP2.RAW, 1063061.625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULAMPPNP3.RAW, 523558.875, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULAMPPNP3.RAW, 334425.09375, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULAMPPNP3.RAW, 731577.6875, 
+[R].EGLTTQEGEDR.[I], E9(GEE85), 2, 220915_2ULAMPPNP3.RAW, 51064.90234375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP3.RAW, 2466304.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP3.RAW, 62487.45703125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULAMPPNP3.RAW, 50819.1640625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP3.RAW, 758226.3125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP3.RAW, 2466304.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP3.RAW, 62487.45703125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULAMPPNP3.RAW, 50819.1640625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULAMPPNP3.RAW, 42662.8125, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULAMPPNP3.RAW, 456879.21875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULAMPPNP3.RAW, 2866962, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULAMPPNP3.RAW, 1460350.375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP3.RAW, 158965.015625, 
+[K].DANLASIPVEELIEK.[A], E14(GEE85), 2, 220915_2ULAMPPNP3.RAW, 84263.6953125, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULAMPPNP3.RAW, 825623.0625, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP3.RAW, 1461900.375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP3.RAW, 158965.015625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP3.RAW, 340318.03125, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP3.RAW, 1244775.75, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP3, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP3.RAW, 1856031.375, 
+[K].ADIGIAVADATDAAR.[G], D12(GEE85), 2, 220915_2ULAMPPNP3.RAW, 61150.41796875, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP3.RAW, 340318.03125, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP3.RAW, 1244775.75, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULAMPPNP4.RAW, 450308.71875, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULAMPPNP4.RAW, 674574.625, 
+[R].EGLTTQEGEDR.[I], D10(GEE85), 2, 220915_2ULAMPPNP4.RAW, 31177.5390625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP4.RAW, 132769.453125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP4.RAW, 3424532, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP4.RAW, 76653.234375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP4.RAW, 836231.1875, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP4.RAW, 132769.453125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP4.RAW, 3424532, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP4.RAW, 76653.234375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULAMPPNP4.RAW, 33368.1875, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULAMPPNP4.RAW, 474278.59375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = GAPEQILELAK
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULAMPPNP4.RAW, 1322434.25, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP4.RAW, 151069.5, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP4.RAW, 88017.484375, 
+[K].DANLASIPVEELIEK.[A], E14(GEE85), 2, 220915_2ULAMPPNP4.RAW, 84091.8359375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULAMPPNP4.RAW, 717703.125, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP4.RAW, 1409730.375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP4.RAW, 151069.5, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP4.RAW, 88017.484375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP4.RAW, 1293420.875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP4, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP4.RAW, 2314094.5, 
+[K].ADIGIAVADATDAAR.[G], D12(GEE85), 2, 220915_2ULAMPPNP4.RAW, 86038.0859375, GEE
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP4.RAW, 1293420.875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULAMPPNP5.RAW, 413068.8125, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULAMPPNP5.RAW, 432737.84375, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULAMPPNP5.RAW, 693986.4375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP5.RAW, 115153.921875, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP5.RAW, 3037530.75, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP5.RAW, 854348.25, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP5.RAW, 115153.921875, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP5.RAW, 3037530.75, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULAMPPNP5.RAW, 24707.4453125, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULAMPPNP5.RAW, 273143.53125, 
+[K].QGEIEAVVIATGVHTFFGK.[A], E5(GEE85), 3, 220915_2ULAMPPNP5.RAW, 19356.65234375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULAMPPNP5.RAW, 2445736, 
+[K].GAPEQILELAK.[A], , 2, 220915_2ULAMPPNP5.RAW, 54613.29296875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULAMPPNP5.RAW, 1490434.25, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP5.RAW, 31466.70703125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULAMPPNP5.RAW, 684187.75, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP5.RAW, 1473736.125, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP5.RAW, 31466.70703125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP5.RAW, 292165.09375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP5.RAW, 1174569, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP5, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP5.RAW, 2290903.25, 
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULAMPPNP5.RAW, 57682, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP5.RAW, 292165.09375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP5.RAW, 1174569, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULAMPPNP6.RAW, 632338.375, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULAMPPNP6.RAW, 617849.9375, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULAMPPNP6.RAW, 1235530.625, 
+[R].EGLTTQEGEDR.[I], E9(GEE85), 2, 220915_2ULAMPPNP6.RAW, 105267.0625, GEE
+[R].EGLTTQEGEDR.[I], E1(GEE85), 2, 220915_2ULAMPPNP6.RAW, 39699.37109375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP6.RAW, 347282.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP6.RAW, 4483371.5, 
+[R].LLEGDPLKVDQSALTGESLPVTKHPGQEVFSGSTCK.[Q], C35(CARBOXYMETHYL), 4, 220915_2ULAMPPNP6.RAW, 131375.984375, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULAMPPNP6.RAW, 65158.12109375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP6.RAW, 1317945.125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULAMPPNP6.RAW, 347282.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULAMPPNP6.RAW, 4483371.5, 
+[R].LLEGDPLKVDQSALTGESLPVTKHPGQEVFSGSTCK.[Q], C35(CARBOXYMETHYL), 4, 220915_2ULAMPPNP6.RAW, 131375.984375, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULAMPPNP6.RAW, 65158.12109375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULAMPPNP6.RAW, 58693.6875, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULAMPPNP6.RAW, 683110.4375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULAMPPNP6.RAW, 4102542.75, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULAMPPNP6.RAW, 1650941.375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP6.RAW, 184937.59375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP6.RAW, 105324.8203125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULAMPPNP6.RAW, 1006242.875, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP6.RAW, 1987675.375, 
+[K].ADGFAGVFPEHKYEIVK.[K], , 3, 220915_2ULAMPPNP6.RAW, 118233.6875, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULAMPPNP6.RAW, 184937.59375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULAMPPNP6.RAW, 105324.8203125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP6.RAW, 526691.875, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP6.RAW, 1614988.125, 
+[K].KADIGIAVADATDAAR.[G], D10(GEE85), 3, 220915_2ULAMPPNP6.RAW, 41858.09765625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULAMPPNP6, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP6.RAW, 2870897.75, 
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULAMPPNP6.RAW, 65563.765625, GEE
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULAMPPNP6.RAW, 90841.5390625, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULAMPPNP6.RAW, 526691.875, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULAMPPNP6.RAW, 1614988.125, 
+[K].KADIGIAVADATDAAR.[G], D10(GEE85), 3, 220915_2ULAMPPNP6.RAW, 41858.09765625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULMOCK1.RAW, 319369.6875, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULMOCK1.RAW, 563151.0625, 
+[R].EGLTTQEGEDR.[I], E9(GEE85), 2, 220915_2ULMOCK1.RAW, 36645.1484375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK1.RAW, 2102216, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK1.RAW, 777324.9375, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK1.RAW, 2102216, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULMOCK1.RAW, 42705.25390625, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULMOCK1.RAW, 528195.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULMOCK1.RAW, 2398873, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULMOCK1.RAW, 1588816.75, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK1.RAW, 83122.2890625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULMOCK1.RAW, 640049.375, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK1.RAW, 1004563, 
+[K].ADGFAGVFPEHKYEIVK.[K], , 3, 220915_2ULMOCK1.RAW, 345930.8125, 
+[K].ADGFAGVFPEHKYEIVK.[K], , 4, 220915_2ULMOCK1.RAW, 94026.4296875, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK1.RAW, 83122.2890625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK1.RAW, 398539.4375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK1.RAW, 1021944.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK1, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK1.RAW, 1846580, 
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULMOCK1.RAW, 69867.796875, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK1.RAW, 398539.4375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK1.RAW, 1021944.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULMOCK2.RAW, 395904.15625, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULMOCK2.RAW, 341073.125, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULMOCK2.RAW, 681380.375, 
+[R].EGLTTQEGEDR.[I], E9(GEE85), 2, 220915_2ULMOCK2.RAW, 49677.51171875, GEE
+[R].EGLTTQEGEDR.[I], E1(GEE85), 2, 220915_2ULMOCK2.RAW, 29843.4375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK2.RAW, 2292639.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK2.RAW, 52752.3203125, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK2.RAW, 1003899.3125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK2.RAW, 2292639.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK2.RAW, 52752.3203125, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULMOCK2.RAW, 68991.171875, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULMOCK2.RAW, 736478.625, 
+[K].QGEIEAVVIATGVHTFFGK.[A], E5(GEE85), 3, 220915_2ULMOCK2.RAW, 53956.484375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULMOCK2.RAW, 2579393.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULMOCK2.RAW, 1396224.125, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK2.RAW, 182747.78125, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULMOCK2.RAW, 73035.5234375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULMOCK2.RAW, 718350.75, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK2.RAW, 1254623.125, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK2.RAW, 182747.78125, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULMOCK2.RAW, 73035.5234375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK2.RAW, 378682.1875, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK2.RAW, 1399220.875, 
+[K].KADIGIAVADATDAAR.[G], D13(GEE85), 3, 220915_2ULMOCK2.RAW, 40843.34765625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK2, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK2.RAW, 1878127.25, 
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULMOCK2.RAW, 64827.05078125, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK2.RAW, 378682.1875, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK2.RAW, 1399220.875, 
+[K].KADIGIAVADATDAAR.[G], D13(GEE85), 3, 220915_2ULMOCK2.RAW, 40843.34765625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULMOCK3.RAW, 442701.65625, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULMOCK3.RAW, 890195.625, 
+[R].EGLTTQEGEDR.[I], D10(GEE85), 2, 220915_2ULMOCK3.RAW, 34213.828125, GEE
+[R].EGLTTQEGEDR.[I], E9(GEE85), 2, 220915_2ULMOCK3.RAW, 56935.3671875, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK3.RAW, 121991.109375, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK3.RAW, 196811.765625, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK3.RAW, 2358536, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK3.RAW, 47812.1328125, GEE
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], Q11(DEAMIDATED), 3, 220915_2ULMOCK3.RAW, , 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK3.RAW, 854579.5625, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK3.RAW, 121991.109375, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK3.RAW, 196811.765625, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK3.RAW, 2358536, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK3.RAW, 47812.1328125, GEE
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], Q11(DEAMIDATED), 3, 220915_2ULMOCK3.RAW, , 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULMOCK3.RAW, 71013.8828125, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULMOCK3.RAW, 704428.6875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULMOCK3.RAW, 3195514.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULMOCK3.RAW, 1977763.375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK3.RAW, 168512.859375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULMOCK3.RAW, 105611.046875, 
+[K].DANLASIPVEELIEK.[A], E14(GEE85), 2, 220915_2ULMOCK3.RAW, 85756.734375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK3.RAW, 1160117.25, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK3.RAW, 168512.859375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULMOCK3.RAW, 105611.046875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK3.RAW, 423682.84375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK3.RAW, 978262.4375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK3, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK3.RAW, 2166644.5, 
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULMOCK3.RAW, 74339.3828125, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK3.RAW, 423682.84375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK3.RAW, 978262.4375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULMOCK4.RAW, 434646.53125, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULMOCK4.RAW, 362247.6875, 
+[R].EGLTTQEGEDR.[I], E1(GEE85), 2, 220915_2ULMOCK4.RAW, 32762.61328125, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK4.RAW, 3921813.25, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK4.RAW, 44321.65625, 
+[R].LLEGDPLKVDQSALTGESLPVTKHPGQEVFSGSTCK.[Q], C35(CARBOXYMETHYL), 4, 220915_2ULMOCK4.RAW, 68187.078125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK4.RAW, 814849.3125, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK4.RAW, 3921813.25, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK4.RAW, 44321.65625, 
+[R].LLEGDPLKVDQSALTGESLPVTKHPGQEVFSGSTCK.[Q], C35(CARBOXYMETHYL), 4, 220915_2ULMOCK4.RAW, 68187.078125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULMOCK4.RAW, 60677.24609375, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULMOCK4.RAW, 627126.25, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULMOCK4.RAW, 2985854.75, 
+[K].GAPEQILELAK.[A], E8(GEE85), 2, 220915_2ULMOCK4.RAW, 100139.0078125, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULMOCK4.RAW, 1442474.125, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK4.RAW, 165393.375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 2, 220915_2ULMOCK4.RAW, 718073, 
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK4.RAW, 1404034.5, 
+[K].ADGFAGVFPEHKYEIVK.[K], , 3, 220915_2ULMOCK4.RAW, 335780.375, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK4.RAW, 165393.375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK4.RAW, 380015.4375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK4.RAW, 1263050.375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK4, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], D12(GEE85), 2, 220915_2ULMOCK4.RAW, 49556.828125, GEE
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULMOCK4.RAW, 76302.34375, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK4.RAW, 380015.4375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK4.RAW, 1263050.375, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULMOCK5.RAW, 591080.125, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULMOCK5.RAW, 542101, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULMOCK5.RAW, 985492.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK5.RAW, 290557.34375, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK5.RAW, 3983366.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK5.RAW, 72393.953125, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTKHPGQEVFSGSTCK.[Q], Q19(DEAMIDATED); C27(CARBOXYMETHYL), 3, 220915_2ULMOCK5.RAW, 18143.021484375, 
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK5.RAW, 1015959.75, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK5.RAW, 290557.34375, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK5.RAW, 3983366.5, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK5.RAW, 72393.953125, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULMOCK5.RAW, 52752.171875, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULMOCK5.RAW, 794448.3125, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULMOCK5.RAW, 3217556.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULMOCK5.RAW, 1499499.625, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK5.RAW, 244223.25, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULMOCK5.RAW, 153068.421875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK5.RAW, 1737391.5, 
+[K].ADGFAGVFPEHKYEIVK.[K], , 3, 220915_2ULMOCK5.RAW, 255523.390625, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK5.RAW, 244223.25, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 4, 220915_2ULMOCK5.RAW, 153068.421875, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK5.RAW, 580712.4375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK5.RAW, 1890856.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK5, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK5.RAW, 2363662.5, 
+[K].ADIGIAVADATDAAR.[G], D12(GEE85), 2, 220915_2ULMOCK5.RAW, 66885.9375, GEE
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULMOCK5.RAW, 112257.015625, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK5.RAW, 580712.4375, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK5.RAW, 1890856.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = EGLTTQEGEDR
+[R].EGLTTQEGEDRIQIFGPNK.[L], , 3, 220915_2ULMOCK6.RAW, 362635.28125, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 3, 220915_2ULMOCK6.RAW, 370845.5625, 
+[R].EGLTTQEGEDRIQIFGPNKLEEK.[K], , 4, 220915_2ULMOCK6.RAW, 833388.625, 
+[R].EGLTTQEGEDR.[I], D10(GEE85), 2, 220915_2ULMOCK6.RAW, 39865.390625, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = LLEGDPLKVDQSALTGESLPVTK
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK6.RAW, 169998.296875, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK6.RAW, 3245095.75, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK6.RAW, 69374, GEE
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E3(GEE85), 3, 220915_2ULMOCK6.RAW, 43041.3984375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = VDQSALTGESLPVTK
+[K].VDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK6.RAW, 895411.0625, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 2, 220915_2ULMOCK6.RAW, 169998.296875, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], , 3, 220915_2ULMOCK6.RAW, 3245095.75, 
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E17(GEE85), 3, 220915_2ULMOCK6.RAW, 69374, GEE
+[R].LLEGDPLKVDQSALTGESLPVTK.[H], E3(GEE85), 3, 220915_2ULMOCK6.RAW, 43041.3984375, GEE
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = QGEIEAVVIATGVHTFFGK
+[K].QGEIEAVVIATGVHTFFGK.[A], , 2, 220915_2ULMOCK6.RAW, 50504.5078125, 
+[K].QGEIEAVVIATGVHTFFGK.[A], , 3, 220915_2ULMOCK6.RAW, 639489.75, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = GAPEQILELAK
+[K].GAPEQILELAK.[A], , 2, 220915_2ULMOCK6.RAW, 3185060.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = DANLASIPVEELIEK
+[K].DANLASIPVEELIEK.[A], , 2, 220915_2ULMOCK6.RAW, 1377150.75, 
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK6.RAW, 232967.265625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = ADGFAGVFPEHK
+[K].ADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK6.RAW, 1817848.875, 
+[K].ADGFAGVFPEHKYEIVK.[K], , 3, 220915_2ULMOCK6.RAW, 96427.265625, 
+[K].ADGFAGVFPEHK.[Y], D2(GEE85), 3, 220915_2ULMOCK6.RAW, 40156.8515625, GEE
+[K].DANLASIPVEELIEKADGFAGVFPEHK.[Y], , 3, 220915_2ULMOCK6.RAW, 232967.265625, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = KADIGIAVADATDAAR
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK6.RAW, 351304, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK6.RAW, 1344485.5, 
+__________________________________________________________________
+
+
+__________________________________________________________________
+Current file f = 2ULMOCK6, current sequence m = ADIGIAVADATDAAR
+[K].ADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK6.RAW, 2673198, 
+[K].ADIGIAVADATDAAR.[G], D9(GEE85), 2, 220915_2ULMOCK6.RAW, 77942.9375, GEE
+[K].KADIGIAVADATDAAR.[G], , 2, 220915_2ULMOCK6.RAW, 351304, 
+[K].KADIGIAVADATDAAR.[G], , 3, 220915_2ULMOCK6.RAW, 1344485.5, 
+__________________________________________________________________
+
+

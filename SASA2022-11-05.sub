@@ -1,0 +1,88 @@
+# Name: SASA2022-11-05.sub | written with list filedotPDBtest.txt
+# submit file for getting solvent accessible surface areas of the residues of target PDB IDs.
+# This submit file was written with listname dotPDBtest.txt
+#
+universe = vanilla
+requirements = (HasCHTCSoftware == true)
+executable = querySASA.sh
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+#
+#
+# transfer_input_files = file1,/absolute/pathto/file2,etc
+transfer_input_files = SASAquatch.py, http://proxy.chtc.wisc.edu/SQUID/chtc/python37.tar.gz, 1su4.pdb, 2agv.pdb, 2zbd.pdb, 2zbe.pdb, 2zbg.pdb, 3BA6protomer.pdb, 4H1Wprotomer.pdb, 5KSD_on_1SU4.pdb, 5KSDon3BA6.pdb, 5KSDon4H1W.pdb
+request_cpus = 2
+request_memory = 2GB
+request_disk = 300MB
+
+arguments = 1SU4.PDB
+log = log/SASA_1SU4.PDB_$(Cluster).log
+error = errors/SASA_1SU4.PDB_$(Cluster)_$(Process).err
+output = output/SASA_1SU4.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 2AGV.PDB
+log = log/SASA_2AGV.PDB_$(Cluster).log
+error = errors/SASA_2AGV.PDB_$(Cluster)_$(Process).err
+output = output/SASA_2AGV.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 2ZBD.PDB
+log = log/SASA_2ZBD.PDB_$(Cluster).log
+error = errors/SASA_2ZBD.PDB_$(Cluster)_$(Process).err
+output = output/SASA_2ZBD.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 2ZBE.PDB
+log = log/SASA_2ZBE.PDB_$(Cluster).log
+error = errors/SASA_2ZBE.PDB_$(Cluster)_$(Process).err
+output = output/SASA_2ZBE.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 2ZBG.PDB
+log = log/SASA_2ZBG.PDB_$(Cluster).log
+error = errors/SASA_2ZBG.PDB_$(Cluster)_$(Process).err
+output = output/SASA_2ZBG.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 3BA6PROTOMER.PDB
+log = log/SASA_3BA6PROTOMER.PDB_$(Cluster).log
+error = errors/SASA_3BA6PROTOMER.PDB_$(Cluster)_$(Process).err
+output = output/SASA_3BA6PROTOMER.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 4H1WPROTOMER.PDB
+log = log/SASA_4H1WPROTOMER.PDB_$(Cluster).log
+error = errors/SASA_4H1WPROTOMER.PDB_$(Cluster)_$(Process).err
+output = output/SASA_4H1WPROTOMER.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 5KSD_ON_1SU4.PDB
+log = log/SASA_5KSD_ON_1SU4.PDB_$(Cluster).log
+error = errors/SASA_5KSD_ON_1SU4.PDB_$(Cluster)_$(Process).err
+output = output/SASA_5KSD_ON_1SU4.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 5KSDON3BA6.PDB
+log = log/SASA_5KSDON3BA6.PDB_$(Cluster).log
+error = errors/SASA_5KSDON3BA6.PDB_$(Cluster)_$(Process).err
+output = output/SASA_5KSDON3BA6.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 5KSDON4H1W.PDB
+log = log/SASA_5KSDON4H1W.PDB_$(Cluster).log
+error = errors/SASA_5KSDON4H1W.PDB_$(Cluster)_$(Process).err
+output = output/SASA_5KSDON4H1W.PDB_$(Cluster)_$(Process).out
+queue
+
+arguments = 5KSD
+log = log/SASA_5KSD_$(Cluster).log
+error = errors/SASA_5KSD_$(Cluster)_$(Process).err
+output = output/SASA_5KSD_$(Cluster)_$(Process).out
+queue
+
+arguments = 4H1W
+log = log/SASA_4H1W_$(Cluster).log
+error = errors/SASA_4H1W_$(Cluster)_$(Process).err
+output = output/SASA_4H1W_$(Cluster)_$(Process).out
+queue

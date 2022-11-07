@@ -90,9 +90,9 @@ if [ $# -gt 0 ]; then
 	while IFS= read line; do
 		
 		## to simplify downstream file handling, first convert entire argument string to uppercase
-		line=$(echo ${line^^})
+		#line=$(echo ${line^^})
 		
-		## now write to the submit file
+		## write to the submit file
 		echo "" >> SASA$d.sub
 		echo 'arguments =' $line >> SASA$d.sub   # add query
 		echo 'log = log/SASA_'$line'_$(Cluster).log' >> SASA$d.sub
