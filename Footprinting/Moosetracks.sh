@@ -18,7 +18,7 @@ function 4_CALCULATE!() {
     for f in ${fnames[*]}; do
 
         echo "Replicate Filename","Position in Master Protein","Master Peptide Sequence","Labeled","Unlabeled","% labeled" >> $file4
-        fupper=$(echo ${f^^})   # stores uppercased version of filename "f"
+        fupper=$(echo ${f^^})   # stores uppercased version of filename "f". Necessary because this is used to search an uppercased image of file3 (see codeline #15)
 
         ## Handle the data in subsets by exporting to temporary files and reading from those files (simplifies search process). j-iterator assists with seq-position matching.
         j=1
@@ -98,12 +98,13 @@ function 3_CleanData() {
 
     ## Use the var 'numPSMfiles' to re-sort PSM records by source filename (which corresponds to original number of input files)
     awk -F"," 'NR == 1' $file3 > $temp
-
-    # FIXME in principle, the logic of this sorting is sound; yet it does not behave consistently and breaks too often.
-    # look into code for building fnames array and also into using awk pattern matching instead of grep
     for ((i = 0; i < $numPSMfiles; i++)); do
-        ## in order of appearance, use each unique filename in fnames and use it to gather all values associated with it; then print to a temporary file
+
+        ## in order of appearance, use each unique filename in fnames to gather all data associated with it into a temporary file
         identifier=$(echo ${fnames[i]}); grep $identifier $file3 >> $temp
+        #identifier=$(echo ${fnames[i]}); grep -w $identifier $file3 >> $temp   ##note: -w in grep means the pattern is its own word, rather than a substring.
+                                                                                ## for some reason, this interferes with matching fnames[i] to the corresponding in file3
+
     done
 
     # bounce the sorted records back to File 3 and reset the temp file
@@ -228,7 +229,7 @@ function 1_MergeFiles() {
     # Get the unique headers from PSM files into the new merged PSM file, and repeat for Peptide Groups.
     awk -F"\t" 'NR==1' PDoutputTextFiles/*PSMs* > $file1; awk -F"\t" 'NR==1' PDoutputTextFiles/*PeptideGroups* > $file1A
     
-    # Now merge the file contents into their respective mergefiles, and remove all ". Also, build an array fnames() containing unique filenames for later use
+    # Now merge the file contents into their respective mergefiles, and remove all "".
     for filename in PDoutputTextFiles/*PSMs*; do
 
         # sed's -i flag edits the file 'in-place' without requiring a temporary file. This line eliminates "" from the file.
@@ -258,11 +259,11 @@ function 0_Initialize() {
     # Begin by storing output filenames in variables for ease of use
     ext=.csv
 
-    ## Create variables for merged-output files
+    ## Create variables for storing analysis snapshots in outfiles
     file1=mergedPSMs.txt; file1A=mergedPeptideGroups.txt
-
-    ## Create  variables for data analysis snapshot files
-    file2=trimmed.txt; file2A=SequencePositions.txt; file3=trimmedFiltered$ext; file3A=GEE_sequencePositions.txt; file4=final$ext; temp=temp$ext; log=AnalysisLog.txt
+    file2=trimmed.txt; file2A=SequencePositions.txt
+    file3=trimmedFiltered$ext; file3A=GEE_sequencePositions.txt
+    file4=final$ext; temp=temp$ext; log=AnalysisLog.txt
 
     # user message flag
     msg1=$(echo "\n>> "); msg2=$(echo "\t~ "); msg3=$(echo "\t! ")
@@ -310,13 +311,17 @@ numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutp
 # Populate fnames array in advance, so that successive methods can access its list of names
 ### WARNING this name extraction code is buggy and leads to inconsistencies in source file matching. Re-work this so it extract PD's assigned File ID instead.
 for filename in PDoutputTextFiles/*PSMs*; do
-    name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); echo $name "added to fnames."; fnames+=( $name )     ## testing
-
-    ## HERE IS THE SOURCE OF THE PROBLEM - taking the basename only opens pattern matching to globby behavior, because even with exact matching
-    ## a substring will still get multiple matches to other strings (ex: MB1 will grep to MB1,MB10,MB11,MB12,MB13...MB19...MB100.. and on. Need to store entire filename)
-    ## alter code tomorrow (11/08) to remove this bug)
-
+    #name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); fnames+=( $name )   ## testing
+    #name=$(basename $filename | awk -F"." '{print $1}' | awk -F"-" '{print $1}'); fnames+=( $name )   ## testing
+    name=$(basename $filename | sed 's/_PSMs.txt//' | awk -F"-" '{print $1}'); name=$(echo $name".raw"); fnames+=( $name )   ## 11/08/2022 testing - replace unwanted file extension with "".raw" THIS CURRENTLY WORKS!!
 done
+
+# Display the identified filenames to user
+fnamestring=""; echo -e "\nFound the following filename abbreviations: "
+for i in ${fnames[*]}; do
+    fnamestring=$(echo -e $fnamestring$i" | ")
+done
+echo -e $fnamestring"\n"
 
 ## Step 1: Merge the output files by calling 'mergeFiles'
 1_MergeFiles
