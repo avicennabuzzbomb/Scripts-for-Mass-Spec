@@ -98,11 +98,12 @@ function 3_CleanData() {
 
     ## Use the var 'numPSMfiles' to re-sort PSM records by source filename (which corresponds to original number of input files)
     awk -F"," 'NR == 1' $file3 > $temp
-    for ((i = 0; i < $numPSMfiles; i++)); do
 
+    # FIXME in principle, the logic of this sorting is sound; yet it does not behave consistently and breaks too often.
+    # look into code for building fnames array and also into using awk pattern matching instead of grep
+    for ((i = 0; i < $numPSMfiles; i++)); do
         ## in order of appearance, use each unique filename in fnames and use it to gather all values associated with it; then print to a temporary file
         identifier=$(echo ${fnames[i]}); grep $identifier $file3 >> $temp
-
     done
 
     # bounce the sorted records back to File 3 and reset the temp file
@@ -310,6 +311,11 @@ numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutp
 ### WARNING this name extraction code is buggy and leads to inconsistencies in source file matching. Re-work this so it extract PD's assigned File ID instead.
 for filename in PDoutputTextFiles/*PSMs*; do
     name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); echo $name "added to fnames."; fnames+=( $name )     ## testing
+
+    ## HERE IS THE SOURCE OF THE PROBLEM - taking the basename only opens pattern matching to globby behavior, because even with exact matching
+    ## a substring will still get multiple matches to other strings (ex: MB1 will grep to MB1,MB10,MB11,MB12,MB13...MB19...MB100.. and on. Need to store entire filename)
+    ## alter code tomorrow (11/08) to remove this bug)
+
 done
 
 ## Step 1: Merge the output files by calling 'mergeFiles'
