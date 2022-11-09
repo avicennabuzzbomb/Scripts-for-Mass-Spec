@@ -30,9 +30,9 @@ function 4_CALCULATE!() {
                 {print AnnotatedSequence "," Modifications "," Charge "," SpectFile "," PrecAbundance "," Label}' $temp > $temp1
 
             # Extract data associated only with current value of "m" from within the file-sorted data
-            awk -F"," -v m=$m '$1 == m{ print $0 }' $temp1 > $temp2                      # filter data again by current value of master sequence (m); KIND OF WORKS, GLOBBY
+            awk -F"," -v m=$m '$1 == m{ print $0 }' $temp1 > $temp2
 
-            # Log file for recording PSM pattern-matching behavior (quality control)
+            # Log file for recording PSM pattern-matching behavior (for quality control/debugging purposes)
             echo -e "__________________________________________________________________\nCurrent file f = "$fupper", current sequence m = |"$m"|\nMatched PSMs shown below:\n" >> $log
             cat $temp2 >> $log
             echo -e "__________________________________________________________________\n\n" >> $log 
@@ -102,8 +102,6 @@ function 3_CleanData() {
 
         ## in order of appearance, use each unique filename in fnames to gather all data associated with it into a temporary file
         identifier=$(echo ${fnames[i]}); grep $identifier $file3 >> $temp
-        #identifier=$(echo ${fnames[i]}); grep -w $identifier $file3 >> $temp   ##note: -w in grep means the pattern is its own word, rather than a substring.
-                                                                                ## for some reason, this interferes with matching fnames[i] to the corresponding in file3
 
     done
 
@@ -236,9 +234,8 @@ function 1_MergeFiles() {
         awk -F"\t" 'NR > 1' $filename >> $file1; sed -i 's/\"//g' $file1
 
     done
-
     for filename in PDoutputTextFiles/*PeptideGroups*; do
-        awk -F"\t" 'NR > 1' $filename >> $file1A; sed -i 's/\"//g' $file1A          # sed's -i flag edits the file 'in-place' without requiring a temporary file
+        awk -F"\t" 'NR > 1' $filename >> $file1A; sed -i 's/\"//g' $file1A          #NOTE sed's -i flag edits the file 'in-place' without requiring a temporary file
     done
 
     # count all non-header rows that should have been exported
@@ -308,12 +305,9 @@ fi
 # Calculate the number of files to process
 numPSMfiles=$(ls PDoutputTextFiles/*PSMs* | wc -l); numPepGroupfiles=$(ls PDoutputTextFiles/*PeptideGroups* | wc -l)
 
-# Populate fnames array in advance, so that successive methods can access its list of names
-### WARNING this name extraction code is buggy and leads to inconsistencies in source file matching. Re-work this so it extract PD's assigned File ID instead.
+# Populate fnames array in advance, so that successive methods can access its list of names; fnames stores the .raw source filenames associated with the data
 for filename in PDoutputTextFiles/*PSMs*; do
-    #name=$(basename $filename | awk -F"_" '{print $2}' | awk -F"-" '{print $1}'); fnames+=( $name )   ## testing
-    #name=$(basename $filename | awk -F"." '{print $1}' | awk -F"-" '{print $1}'); fnames+=( $name )   ## testing
-    name=$(basename $filename | sed 's/_PSMs.txt//' | awk -F"-" '{print $1}'); name=$(echo $name".raw"); fnames+=( $name )   ## 11/08/2022 testing - replace unwanted file extension with "".raw" THIS CURRENTLY WORKS!!
+    name=$(basename $filename | sed 's/_PSMs.txt//' | awk -F"-" '{print $1}'); name=$(echo $name".raw"); fnames+=( $name )
 done
 
 # Display the identified filenames to user
@@ -336,10 +330,10 @@ echo -e $fnamestring"\n"
 4_CALCULATE!
 
 
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 6/01/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Script is now complete; accurately calculates abundances and %labeling |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| NEXT: Debug for ambiguous cleavage in peptide IDs; re-tool to extract |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
-#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| unique peptide sequences from the PSMs in output file3 rather than from peptide groups |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 11/09/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Script is now complete; accurately calculates abundances and %labeling |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| NEXT: Debug for ambiguous cleavage in peptide IDs; re-tool to extract |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
+#######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| unique peptide sequences from the PSMs in output file3 rather than from peptide groups |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
 
 ### NOTES ###
 ######################################################################################################################################
@@ -368,7 +362,7 @@ echo -e $fnamestring"\n"
 
 
 
-
+## 11/09/2022 - extensions below still pending
 ## 6/02/2022 - HEADS UP - several major extensions to this need to be made to this code_________________________________________________________________________________________
 ## 1) This script is originally written to handle multiple result files from a "batched" search. Unbatched compresses all results into a single file.
 ##    Make sure that this script knows how to distinguish between the two formats and that it no longer tries to merge files by default. A simple if branch
