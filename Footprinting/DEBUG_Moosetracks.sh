@@ -1,5 +1,9 @@
 #!/bin/bash
 
+##### TODO!!!!!!! (12/05/2022): 1) Update code to correctly flag undetected peptides as 'undetected' instead of defaulting their calculated %change to 0%
+##### TODO!!!!!!! (12/05/2022): 2) Add additional code so that the final output file gets re-printed to a new file, with replicates correctly positioned in the same row as each other
+##### TODO!!!!!!! (12/05/2022): ...in the form of "Sequence","Position","%change1","%change2","%change3","%change4" and so on.
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
 
