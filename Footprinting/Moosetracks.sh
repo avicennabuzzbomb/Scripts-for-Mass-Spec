@@ -1,5 +1,9 @@
 #!/bin/bash
 
+##### TODO!!!!!!! (12/05/2022): 1) Update code to correctly flag undetected peptides as 'undetected' instead of defaulting their calculated %change to 0%
+##### TODO!!!!!!! (12/05/2022): 2) Add additional code so that the final output file gets re-printed to a new file, with replicates correctly positioned in the same row as each other
+##### TODO!!!!!!! (12/05/2022): ...in the form of "Sequence","Position","%change1","%change2","%change3","%change4" and so on.
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
 
@@ -116,6 +120,9 @@ function 3_CleanData() {
         echo -e $msg3"Error during record sorting! Review contents of "$file3" to identify what changed."
     fi
 
+    ## TODO 12/08/2022: Originally, file3A (merged, sorted unique peptide groups) was used to populate mseqs, but there are still inexact matches between peptide groups (file3A)
+    ## TODO 12/08/2022: and specific PSM sequences from File3. Thus, during position-matching there are sometimes no matches found. This should be corrected; possibly, string-indexing
+    ## TODO 12/08/2022: will be needed to smooth out PSM - PeptideGroup mismatches.
     ## use file3 to populate the mseqs array with unique GEE-labeled peptide sequences (update 6/01/2022: this works as desired (matches manual analysis in Excel))
     mseqs=($( awk -F"." 'NR > 1 && $0 ~ /GEE/{ print toupper($2) }' $file3 | sort | uniq ))
     numseqs=$(echo ${#mseqs[@]}); echo -e $msg2$numseqs" unique peptide sequences identified in "$file3
@@ -135,6 +142,7 @@ function 3_CleanData() {
     sort -t"," -k 2n -o Sequence_Position.csv{,}
     echo -e $msg2"Sequence-position list file completed."
 
+    # Reset mseqs, and then store the sorted sequences back into it. mseqs contents are now indexed in the numerical order of the target protein's fasta sequence.
     unset mseqs; mseqs=($( awk -F"," '{ print $1 }' Sequence_Position.csv ))
 
     return
@@ -160,7 +168,7 @@ function 2_ExtractData() {
 
     echo -e $msg2"Copied 'Annotated Sequence' 'Modifications' 'Charge' 'Spectrum File' 'Precursor Abundance' 'XCorr' 'Rank' to "$file2
 
-    # Repeat for to get sequence/position matches from merged peptide groups.
+    # Repeat to get sequence/position matches from merged peptide groups.
     awk -F "\t" '
     NR==1 {
         for (i=1; i<=NF; i++) {
@@ -175,7 +183,7 @@ function 2_ExtractData() {
     awk -F"\t" 'NR==1 {print $1"\t",$2}' $file2A > $file3A; awk -F"\t" 'NR > 1 {print $1"\t",$2}' $file2A | sort | uniq >> $file3A
     numUniqPepGrps=$(awk 'NR > 1' $file3A | wc -l); echo -e $msg2"Extracted "$numUniqPepGrps" unique, labeled sequence groups with their positions from among "$actual1A" total peptide groups."
 
-    # First print headers to File 3
+    # Now begin to clean data from PSM files: first, print headers to File 3
     echo -e $msg1"Filtering out low-scoring PSMs and annotating labeled PSMs..."
     Seq=$(awk -F "\t" 'NR==1 {print $1}' $file2)
     Mods=$(awk -F "\t" 'NR==1 {print $2}' $file2)
@@ -200,7 +208,7 @@ function 2_ExtractData() {
             if ( xcorr >= 2 && rank == 1)
                 print seq "," mods "," charge "," name "," abundance "," label "," xcorr "," rank}' $file2 >> $file3
 
-    ## Report the number of removed records for failing XCorr threshold   ### NOTE functions as expected (compared to manual work in Excel)
+    ## Report the number of records that were removed for failing XCorr threshold   ### NOTE functions as expected (compared to manual work in Excel)
     lenfile=$(awk 'NR >= 2' $file3 | wc -l)
     filtered=$((actual-lenfile))
 
