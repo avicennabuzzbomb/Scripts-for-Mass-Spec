@@ -3,6 +3,24 @@
 ##### TODO!!!!!!! (12/05/2022): 1) Update code to correctly flag undetected peptides as 'undetected' instead of defaulting their calculated %change to 0%
 ##### TODO!!!!!!! (12/05/2022): 2) Add additional code so that the final output file gets re-printed to a new file, with replicates correctly positioned in the same row as each other
 ##### TODO!!!!!!! (12/05/2022): ...in the form of "Sequence","Position","%change1","%change2","%change3","%change4" and so on.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function 5_Reformat() {
+
+    # Store the nunmber of Unique Peptide IDs as a counter. For each unique peptide ID as in `for (( i = 1, i <= numUnique, i++ ); do : ; done`,
+    # print the percent labeling of each replicate or sample name associated with the value `unique`. Use variables for each replicate, as in
+    # `sample1`, `sample2`, `sample3` ... etc. and also `avg` for the sample mean, `stdev` for standard deviation, and `p_val` for p values
+    # calculated from a 2-tailed t-test. Then, the values can be printed to a new formatted output:
+    # `echo $sample1,$sample2,$sample3 ... $samplen, $avg, $stdev, $pval >> DATE_ANALYSIS.csv` where the sample variables
+    # update to the replicate values for the next peptide sequence ID.
+    #
+    # NOTE1 - there isn't a function built into bash for calculating stdev but it can be encoded manually.
+    # See https://teachics.org/linux-shell-scripts/shell-script-to-find-mean-and-standard-deviation/ for more info.
+    #
+    # NOTE2 - same as with stdev, p-value calculation can be encoded manually, once you have the sample means
+    # see https://stackoverflow.com/questions/44287181/calculate-p-value-from-estimate-and-standard-error-in-unix
+    :
+
+}
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function 4_CALCULATE!() {
@@ -337,6 +355,8 @@ echo -e $fnamestring"\n"
 ## Step 4: Calculate percent labeling of each unique PSM in each file.
 4_CALCULATE!
 
+## Step 5: Format the data for the final export file.
+5_Reformat
 
 #######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| 11/09/2022: Everything to this point has been tested and works correctly! |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
 #######~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Script is now complete; accurately calculates abundances and %labeling |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######
